@@ -9,6 +9,11 @@ app.use(express.static(__dirname + '/public'));
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
+ app.get('*', function(req, res) {
+        res.sendfile('./views/pages/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    });
+
 //
 //app.get('/', function(request, response) {
 //  response.render('pages/index');
