@@ -9,12 +9,12 @@ $routeProvider
     controller:'homeController'
     })
     .when('/Home',{
-    templateUrl:'../pages/Home.htm',
+    templateUrl:'../pages/home.htm',
     controller:'homeController'
     })
 
     .when('/Forecast', {
-    templateUrl:'../pages/Forecast.htm',
+    templateUrl:'../pages/forecast.htm',
     controller:'forecastController'
     })
 
