@@ -12,13 +12,13 @@ app.set('view engine', 'ejs');
 
 
 
-//app.get('*', function(request, response) {
-//  response.render('pages/index');
-//});
+app.get('*', function(request, response) {
+  response.render('pages/index');
+});
 ////
-//app.get('/Forecast', function(request, response) {
-//  response.render('pages/Forecast');
-//});
+app.get('/Forecast', function(request, response) {
+  response.render('pages/Forecast');
+});
 //
 //app.get('/Home', function(request, response) {
 //  response.render('pages/Home');
