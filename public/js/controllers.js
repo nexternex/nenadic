@@ -1,11 +1,10 @@
 //CONTROLERS
-erpagWeather.controller('IndexCtrl',['$scope','$http' ($scope, $http) {
+erpagWeather.controller('IndexCtrl',['$scope','$http',function ($scope, $http) {
   $http.get('/api/posts').
     success(function(data, status, headers, config) {
       $scope.posts = data.posts;
     });
-}
-
+}]);
 
 
 erpagWeather.controller('homeController',['$scope','cityService' ,function($scope,cityService){
