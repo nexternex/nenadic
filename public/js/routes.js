@@ -14,7 +14,7 @@ $routeProvider
     })
 
     .when('/Forecast', {
-    templateUrl:'pages/Forecast.ejs',
+    templateUrl:'views/pages/Forecast.ejs',
     controller:'forecastController'
     })
 
