@@ -14,7 +14,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/Forecast', function(request, response) {
-  response.render('pages/forecast');
+  response.render('pages/Forecast');
 });
 
 app.listen(app.get('port'), function() {
