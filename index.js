@@ -11,7 +11,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
  app.get('*', function(req, res) {
-        res.sendfile('pages/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+        res.sendfile('pages/index.ejs'); // load the single view file (angular will handle the page changes on the front-end)
     });
 
 //
