@@ -5,16 +5,16 @@ erpagWeather.config(function ($routeProvider){
 $routeProvider
 
     .when('/',{
-    templateUrl:'pages/Home.htm',
+    templateUrl:'../../pages/Home.htm',
     controller:'homeController'
     })
     .when('/Home',{
-    templateUrl:'pages/Home.ejs',
+    templateUrl:'../../pages/Home.ejs',
     controller:'homeController'
     })
 
     .when('/Forecast', {
-    templateUrl:'pages/Forecast.ejs',
+    templateUrl:'../../pages/Forecast.ejs',
     controller:'forecastController'
     })
 
