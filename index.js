@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', function(request, response) {
-  response.render('public/pages/index');
+  response.render('pages/index');
 });
 //
 //app.get('/Forecast', function(request, response) {
