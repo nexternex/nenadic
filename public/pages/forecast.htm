@@ -1,9 +1,9 @@
-<h2>Prognoza za : {{city}}</h2>
+<h2 class='white'>Prognoza za : {{city}}</h2>
 
 <div ng-repeat="w in weatherResult.list">
     <div class="row">
         <div class="panel panel-default">
-            
+            <p>Prognoza za grad</p>
         </div>
         <div class="panel-body bg-white">
             <h3 class="panel-title">{{convertToDate(w.dt)}}</h3>
