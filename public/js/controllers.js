@@ -25,6 +25,8 @@ erpagWeather.controller('forecastController',['$scope','$resource','cityService'
     $scope.convertToDate=function(dt){
         return new Date(dt*1000);
     };
+    
+    console.log('forecast controller used')
 }]);
 
 // LOgin.js
@@ -45,10 +47,13 @@ function ($scope, $http, auth, store, $location) {
   store.remove('profile');
   store.remove('token');
   };
+     console.log('LoginCtrl controller used')
 }]);
 
 // UserInfoCtrl.js
 erpagWeather.controller('UserInfoCtrl',[
+     console.log('UserInfoCtrl controller used')
 function UserInfoCtrl($scope, auth) {
   $scope.auth = auth;
+    
 }]);
