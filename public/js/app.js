@@ -1,7 +1,6 @@
 //MODULE
 var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource']);
 
- app.js
 angular.module('erpagWeather', ['auth0', 'angular-storage', 'angular-jwt']);
 
 erpagWeather.config(function (authProvider) {
