@@ -1,6 +1,10 @@
 //MODULE
-var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','auth0','angular-storage', 'angular-jwt'])
-.config(function (authProvider) {
+var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','auth0','angular-storage','angular-jwt']);
+
+
+
+
+erpagWeather.config(function (authProvider) {
   authProvider.init({
     domain: 'myday.eu.auth0.com',
     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl'
