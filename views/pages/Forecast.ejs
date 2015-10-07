@@ -3,7 +3,14 @@
 <div ng-repeat="w in weatherResult.list">
     <div class="row">
         <div class="panel panel-default">
-            <h3 class="panel-title">{{convertToDate(w.dt)}}</h3>
+            <h3 class="panel-title">{{convertToDate(w.dt)}}</h3>]
+            <div>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
         </div>
         <div class="panel-body">
             DNEVNA TEMPERATURA:<strong>{{convertToDeg(w.temp.day)}}</strong>
