@@ -1,12 +1,4 @@
 //CONTROLERS
-//erpagWeather.controller('IndexCtrl',['$scope','$http',function ($scope, $http) {
-//  $http.get('/api/posts').
-//    success(function(data, status, headers, config) {
-//      $scope.posts = data.posts;
-//    });
-//}]);
-
-
 erpagWeather.controller('homeController',['$scope','cityService' ,function($scope,cityService){
 
     $scope.city=cityService.city;
@@ -51,7 +43,7 @@ function ($scope, $http, auth, store, $location) {
 }]);
 
 // UserInfoCtrl.js
-erpagWeather.controller('UserInfoCtrl'.[
+erpagWeather.controller('UserInfoCtrl',[
 function UserInfoCtrl($scope, auth) {
   $scope.auth = auth;
 }]);
