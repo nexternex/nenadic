@@ -2,18 +2,16 @@
 
 erpagWeather.config(function ($routeProvider){
 
-$routeProvider
-
-    .when('/',{
+    $routeProvider.when('/',{
     templateUrl:'../pages/home.htm',
     controller:'homeController'
     })
-    .when('/Home',{
+    $routeProvider.when('/Home',{
     templateUrl:'../pages/home.htm',
     controller:'homeController'
     })
 
-    .when('/Forecast', {
+    $routeProvider.when('/Forecast', {
     templateUrl:'../pages/forecast.htm',
     controller:'forecastController'
     });
@@ -21,13 +19,13 @@ $routeProvider
     $routeProvider.when('/login', {
     templateUrl: 'login.tpl.html',
     controller: 'LoginCtrl'
-  });
+    });
     // Logged in route
-  $routeProvider.when('/user-info', {
+    $routeProvider.when('/user-info', {
     templateUrl: 'userInfo.tpl.html',
     controller: 'UserInfoCtrl',
     requiresLogin: true
-  });
+    });
       authProvider.init({
     domain: 'myday.eu.auth0.com',
     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
