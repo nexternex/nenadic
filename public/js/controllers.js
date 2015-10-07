@@ -34,3 +34,22 @@ erpagWeather.controller('forecastController',['$scope','$resource','cityService'
         return new Date(dt*1000);
     };
 }]);
+// UserInfoCtrl.js
+erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',
+function ($scope, $http, auth, store, $location) {
+  $scope.login = function () {
+    auth.signin({}, function (profile, token) {
+      // Success callback
+      store.set('profile', profile);
+      store.set('token', token);
+      $location.path('/');
+    }, function () {
+      // Error callback
+    });
+  }
+}]);
+
+// UserInfoCtrl.js
+function UserInfoCtrl($scope, auth) {
+  $scope.auth = auth;
+}
