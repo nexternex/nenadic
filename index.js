@@ -10,20 +10,10 @@ var express = require('express'),
 var app = module.exports=express();
 
 app.set('port', (process.env.PORT || 5000));
-
-// views is directory for all template files
-//  app.set('views', __dirname + '/views');
-//  app.set('view engine', 'ejs');
-//  app.use(bodyParser());
-//  app.use(express.methodOverride());
-//  app.use(express.static(__dirname + '/public'));
-//  app.use(app.router);
-
-app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
-app.use(express.bodyParser());
+app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
