@@ -52,7 +52,7 @@ function ($scope, $http, auth, store, $location) {
 
 // UserInfoCtrl.js
 erpagWeather.controller('UserInfoCtrl',[
-     console.log('UserInfoCtrl controller used')
+     console.log('UserInfoCtrl controller used');
 function UserInfoCtrl($scope, auth) {
   $scope.auth = auth;
     
