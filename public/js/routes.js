@@ -2,10 +2,12 @@
 
 erpagWeather.config(function ($routeProvider){
 
-    $routeProvider.when('/',{
+    $routeProvider
+        
+    .when('/',{
     templateUrl:'../pages/home.htm',
     controller:'homeController'
-    }
+    })
     
     .when('/Home',{
     templateUrl:'../pages/home.htm',
@@ -18,12 +20,12 @@ erpagWeather.config(function ($routeProvider){
     })
     
     .when('/login', {
-    templateUrl: 'login.htm',
+    templateUrl: '../pages/login.htm',
     controller: 'LoginCtrl'
     })
     // Logged in route
     .when('/user-info', {
-    templateUrl: 'userInfo.htm',
+    templateUrl: '../pages/userInfo.htm',
     controller: 'UserInfoCtrl',
     requiresLogin: true
     });
