@@ -1,6 +1,6 @@
 var express = require('express'),
   bodyParser = require('body-parser'),
-  methodOverride = require('method-override'),
+//  methodOverride = require('method-override'),
   errorHandler = require('error-handler'),
   morgan = require('morgan'),
   routes = require('./routes'),
