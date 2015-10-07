@@ -32,6 +32,7 @@ erpagWeather.config(function ($routeProvider){
     callbackURL: location.href,
     // Here include the URL to redirect to if the user tries to access a resource when not authenticated.
     loginUrl: '/login'
-  });
+    });
+    
 });
 
