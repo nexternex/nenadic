@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html ng-app='erpagWeather'>
+	<head>
+		<meta charset="utf-8">
+		<title>Erpag Weather</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+		<!-- Font awesome CSS -->
+		<link href="stylesheets/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- Main CSS -->
+        <link href="stylesheets/style-71.css" rel="stylesheet">	
+		<!-- Resourcesn -->
+		<link rel="shortcut icon" href="#">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script><!-- load jquery -->
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.js"></script>
+<!--        <script src="js/angular-css.min.js"></script>-->
+        <!--App files-->
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+<!--        <script src="js/directives.js"></script>-->
+        <script src="js/services.js"></script>
+        <script src="js/routes.js"></script>
+	</head>
+    <body >
+        <header>
+        <nav class='navbar navbar-default'>
+            <div class="container">
+                <div class='navbar-header'><strong>ERPAG</strong> WEATHER</div>
+                <span><a class='btn btn-success' href="#Home"><strong>Home</strong></a></span>
+                <span><a class='btn btn-success' href="#Forecast"><strong>Forecast</strong></a></span>
+            </div>
+        </nav>>
+        </header>
+<!--CONTENT-->
+        <container>
+            <div ng-view>START1</div>
+        </container>    
+	</body>	
+</html>
