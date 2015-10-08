@@ -14,6 +14,7 @@ erpagWeather.config(function (authProvider) {
 erpagWeather.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
   auth.hookEvents();
+    console.log('step0001');
 });
 
 
