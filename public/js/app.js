@@ -1,19 +1,20 @@
 //MODULE
 var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource']);
 
-// app.js
-angular.module('erpagWeather', ['auth0', 'angular-storage', 'angular-jwt'])
-.config(function (authProvider) {
+angular.module('erpagWeather', ['auth0', 'angular-storage', 'angular-jwt']);
+
+erpagWeather.config(function (authProvider) {
+
   authProvider.init({
     domain: 'myday.eu.auth0.com',
     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl'
   });
 })
-.run(function(auth) {
+
+erpagWeather.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
   auth.hookEvents();
 });
-
 
 
 erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider) {
@@ -40,7 +41,8 @@ erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
         }
       } else {
         // Either show the login page or use the refresh token to get a new idToken
-        $location.path('/');
+        $location.path('/index');
+          console.log("error location changer")
       }
     }
   });

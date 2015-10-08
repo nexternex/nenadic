@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//GET ROUTES
+//GET ROUTES//
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 app.get('*', routes.index)
