@@ -47,3 +47,23 @@ erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
     }
   });
 });
+
+erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',
+function ($scope, $http, auth, store, $location) {
+  $scope.login = function () {
+    auth.signin({}, function (profile, token) {
+      // Success callback
+      store.set('profile', profile);
+      store.set('token', token);
+      $location.path('/');
+    }, function () {
+      // Error callback
+    });
+  };
+  $scope.logout = function() {
+  auth.signout();
+  store.remove('profile');
+  store.remove('token');
+  };
+     console.log('pokusaj login controller used')
+}]);
