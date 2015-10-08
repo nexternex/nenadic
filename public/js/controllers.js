@@ -47,7 +47,7 @@ function ($scope, $http, auth, store, $location) {
   store.remove('profile');
   store.remove('token');
   };
-     console.log('LoginCtrl controller used')
+     console.log('pokusaj login controller used')
 }]);
 
 // UserInfoCtrl.js
