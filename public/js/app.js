@@ -1,15 +1,5 @@
 //MODULE
-var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource']);
-
-angular.module('erpagWeather', ['auth0', 'angular-storage', 'angular-jwt']);
-
-erpagWeather.config(function (authProvider) {
-
-  authProvider.init({
-    domain: 'myday.eu.auth0.com',
-    clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl'
-  });
-})
+var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','auth0', 'angular-storage', 'angular-jwt']);
 
 erpagWeather.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
@@ -20,7 +10,12 @@ erpagWeather.run(function(auth) {
 
 erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider) {
   // ...
-
+  authProvider.init({
+    domain: 'myday.eu.auth0.com',
+    clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
+    loginUrl: '/login'
+  });
+    
   // We're annotating this function so that the `store` is injected correctly when this file is minified
   jwtInterceptorProvider.tokenGetter = ['store', function(store) {
     // Return the saved token

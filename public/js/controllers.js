@@ -53,12 +53,15 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
   console.log('pokusaj login controller used');
 
 }]);
-
+// Logout controller
+erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
+  auth.signout();
+  store.remove('profile');
+  store.remove('token');
+  $location.path('/login');
+});
 // UserInfoCtrl.js
-erpagWeather.controller('UserInfoCtrl',[
-
-function UserInfoCtrl($scope, auth) {
+erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
   $scope.auth = auth;
-         console.log('UserInfoCtrl controller used');
-    
+  console.log('UserInfoCtrl controller used');  
 }]);
