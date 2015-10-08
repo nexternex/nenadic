@@ -59,6 +59,7 @@ function ($scope, $http, auth, store, $location) {
       $location.path('/');
     }, function () {
       // Error callback
+        console.log('err logoin controller used');
     });
   };
   $scope.logout = function() {
@@ -66,5 +67,5 @@ function ($scope, $http, auth, store, $location) {
   store.remove('profile');
   store.remove('token');
   };
-     console.log('pokusaj login controller used')
+     console.log('pokusaj logoin controller used');
 }]);
