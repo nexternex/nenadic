@@ -39,6 +39,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
       store.set('token', token);
       $location.path('/');
     }, function () {
+        console.log('error controller login');
       // Error callback
     });
   };
