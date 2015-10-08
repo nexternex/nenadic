@@ -16,12 +16,14 @@ erpagWeather.config(function ($routeProvider){
 
     .when('/Forecast', {
     templateUrl:'../pages/forecast.htm',
-    controller:'forecastController'
+    controller:'forecastController',
+    requiresLogin: true
     })
     
     .when('/login', {
     templateUrl: '../pages/login.htm',
     controller: 'LoginCtrl'
+        
     })
     // Logged in route
     .when('/user-info', {
