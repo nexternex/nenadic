@@ -7,13 +7,16 @@ var express = require('express'),
 //  api = require('./routes/api'),
   http = require('http'),
   path = require('path');
+
 var app = module.exports=express();
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://nexnexter:n1g22s581,@waffle.modulusmongo.net:27017/bOs4amos');
 
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -22,6 +25,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 app.get('*', routes.index)
+
+
+//DB models
+var Todo = mongoose.model('Todo', {
+        text : String
+    });
+
+
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
