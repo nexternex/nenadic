@@ -30,8 +30,8 @@ erpagWeather.controller('forecastController',['$scope','$resource','cityService'
 }]);
 
 // LOgin.js
-erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',
-function ($scope, $http, auth, store, $location) {
+erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
+    
   $scope.login = function () {
     auth.signin({}, function (profile, token) {
       // Success callback
@@ -42,12 +42,15 @@ function ($scope, $http, auth, store, $location) {
       // Error callback
     });
   };
+    
   $scope.logout = function() {
-  auth.signout();
-  store.remove('profile');
-  store.remove('token');
+      auth.signout();
+      store.remove('profile');
+      store.remove('token');
   };
-     console.log('pokusaj login controller used')
+
+  console.log('pokusaj login controller used');
+
 }]);
 
 // UserInfoCtrl.js
