@@ -70,7 +70,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 
 //MAIN coontroler
 
-function mainController($scope, $http) {
+erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
 
     // when landing on the page, get all todos and show them
@@ -108,4 +108,4 @@ function mainController($scope, $http) {
             });
     };
 
-}
+}]);
