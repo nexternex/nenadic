@@ -11,7 +11,7 @@ exports.partials = function (req, res) {
   res.render('partials/' + name);
 };
 
-app.get('/api/todos', function(req, res) {
+exports.get('/api/todos', function(req, res) {
 
         // use mongoose to get all todos in the database
         Todo.find(function(err, todos) {
@@ -24,7 +24,7 @@ app.get('/api/todos', function(req, res) {
         });
     });
 
- app.post('/api/todos', function(req, res) {
+ exports.post('/api/todos', function(req, res) {
 
         // create a todo, information comes from AJAX request from Angular
         Todo.create({
@@ -44,7 +44,7 @@ app.get('/api/todos', function(req, res) {
 
     });
  // delete a todo
-    app.delete('/api/todos/:todo_id', function(req, res) {
+exports.delete('/api/todos/:todo_id', function(req, res) {
         Todo.remove({
             _id : req.params.todo_id
         }, function(err, todo) {
