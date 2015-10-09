@@ -1,4 +1,4 @@
-var Todo = require('.routes/models/todo');
+var Todo = require('./models/todo');
 
 module.exports = function(app) {
 
