@@ -108,6 +108,69 @@ app.use(express.static(path.join(__dirname, 'public')));
 			});
 		});
 	});
+//LIST |ROUTES
+
+	app.get('/api/lists', function(req, res) {
+        
+    mongoose.connect(uristring, function (err, res) {
+      if (err) {
+      console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+      } else {
+      console.log ('Succeeded connected to: ' + uristring);
+      }
+    });
+
+		// use mongoose to get all todos in the database
+		List.find(function(err, lists) {
+
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err)
+
+			res.json(lists); // return all todos in JSON format
+            console.log("R2D2 says:nasao sam:"+lists);
+		});
+	});
+
+	// create todo and send back all todos after creation
+	app.post('/api/lists', function(req, res) {
+
+		// create a todo, information comes from AJAX request from Angular
+		List.create({
+			text : req.body.text,
+			done : false
+		}, function(err, list) {
+			if (err)
+				res.send(err);
+
+			// get and return all the todos after you create another
+			List.find(function(err, lists) {
+				if (err)
+					res.send(err)
+				res.json(lists);
+                
+			});
+		});
+
+	});
+
+	// delete a todo
+	app.delete('/api/lists/:list_id', function(req, res) {
+		List.remove({
+			_id : req.params.list_id
+		}, function(err, list) {
+			if (err)
+				res.send(err);
+
+			// get and return all the todos after you create another
+			List.find(function(err, lists) {
+				if (err)
+					res.send(err)
+				res.json(lists);
+			});
+		});
+	});
+
 //GET ROUTES//
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
