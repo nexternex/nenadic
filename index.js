@@ -112,13 +112,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 	app.get('/api/lists', function(req, res) {
         
-    mongoose.connect(uristring, function (err, res) {
-      if (err) {
-      console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-      } else {
-      console.log ('Succeeded connected to: ' + uristring);
-      }
-    });
 
 		// use mongoose to get all todos in the database
 		List.find(function(err, lists) {
