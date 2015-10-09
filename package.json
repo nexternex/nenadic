@@ -10,13 +10,13 @@
     "ejs": "2.3.3",
     "express": "4.13.3",
     "mongoose"   : "~4.1.10",
-    "body-parser": "~1.5.2",
+    "body-parser": "~1.14.12",
     "error-handler": "^0.1.4",
     "method-override": "^1.0.0",
     "morgan": "^1.0.0"  
   },
   "engines": {
-    "node": "0.12.7"
+    "node": "4.1.2"
   },
   "repository": {
     "type": "git",
