@@ -48,7 +48,7 @@
                 <div class='navbar-header'><strong>ERPAG</strong> WEATHER</div>
                 <span><a class='btn btn-success' href="#Home"><strong>Home</strong></a></span>
                 <span><a class='btn btn-success' href="#Forecast"><strong>Forecast</strong></a></span>
-                <span><a class='btn btn-success' href="#list"><strong>Forecast</strong></a></span>
+                <span><a class='btn btn-success' href="#list"><strong>List</strong></a></span>
                 <div>
                     <input type="submit" ng-controller="LoginCtrl" ng-click="login()" />
                     <input type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out" />
@@ -61,10 +61,43 @@
         <container>
             <div ng-view>START XYZ</div>
         </container> 
+        
+        !-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body ng-controller="listController">
+  <!-- Bottom bar with filter and cart info -->
+  <div class="bar">
+    <div class="filter">
+      <span class="filter__label">Filter: </span>
+      <button class="action filter__item filter__item--selected" data-filter="*">Prikazi sve</button>
+      <button class="action filter__item" data-filter=".jackets"><i class="icon icon--jacket"></i><span class="action__text">Muzika</span></button>
+      <button class="action filter__item" data-filter=".shirts"><i class="icon icon--shirt"></i><span class="action__text">Sale</span></button>
+      <button class="action filter__item" data-filter=".dresses"><i class="icon icon--dress"></i><span class="action__text">Dekoracija</span></button>
+      <button class="action filter__item" data-filter=".trousers"><i class="icon icon--trousers"></i><span class="action__text">Nakit</span></button>
+      <button class="action filter__item" data-filter=".shoes"><i class="icon icon--shoe"></i><span class="action__text">Vencanice</span></button>
+    </div>
+    <button class="cart">
+      <i class="cart__icon fa fa-shopping-cart"></i>
+      <span class="text-hidden">Shopping cart</span>
+      <span class="cart__count">0</span>
+    </button>
+  </div>
+  <div class="view">
+    <!-- Blueprint header -->
+    <header class="bp-header cf">
+      <span>MyDay <span class="bp-icon bp-icon-about"></span></span>
+      <h1>Organizujte vas poseban dan<span>powered by <a>Ooniko</a></h1>
+      <h5>Ukliko zelite da budete izlistani kao kompanija za pruzanje usluga molimo Vas da se <a href="/register">registrujete</a></h5>     
+    </header>
+    <div>
+    </div>
+        <ngView></ngView>
+    </div>
+        
+        
       <!--      JS LIBS-->
-<script src="js/modernizr.custom.js"></script>
-<script src="js/isotope.pkgd.min.js"></script>
-<script src="js/flickity.pkgd.min.js"></script>
+        <script src="js/modernizr.custom.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/flickity.pkgd.min.js"></script>
 <!--<script src="js/main.js"></script>-->  
         
         
