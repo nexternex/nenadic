@@ -38,6 +38,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 	// api ---------------------------------------------------------------------
 	// get all todos
 	app.get('/api/todos', function(req, res) {
+        
+    mongoose.connect(uristring, function (err, res) {
+      if (err) {
+      console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+      } else {
+      console.log ('Succeeded connected to: ' + uristring);
+      }
+    });
 
 		// use mongoose to get all todos in the database
 		Todo.find(function(err, todos) {
