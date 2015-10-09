@@ -28,7 +28,7 @@ erpagWeather.config(function ($routeProvider){
     // Logged in route
     .when('/userInfo', {
     templateUrl: '../pages/userInfo.htm',
-    controller: 'UserInfoCtrl',
+    controller: 'mainController',
     requiresLogin: true
     });
     
