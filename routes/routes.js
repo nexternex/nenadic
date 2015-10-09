@@ -14,6 +14,7 @@ module.exports = function(app) {
 				res.send(err)
 
 			res.json(todos); // return all todos in JSON format
+            console.log(data);
 		});
 	});
 
