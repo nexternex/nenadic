@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 				res.send(err)
 
 			res.json(todos); // return all todos in JSON format
-            console.log(todos);
+            console.log("R2D2 says:nasao sam:"+todos);
 		});
 	});
 
@@ -66,7 +66,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 			Todo.find(function(err, todos) {
 				if (err)
 					res.send(err)
-				res.json("R2D2 says:nasao sam:"todos);
+				res.json(todos);
+                
 			});
 		});
 
