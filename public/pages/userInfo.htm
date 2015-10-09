@@ -3,7 +3,8 @@
 
         <!-- HEADER AND TODO COUNT -->
         <div class="jumbotron text-center">
-            <h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
+            <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}
+                <span class="label label-info">{{ todos.length }}</span></h1>
         </div>
 
         <!-- TODO LIST -->
@@ -14,7 +15,6 @@
                 <div class="checkbox" ng-repeat="todo in todos">
                     <label>
                         <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.msg }}
                     </label>
                 </div>
 
