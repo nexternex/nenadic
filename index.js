@@ -10,7 +10,8 @@ var express = require('express'),
 
 var app = module.exports=express();
 var mongoose = require('mongoose');
-var uristring='mongodb://nexnexter:n1g22s581,@waffle.modulusmongo.net:27017/bOs4amos'
+
+var uristring='mongodb://nexnexter:n1g22s581,@waffle.modulusmongo.net:27017/bOs4amos';
 mongoose.connect(uristring, function (err, res) {
       if (err) {
       console.log ('ERROR connecting to: ' + uristring + '. ' + err);
