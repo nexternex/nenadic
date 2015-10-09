@@ -122,7 +122,7 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
     };
 
 }]);
-
+//list Controler
 erpagWeather.controller('listController', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
 

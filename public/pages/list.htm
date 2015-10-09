@@ -5,16 +5,16 @@
             <div class="grid__sizer"></div>
 
             <!-- Grid items -->
-            <div  ng-repeat="user in users" on-finish-render="ngRepeatFinished" class="grid__item dresses">
+            <div  ng-repeat="list in lists" on-finish-render="ngRepeatFinished" class="grid__item dresses">
               <div class="slider">
                 <div class="slider__item"><img src="images/macak.jpg" alt="Dummy" /></div>
                 <div class="slider__item"><img src="images/shirt.png" alt="Dummy" /></div>
                 <div class="slider__item"><img src="images/shirt.png" alt="Dummy" /></div>
               </div>
               <div class="meta">
-                <h3 class="meta__title">{{ user.uname }}</h3>
-                <span class="meta__brand">{{ user.uname }}</span>
-                <span class="meta__price">{{ user.ulastname }}</span>
+                <h3 class="meta__title">{{ list.text }}</h3>
+                <span class="meta__brand">{{ list.text }}</span>
+                <span class="meta__price">{{ list.text }}</span>
                  <input data={{user.id_user}} value="Delete" type="button" ng-click="deleteUser(user.id_user)"></input>
               </div>
               <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="text-hidden">Add to cart</span></button>
