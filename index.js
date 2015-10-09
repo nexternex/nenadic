@@ -26,6 +26,11 @@ mongoose.connect(uristring,options, function (err, res) {
       console.log ('Succeeded connected to: ' + uristring);
       }
     });
+var db = mongoose.connection;
+db.once('open', function () {
+console.log('MongoDB connection successful.');
+});
+
 //database model
 var Todo = mongoose.model('Todo', {text : String});
 //app settings
