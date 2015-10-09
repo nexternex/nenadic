@@ -77,7 +77,7 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
     $http.get('/api/todos')
         .success(function(data) {
             $scope.todos = data;
-            console.log(data);
+            console.log('ovo sam dobio iz baze:'+data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
