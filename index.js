@@ -32,7 +32,7 @@ console.log('MongoDB connection successful.');
 });
 
 //database model
-var schema = new mongoose.Schema({ name: 'string', size: 'string' });
+var schema = new mongoose.Schema({ text: 'string' });
 var Todo = mongoose.model('Todo', schema);
 //app settings
 app.set('port', (process.env.PORT || 5000));
