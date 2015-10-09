@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 				res.send(err)
 
 			res.json(todos); // return all todos in JSON format
-            console.log(data);
+            console.log(todos);
 		});
 	});
 
