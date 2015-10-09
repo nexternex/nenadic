@@ -15,8 +15,8 @@ var uristring='mongodb://goran:n1g22s581@ds035014.mongolab.com:35014/nenadic';
 var options = {
   db: { native_parser: true },
   server: { poolSize: 5 },
-  user: 'nexnexter@gmail.com',
-  pass: 'n1g22s581,'
+  user: 'goran',
+  pass: 'n1g22s581'
 }
 
 mongoose.connect(uristring,options, function (err, res) {
