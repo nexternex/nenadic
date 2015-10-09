@@ -22,13 +22,16 @@ erpagWeather.config(function ($routeProvider){
     
     .when('/login', {
     templateUrl: '../pages/login.htm',
-    controller: 'LoginCtrl'
-        
+    controller: 'LoginCtrl'       
     })
     
     .when('/list', {
     templateUrl: '../pages/list.htm',
-    controller: 'listController'
+    controller: 'listController'        
+    })
+    .when('/register', {
+    templateUrl: '../pages/register.htm',
+    controller: 'main1Controller'
         
     })
     // Logged in route
