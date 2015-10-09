@@ -10,7 +10,7 @@ var express = require('express'),
 
 var app = module.exports=express();
 var mongoose = require('mongoose');
-var uristring='mongodb://nexnexter:n1g22s581,@waffle.modulusmongo.net:27017/bOs4amos';
+var uristring='mongodb://nexnexter:n1g22s581,@waffle.modulusmongo.net:27017/bOs4amos?authMode=scram-sha1';
 
 mongoose.connect(uristring, function (err, res) {
       if (err) {
@@ -19,11 +19,9 @@ mongoose.connect(uristring, function (err, res) {
       console.log ('Succeeded connected to: ' + uristring);
       }
     });
-
-var Todo = mongoose.model('Todo', {
-        text : String
-    });
-
+//database model
+var Todo = mongoose.model('Todo', {text : String});
+//app settings
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
