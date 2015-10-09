@@ -15,7 +15,7 @@ var uristring='mongodb://goran:n1g22s5@ds035014.mongolab.com:35014/nenadic';
 var options = {
   db: { native_parser: true },
   server: { poolSize: 5 },
-  user: 'nexnexter',
+  user: 'nexnexter@gmail.com',
   pass: 'n1g22s581,'
 }
 
