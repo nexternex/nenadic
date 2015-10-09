@@ -12,9 +12,14 @@ var app = module.exports=express();
 var mongoose = require('mongoose');
 //var uristring='mongodb://nexnexter:n1g22s581,@waffle.modulusmongo.net:27017/bOs4amos?authMode=scram-sha1';
 var uristring='mongodb://nexnexter:n1g22s581,@ds035014.mongolab.com:35014/nenadic';
+var options = {
+  db: { native_parser: true },
+  server: { poolSize: 5 },
+  user: 'nexnexter@gmail.com',
+  pass: 'n1g22s581,'
+}
 
-
-mongoose.connect(uristring, function (err, res) {
+mongoose.connect(uristring,options function (err, res) {
       if (err) {
       console.log ('ERROR connecting to: ' + uristring + '. ' + err);
       } else {
