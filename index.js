@@ -11,12 +11,12 @@ var express = require('express'),
 var app = module.exports=express();
 var mongoose = require('mongoose');
 //var uristring='mongodb://nexnexter:n1g22s581,@waffle.modulusmongo.net:27017/bOs4amos?authMode=scram-sha1';
-var uristring='mongodb://goran:n1g22s581@ds035014.mongolab.com:35014/nenadic';
+var uristring='mongodb://goran:n1g22s5@ds035014.mongolab.com:35014/nenadic';
 var options = {
   db: { native_parser: true },
   server: { poolSize: 5 },
   user: 'goran',
-  pass: 'n1g22s581'
+  pass: 'n1g22s5'
 }
 
 mongoose.connect(uristring,options, function (err, res) {
