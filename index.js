@@ -66,7 +66,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 			Todo.find(function(err, todos) {
 				if (err)
 					res.send(err)
-				res.json(todos);
+				res.json("R2D2 says:nasao sam:"todos);
 			});
 		});
 
