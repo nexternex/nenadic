@@ -182,7 +182,7 @@ erpagWeather.controller('dropDown', ['$scope', function($scope) {
 erpagWeather.controller('main1Controller', function ($scope, $http) {
     $scope.formData = {};
     // when landing on the page, get all todos and show them
-    $http.get('/api/users')
+    $http.get('/api/lists')
         .success(function(data) {
             $scope.users = data;
             console.log(data);
@@ -332,7 +332,7 @@ erpagWeather.controller('main1Controller', function ($scope, $http) {
     // when submitting the add form, send the text to the node API
     $scope.createUser = function() {
        
-        $http.post('/api/users', $scope.formData)
+        $http.post('/api/lists', $scope.formData)
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.users = data;
@@ -347,7 +347,7 @@ erpagWeather.controller('main1Controller', function ($scope, $http) {
     // delete a todo after checking it
     $scope.deleteUser = function(id) {
         alert(id);
-        $http.delete('/api/users/' + id)
+        $http.delete('/api/lists/' + id)
             .success(function(data) {
                 $scope.users = data;
                 console.log("obrisao");
