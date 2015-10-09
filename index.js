@@ -19,7 +19,7 @@ var options = {
   pass: 'n1g22s581,'
 }
 
-mongoose.connect(uristring,options function (err, res) {
+mongoose.connect(uristring,options, function (err, res) {
       if (err) {
       console.log ('ERROR connecting to: ' + uristring + '. ' + err);
       } else {
