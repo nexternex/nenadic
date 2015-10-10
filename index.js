@@ -125,10 +125,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 		// create a list, information comes from AJAX request from Angular
 		List.create({
-			name : req.body.name,
-            lastname : req.body.lastname,
-            company : req.body.company,
-            address : req.body.address,
+			name :'test',
+            lastname : 'lname',
+            company : 'test',
+            address : 'ades',
             size : 'small',
 			done : false
 		}, function(err, list) {
