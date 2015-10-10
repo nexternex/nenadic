@@ -228,8 +228,7 @@ erpagWeather.controller('listController', function ($scope, $http) {
     $http.get('/api/lists')
         .success(function(data) {
             $scope.lists = data;
-            console.log('lsite iz baze'+data);
-          
+            console.log('liste iz baze'+data);   
             $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
                     //you also get the actual event object
                     //do stuff, execute functions -- whatever...

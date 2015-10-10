@@ -33,7 +33,7 @@ console.log('MongoDB connection successful.');
 
 //database model
 var schema = new mongoose.Schema({ text: 'string' });
-var schema_list = new mongoose.Schema({ name: 'string',lastname: 'string',company: 'string',address: 'string',size: 'string', });
+var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string' });
 
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
@@ -123,13 +123,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 // create list and send back all lists after creation
 	app.post('/api/lists', function(req, res) {
 
-		// create a todo, information comes from AJAX request from Angular
+		// create a list, information comes from AJAX request from Angular
 		List.create({
 			name : req.body.name,
             lastname : req.body.lastname,
             company : req.body.company,
             address : req.body.address,
-            size : "1",
+            size : 'small',
 			done : false
 		}, function(err, list) {
 			if (err)
