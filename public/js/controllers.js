@@ -181,12 +181,13 @@ erpagWeather.controller('dropDown', ['$scope', function($scope) {
 ////////////////////list controler///////////////////////////////////////
 
 erpagWeather.controller('listController', function ($scope, $http) {
+    console.log("aktiviran list controller");
     $scope.formData = {};
     // when landing on the page, get all todos and show them
     $http.get('/api/lists')
         .success(function(data) {
             $scope.users = data;
-            console.log(data);
+            console.log('lsite iz baze'+data);
           
             $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
                     //you also get the actual event object
