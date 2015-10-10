@@ -124,14 +124,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 	app.post('/api/lists', function(req, res) {
 
 		// create a list, information comes from AJAX request from Angular
-		List.create({
-			name :'test',
-            lastname : 'lname',
-            company : 'test',
-            address : 'ades',
-            size : 'small',
-			done : false
-		}, function(err, list) {
+		List.create({name :'test',lastname : 'lname',company : 'test',address : 'ades',size : 'small'}, function(err, list) {
 			if (err)
 				res.send(err);
 
