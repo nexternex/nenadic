@@ -178,8 +178,9 @@ erpagWeather.controller('dropDown', ['$scope', function($scope) {
    };
 }]);
 
+////////////////////list controler///////////////////////////////////////
 
-erpagWeather.controller('main1Controller', function ($scope, $http) {
+erpagWeather.controller('listController', function ($scope, $http) {
     $scope.formData = {};
     // when landing on the page, get all todos and show them
     $http.get('/api/lists')
