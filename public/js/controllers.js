@@ -227,7 +227,7 @@ erpagWeather.controller('listController', function ($scope, $http) {
     // when landing on the page, get all todos and show them
     $http.get('/api/lists')
         .success(function(data) {
-            $scope.users = data;
+            $scope.lists = data;
             console.log('lsite iz baze'+data);
           
             $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
@@ -373,12 +373,12 @@ erpagWeather.controller('listController', function ($scope, $http) {
         });
 
     // when submitting the add form, send the text to the node API
-    $scope.createUser = function() {
+    $scope.createList = function() {
        
         $http.post('/api/lists', $scope.formData)
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.users = data;
+                $scope.lists = data;
                 // console.log(data+"users");
                 alert("uspesno ste registrovali nalog");
             })
@@ -388,11 +388,11 @@ erpagWeather.controller('listController', function ($scope, $http) {
     };
 
     // delete a todo after checking it
-    $scope.deleteUser = function(id) {
+    $scope.deleteList = function(id) {
         alert(id);
         $http.delete('/api/lists/' + id)
             .success(function(data) {
-                $scope.users = data;
+                $scope.lists = data;
                 console.log("obrisao");
             })
             .error(function(data) {
