@@ -34,6 +34,7 @@ console.log('MongoDB connection successful.');
 //database model
 var schema = new mongoose.Schema({ text: 'string' });
 var schema_list = new mongoose.Schema({ name: 'string',lastname: 'string',company: 'string',address: 'string',option: 'string', });
+
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
 //app settings
