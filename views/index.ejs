@@ -11,15 +11,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 		<!-- Styles -->
         !-- Font Awesome -->
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <!-- Pixel Fabric clothes icons -->
-        <link rel="stylesheet" type="text/css" href="fonts/pixelfabric-clothes/style.css" />
-        <!-- General demo styles & header -->
-        <link rel="stylesheet" type="text/css" href="stylesheets/demo.css" />
-         <!-- Flickity gallery styles -->
-        <link rel="stylesheet" type="text/css" href="stylesheets/flickity.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Pixel Fabric clothes icons -->
+    <link rel="stylesheet" type="text/css" href="fonts/pixelfabric-clothes/style.css" />
+    <!-- General demo styles & header -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/demo.css" />
+     <!-- Flickity gallery styles -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/flickity.css" />
     <!-- Component styles -->
-        <link rel="stylesheet" type="text/css" href="stylesheets/component.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/component.css" />
     <!-- SCROLLS -->
 		<!-- Bootstrap CSS -->
 		<link href="stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -30,8 +30,8 @@
         <link href="stylesheets/style-71.css" rel="stylesheet">	
 		<!-- Resourcesn -->
 		<link rel="shortcut icon" href="#">
-<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>-->
-        <script src="js/jquery-2.1.4.min.js"></script>
+<!--		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>-->
+         <script src="js/jquery-2.1.4.min.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.js"></script>
@@ -48,7 +48,7 @@
 
         
 	</head>
-    <body ng-controller="mainController">
+    <body >
         <header>
         <nav class='navbar navbar-default'>
             <div class="container">
@@ -65,7 +65,10 @@
         </nav>>
         </header>
 <!--CONTENT-->
-<section  ng-controller="main1Controller">
+        <container>
+            <div ng-view>START XYZ</div>
+        </container> 
+<body ng-controller="main1Controller">
   <!-- Bottom bar with filter and cart info -->
   <div class="bar">
     <div class="filter">
@@ -83,7 +86,7 @@
       <span class="cart__count">0</span>
     </button>
   </div>
-  <div class="view white">
+  <div class="view">
     <!-- Blueprint header -->
     <header class="bp-header cf">
       <span>MyDay <span class="bp-icon bp-icon-about"></span></span>
@@ -92,10 +95,10 @@
     </header>
     <div>
     </div>
-        <ngView></ngView>
+<!--        <ngView></ngView>-->
     </div>
         
-    </section>       
+        
       <!--      JS LIBS-->
         <script src="js/modernizr.custom.js"></script>
         <script src="js/isotope.pkgd.min.js"></script>
