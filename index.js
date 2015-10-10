@@ -52,14 +52,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 	// api ---------------------------------------------------------------------
 	// get all todos
 	app.get('/api/todos', function(req, res) {
-        
-//    mongoose.connect(uristring, function (err, res) {
-//      if (err) {
-//      console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-//      } else {
-//      console.log ('Succeeded connected to: ' + uristring);
-//      }
-//    });
 
 		// use mongoose to get all todos in the database
 		Todo.find(function(err, todos) {
@@ -125,11 +117,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 				res.send(err)
 
 			res.json(lists); // return all todos in JSON format
-            console.log("R2D2 says:nasao sam lsit:"+lists);
+            console.log("R2D2 says:nasao sam list:"+lists);
 		});
 	});
-
-	// create todo and send back all todos after creation
+// create list and send back all lists after creation
 	app.post('/api/lists', function(req, res) {
 
 		// create a todo, information comes from AJAX request from Angular
@@ -150,8 +141,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 		});
 
 	});
-
-	// delete a todo
+// delete a list
 	app.delete('/api/lists/:list_id', function(req, res) {
 		List.remove({
 			_id : req.params.list_id
