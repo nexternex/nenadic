@@ -127,10 +127,10 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
 
-    // when landing on the page, get all todos and show them
+    // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
-            $scope.todos = data;
+            $scope.lists = data;
             console.log('liste sam dobio iz baze:'+data);
         })
         .error(function(data) {
@@ -138,11 +138,11 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
         });
 
     // when submitting the add form, send the text to the node API
-    $scope.createTodo = function() {
+    $scope.createList = function() {
         $http.post('/api/lists', $scope.formData)
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.todos = data;
+                $scope.lists = data;
                 console.log(data);
             })
             .error(function(data) {
@@ -150,11 +150,11 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
             });
     };
 
-    // delete a todo after checking it
-    $scope.deleteTodo = function(id) {
+    // delete a list after checking it
+    $scope.deleteList = function(id) {
         $http.delete('/api/lists/' + id)
             .success(function(data) {
-                $scope.todos = data;
+                $scope.lists = data;
                 console.log(data);
             })
             .error(function(data) {
