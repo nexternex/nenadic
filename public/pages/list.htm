@@ -5,7 +5,7 @@
             <div class="grid__sizer"></div>
 
             <!-- Grid items -->
-        <div  ng-repeat="list in lists" on-finish-render="ngRepeatFinished" ng-class="{'grid__item dresses':type===0,'grid__item--size-a':type===1}">
+        <div  ng-repeat="list in lists" on-finish-render="ngRepeatFinished" ng-class="{'grid__item dresses':{{list.size}}===1,'grid__item--size-a':{{list.size}}===2}">
               <div class="slider">
                 <div class="slider__item"><img src="../images/macak.jpg" alt="Dummy" /></div>
                 <div class="slider__item"><img src="../images/shirt.png" alt="Dummy" /></div>
