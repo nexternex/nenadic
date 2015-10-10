@@ -356,7 +356,6 @@ erpagWeather.controller('main1Controller', function ($scope, $http) {
                 console.log('Error: ' + data);
             });
     };
-}
-)
+});
 
 //end of MAIN controller
