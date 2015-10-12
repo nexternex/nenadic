@@ -129,7 +129,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             lastname : req.body.lastname,
             company : req.body.company,
             address : req.body.address,
-            size : req.body.size_id
+            size : req.body.add_size.id
 		}, function(err, list) {
 			if (err)
 				res.send(err);

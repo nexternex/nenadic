@@ -223,8 +223,8 @@ erpagWeather.controller('dropDownSize', ['$scope', function($scope) {
    $scope.data = {
     singleSelect: null,
     availableOptions: [
-      {size_id: '1', name: 'Standardna'},
-      {size_id: '2', name: 'Velika'},
+      {id: '1', name: 'Standardna'},
+      {id: '2', name: 'Velika'},
     ],
    };
 }]);
