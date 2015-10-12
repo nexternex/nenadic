@@ -24,6 +24,7 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/timeline.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/timeline1.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylemenu.css" />
     <!-- SCROLLS -->
 		<!-- Bootstrap CSS -->
 		<link href="stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -51,20 +52,19 @@
 
         
 	</head>
-    <body >
+    <body class="cbp-spmenu-push" >
         <header>
-        <nav class='navbar navbar-default'>
+        <nav class='cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1"'>
             <div class="container">
                 <span><a class='btn btn-primary' href="#Home"><strong>Home</strong></a></span>
                 <span><a class='btn btn-primary' href="#Forecast"><strong>Forecast</strong></a></span>
                 <span><a class='btn btn-primary' href="#list"><strong>List</strong></a></span>
                 <span><a class='btn btn-primary' href="#userInfo"><strong>UserInfo</strong></a></span>
                 <span><a class='btn btn-primary' href="#timeline"><strong>Timeline</strong></a></span>
-                
+              </nav>  
                 <input type="submit" ng-controller="LoginCtrl" ng-click="login()" />
                 <input type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out" />          
             </div>
-        </nav>>
         </header>
 <!--CONTENT-->
 <container>
@@ -93,7 +93,46 @@
       <h5>Ukliko zelite da budete izlistani kao kompanija za pruzanje usluga molimo Vas da se <a href="#register">registrujete</a></h5>     
     </header>
         <div ng-view></div>
-    </div>    
+    </div>   
+		<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+			<h3>Menu</h3>
+			<a href="#">Celery seakale</a>
+			<a href="#">Dulse daikon</a>
+			<a href="#">Zucchini garlic</a>
+			<a href="#">Catsear azuki bean</a>
+			<a href="#">Dandelion bunya</a>
+			<a href="#">Rutabaga</a>
+		</nav>
+		<div class="container">
+			<header class="clearfix">
+				<span>Blueprint</span>
+				<h1>Slide and Push Menus</h1>
+				<nav>
+					<a href="http://tympanus.net/Blueprints/QuotesRotator/" class="icon-arrow-left" data-info="previous Blueprint">Previous Blueprint</a>
+					<a href="http://tympanus.net/codrops/?p=14725" class="icon-drop" data-info="back to the Codrops article">back to the Codrops article</a>
+				</nav>
+			</header>
+			<div class="main">
+				<section>
+					<h2>Slide Menus</h2>
+					<!-- Class "cbp-spmenu-open" gets applied to menu -->
+					<button id="showLeft">Show/Hide Left Slide Menu</button>
+					<button id="showRight">Show/Hide Right Slide Menu</button>
+					<button id="showTop">Show/Hide Top Slide Menu</button>
+					<button id="showBottom">Show/Hide Bottom Slide Menu</button>
+				</section>
+				<section class="buttonset">
+					<h2>Push Menus</h2>
+					<!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
+					<button id="showLeftPush">Show/Hide Left Push Menu</button>
+					<button id="showRightPush">Show/Hide Right Push Menu</button>
+				</section>
+			</div>
+		</div>
+		
+	</body>
+      
+      
  </container>        
       <!--JS LIBS-->
         <script src="js/modernizr.custom.js"></script>
@@ -106,6 +145,33 @@
         <script src="js/directives.js"></script>
         <script src="js/services.js"></script>
         <script src="js/routes.js"></script>
+    <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+		<script src="js/classie.js"></script>
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeft = document.getElementById( 'showLeft' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+
+			showLeft.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeft' );
+			};
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeftPush' );
+			};
+			
+			function disableOther( button ) {
+				if( button !== 'showLeft' ) {
+					classie.toggle( showLeft, 'disabled' );
+				}
+				
+			}
+		</script>
     
 </body>	
 </html>
