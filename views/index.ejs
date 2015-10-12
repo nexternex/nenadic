@@ -66,7 +66,7 @@
         <section class="buttonset">
                 <input type="submit" ng-controller="LoginCtrl" ng-click="login()" />
                 <input type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out" />
-            	<button id="showLeft">Show/Hide Left Slide Menu</button>
+<!--            	<button id="showLeft">Show/Hide Left Slide Menu</button>-->
 <!--                <button id="showLeftPush">Show/Hide Right Push Menu</button>-->
                 <button id="showLeftPush" > &#9776;</button>
         </section>
@@ -115,15 +115,15 @@
 		<script src="js/classie.js"></script>
 		<script>
 			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-				showLeft = document.getElementById( 'showLeft' ),
+//				showLeft = document.getElementById( 'showLeft' ),
 				showLeftPush = document.getElementById( 'showLeftPush' ),
 				body = document.body;
 
-			showLeft.onclick = function() {
-				classie.toggle( this, 'active' );
-				classie.toggle( menuLeft, 'cbp-spmenu-open' );
-				disableOther( 'showLeft' );
-			};
+//			showLeft.onclick = function() {
+//				classie.toggle( this, 'active' );
+//				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+//				disableOther( 'showLeft' );
+//			};
 			showLeftPush.onclick = function() {
 				classie.toggle( this, 'active' );
 				classie.toggle( body, 'cbp-spmenu-push-toright' );
