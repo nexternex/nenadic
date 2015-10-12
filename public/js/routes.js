@@ -38,7 +38,7 @@ erpagWeather.config(function ($routeProvider){
     controller: 'listController'
         
     })
-    .when('/register', {
+    .when('/timeline', {
     templateUrl: '../pages/timeline.htm',
     controller: 'listController'
         
