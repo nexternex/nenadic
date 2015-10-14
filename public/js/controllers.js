@@ -124,7 +124,7 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
     ],
    };
     
-    $scope.size{
+    $scope.size={
     singleSelect: null,
     availableOptions: [
       {id: '1', name: 'Standardna'},
