@@ -13,13 +13,13 @@
 		    <select name="category" ng-model="formData.dropcat" value="{{dropcat.repeatSelect}}">
 		      <option ng-repeat="option in dropcat.availableOptions" name="category" value="{{option.id}}">{{option.name}}</option>
 		    </select>
-            <tt>repeatSelect = {{dropcat.repeatSelect}}</tt><br/>
+            <tt>repeatSelect = {{formData.dropcat.repeatSelect}}</tt><br/>
 
 		    <label for="repeatSelect" >Velicina prikaza: </label></br>
-		    <select name="add_size" ng-model="formData.dropcat" value="{{dropsize.repeatSelect}}">
+		    <select name="add_size" ng-model="formData.dropsize" value="{{formData.dropsize.repeatSelect}}">
 		      <option ng-repeat="option in dropsize.availableOptions" name="category"  value="{{option.id}}">{{option.name}}</option>
 		    </select>
-            <tt>repeatSelect12345 = {{dropsize.repeatSelect}}</tt><br/>
+            <tt>repeatSelect12345 = {{formData.dropsize.repeatSelect}}</tt><br/>
 		</form>
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
 <!--	<script src="js/app.js"></script>-->
