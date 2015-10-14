@@ -11,7 +11,7 @@
 		</form>	
 		<form >
 		    <label for="repeatSelect">Vrsta delatnosti: </label></br>
-		    <select name="category" ng-model="dropcat">
+		    <select name="category" ng-model="dropcat" value="{{data.repeatSelect}}">
 		      <option ng-repeat="option in data.availableOptions" name="category" value="{{option.id}}">{{option.name}}</option>
 		    </select>
 <tt>repeatSelect = {{dropcat.repeatSelect}}</tt><br/>
