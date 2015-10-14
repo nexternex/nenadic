@@ -127,24 +127,24 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
     
-    $scope.dropcat = {
-    singleSelect: null,
-    availableOptions: [
-      {id: '1', name: 'Svecane sale'},
-      {id: '2', name: 'Bend za svadbe'},
-      {id: '3', name: 'Dekoracija'},
-      {id: '4', name: 'Poslasticarnica'},
-      {id: '5', name: 'Efekti'}
-    ],
-   };
-    
-    $scope.dropsize = {
-    singleSelect: null,
-    availableOptions: [
-      {id: '1', name: 'Standardna'},
-      {id: '2', name: 'Velika'},
-    ],
-   };
+//    $scope.dropcat = {
+//    singleSelect: null,
+//    availableOptions: [
+//      {id: '1', name: 'Svecane sale'},
+//      {id: '2', name: 'Bend za svadbe'},
+//      {id: '3', name: 'Dekoracija'},
+//      {id: '4', name: 'Poslasticarnica'},
+//      {id: '5', name: 'Efekti'}
+//    ],
+//   };
+//    
+//    $scope.dropsize = {
+//    singleSelect: null,
+//    availableOptions: [
+//      {id: '1', name: 'Standardna'},
+//      {id: '2', name: 'Velika'},
+//    ],
+//   };
 
     // when landing on the page, get all lists and show them
     $http.get('/api/lists')
