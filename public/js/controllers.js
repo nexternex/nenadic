@@ -113,7 +113,7 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
     
-    $scope.category{
+    $scope.category={
     singleSelect: null,
     availableOptions: [
       {id: '1', name: 'Svecane sale'},
