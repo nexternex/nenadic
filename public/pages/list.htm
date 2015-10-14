@@ -13,7 +13,7 @@
               </div>
               <div class="meta">
                 <h3 class="meta__title">{{list.name}}</h3>
-                  <span class="meta__brand">{{list.address}}</span>
+                  <span class="meta__brand {{list.category}}">{{list.address}}</span>
                   <span class="meta__price">{{list.lastname}}</span>
                  <input data={{list._id}} dataSize={{list.size}} value="Delete" type="button" ng-click="deleteList(list._id)"></input>
               </div>

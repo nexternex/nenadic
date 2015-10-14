@@ -170,32 +170,6 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
 
 }]);
 
-
-
-erpagWeather.controller('dropDown', ['$scope', function($scope) {
-   $scope.data = {
-    singleSelect: null,
-    availableOptions: [
-      {id: '1', name: 'Svecane sale'},
-      {id: '2', name: 'Bend za svadbe'},
-      {id: '3', name: 'Dekoracija'},
-      {id: '4', name: 'Poslasticarnica'},
-      {id: '5', name: 'Efekti'}
-    ],
-   };
-}]);
-
-erpagWeather.controller('dropDownSize', ['$scope', function($scope) {
-   $scope.data = {
-    singleSelect: null,
-    availableOptions: [
-      {id: '1', name: 'Standardna'},
-      {id: '2', name: 'Velika'},
-    ],
-   };
-}]);
-
-
 ////////////////////list controler///////////////////////////////////////
 
 erpagWeather.controller('listController', function ($scope, $http) {
