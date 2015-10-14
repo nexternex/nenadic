@@ -9,16 +9,16 @@
 	          Naziv preduzeca: </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
 	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>    
 		</form>	
-		<form ng-controller="dropDown">
+		<form >
 		    <label for="repeatSelect">Vrsta delatnosti: </label></br>
-		    <select name="type" ng-model="data.repeatSelect">
+		    <select name="category" ng-model="dropcat">
 		      <option ng-repeat="option in data.availableOptions" name="category" value="{{option.id}}">{{option.name}}</option>
 		    </select>
-<tt>repeatSelect = {{data.repeatSelect}}</tt><br/>
+<tt>repeatSelect = {{dropcat.repeatSelect}}</tt><br/>
 		</form>
-	<form  ng-controller="dropDownSize">
+	<form  >
 		    <label for="repeatSelect">Velicina prikaza: </label></br>
-		    <select name="add_size" ng-model="data.repeatSelect" value="{{data.repeatSelect}}">
+		    <select name="add_size" ng-model="dropsize" value="{{data.repeatSelect}}">
 		      <option ng-repeat="option in data.availableOptions" name="category"  value="{{option.id}}">{{option.name}}</option>
 		    </select>
 <tt>repeatSelect12345 = {{data.repeatSelect}}</tt><br/>

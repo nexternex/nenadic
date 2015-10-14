@@ -126,6 +126,26 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
 
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
+    
+    $scope.dropcat = {
+     $scope.data = {
+    singleSelect: null,
+    availableOptions: [
+      {id: '1', name: 'Svecane sale'},
+      {id: '2', name: 'Bend za svadbe'},
+      {id: '3', name: 'Dekoracija'},
+      {id: '4', name: 'Poslasticarnica'},
+      {id: '5', name: 'Efekti'}
+    ],
+   };
+    
+    $scope.dropsize = {
+    singleSelect: null,
+    availableOptions: [
+      {id: '1', name: 'Standardna'},
+      {id: '2', name: 'Velika'},
+    ],
+   };
 
     // when landing on the page, get all lists and show them
     $http.get('/api/lists')
@@ -139,7 +159,7 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
 
     // when submitting the add form, send the text to the node API
     $scope.createList = function() {
-        $http.post('/api/lists', $scope.formData)
+        $http.post('/api/lists', $scope.formData,$scope.dropsize)
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.lists = data;
