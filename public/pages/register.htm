@@ -12,13 +12,13 @@
 		<form ng-controller="dropDown">
 		    <label for="repeatSelect">Vrsta delatnosti: </label></br>
 		    <select name="type" ng-model="data.repeatSelect">
-		      <option ng-repeat="option in data.availableOptions" ng-model=formData.category value="{{option.id}}">{{option.name}}</option>
+		      <option ng-repeat="option in data.availableOptions" name="category" ng-model=formData.category value="{{option.id}}">{{option.name}}</option>
 		    </select>
 		</form>
 	<form  ng-controller="dropDownSize">
 		    <label for="repeatSelect">Velicina prikaza: </label></br>
 		    <select name="add_size" ng-model="data.repeatSelect">
-		      <option ng-repeat="option in data.availableOptions" ng-model=formData.adsize value="{{option.id}}">{{option.name}}</option>
+		      <option ng-repeat="option in data.availableOptions" name="adsize" ng-model=formData.adsize value="{{option.id}}">{{option.name}}</option>
 		    </select>
 		</form>
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
