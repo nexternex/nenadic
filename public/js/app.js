@@ -226,7 +226,7 @@ erpagWeather.controller('listController', function ($scope, $http) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.users = data;
                 // console.log(data+"users");
-                alert("uspesno ste registrovali nalog");
+                alert("uspesno ste registrovali nalog sa app strane");
             })
             .error(function(data) {
                 console.log('Error: ' + data);
