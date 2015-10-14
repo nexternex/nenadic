@@ -129,8 +129,8 @@ app.use(express.static(path.join(__dirname, 'public')));
             lastname : req.body.lastname,
             company : req.body.company,
             address : req.body.address,
-            size : req.body.repeatSelect,
-            category : req.body.category
+            size : req.body.dropsize.singleSelect,
+            category : req.body.dropcat.ssingleSelect
 		}, function(err, list) {
 			if (err)
 				res.send(err);
