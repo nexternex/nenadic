@@ -66,20 +66,6 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
   console.log('UserInfoCtrl controller used');  
 }]);
 
-//DROP DOWN COMBO
-erpagWeather.controller('dropDown', ['$scope', function($scope) {
-   $scope.data = {
-    singleSelect: null,
-    availableOptions: [
-      {id: '1', name: 'Svecane sale'},
-      {id: '2', name: 'Bend za svadbe'},
-      {id: '3', name: 'Dekoracija'},
-      {id: '4', name: 'Poslasticarnica'},
-      {id: '5', name: 'Efekti'}
-    ],
-   };
-}]);
-
 
 //MAIN coontroler
 
