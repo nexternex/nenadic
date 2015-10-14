@@ -8,19 +8,19 @@
 	          Prezime: 		   </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
 	          Naziv preduzeca: </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
 	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>    
-		
-		    <label for="repeatSelect">Vrsta delatnosti: </label></br>
-		    <select name="category" ng-model="dropcat.singleSelect">
-		      <option ng-repeat="option in dropcat.availableOptions" name="category" value="{{option.id}}">{{option.name}}</option>
+		</form>
+		    <label for="category">Vrsta delatnosti: </label></br>
+		    <select name="category" ng-model="dropcat.singleSelect" value="{{dropcat.singleSelect}}">
+		      <option ng-repeat="option in dropcat.availableOptions" value="{{option.id}}">{{option.name}}</option>
 		    </select>
             <tt>repeatSelect = {{dropcat.singleSelect}}</tt><br/>
 
 		    <label for="size" >Velicina prikaza: </label></br>
-		    <select name="size" ng-model="dropsize.singleSelect">
+		    <select name="size" ng-model="dropsize.singleSelect" value="{{dropsize.singleSelect}}">
 		      <option ng-repeat="option in dropsize.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
 		    </select>
             <tt>repeatSelect12345 = {{dropsize.singleSelect}}</tt><br/>
-		</form>
+		
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
 <!--	<script src="js/app.js"></script>-->
 	</div>
