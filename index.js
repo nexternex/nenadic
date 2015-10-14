@@ -130,7 +130,7 @@ app.use(express.static(path.join(__dirname, 'public')));
             company : req.body.company,
             address : req.body.address,
             size : req.body.dropsize.singleSelect,
-            category : req.body.dropcat.ssingleSelect
+            category : req.body.dropcat.singleSelect
 		}, function(err, list) {
 			if (err)
 				res.send(err);
