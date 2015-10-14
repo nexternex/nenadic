@@ -10,14 +10,14 @@
 	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>    
 		
 		    <label for="repeatSelect">Vrsta delatnosti: </label></br>
-		    <select name="category" ng-model="formData.dropcat" value="{{dropcat.repeatSelect}}">
+		    <select name="category" ng-model="formData.dropcat">
 		      <option ng-repeat="option in dropcat.availableOptions" name="category" value="{{option.id}}">{{option.name}}</option>
 		    </select>
             <tt>repeatSelect = {{formData.dropcat.repeatSelect}}</tt><br/>
 
 		    <label for="repeatSelect" >Velicina prikaza: </label></br>
-		    <select name="add_size" ng-model="formData.dropsize" value="{{formData.dropsize.repeatSelect}}">
-		      <option ng-repeat="option in dropsize.availableOptions" name="category"  value="{{option.id}}">{{option.name}}</option>
+		    <select name="add_size" ng-model="formData.dropsize">
+		      <option ng-repeat="option in dropsize.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
 		    </select>
             <tt>repeatSelect12345 = {{formData.dropsize.repeatSelect}}</tt><br/>
 		</form>
