@@ -145,9 +145,7 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
     // when submitting the add form, send the text to the node API
     $scope.createList = function() {
         $http.post('/api/lists', 
-                   $scope.formData,
-                   $scope.dropsize.singleSelect,
-                   $scope.dropcat.singleSelect
+                   $scope.formData
                   )
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
