@@ -10,16 +10,16 @@
 	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>    
 		</form>
 		    <label for="category">Vrsta delatnosti: </label></br>
-		    <select name="category" ng-model="dropcat.singleSelect" value="{{dropcat.singleSelect}}">
-		      <option ng-repeat="option in dropcat.availableOptions" value="{{option.id}}">{{option.name}}</option>
+		    <select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
+		      <option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
 		    </select>
-            <tt>repeatSelect = {{dropcat.singleSelect}}</tt><br/>
+            <tt>repeatSelect = {{category.singleSelect}}</tt><br/>
 
 		    <label for="size" >Velicina prikaza: </label></br>
-		    <select name="size" ng-model="dropsize.singleSelect" value="{{dropsize.singleSelect}}">
-		      <option ng-repeat="option in dropsize.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
+		    <select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
+		      <option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
 		    </select>
-            <tt>repeatSelect12345 = {{dropsize.singleSelect}}</tt><br/>
+            <tt>repeatSelect12345 = {{size.singleSelect}}</tt><br/>
 		
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
 <!--	<script src="js/app.js"></script>-->
