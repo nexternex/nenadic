@@ -128,7 +128,6 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
     $scope.formData = {};
     
     $scope.dropcat = {
-     $scope.data = {
     singleSelect: null,
     availableOptions: [
       {id: '1', name: 'Svecane sale'},
