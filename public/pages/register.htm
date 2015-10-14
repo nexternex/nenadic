@@ -19,7 +19,7 @@
 		    <select name="add_size" ng-model="dropsize" value="{{data.repeatSelect}}">
 		      <option ng-repeat="option in data.availableOptions" name="category"  value="{{option.id}}">{{option.name}}</option>
 		    </select>
-            <tt>repeatSelect12345 = {{data.repeatSelect}}</tt><br/>
+            <tt>repeatSelect12345 = {{dropsize.repeatSelect}}</tt><br/>
 		</form>
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
 <!--	<script src="js/app.js"></script>-->
