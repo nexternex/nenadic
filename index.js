@@ -122,15 +122,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 	});
 // create list and send back all lists after creation
 	app.post('/api/lists', function(req, res) {
-        console.log(req.body.name+":"+req.body.dropcat.singleSelect);
+        console.log(req.body.name+":"+req.body.size);
 		// create a list, information comes from AJAX request from Angular
 		List.create({
 			name :req.body.name,
             lastname : req.body.lastname,
             company : req.body.company,
             address : req.body.address,
-            size : req.body.singleSelect,
-            category : req.body.dropcat
+            size : req.body.size,
+            category : req.body.category
 		}, function(err, list) {
 			if (err)
 				res.send(err);
