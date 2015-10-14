@@ -18,7 +18,7 @@
 	<form  ng-controller="dropDownSize">
 		    <label for="repeatSelect">Velicina prikaza: </label></br>
 		    <select name="add_size" ng-model="data.repeatSelect">
-		      <option ng-repeat="option in data.availableOptions" value="{{option.id_addsize}}">{{option.name}}</option>
+		      <option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
 		    </select>
 		</form>
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
