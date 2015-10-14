@@ -9,18 +9,18 @@
 	          Naziv preduzeca: </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
 	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>    
 		</form>	
-		<form ng-controller="dropDown">
+		<div ng-controller="dropDown">
 		    <label for="repeatSelect">Vrsta delatnosti: </label></br>
 		    <select name="type" ng-model="data.repeatSelect">
 		      <option ng-repeat="option in data.availableOptions" name="category" ng-model=formData.category value="{{option.id}}">{{option.name}}</option>
 		    </select>
-		</form>
-	<form  ng-controller="dropDownSize">
+		</div>
+	<div  ng-controller="dropDownSize">
 		    <label for="repeatSelect">Velicina prikaza: </label></br>
 		    <select name="add_size" ng-model="data.repeatSelect">
 		      <option ng-repeat="option in data.availableOptions" name="adsize" ng-model=formData.adsize value="{{option.id}}">{{option.name}}</option>
 		    </select>
-		</form>
+		</div>
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
 <!--	<script src="js/app.js"></script>-->
 	</div>
