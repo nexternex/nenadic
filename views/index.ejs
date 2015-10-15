@@ -35,8 +35,9 @@
 		<!-- Main CSS -->
 		<!-- Resourcesn -->
 		<link rel="shortcut icon" href="#">
-<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>-->
+<!--	<script src="https://cdnjs.cloudflare.com/ajax/lib/jquery/3.0.0-alpha1/jquery.js"></script>-->
         <script src="js/jquery-2.1.4.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.js"></script>
@@ -138,18 +139,13 @@
 				
 			}
 		</script>
-    <script type="text/javascript">
+        <script type="text/javascript">
+           <script type="text/javascript">
             $(function () {
-                $('#datetimepicker5').datetimepicker({
-                    defaultDate: "11/1/2013",
-                    disabledDates: [
-                        moment("12/25/2013"),
-                        new Date(2013, 11 - 1, 21),
-                        "11/22/2013 00:53"
-                    ]
-                });
+                $('#datetimepicker1').datetimepicker();
             });
         </script>
+  
     
 </body>	
 </html>
