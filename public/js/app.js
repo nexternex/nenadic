@@ -1,5 +1,5 @@
 //MODULE
-var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','auth0', 'angular-storage', 'angular-jwt']);
+var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','auth0', 'ui.bootstrap','angular-storage', 'angular-jwt']);
 
 erpagWeather.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
