@@ -16,9 +16,6 @@
                     <label>
                         <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
                     </label>
-                    <label>
-                        <input type="datetime"> {{ todo.datetime }}
-                    </label>
                 </div>
 
             </div>
@@ -33,6 +30,16 @@
                         <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                         <input type="text" class="form-control input-lg text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
                     </div>
+        div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
 
                     <!-- createToDo() WILL CREATE NEW TODOS -->
                     <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
