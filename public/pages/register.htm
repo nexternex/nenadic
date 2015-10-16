@@ -18,17 +18,20 @@
 	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
          </md-input-container>
 		</form>
+ <md-input-container flex>
 		    <label for="category">Vrsta delatnosti: </label></br>
 		    <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
 		      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
 		    </md-select>
             <tt>repeatSelect = {{category.singleSelect}}</tt><br/>
-
+</md-input-container>
+<md-input-container flex>
 		    <label for="size" >Velicina prikaza: </label></br>
 		    <md-select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
 		      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
 		    </md-select>
             <tt>repeatSelect12345 = {{size.singleSelect}}</tt><br/>
+</md-input-container>
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
   </md-content>
 <!--	<script src="js/app.js"></script>-->
