@@ -1,0 +1,27 @@
+{
+  "name": "ERPAG_weather",
+  "description": "nexnexter sample app",
+  "main": "index.js",
+  "authors": [
+    "nexnexter <nexnexter@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "homepage": "https://github.com/nexternex/nenadic",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.1.0"
+  }
+}
