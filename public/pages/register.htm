@@ -10,15 +10,15 @@
 	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>    
 		</form>
 		    <label for="category">Vrsta delatnosti: </label></br>
-		    <select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
-		      <option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
-		    </select>
+		    <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
+		      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
+		    </md-select>
             <tt>repeatSelect = {{category.singleSelect}}</tt><br/>
 
 		    <label for="size" >Velicina prikaza: </label></br>
-		    <select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
-		      <option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
-		    </select>
+		    <md-select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
+		      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
+		    </md-select>
             <tt>repeatSelect12345 = {{size.singleSelect}}</tt><br/>
 	</md-input-container>	
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
