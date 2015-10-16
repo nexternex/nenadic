@@ -2,7 +2,7 @@
 	<div class="col-md-4 bg-blue" ng-model="formData">	
 		<h1>My Day Company page</h1>
 	<p>Register your company</p>
-
+ <md-input-container style="width:70%">
 	   <form ng-model="formData">
 	          Ime: 			   </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
 	          Prezime: 		   </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
@@ -20,7 +20,7 @@
 		      <option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
 		    </select>
             <tt>repeatSelect12345 = {{size.singleSelect}}</tt><br/>
-		
+	</md-input-container>	
 	<input  type="button" class="btn btn-large btn-success" value="Register" ng-click="createList()"></input>
 <!--	<script src="js/app.js"></script>-->
 	</div>
