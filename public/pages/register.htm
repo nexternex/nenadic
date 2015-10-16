@@ -21,7 +21,7 @@
 	         <label>Adresa:</label> 		   
              </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
          </md-input-container>
-		</form>
+		
         <md-input-container flex>
 		    <label for="category">Vrsta delatnosti: </label></br>
 		    <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
@@ -34,5 +34,6 @@
 		      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
 		    </md-select>
         </md-input-container>
+</form>
 	<md-button class="md-raised" value="Register" ng-click="createList()"></md-button>
   </md-content>
