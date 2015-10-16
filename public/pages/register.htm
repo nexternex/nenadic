@@ -4,12 +4,19 @@
 		<h1>My Day Company page</h1>
 <md-whiteframe class="md-whiteframe-3dp" flex="25" layout layout-align="center center">
 	<p>Register your company</p>
- <md-input-container style="width:70%">
 	   <form ng-model="formData">
+            <md-input-container style="width:70%">
 	          Ime: 			   </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
+            </md-input-container>
+         <md-input-container style="width:70%">
 	          Prezime: 		   </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
+        </md-input-container>
+         <md-input-container style="width:70%">
 	          Naziv preduzeca: </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
-	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>    
+         </md-input-container>
+         <md-input-container style="width:70%">
+	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
+            </md-input-container>
 		</form>
 		    <label for="category">Vrsta delatnosti: </label></br>
 		    <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
