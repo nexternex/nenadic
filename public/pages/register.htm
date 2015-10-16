@@ -6,16 +6,23 @@
 	<p>Register your company</p>
 	   <form ng-model="formData">
         <md-input-container style="width:70%">
-	          Ime: 			   </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
+	       <label>Ime:</label>
+            </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
         </md-input-container>
+     
          <md-input-container style="width:70%">
-	          Prezime: 		   </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
+             <label> Prezime:</label> 		   
+             </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
         </md-input-container>
+
          <md-input-container style="width:70%">
-	          Naziv preduzeca: </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
+	       <label>Naziv preduzeca:</label> 
+             </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
          </md-input-container>
+
          <md-input-container style="width:70%">
-	          Adresa: 		   </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
+	         <label>Adresa:</label> 		   
+             </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
          </md-input-container>
 		</form>
  <md-input-container flex>
