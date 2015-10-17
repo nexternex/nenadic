@@ -13,7 +13,7 @@ var express = require('express'),
 //upload image resources
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
-var flow = require('./public/js/flow-node.js')('tmp');
+var flow = require('./flow-node.js')('tmp');
 
 
 var app = module.exports=express();
@@ -191,7 +191,10 @@ app.options('/upload', function(req, res){
   res.status(200).send();
 });
 
-// Handle status checks on chunks through Flow.js
+
+
+//---------------------- Handle status checks on chunks through Flow.js--------------------------//
+
 app.get('/upload', function(req, res) {
   flow.get(req, function(status, filename, original_filename, identifier) {
     console.log('GET', status);
