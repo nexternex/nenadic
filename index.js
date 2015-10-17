@@ -1,3 +1,5 @@
+process.env.TMPDIR = 'tmp'; // to avoid the EXDEV rename error, see http://stackoverflow.com/q/21071303/76173
+
 var express = require('express'),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
@@ -7,6 +9,12 @@ var express = require('express'),
 //  api = require('./routes/api'),
   http = require('http'),
   path = require('path');
+
+//upload image resources
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart();
+var flow = require('./flow-node.js')('tmp');
+
 
 var app = module.exports=express();
 var mongoose = require('mongoose');
@@ -47,6 +55,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/../../src'));
 
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
@@ -161,6 +170,50 @@ app.use(express.static(path.join(__dirname, 'public')));
 			});
 		});
 	});
+
+// Handle uploads through Flow.js
+app.post('/upload', multipartMiddleware, function(req, res) {
+  flow.post(req, function(status, filename, original_filename, identifier) {
+    console.log('POST', status, original_filename, identifier);
+    if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
+      res.header("Access-Control-Allow-Origin", "*");
+    }
+    res.status(status).send();
+  });
+});
+
+
+app.options('/upload', function(req, res){
+  console.log('OPTIONS');
+  if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
+    res.header("Access-Control-Allow-Origin", "*");
+  }
+  res.status(200).send();
+});
+
+// Handle status checks on chunks through Flow.js
+app.get('/upload', function(req, res) {
+  flow.get(req, function(status, filename, original_filename, identifier) {
+    console.log('GET', status);
+    if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
+      res.header("Access-Control-Allow-Origin", "*");
+    }
+
+    if (status == 'found') {
+      status = 200;
+    } else {
+      status = 204;
+    }
+
+    res.status(status).send();
+  });
+});
+
+app.get('/download/:identifier', function(req, res) {
+  flow.write(req.params.identifier, res);
+});
+
+
 
 //GET ROUTES//
 app.get('/', routes.index);
