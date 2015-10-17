@@ -18,9 +18,8 @@ var express = require('express'),
 // Configure access control allow origin header stuff
 var ACCESS_CONTROLL_ALLOW_ORIGIN = false;
 
-// Host most stuff in the public folder
-app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/../../src'));
+
+
 
 var app = module.exports=express();
 var mongoose = require('mongoose');
@@ -62,6 +61,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride());
+// Host most stuff in the public folder
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/../../src'));
 
