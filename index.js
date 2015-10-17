@@ -1,6 +1,10 @@
 //process.env.TMPDIR = 'tmp'; // to avoid the EXDEV rename error, see http://stackoverflow.com/q/21071303/76173
 
 var express = require('express'),
+    //upload image resources
+    multipart = require('connect-multiparty');
+    multipartMiddleware = multipart();
+    flow = require('./flow-node.js')('tmp');
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     errorHandler = require('error-handler'),
@@ -10,11 +14,13 @@ var express = require('express'),
     http = require('http'),
     path = require('path');
 
-//upload image resources
-var multipart = require('connect-multiparty');
-var multipartMiddleware = multipart();
-var flow = require('./flow-node.js')('tmp');
 
+// Configure access control allow origin header stuff
+var ACCESS_CONTROLL_ALLOW_ORIGIN = false;
+
+// Host most stuff in the public folder
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/../../src'));
 
 var app = module.exports=express();
 var mongoose = require('mongoose');
@@ -45,6 +51,8 @@ var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company
 
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
+
+
 //app settings
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
@@ -171,7 +179,10 @@ app.use(express.static(__dirname + '/../../src'));
 		});
 	});
 
-// Handle uploads through Flow.js
+
+
+
+//------------------ Handle uploads through Flow.js----------------------------------------------//
 app.post('/upload', multipartMiddleware, function(req, res) {
   flow.post(req, function(status, filename, original_filename, identifier) {
     console.log('POST', status, original_filename, identifier);
