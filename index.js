@@ -2,9 +2,9 @@
 
 var express = require('express'),
     //upload image resources
-    multipart = require('connect-multiparty');
-    multipartMiddleware = multipart();
-    flow = require('./flow-node.js')('tmp');
+    multipart = require('connect-multiparty'),
+    multipartMiddleware = multipart(),
+    flow = require('./flow-node.js'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     errorHandler = require('error-handler'),
