@@ -1,17 +1,4 @@
-Skip to content
-Sign up Sign in
-This repository  
-Search
-Explore
-Features
-Enterprise
-Pricing
- Watch 52  Star 1,754  Fork 186 flowjs/flow.js
- Branch: master  flow.js/samples/Node.js/flow-node.js
-d642e7  on Dec 9, 2014
-@milkisevil milkisevil Minor fix in node clean method
-6 contributors @AidasK @thorn0 @milkisevil @Partyschaum @davidyang @joggino
-RawBlameHistory     211 lines (178 sloc)  7.88 KB
+
 var fs = require('fs'),
     path = require('path'),
     util = require('util'),
