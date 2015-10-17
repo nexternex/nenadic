@@ -2,8 +2,8 @@ process.env.TMPDIR = 'tmp'; // to avoid the EXDEV rename error, see http://stack
 
 var express = require('express'),
     //upload image resources
-    multipart = require('connect-multiparty'),
-    multipartMiddleware = multipart(),
+//    multipart = require('connect-multiparty'),
+//    multipartMiddleware = multipart(),
     flow = require('./flow-node.js')('tmp'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
