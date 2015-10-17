@@ -1,5 +1,5 @@
 //MODULE
-var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','ngAnimate','ngAria','ngMaterial','auth0','angular-storage', 'angular-jwt']);
+var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','ngAnimate','ngAria','ngMaterial','auth0','angular-storage', 'angular-jwt','flow']);
 
 erpagWeather.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
@@ -25,6 +25,21 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   $httpProvider.interceptors.push('jwtInterceptor');
   // ...
 });
+
+//image upload//
+erpagWeather.config(['flowFactoryProvider', function (flowFactoryProvider) {
+  flowFactoryProvider.defaults = {
+    target: 'upload.php',
+    permanentErrors: [404, 500, 501],
+    maxChunkRetries: 1,
+    chunkRetryInterval: 5000,
+    simultaneousUploads: 4,
+    singleFile: true
+  };
+flowFactoryProvider.on('catchAll', function (event) {
+    console.log('catchAll', arguments);
+  });    
+//end image upload//
 
 erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
   // This events gets triggered on refresh or URL change

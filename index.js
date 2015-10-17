@@ -1,4 +1,4 @@
-process.env.TMPDIR = 'tmp'; // to avoid the EXDEV rename error, see http://stackoverflow.com/q/21071303/76173
+//process.env.TMPDIR = 'tmp'; // to avoid the EXDEV rename error, see http://stackoverflow.com/q/21071303/76173
 
 var express = require('express'),
     bodyParser = require('body-parser'),
