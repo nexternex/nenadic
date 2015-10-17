@@ -9,6 +9,7 @@
   "dependencies": {
     "ejs": "2.3.3",
     "express": "4.13.3",
+    "connect-multiparty": "^1.0.4", //bitno za upload slika
     "mongoose"   : "~4.1.10",
     "body-parser": "~1.5.2",
     "error-handler": "^0.1.4",
