@@ -183,7 +183,7 @@ app.use(express.static(__dirname + '/../../src'));
 
 
 //------------------ Handle uploads through Flow.js----------------------------------------------//
-app.post('/upload', function(req, res) {
+app.post('/api/upload', function(req, res) {
   flow.post(req, function(status, filename, original_filename, identifier) {
     console.log('POST', status, original_filename, identifier);
     if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
@@ -194,7 +194,7 @@ app.post('/upload', function(req, res) {
 });
 
 
-app.options('/upload', function(req, res){
+app.options('/api/upload', function(req, res){
   console.log('OPTIONS');
   if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -206,7 +206,7 @@ app.options('/upload', function(req, res){
 
 //---------------------- Handle status checks on chunks through Flow.js--------------------------//
 
-app.get('/upload', function(req, res) {
+app.get('/api/upload', function(req, res) {
   flow.get(req, function(status, filename, original_filename, identifier) {
     console.log('GET', status);
     if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
@@ -223,7 +223,7 @@ app.get('/upload', function(req, res) {
   });
 });
 
-app.get('/download/:identifier', function(req, res) {
+app.get('/api/download/:identifier', function(req, res) {
   flow.write(req.params.identifier, res);
 });
 
