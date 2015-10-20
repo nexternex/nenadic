@@ -16,9 +16,7 @@ var express = require('express'),
 
 
 // Configure access control allow origin header stuff
-var ACCESS_CONTROLL_ALLOW_ORIGIN = false;
-
-
+var ACCESS_CONTROLL_ALLOW_ORIGIN = true;
 
 
 var app = module.exports=express();
