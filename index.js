@@ -183,7 +183,7 @@ app.use(express.static(__dirname + '/../../src'));
 
 
 //------------------ Handle uploads through Flow.js----------------------------------------------//
-app.post('/upload', multipartMiddleware, function(req, res) {
+app.post('/upload', function(req, res) {
   flow.post(req, function(status, filename, original_filename, identifier) {
     console.log('POST', status, original_filename, identifier);
     if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
