@@ -182,6 +182,7 @@ app.use(express.static(__dirname + '/../../src'));
 
 //------------------ Handle uploads through Flow.js----------------------------------------------//
 app.post('/api/upload', function(req, res) {
+    console.log('poceo post p..a ti m.....');
   flow.post(req, function(status, filename, original_filename, identifier) {
     console.log('POST', status, original_filename, identifier);
     if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
