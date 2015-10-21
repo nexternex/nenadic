@@ -22,6 +22,7 @@ var express = require('express'),
 var router = module.exports = express.Router();
 var multer = require('multer');
 var fs = require('fs');
+
 router.use(multer({
     dest: './public/uploads',
     changeDest: function(dest, req, res){
@@ -37,15 +38,16 @@ router.use(multer({
         console.log('starting');
     }
 }));
-router.post('/', sendResponse);
-function sendResponse(req, res){
-res.send('ok');
-};
+
+//
+//router.post('/', sendResponse);
+//function sendResponse(req, res){
+//res.send('ok');
+//};
+
+
 module.exports = router;
 
-
-// Configure access control allow origin header stuff
-var ACCESS_CONTROLL_ALLOW_ORIGIN = true;
 
 
 var app = module.exports=express();
@@ -90,7 +92,6 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 // Host most stuff in the public folder
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(__dirname + '/../../src'));
 
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
@@ -205,55 +206,6 @@ app.use(express.static(__dirname + '/../../src'));
 			});
 		});
 	});
-
-
-
-
-//------------------ Handle uploads through Flow.js----------------------------------------------//
-app.post('/api/upload', function(req, res) {
-    console.log('poceo post p..a ti m.....');
-  flow.post(req, function(status, filename, original_filename, identifier) {
-    console.log('POST', status, original_filename, identifier);
-    if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
-      res.header("Access-Control-Allow-Origin", "*");
-    }
-    res.status(status).send();
-  });
-});
-
-
-app.options('/api/upload', function(req, res){
-  console.log('OPTIONS');
-  if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
-    res.header("Access-Control-Allow-Origin", "*");
-  }
-  res.status(200).send();
-});
-
-
-
-//---------------------- Handle status checks on chunks through Flow.js--------------------------//
-
-app.get('/api/upload', function(req, res) {
-  flow.get(req, function(status, filename, original_filename, identifier) {
-    console.log('GET', status);
-    if (ACCESS_CONTROLL_ALLOW_ORIGIN) {
-      res.header("Access-Control-Allow-Origin", "*");
-    }
-
-    if (status == 'found') {
-      status = 200;
-    } else {
-      status = 204;
-    }
-
-    res.status(status).send();
-  });
-});
-
-app.get('/api/download/:identifier', function(req, res) {
-  flow.write(req.params.identifier, res);
-});
 
 
 
