@@ -9,8 +9,8 @@ return {
     var formData = new FormData();
     formData.append("file", logo);
     return $http.post('/api/uploads', formData, {
-    headers: {'Content-Type': undefined},
-    transformRequest: angular.identity
+        headers: {'Content-Type': undefined},
+        transformRequest: angular.identity
             });
         }
     };
