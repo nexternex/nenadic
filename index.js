@@ -22,21 +22,21 @@ var router = module.exports = express.Router();
 var multer = require('multer');
 var fs = require('fs');
 
-router.use(multer({
-    dest: './public/uploads',
-    changeDest: function(dest, req, res){
-        dest += '/haha/';
-        try{
-            stat = fs.statSync(dest);
-        }catch(err){
-            fs.mkdirSync(dest);
-        }
-        return dest;
-    },
-    onFileUploadStart: function(file){
-        console.log('starting');
-    }
-}));
+//router.use(multer({
+//    dest: './public/uploads',
+//    changeDest: function(dest, req, res){
+//        dest += '/haha/';
+//        try{
+//            stat = fs.statSync(dest);
+//        }catch(err){
+//            fs.mkdirSync(dest);
+//        }
+//        return dest;
+//    },
+//    onFileUploadStart: function(file){
+//        console.log('starting');
+//    }
+//}));
 
 //
 //router.post('/', sendResponse);
