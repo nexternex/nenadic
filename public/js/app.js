@@ -70,17 +70,6 @@ function ($scope, $http, auth, store, $location) {
 erpagWeather.controller('listController', function ($scope, $http) {
     console.log("aktiviran list controller");
         ///file upload controler///
-    $scope.uploadLogo = function(logoFile) {
-    console.log('before_API');
-      API.uploadLogo(logoFile).success(function (uploadResponse) {
-          // Handle response from server
-        console.log(uploadResponse);
-      }).error(function (error) {
-        // Handle error from server
-        console.log(error);
-      });
-    };
-    
     $scope.formData = {};
     // when landing on the page, get all todos and show them
     $http.get('/api/lists')
@@ -257,6 +246,19 @@ erpagWeather.controller('listController', function ($scope, $http) {
                 console.log('Error: ' + data);
             });
     };
+    
+    //upload
+        $scope.uploadLogo = function(logoFile) {
+            console.log('before_API');
+      API.uploadLogo(logoFile).success(function (uploadResponse) {
+          // Handle response from server
+        console.log(uploadResponse);
+      }).error(function (error) {
+        // Handle error from server
+        console.log(error);
+      });
+    };
+    
 });
 
 //end of MAIN controller
