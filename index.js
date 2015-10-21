@@ -9,7 +9,7 @@ var express = require('express'),
     errorHandler = require('error-handler'),
     morgan = require('morgan'),
     routes = require('./routes'),
-//  api = require('./routes/api'),
+//    api = require('./routes/api'),
     http = require('http'),
     path = require('path');
 
@@ -17,7 +17,7 @@ var express = require('express'),
 
 
 //upload files
-//var controller = require('./upload.controller');
+var controller = require('./upload.controller');
 var router = module.exports = express.Router();
 var multer = require('multer');
 var fs = require('fs');
