@@ -19,7 +19,7 @@ var express = require('express'),
 //upload files
 //var controller = require('./upload.controller');
 //var router = module.exports = express.Router();
-var multer = require('multer');
+//var multer = require('multer');
 //var fs = require('fs');
 
 //router.use(multer({
