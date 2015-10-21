@@ -38,7 +38,7 @@ router.use(multer({
     }
 }));
 
-
+console.log('starting-router');
 router.post('/', sendResponse);
 function sendResponse(req, res){
 res.send('ok');
