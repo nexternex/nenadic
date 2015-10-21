@@ -69,7 +69,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 
 //MAIN coontroler
 
-erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, $http) {
+erpagWeather.controller('mainController', ['$scope', '$http','API', function ($scope, $http,API) {
     $scope.formData = {};
 
     // when landing on the page, get all todos and show them
