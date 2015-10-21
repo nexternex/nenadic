@@ -44,6 +44,17 @@
                 </form>
             </div>
         </div>
+
+        <!--FIEL UPLOAD-->
+        <div class="row">
+         <div class="col-md-12">
+                <form name="myForm" id="myForm" enctype="multipart/form-data" ng-submit="uploadLogo(logoFile)">
+                    <input type="file" name="logo" id="logo" file-model="logoFile">
+                    <button id="addLogo" type="submit">Add Logo</button>
+                </form>
+            </div>
+        </div>
+
 <!--FIEL UPLOAD-->
 <!--FIEL UPLOAD-->
 	<md-button class="md-raised" value="Register" ng-click="createList()"></md-button>

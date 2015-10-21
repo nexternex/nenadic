@@ -43,7 +43,7 @@ erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
     }
   });
 });
-
+// LOGIN CONTROLLER//
 erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',
 function ($scope, $http, auth, store, $location) {
   $scope.login = function () {
@@ -64,8 +64,4 @@ function ($scope, $http, auth, store, $location) {
   };
      console.log('pokusaj logoin controller used');
 }]);
-
-
-//////////////////LIST ctrl///////////////////////////////////////////////
-
 //end of MAIN controller
