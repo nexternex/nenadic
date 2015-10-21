@@ -44,8 +44,8 @@ var multer = require('multer');
 //res.send('ok');
 //};
 
-
-module.exports = router;
+//
+//module.exports = router;
 
 
 
