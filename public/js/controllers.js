@@ -110,7 +110,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','API', function ($s
 }]);
 
 
-erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
+erpagWeather.controller('list1Controller', ['$scope', '$http','API', function ($scope, $http,API) {
     $scope.formData = {};
     
     $scope.category={
