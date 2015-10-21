@@ -169,17 +169,17 @@ erpagWeather.controller('list1Controller', ['$scope', '$http','API', function ($
     };
     
     
-    ///file upload controler///
-//    $scope.uploadLogo = function(logoFile) {
-//    console.log('before_API');
-//      API.uploadLogo(logoFile).success(function (uploadResponse) {
-//          // Handle response from server
-//        console.log(uploadResponse);
-//      }).error(function (error) {
-//        // Handle error from server
-//        console.log(error);
-//      });
-//    };
+//    /file upload controler///
+    $scope.uploadLogo = function(logoFile) {
+    console.log('before_API');
+      API.uploadLogo(logoFile).success(function (uploadResponse) {
+          // Handle response from server
+        console.log(uploadResponse);
+      }).error(function (error) {
+        // Handle error from server
+        console.log(error);
+      });
+    };
     
 
 }]);
