@@ -13,8 +13,12 @@ var express = require('express'),
 //  api = require('./routes/api'),
     http = require('http'),
     path = require('path');
+
+
+
+
 //upload files
-var controller = require('./upload.controller');
+//var controller = require('./upload.controller');
 var multer = require('multer');
 var fs = require('fs');
 router.use(multer({
