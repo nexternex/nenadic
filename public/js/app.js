@@ -67,7 +67,7 @@ function ($scope, $http, auth, store, $location) {
 
 
 //////////////////LIST ctrl///////////////////////////////////////////////
-erpagWeather.controller('listController', function ($scope, $http) {
+erpagWeather.controller('listController', function ($scope, $http,API) {
     console.log("aktiviran list controller");
         ///file upload controler///
     $scope.formData = {};
@@ -250,7 +250,7 @@ erpagWeather.controller('listController', function ($scope, $http) {
     //upload
         $scope.uploadLogo = function(logoFile) {
             console.log('before_API');
-      API.uploadLogo(logoFile).success(function (uploadResponse) {
+            API.uploadLogo(logoFile).success(function (uploadResponse) {
           // Handle response from server
         console.log(uploadResponse);
       }).error(function (error) {
