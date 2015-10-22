@@ -71,11 +71,23 @@ app.use(multer({ dest: './tmp/',
 }));
 
 app.post('/api/photo',function(req,res){
+    
     upload(req,res,function(err) {
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.end("Upisano");
+        res.send(
+        // use mongoose to get all todos in the database
+		  List.find(function(err, lists) {
+
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err)
+
+			res.json(lists); // return all todos in JSON format
+            console.log("R2D2 says:nasao sam list:"+lists);
+            });
+        );
     });
 });
 
