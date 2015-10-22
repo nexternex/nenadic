@@ -67,7 +67,7 @@ function ($scope, $http, auth, store, $location) {
 
 
 //////////////////LIST ctrl///////////////////////////////////////////////
-erpagWeather.controller('listController', function ($scope, $http,API) {
+erpagWeather.controller('listController', function ($scope, $http) {
     console.log("aktiviran list controller");
         ///file upload controler///
     $scope.formData = {};
