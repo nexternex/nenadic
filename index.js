@@ -75,7 +75,7 @@ app.post('/api/photo',function(req,res){
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.end("File is uploaded");
+        res.end("Upisano");
     });
 });
 
