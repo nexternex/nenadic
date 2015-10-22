@@ -34,16 +34,6 @@ var express = require('express'),
 //    }
 //}));
 
-console.log('starting-router');
-router.post('/', sendResponse);
-
-function sendResponse(req, res){
-    res.send('ok');
-};
-
-
-module.exports = router;
-
 var app = module.exports=express();
 var mongoose = require('mongoose');
 //var uristring='mongodb://nexnexter:n1g22s581,@waffle.modulusmongo.net:27017/bOs4amos?authMode=scram-sha1';
