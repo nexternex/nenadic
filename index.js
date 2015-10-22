@@ -17,22 +17,22 @@ var express = require('express'),
 //upload files
 //var controller = require('./upload.controller');
 //var router = module.exports = express.Router();
-
-app.use(multer({
-    dest: './public/uploads',
-    changeDest: function(dest, req, res){
-        dest += '/haha/';
-        try{
-            stat = fs.statSync(dest);
-        }catch(err){
-            fs.mkdirSync(dest);
-        }
-        return dest;
-    },
-    onFileUploadStart: function(file){
-        console.log('starting');
-    }
-}));
+//
+//app.use(multer({
+//    dest: './public/uploads',
+//    changeDest: function(dest, req, res){
+//        dest += '/haha/';
+//        try{
+//            stat = fs.statSync(dest);
+//        }catch(err){
+//            fs.mkdirSync(dest);
+//        }
+//        return dest;
+//    },
+//    onFileUploadStart: function(file){
+//        console.log('starting');
+//    }
+//}));
 
 console.log('starting-router');
 router.post('/', sendResponse);
