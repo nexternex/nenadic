@@ -12,26 +12,6 @@ var express = require('express'),
     path = require('path');
 
 
-app.use(multer({ dest: './uploads/',
-    rename: function (fieldname, filename) {
-        return filename+Date.now();
-    },
-    onFileUploadStart: function (file) {
-        console.log(file.originalname + ' is starting ...');
-    },
-    onFileUploadComplete: function (file) {
-        console.log(file.fieldname + ' uploaded to  ' + file.path)
-    }
-}));
-
-app.post('/api/photo',function(req,res){
-    upload(req,res,function(err) {
-        if(err) {
-            return res.end("Error uploading file.");
-        }
-        res.end("File is uploaded");
-    });
-});
 
 
 var app = module.exports=express();
@@ -76,6 +56,29 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 // Host most stuff in the public folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+//IMAGES//
+app.use(multer({ dest: './uploads/',
+    rename: function (fieldname, filename) {
+        return filename+Date.now();
+    },
+    onFileUploadStart: function (file) {
+        console.log(file.originalname + ' is starting ...');
+    },
+    onFileUploadComplete: function (file) {
+        console.log(file.fieldname + ' uploaded to  ' + file.path)
+    }
+}));
+
+app.post('/api/photo',function(req,res){
+    upload(req,res,function(err) {
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.end("File is uploaded");
+    });
+});
+
 
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
