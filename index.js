@@ -206,7 +206,7 @@ app.post('/profile', upload.single('photho'), function(req, res){
     console.log(req.body) // form fields
     console.log(req.file) // form files
     res.status(204).end()
-}]);
+});
 
 
 //GET ROUTES//
