@@ -58,7 +58,7 @@ app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //IMAGES//
-app.use(multer({ dest: './uploads/',
+app.use(multer({ dest: './tmp/',
     rename: function (fieldname, filename) {
         return filename+Date.now();
     },
