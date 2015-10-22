@@ -34,34 +34,16 @@
 		      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
 		    </md-select>
         </md-input-container>
-<!--FIEL UPLOAD-->
-        <div class="row">
-         <div class="col-md-12" ng-controller='listController'>
-                <form name="myForm" id="myForm" enctype="multipart/form-data" ng-submit="uploadLogo(logoFile)">
-                    <input type="file" name="logo" id="logo" file-model="logoFile">
-                    <button id="addLogo" type="submit">Add Logo</button>
-                </form>
-            </div>
-        </div>
-<!--FIEL UPLOAD-->
-        <div class="row">
-         <div class="col-md-12" ng-controller='listController'>
-                <form name="myForm" id="myForm" enctype="multipart/form-data" ng-submit="uploadLogo(logoFile)">
-                    <input type="file" name="logo" id="logo" file-model="logoFile">
-                    <button id="addLogo" type="submit">Add Logo</button>
-                </form>
-            </div>
-        </div>
-<!--FIEL UPLOAD-->
-<form id        =  "uploadForm"
-     enctype   =  "multipart/form-data"
-     action    =  "/api/photo"
-     method    =  "post"
->
-<input type="file" name="userPhoto" />
-<input type="submit" value="Upload Image" name="submit">
-</form>
 
+<!--FILE UPLOAD-->
+            <form id        =  "uploadForm"
+                 enctype   =  "multipart/form-data"
+                 action    =  "/api/photo"
+                 method    =  "post"
+            >
+            <input type="file" name="userPhoto" />
+            <input type="submit" value="Upload Image" name="submit">
+            </form>
 <!--FIEL UPLOAD-->
 	<md-button class="md-raised" value="Register" ng-click="createList()"></md-button>
   </md-content>
