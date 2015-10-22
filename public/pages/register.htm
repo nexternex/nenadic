@@ -52,8 +52,16 @@
                 </form>
             </div>
         </div>
-
 <!--FIEL UPLOAD-->
+<form id        =  "uploadForm"
+     enctype   =  "multipart/form-data"
+     action    =  "/api/photo"
+     method    =  "post"
+>
+<input type="file" name="userPhoto" />
+<input type="submit" value="Upload Image" name="submit">
+</form>
+
 <!--FIEL UPLOAD-->
 	<md-button class="md-raised" value="Register" ng-click="createList()"></md-button>
   </md-content>

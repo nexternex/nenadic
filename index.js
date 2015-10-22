@@ -4,7 +4,7 @@ var express = require('express'),
     errorHandler = require('error-handler'),
     morgan = require('morgan'),
     multer = require('multer'),
-    upload=multer({ dest: './tmp'}),
+    upload = multer({ dest: './tmp/'});
     fs = require('fs'),
 //    routes = require('./routes'),
 //    api = require('./routes/api'),
@@ -12,27 +12,27 @@ var express = require('express'),
     path = require('path');
 
 
+app.use(multer({ dest: './uploads/',
+    rename: function (fieldname, filename) {
+        return filename+Date.now();
+    },
+    onFileUploadStart: function (file) {
+        console.log(file.originalname + ' is starting ...');
+    },
+    onFileUploadComplete: function (file) {
+        console.log(file.fieldname + ' uploaded to  ' + file.path)
+    }
+}));
 
+app.post('/api/photo',function(req,res){
+    upload(req,res,function(err) {
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.end("File is uploaded");
+    });
+});
 
-//upload files
-//var controller = require('./upload.controller');
-//var router = module.exports = express.Router();
-//
-//app.use(multer({
-//    dest: './public/uploads',
-//    changeDest: function(dest, req, res){
-//        dest += '/haha/';
-//        try{
-//            stat = fs.statSync(dest);
-//        }catch(err){
-//            fs.mkdirSync(dest);
-//        }
-//        return dest;
-//    },
-//    onFileUploadStart: function(file){
-//        console.log('starting');
-//    }
-//}));
 
 var app = module.exports=express();
 var mongoose = require('mongoose');
@@ -190,14 +190,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 			});
 		});
 	});
-
-//images
-app.post('/profile', upload.single('photho'), function(req, res){
-    console.log(req.body) // form fields
-    console.log(req.file) // form files
-    res.status(204).end()
-});
-
 
 //GET ROUTES//
 app.get('/', routes.index);
