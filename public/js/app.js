@@ -246,19 +246,7 @@ erpagWeather.controller('listController', function ($scope, $http,API) {
                 console.log('Error: ' + data);
             });
     };
-    
-    //upload
-        $scope.uploadLogo = function(logoFile) {
-            console.log('before_API');
-            API.uploadLogo(logoFile).success(function (uploadResponse) {
-          // Handle response from server
-        console.log(uploadResponse);
-      }).error(function (error) {
-        // Handle error from server
-        console.log(error);
-      });
-    };
-    
+        
 });
 
 //end of MAIN controller
