@@ -1,14 +1,12 @@
-process.env.TMPDIR = 'tmp'; // to avoid the EXDEV rename error, see http://stackoverflow.com/q/21071303/76173
-
 var express = require('express'),
-    //upload image resources
-//    multipart = require('connect-multiparty'),
-//    multipartMiddleware = multipart(),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     errorHandler = require('error-handler'),
     morgan = require('morgan'),
-    routes = require('./routes'),
+    multer = require('multer'),
+    upload=multer({ dest: './tmp'}),
+    fs = require('fs'),
+//    routes = require('./routes'),
 //    api = require('./routes/api'),
     http = require('http'),
     path = require('path');
@@ -18,11 +16,9 @@ var express = require('express'),
 
 //upload files
 //var controller = require('./upload.controller');
-var router = module.exports = express.Router();
-var multer = require('multer');
-var fs = require('fs');
+//var router = module.exports = express.Router();
 
-router.use(multer({
+app.use(multer({
     dest: './public/uploads',
     changeDest: function(dest, req, res){
         dest += '/haha/';
@@ -40,14 +36,13 @@ router.use(multer({
 
 console.log('starting-router');
 router.post('/', sendResponse);
+
 function sendResponse(req, res){
-res.send('ok');
+    res.send('ok');
 };
 
 
 module.exports = router;
-
-
 
 var app = module.exports=express();
 var mongoose = require('mongoose');
@@ -206,6 +201,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 		});
 	});
 
+//images
+app.post('/profile', upload.single('photho'), function(req, res){
+    console.log(req.body) // form fields
+    console.log(req.file) // form files
+    res.status(204).end()
+}]);
 
 
 //GET ROUTES//
