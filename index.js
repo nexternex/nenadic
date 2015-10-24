@@ -76,7 +76,7 @@ app.post('/api/photo',function(req,res){
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.send();
+        res.end("Upisah");
     });
 });
 
