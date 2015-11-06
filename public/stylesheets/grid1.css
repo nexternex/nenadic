@@ -72,6 +72,7 @@ a:hover {
 	margin: 0 auto;
 	padding: 4em 1.875em 1.875em;
 	text-align: center;
+    background-image: "../images/001.jpg";
 }
 
 .bp-header h1 {
