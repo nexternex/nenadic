@@ -2,3 +2,90 @@
     background-image: "../images/001.jpg";
     min-height: 300px;
 }
+
+/* ==========================================================================
+Hero
+========================================================================== */
+.hero {
+  min-height: 750px;
+  background: url("../img/hero.jpg") center center;
+  background-size: cover;
+  position: relative; }
+  .hero .down-arrow a {
+    color: #fff; }
+  .hero h1 {
+    color: #fff;
+    margin-bottom: 40px; }
+  .hero p.intro {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 80px; }
+  .hero .hero-content {
+    padding-top: 26%; }
+
+.navigation {
+  -webkit-transition: all 300ms ease-in-out;
+          transition: all 300ms ease-in-out;
+  position: fixed;
+  width: 100%;
+  z-index: 999; }
+
+.fixed {
+  position: fixed;
+  background-color: #232731;
+  z-index: 999;
+  width: 100%; }
+
+header {
+  padding: 50px 0;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  width: 1170px;
+  margin: 0 auto;
+  -webkit-transition: padding 300ms ease-in-out;
+          transition: padding 300ms ease-in-out; }
+  header a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px; }
+    header a.login {
+      margin-right: 20px; }
+  header .logo {
+    display: inline-block; }
+  header ul.primary-nav {
+    margin: 0 0 0 75px;
+    padding: 0; }
+    header ul.primary-nav li {
+      display: inline; }
+      header ul.primary-nav li a {
+        color: #fff;
+        padding-right: 25px; }
+        header ul.primary-nav li a:hover {
+          color: #FF5274; }
+      header ul.primary-nav li:last-child a {
+        padding-right: 0px; }
+  header ul.member-actions li {
+    display: inline; }
+    header ul.member-actions li a {
+      color: #fff; }
+      header ul.member-actions li a:hover {
+        color: #FF5274; }
+  header .header-nav {
+    display: inline-block; }
+  header .member-actions {
+    position: absolute;
+    right: 0;
+    top: 41px;
+    -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out; }
+
+.down-arrow {
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
