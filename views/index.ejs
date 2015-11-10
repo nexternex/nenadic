@@ -63,7 +63,6 @@
                                 <md-button type="submit" ng-controller="LoginCtrl" ng-click="login()" >LOG IN</md-button>
                                 <md-button type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out">LOG OUT</md-button>
                                 <button id="showLeftPush" > &#9776;</button>
-                                <h1>Organizujte vas poseban dan<span>powered by <a>Ooniko</a></h1>
                                 <a href="#register">registrujete</a></h5> 
                             </ul>
             <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
@@ -73,27 +72,13 @@
                 <md-button ng-href="#timeline">Timeline</md-button>
             </nav> 
         </header>
-        
-        <section class="navigation">
-            <header>
-                <div class="header-content">
-                    <div class="logo"><a href="#">MY DAY</a></div>
-                    <div class="header-nav">
-                        <nav>
-                           
-                        </nav>
-                    </div>
-                </div>
-            </header>
-              <div class="view">
-    <!-- Blueprint header -->
-                    <header class="bp-header cf">
-                        <span>MyDay <span class="bp-icon bp-icon-about"></span></span>    
-                    </header>
-                    <div ng-view></div>
-                </div>      
-        </section>
+    
+
+    
 <!--CONTENT-->
+<section  class="view">
+    <div ng-view></div>    
+</section>
 <container>
   <!-- Bottom bar with filter and cart info -->
   <div class="bar">
