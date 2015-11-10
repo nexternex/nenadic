@@ -27,18 +27,15 @@
         <link rel="stylesheet" type="text/css" href="stylesheets/stylemenu1.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/flow.css" />
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
-    <!-- SCROLLS -->
 		<!-- Bootstrap CSS -->
 		<link  type="text/css" href="stylesheets/bootstrap.min.css" rel="stylesheet">
         <link  type="text/css" href="stylesheets/bootstrap-datetimepicker.min.css" rel="stylesheet">
 		<!-- Font awesome CSS -->
-
 		<!-- Main CSS -->
 		<!-- Resourcesn -->
 		<link rel="shortcut icon" href="#">
 <!--	<script src="https://cdnjs.cloudflare.com/ajax/lib/jquery/3.0.0-alpha1/jquery.js"></script>-->
         <script src="js/jquery-2.1.4.min.js"></script>
-
 <!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
         <script src="js/bootstrap-datetimepicker.min.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
@@ -58,25 +55,17 @@
 <!--    <script src="js/angular-css.min.js"></script>-->  
             <!-- Angular Material Javascript now available via Google CDN; version 0.11.2 used here -->
         <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
-
-
-        
 	</head>
+    
     <body class="cbp-spmenu-push" >
         <header>
         <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
             <md-button ng-href="#Home" >Home</md-button>
-            <md-button ng-href="#Forecast">Forecast</md-button>
+<!--            <md-button ng-href="#Forecast">Forecast</md-button>-->
             <md-button ng-href="#list">List</md-button>
             <md-button ng-href="#userInfo">UserInfo</md-button>
             <md-button ng-href="#timeline">Timeline</md-button>
         </nav> 
-            
-        <section class="buttonset">
-            <md-button type="submit" ng-controller="LoginCtrl" ng-click="login()" >LOG IN</md-button>
-            <md-button type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out">LOG OUT</md-button>
-                <button id="showLeftPush" > &#9776;</button>
-        </section>
         </header>
             <section class="hero">
         <section class="navigation">
@@ -86,15 +75,14 @@
                     <div class="header-nav">
                         <nav>
                             <ul class="primary-nav">
-                                <li><a href="#features">Features</a></li>
-                                <li><a href="#assets">Assets</a></li>
-                                <li><a href="#blog">Blog</a></li>
-                                <li><a href="#download">Download</a></li>
+                                <md-button type="submit" ng-controller="LoginCtrl" ng-click="login()" >LOG IN</md-button>
+                                <md-button type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out">LOG OUT</md-button>
+                                <button id="showLeftPush" > &#9776;</button>
                             </ul>
-                            <ul class="member-actions">
-                                <li><a href="#download" class="login">Log in</a></li>
-                                <li><a href="#download" class="btn-white btn-small">Sign up</a></li>
-                            </ul>
+                                <ul class="member-actions">
+                                    <li><a href="#download" class="login">Log in</a></li>
+                                    <li><a href="#download" class="btn-white btn-small">Sign up</a></li>
+                                </ul>
                         </nav>
                     </div>
                     <div class="navicon">
