@@ -59,15 +59,14 @@
     
     <body class="cbp-spmenu-push" >
         <header>
-        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-            <md-button ng-href="#Home" >Home</md-button>
-<!--            <md-button ng-href="#Forecast">Forecast</md-button>-->
-            <md-button ng-href="#list">List</md-button>
-            <md-button ng-href="#userInfo">UserInfo</md-button>
-            <md-button ng-href="#timeline">Timeline</md-button>
-        </nav> 
+            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                <md-button ng-href="#Home" >Home</md-button>
+    <!--            <md-button ng-href="#Forecast">Forecast</md-button>-->
+                <md-button ng-href="#list">List</md-button>
+                <md-button ng-href="#userInfo">UserInfo</md-button>
+                <md-button ng-href="#timeline">Timeline</md-button>
+            </nav> 
         </header>
-            <section class="hero">
         <section class="navigation">
             <header>
                 <div class="header-content">
@@ -78,11 +77,9 @@
                                 <md-button type="submit" ng-controller="LoginCtrl" ng-click="login()" >LOG IN</md-button>
                                 <md-button type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out">LOG OUT</md-button>
                                 <button id="showLeftPush" > &#9776;</button>
+                                <h1>Organizujte vas poseban dan<span>powered by <a>Ooniko</a></h1>
+                                <h5>Ukliko zelite da budete izlistani kao kompanija za pruzanje usluga molimo Vas da se <a href="#register">registrujete</a></h5> 
                             </ul>
-                                <ul class="member-actions">
-                                    <li><a href="#download" class="login">Log in</a></li>
-                                    <li><a href="#download" class="btn-white btn-small">Sign up</a></li>
-                                </ul>
                         </nav>
                     </div>
                     <div class="navicon">
@@ -91,21 +88,6 @@
                 </div>
             </header>
         </section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="hero-content text-center">
-                        <h1>Design, collaborate, win!</h1>
-                        <p class="intro">Introducing “Sedna”. A responsive one page website, designed & developed by Peter Finlan, exclusively for Codrops.</p>
-                        <a href="#" class="btn btn-fill btn-large btn-margin-right">Download</a> <a href="#" class="btn btn-accent btn-large">Learn more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="down-arrow floating-arrow"><a href="#"><i class="fa fa-angle-down"></i></a></div>
-    </section>
-        
-        
 <!--CONTENT-->
 <container>
   <!-- Bottom bar with filter and cart info -->
@@ -128,9 +110,7 @@
   <div class="view">
     <!-- Blueprint header -->
     <header class="bp-header cf">
-      <span>MyDay <span class="bp-icon bp-icon-about"></span></span>
-      <h1>Organizujte vas poseban dan<span>powered by <a>Ooniko</a></h1>
-      <h5>Ukliko zelite da budete izlistani kao kompanija za pruzanje usluga molimo Vas da se <a href="#register">registrujete</a></h5>     
+      <span>MyDay <span class="bp-icon bp-icon-about"></span></span>    
     </header>
         <div ng-view></div>
     </div>      
