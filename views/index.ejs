@@ -61,12 +61,12 @@
         <header>
             <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
                 <md-button ng-href="#Home" >Home</md-button>
-    <!--            <md-button ng-href="#Forecast">Forecast</md-button>-->
                 <md-button ng-href="#list">List</md-button>
                 <md-button ng-href="#userInfo">UserInfo</md-button>
                 <md-button ng-href="#timeline">Timeline</md-button>
             </nav> 
         </header>
+        
         <section class="navigation">
             <header>
                 <div class="header-content">
@@ -78,15 +78,19 @@
                                 <md-button type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out">LOG OUT</md-button>
                                 <button id="showLeftPush" > &#9776;</button>
                                 <h1>Organizujte vas poseban dan<span>powered by <a>Ooniko</a></h1>
-                                <h5>Ukliko zelite da budete izlistani kao kompanija za pruzanje usluga molimo Vas da se <a href="#register">registrujete</a></h5> 
+                                <a href="#register">registrujete</a></h5> 
                             </ul>
                         </nav>
                     </div>
-                    <div class="navicon">
-                        <a class="nav-toggle" href="#"><span></span></a>
-                    </div>
                 </div>
             </header>
+              <div class="view">
+    <!-- Blueprint header -->
+    <header class="bp-header cf">
+                  <span>MyDay <span class="bp-icon bp-icon-about"></span></span>    
+    </header>
+                    <div ng-view></div>
+                </div>      
         </section>
 <!--CONTENT-->
 <container>
@@ -107,13 +111,6 @@
       <span class="cart__count">0</span>
     </button>
   </div>
-  <div class="view">
-    <!-- Blueprint header -->
-    <header class="bp-header cf">
-      <span>MyDay <span class="bp-icon bp-icon-about"></span></span>    
-    </header>
-        <div ng-view></div>
-    </div>      
  </container>        
       <!--JS LIBS-->
         <script src="js/modernizr.custom.js"></script>
