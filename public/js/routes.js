@@ -29,6 +29,10 @@ erpagWeather.config(function ($routeProvider){
     templateUrl: '../pages/list.htm',
     controller: 'list1Controller'        
     })
+     .when('/companies', {
+    templateUrl: '../pages/companies.htm',
+    controller: 'list1Controller'        
+    })
     .when('/register', {
     templateUrl: '../pages/register.htm',
     controller: 'list1Controller'
