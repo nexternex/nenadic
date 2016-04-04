@@ -26,6 +26,8 @@
       max-width: 100%; }
 
 .test_css {
-height:200px;
-width:150px;    
+    height: 200px;
+    min-height: 100px;
+    background: red;
+    max-width: 200px;  
 }
