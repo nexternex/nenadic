@@ -1,15 +1,16 @@
 <section class="grid grid--loading" ng-controller="listController">
         <!-- Loader -->
-            <img class="grid__loader" src="images/grid.svg" width="60" alt="Loader image" />
+            <h1>Nex nexter iz baze neki naslov</h1>
+            <img src="images/grid.svg" width="60" alt="Loader image" />
             <!-- Grid sizer for a fluid Isotope (Masonry) layout -->
             <div class="grid__sizer"></div>
 
             <!-- Grid items -->
-        <div  ng-repeat="list in lists" on-finish-render="ngRepeatFinished" ng-class="{'grid__item grid__item--size-a':list.size=='2'}" class="grid__item {{list.category}}">
+        <div  ng-repeat="list in lists" on-finish-render="ngRepeatFinished">
               <div class="slider">
-                <div class="slider__item"><img src="../images/macak.jpg" alt="Dummy" /></div>
-                <div class="slider__item"><img src="../images/macak.jpg" alt="Dummy" /></div>
-                <div class="slider__item"><img src="../images/macak.jpg" alt="Dummy" /></div>
+                <div <img src="../images/macak.jpg" alt="Dummy" /></div>
+                <div <img src="../images/macak.jpg" alt="Dummy" /></div>
+                <div <img src="../images/macak.jpg" alt="Dummy" /></div>
               </div>
               <div class="meta">
                 <h3 class="meta__title">{{list.name}}</h3>
