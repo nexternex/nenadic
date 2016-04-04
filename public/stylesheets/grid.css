@@ -418,3 +418,10 @@
 		-webkit-tap-highlight-color: transparent;
 	}
 }
+
+.test_css {
+    height: 200px;
+    min-height: 100px;
+    background: red;
+    max-width: 200px;  
+}
