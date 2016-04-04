@@ -24,7 +24,7 @@ var options = {
   user: 'nexnexter@gmail.com',
   pass: 'n1g22s581,'
 }
-
+console.log('test_001');
 mongoose.connect(uristring,options, function (err, res) {
       if (err) {
       console.log ('ERROR connecting to: ' + uristring + '. ' + err);
