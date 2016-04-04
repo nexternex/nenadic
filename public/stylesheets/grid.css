@@ -420,8 +420,11 @@
 }
 
 .test_css {
-    height: 200px;
+    max-height: 30px;
     min-height: 100px;
-    background: red;
-    max-width: 200px;  
+    background: rgba(0,0,0,0.26);
+    max-width: 200px;
+    margin: 10px;
+    color: white;
+    font-family: -webkit-body;
 }
