@@ -420,12 +420,11 @@
 }
 
 .test_css {
-    max-height: 30px;
+    max-height:130px;
     max-width: 200px;
     margin: 10px;
     color: white;
     font-family:Arial;
     background: rgba(0,0,0,0.26);
     border:1px solid black;
-    
 }
