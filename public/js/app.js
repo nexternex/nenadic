@@ -91,7 +91,7 @@ erpagWeather.controller('listController', function ($scope, $http) {
                 
 //funcija koja radi isotope i flickity
 
-    (function(window) {
+function(window) {
 
     'use strict';
 
