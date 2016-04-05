@@ -91,7 +91,7 @@ erpagWeather.controller('listController', function ($scope, $http) {
                 
 //funcija koja radi isotope i flickity
 
-    ($scope  function(window) {
+ (function(window) {
 
     'use strict';
 
@@ -126,6 +126,8 @@ erpagWeather.controller('listController', function ($scope, $http) {
             }
         };
     }
+    
+    
 
     // sliders - flickity
     var sliders = [].slice.call(document.querySelectorAll('.slider')),
