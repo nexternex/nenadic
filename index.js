@@ -1,3 +1,5 @@
+//serve side for node--start node first file
+
 var express = require('express'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),

@@ -1,4 +1,4 @@
-//MODULE
+//MODULE Angular
 var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','ngAnimate','ngAria','ngMaterial','auth0','angular-storage', 'angular-jwt']);
 
 erpagWeather.run(function(auth) {
@@ -82,6 +82,13 @@ erpagWeather.controller('listController', function ($scope, $http) {
                     //you also get the actual event object
                     //do stuff, execute functions -- whatever...
                     console.log('sad funcija');
+                
+       
+                
+                
+                
+                
+                
 //funcija koja radi isotope i flickity
 
     (function(window) {
