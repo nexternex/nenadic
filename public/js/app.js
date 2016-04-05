@@ -72,7 +72,7 @@ erpagWeather.controller('listController', function ($scope, $http) {
     console.log("aktiviran list controller");
         ///file upload controler///
     $scope.formData = {};
-    // when landing on the page, get all todos and show them
+    // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
             $scope.users = data;
@@ -82,7 +82,7 @@ erpagWeather.controller('listController', function ($scope, $http) {
                     //you also get the actual event object
                     //do stuff, execute functions -- whatever...
                     console.log('sad funcija');
-
+//funcija koja radi isotope i flickity
 
     (function(window) {
 
