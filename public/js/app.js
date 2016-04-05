@@ -81,7 +81,7 @@ erpagWeather.controller('listController', function ($scope, $http) {
             $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
                     //you also get the actual event object
                     //do stuff, execute functions -- whatever...
-                    console.log('sad funcija');
+                    console.log('app_js: start isotop funcija');
         
 });
 
