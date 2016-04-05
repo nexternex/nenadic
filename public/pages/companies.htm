@@ -1,4 +1,4 @@
-<section class="grid grid--loading" ng-controller="listController">
+<section class="grid" ng-controller="listController">
         <!-- Loader -->
             <h1>Nex nexter iz baze neki naslov</h1>
             <!-- Grid sizer for a fluid Isotope (Masonry) layout -->
@@ -6,9 +6,11 @@
             <!-- Grid items -->
         <div  ng-repeat="list in lists" on-finish-render="ngRepeatFinished" class="test_css">
             <div>
+<!--
                 <div> <img src="../images/macak.jpg" alt="Dummy" /></div>
                 <div> <img src="../images/macak.jpg" alt="Dummy" /></div>
                 <div> <img src="../images/macak.jpg" alt="Dummy" /></div>
+-->
               </div>
               <div class="meta">
                 <h3 class="meta__title">{{list.name}}</h3>
