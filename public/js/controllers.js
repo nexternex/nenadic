@@ -53,6 +53,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
   console.log('pokusaj login controller used');
 
 }]);
+
 // Logout controller
 erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
   auth.signout();
@@ -131,8 +132,8 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
       {id: '2', name: 'Velika'},
     ],
    };
-
-    // when landing on the page, get all lists and show them
+    
+// when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
             $scope.lists = data;
@@ -142,7 +143,7 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
             console.log('Error: ' + data);
         });
 
-    // when submitting the add form, send the text to the node API
+// when submitting the add form, send the text to the node API
     $scope.createList = function() {
         $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
             .success(function(data) {

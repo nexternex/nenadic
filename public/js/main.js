@@ -1,142 +1,208 @@
-/**
- * main.js
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2015, Codrops
- * http://www.codrops.com
- */
-var isoelements = (function(window) {
+jQuery(document).ready(function($){
+	//open/close lateral filter
+	$('.cd-filter-trigger').on('click', function(){
+		triggerFilter(true);
+	});
+	$('.cd-filter .cd-close').on('click', function(){
+		triggerFilter(false);
+	});
 
-	'use strict';
-
-	var support = { animations : Modernizr.cssanimations },
-		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
-		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ],
-		onEndAnimation = function( el, callback ) {
-			var onEndCallbackFn = function( ev ) {
-				if( support.animations ) {
-					if( ev.target != this ) return;
-					this.removeEventListener( animEndEventName, onEndCallbackFn );
-				}
-				if( callback && typeof callback === 'function' ) { callback.call(); }
-			};
-			if( support.animations ) {
-				el.addEventListener( animEndEventName, onEndCallbackFn );
-			}
-			else {
-				onEndCallbackFn();
-			}
-		};
-
-	// from http://www.sberry.me/articles/javascript-event-throttling-debouncing
-	function throttle(fn, delay) {
-		var allowSample = true;
-
-		return function(e) {
-			if (allowSample) {
-				allowSample = false;
-				setTimeout(function() { allowSample = true; }, delay);
-				fn(e);
-			}
-		};
-	}
-
-	// sliders - flickity
-	var sliders = [].slice.call(document.querySelectorAll('.slider')),
-		// array where the flickity instances are going to be stored
-		flkties = [],
-		// grid element
-		grid = document.querySelector('.grid'),
-		// isotope instance
-		iso,
-		// filter ctrls
-		filterCtrls = [].slice.call(document.querySelectorAll('.filter > button')),
-		// cart
-		cart = document.querySelector('.cart'),
-		cartItems = cart.querySelector('.cart__count');
-
-	function init() {
-		// preload images
-		imagesLoaded(grid, function() {
-			initFlickity();
-			initIsotope();
-			initEvents();
-			classie.remove(grid, 'grid--loading');
+	function triggerFilter($bool) {
+		var elementsToTrigger = $([$('.cd-filter-trigger'), $('.cd-filter'), $('.cd-tab-filter'), $('.cd-gallery')]);
+		elementsToTrigger.each(function(){
+			$(this).toggleClass('filter-is-visible', $bool);
 		});
 	}
 
-	function initFlickity() {
-		sliders.forEach(function(slider){
-			var flkty = new Flickity(slider, {
-				prevNextButtons: false,
-				wrapAround: true,
-				cellAlign: 'left',
-				contain: true,
-				resize: false
-			});
+	//mobile version - detect click event on filters tab
+	var filter_tab_placeholder = $('.cd-tab-filter .placeholder a'),
+		filter_tab_placeholder_default_value = 'Select',
+		filter_tab_placeholder_text = filter_tab_placeholder.text();
+	
+	$('.cd-tab-filter li').on('click', function(event){
+		//detect which tab filter item was selected
+		var selected_filter = $(event.target).data('type');
+			
+		//check if user has clicked the placeholder item
+		if( $(event.target).is(filter_tab_placeholder) ) {
+			(filter_tab_placeholder_default_value == filter_tab_placeholder.text()) ? filter_tab_placeholder.text(filter_tab_placeholder_text) : filter_tab_placeholder.text(filter_tab_placeholder_default_value) ;
+			$('.cd-tab-filter').toggleClass('is-open');
 
-			// store flickity instances
-			flkties.push(flkty);
-		});
-	}
+		//check if user has clicked a filter already selected 
+		} else if( filter_tab_placeholder.data('type') == selected_filter ) {
+			filter_tab_placeholder.text($(event.target).text());
+			$('.cd-tab-filter').removeClass('is-open');	
 
-	function initIsotope() {
-		iso = new Isotope( grid, {
-			isResizeBound: false,
-			itemSelector: '.grid__item',
-			percentPosition: true,
-			masonry: {
-				// use outer width of grid-sizer for columnWidth
-				columnWidth: '.grid__sizer'
-			},
-			transitionDuration: '0.6s'
-		});
-	}
-
-	function initEvents() {
-		filterCtrls.forEach(function(filterCtrl) {
-			filterCtrl.addEventListener('click', function() {
-				classie.remove(filterCtrl.parentNode.querySelector('.filter__item--selected'), 'filter__item--selected');
-				classie.add(filterCtrl, 'filter__item--selected');
-				iso.arrange({
-					filter: filterCtrl.getAttribute('data-filter')
-				});
-				recalcFlickities();
-				iso.layout();
-			});
-		});
-
-		// window resize / recalculate sizes for both flickity and isotope/masonry layouts
-		window.addEventListener('resize', throttle(function(ev) {
-			recalcFlickities()
-			iso.layout();
-		}, 50));
-
-		// add to cart
-		[].slice.call(grid.querySelectorAll('.grid__item')).forEach(function(item) {
-			item.querySelector('.action--buy').addEventListener('click', addToCart);
-		});
-	}
-
-	function addToCart() {
-		classie.add(cart, 'cart--animate');
-		setTimeout(function() {cartItems.innerHTML = Number(cartItems.innerHTML) + 1;}, 200);
-		onEndAnimation(cartItems, function() {
-			classie.remove(cart, 'cart--animate');
-		});
-	}
-
-	function recalcFlickities() {
-		for(var i = 0, len = flkties.length; i < len; ++i) {
-			flkties[i].resize();
+		} else {
+			//close the dropdown and change placeholder text/data-type value
+			$('.cd-tab-filter').removeClass('is-open');
+			filter_tab_placeholder.text($(event.target).text()).data('type', selected_filter);
+			filter_tab_placeholder_text = $(event.target).text();
+			
+			//add class selected to the selected filter item
+			$('.cd-tab-filter .selected').removeClass('selected');
+			$(event.target).addClass('selected');
 		}
+	});
+	
+	//close filter dropdown inside lateral .cd-filter 
+	$('.cd-filter-block h4').on('click', function(){
+		$(this).toggleClass('closed').siblings('.cd-filter-content').slideToggle(300);
+	})
+
+	//fix lateral filter and gallery on scrolling
+	$(window).on('scroll', function(){
+		(!window.requestAnimationFrame) ? fixGallery() : window.requestAnimationFrame(fixGallery);
+	});
+
+	function fixGallery() {
+		var offsetTop = $('.cd-main-content').offset().top,
+			scrollTop = $(window).scrollTop();
+		( scrollTop >= offsetTop ) ? $('.cd-main-content').addClass('is-fixed') : $('.cd-main-content').removeClass('is-fixed');
 	}
 
-	init();
+	/************************************
+		MitItUp filter settings
+		More details: 
+		https://mixitup.kunkalabs.com/
+		or:
+		http://codepen.io/patrickkunka/
+	*************************************/
 
-})(window)
+	buttonFilter.init();
+	$('.cd-gallery ul').mixItUp({
+	    controls: {
+	    	enable: false
+	    },
+	    callbacks: {
+	    	onMixStart: function(){
+	    		$('.cd-fail-message').fadeOut(200);
+	    	},
+	      	onMixFail: function(){
+	      		$('.cd-fail-message').fadeIn(200);
+	    	}
+	    }
+	});
 
+	//search filtering
+	//credits http://codepen.io/edprats/pen/pzAdg
+	var inputText;
+	var $matching = $();
 
+	var delay = (function(){
+		var timer = 0;
+		return function(callback, ms){
+			clearTimeout (timer);
+		    timer = setTimeout(callback, ms);
+		};
+	})();
+
+	$(".cd-filter-content input[type='search']").keyup(function(){
+	  	// Delay function invoked to make sure user stopped typing
+	  	delay(function(){
+	    	inputText = $(".cd-filter-content input[type='search']").val().toLowerCase();
+	   		// Check to see if input field is empty
+	    	if ((inputText.length) > 0) {            
+	      		$('.mix').each(function() {
+		        	var $this = $(this);
+		        
+		        	// add item to be filtered out if input text matches items inside the title   
+		        	if($this.attr('class').toLowerCase().match(inputText)) {
+		          		$matching = $matching.add(this);
+		        	} else {
+		          		// removes any previously matched item
+		          		$matching = $matching.not(this);
+		        	}
+	      		});
+	      		$('.cd-gallery ul').mixItUp('filter', $matching);
+	    	} else {
+	      		// resets the filter to show all item if input is empty
+	      		$('.cd-gallery ul').mixItUp('filter', 'all');
+	    	}
+	  	}, 200 );
+	});
+});
+
+/*****************************************************
+	MixItUp - Define a single object literal 
+	to contain all filter custom functionality
+*****************************************************/
+var buttonFilter = {
+  	// Declare any variables we will need as properties of the object
+  	$filters: null,
+  	groups: [],
+  	outputArray: [],
+  	outputString: '',
+  
+  	// The "init" method will run on document ready and cache any jQuery objects we will need.
+  	init: function(){
+    	var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "buttonFilter" object so that we can share methods and properties between all parts of the object.
+    
+    	self.$filters = $('.cd-main-content');
+    	self.$container = $('.cd-gallery ul');
+    
+	    self.$filters.find('.cd-filters').each(function(){
+	      	var $this = $(this);
+	      
+		    self.groups.push({
+		        $inputs: $this.find('.filter'),
+		        active: '',
+		        tracker: false
+		    });
+	    });
+	    
+	    self.bindHandlers();
+  	},
+  
+  	// The "bindHandlers" method will listen for whenever a button is clicked. 
+  	bindHandlers: function(){
+    	var self = this;
+
+    	self.$filters.on('click', 'a', function(e){
+	      	self.parseFilters();
+    	});
+	    self.$filters.on('change', function(){
+	      self.parseFilters();           
+	    });
+  	},
+  
+  	parseFilters: function(){
+	    var self = this;
+	 
+	    // loop through each filter group and grap the active filter from each one.
+	    for(var i = 0, group; group = self.groups[i]; i++){
+	    	group.active = [];
+	    	group.$inputs.each(function(){
+	    		var $this = $(this);
+	    		if($this.is('input[type="radio"]') || $this.is('input[type="checkbox"]')) {
+	    			if($this.is(':checked') ) {
+	    				group.active.push($this.attr('data-filter'));
+	    			}
+	    		} else if($this.is('select')){
+	    			group.active.push($this.val());
+	    		} else if( $this.find('.selected').length > 0 ) {
+	    			group.active.push($this.attr('data-filter'));
+	    		}
+	    	});
+	    }
+	    self.concatenate();
+  	},
+  
+  	concatenate: function(){
+    	var self = this;
+    
+    	self.outputString = ''; // Reset output string
+    
+	    for(var i = 0, group; group = self.groups[i]; i++){
+	      	self.outputString += group.active;
+	    }
+    
+	    // If the output string is empty, show all rather than none:    
+	    !self.outputString.length && (self.outputString = 'all'); 
+	
+    	// Send the output string to MixItUp via the 'filter' method:    
+		if(self.$container.mixItUp('isLoaded')){
+	    	self.$container.mixItUp('filter', self.outputString);
+		}
+  	}
+};
