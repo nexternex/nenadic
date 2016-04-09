@@ -6,7 +6,7 @@ erpagWeather.controller('homeController',['$scope','cityService','itemService' ,
         cityService.city=$scope.city
     }); 
     
-    $scope.items=itemService;
+//    $scope.items=itemService;
     console.log('kraj home controlera');
     
     angular.element(document).ready(function () {
