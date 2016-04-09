@@ -132,7 +132,6 @@ erpagWeather.controller('homeController',['$scope','cityService','itemService' ,
 	    	}
 	  	}, 200 );
 	});
-});
 
 /*****************************************************
 	MixItUp - Define a single object literal 
@@ -216,10 +215,22 @@ var buttonFilter = {
 	    	self.$container.mixItUp('filter', self.outputString);
 		}
   	}
-};
+}
+
+});
    
 
 }]);
+
+
+
+
+
+
+
+
+
+
 
 erpagWeather.controller('forecastController',['$scope','$resource','cityService' ,function($scope,$resource,cityService){
 
