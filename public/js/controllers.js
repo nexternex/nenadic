@@ -1,5 +1,5 @@
 //CONTROLERS
-erpagWeather.controller('homeController',['$scope','cityService','itemService' ,function($scope,cityService,itemService){
+erpagWeather.controller('homeController',['$scope','cityService' ,function($scope,cityService){
 
     $scope.city=cityService.city;
     $scope.$watch('city', function(){
