@@ -4,7 +4,7 @@ erpagWeather.controller('homeController',['$scope','cityService','itemService' ,
     $scope.city=cityService.city;
     $scope.$watch('city', function(){
         cityService.city=$scope.city
-    });
+    }); 
     
     $scope.items=itemService;
     console.log('kraj home controlera');
