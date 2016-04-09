@@ -4,7 +4,7 @@ erpagWeather.service('cityService', function(){
 
 erpagWeather.service('itemService', function () {
     
-    jQuery(document).ready(function($){
+//    jQuery(document).ready(function($){
 	//open/close lateral filter
 	$('.cd-filter-trigger').on('click', function(){
 		triggerFilter(true);
