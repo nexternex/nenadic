@@ -2,7 +2,7 @@ erpagWeather.service('cityService', function(){
     this.city="Pancevo1,Serbia"
 });
 
-myDay.service('itemService', function () {
+erpagWeather.service('itemService', function () {
     
     jQuery(document).ready(function($){
 	//open/close lateral filter
