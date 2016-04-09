@@ -2,7 +2,7 @@
 erpagWeather.controller('homeController',['$scope' ,function($scope){
     
 //    $scope.items=itemService;
-    console.log('kraj home controlera');
+
     
     angular.element(document).ready(function () {
 	//open/close lateral filter
@@ -214,7 +214,7 @@ var buttonFilter = {
 
     });
    
-
+    console.log('kraj home controlera');
 }]);
 
 
