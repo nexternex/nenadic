@@ -212,7 +212,7 @@ var buttonFilter = {
   	}
 }
 
-});
+    });
    
 
 }]);
@@ -225,28 +225,28 @@ var buttonFilter = {
 
 
 
-
-
-erpagWeather.controller('forecastController',['$scope','$resource','cityService' ,function($scope,$resource,cityService){
-
-    $scope.city=cityService.city;
-    
-    $scope.weatherAPI=$resource("http://openweathermap.org/data/2.5/forecast/daily", {
-        callback:"JSON_CALLBACK"},{get:{method:"JSONP"}
-    });
-
-    $scope.weatherResult=$scope.weatherAPI.get({q:$scope.city,cnt:2});
-
-    $scope.convertToDeg=function(degK){
-        return Math.round(degK-273);
-    };
-    
-    $scope.convertToDate=function(dt){
-        return new Date(dt*1000);
-    };
-    
-    console.log('forecast controller used')
-}]);
+//
+//
+//erpagWeather.controller('forecastController',['$scope','$resource','cityService' ,function($scope,$resource,cityService){
+//
+//    $scope.city=cityService.city;
+//    
+//    $scope.weatherAPI=$resource("http://openweathermap.org/data/2.5/forecast/daily", {
+//        callback:"JSON_CALLBACK"},{get:{method:"JSONP"}
+//    });
+//
+//    $scope.weatherResult=$scope.weatherAPI.get({q:$scope.city,cnt:2});
+//
+//    $scope.convertToDeg=function(degK){
+//        return Math.round(degK-273);
+//    };
+//    
+//    $scope.convertToDate=function(dt){
+//        return new Date(dt*1000);
+//    };
+//    
+//    console.log('forecast controller used')
+//}]);
 
 // LOgin.js
 erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
