@@ -1,10 +1,5 @@
 //CONTROLERS
-erpagWeather.controller('homeController',['$scope','cityService' ,function($scope,cityService){
-
-    $scope.city=cityService.city;
-    $scope.$watch('city', function(){
-        cityService.city=$scope.city
-    }); 
+erpagWeather.controller('homeController',['$scope' ,function($scope){
     
 //    $scope.items=itemService;
     console.log('kraj home controlera');
