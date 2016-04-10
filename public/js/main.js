@@ -1,4 +1,5 @@
 (function () {jQuery(document).ready(function($){
+    console.log('mix js start')
 	//open/close lateral filter
 	$('.cd-filter-trigger').on('click', function(){
 		triggerFilter(true);
@@ -206,5 +207,5 @@ var buttonFilter = {
 		}
   	}
 };
-
+console.log('mix js end')
                         });
