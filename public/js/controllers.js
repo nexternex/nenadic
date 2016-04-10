@@ -5,7 +5,7 @@ erpagWeather.controller('homeController',['$scope' ,function($scope){
 
     
     angular.element(document).ready(function () {
-         console.log('start home controlera');
+         console.log('start home controlera'); 
 	//open/close lateral filter
 	$('.cd-filter-trigger').on('click', function(){
 		triggerFilter(true);
@@ -219,7 +219,7 @@ var buttonFilter = {
 }]);
 
 
-
+ 
 
 
 

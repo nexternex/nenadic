@@ -6,7 +6,7 @@ erpagWeather.run(function(auth) {
   auth.hookEvents();
     console.log('step0001');
 });
-
+ 
 //config app
 erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider) {
   // ...
