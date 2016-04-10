@@ -1,4 +1,4 @@
-(function () {jQuery(document).ready(function($){
+jQuery(document).ready(function($){
     console.log('mix js start')
 	//open/close lateral filter
 	$('.cd-filter-trigger').on('click', function(){
@@ -161,12 +161,13 @@ var buttonFilter = {
 
     	self.$filters.on('click', 'a', function(e){
 	      	self.parseFilters();
-    	});
+    	}); 
 	    self.$filters.on('change', function(){
 	      self.parseFilters();           
 	    });
   	},
-  
+   
+    
   	parseFilters: function(){
 	    var self = this;
 	 
@@ -207,5 +208,4 @@ var buttonFilter = {
 		}
   	}
 };
-console.log('mix js end')
-                        });
+console.log('mix js end');
