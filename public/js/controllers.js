@@ -4,7 +4,7 @@ erpagWeather.controller('homeController',['$scope' ,function($scope){
 //    $scope.items=itemService;
 
     
-    angular.element(document).ready(function () {
+    angular.element(document).ready(function ($) {
          console.log('start home controlera'); 
 	//open/close lateral filter
 	$('.cd-filter-trigger').on('click', function(){
