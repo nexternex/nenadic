@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-    console.log('mix js start')
+    console.log('mix js start');
 	//open/close lateral filter
 	$('.cd-filter-trigger').on('click', function(){
 		triggerFilter(true);
@@ -71,7 +71,10 @@ jQuery(document).ready(function($){
 	*************************************/
 
 	buttonFilter.init();
+      console.log('mix1 js start');
 	$('.cd-gallery ul').mixItUp({
+        
+        
 	    controls: {
 	    	enable: false
 	    },
