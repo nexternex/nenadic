@@ -1,4 +1,4 @@
-var nexter =(function () {jQuery(document).ready(function($){
+(function () {jQuery(document).ready(function($){
 	//open/close lateral filter
 	$('.cd-filter-trigger').on('click', function(){
 		triggerFilter(true);
