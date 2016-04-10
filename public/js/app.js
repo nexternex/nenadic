@@ -44,78 +44,78 @@ erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
   });
 });
 
-erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',
-function ($scope, $http, auth, store, $location) {
-  $scope.login = function () {
-    auth.signin({}, function (profile, token) {
-      // Success callback
-      store.set('profile', profile);
-      store.set('token', token);
-      $location.path('/');
-    }, function () {
-      // Error callback
-        console.log('err logoin controller used');
-    });
-  };
-  $scope.logout = function() {
-  auth.signout();
-  store.remove('profile');
-  store.remove('token');
-  };
-     console.log('pokusaj logoin controller used');
-}]);
+//erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',
+//function ($scope, $http, auth, store, $location) {
+//  $scope.login = function () {
+//    auth.signin({}, function (profile, token) {
+//      // Success callback
+//      store.set('profile', profile);
+//      store.set('token', token);
+//      $location.path('/');
+//    }, function () {
+//      // Error callback
+//        console.log('err logoin controller used');
+//    });
+//  };
+//  $scope.logout = function() {
+//  auth.signout();
+//  store.remove('profile');
+//  store.remove('token');
+//  };
+//     console.log('pokusaj logoin controller used');
+//}]);
 
 
-////////////////////LIST ctrl///////////////////////////////////////////////
-erpagWeather.controller('listController', function ($scope, $http) {
-    
-    console.log("aktiviran list controller");
-        ///file upload controler///
-    $scope.formData = {};
-    // when landing on the page, get all lists and show them
-    $http.get('/api/lists')
-        .success(function(data) {
-            $scope.users = data;
-            console.log('lsite iz baze'+data);
-          
-            $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
-                    //you also get the actual event object
-                    //do stuff, execute functions -- whatever...
-                    console.log('sad funcija');
-                });
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
-
-    // when submitting the add form, send the text to the node API
-    $scope.createUser = function() {
-       
-        $http.post('/api/lists', $scope.formData)
-            .success(function(data) {
-                $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.users = data;
-                // console.log(data+"users");
-                alert("uspesno ste registrovali nalog sa app strane");
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
-
-    // delete a todo after checking it
-    $scope.deleteUser = function(id) {
-        alert(id);
-        $http.delete('/api/lists/' + id)
-            .success(function(data) {
-                $scope.users = data;
-                console.log("obrisao");
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
-        
-});
+//////////////////////LIST ctrl///////////////////////////////////////////////
+//erpagWeather.controller('listController', function ($scope, $http) {
+//    
+//    console.log("aktiviran list controller");
+//        ///file upload controler///
+//    $scope.formData = {};
+//    // when landing on the page, get all lists and show them
+//    $http.get('/api/lists')
+//        .success(function(data) {
+//            $scope.users = data;
+//            console.log('lsite iz baze'+data);
+//          
+//            $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+//                    //you also get the actual event object
+//                    //do stuff, execute functions -- whatever...
+//                    console.log('sad funcija');
+//                });
+//        })
+//        .error(function(data) {
+//            console.log('Error: ' + data);
+//        });
+//
+//    // when submitting the add form, send the text to the node API
+//    $scope.createUser = function() {
+//       
+//        $http.post('/api/lists', $scope.formData)
+//            .success(function(data) {
+//                $scope.formData = {}; // clear the form so our user is ready to enter another
+//                $scope.users = data;
+//                // console.log(data+"users");
+//                alert("uspesno ste registrovali nalog sa app strane");
+//            })
+//            .error(function(data) {
+//                console.log('Error: ' + data);
+//            });
+//    };
+//
+//    // delete a todo after checking it
+//    $scope.deleteUser = function(id) {
+//        alert(id);
+//        $http.delete('/api/lists/' + id)
+//            .success(function(data) {
+//                $scope.users = data;
+//                console.log("obrisao");
+//            })
+//            .error(function(data) {
+//                console.log('Error: ' + data);
+//            });
+//    };
+//        
+//});
 
 //end of MAIN controller
