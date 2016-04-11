@@ -344,7 +344,7 @@ xsigin/signup popup
 .cd-form input[type=submit] {
   padding: 16px 0;
   cursor: pointer;
-  background: #2f889a;
+  background:rgb(63,81,181);
   color: #FFF;
   font-weight: bold;
   border: none;
