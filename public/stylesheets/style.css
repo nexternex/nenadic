@@ -35,7 +35,7 @@ a {
     background: url(http://s14.directupload.net/images/111129/44ga9qid.png);
     height: 100%;
     width: 100%;
-    position: fixed;
+    position: relative;
     top: 0;
     z-index: 1
 }
