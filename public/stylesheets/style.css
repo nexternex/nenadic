@@ -37,9 +37,11 @@ Main Components
 -------------------------------- */
 .cd-header {
   position: relative;
-  height: 450px;
+  height: 100%;
+    Width:100%;
   background-image: url(/img/187.jpg);
   background-size:cover;
+    
 }
 .cd-header h1 {
   color: #ffffff;
