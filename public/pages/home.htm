@@ -128,7 +128,6 @@
 				<li><a >Sign in</a></li>
 				<li><a >New account</a></li>
 			</ul>
-
 			<div id="cd-login"> <!-- log in form -->
 				<form class="cd-form">
 					<p class="fieldset">
@@ -157,23 +156,23 @@
 				<p class="cd-form-bottom-message"><a >Forgot your password?</a></p>
 				<!-- <a href="#0" class="cd-close-form">Close</a> -->
 			</div> <!-- cd-login -->
-
+        <form ng-model="formData">
 			<div id="cd-signup"> <!-- sign up form -->
 				<form class="cd-form">
 					<p class="fieldset">
-						<label class="image-replace cd-username" for="signup-username">Username</label>
-						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+						<label class="image-replace cd-username" for="signup-username">{{name}}</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username"  ng-model="formData.name">
 						<span class="cd-error-message">Error message here!</span>
 					</p>
 
 					<p class="fieldset">
-						<label class="image-replace cd-email" for="signup-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<label class="image-replace cd-email" for="signup-email">{{address}}</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" ng-model="formData.addressa">
 						<span class="cd-error-message">Error message here!</span>
 					</p>
 
 					<p class="fieldset">
-						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<label class="image-replace cd-password" for="signup-password" ng-model="formData.lastname">{{password}}</label>
 						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
 						<a  class="hide-password">Hide</a>
 						<span class="cd-error-message">Error message here!</span>
@@ -192,7 +191,7 @@
 				 <a  class="cd-close-form">Close</a> 
                 
 			</div> <!-- cd-signup -->
-
+        </form>
 			<div id="cd-reset-password"> <!-- reset password form -->
 				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
 
