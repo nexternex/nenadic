@@ -11,7 +11,7 @@ erpagWeather.config(function ($routeProvider){
     
     .when('/Home',{
     templateUrl:'../pages/home.htm',
-//    controller:'homeController',
+    controller:'list1Controller',
     })
 
     .when('/Forecast', {
