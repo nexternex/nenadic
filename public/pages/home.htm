@@ -177,6 +177,13 @@
 						<a  class="hide-password">Hide</a>
 						<span class="cd-error-message">Error message here!</span>
 					</p>
+                    
+                    <p class="fieldset">
+						<label class="image-replace cd-password" for="signup-lastname" ng-model="formData.lastname">{{password}}</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+						<a  class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
 
 					<p class="fieldset">
 						<input type="checkbox" id="accept-terms">
@@ -184,7 +191,7 @@
 					</p>
 
 					<p class="fieldset">
-						<input class="full-width has-padding" type="submit" value="Create account">
+						<input class="full-width has-padding" type="submit" value="Create account" ng-click="createList()">
 					</p>
 				</form>
 
@@ -217,4 +224,4 @@
         <script src="js/modernizr.js"></script>
         <script src="js/jquery.mixitup.min.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/login.js"></script>  Gem jQuery 
+        <script src="js/login.js"></script> 
