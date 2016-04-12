@@ -59,9 +59,7 @@
         <script src="js/modernizr.js"></script>
         <script src="js/jquery.mixitup.min.js"></script>
 	</head>
-    <body>
-<!--
-    <body class="cbp-spmenu-push" >
+    <body class="cbp-spmenu-push">
         <header>
              <button id="showLeftPush" > &#9776;</button>
              <ul class="primary-nav">
@@ -104,27 +102,24 @@
         <script src="js/directives.js"></script>
         <script src="js/services.js"></script>
         <script src="js/routes.js"></script>
-<!--        <script src="js/main.js"></script>-->
     <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
-<!--		<script src="js/classie.js"></script>-->
-
-<!--        <script src="js/main.js"></script> -->
+		<script src="js/classie.js"></script>
+        <script src="js/main.js"></script> 
 <!-- Resource jQuery -->
-<!--
-		<script>
-//			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-////				showLeft = document.getElementById( 'showLeft' ),
-//				showLeftPush = document.getElementById( 'showLeftPush' ),
-//				body = document.body;
-//
-//			showLeftPush.onclick = function() {
-//				classie.toggle( this, 'active' );
-//				classie.toggle( body, 'cbp-spmenu-push-toright' );
-//				classie.toggle( menuLeft, 'cbp-spmenu-open' );
-//			};
 
-		</script>
--->
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+//				showLeft = document.getElementById( 'showLeft' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+			};
+
+        </script>
 <script>
         
         console.log('draw_items');
