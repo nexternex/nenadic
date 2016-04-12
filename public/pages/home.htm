@@ -178,13 +178,14 @@
 						<a  class="hide-password">Hide</a>
 						<span class="cd-error-message">Error message here!</span>
 					</p>
+                    <p>
                     <md-input-container flex>
                         <label for="category">Vrsta delatnosti: </label></br>
                         <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
                           <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
                         </md-select>
                     </md-input-container>
-
+                    </p>
 					<p class="fieldset">
 						<input type="checkbox" id="accept-terms">
 						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
