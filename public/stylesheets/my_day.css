@@ -90,15 +90,4 @@ header {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%); }
 
-/*css za flickity galery scroll*/
 
-html { overflow-y: scroll; }
-
-.gallery {
-  background: #EEE;
-}
-
-.gallery img {
-  display: block;
-  height: 200px;
-}
