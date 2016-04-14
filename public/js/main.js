@@ -71,7 +71,7 @@ jQuery(document).ready(function($){
 	*************************************/
 
 	buttonFilter.init();
-      console.log('mix1 js start');
+    console.log('mix1 js start');
 	$('.cd-gallery ul').mixItUp({
         
         

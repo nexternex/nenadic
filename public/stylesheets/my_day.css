@@ -89,3 +89,9 @@ header {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%); }
+
+/*css za flickity galery scroll*/
+
+.carousel-image {
+  min-width: 150px;
+}
