@@ -93,28 +93,3 @@ header {
 
 /*flickit stil za galeriju*/
 
-.gallery {
-  background: #FAFAFA;
-}
-
-.gallery img {
-  display: block;
-  height: 200px;
-}
-
-.caption {
-  background: #FAFAFA;
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-}
-
-.flickity-page-dots {
-  bottom: -60px;
-}
-
-@media screen and ( min-width: 768px ) {
-  .gallery img {
-    height: 400px;
-  }
-}
