@@ -92,6 +92,13 @@ header {
 
 /*css za flickity galery scroll*/
 
-.carousel-image {
-  min-width: 150px;
+html { overflow-y: scroll; }
+
+.gallery {
+  background: #EEE;
+}
+
+.gallery img {
+  display: block;
+  height: 200px;
 }

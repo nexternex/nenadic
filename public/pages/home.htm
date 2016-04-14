@@ -28,7 +28,8 @@
 
 		<section class="cd-gallery" >
 			<ul >
-				<li class="mix color-{{list.category}}  check1 radio2 option3 {{list.category}} gallery js-flickity" ng-repeat="list in lists" on-finish-render="ngRepeatFinished">
+				<li class="mix color-{{list.category}}  check1 radio2 option3 {{list.category}}" ng-repeat="list in lists" on-finish-render="ngRepeatFinished">
+                    <div class="gallery js-flickity" data-flickity-options='{ "imagesLoaded": true }'>
                       <div class="static-banner" >{{list.name}},{{list.lastname}}</div>
                       <div class="static-banner">{{list.address}},{{list.category}}</div>
                       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" alt="orange tree" />
@@ -38,6 +39,7 @@
                       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" alt="drizzle" />
                       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" alt="cat nose" />
                     <input data={{list._id}} dataSize={{list.size}} value="Delete" type="button" ng-click="deleteList(list._id)"></input>
+                    </div>
                 </li>
                 <li class="mix color-1 check1 radio2 option3"><img src="img/001.jpg" alt="Image 1"></li>
 				<li class="mix color-2 check2 radio2 option2"><img src="img/002.jpg" alt="Image 2"></li>
