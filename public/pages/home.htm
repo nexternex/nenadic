@@ -28,12 +28,11 @@
 
 		<section class="cd-gallery" >
 			<ul >
-				<li class="mix color-{{list.category}}  check1 radio2 option3 {{list.category}}" ng-repeat="list in lists" on-finish-render="ngRepeatFinished">
-                    <img src="img/001.jpg" alt="Image 1"></img>
-                    <div class="meta__title">{{list.name}}</div>
-                    <div class="meta__brand">{{list.address}}</div>
-                    <div class="meta__price">{{list.lastname}}</div>
-                    <div class="meta__price">{{list.category}}</div>
+				<li class="mix color-{{list.category}}  check1 radio2 option3 {{list.category}} carousel" ng-repeat="list in lists" on-finish-render="ngRepeatFinished">
+                      <div class="static-banner">{{list.name}},{{list.lastname}}</div>
+                      <div class="static-banner">{{list.address}},{{list.category}}</div>
+                      <div class="carousel-cell"><img src="img/001.jpg" alt="Image 1"></img></div>
+                      <div class="carousel-cell"> <img src="img/002.jpg" alt="Image 1"></img></div>
                     <input data={{list._id}} dataSize={{list.size}} value="Delete" type="button" ng-click="deleteList(list._id)"></input>
                 </li>
         
