@@ -4,6 +4,7 @@
         <!-- HEADER AND TODO COUNT -->
         <div class="jumbotron text-center">
             <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}
+                <span class="label label-info">{{ auth.profile.id }}</span></h1>
                 <span class="label label-info">{{ todos.length }}</span></h1>
         </div>
 

@@ -361,3 +361,4 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
 }]);
 
 //end of MAIN controller
+
