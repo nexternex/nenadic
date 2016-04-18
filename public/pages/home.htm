@@ -3,8 +3,9 @@
 		<nav class="main-nav">
 			<ul>
 				<!-- inser more links here -->
-				<li><a class="cd-signin" >Sign in</a></li>
-				<li><a class="cd-signup" >Sign up</a></li>
+                <md-button type="submit" ng-controller="LoginCtrl" ng-click="login()" >LOG IN</md-button>
+                <md-button type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out">LOG OUT</md-button>
+                <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}
 			</ul>
 		</nav>
         <h1>MyDay</h1>
