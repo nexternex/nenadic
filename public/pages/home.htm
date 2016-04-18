@@ -1,18 +1,14 @@
 <header  class="cd-header">
-		<div id="cd-logo"><h2 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}</h2></div>
+		<div id="cd-logo"></div>
 		<nav class="main-nav">
 			<ul>
 				<!-- inser more links here -->
-<!--
-                <md-button type="submit" ng-controller="LoginCtrl" ng-click="login()" >LOG IN</md-button>
-                <md-button type="submit" ng-controller="LoginCtrl" ng-click="logout()" value="Log out">LOG OUT</md-button>
--->
-             
 				<li><a class="cd-signin"  ng-controller="LoginCtrl" ng-click="login()">Sign in</a></li>
 				<li><a class="cd-signup"  ng-controller="LoginCtrl" ng-click="logout()">Log out</a></li>
 			</ul>
 		</nav>
         <h1>MyDay</h1>
+        <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}</h1>
 	</header>
 
 	<main class="cd-main-content">
