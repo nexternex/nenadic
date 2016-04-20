@@ -4,7 +4,7 @@ var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','ngAnimat
 erpagWeather.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
   auth.hookEvents();
-    console.log('step0001');
+    console.log('step0001-a');
 });
  
 //config app
