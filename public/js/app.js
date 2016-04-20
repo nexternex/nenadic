@@ -38,7 +38,7 @@ erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
         }
       } else {
         // Either show the login page or use the refresh token to get a new idToken
-        $location.path('/index');
+        $location.path('/');
           console.log("error location changer")
       }
     }
