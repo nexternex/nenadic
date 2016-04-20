@@ -34,7 +34,7 @@ erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
       if (!jwtHelper.isTokenExpired(token)) {
         if (!auth.isAuthenticated) {
           auth.authenticate(store.get('profile'), token);
-          window.location.href ("/timeline");
+          window.location.assign ("/timeline");
            
         }
       } else {
