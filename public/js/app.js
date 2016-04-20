@@ -13,7 +13,7 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   authProvider.init({
     domain: 'myday.eu.auth0.com',
     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-    loginUrl: 'https://myday.eu.auth0.com/login?client=oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl'
+    loginUrl: '/login'
   });
     
   // We're annotating this function so that the `store` is injected correctly when this file is minified
@@ -34,6 +34,8 @@ erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
       if (!jwtHelper.isTokenExpired(token)) {
         if (!auth.isAuthenticated) {
           auth.authenticate(store.get('profile'), token);
+            window.location.replace("http://stackoverflow.com");
+           
         }
       } else {
         // Either show the login page or use the refresh token to get a new idToken
