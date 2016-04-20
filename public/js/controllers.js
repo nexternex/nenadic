@@ -226,7 +226,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
       // Success callback
       store.set('profile', profile);
       store.set('token', token);
-      $location.path('/');
+      $location.path('/userInfo');
     }, function () {
         console.log('error controller login');
       // Error callback
@@ -248,7 +248,7 @@ erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
   auth.signout();
   store.remove('profile');
   store.remove('token');
-  $location.path('/login');
+  $location.path('/timeline');
 });
 // UserInfoCtrl.js
 erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
