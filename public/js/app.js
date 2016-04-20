@@ -13,7 +13,7 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   authProvider.init({
     domain: 'myday.eu.auth0.com',
     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-    loginUrl: '/login'
+    loginUrl: 'https://myday.eu.auth0.com/login?client=oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl'
   });
     
   // We're annotating this function so that the `store` is injected correctly when this file is minified
