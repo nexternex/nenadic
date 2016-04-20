@@ -34,7 +34,7 @@ erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
       if (!jwtHelper.isTokenExpired(token)) {
         if (!auth.isAuthenticated) {
           auth.authenticate(store.get('profile'), token);
-            window.location.replace("http://stackoverflow.com");
+            window.location.replace("/userInfo");
            
         }
       } else {
