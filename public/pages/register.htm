@@ -1,4 +1,4 @@
-<md-content layout-padding layout="row" layout-sm="column">
+<md-content layout-padding layout="column" layout-sm="column">
     <h1>My Day Company page</h1>
 	<p>Register your company</p>
     
@@ -13,22 +13,22 @@
         </section>
         <section>    
                <form ng-model="formData">
-                <md-input-container style="width:70%">
+                <md-input-container style="width:90%">
                    <label>Ime:</label>
                     </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
                 </md-input-container>
 
-                 <md-input-container style="width:70%">
+                 <md-input-container style="width:90%">
                      <label> Prezime:</label> 		   
                      </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
                 </md-input-container>
 
-                 <md-input-container style="width:70%">
+                 <md-input-container style="width:90%">
                    <label>Naziv preduzeca:</label> 
                      </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
                  </md-input-container>
 
-                 <md-input-container style="width:70%">
+                 <md-input-container style="width:90%">
                      <label>Adresa:</label> 		   
                      </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
                  </md-input-container>
@@ -49,16 +49,16 @@
 <!--FIEL UPLOAD-->
 <!--FIEL UPLOAD-->
         <section >
-         <div ng-controller='listController'>
-              <form  id        =  "uploadForm"
-                     enctype   =  "multipart/form-data"
-                     action    =  "/api/photo"
-                     method    =  "post"
-                >
-                <input type="file" name="userPhoto" />
-                <input type="submit" value="Upload Image" name="submit">
-                </form>
-        </div>
+             <div ng-controller='listController'>
+                  <form  id        =  "uploadForm"
+                         enctype   =  "multipart/form-data"
+                         action    =  "/api/photo"
+                         method    =  "post"
+                    >
+                    <input type="file" name="userPhoto" />
+                    <input type="submit" value="Upload Image" name="submit">
+                    </form>
+            </div>
         </section>
 <!--FIEL UPLOAD-->
 <!--FIEL UPLOAD-->
