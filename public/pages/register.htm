@@ -2,54 +2,54 @@
     <h1>My Day Company page</h1>
 	<p>Register your company</p>
     
-<section>    
-        <div ng-controller="mainController" class="container">
-                <!-- HEADER AND TODO COUNT -->
-                <div class="jumbotron text-center">
-                    <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}<span class="label label-info">{{ auth.profile.id }}</span></h1>
-                    <h1><span class="label label-info">{{ todos.length }}</span></h1>
+        <section>    
+                <div ng-controller="mainController" class="container">
+                        <!-- HEADER AND TODO COUNT -->
+                        <div class="jumbotron text-center">
+                            <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}<span class="label label-info">{{ auth.profile.id }}</span></h1>
+                            <h1><span class="label label-info">{{ todos.length }}</span></h1>
+                        </div>
                 </div>
-        </div>
-</section>
-<section>    
-	   <form ng-model="formData">
-        <md-input-container style="width:70%">
-	       <label>Ime:</label>
-            </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
-        </md-input-container>
-     
-         <md-input-container style="width:70%">
-             <label> Prezime:</label> 		   
-             </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
-        </md-input-container>
+        </section>
+        <section>    
+               <form ng-model="formData">
+                <md-input-container style="width:70%">
+                   <label>Ime:</label>
+                    </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
+                </md-input-container>
 
-         <md-input-container style="width:70%">
-	       <label>Naziv preduzeca:</label> 
-             </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
-         </md-input-container>
+                 <md-input-container style="width:70%">
+                     <label> Prezime:</label> 		   
+                     </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
+                </md-input-container>
 
-         <md-input-container style="width:70%">
-	         <label>Adresa:</label> 		   
-             </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
-         </md-input-container>
-		
-        <md-input-container flex>
-		    <label for="category">Vrsta delatnosti: </label></br>
-		    <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
-		      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
-		    </md-select>
-        </md-input-container>
-        <md-input-container flex>
-		    <label for="size" >Velicina prikaza: </label></br>
-		    <md-select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
-		      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
-		    </md-select>
-        </md-input-container>
-</section> 
+                 <md-input-container style="width:70%">
+                   <label>Naziv preduzeca:</label> 
+                     </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
+                 </md-input-container>
+
+                 <md-input-container style="width:70%">
+                     <label>Adresa:</label> 		   
+                     </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
+                 </md-input-container>
+
+                <md-input-container flex>
+                    <label for="category">Vrsta delatnosti: </label></br>
+                    <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
+                      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex>
+                    <label for="size" >Velicina prikaza: </label></br>
+                    <md-select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
+                      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
+                    </md-select>
+                </md-input-container>
+        </section> 
 <!--FIEL UPLOAD-->
 <!--FIEL UPLOAD-->
         <section >
-         <div class="col-md-12" ng-controller='listController'>
+         <div ng-controller='listController'>
               <form  id        =  "uploadForm"
                      enctype   =  "multipart/form-data"
                      action    =  "/api/photo"
