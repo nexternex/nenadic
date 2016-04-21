@@ -8,6 +8,9 @@
                 <span class="label label-info">{{ todos.length }}</span></h1>
         </div>
 
+    <span class="card-title"> <code>&lt;user-card&gt;</code>{{ auth.profile.id }}</span>
+    <user-card name="{{auth.profile.nickname}}"></user-card>
+
         <!-- TODO LIST -->
         <div id="todo-list" class="row">
             <div class="col-sm-4 col-sm-offset-4">
