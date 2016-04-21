@@ -1,6 +1,15 @@
 <md-content layout-padding layout="row" layout-sm="column">
     <h1>My Day Company page</h1>
 	<p>Register your company</p>
+    
+    
+        <div ng-controller="mainController" class="container">
+                <!-- HEADER AND TODO COUNT -->
+                <div class="jumbotron text-center">
+                    <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}<span class="label label-info">{{ auth.profile.id }}</span></h1>
+                    <h1><span class="label label-info">{{ todos.length }}</span></h1>
+                </div>
+        </div>
 	   <form ng-model="formData">
         <md-input-container style="width:70%">
 	       <label>Ime:</label>

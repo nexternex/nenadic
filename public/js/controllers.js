@@ -226,7 +226,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
       // Success callback
       store.set('profile', profile);
       store.set('token', token);
-      $location.path('/userInfo');
+      $location.path('/register');
     }, function () {
         console.log('error controller login');
       // Error callback
