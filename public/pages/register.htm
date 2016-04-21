@@ -2,7 +2,7 @@
     <h1>My Day Company page</h1>
 	<p>Register your company</p>
     
-    
+<section>    
         <div ng-controller="mainController" class="container">
                 <!-- HEADER AND TODO COUNT -->
                 <div class="jumbotron text-center">
@@ -10,6 +10,8 @@
                     <h1><span class="label label-info">{{ todos.length }}</span></h1>
                 </div>
         </div>
+</section>
+<section>    
 	   <form ng-model="formData">
         <md-input-container style="width:70%">
 	       <label>Ime:</label>
@@ -43,9 +45,10 @@
 		      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
 		    </md-select>
         </md-input-container>
+</section> 
 <!--FIEL UPLOAD-->
 <!--FIEL UPLOAD-->
-        <div class="row">
+        <section >
          <div class="col-md-12" ng-controller='listController'>
               <form  id        =  "uploadForm"
                      enctype   =  "multipart/form-data"
@@ -56,9 +59,9 @@
                 <input type="submit" value="Upload Image" name="submit">
                 </form>
         </div>
-</div>
+        </section>
 <!--FIEL UPLOAD-->
 <!--FIEL UPLOAD-->
-	<md-button class="md-raised" value="Register" ng-click="createList()" width="200px"></md-button>
+	<md-button class="md-raised" value="Register" ng-click="createList()" width="100px"></md-button>
   </md-content>
        
