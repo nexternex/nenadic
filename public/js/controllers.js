@@ -229,6 +229,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
       $location.path('/register');
     }, function () {
         console.log('error controller login');
+        alert("please login");
       // Error callback
     });
   };
