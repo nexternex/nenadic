@@ -31,8 +31,8 @@
 			<ul >
 				<li class="mix color-{{list.category}}  check1 radio2 option3 {{list.category}}" ng-repeat="list in lists" on-finish-render="ngRepeatFinished">
                     <div class=" js-flickity" data-flickity-options='{ "imagesLoaded": true }'>
-                      <div class="static-banner" >{{list.lastname}}</div>
-                      <div class="static-banner">{{list.address}},{{list.category}}</div>
+                      <h2 class="static-banner" >{{list.lastname}}</h2>
+                      <h3 class="static-banner">{{list.address}},{{list.category}}</h3>
                       <img src="img/001.jpg" alt="orange tree" />
                         <p class="caption">{{list.name}};</p>
                         <md-button class="md-raised md-warn"  data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">Delete</md-button>
