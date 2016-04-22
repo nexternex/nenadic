@@ -3,7 +3,7 @@
 	<h2>Register your company</h2>
     
         <section>    
-                <div ng-controller="mainController" class="container">
+                <div ng-controller="mainController" class="container" md-colors="::{background: '{{theme}}-accent'}">
                         <!-- HEADER AND TODO COUNT -->
                         <div class="jumbotron text-center">
                             <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}<span class="label label-info">{{ auth.profile.id }}</span></h1>
@@ -12,7 +12,7 @@
                 </div>
         </section>
 <div layout="row">
-        <section FLEX="45"> 
+        <section FLEX="45" md-colors="::{background: '{{theme}}-accent'}"> 
                <form ng-model="formData">
                 <md-input-container style="width:90%">
                    <label>Ime:</label>
@@ -47,7 +47,7 @@
                     </md-select>
                 </md-input-container>
         </section> 
-       <section FLEX="45">    
+       <section FLEX="45" md-colors="::{background: '{{theme}}-accent'}">    
                <form ng-model="formData">
                 <md-input-container style="width:90%">
                    <label>Ime:</label>
