@@ -10,8 +10,9 @@
                             <h1><span class="label label-info">{{ todos.length }}</span></h1>
                         </div>
                 </div>
-        </section>    
-        <section>    
+        </section>
+<div layout="row">
+        <section FLEX="45"> 
                <form ng-model="formData">
                 <md-input-container style="width:90%">
                    <label>Ime:</label>
@@ -46,6 +47,43 @@
                     </md-select>
                 </md-input-container>
         </section> 
+       <section FLEX="45">    
+               <form ng-model="formData">
+                <md-input-container style="width:90%">
+                   <label>Ime:</label>
+                    </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
+                </md-input-container>
+
+                 <md-input-container style="width:90%">
+                     <label> Prezime:</label> 		   
+                     </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
+                </md-input-container>
+
+                 <md-input-container style="width:90%">
+                   <label>Naziv preduzeca:</label> 
+                     </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
+                 </md-input-container>
+
+                 <md-input-container style="width:90%">
+                     <label>Adresa:</label> 		   
+                     </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
+                 </md-input-container>
+
+                <md-input-container flex>
+                    <label for="category">Vrsta delatnosti: </label></br>
+                    <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
+                      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex>
+                    <label for="size" >Velicina prikaza: </label></br>
+                    <md-select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
+                      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
+                    </md-select>
+                </md-input-container>
+                </FORM>
+        </section>
+</div>
 <!--FIEL UPLOAD-->
 <!--
         <section >
