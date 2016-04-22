@@ -251,6 +251,8 @@ erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
   store.remove('token');
   $location.path('/timeline');
 });
+
+
 // UserInfoCtrl.js
 erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
   $scope.auth = auth;
