@@ -1,15 +1,5 @@
 
 <div ng-controller="mainController" class="container" layout-padding layout="column" layout-sm="column" layout-wrap style="width:70%">
-
-        <!-- HEADER AND TODO COUNT -->
-<!--
-        <div class="jumbotron text-center">
-            <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}
-                <span class="label label-info">{{ auth.profile.id }}</span></h1>
-                <span class="label label-info">{{ todos.length }}</span></h1>
-        </div>
--->
-
     <section  flex ng-controller="UserInfoCtrl">
         <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch >
         <md-card-title>
@@ -28,7 +18,7 @@
       </md-card>
     </section>
         <!-- TODO LIST -->
-    <section flex>
+    <section layout="row" flex>
         <div id="todo-list" class="row">
             <div class="col-sm-4 col-sm-offset-4">
 
@@ -41,7 +31,6 @@
 
             </div>
         </div>
-    
         <!-- FORM TO CREATE TODOS -->
         <div id="todo-form" class="row">
                <md-content> 
