@@ -8,7 +8,7 @@ erpagWeather.run(function(auth) {
 });
  
 //config app
-erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider) {
+erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,$mdThemingProvider) {
   // ...
   authProvider.init({
     domain: 'myday.eu.auth0.com',
@@ -23,7 +23,15 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   }];
 
   $httpProvider.interceptors.push('jwtInterceptor');
+    
   // ...
+    
+//tehemse
+    
+  $mdThemingProvider.theme('default')
+    .primaryPalette('pink')
+    .accentPalette('orange');
+    
 });
 
 erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
