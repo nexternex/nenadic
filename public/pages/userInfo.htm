@@ -32,8 +32,8 @@
             </div>
         </div>
         <!-- FORM TO CREATE TODOS -->
-        <div id="todo-form">
-               <md-content> 
+        <div layout="column" id="todo-form">
+          <md-content> 
                 <div>
                     <form>
                         <div class="form-group col-md-6">
@@ -42,11 +42,12 @@
                         </div>
 
                         <md-datepicker ng-model="myDate" md-placeholder="Enter date" class=" col-md-3"></md-datepicker>
-                </md-content>  
+              
                     <!-- createToDo() WILL CREATE NEW TODOS -->
                     <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
                 </form>
             </div>
+          </md-content>  
         </div>
 </section>
     </div>
