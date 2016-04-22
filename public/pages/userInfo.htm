@@ -8,8 +8,22 @@
                 <span class="label label-info">{{ todos.length }}</span></h1>
         </div>
 
-    <span class="card-title"> <code>&lt;user-card&gt;</code>{{ auth.profile.id }}</span>
-    <user-card name="{{auth.profile.nickname}}"></user-card>
+
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch ng-controller="UserInfoCtrl">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{ auth.profile.id }}</span>
+            <span class="md-subhead">{{ auth.profile.id }}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-lg card-media"><img src='/public/img/001.jpg'</div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Delete</md-button>
+          <md-button>Edit</md-button>
+        </md-card-actions>
+      </md-card>
 
         <!-- TODO LIST -->
         <div id="todo-list" class="row">
