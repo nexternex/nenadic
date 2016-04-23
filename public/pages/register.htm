@@ -12,7 +12,7 @@
                 </div>
         </section>
 <div layout="row">
-        <section FLEX="45" md-colors="::{background: '{{theme}}-accent'}"> 
+        <md-whiteframe class="md-whiteframe-1dp" FLEX="45" md-colors="::{background: '{{theme}}-accent'}" > 
                <form ng-model="formData">
                 <md-input-container style="width:90%">
                    <label>Ime:</label>
@@ -46,8 +46,8 @@
                       <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
                     </md-select>
                 </md-input-container>
-        </section> 
-       <section FLEX="45" md-colors="::{background: '{{theme}}-accent'}">    
+        </md-whiteframe> 
+       <md-whiteframe  class="md-whiteframe-1dp" FLEX="45" md-colors="::{background: '{{theme}}-accent'}">    
                <form ng-model="formData">
                 <md-input-container style="width:90%">
                    <label>Ime:</label>
@@ -82,7 +82,7 @@
                     </md-select>
                 </md-input-container>
                 </FORM>
-        </section>
+        </md-whiteframe>
 </div>
 <!--FIEL UPLOAD-->
 <!--
