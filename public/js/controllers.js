@@ -300,14 +300,14 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
             });
     };
     
-    $scope.data = {
+    $scope.swdata = {
         cb1: true,
         cb4: true,
         cb5: false
       };
-      $scope.message = 'false';
+      $scope.swmessage = 'false';
       $scope.onChange = function(cbState) {
-        $scope.message = cbState;
+        $scope.swmessage = cbState;
       };
 
 }]);
