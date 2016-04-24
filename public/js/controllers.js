@@ -300,8 +300,8 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
             });
     };
 }]);
-erpagWeather.controller('SwitchCtrl', function($scope) {
-  $scope.data = {
+
+  $scope.swdata = function(){
     cb1: true,
     cb4: true,
     cb5: false
@@ -310,7 +310,7 @@ erpagWeather.controller('SwitchCtrl', function($scope) {
   $scope.onChange = function(cbState) {
   	$scope.message = cbState;
   };
-});
+
 
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
