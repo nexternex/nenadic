@@ -299,21 +299,18 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
                 console.log('Error: ' + data);
             });
     };
-    
- $scope.switchdata ={
+}]);
+erpagWeather.controller('SwitchCtrl', function($scope) {
+  $scope.data = {
     cb1: true,
     cb4: true,
     cb5: false
   };
-  $scope.message1 = 'false';
-    
+  $scope.message = 'false';
   $scope.onChange = function(cbState) {
-  	$scope.message1 = cbState;
-      console.log(cbState);
+  	$scope.message = cbState;
   };
-
-}]);
-
+});
 
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
