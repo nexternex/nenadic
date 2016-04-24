@@ -302,9 +302,7 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
 }]);
 
   $scope.swdata = function(){
-    cb1: true,
-    cb4: true,
-    cb5: false
+    cb1: true;
   };
 
   $scope.swstate = 'false';
