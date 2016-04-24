@@ -52,27 +52,27 @@
         </section> 
        <section  class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding>    
                <form ng-model="formData">
-                <md-input-container style="width:90%">
+                <md-input-container style="width:90%"  ng-readonly="switchdata.cb6">>
                    <label>Ime:</label>
                     </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
                 </md-input-container>
 
-                 <md-input-container style="width:90%">
+                 <md-input-container style="width:90%"  ng-readonly="switchdata.cb6">>
                      <label> Prezime:</label> 		   
                      </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
                 </md-input-container>
 
-                 <md-input-container style="width:90%">
+                 <md-input-container style="width:90%"  ng-readonly="switchdata.cb6">>
                    <label>Naziv preduzeca:</label> 
                      </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
                  </md-input-container>
 
-                 <md-input-container style="width:90%">
+                 <md-input-container style="width:90%"  ng-readonly="switchdata.cb6">>
                      <label>Adresa:</label> 		   
                      </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
                  </md-input-container>
 
-                <md-input-container flex>
+                <md-input-container flex  ng-readonly="switchdata.cb6">>
                     <label for="category">Vrsta delatnosti: </label></br>
                     <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
                       <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
