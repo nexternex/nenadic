@@ -7,7 +7,7 @@
                         <!-- HEADER AND TODO COUNT -->
                         <div class="jumbotron text-center">
                             <md-switch ng-model="switchdata.cb1" aria-label="Izmeni" ng-change="onChange(data.cb1)">
-                                {{ data.cb1}}
+                              <span class="label label-info">{{ switchdata.cb1.length }}</span>
                             </md-switch>
                             <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}<span class="label label-info">{{ auth.profile.id }}</span></h1>
                             <h1><span class="label label-info">{{ todos.length }}</span></h1>
