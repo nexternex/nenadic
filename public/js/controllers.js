@@ -299,16 +299,19 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
                 console.log('Error: ' + data);
             });
     };
+    
+$scope.data = {
+    cb1: true,
+    cb4: true,
+    cb5: false
+  };
+  $scope.message = 'false';
+  $scope.onChange = function(cbState) {
+  	$scope.message = cbState;
+  };
+});
 }]);
 
-  $scope.swdata = function(){
-    cb1: true;
-  };
-
-  $scope.swstate = 'false';
-  $scope.onChange = function(cbState) {
-  	$scope.swstate = cbState;
-  };
 
 
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
