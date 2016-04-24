@@ -300,7 +300,7 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
             });
     };
     
- $scope.switchdata = function(){
+ $scope.switchdata ={
     cb1: true,
     cb4: true,
     cb5: false
