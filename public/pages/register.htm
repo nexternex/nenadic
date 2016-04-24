@@ -52,7 +52,7 @@
         </section> 
        <section  class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding>    
                <form ng-model="formData">
-                <md-input-container style="width:90%"  ng-readonly="swmessage">
+                <md-input-container style="width:90%"  ng-readonly="{{swmessage}}">
                    <label>Ime:</label>
                     </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
                 </md-input-container>
