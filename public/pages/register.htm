@@ -8,7 +8,7 @@
                         <div class="jumbotron text-center">
                               <md-switch ng-model="swdata.cb1" aria-label="Switch 1">
                                 Switch 1: {{ swdata.cb1 }}
-                                   </br><input  type="text" name="name" ng-readonly="{{swmessage}}" ></input>{{name}}<br>
+                                   </br><input  type="text" name="name" ng-readonly="{{swdata.cb1}}" ></input>{{name}}<br>
              
                               </md-switch>
                             <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}<span class="label label-info">{{ auth.profile.id }}</span></h1>
