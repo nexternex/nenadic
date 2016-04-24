@@ -17,9 +17,9 @@
 <div layout="row" class="md-whiteframe-1dp" layout-margin layout-padding layout-align="space-around center">
         <section class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding> 
                <form ng-model="formData">
-                <md-input-container style="width:90%" ng-readonly="{{swdata.cb1}}">
+                <md-input-container style="width:90%" ng-model="swdata.cb1" ng-readonly="{{swdata.cb1}}">
                    <label>Ime:</label>
-                    </br><input  type="text" name="name" ng-model="swdata.cb1"    ng-model="formData.name" ng-readonly="{{swdata.cb1}}" ></input>{{name}}<br>
+                    </br><input  type="text" name="name"     ng-model="formData.name" ng-readonly="{{swdata.cb1}}" ></input>{{name}}<br>
                 </md-input-container>
 
                  <md-input-container style="width:90%">
