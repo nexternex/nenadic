@@ -5,9 +5,9 @@
         <section>    
                 <div ng-controller="mainController" class="container" md-colors="::{background: '{{theme}}-accent'}">
                         <!-- HEADER AND TODO COUNT -->
-                        <div class="jumbotron text-center" ng-controller="SwitchCtrl">
-                              <md-switch ng-model="data.cb1" aria-label="Switch 1">
-                                Switch 1: {{ data.cb1 }}
+                        <div class="jumbotron text-center">
+                              <md-switch ng-model="swdata.cb1" aria-label="Switch 1">
+                                Switch 1: {{ swdata.cb1 }}
                               </md-switch>
                             <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}<span class="label label-info">{{ auth.profile.id }}</span></h1>
                             <h1><span class="label label-info">{{ todos.length }}</span></h1>
