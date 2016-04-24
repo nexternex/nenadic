@@ -306,9 +306,10 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
     cb4: true,
     cb5: false
   };
-  $scope.message = 'false';
+
+  $scope.swstate = 'false';
   $scope.onChange = function(cbState) {
-  	$scope.message = cbState;
+  	$scope.swstate = cbState;
   };
 
 
