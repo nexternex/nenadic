@@ -8,8 +8,7 @@
                         <div class="jumbotron text-center">
                               <md-switch ng-model="swdata.cb1" aria-label="Switch 1">
                                 Switch 1: {{ swdata.cb1 }}
-                                   </br><input  type="text" name="name" ng-readonly="{{swdata.cb1}}" ></input>{{name}}<br>
-             
+                                   </br><input  type="text" name="name" ng-readonly="{{swdata.cb1}}" ></input>{{name}}<br>            
                               </md-switch>
                             <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}<span class="label label-info">{{ auth.profile.id }}</span></h1>
                             <h1><span class="label label-info">{{ todos.length }}</span></h1>
@@ -20,9 +19,9 @@
     <p  ng-model="swdata.cb1">{{cb1}}</p>
         <section class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding> 
                <form ng-model="formData">
-                <md-input-container style="width:90%">
-                   <label  ng-readonly="{{swdata.cb1}}">Ime:{{swdata.cb1}}</label>
-                     <label ng-model="swdata.cb1">Ime:{{swdata.cb1}}</label>
+                <md-input-container style="width:90%" ngmodel="state">
+                   <label  ng-readonly="{{state.value}}"> Ime:{{swdata.cb1}}</label>
+                     <label ng-model="state.value">Ime:{{state.value}}</label>
                     </br><input  type="text" name="name"  ng-model="formData.name" ng-readonly="{{swdata.cb1}}" ></input>{{name}}<br>
                 </md-input-container>
 
