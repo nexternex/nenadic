@@ -16,13 +16,12 @@
                 </div>
         </section>
 <div  layout="row" class="md-whiteframe-1dp" layout-margin layout-padding layout-align="space-around center">
-    <p  ng-model="swdata.cb1">{{cb1}}</p>
         <section class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding> 
                <form ng-model="formData">
                 <md-input-container style="width:90%" ngmodel="state">
-                   <label  ng-readonly="{{state.value}}"> Ime:{{swdata.cb1}}</label>
+                   <label> Ime:</label>
                      <label ng-model="state.value">Ime:{{state.value}}</label>
-                    </br><input  type="text" name="name"  ng-model="formData.name" ng-readonly="{{swdata.cb1}}" ></input>{{name}}<br>
+                    </br><input  type="text" name="name"  ng-model="formData.name"></input>{{name}}<br>
                 </md-input-container>
 
                  <md-input-container style="width:90%">
