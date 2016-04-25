@@ -303,6 +303,11 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
     $scope.swdata = {
         cb1: true ,       
       };
+    
+    $scope.state={
+        value=true,
+    };
+
 }]);
 
 
