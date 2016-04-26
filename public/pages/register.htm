@@ -19,10 +19,9 @@
     
         <section class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding> 
             
-               <fieldset ng-model="formData" ng-disabled=true>
+               <fieldset ng-model="formData" ng-disabled={{data.cb2}}>
                    
-                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'edit'" ng-false-value="'save'" class="md-warn">
-                          Switch 2 (md-warn): {{ data.cb2 }}
+                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'true'" ng-false-value="'false'" class="md-warn">
                 </md-switch>
                 <md-input-container style="width:90%" ngmodel="state">
                    <label> Ime:</label>
