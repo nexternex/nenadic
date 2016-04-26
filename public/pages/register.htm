@@ -1,10 +1,11 @@
 <md-content layout-padding layout="column" layout-sm="column" layout-wrap style="width:90%" ng-controler="list1controller" md-colors="::{backgroundColor: '{{theme}}-primary-700'}" layout-align="center">
-    <h1>My Day Company page</h1>
-	<h2>Register your company</h2>
-    
+    <md-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools" ng-controller="UserInfoCtrl" >Welcome {{auth.profile.nickname}} </div>
+  </md-toolbar>
         <section>    
                 <div ng-controller="mainController" class="container" md-colors="::{background: '{{theme}}-accent'}">
                         <!-- HEADER AND TODO COUNT -->
+<!--
                         <div class="jumbotron text-center">
                               <md-switch ng-model="swdata.cb1" aria-label="Switch 1">
                                 Switch 1: {{ swdata.cb1 }}
@@ -13,6 +14,7 @@
                             <h1 ng-controller="UserInfoCtrl">{{auth.profile.nickname}}<span class="label label-info">{{ auth.profile.id }}</span></h1>
                             <h1><span class="label label-info">{{ todos.length }}</span></h1>
                         </div>
+-->
                 </div>
         </section>
 <div  layout="row" class="md-whiteframe-1dp" layout-margin layout-padding layout-align="space-around center">
