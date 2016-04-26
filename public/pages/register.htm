@@ -1,5 +1,5 @@
 <md-content layout-padding layout="column" layout-sm="column" layout-wrap style="width:90%" ng-controler="list1controller" md-colors="::{backgroundColor: '{{theme}}-primary-700'}" layout-align="center">
-    <md-toolbar md-scroll-shrink>
+<md-toolbar md-scroll-shrink>
     <div class="md-toolbar-tools" ng-controller="UserInfoCtrl" >Welcome {{auth.profile.nickname}} </div>
   </md-toolbar>
         <section>    
@@ -41,8 +41,8 @@
                      </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company">{{company}}<br>
                  </md-input-container>
 
-                 <md-input-container style="width:90%">
-                     <label>Adresa:</label> 		   
+                 <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" style="width:90%">
+                     <label>email:</label> 		   
                      </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address">{{address}}<br>
                  </md-input-container>
 
