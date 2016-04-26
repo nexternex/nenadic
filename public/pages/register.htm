@@ -21,9 +21,9 @@
     
         <section class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding> 
             
-               <fieldlist ng-model="formData" ng-readonly="data.cb2">
+               <fieldlist ng-model="formData" ng-disabled="data.cb2">
                    
-                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-warn">
+                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary">
                 </md-switch>
                    
                 <md-input-container style="width:90%" ngmodel="state">
