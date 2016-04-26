@@ -16,8 +16,10 @@
                 </div>
         </section>
 <div  layout="row" class="md-whiteframe-1dp" layout-margin layout-padding layout-align="space-around center">
+    
         <section class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding> 
-               <form ng-model="formData" ng-disabled=true>
+            
+               <fieldset ng-model="formData" ng-disabled=true>
                    
                 <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'edit'" ng-false-value="'save'" class="md-warn">
                           Switch 2 (md-warn): {{ data.cb2 }}
@@ -55,45 +57,8 @@
                       <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
                     </md-select>
                 </md-input-container>
+            </fieldset>
         </section> 
-<!--
-       <section  class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding>    
-               <form ng-model="formData">
-                <md-input-container style="width:90%"  ng-readonly="{{swdata.cb1}}">
-                   <label>Ime:</label>
-                    </br><input  type="text" name="name"     ng-model="formData.name" ></input>{{name}}<br>
-                </md-input-container>
-
-                 <md-input-container style="width:90%"  ng-readonly="swdata.cb1">
-                     <label> Prezime:</label> 		   
-                     </br><input  type="text" name="lastname" ng-model="formData.lastname">{{ lastname }}<br>
-                </md-input-container>
-
-                 <md-input-container style="width:90%"  ng-readonly="swdata.cb1">
-                   <label>Naziv preduzeca:</label> 
-                     </br><input  type="text" name="company"  ng-model="formData.company">{{company}}<br>
-                 </md-input-container>
-
-                 <md-input-container style="width:90%"  ng-disabled="true">
-                     <label>Adresa:</label> 		   
-                     </br><input  type="text" name="address"  ng-model="formData.address">{{address}}<br>
-                 </md-input-container>
-
-                <md-input-container flex  ng-readonly="swmessage">
-                    <label for="category">Vrsta delatnosti: </label></br>
-                    <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
-                      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
-                    </md-select>
-                </md-input-container>
-                <md-input-container flex>
-                    <label for="size" >Velicina prikaza: </label></br>
-                    <md-select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
-                      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
-                    </md-select>
-                </md-input-container>
-                </FORM>
-        </section>
--->
 </div>
 <!--FIEL UPLOAD-->
 <!--
