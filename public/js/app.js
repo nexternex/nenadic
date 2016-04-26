@@ -29,8 +29,8 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
 //tehemse
     
   $mdThemingProvider.theme('default')
-    .primaryPalette('#BA68C8')
-    .accentPalette('#64FFDA');
+    .primaryPalette('purple')
+    .accentPalette('green');
     
 });
 
