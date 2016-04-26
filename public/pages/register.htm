@@ -18,7 +18,7 @@
 <div  layout="row" class="md-whiteframe-1dp" layout-margin layout-padding layout-align="space-around center">
     
         <section class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding> 
-            
+            <label>Click me to toggle: <input type="checkbox" ng-model="checked"></label><br/>
                <form ng-model="formData" ng-readonly={{data.cb2}}>
                    
                 <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'true'" ng-false-value="'false'" class="md-warn">
@@ -26,7 +26,7 @@
                 <md-input-container style="width:90%" ngmodel="state">
                    <label> Ime:</label>
                      <label ng-model="state.value">Ime:{{data.cb2}}</label>
-                    </br><input  type="text" name="name" ng-readonly="{{data.cb2}}" ng-model="formData.name"></input>{{name}}<br>
+                    </br><input  type="text" name="name" ng-readonly="checked" ng-model="formData.name"></input>{{name}}<br>
                 </md-input-container>
 
                  <md-input-container style="width:90%">
