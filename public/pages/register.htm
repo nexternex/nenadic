@@ -19,7 +19,7 @@
     
         <section class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding> 
             <label>Click me to toggle: <input type="checkbox" ng-model="checked"></label><br/>
-               <form ng-model="formData" ng-readonly={{data.cb2}}>
+               <form ng-model="formData" ng-readonly="data.cb2">
                    
                 <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'true'" ng-false-value="'false'" class="md-warn">
                 </md-switch>
@@ -36,12 +36,12 @@
 
                  <md-input-container style="width:90%">
                    <label>Naziv preduzeca:</label> 
-                     </br><input  type="text" name="company"  ng-readonly="{{data.cb2}}" ng-model="formData.company">{{company}}<br>
+                     </br><input  type="text" name="company"  ng-readonly="data.cb2" ng-model="formData.company">{{company}}<br>
                  </md-input-container>
 
                  <md-input-container style="width:90%">
                      <label>Adresa:</label> 		   
-                     </br><input  type="text" name="address" ng-readonly="{{data.cb2}}"  ng-model="formData.address">{{address}}<br>
+                     </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address">{{address}}<br>
                  </md-input-container>
 
                 <md-input-container flex>
