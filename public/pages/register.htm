@@ -19,24 +19,25 @@
     
         <section class="md-whiteframe-1dp" FLEX="40" md-colors="::{background: '{{theme}}-accent'}" layout-margin layout-padding> 
             
-               <form ng-model="formData" ng-readonly="data.cb2">
+               <form ng-model="formData" ng-readonly="{{data.cb2}}">
                    
-                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'true'" ng-false-value="'false'" class="md-warn">
+                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="true" ng-false-value="false" class="md-warn">
                 </md-switch>
+                   
                 <md-input-container style="width:90%" ngmodel="state">
                    <label> Ime:</label>
                      <label ng-model="state.value">Ime:{{data.cb2}}</label>
-                    </br><input  type="text" name="name" ng-readonly="data.cb2" ng-model="formData.name"></input>{{name}}<br>
+                    </br><input  type="text" name="name"  ng-model="formData.name"></input>{{name}}<br>
                 </md-input-container>
 
                  <md-input-container style="width:90%">
                      <label> Prezime:</label> 		   
-                     </br><input  type="text" name="lastname" ng-readonly="data.cb2"  ng-model="formData.lastname">{{ lastname }}<br>
+                     </br><input  type="text" name="lastname"   ng-model="formData.lastname">{{ lastname }}<br>
                 </md-input-container>
 
                  <md-input-container style="width:90%">
                    <label>Naziv preduzeca:</label> 
-                     </br><input  type="text" name="company"  ng-readonly="data.cb2" ng-model="formData.company">{{company}}<br>
+                     </br><input  type="text" name="company"   ng-model="formData.company">{{company}}<br>
                  </md-input-container>
 
                  <md-input-container style="width:90%">
