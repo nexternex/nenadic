@@ -34,6 +34,12 @@
                      </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address">{{address}}<br>
                  </md-input-container>
 
+                <md-input-container class="md-block">
+                      <!-- Use floating placeholder instead of label -->
+                      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+                      <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+                </md-input-container>
+
                 <md-input-container ng-disabled="data.cb2" flex>
                     <label for="category">Vrsta delatnosti: </label></br>
                     <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
