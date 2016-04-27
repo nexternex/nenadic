@@ -308,6 +308,17 @@ $scope.onChange = function(cbState) {
         
 }]);
 
+erpagWeather.controller('fabTool', function($scope) {
+      $scope.isOpen = false;
+      $scope.demo = {
+        isOpen: false,
+        count: 0,
+        selectedDirection: 'left'
+      };
+    });
+
+
+
 erpagWeather.controller('sideNav', function($scope, $mdSidenav) {
   $scope.openLeftMenu = function() {
     $mdSidenav('left').toggle();

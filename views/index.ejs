@@ -61,7 +61,33 @@
 	</head>
     <body>
         <header>
-       <div layout="row" ng-controller="sideNav">
+       <div layout="row" ng-controller="fabTool">
+           
+           <md-fab-toolbar md-open="demo.isOpen" count="demo.count" md-direction="{{demo.selectedDirection}}">
+                <md-fab-trigger class="align-with-text">
+                  <md-button aria-label="menu" class="md-fab md-primary">
+                    <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
+                  </md-button>
+                </md-fab-trigger>
+                <md-toolbar>
+                  <md-fab-actions class="md-toolbar-tools">
+                    <md-button aria-label="comment" class="md-icon-button">
+                      <md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
+                    </md-button>
+                    <md-button aria-label="label" class="md-icon-button">
+                      <md-icon md-svg-src="img/icons/ic_label_24px.svg"></md-icon>
+                    </md-button>
+                    <md-button aria-label="photo" class="md-icon-button">
+                      <md-icon md-svg-src="img/icons/ic_photo_24px.svg"></md-icon>
+                    </md-button>
+                  </md-fab-actions>
+                </md-toolbar>
+            </md-fab-toolbar>
+<!--
+           
+           
+           
+           
           <md-sidenav md-component-id="left" class="md-sidenav-left">
                 <md-button ng-href="#Home" >Home</md-button>
                 <md-button ng-href="#list">List</md-button>
@@ -72,7 +98,7 @@
                 <md-content ng-controller="sideNav">
                     <md-button ng-click="openLeftMenu()">&#9776;</md-button>
                 </md-content>
-
+-->
         </div>
 
 <!--
@@ -88,7 +114,6 @@
         </header>
         <!--CONTENT-->
             <md-content  class="view">
-
                 <div ng-view></div>    
             </md-content>
         <!-- ovde ide filter ili footer -->       
