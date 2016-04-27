@@ -69,9 +69,7 @@
                 <md-button ng-href="#userInfo">UserInfo</md-button>
                 <md-button ng-href="#timeline">Timeline</md-button>
           </md-sidenav>
-                 <content  class="view">
-                <div ng-view></div>    
-            </content>
+       
           <md-sidenav md-component-id="right" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-right">
           </md-sidenav>
         </div>
@@ -88,7 +86,9 @@
 -->
         </header>
         <!--CONTENT-->
-      
+            <md-content  class="view">
+                <div ng-view></div>    
+            </md-content>
         <!-- ovde ide filter ili footer -->       
       <!--JS LIBS-->
      <!--App files-->
