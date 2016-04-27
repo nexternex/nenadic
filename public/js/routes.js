@@ -43,6 +43,12 @@ erpagWeather.config(function ($routeProvider){
     requiresLogin: true
         
     })
+    .when('/mypage', {
+    templateUrl: '../pages/mypage.htm',
+    controller: 'list1Controller',
+    requiresLogin: true
+        
+    })
     .when('/timeline', {
     templateUrl: '../pages/timeline.htm',
     controller: 'list1Controller',
