@@ -69,11 +69,6 @@
                 <md-button ng-href="#userInfo">UserInfo</md-button>
                 <md-button ng-href="#timeline">Timeline</md-button>
           </md-sidenav>
-          <md-content>
-            <md-button ng-click="openLeftMenu()">
-               &#9776;
-            </md-button>
-          </md-content>
           <md-sidenav md-component-id="right" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-right">
           </md-sidenav>
         </div>
@@ -90,9 +85,9 @@
 -->
         </header>
         <!--CONTENT-->
-            <section  class="view">
+            <content  class="view">
                 <div ng-view></div>    
-            </section>
+            </content>
         <!-- ovde ide filter ili footer -->       
       <!--JS LIBS-->
      <!--App files-->
