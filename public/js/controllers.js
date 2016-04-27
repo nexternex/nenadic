@@ -372,6 +372,8 @@ erpagWeather.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log)
           $log.debug("close RIGHT is done");
         });
     };
+    
+      });
 
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
