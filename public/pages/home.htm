@@ -1,5 +1,4 @@
 <header  class="cd-header" ng-controller="fabTool">
-    
      <md-fab-toolbar md-open="demo.isOpen" count="demo.count" md-direction="{{demo.selectedDirection}}">
                 <md-fab-trigger class="align-with-text">
                   <md-button aria-label="menu" class="md-fab md-primary">
@@ -8,8 +7,11 @@
                 </md-fab-trigger>
                
                 <md-toolbar 100%>
-                <md-fab-button ><a class="cd-signin"  ng-controller="LoginCtrl" ng-click="login()">Sign in</a></md-fab-button>
-				<md-fab-button><a class="cd-signup"  ng-controller="LoginCtrl" ng-click="logout()">Log out</a></md-fab-button>
+                         <md-button class="md-fab" aria-label="Eat cake">
+                            <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
+                        </md-button>
+                <md-button ><a class="cd-signin"  ng-controller="LoginCtrl" ng-click="login()">Sign in</a></md-button>
+				<md-button><a class="cd-signup"  ng-controller="LoginCtrl" ng-click="logout()">Log out</a></md-button>
                     
                   <md-fab-actions class="md-toolbar-tools" width="100%">
                     <md-button aria-label="comment" class="md-icon-button">
@@ -24,10 +26,6 @@
                   </md-fab-actions>
                 </md-toolbar>
             </md-fab-toolbar>
-    
-    
-    
-    
 		<div id="cd-logo"></div>
 		<nav class="main-nav">
 			<ul>
