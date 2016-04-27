@@ -86,6 +86,11 @@
         </header>
         <!--CONTENT-->
             <md-content  class="view">
+                <md-content>
+            <md-button ng-click="openLeftMenu()">
+               &#9776;
+            </md-button>
+          </md-content>
         <md-sidenav md-component-id="right" md-is-locked-open="$mdMedia('min-width: 333px')" class="md-sidenav-right">
           </md-sidenav>
                 <div ng-view></div>    
