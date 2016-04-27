@@ -61,14 +61,36 @@
 	</head>
     <body>
         <header>
+            <md-sidenav
+                class="md-sidenav-left"
+                md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-md')"
+                md-disable-backdrop
+                md-whiteframe="4">
+              <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Sidenav Left</h1>
+              </md-toolbar>
+                  <md-content layout-padding ng-controller="LeftCtrl">
+                    <md-button ng-click="close()" class="md-primary" hide-gt-md>
+                      Close Sidenav Left
+                    </md-button>
+                    <p hide-md show-gt-md>
+                      This sidenav is locked open on your device. To go back to the default behavior,
+                      narrow your display.
+                    </p>
+                  </md-content>
+            </md-sidenav>
+            
+<!--
             <md-toolbar md-scroll-shrink><span id="showLeftPush" > &#9776;</span></md-toolbar>
-            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+            <md-sidenav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
                 <md-button ng-href="#Home" >Home</md-button>
                 <md-button ng-href="#list">List</md-button>
                 <md-button ng-href="#comp">Firme</md-button>
                 <md-button ng-href="#userInfo">UserInfo</md-button>
                 <md-button ng-href="#timeline">Timeline</md-button>
-            </nav> 
+            </md-sidenavav> 
+-->
         </header>
         <!--CONTENT-->
             <section  class="view">
