@@ -313,7 +313,7 @@ erpagWeather.controller('fabTool', function($scope) {
       $scope.demo = {
         isOpen: false,
         count: 0,
-        selectedDirection: 'left'
+        selectedDirection: 'right'
       };
     });
 
