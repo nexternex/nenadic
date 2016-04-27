@@ -354,7 +354,8 @@ erpagWeather.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log)
           });
       }
     }
-  })
+  });
+
   erpagWeather.controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
     $scope.close = function () {
       // Component lookup should always be available since we are not using `ng-if`
@@ -363,7 +364,8 @@ erpagWeather.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log)
           $log.debug("close LEFT is done");
         });
     };
-  })
+  });
+
   erpagWeather.controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
     $scope.close = function () {
       // Component lookup should always be available since we are not using `ng-if`
@@ -372,6 +374,7 @@ erpagWeather.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log)
           $log.debug("close RIGHT is done");
         });
     };
+  });
     
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
