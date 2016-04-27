@@ -63,10 +63,13 @@
         <header>
        <div layout="row" ng-controller="sideNav">
           <md-sidenav md-component-id="left" class="md-sidenav-left">
-            Left Nav!
+                <md-button ng-href="#Home" >Home</md-button>
+                <md-button ng-href="#list">List</md-button>
+                <md-button ng-href="#comp">Firme</md-button>
+                <md-button ng-href="#userInfo">UserInfo</md-button>
+                <md-button ng-href="#timeline">Timeline</md-button>
           </md-sidenav>
           <md-content>
-            Center Content
             <md-button ng-click="openLeftMenu()">
               Open Left Menu
             </md-button>
