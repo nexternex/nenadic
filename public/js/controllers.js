@@ -325,9 +325,9 @@ $scope.onChange = function(cbState) {
         }
       });
       self.items = [
-        { name: "Twitter", icon: "img/icons/twitter.svg", direction: "bottom" },
-        { name: "Facebook", icon: "img/icons/facebook.svg", direction: "top" },
-        { name: "Google Hangout", icon: "img/icons/hangout.svg", direction: "bottom" }
+        { name: "user-img", icon: "android", direction: "bottom" },
+        { name: "Uloguj se", icon: "account", direction: "top" },
+        { name: "Otvori Nalog", icon: "account-plus", direction: "bottom" }
       ];
       self.openDialog = function($event, item) {
         // Show the dialog
@@ -344,20 +344,12 @@ $scope.onChange = function(cbState) {
               $mdDialog.hide();
             };
           },
-          controllerAs: 'dialog',
-          templateUrl: 'dialog.html',
+          controllerAs: 'list1Controller',
+          templateUrl: 'register.html',
           targetEvent: $event
         });
       }
     });
-
-
-
-erpagWeather.controller('sideNav', function($scope, $mdSidenav) {
-  $scope.openLeftMenu = function() {
-    $mdSidenav('left').toggle();
-  };
-});
     
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
