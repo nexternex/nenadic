@@ -308,48 +308,14 @@ $scope.onChange = function(cbState) {
         
 }]);
 
- erpagWeather.controller('MenuCtrl', function($scope, $mdDialog, $timeout) {
-      var self = this;
-      self.hidden = false;
-      self.isOpen = false;
-      self.hover = false;
-      // On opening, add a delayed property which shows tooltips after the speed dial has opened
-      // so that they have the proper position; if closing, immediately hide the tooltips
-      $scope.$watch('demo.isOpen', function(isOpen) {
-        if (isOpen) {
-          $timeout(function() {
-            $scope.tooltipVisible = self.isOpen;
-          }, 600);
-        } else {
-          $scope.tooltipVisible = self.isOpen;
-        }
-      });
-      self.items = [
-        { name: "user-img", icon: "apple", direction: "bottom" },
-        { name: "Uloguj se", icon: "account", direction: "top" },
-        { name: "Otvori Nalog", icon: "account-plus", direction: "bottom" }
-      ];
-      self.openDialog = function($event, item) {
-          console.log('otvaram meni');
-        // Show the dialog
-        $mdDialog.show({
-          clickOutsideToClose: true,
-          controller: function($mdDialog) {
-            // Save the clicked item
-            this.item = item;
-            // Setup some handlers
-            this.close = function() {
-              $mdDialog.cancel();
-            };
-            this.submit = function() {
-              $mdDialog.hide();
-            };
-          },
-          controllerAs: 'list1Controller',
-          templateUrl: 'register.html',
-          targetEvent: $event
-        });
-      }
+ erpagWeather.controller('MenuCtrl', function() {
+      this.topDirections = ['left', 'up'];
+      this.bottomDirections = ['down', 'right'];
+      this.isOpen = false;
+      this.availableModes = ['md-fling', 'md-scale'];
+      this.selectedMode = 'md-fling';
+      this.availableDirections = ['up', 'down', 'left', 'right'];
+      this.selectedDirection = 'up';
     });
     
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
