@@ -1,27 +1,24 @@
 <header  class="cd-header" ng-controller="MenuCtrl">
- <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen"
-                       class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }"
-                       ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
-      <md-fab-trigger>
-        <md-button aria-label="menu" class="md-fab md-accent">
-          <md-tooltip md-direction="left" md-visible="tooltipVisible">Menu</md-tooltip>
-          <md-icon md-svg-icon="apple" aria-label="menu"></md-icon>
-        </md-button>
-      </md-fab-trigger>
-     
-      <md-fab-actions>
-        <div ng-repeat="item in demo.items">
-          <md-button aria-label="{{item.name}}" class="md-fab md-raised md-mini"
-                     ng-click="demo.openDialog($event, item)">
-            <md-tooltip md-direction="{{item.direction}}" md-visible="tooltipVisible"
-                        md-autohide="false">
-              {{item.name}}
-            </md-tooltip>
-            <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.name}}"></md-icon>
+ <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
+                         ng-class="demo.selectedMode">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn">
+            <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
           </md-button>
-        </div>
-      </md-fab-actions>
-    </md-fab-speed-dial>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Uloguj se" class="md-fab md-raised md-mini">
+            <md-icon md-svg-ico="android" aria-label="Twitter"></md-icon>
+          </md-button>
+          <md-button aria-label="Keiraj nalog" class="md-fab md-raised md-mini">
+            <md-icon md-svg-ico="account" aria-label="Facebook"></md-icon>
+          </md-button>
+          <md-button aria-label="kljucic" class="md-fab md-raised md-mini">
+            <md-icon md-svg-ico="key" aria-label="Google Hangout"></md-icon>
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
+    </div>
     
      
 		<nav class="main-nav">
