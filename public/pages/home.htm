@@ -2,26 +2,26 @@
  <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
                          ng-class="demo.selectedMode">
         <md-fab-trigger>
-          <md-button aria-label="menu" class="md-fab md-accent">
+          <md-button aria-label="menu" class="md-fab md-accent" md-visible="tooltipVisible">
             <md-icon md-svg-src="menu"></md-icon>
           </md-button>
         </md-fab-trigger>
         <md-fab-actions>
             
-          <md-button aria-label="Uloguj se" class="md-fab md-raised md-mini md-primary" >
+          <md-button aria-label="Uloguj se" class="md-fab md-raised md-mini md-primary" md-visible="tooltipVisible">
             <md-icon md-svg-icon="android" aria-label="Twitter"></md-icon>
           </md-button>
             
           <md-button aria-label="Keiraj nalog" class="md-fab md-raised md-mini md-primary" ng-controller="LoginCtrl" ng-click="login()">
-            <md-icon md-svg-icon="account" aria-label="Facebook" ></md-icon>
+            <md-icon md-svg-icon="account" aria-label="login" md-visible="tooltipVisible"></md-icon>
           </md-button>
             
-          <md-button aria-label="kljucic" class="md-fab md-raised md-mini" ng-controller="LoginCtrl" ng-click="logout()">
-            <md-icon md-svg-icon="key" aria-label="Google Hangout" ></md-icon>
+          <md-button aria-label="LogIN" class="md-fab md-raised md-mini" ng-controller="LoginCtrl" ng-click="logout()">
+            <md-icon md-svg-icon="key" aria-label="logout" md-visible="tooltipVisible"></md-icon>
           </md-button>
               
-          <md-button aria-label="kljucic" class="md-fab md-raised md-mini">
-            <md-icon md-svg-icon="key" aria-label="Google Hangout" ng-href="#comp"></md-icon>
+          <md-button aria-label="Timeline" class="md-fab md-raised md-mini">
+            <md-icon md-svg-icon="alarm" aria-label="Raspored desavanja" ng-href="#timeline" md-visible="tooltipVisible"></md-icon>
           </md-button>
         </md-fab-actions>
       </md-fab-speed-dial>
