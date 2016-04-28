@@ -29,7 +29,7 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
 //tehemse
     
 
-  $mdIconProvider.defaultIconSet('/fonts/material_ico.svg');
+  $mdIconProvider.defaultIconSet('../fonts/material_ico.svg');
 
     
   $mdThemingProvider.theme('default')
