@@ -13,14 +13,9 @@
         <link href="stylesheets/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link href='http://fonts.googleapis.com/css?family=Jaldi:700,400' rel='stylesheet' type='text/css'>
-        <!-- Pixel Fabric clothes icons -->
-        <link rel="stylesheet" type="text/css" href="fonts/pixelfabric-clothes/style.css" />
-         <!-- Flickity gallery styles -->
-        <link rel="stylesheet" type="text/css" href="stylesheets/flickity.css" />
         <!-- Component styles -->
         <link rel="stylesheet" type="text/css" href="stylesheets/my_day.css" />
         <link rel="stylesheet" type="text/css" href="stylesheets/timeline.css" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/stylemenu.css" />
 <!--        <link rel="stylesheet" type="text/css" href="stylesheets/flow.css" />-->
         <link rel="stylesheet" href="stylesheets/reset.css"> <!-- CSS reset -->
 	    <link rel="stylesheet" href="stylesheets/filter.css"> <!-- Resource style -->
@@ -34,7 +29,6 @@
 		<!-- Main CSS -->
 		<!-- Resourcesn -->
 		<link rel="shortcut icon" href="#">
-<!--	<script src="https://cdnjs.cloudflare.com/ajax/lib/jquery/3.0.0-alpha1/jquery.js"></script>-->
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!--        <script src="js/bootstrap-datetimepicker.min.js"></script>-->
@@ -59,60 +53,9 @@
         <script src="js/jquery.mixitup.min.js"></script>
 	</head>
     <body>
-        <header>
-       <div layout="row">
-           
-<!--
-           <md-fab-toolbar md-open="demo.isOpen" count="demo.count" md-direction="{{demo.selectedDirection}}">
-                <md-fab-trigger class="align-with-text">
-                  <md-button aria-label="menu" class="md-fab md-primary">
-                    <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
-                  </md-button>
-                </md-fab-trigger>
-               
-                <md-toolbar 100%>
-                <md-fab-button ><a class="cd-signin"  ng-controller="LoginCtrl" ng-click="login()">Sign in</a></md-fab-button>
-				<md-fab-button><a class="cd-signup"  ng-controller="LoginCtrl" ng-click="logout()">Log out</a></md-fab-button>
-                    
-                  <md-fab-actions class="md-toolbar-tools" width="100%">
-                    <md-button aria-label="comment" class="md-icon-button">
-                      <md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
-                    </md-button>
-                    <md-button aria-label="label" class="md-icon-button">
-                      <md-icon md-svg-src="img/icons/ic_label_24px.svg"></md-icon>
-                    </md-button>
-                    <md-button aria-label="photo" class="md-icon-button">
-                      <md-icon md-svg-src="img/icons/ic_photo_24px.svg"></md-icon>
-                    </md-button>
-                  </md-fab-actions>
-                </md-toolbar>
-            </md-fab-toolbar>
--->
-<!--
-<md-sidenav md-component-id="left" class="md-sidenav-left">
-                <md-button ng-href="#Home" >Home</md-button>
-                <md-button ng-href="#list">List</md-button>
-                <md-button ng-href="#comp">Firme</md-button>
-                <md-button ng-href="#userInfo">UserInfo</md-button>
-                <md-button ng-href="#timeline">Timeline</md-button>
-          </md-sidenav>
-                <md-content ng-controller="sideNav">
-                    <md-button ng-click="openLeftMenu()">&#9776;</md-button>
-                </md-content>
--->
-        </div>
-
-<!--
-            <md-toolbar md-scroll-shrink><span id="showLeftPush" > &#9776;</span></md-toolbar>
-            <md-sidenav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-                <md-button ng-href="#Home" >Home</md-button>
-                <md-button ng-href="#list">List</md-button>
-                <md-button ng-href="#comp">Firme</md-button>
-                <md-button ng-href="#userInfo">UserInfo</md-button>
-                <md-button ng-href="#timeline">Timeline</md-button>
-            </md-sidenavav> 
--->
-        </header>
+     <header>
+       <div layout="row"></div>
+     </header>
         <!--CONTENT-->
             <md-content  class="view">
                 <div ng-view></div>    
@@ -128,24 +71,7 @@
     <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
 		<script src="js/classie.js"></script>
         <script src="js/main.js"></script> 
-        <script src="js/flickity.pkgd.min.js"></script> 
 <!-- Resource jQuery -->
-
-<!--
-		<script>
-			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-//				showLeft = document.getElementById( 'showLeft' ),
-				showLeftPush = document.getElementById( 'showLeftPush' ),
-				body = document.body;
-
-			showLeftPush.onclick = function() {
-				classie.toggle( this, 'active' );
-				classie.toggle( body, 'cbp-spmenu-push-toright' );
-				classie.toggle( menuLeft, 'cbp-spmenu-open' );
-			};
-
-    </script>
--->
 <script>
 console.log('draw_items');        
 </script>
