@@ -350,7 +350,7 @@ $scope.onChange = function(cbState) {
         });
       }
     });
-});
+
 
 
 erpagWeather.controller('sideNav', function($scope, $mdSidenav) {
