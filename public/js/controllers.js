@@ -325,11 +325,12 @@ $scope.onChange = function(cbState) {
         }
       });
       self.items = [
-        { name: "user-img", icon: "android", direction: "bottom" },
+        { name: "user-img", icon: "apple", direction: "bottom" },
         { name: "Uloguj se", icon: "account", direction: "top" },
         { name: "Otvori Nalog", icon: "account-plus", direction: "bottom" }
       ];
       self.openDialog = function($event, item) {
+          console.log('otvaram meni');
         // Show the dialog
         $mdDialog.show({
           clickOutsideToClose: true,
