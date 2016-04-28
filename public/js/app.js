@@ -23,15 +23,7 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   }];
 
   $httpProvider.interceptors.push('jwtInterceptor');
-    
-  // ...
-    
-//tehemse
-    
-
-  $mdIconProvider.defaultIconSet('../fonts/material_ico.svg');
-
-    
+  $mdIconProvider.defaultIconSet('../fonts/material_ico.svg'); 
   $mdThemingProvider.theme('default')
     .primaryPalette('purple',  {                  
     'default': '400', // by default use shade 400 from the pink palette for primary intentions
