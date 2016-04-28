@@ -2,19 +2,26 @@
  <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
                          ng-class="demo.selectedMode">
         <md-fab-trigger>
-          <md-button aria-label="menu" class="md-fab md-warn">
-            <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
+          <md-button aria-label="menu" class="md-fab md-accent">
+            <md-icon md-svg-src="menu"></md-icon>
           </md-button>
         </md-fab-trigger>
         <md-fab-actions>
-          <md-button aria-label="Uloguj se" class="md-fab md-raised md-mini">
-            <md-icon md-svg-ico="android" aria-label="Twitter"></md-icon>
+            
+          <md-button aria-label="Uloguj se" class="md-fab md-raised md-mini md-primary" >
+            <md-icon md-svg-icon="android" aria-label="Twitter"></md-icon>
           </md-button>
-          <md-button aria-label="Keiraj nalog" class="md-fab md-raised md-mini">
-            <md-icon md-svg-ico="account" aria-label="Facebook"></md-icon>
+            
+          <md-button aria-label="Keiraj nalog" class="md-fab md-raised md-mini md-primary">
+            <md-icon md-svg-icon="account" aria-label="Facebook" ng-controller="LoginCtrl" ng-click="login()"></md-icon>
           </md-button>
+            
           <md-button aria-label="kljucic" class="md-fab md-raised md-mini">
-            <md-icon md-svg-ico="key" aria-label="Google Hangout"><a href="/register"></md-icon>
+            <md-icon md-svg-icon="key" aria-label="Google Hangout" ng-controller="LoginCtrl" ng-click="logout()"><a href="/register"></md-icon>
+          </md-button>
+              
+          <md-button aria-label="kljucic" class="md-fab md-raised md-mini">
+            <md-icon md-svg-icon="key" aria-label="Google Hangout" ng-href="#comp"></md-icon>
           </md-button>
         </md-fab-actions>
       </md-fab-speed-dial>
