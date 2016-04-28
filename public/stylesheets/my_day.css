@@ -41,7 +41,7 @@ Hero
     padding-top: 26%; }
 .slogan{
 font-size: 20px;    
-font-family: font-family: 'Indie Flower', cursive;  
+font-family: font-family: 'Indie Flower', cursive!important;  
     
 }
 .navigation {
