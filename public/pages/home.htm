@@ -58,7 +58,8 @@
 		</div> <!-- cd-tab-filter-wrapper -->
 
 		<section class="cd-gallery" >
-			<ul >
+			<ul>
+<!--
 				<li class="mix color-{{list.category}}  check1 radio2 option3 {{list.category}}" ng-repeat="list in lists" on-finish-render="ngRepeatFinished">
                     <div class="js-flickity md-primary" data-flickity-options='{ "imagesLoaded": true }'>
                       <h2 class="static-banner" >{{list.lastname}}</h2>
@@ -68,6 +69,41 @@
                         <md-button class="md-raised md-warn"  data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">Delete</md-button>
                     </div>
                 </li>
+-->
+              <li class="mix color-{{list.category}}  check1 radio2 option3 {{list.category}}" ng-repeat="list in lists" on-finish-render="ngRepeatFinished">  
+                  <md-card>
+                    <md-card-header>
+                      <md-card-avatar>
+                         <md-icon md-svg-icon="android" aria-label="Twitter"></md-icon>/>
+                      </md-card-avatar>
+                      <md-card-header-text>
+                        <span class="md-title">{{list.name}}</span>
+                        <span class="md-subhead">{{list.address}}</span>
+                      </md-card-header-text>
+                    </md-card-header>
+                    <img ng-src="../img/001.jpg" class="md-card-image" alt="Washed Out">
+                    <md-card-title>
+                      <md-card-title-text>
+                        <span class="md-headline">{{list.lastname}}</span>
+                      </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                      <p>
+                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                        two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                      </p>
+                        <md-button class="md-raised md-warn"  data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">Delete</md-button>
+                    </md-card-content>
+                </md-card>
+            </li>
+                
+                
+                
+                
+                
+                
+                
+                
                 <li class="mix color-1 check1 radio2 option3"><img src="img/001.jpg" alt="Image 1"></li>
 				<li class="mix color-2 check2 radio2 option2"><img src="img/002.jpg" alt="Image 2"></li>
 				<li class="mix color-1 check3 radio3 option1"><img src="img/003.jpg" alt="Image 3"></li>
