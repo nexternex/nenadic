@@ -44,11 +44,12 @@ Main Components
     
 }
 .cd-header h1 {
-  color: #ffffff;
-  line-height: 150px;
-  text-align: center;
-  font-size: 9.4rem;
-  font-weight: 600;
+    color: rgba(0, 0, 0, 0.72);
+    line-height: 150px;
+    text-align: center;
+    font-size: 17.4rem;
+    font-weight: 600;
+    font-family: 'Indie Flower', cursive!important;
 }
 @media only screen and (min-width: 1170px) {
   .cd-header {
