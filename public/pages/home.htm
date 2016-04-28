@@ -1,32 +1,26 @@
 <header  class="cd-header" ng-controller="fabTool">
-     <md-fab-toolbar md-open="demo.isOpen" count="demo.count" md-direction="{{demo.selectedDirection}}">
-                <md-fab-trigger class="align-with-text">
-                  <md-button aria-label="menu" class="md-fab md-primary">
-                    <md-icon md-svg-src="img/icons/menu.svg"></md-icon>
-                  </md-button>
-                </md-fab-trigger>
-               
-                <md-toolbar 100%>
-                         <md-button class="md-fab" aria-label="Eat cake">
-                            <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
-                        </md-button>
-                <md-button ><a class="cd-signin"  ng-controller="LoginCtrl" ng-click="login()">Sign in</a></md-button>
-				<md-button><a class="cd-signup"  ng-controller="LoginCtrl" ng-click="logout()">Log out</a></md-button>
-                    
-                  <md-fab-actions class="md-toolbar-tools" width="100%">
-                    <md-button aria-label="comment" class="md-icon-button">
-                      <md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
-                    </md-button>
-                    <md-button aria-label="label" class="md-icon-button">
-                      <md-icon md-svg-src="img/icons/ic_label_24px.svg"></md-icon>
-                    </md-button>
-                    <md-button aria-label="photo" class="md-icon-button">
-                      <md-icon md-svg-src="img/icons/ic_photo_24px.svg"></md-icon>
-                    </md-button>
-                  </md-fab-actions>
-                </md-toolbar>
-            </md-fab-toolbar>
-		<div id="cd-logo"></div>
+ <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen"
+                       class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }"
+                       ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
+      <md-fab-trigger>
+        <md-button aria-label="menu" class="md-fab md-warn">
+          <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
+          <md-icon md-svg-src="img/icons/menu.svg" aria-label="menu"></md-icon>
+        </md-button>
+      </md-fab-trigger>
+      <md-fab-actions>
+        <div ng-repeat="item in demo.items">
+          <md-button aria-label="{{item.name}}" class="md-fab md-raised md-mini"
+                     ng-click="demo.openDialog($event, item)">
+            <md-tooltip md-direction="{{item.direction}}" md-visible="tooltipVisible"
+                        md-autohide="false">
+              {{item.name}}
+            </md-tooltip>
+            <md-icon md-svg-src="{{item.icon}}" aria-label="{{item.name}}"></md-icon>
+          </md-button>
+        </div>
+      </md-fab-actions>
+    </md-fab-speed-dial>
 		<nav class="main-nav">
 			<ul>
 				<!-- inser more links here -->
