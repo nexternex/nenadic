@@ -75,13 +75,13 @@
                 <md-checkbox class="md-secondary" ng-click="deleteTodo(todo._id)"></md-checkbox>
               </md-list-item>
             <!-- FORM TO CREATE TODOS -->
-              <md-content ng-controller="mainController" layout="column" id="todo-form"> 
+              <fieldlist ng-controller="mainController" layout="column" id="todo-form"> 
                 <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                 <md-input flex="100" type="text" class="form-control input-lg text-center" placeholder="ENTER TO DO" ng-model="formData.text">
                 <md-datepicker  flex="100" ng-model="myDate" md-placeholder="Enter date" class=" col-md-3"></md-datepicker>
                 <!-- createToDo() WILL CREATE NEW TODOS -->
                 <md-button flex="100" type="submit" class="md-raised md-primary" ng-click="createTodo()">Add</button>
-              </md-content>  
+              </fieldlist>  
             </md-card>
         </section>
     </div>
