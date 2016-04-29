@@ -54,10 +54,11 @@
                       <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
                     </md-select>
                 </md-input-container>
-                    <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj</md-button>
+                    <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj se</md-button>
             </fieldlist>
         </section> 
         <section>
+            
             <iframe
               width="600"
               height="450"
@@ -65,6 +66,39 @@
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA7q58HCwcxOBwtqybMIm8-s9Zzu5CSYM4
                 &q=pancevo" allowfullscreen>
             </iframe>
+            
+                <section flex="33">
+        <div id="todo-list">
+            <div>
+
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <div class="checkbox white" ng-repeat="todo in todos">
+                    <label>
+                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <!-- FORM TO CREATE TODOS -->
+        <div ng-controller="mainController" layout="column" id="todo-form">
+          <md-content> 
+                <div>
+                    <form>
+                        <div class="form-group col-md-6">
+                            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                            <input type="text" class="form-control input-lg text-center" placeholder="ENTER TO DO" ng-model="formData.text">
+                        </div>
+
+                        <md-datepicker ng-model="myDate" md-placeholder="Enter date" class=" col-md-3"></md-datepicker>
+              
+                    <!-- createToDo() WILL CREATE NEW TODOS -->
+                    <md-button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+                </form>
+            </div>
+          </md-content>  
+        </div>
+</section>
         </section>
     </div>
 <!--FIEL UPLOAD-->
