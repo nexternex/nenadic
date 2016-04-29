@@ -83,7 +83,7 @@
         <!-- FORM TO CREATE TODOS -->
         <div ng-controller="mainController" layout="column" id="todo-form">
           <md-content> 
-                <div>
+                <md-card>
                     <form>
                         <div class="form-group col-md-6">
                             <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
@@ -95,7 +95,7 @@
                     <!-- createToDo() WILL CREATE NEW TODOS -->
                     <md-button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
                 </form>
-            </div>
+            </md-card>
           </md-content>  
         </div>
 </section>
