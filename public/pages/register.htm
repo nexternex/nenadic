@@ -58,7 +58,7 @@
             </fieldlist>
         </section> 
         <section>
-            
+           <MD-CONTENT flex="33    ">     
             <iframe
               width="600"
               height="450"
@@ -67,10 +67,9 @@
                 &q=pancevo" allowfullscreen>
             </iframe>
             
-                <section flex="33">
+
         <div id="todo-list">
             <div>
-
                 <!-- LOOP OVER THE TODOS IN $scope.todos -->
                 <div class="checkbox white" ng-repeat="todo in todos">
                     <label>
@@ -85,20 +84,16 @@
           <md-content> 
                 <md-card>
                     <form>
-                        <div class="form-group col-md-6">
                             <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                            <input type="text" class="form-control input-lg text-center" placeholder="ENTER TO DO" ng-model="formData.text">
-                        </div>
-
-                        <md-datepicker ng-model="myDate" md-placeholder="Enter date" class=" col-md-3"></md-datepicker>
-              
-                    <!-- createToDo() WILL CREATE NEW TODOS -->
-                    <md-button type="submit" class="md-raised md-primary" ng-click="createTodo()">Add</button>
+                            <md-input type="text" class="form-control input-lg text-center" placeholder="ENTER TO DO" ng-model="formData.text">
+                            <md-datepicker ng-model="myDate" md-placeholder="Enter date" class=" col-md-3"></md-datepicker>
+                            <!-- createToDo() WILL CREATE NEW TODOS -->
+                            <md-button type="submit" class="md-raised md-primary" ng-click="createTodo()">Add</button>
                 </form>
             </md-card>
           </md-content>  
         </div>
-</section>
+</MD-CONTENT>
         </section>
     </div>
 <!--FIEL UPLOAD-->
