@@ -70,7 +70,8 @@ var componentForm = {
   administrative_area_level_1: 'short_name',
   country: 'long_name',
   postal_code: 'short_name'
-};
+    };
+});
 
 erpagWeather.factory('InitAutocomplete',function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
@@ -85,7 +86,7 @@ erpagWeather.factory('InitAutocomplete',function initAutocomplete() {
 });
                      
                      
-erpagWeather.factory('fillInAddress',function fillInAddress() {
+erpagWeather.factory('FillInAddress',function fillInAddress() {
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace();
 
@@ -107,7 +108,7 @@ erpagWeather.factory('fillInAddress',function fillInAddress() {
 
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
-erpagWeather.factory('geolocate',function geolocate() { {
+erpagWeather.factory('Geolocate',function geolocate() { {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var geolocation = {
