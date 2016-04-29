@@ -76,7 +76,10 @@
             <!-- FORM TO CREATE TODOS -->
               <fieldlist ng-controller="mainController" layout="column" id="todo-form"> 
                 <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                <md-input flex="100" type="text" placeholder="ENTER TO DO" ng-model="formData.text"></md-input>
+                      <md-input-container>
+                        <label>Opis</label>
+                        <input ng-model="formData.text">
+                    </md-input-container>
                 <md-datepicker  flex="100" ng-model="myDate" md-placeholder="Enter date" ></md-datepicker>
                 <!-- createToDo() WILL CREATE NEW TODOS -->
                 <md-button flex="100" type="submit" class="md-raised md-primary" ng-click="createTodo()">Add</button>
