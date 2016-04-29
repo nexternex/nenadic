@@ -58,7 +58,8 @@
             </fieldlist>
         </section> 
         <section>
-           <MD-CONTENT flex="33    ">     
+        <MD-CONTENT flex="33">     
+<!--
             <iframe
               width="600"
               height="450"
@@ -66,34 +67,24 @@
               src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA7q58HCwcxOBwtqybMIm8-s9Zzu5CSYM4
                 &q=pancevo" allowfullscreen>
             </iframe>
-            
-
-        <div id="todo-list">
-            <div>
-                <!-- LOOP OVER THE TODOS IN $scope.todos -->
-                <div class="checkbox white" ng-repeat="todo in todos">
-                    <label>
-                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-                    </label>
-                </div>
-
-            </div>
-        </div>
+-->       
+        <md-list ng-controller="mainController" ng-cloak>
+          <md-subheader class="md-no-sticky">Taskovi</md-subheader>
+          <md-list-item ng-repeat="todo in todos">
+            <p> {{ todo.text }} </p>
+            <md-checkbox class="md-secondary" ng-click="deleteTodo(todo._id)"></md-checkbox>
+          </md-list-item>
         <!-- FORM TO CREATE TODOS -->
-        <div ng-controller="mainController" layout="column" id="todo-form">
+        <md-card ng-controller="mainController" layout="column" id="todo-form">
           <md-content> 
-                <md-card>
-                    <form>
-                            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                            <md-input type="text" class="form-control input-lg text-center" placeholder="ENTER TO DO" ng-model="formData.text">
-                            <md-datepicker ng-model="myDate" md-placeholder="Enter date" class=" col-md-3"></md-datepicker>
-                            <!-- createToDo() WILL CREATE NEW TODOS -->
-                            <md-button type="submit" class="md-raised md-primary" ng-click="createTodo()">Add</button>
-                </form>
-            </md-card>
+            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+            <md-input type="text" class="form-control input-lg text-center" placeholder="ENTER TO DO" ng-model="formData.text">
+            <md-datepicker ng-model="myDate" md-placeholder="Enter date" class=" col-md-3"></md-datepicker>
+            <!-- createToDo() WILL CREATE NEW TODOS -->
+            <md-button type="submit" class="md-raised md-primary" ng-click="createTodo()">Add</button>
           </md-content>  
-        </div>
-</MD-CONTENT>
+        </md-card>
+        </MD-CONTENT>
         </section>
     </div>
 <!--FIEL UPLOAD-->
