@@ -57,7 +57,7 @@
                     <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj se</md-button>
             </fieldlist>
         </section> 
-            <md-card flex="3350" class="md-whiteframe-2dp">     
+            <md-card flex="50" class="md-whiteframe-2dp">     
     <!--
                 <iframe
                   width="600"
@@ -77,7 +77,7 @@
               <fieldlist ng-controller="mainController" layout="column" id="todo-form"> 
                 <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                 <md-input flex="100" type="text" placeholder="ENTER TO DO" ng-model="formData.text"></md-input>
-                <md-datepicker  flex="100" ng-model="myDate" md-placeholder="Enter date" class=" col-md-3"></md-datepicker>
+                <md-datepicker  flex="100" ng-model="myDate" md-placeholder="Enter date" ></md-datepicker>
                 <!-- createToDo() WILL CREATE NEW TODOS -->
                 <md-button flex="100" type="submit" class="md-raised md-primary" ng-click="createTodo()">Add</button>
               </fieldlist>  
