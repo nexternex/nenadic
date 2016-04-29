@@ -61,7 +61,15 @@
 			<ul>
             <li class="mix color-{{list.category}}  check1 radio2 option3 " ng-repeat="list in lists" on-finish-render="ngRepeatFinished">  
                     <md-card class="md-accent">
+                        
+                        <md-card-title>
+                              <md-card-title-text>
+                                <span class="md-headline">{{list.name}}</span>
+                              </md-card-title-text>
+                        </md-card-title>
+                        
                         <img ng-src="../img/001.jpg" class="md-card-image" alt="Washed Out">
+                        
                         <md-card-actions layout="row" layout-align="end center">
                             
                           <md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
