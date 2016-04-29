@@ -252,7 +252,6 @@ erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
   $location.path('/timeline');
 });
 
-
 // UserInfoCtrl.js
 erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
   $scope.auth = auth;
@@ -317,6 +316,15 @@ $scope.onChange = function(cbState) {
       this.availableDirections = ['up', 'down', 'left', 'right'];
       this.selectedDirection = 'up';
     });
+
+ erpagWeather.controller('MapsCtrl', [$scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate, function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
+     
+     console.log("maps kontroler entry");
+
+
+    }]);
+    
+
     
 erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
