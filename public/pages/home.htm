@@ -63,18 +63,23 @@
                     <md-card class="md-accent">
                         <img ng-src="../img/001.jpg" class="md-card-image" alt="Washed Out">
                         <md-card-actions layout="row" layout-align="end center">
+                            
                           <md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
                             <md-icon md-svg-icon="delete"></md-icon>
                           </md-button>
+                            
                           <md-button class="md-icon-button" aria-label="Favorite">
-                            <md-icon md-svg-icon="favorite.svg"></md-icon>
+                            <md-icon md-svg-icon="favorite"></md-icon>
                           </md-button>
+                            
                           <md-button class="md-icon-button" aria-label="Settings">
                             <md-icon md-svg-icon="calendar-plus"></md-icon>
                           </md-button>
+                            
                           <md-button class="md-icon-button" aria-label="Share">
-                            <md-icon md-svg-icon="share-arrow"></md-icon>
+                            <md-icon md-svg-icon="open-in-new"></md-icon>
                           </md-button>
+                            
                         </md-card-actions>
                     </md-card>
                 </li>
