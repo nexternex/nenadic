@@ -317,7 +317,7 @@ $scope.onChange = function(cbState) {
       this.selectedDirection = 'up';
     });
 
- erpagWeather.controller('MapsCtrl', [GoogleMaps,InitAutocomplete,FillInAddress,Geolocate, function(GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
+ erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      
      console.log("maps kontroler entry");
 
