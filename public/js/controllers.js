@@ -320,6 +320,7 @@ $scope.onChange = function(cbState) {
  erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      
      console.log("maps kontroler entry");
+    
 
 
     }]);
