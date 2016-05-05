@@ -5,6 +5,7 @@
       google.charts.setOnLoadCallback(drawChart);
 
    function drawChart() {
+       console.log('drawchart');
        var dataTable = new google.visualization.DataTable();
        dataTable.addColumn({ type: 'date', id: 'Date' });
        dataTable.addColumn({ type: 'number', id: 'Won/Loss' });
