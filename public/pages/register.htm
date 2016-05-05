@@ -72,26 +72,20 @@
                       <table md-table md-row-select multiple ng-model="todos" md-progress="promise">
                         <thead md-head md-order="query.order" md-on-reorder="">
                           <tr md-row>
-                            <th md-column md-order-by="nameToLower"><span>Dessert (100g serving)</span></th>
-                            <th md-column md-numeric md-order-by="calories.value"><span>Calories</span></th>
-                            <th md-column md-numeric>Fat (g)</th>
-                            <th md-column md-numeric>Carbs (g)</th>
-                            <th md-column md-numeric>Protein (g)</th>
-                            <th md-column md-numeric>Sodium (mg)</th>
-                            <th md-column md-numeric>Calcium (%)</th>
-                            <th md-column md-numeric>Iron (%)</th>
+                            <th md-column md-order-by="nameToLower"><span>Naziv dogadjaja</span></th>
+                            <th md-column md-numeric md-order-by="calories.value"><span>Datum</span></th>
+                            <th md-column md-numeric>Mesto</th>
+                            <th md-column md-numeric>Opis</th>
+                            <th md-column md-numeric>Napomena</th>
                           </tr>
                         </thead>
                         <tbody md-body>
                           <tr md-row md-select="todo" md-select-id="name" md-auto-select ng-repeat="todo in todos">
                             <td md-cell>{{todo.text}}</td>
-                            <td md-cell>{{todo.text}}</td>
-                            <td md-cell>{{todo.text}}</td>
-                            <td md-cell>{{todo.text}}</td>
-                            <td md-cell>{{todo.text}}</td>
-                            <td md-cell>{{todo.text}}</td>
-                            <td md-cell>{{todo.text}}</td>
-                            <td md-cell>{{todo.text}}</td>
+                            <td md-cell>22.01.2016</td>
+                            <td md-cell>Pancevo</td>
+                            <td md-cell>Uci u salu pre fotografa</td>
+                            <td md-cell>Poneti spisak pesama</td>
                           </tr>
                         </tbody>
                       </table>
