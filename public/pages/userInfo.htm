@@ -1,43 +1,3 @@
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        console.log('usao u gscript');
-      google.charts.load("current", {packages:["calendar"]});
-      google.charts.setOnLoadCallback(drawChart);
-
-   function drawChart() {
-       console.log('drawchart');
-       var dataTable = new google.visualization.DataTable();
-       dataTable.addColumn({ type: 'date', id: 'Date' });
-       dataTable.addColumn({ type: 'number', id: 'Won/Loss' });
-       dataTable.addRows([
-          [ new Date(2012, 3, 13), 37032 ],
-          [ new Date(2012, 3, 14), 38024 ],
-          [ new Date(2012, 3, 15), 38024 ],
-          [ new Date(2012, 3, 16), 38108 ],
-          [ new Date(2012, 3, 17), 38229 ],
-          // Many rows omitted for brevity.
-          [ new Date(2013, 9, 4), 38177 ],
-          [ new Date(2013, 9, 5), 38705 ],
-          [ new Date(2013, 9, 12), 38210 ],
-          [ new Date(2013, 9, 13), 38029 ],
-          [ new Date(2013, 9, 19), 38823 ],
-          [ new Date(2013, 9, 23), 38345 ],
-          [ new Date(2013, 9, 24), 38436 ],
-          [ new Date(2013, 9, 30), 38447 ]
-        ]);
-
-       var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
-
-       var options = {
-         title: "Red Sox Attendance",
-         height: 350,
-       };
-
-       chart.draw(dataTable, options);
-   }
-    </script>
-</head>
 
 <div ng-controller="mainController" class="container" layout-padding layout="row" layout-sm="row" layout-wrap style="width:80%">
 
@@ -76,4 +36,46 @@
           </md-content>  
         </div>
 </section>
+    <section>
+    <md-toolbar class="md-table-toolbar md-default">
+          <div class="md-toolbar-tools">
+            <span>Nutrition</span>
+          </div>
+    </md-toolbar>
+    
+    
+    <!-- exact table from live demo -->
+    <md-table-container>
+      <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+        <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+          <tr md-row>
+            <th md-column md-order-by="nameToLower"><span>Dessert (100g serving)</span></th>
+            <th md-column md-numeric md-order-by="calories.value"><span>Calories</span></th>
+            <th md-column md-numeric>Fat (g)</th>
+            <th md-column md-numeric>Carbs (g)</th>
+            <th md-column md-numeric>Protein (g)</th>
+            <th md-column md-numeric>Sodium (mg)</th>
+            <th md-column md-numeric>Calcium (%)</th>
+            <th md-column md-numeric>Iron (%)</th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="dessert in desserts.data">
+            <td md-cell>{{dessert.name}}</td>
+            <td md-cell>{{dessert.name}}</td>
+            <td md-cell>{{dessert.name}}</td>
+            <td md-cell>{{dessert.name}}</td>
+            <td md-cell>{{dessert.name}}</td>
+            <td md-cell>{{dessert.name}}</td>
+            <td md-cell>{{dessert.name}}</td>
+            <td md-cell>{{dessert.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+
+<md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+    
+    
+    </section>
     </div>

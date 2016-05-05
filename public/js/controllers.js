@@ -244,6 +244,41 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 
 }]);
 
+//table controler
+erpagWeather.controller('tableController', ['$http', '$scope', function ($http, $scope) {
+  'use strict';
+
+  $scope.selected = [];
+
+  $scope.query = {
+    order: 'name',
+    limit: 5,
+    page: 1
+  };
+
+  function success(desserts) {
+    $scope.desserts = todos;
+  }
+
+  $scope.getDesserts = function () {
+    $scope.promise = $nutrition.desserts.get($scope.query, success).$promise;
+  };
+    
+    $http.get('/api/todos')
+    .success(function(data) {
+        $scope.todos = data;
+        console.log('ovo sam dobio iz baze:'+data);
+        })
+        .error(function(data) {
+                console.log('Error: ' + data);
+        });
+
+}]);
+
+
+
+
+
 // Logout controller
 erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
   auth.signout();
