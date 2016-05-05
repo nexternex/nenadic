@@ -248,7 +248,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 erpagWeather.controller('tableController', ['$http', '$scope', function ($http, $scope) {
   'use strict';
 
-  $scope.selected = [];
+  $scope.todos = [];
 
   $scope.query = {
     order: 'name',
@@ -256,13 +256,13 @@ erpagWeather.controller('tableController', ['$http', '$scope', function ($http, 
     page: 1
   };
 
-  function success(desserts) {
-    $scope.desserts = todos;
-  }
+//  function success(desserts) {
+//    $scope.desserts = todos;
+//  }
 
-  $scope.getDesserts = function () {
-    $scope.promise = $nutrition.desserts.get($scope.query, success).$promise;
-  };
+//  $scope.getDesserts = function () {
+//    $scope.promise = $nutrition.desserts.get($scope.query, success).$promise;
+//  };
     
     $http.get('/api/todos')
     .success(function(data) {
