@@ -270,8 +270,12 @@ erpagWeather.controller('tableController', ['$http', '$scope', function ($http, 
         console.log('table controller' +data);
         })
         .error(function(data) {
-        onsole.log('Error: ' + data);
+        console.log('Error: ' + data);
         });
+    
+    $scope.message=true;
+    $scope.onChange = function(cbState) {
+  	$scope.message = cbState;
 
 }]);
 
