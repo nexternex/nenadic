@@ -299,7 +299,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 
 //MAIN coontroler
 
-erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia' function ($scope, $http, $mdDialog, $mdMedia) {
+erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia', function ($scope, $http, $mdDialog, $mdMedia) {
     $scope.formData = {};
     $scope.status = '  ';
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
