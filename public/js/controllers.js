@@ -254,26 +254,26 @@ erpagWeather.controller('tableController', ['$http', '$scope', function ($http, 
   $scope.todos = [];
 
   $scope.query = {
-    order: 'name',
+    order: 'text',
     limit: 5,
     page: 1
   };
 
-//  function success(desserts) {
-//    $scope.desserts = todos;
-//  }
+  function success(desserts) {
+    $scope.desserts = todos;
+  }
 
-//  $scope.getDesserts = function () {
-//    $scope.promise = $nutrition.desserts.get($scope.query, success).$promise;
-//  };
+  $scope.getDesserts = function () {
+    $scope.promise = $http.get('/api/todos', success).$promise;
+  };
     
     $http.get('/api/todos')
     .success(function(data) {
         $scope.todos = data;
-        console.log('ovo sam dobio iz baze:'+data);
+        console.log('table controller' +data);
         })
         .error(function(data) {
-                console.log('Error: ' + data);
+        onsole.log('Error: ' + data);
         });
 
 }]);
@@ -331,6 +331,7 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
             .success(function(data) {
                 $scope.todos = data;
                 console.log(data);
+            
             })
             .error(function(data) {
                 console.log('Error: ' + data);
