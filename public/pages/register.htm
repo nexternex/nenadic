@@ -65,11 +65,9 @@
                             <span>Termini</span>
                           </div>
                     </md-toolbar>
-
-
                     <!-- exact table from live demo -->
                     <md-table-container >
-                      <table md-table md-row-select multiple ng-model="todos" md-progress="promise" id="todo-list">
+                      <table md-table md-row-select multiple ng-model="todos" md-progress="promise" >
                         <thead md-head md-order="query.order" md-on-reorder="">
                           <tr md-row>
                             <th md-column md-order-by="nameToLower"><span>Naziv dogadjaja</span></th>
@@ -80,7 +78,7 @@
                           </tr>
                         </thead>
                         <tbody md-body>
-                          <tr md-row md-select="todo" md-select-id="name" md-auto-select ng-repeat="todo in todos">
+                          <tr md-row md-select="todo" md-select-id="name" md-auto-select ng-repeat="todo in todos" id="todo-list">
                             <td md-cell>{{todo.text}}</td>
                             <td md-cell>22.01.2016</td>
                             <td md-cell>Pancevo</td>
