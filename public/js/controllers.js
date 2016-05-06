@@ -299,7 +299,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 
 //MAIN coontroler
 
-erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia', function ($scope, $http, $mdDialog, $mdMedia) {
+erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, $http) {
     $scope.formData = {};
 
     // when landing on the page, get all todos and show them
@@ -341,14 +341,10 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 
     $scope.onChange = function(cbState) {
   	$scope.message = cbState;
-  };
-    
-    
-    
-        
+  };     
 }]);
 
-
+//Kontroler za unos novig eventa u listu eventa
 erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia', function ($scope,$mdDialog, $mdMedia) {
     $scope.status = '  ';
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
