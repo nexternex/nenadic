@@ -243,9 +243,6 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
   console.log('pokusaj login controller used');
 
 }]);
-//dialog add new event
-
-
 
 //table controler
 erpagWeather.controller('tableController', ['$http', '$scope', function ($http, $scope) {
@@ -277,10 +274,6 @@ erpagWeather.controller('tableController', ['$http', '$scope', function ($http, 
         });
 
 }]);
-
-
-
-
 
 // Logout controller
 erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
@@ -318,7 +311,7 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.todos = data;
-                console.log(data);
+                console.log('unos eventa'+data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
