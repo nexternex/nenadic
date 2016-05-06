@@ -69,7 +69,7 @@
 
                     <!-- exact table from live demo -->
                     <md-table-container >
-                      <table md-table md-row-select multiple ng-model="todos" md-progress="promise">
+                      <table md-table md-row-select multiple ng-model="todos" md-progress="promise" id="todo-list">
                         <thead md-head md-order="query.order" md-on-reorder="">
                           <tr md-row>
                             <th md-column md-order-by="nameToLower"><span>Naziv dogadjaja</span></th>
@@ -98,45 +98,10 @@
               </fieldlist>  
             </md-card>   
         <div md-card id="calendar_basic" style="width: 1000px; height: 350px;"></div>
-         
-<section flex="33" ng-controller="mainController">
-        <div id="todo-list">
-            <div>
-
-                <!-- LOOP OVER THE TODOS IN $scope.todos -->
-                <div class="checkbox white" ng-repeat="todo in todos">
-                    <label>
-                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <!-- FORM TO CREATE TODOS -->
-        <div layout="column" id="todo-form">
-          <md-content> 
-                <div>
-                    <form>
-                        <div class="form-group col-md-6">
-                            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                            <input type="text" class="form-control input-lg text-center" placeholder="ENTER TO DO" ng-model="formData.text">
-                        </div>
-
-                        <md-datepicker ng-model="myDate" md-placeholder="Enter date" class=" col-md-3"></md-datepicker>
-              
-                    <!-- createToDo() WILL CREATE NEW TODOS -->
-                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
-                </form>
-            </div>
-          </md-content>  
-        </div>
-</section>
-         
      </div> 
     </div>
 
 
-<!--
     <script type="text/javascript">
       console.log('usao u gscript');
       google.charts.load("current", {packages:["calendar"]});
@@ -174,7 +139,6 @@
        chart.draw(dataTable, options);
    }
     </script>
--->
 <!--FIEL UPLOAD-->
 <!--
         <section >
