@@ -352,7 +352,7 @@ erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia', f
 $scope.showAdvanced = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
-      controller: 'mainController',
+      controller: 'dialogController',
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
       targetEvent: ev,
