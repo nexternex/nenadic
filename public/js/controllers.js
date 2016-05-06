@@ -353,7 +353,7 @@ $scope.showAdvanced = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
       controller: 'mainController',
-      templateUrl: '..pages/dialog1.tmpl.html',
+      templateUrl: '/dialog',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
