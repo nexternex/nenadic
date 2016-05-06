@@ -93,7 +93,7 @@
                   <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
                     </section>
             <!-- FORM TO CREATE TODOS -->
-              <fieldlist  id="popupContainer" ng-controller="showAdvanced" layout="column" id="todo-form"> 
+              <fieldlist  id="popupContainer" ng-controller="mainController" layout="column" id="todo-form"> 
                   <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
               </fieldlist>  
             </md-card>   
