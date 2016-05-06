@@ -80,10 +80,10 @@
                         <tbody md-body>
                           <tr md-row md-select="todo" md-select-id="name" md-auto-select ng-repeat="todo in todos" id="todo-list">
                             <td md-cell>{{todo.text}}</td>
-                            <td md-cell>22.01.2016</td>
-                            <td md-cell>Pancevo</td>
-                            <td md-cell>Uci u salu pre fotografa</td>
-                            <td md-cell>Poneti spisak pesama</td>
+                            <td md-cell>{{todo.place}}</td>
+                            <td md-cell>{{todo.date}}</td>
+                            <td md-cell>{{todo.desc}}</td>
+                            <td md-cell>{{todo.text}}</td>
                           </tr>
                         </tbody>
                       </table>

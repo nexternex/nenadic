@@ -40,7 +40,7 @@ console.log('MongoDB connection successful.');
 });
 
 //database model
-var schema = new mongoose.Schema({ text: 'string' });
+var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string' });
 var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string' });
 
 var Todo = mongoose.model('Todo', schema);
@@ -106,6 +106,9 @@ app.post('/api/photo',function(req,res){
 		// create a todo, information comes from AJAX request from Angular
 		Todo.create({
 			text : req.body.text,
+            place : req.body.place,
+            desc : req.body.desc,
+            date : req.body.date,
 			done : false
 		}, function(err, todo) {
 			if (err)
