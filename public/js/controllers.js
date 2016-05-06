@@ -301,8 +301,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 
 erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia', function ($scope, $http, $mdDialog, $mdMedia) {
     $scope.formData = {};
-    $scope.status = '  ';
-    $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+
     // when landing on the page, get all todos and show them
     $http.get('/api/todos')
         .success(function(data) {
@@ -344,7 +343,16 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
   	$scope.message = cbState;
   };
     
-//Dialog za unos novog eventa    
+    
+    
+        
+}]);
+
+
+erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia', function ($scope,$mdDialog, $mdMedia) {
+    $scope.status = '  ';
+    $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+  //Dialog za unos novog eventa    
 $scope.showAdvanced = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
@@ -365,10 +373,12 @@ $scope.showAdvanced = function(ev) {
     }, function(wantsFullScreen) {
       $scope.customFullscreen = (wantsFullScreen === true);
     });
-  };    
+  };  
     
-        
-}]);
+    
+    
+}]);    
+    
 
  erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
