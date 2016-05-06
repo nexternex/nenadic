@@ -275,7 +275,8 @@ erpagWeather.controller('tableController', ['$http', '$scope', function ($http, 
     
     $scope.message=true;
     $scope.onChange = function(cbState) {
-  	$scope.message = cbState;
+  	     $scope.message = cbState;
+          }; 
 
 }]);
 
