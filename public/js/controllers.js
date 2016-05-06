@@ -262,7 +262,7 @@ erpagWeather.controller('dialogCtrl', function($scope, $mdDialog, $mdMedia) {
         .targetEvent(ev)
     );
   };
-
+});
 
 
 //table controler
