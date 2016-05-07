@@ -262,7 +262,7 @@ console.log('faactory start') ;
 
       
     }
-  };
+  }; 
 });
 
 
