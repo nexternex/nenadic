@@ -247,9 +247,11 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 //factory return users
 
 erpagWeather.factory('setEvent', function($http) {
-      
+console.log('faactory start') ;     
 
-  var events=  $http.get('/api/todos')
+  var events =[];
+    
+  $http.get('/api/todos')
     .success(function(data) {
         events = data;
         console.log('factory table controller' +events);
