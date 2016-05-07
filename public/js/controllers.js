@@ -260,7 +260,7 @@ var events = ['nex','gox'];
  
   return {
     all: function() {
-      return this.events;
+      return data;
     }
   };
 });
