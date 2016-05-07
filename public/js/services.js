@@ -89,8 +89,9 @@ $http.get('/api/todos')
     
   return {
     all: function() {
-      return users;
+      return events;
     }
+  };
 });
 
 

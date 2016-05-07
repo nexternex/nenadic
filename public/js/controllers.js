@@ -245,7 +245,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 }]);
 
 //table controler
-erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope,setEvent) {
+erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
   'use strict';
 
   $scope.todos = setEvent.all();
@@ -260,19 +260,19 @@ erpagWeather.controller('tableController', ['$http', '$scope','setEvent', functi
     $scope.desserts = todos;
   }
 
-  $scope.getDesserts = function () {
-    $scope.promise = $http.get('/api/todos', success).$promise;
-  };
-    
-    $http.get('/api/todos')
-    .success(function(data) {
-        $scope.todos = data;
-        console.log('table controller' +data);
-        })
-        .error(function(data) {
-        console.log('Error: ' + data);
-        });
-    
+//  $scope.getDesserts = function () {
+//    $scope.promise = $http.get('/api/todos', success).$promise;
+//  };
+//    
+//    $http.get('/api/todos')
+//    .success(function(data) {
+//        $scope.todos = data;
+//        console.log('table controller' +data);
+//        })
+//        .error(function(data) {
+//        console.log('Error: ' + data);
+//        });
+//    
     $scope.message=true;
     $scope.onChange = function(cbState) {
   	     $scope.message = cbState;
