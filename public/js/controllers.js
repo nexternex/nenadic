@@ -272,7 +272,7 @@ erpagWeather.controller('tableController', ['$http', '$scope','setEvent', functi
   'use strict';
 
   $scope.todos = setEvent.all();
-    console.log('iz factorija'+setEvent.all)
+    console.log('iz factorija'+$scope.todos);
 
   $scope.query = {
     order: 'text',
