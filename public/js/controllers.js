@@ -248,7 +248,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope,setEvent) {
   'use strict';
 
-  $scope.todos = $setEvent.data;
+  $scope.todos = setEvent.all();
 
   $scope.query = {
     order: 'text',
@@ -318,7 +318,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.todos = data;
-                tableController.todos=data;
+                $scope.todos=setEvent.all();
                 console.log('unos eventa'+data);
             })
             .error(function(data) {
