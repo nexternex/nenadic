@@ -252,7 +252,7 @@ var events = ['nex','gox'];
     $http.get('/api/todos')
     .success(function(data) {
         events = data;
-        console.log('factory table controller' +data);
+        console.log('factory table controller' +events);
         })
         .error(function(data) {
         console.log('Error: ' + data);
