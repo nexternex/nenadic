@@ -245,7 +245,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 }]);
 
 //table controler
-erpagWeather.controller('tableController', ['$http', '$scope','$setEvent', function ($http, $scope,$setEvent) {
+erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope,setEvent) {
   'use strict';
 
   $scope.todos = $setEvent.data;
@@ -297,7 +297,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 
 //MAIN coontroler
 
-erpagWeather.controller('mainController', ['$scope', '$http','$setEvents', function ($scope, $http,$setEvents) {
+erpagWeather.controller('mainController', ['$scope', '$http','setEvent', function ($scope, $http,setEvent) {
     $scope.formData = {};
     
 
