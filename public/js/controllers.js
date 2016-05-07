@@ -251,7 +251,7 @@ var events = ['nex','gox'];
 
     $http.get('/api/todos')
     .success(function(data) {
-        this.events = data;
+        events = data;
         console.log('factory table controller' +events);
         })
         .error(function(data) {
@@ -260,7 +260,7 @@ var events = ['nex','gox'];
  
   return {
     all: function() {
-      return data;
+      return events;
     }
   };
 });
