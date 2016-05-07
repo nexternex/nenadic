@@ -312,7 +312,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
     $http.get('/api/todos')
         .success(function(data) {
             $scope.todos = data;
-            $setEvent.data=data;
             console.log('ovo sam dobio iz baze:'+data);
         })
         .error(function(data) {
