@@ -262,7 +262,7 @@ var events = ['nex','gox'];
 //    all: function() {
 //      return events;
 //    }
-  };
+//  };
 });
 
 
