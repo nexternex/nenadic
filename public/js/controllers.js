@@ -258,7 +258,7 @@ console.log('faactory start') ;
            return events;
         })
         .error(function(data) {
-            consple.log('101:error retur events from database');
+            console.log('101:error retur events from database');
         });
 
       
