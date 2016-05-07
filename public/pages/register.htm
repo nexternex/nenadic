@@ -97,8 +97,8 @@
                             <th md-column md-numeric>Napomena</th>
                           </tr>
                         </thead>
-                        <tbody md-body>
-                          <tr md-row md-select="todo" md-select-id="name" md-auto-select ng-repeat="todo in todos" id="todo-list">
+                        <tbody md-body >
+                          <tr md-row md-select="todo" md-select-id="name" md-auto-select ng-repeat="todo in todos" id="todo-list"  ng-controller="mainController">
                             <td md-cell>{{todo.text}}</td>
                             <td md-cell>{{todo.date}}</td>
                             <td md-cell>{{todo.place}}</td>
