@@ -262,6 +262,7 @@ console.log('faactory start') ;
  
   return {
     all: function() {
+         console.log(events);
       return events;
     }
   };
