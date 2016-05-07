@@ -248,10 +248,11 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 
 erpagWeather.factory('setEvent', function($http) {
 var events = [];        
-$http.get('/api/todos')
+
+    $http.get('/api/todos')
     .success(function(data) {
         events = data;
-        console.log('table controller' +data);
+        console.log('factory table controller' +data);
         })
         .error(function(data) {
         console.log('Error: ' + data);
@@ -324,7 +325,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.todos = data;
-                $scope.todos=setEvent.all();
+                setEvent.all=data;
                 console.log('unos eventa'+data);
             })
             .error(function(data) {
