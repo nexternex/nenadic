@@ -250,18 +250,16 @@ erpagWeather.factory('setEvent', function($http) {
 console.log('faactory start') ;     
 
   var events =[];
-    
-  $http.get('/api/todos')
-    .success(function(data) {
-        events = data;
-        console.log('101: factory table controller' +data);
-        })
-        .error(function(data) {
-        console.log('Error: ' + data);
-        });
- 
   return {
     all: function() {
+        $http.get('/api/todos')
+        .success(function(data) {
+            events = data;
+            console.log('101: factory table controller' +data);
+        })
+        .error(function(data) {
+          console.log('Error: ' + data);
+        });
       console.log('factory elements='+events);
       return events;
     }
