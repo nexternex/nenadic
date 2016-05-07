@@ -263,7 +263,7 @@ console.log('faactory start') ;
   return {
     all: function() {
       console.log(events);
-      return "Nikola tesla";
+      return ;
     }
   };
 });
@@ -274,7 +274,10 @@ console.log('faactory start') ;
 erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
   'use strict';
 
-    $scope.todos = setEvent.all();
+    $scope.todos = []
+    setEvent.all();
+    $scope.todos=setEvent.all;
+    
     console.log('iz tabele factorija'+ $scope.todos);
 
   $scope.query = {
