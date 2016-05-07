@@ -75,7 +75,6 @@ $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function($q
 
 erpagWeather.service('setEvent', function() {
     this.data=[];
-    }
 });
 
 
