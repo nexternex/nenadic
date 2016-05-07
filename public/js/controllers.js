@@ -316,6 +316,7 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.todos = data;
+                tableController.todos=data;
                 console.log('unos eventa'+data);
             })
             .error(function(data) {
