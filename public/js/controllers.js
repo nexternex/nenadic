@@ -258,10 +258,10 @@ var events = ['nex','gox'];
         console.log('Error: ' + data);
         });
  
-  return {
-    all: function() {
-      return events;
-    }
+//  return {
+//    all: function() {
+//      return events;
+//    }
   };
 });
 
@@ -271,7 +271,7 @@ var events = ['nex','gox'];
 erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
   'use strict';
 
-  $scope.todos = setEvent.all();
+  $scope.todos = setEvent.events;
     console.log('iz factorija'+$scope.todos);
 
   $scope.query = {
@@ -326,7 +326,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.todos = data;
-                setEvent.all=data;
+                setEvent.events=data;
                 console.log('unos eventa'+data);
             })
             .error(function(data) {
