@@ -244,6 +244,28 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 
 }]);
 
+//factory return users
+
+erpagWeather.factory('setEvent', function($http) {
+var events = [];        
+$http.get('/api/todos')
+    .success(function(data) {
+        events = data;
+        console.log('table controller' +data);
+        })
+        .error(function(data) {
+        console.log('Error: ' + data);
+        });
+ 
+  return {
+    all: function() {
+      return events;
+    }
+  };
+});
+
+
+
 //table controler
 erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
   'use strict';
@@ -263,21 +285,6 @@ erpagWeather.controller('tableController', ['$http', '$scope','setEvent', functi
 //  $scope.getDesserts = function () {
 //    $scope.promise = $http.get('/api/todos', success).$promise;
 //  };
-//    
-//    $http.get('/api/todos')
-//    .success(function(data) {
-//        $scope.todos = data;
-//        console.log('table controller' +data);
-//        })
-//        .error(function(data) {
-//        console.log('Error: ' + data);
-//        });
-//    
-    $scope.message=true;
-    $scope.onChange = function(cbState) {
-  	     $scope.message = cbState;
-          }; 
-
 }]);
 
 // Logout controller
@@ -297,7 +304,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 
 //MAIN coontroler
 
-erpagWeather.controller('mainController', ['$scope', '$http','setEvent', function ($scope, $http,setEvent) {
+erpagWeather.controller('mainController', ['$scope', '$http','setEvent', function ($scope, $http, setEvent) {
     $scope.formData = {};
     
 

@@ -73,25 +73,23 @@ $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function($q
             };
         }]);
 
-erpagWeather.factory('setEvent', function($http) {
-  var events = [];
-
-        
-$http.get('/api/todos')
-    .success(function(data) {
-        events = data;
-        console.log('table controller' +data);
-        })
-        .error(function(data) {
-        console.log('Error: ' + data);
-        });
-    
-    
-  return {
-    all: function() {
-      return events;
-    }
-  };
-});
+//factory koji vraca sve evente
+//erpagWeather.factory('setEvent', function($http) {
+//var events = [];        
+//$http.get('/api/todos')
+//    .success(function(data) {
+//        events = data;
+//        console.log('table controller' +data);
+//        })
+//        .error(function(data) {
+//        console.log('Error: ' + data);
+//        });
+// 
+//  return {
+//    all: function() {
+//      return events;
+//    }
+//  };
+//});
 
 
