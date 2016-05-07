@@ -254,13 +254,13 @@ console.log('faactory start') ;
     all: function() {
         $http.get('/api/todos')
         .success(function(data) {
-           return data;
+          console.log('1001:return events from database');
         })
         .error(function(data) {
             console.log('101:error retur events from database');
         });
 
-      
+       return data;
     }
   }; 
 });
