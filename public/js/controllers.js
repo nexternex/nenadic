@@ -271,7 +271,7 @@ var events = ['nex','gox'];
 erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
   'use strict';
 
-  $scope.todos = setEvent.events;
+  $scope.todos = setEvent.all();
     console.log('iz factorija'+$scope.todos);
 
   $scope.query = {
