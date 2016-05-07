@@ -337,13 +337,12 @@ erpagWeather.controller('mainController', ['$scope', '$http', function ($scope, 
     };
     
     $scope.message=true;
-
     $scope.onChange = function(cbState) {
-  	$scope.message = cbState;
-  };     
+        $scope.message = cbState;
+        };     
 }]);
 
-//Kontroler za unos novig eventa u listu eventa
+//Kontroler za unos novih eventa u listu eventa
 erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia', function ($scope,$mdDialog, $mdMedia) {
     $scope.status = '  ';
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
