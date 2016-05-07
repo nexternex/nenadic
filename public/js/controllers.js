@@ -262,7 +262,7 @@ console.log('faactory start') ;
  
   return {
     all: function() {
-      console.log(events);
+      console.log('factory elements='+events);
       return ;
     }
   };
