@@ -258,11 +258,11 @@ var events = ['nex','gox'];
         console.log('Error: ' + data);
         });
  
-//  return {
-//    all: function() {
-//      return events;
-//    }
-//  };
+  return {
+    all: function() {
+      return this.events;
+    }
+  };
 });
 
 
