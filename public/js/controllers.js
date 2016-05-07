@@ -247,7 +247,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 //factory return users
 
 erpagWeather.factory('setEvent', function($http) {
-var events = [];        
+var events = ['nex','gox'];        
 
     $http.get('/api/todos')
     .success(function(data) {
