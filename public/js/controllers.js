@@ -254,14 +254,13 @@ console.log('faactory start') ;
     all: function() {
         $http.get('/api/todos')
         .success(function(data) {
-            events = data;
-            console.log('101: factory table controller' +data);
+           events=data;
+           return data;
         })
         .error(function(data) {
-          console.log('Error: ' + data);
         });
-      console.log('factory elements='+events);
-      return events;
+
+      
     }
   };
 });
