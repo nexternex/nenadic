@@ -255,9 +255,10 @@ console.log('faactory start') ;
         $http.get('/api/todos')
         .success(function(data) {
            events=data;
-           return data;
+           return events;
         })
         .error(function(data) {
+            consple.log('101:error retur events from database');
         });
 
       
