@@ -65,6 +65,15 @@
                             <span>Termini</span>
                           </div>
                     </md-toolbar>
+                  
+                  <div id="todo-list">
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                      <div class="checkbox white" ng-repeat="todo in todos">
+                        <label>
+                            <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                        </label>
+                      </div>
+                  </div>
                     <!-- exact table from live demo -->
                     <md-table-container >
                       <table md-table md-row-select multiple ng-model="todos" md-progress="promise" >
