@@ -249,14 +249,16 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 erpagWeather.factory('setEvent', function($http) {
   return {
     loadEvents: function(data) {
-        $http.get('/api/todos')
+        var promise=$http.get('/api/todos')
         .success(function(data) {
           console.log('1001:return events from database'+data);
-            return data;
+            
         })
         .error(function(data) {
             console.log('101:error retur events from database');
         });
+        
+        return promise;
     }
   }; 
 });
@@ -266,10 +268,12 @@ erpagWeather.factory('setEvent', function($http) {
 //table controler
 erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
   'use strict';
-
-    $scope.todos = [];
-    $scope.todos=setEvent.loadEvents();
     
+    setEvent.loadEvents().then(function(promise) {
+    scope.todos = promise;
+  });
+
+    $scope.todos=setEvent.loadEvents();    
     console.log('iz tabele factorija'+ $scope.todos);
 
   $scope.query = {
