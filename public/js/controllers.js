@@ -251,12 +251,12 @@ erpagWeather.factory('setEvent', function($http) {
     loadEvents: function(data) {
         var promise=$http.get('/api/todos')
         .success(function(data) {
-          console.log('1001:return events from database'+data);
-            
-        })
+             console.log('1001:return events from database'+data);
+             return data
+            })
         .error(function(data) {
             console.log('101:error retur events from database');
-        });
+            });
         
         return promise;
     }
