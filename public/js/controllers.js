@@ -269,6 +269,7 @@ erpagWeather.controller('tableController', ['$http', '$scope','setEvent', functi
   'use strict';
     
     setEvent.loadEvents().then(function(promise) {
+    console.log(promise);
     $scope.todos = promise;
     });
  
