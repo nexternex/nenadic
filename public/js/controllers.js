@@ -273,21 +273,21 @@ erpagWeather.controller('tableController', ['$http', '$scope','setEvent', functi
     $scope.todos = promise;
     });
  
-    console.log('iz tabele factorija'+ $scope.todos);
+    console.log('iz tabele factorija'+ promise);
 
   $scope.query = {
     order: 'text',
     limit: 5,
     page: 1
   };
-
-  function success(desserts) {
-    $scope.desserts = todos;
-  }
-
-  $scope.getDesserts = function () {
-    $scope.promise = $http.get('/api/todos', success).$promise;
-  };
+//
+//  function success(desserts) {
+//    $scope.desserts = todos;
+//  }
+//
+//  $scope.getDesserts = function () {
+//    $scope.promise = $http.get('/api/todos', success).$promise;
+//  };
 }]);
 
 // Logout controller
