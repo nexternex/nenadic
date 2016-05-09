@@ -258,8 +258,9 @@ erpagWeather.factory('setEvent', function($http) {
             console.log('101:error retur events from database');
             });
         
-        return promise;
     }
+    return promise;
+
   }; 
 });
 
