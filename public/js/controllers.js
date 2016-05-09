@@ -269,7 +269,7 @@ erpagWeather.factory('setEvent', function($http) {
 erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
   'use strict';
 
-    $scope.todos = []
+    $scope.todos = [];
     $scope.todos=setEvent.loadEvents();
     
     console.log('iz tabele factorija'+ $scope.todos);
