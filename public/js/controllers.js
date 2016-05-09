@@ -267,7 +267,7 @@ erpagWeather.factory('setEvent', function($http) {
 //table controler
 erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
   'use strict';
-    
+    $scope.todos=[];
     setEvent.loadEvents().then(function(promise) {
     console.log(promise);
     $scope.todos = promise;
