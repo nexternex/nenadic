@@ -274,7 +274,7 @@ erpagWeather.controller('tableController', ['$http', '$scope','setEvent', functi
     $scope.todos = promise;
     });
  
-    console.log('iz tabele factorija'+ promise);
+    console.log('iz tabele factorija'+ $scope.todos);
 
   $scope.query = {
     order: 'text',
