@@ -247,20 +247,18 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 //factory return users
 
 erpagWeather.factory('setEvent', function($http) {
-console.log('faactory start') ;     
-
-  var events =[];
   return {
-    all: function() {
+    loadEvents: function(data) {
         $http.get('/api/todos')
         .success(function(data) {
           console.log('1001:return events from database');
+            return data;
         })
         .error(function(data) {
             console.log('101:error retur events from database');
         });
 
-       return data;
+       
     }
   }; 
 });
