@@ -285,9 +285,9 @@ erpagWeather.controller('tableController', ['$http', '$scope','setEvent', functi
     $scope.desserts = todos;
   }
 
-//  $scope.getDesserts = function () {
-//    $scope.promise = $http.get('/api/todos', success).$promise;
-//  };
+  $scope.getDesserts = function () {
+    $scope.promise = $http.get('/api/todos', success).$promise;
+  };
 }]);
 
 // Logout controller
