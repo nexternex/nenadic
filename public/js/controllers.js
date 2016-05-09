@@ -270,7 +270,7 @@ erpagWeather.controller('tableController', ['$http', '$scope','setEvent', functi
     $scope.todos=[];
     $scope.todos=setEvent.loadEvents();
     
-      setEvent.loadEvents.then(function(result){
+      setEvent.then(function(result){
                 $scope.todos=result.data;
           });
  
