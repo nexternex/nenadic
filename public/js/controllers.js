@@ -279,19 +279,30 @@ $scope.query = {
     limit: 5,
     page: 1
   };           
-           
-               
-  todosService.getTodos().then(function(data) {
-      console.log('paket iz faktorija:'+data);
-    $scope.todos = data;
-        },function() {
-    $scope.error = 'unable to get the todos';
-        });
-    console.log($scope.todos.every);
-//  $scope.getTodos1 = function () {
-//    $scope.promise = $http.get('/api/todos', success).$promise;
-//  };
-//    
+  
+    
+    $http.get('/api/todos')
+        .success(function(data) {
+            $scope.todos = data;
+            console.log('ovo sam dobio iz baze:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });    
+    
+    
+//               
+//  todosService.getTodos().then(function(data) {
+//      console.log('paket iz faktorija:'+data);
+//    $scope.todos = data;
+//        },function() {
+//    $scope.error = 'unable to get the todos';
+//        });
+//    console.log($scope.todos.every);
+////  $scope.getTodos1 = function () {
+////    $scope.promise = $http.get('/api/todos', success).$promise;
+////  };
+////    
 }]);
 
 
