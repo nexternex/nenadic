@@ -272,7 +272,7 @@ erpagWeather.factory('todosService', function($http) {
   };
 });
 
-erpagWeather.controller('tableController',['$scope','todosService', function($scope, todosService) {
+erpagWeather.controller('tableController',['$scope','todosService','$http', function($scope, todosService,$http) {
 $scope.todos=[];    
 $scope.query = {
     order: 'text',
@@ -287,9 +287,9 @@ $scope.query = {
     $scope.error = 'unable to get the todos';
         });
     
-//  $scope.getTodos = function () {
-//    $scope.promise = $http.get('/api/todos', success).$promise;
-//  };
+  $scope.getTodos = function () {
+    $scope.promise = $http.get('/api/todos', success).$promise;
+  };
     
 }]);
 
