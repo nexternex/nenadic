@@ -357,7 +357,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
     };
 
     // delete a todo after checking it
-    $scope.deleteTodo = function(id) {
+    $scope.deleteTodo = function(id) { 
         $http.delete('/api/todos/' + id)
             .success(function(data) {
                 $scope.todos = data;
