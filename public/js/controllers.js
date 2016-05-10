@@ -312,39 +312,6 @@ $scope.query = {
     
 }]);
 
-
-//table controler
-//erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
-//  'use strict';
-//    $scope.todos=[];
-//    
-//    setEvent.loadEvents()
-//        .success(function(data){
-//            $scope.todos=data;
-//            })
-//        .error(function(data){  
-//            console.log('error loading data');
-//    
-//    })
-//    ;  
-//    
-//    console.log('iz tabele factorija'+ $scope.todos);
-//
-//  $scope.query = {
-//    order: 'text',
-//    limit: 5,
-//    page: 1
-//  };
-////
-////  function success(desserts) {
-////    $scope.desserts = todos;
-////  }
-////
-////  $scope.getDesserts = function () {
-////    $scope.promise = $http.get('/api/todos', success).$promise;
-////  };
-//}]);
-
 // Logout controller
 erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
   auth.signout();
@@ -382,7 +349,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.todos = data;
-                setEvent.events=data; 
                 console.log('unos eventa'+data);
             })
             .error(function(data) {
@@ -403,7 +369,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
             });
     };
     
-///Material tabe parts
+///Material table parts
     
       $scope.query = {
         order: 'text',
@@ -411,9 +377,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
         page: 1
       };
 //
-  function success(desserts) {
-    $scope.desserts = todos;
-  }
+//  function success(data) {
+//    $scope.todos = todos;
+//  }
 ////
   $scope.getTodos = function () {
     $scope.promise = $http.get('/api/todos', success).$promise;
