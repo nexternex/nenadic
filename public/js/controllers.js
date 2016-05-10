@@ -287,11 +287,11 @@ $scope.query = {
         },function() {
     $scope.error = 'unable to get the todos';
         });
-    
-  $scope.getTodos1 = function () {
-    $scope.promise = $http.get('/api/todos', success).$promise;
-  };
-    
+    console.log($scope.todos.every);
+//  $scope.getTodos1 = function () {
+//    $scope.promise = $http.get('/api/todos', success).$promise;
+//  };
+//    
 }]);
 
 
