@@ -57,14 +57,19 @@
                     <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj se</md-button>
             </fieldlist>
         </section>
-     <div layout="column">
-         
-         <md-card flex="33" ng-repeat="todo in todos" class="md-whiteframe-2dp" md-row>
+<section>
+  <md-card flex="33" ng-repeat="todo in todos" class="md-whiteframe-2dp" md-row>
              <p md-column>{{todo.text}}</p>
              <p md-column>{{todo.date}}</p>
              <p md-column>{{todo.place}}</p>
          </md-card>
          
+
+</section>
+
+     <div layout="column">
+         
+       
         <md-card flex="33" class="md-whiteframe-2dp">      
               <section ng-controller="mainController">
                     <md-toolbar class="md-table-toolbar md-default">
