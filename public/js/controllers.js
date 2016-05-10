@@ -262,38 +262,62 @@ erpagWeather.factory('setEvent', function($http) {
   }; 
 });
 
+app.factory('todosService', function($http) {
+  var getTodos = function() {
+    return $http.get('/api/todos');
+  };
 
+  return {
+    getPoneys: getTodos
+  };
+});
 
-//table controler
-erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
-  'use strict';
-    $scope.todos=[];
-    
-    setEvent.loadEvents()
-        .success(function(data){
-            $scope.todos=data;
-            })
-        .error(function(data){  
-            console.log('error loading data');
-    
-    });  
-    
-    console.log('iz tabele factorija'+ $scope.todos);
-
-  $scope.query = {
+app.controller('tableController', function($scope, todosService) 
+$scope.query = {
     order: 'text',
     limit: 5,
     page: 1
-  };
+  }           
+               
+               
+  todosService.getTodos().then(function(data) {
+    $scope.todos = data;
+  }).catch(function() {
+    $scope.error = 'unable to get the todos';
+  });
+});
+
+//table controler
+//erpagWeather.controller('tableController', ['$http', '$scope','setEvent', function ($http, $scope, setEvent) {
+//  'use strict';
+//    $scope.todos=[];
+//    
+//    setEvent.loadEvents()
+//        .success(function(data){
+//            $scope.todos=data;
+//            })
+//        .error(function(data){  
+//            console.log('error loading data');
+//    
+//    })
+//    ;  
+//    
+//    console.log('iz tabele factorija'+ $scope.todos);
 //
-//  function success(desserts) {
-//    $scope.desserts = todos;
-//  }
-//
-//  $scope.getDesserts = function () {
-//    $scope.promise = $http.get('/api/todos', success).$promise;
+//  $scope.query = {
+//    order: 'text',
+//    limit: 5,
+//    page: 1
 //  };
-}]);
+////
+////  function success(desserts) {
+////    $scope.desserts = todos;
+////  }
+////
+////  $scope.getDesserts = function () {
+////    $scope.promise = $http.get('/api/todos', success).$promise;
+////  };
+//}]);
 
 // Logout controller
 erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
