@@ -292,17 +292,24 @@ $scope.query = {
     
     
 //               
-//  todosService.getTodos().then(function(data) {
-//      console.log('paket iz faktorija:'+data);
-//    $scope.todos = data;
-//        },function() {
-//    $scope.error = 'unable to get the todos';
-//        });
+  todosService.getTodos().then(function(data) {
+      console.log('paket iz faktorija:'+data);
+    $scope.todos = data;
+        },function() {
+    $scope.error = 'unable to get the todos';
+        });
+    
 //    console.log($scope.todos.every);
 ////  $scope.getTodos1 = function () {
 ////    $scope.promise = $http.get('/api/todos', success).$promise;
 ////  };
 ////    
+    
+    $scope.message=true;
+    $scope.onChange = function(cbState) {
+        $scope.message = cbState;
+        };
+    
 }]);
 
 
@@ -359,15 +366,15 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
     $scope.formData = {};
     
 
-    // when landing on the page, get all todos and show them
-//    $http.get('/api/todos')
-//        .success(function(data) {
-//            $scope.todos = data;
-//            console.log('ovo sam dobio iz baze:'+data);
-//        })
-//        .error(function(data) {
-//            console.log('Error: ' + data);
-//        });
+     //when landing on the page, get all todos and show them
+    $http.get('/api/todos')
+        .success(function(data) {
+            $scope.todos = data;
+            console.log('ovo sam dobio iz baze:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
 
     // when submitting the add form, send the text to the node API
     $scope.createTodo = function() {
@@ -395,6 +402,22 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
                 console.log('Error: ' + data);
             });
     };
+    
+///Material tabe parts
+    
+      $scope.query = {
+        order: 'text',
+        limit: 5,
+        page: 1
+      };
+//
+  function success(desserts) {
+    $scope.desserts = todos;
+  }
+////
+  $scope.getDesserts = function () {
+    $scope.promise = $http.get('/api/todos', success).$promise;
+  };
     
     $scope.message=true;
     $scope.onChange = function(cbState) {
