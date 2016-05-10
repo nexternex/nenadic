@@ -282,9 +282,9 @@ $scope.query = {
                
   todosService.getTodos().then(function(data) {
     $scope.todos = data;
-  }).catch(function() {
+        },function() {
     $scope.error = 'unable to get the todos';
-  });
+        });
     
   $scope.getDesserts = function () {
     $scope.promise = $http.get('/api/todos', success).$promise;
