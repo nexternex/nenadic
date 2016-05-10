@@ -415,7 +415,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
     $scope.desserts = todos;
   }
 ////
-  $scope.getDesserts = function () {
+  $scope.getTodos = function () {
     $scope.promise = $http.get('/api/todos', success).$promise;
   };
     
