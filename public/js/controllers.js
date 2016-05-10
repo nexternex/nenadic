@@ -268,7 +268,7 @@ erpagWeather.factory('todosService', function($http) {
   };
 
   return {
-    getPoneys: getTodos
+    getTodos: getTodos
   };
 });
 
