@@ -285,6 +285,11 @@ $scope.query = {
   }).catch(function() {
     $scope.error = 'unable to get the todos';
   });
+    
+  $scope.getDesserts = function () {
+    $scope.promise = $http.get('/api/todos', success).$promise;
+  };
+    
 }]);
 
 
