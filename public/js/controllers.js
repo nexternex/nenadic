@@ -262,7 +262,7 @@ erpagWeather.factory('setEvent', function($http) {
   }; 
 });
 
-app.factory('todosService', function($http) {
+erpagWeather.factory('todosService', function($http) {
   var getTodos = function() {
     return $http.get('/api/todos');
   };
@@ -272,7 +272,7 @@ app.factory('todosService', function($http) {
   };
 });
 
-app.controller('tableController', function($scope, todosService) 
+erpagWeather.controller('tableController', function($scope, todosService) 
 $scope.query = {
     order: 'text',
     limit: 5,
