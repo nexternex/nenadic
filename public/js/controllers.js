@@ -282,6 +282,7 @@ $scope.query = {
            
                
   todosService.getTodos().then(function(data) {
+      console.log('paket iz faktorija:'+data);
     $scope.todos = data;
         },function() {
     $scope.error = 'unable to get the todos';
