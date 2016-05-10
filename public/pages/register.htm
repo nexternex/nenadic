@@ -57,7 +57,7 @@
                     <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj se</md-button>
             </fieldlist>
         </section>
-<section>
+<section layout="column"  ng-controller="mainController">
   <md-card flex="33" ng-repeat="todo in todos" class="md-whiteframe-2dp" md-row>
              <p md-column>{{todo.text}}</p>
              <p md-column>{{todo.date}}</p>
