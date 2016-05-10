@@ -273,6 +273,7 @@ erpagWeather.factory('todosService', function($http) {
 });
 
 erpagWeather.controller('tableController',['$scope','todosService', function($scope, todosService) {
+$scope.todos=[];    
 $scope.query = {
     order: 'text',
     limit: 5,
