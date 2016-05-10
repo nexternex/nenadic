@@ -286,7 +286,7 @@ $scope.query = {
     $scope.error = 'unable to get the todos';
         });
     
-  $scope.getDesserts = function () {
+  $scope.getTodos1 = function () {
     $scope.promise = $http.get('/api/todos', success).$promise;
   };
     
