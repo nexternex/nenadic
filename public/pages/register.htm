@@ -69,6 +69,15 @@
 
      <div layout="column">
          
+         <md-divider></md-divider>
+          <md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
+          <md-list-item ng-repeat="todo in todos" ng-click="goToPerson(todo.name, $event)">
+            <p>{{ todo.name }}</p>
+            <md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-               secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>
+          </md-list-item>
+         
+         
+         
        
         <md-card flex="33" class="md-whiteframe-2dp">      
               <section ng-controller="mainController">
