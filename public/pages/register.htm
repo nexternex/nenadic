@@ -62,15 +62,14 @@
     <div md-card>   
         <md-list ng-controller="mainController">
           <md-subheader class="md-no-sticky">Dogadjai</md-subheader>
-          <md-list-item class="md-3-line" ng-repeat="item in todos">
+          <md-list-item class="md-3-line" ng-repeat="todo in todos">
            <md-icon md-svg-icon="android" aria-label="Twitter"></md-icon>
-            <div class="md-list-item-text" layout="column">
-              <h3>{{ item.text }}</h3>
-              <h4>{{item.place }}</h4>
-                <p>{{item.desc }}</p>
-                <label>
-                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
-                    </label>
+            <div class="md-list-item-text" layout="row">
+              <h3>{{todo.text }}</h3>
+              <h4>{{todo.place }}</h4>
+                <p>{{todo.desc }}</p>
+                <md-icon md-svg-icon="android" aria-label="Twitter" ng-click="deleteTodo(todo._id)" ></md-icon>
+
             </div>
           </md-list-item>
         </md-list>
