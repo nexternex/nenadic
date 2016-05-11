@@ -63,12 +63,12 @@
         <md-list ng-controller="mainController">
           <md-title class="md-no-sticky">Dogadjaji</md-title>
           <md-list-item class="md-3-line" ng-repeat="todo in todos">
-           <md-icon md-svg-icon="claendar" aria-label="Twitter" flex="20"></md-icon>
-            <div class="md-list-item-text" layout="row" >
+           <md-icon md-svg-icon="calendar" aria-label="cal" flex="20"></md-icon>
+            <div class="md-list-item-text" layout="row" flex="50">
               <h3>{{todo.text }}</h3>
               <h4>{{todo.place }}</h4>
                 <p>{{todo.desc }}</p>
-                <md-icon md-svg-icon="delete" aria-label="Twitter" ng-click="deleteTodo(todo._id)" ></md-icon>
+                <md-icon md-svg-icon="delete" aria-label="delete" ng-click="deleteTodo(todo._id)" ></md-icon>
             </div>
         <md-divider></md-divider> 
           </md-list-item>
