@@ -69,12 +69,16 @@
 
      <div layout="column">
          
-         <md-divider></md-divider>
-          <md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
-          <md-list-item ng-repeat="todo in todos" ng-click="goToPerson(todo.name, $event)">
-            <p>{{ todo.name }}</p>
-            <md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-               secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>
-          </md-list-item>
+  <md-list>
+      <md-subheader class="md-no-sticky">Dogadjai</md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="item in todos">
+        <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
+        <div class="md-list-item-text" layout="column">
+          <h3>{{ item.who }}</h3>
+          <h4>{{ item.what }}</h4>
+          <p>{{ item.notes }}</p>
+        </div>
+      </md-list-item>
          
          
          
