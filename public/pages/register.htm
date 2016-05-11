@@ -57,25 +57,16 @@
                     <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj se</md-button>
             </fieldlist>
         </section>
-<section layout="column"  ng-controller="mainController">
-  <md-card flex="33" ng-repeat="todo in todos" class="md-whiteframe-2dp" md-row>
-             <span md-column>{{todo.text}}</span>
-             <span md-column>{{todo.desc}}</span>
-<!--             <p md-column>{{todo.place}}</p>-->
-         </md-card>
-         
 
-</section>
-
-<div layout="column">       
+    <div layout="column">       
         <md-list ng-controller="mainController">
           <md-subheader class="md-no-sticky">Dogadjai</md-subheader>
           <md-list-item class="md-3-line" ng-repeat="item in todos">
            <md-icon md-svg-icon="android" aria-label="Twitter"></md-icon>
             <div class="md-list-item-text" layout="column">
               <h3>{{ item.text }}</h3>
-              <h4>{{ item.place }}</h4>
-              <p>{{  item.desc }}</p>
+              <h4>{{item.place }}</h4>
+                <p>{{item.desc }}</p>
             </div>
           </md-list-item>
         </md-list>
