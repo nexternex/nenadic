@@ -61,10 +61,10 @@
     <div class="md-whiteframe-2dp"  flex="33" layout="column">  
     <div md-card>   
         <md-list ng-controller="mainController">
-          <md-subheader class="md-no-sticky">Dogadjaji</md-subheader>
+          <md-title class="md-no-sticky">Dogadjaji</md-title>
           <md-list-item class="md-3-line" ng-repeat="todo in todos">
-           <md-icon md-svg-icon="android" aria-label="Twitter"></md-icon>
-            <div class="md-list-item-text" layout="row">
+           <md-icon md-svg-icon="android" aria-label="Twitter" flex="20"></md-icon>
+            <div class="md-list-item-text" layout="row" >
               <h3>{{todo.text }}</h3>
               <h4>{{todo.place }}</h4>
                 <p>{{todo.desc }}</p>
