@@ -4,6 +4,13 @@
     min-height: 300px;
 }
 
+HTMLJSCSS
+.dividerdemoBasicUsage .face {
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  width: 48px;
+  margin: 16px; }
+
 
 .fabSpeedDialdemoBasicUsage .text-capitalize {
   text-transform: capitalize; }
