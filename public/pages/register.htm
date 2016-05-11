@@ -14,6 +14,11 @@
           </md-toolbar>
 <!--\\\\\\\\\starting form layout-->
     <div  layout="row"  layout-margin layout-padding layout-align="space-between none">
+<md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="one">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Moj Nalog</h1>
+
     
         <section class="md-whiteframe-2dp md-background-white"  FLEX="33"  layout-margin layout-padding> 
             
@@ -57,6 +62,11 @@
                     <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj se</md-button>
             </fieldlist>
         </section>
+    </md-content>
+</md-tab>
+<md-tab>
+  <md-content class="md-padding">
+     <h1 class="md-display-2">Moj Nalog</h1>
 
     <div class="md-whiteframe-2dp"  flex="33" layout="column">  
     <div md-card>   
@@ -79,7 +89,9 @@
                    <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
         </fieldlist>   
         <div md-card id="calendar_basic" style="width: 1000px; height: 350px;"></div>
-     </div>  
+     </div>
+    </md-content>
+</md-tab>
 
 
 <!--
