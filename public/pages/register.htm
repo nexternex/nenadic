@@ -13,8 +13,8 @@
             </div>
           </md-toolbar>
 <!--\\\\\\\\\starting form layout-->
-    <div  layout="row"  layout-margin layout-padding layout-align="space-between none">
-<md-tabs md-dynamic-height md-border-bottom>
+<div  layout="row"  layout-margin layout-padding layout-align="space-between none">
+<md-tabs md-dynamic-height md-border-bottom flex="99">
       <md-tab label="one">
         <md-content class="md-padding">
           <h1 class="md-display-2">Moj Nalog</h1>    
@@ -62,10 +62,9 @@
             </section>
     </md-content>
 </md-tab>
-<md-tab>
+<md-tab label="two">
   <md-content class="md-padding">
-     <h1 class="md-display-2">Moji Dogadjai</h1>
-
+    <h1 class="md-display-2">Moji Dogadjai</h1>
     <div class="md-whiteframe-2dp"  flex="90" layout="column">  
     <div md-card>   
         <md-list ng-controller="mainController">
