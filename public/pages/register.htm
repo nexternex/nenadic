@@ -6,16 +6,15 @@
             layout-align="none"
             class="md-tall">
     
-        <md-toolbar md-scroll-shrink>
+<md-toolbar md-scroll-shrink>
             <div class="md-toolbar-tools" ng-controller="UserInfoCtrl" >
             Welcome {{auth.profile.nickname}} 
                 <img src="{{auth.profile.picture}}"></img>
             </div>
           </md-toolbar>
 <!--\\\\\\\\\starting form layout-->
-<div  layout="row"  layout-margin layout-padding layout-align="space-between none">
 <md-tabs md-dynamic-height md-border-bottom flex="99">
-      <md-tab label="one">
+<md-tab label="Moj Nalog">
         <md-content class="md-padding">
           <h1 class="md-display-2">Moj Nalog</h1>    
             <section class="md-whiteframe-2dp md-background-white"  FLEX="90"  layout-margin layout-padding> 
@@ -62,9 +61,9 @@
             </section>
     </md-content>
 </md-tab>
-<md-tab label="two">
+<md-tab label="Moji Dogadjaji">
   <md-content class="md-padding">
-    <h1 class="md-display-2">Moji Dogadjai</h1>
+    <h1 class="md-display-2">Moji Dogadjaji</h1>
     <div class="md-whiteframe-2dp"  flex="90" layout="column">  
     <div md-card>   
         <md-list ng-controller="mainController">
@@ -147,6 +146,5 @@
         </section>
 -->
 <!--FIEL UPLOAD-->
-	
-  </md-content>
+</md-content>
        
