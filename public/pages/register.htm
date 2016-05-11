@@ -64,10 +64,10 @@
           <md-title class="md-no-sticky">Dogadjaji</md-title>
           <md-list-item  ng-repeat="todo in todos">
            <md-icon md-svg-icon="calendar" aria-label="cal" flex="20"></md-icon>
-            <div class="md-list-item-text" layout="row" flex="50">
-              <h3>{{todo.text }}</h3>
-              <h4>{{todo.place }}</h4>
-                <p>{{todo.desc }}</p>
+            <div class="md-list-item-text" layout="row" flex="70" layout-align="space-between stretch">
+                <div>{{todo.text }}</div>
+                <div>{{todo.place }}</div>
+                <div>{{todo.desc }}</div>
                 <md-icon md-svg-icon="delete" aria-label="delete" ng-click="deleteTodo(todo._id)" ></md-icon>
             </div>
         <md-divider></md-divider> 
