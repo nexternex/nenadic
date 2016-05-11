@@ -61,22 +61,22 @@
     <div class="md-whiteframe-2dp"  flex="33" layout="column">  
     <div md-card>   
         <md-list ng-controller="mainController">
-          <md-subheader class="md-no-sticky">Dogadjai</md-subheader>
+          <md-subheader class="md-no-sticky">Dogadjaji</md-subheader>
           <md-list-item class="md-3-line" ng-repeat="todo in todos">
            <md-icon md-svg-icon="android" aria-label="Twitter"></md-icon>
             <div class="md-list-item-text" layout="row">
               <h3>{{todo.text }}</h3>
               <h4>{{todo.place }}</h4>
                 <p>{{todo.desc }}</p>
-                <md-icon md-svg-icon="android" aria-label="Twitter" ng-click="deleteTodo(todo._id)" ></md-icon>
-
+                <md-icon md-svg-icon="delete" aria-label="Twitter" ng-click="deleteTodo(todo._id)" ></md-icon>
+                  <md-divider></md-divider>
             </div>
           </md-list-item>
         </md-list>
         </div>
             <!-- FORM TO CREATE TODOS -->
         <fieldlist  id="popupContainer" ng-controller="dialogController" layout="column" id="todo-form"> 
-                  <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
+                   <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
         </fieldlist>   
         <div md-card id="calendar_basic" style="width: 1000px; height: 350px;"></div>
      </div> 
