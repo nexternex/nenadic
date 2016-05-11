@@ -68,6 +68,9 @@
               <h3>{{ item.text }}</h3>
               <h4>{{item.place }}</h4>
                 <p>{{item.desc }}</p>
+                <label>
+                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                    </label>
             </div>
           </md-list-item>
         </md-list>
