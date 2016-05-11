@@ -69,16 +69,17 @@
 
 <div layout="column">
          
-  <md-list>
+  <md-list ng-controller="mainController">
       <md-subheader class="md-no-sticky">Dogadjai</md-subheader>
       <md-list-item class="md-3-line" ng-repeat="item in todos">
-        <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
+<!--        <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />-->
         <div class="md-list-item-text" layout="column">
-          <h3>{{ item.who }}</h3>
-          <h4>{{ item.what }}</h4>
-          <p>{{ item.notes }}</p>
+          <h3>{{ item.name }}</h3>
+          <h4>{{ item.place }}</h4>
+          <p>{{ item.desc }}</p>
         </div>
       </md-list-item>
+    </md-list>
             <!-- FORM TO CREATE TODOS -->
         <fieldlist  id="popupContainer" ng-controller="dialogController" layout="column" id="todo-form"> 
                   <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
