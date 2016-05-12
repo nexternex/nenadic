@@ -378,10 +378,11 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 $scope.showDelete = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
-      controller: 'mainController',
-      templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
       targetEvent: ev,
+      ok:'Da, obrisi!',
+      cancel:'Ne, vrati me u listu',
+      textContent:'Ukoliko brisete piste',
       clickOutsideToClose:true,
       fullscreen: useFullScreen
     })
