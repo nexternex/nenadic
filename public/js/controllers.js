@@ -356,47 +356,22 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                 console.log('Error: ' + data);
             });
     };
-    
-// Appending dialog to document.body to cover sidenav in docs app
-//    $scope.showConfirm = function(ev) {
-//
-//    var confirm = $mdDialog.confirm()
-//          .title('Delete')
-//          .textContent('Ukoliko')
-//          .ariaLabel('Delete event')
-//          .targetEvent(ev)
-//          .ok('Da, obrisi!')
-//          .cancel('Ne, vrati me u listu');
-//        
-//    $mdDialog.show(confirm).then(function() {
-//          $scope.status = 'You decided to get rid of your debt.';
-//        }, function() {
-//          $scope.status = 'You decided to keep your debt.';
-//        });
-//    };
 
-$scope.showDelete = function(ev) {
-    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-    $mdDialog.show({
-      targetEvent: ev,
-      title:'Delete',
-      ok:'Da, obrisi!',
-      cancel:'Ne, vrati me u listu',
-      textContent:'Ukoliko brisete piste',
-      clickOutsideToClose:true,
-      fullscreen: useFullScreen
-    })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
-    });
-    $scope.$watch(function() {
-      return $mdMedia('xs') || $mdMedia('sm');
-    }, function(wantsFullScreen) {
-      $scope.customFullscreen = (wantsFullScreen === true);
-    });
-  };   
+  $scope.showAlert = function(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    // Modal dialogs should fully cover application
+    // to prevent interaction outside of dialog
+    $mdDialog.show(
+      $mdDialog.alert()
+        .parent(angular.element(document.querySelector('#popupContainer1')))
+        .clickOutsideToClose(true)
+        .title('This is an alert title')
+        .textContent('You can specify some description text in here.')
+        .ariaLabel('Alert Dialog Demo')
+        .ok('Got it!')
+        .targetEvent(ev)
+    );
+  };
     
 
     // delete a todo after checking it
@@ -443,7 +418,7 @@ $scope.showAdvanced = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
       controller: 'mainController',
-      templateUrl: '../pages/dialog1.htm',
+      templateUrl: '../pages/dialog2.htm',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
