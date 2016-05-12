@@ -358,22 +358,40 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     };
     
 // Appending dialog to document.body to cover sidenav in docs app
-    $scope.showConfirm = function(ev) {
+//    $scope.showConfirm = function(ev) {
+//
+//    var confirm = $mdDialog.confirm()
+//          .title('Delete')
+//          .textContent('Ukoliko')
+//          .ariaLabel('Delete event')
+//          .targetEvent(ev)
+//          .ok('Da, obrisi!')
+//          .cancel('Ne, vrati me u listu');
+//        
+//    $mdDialog.show(confirm).then(function() {
+//          $scope.status = 'You decided to get rid of your debt.';
+//        }, function() {
+//          $scope.status = 'You decided to keep your debt.';
+//        });
+//    };
 
+    
+      $scope.showConfirm = function(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
-          .title('Delete')
-          .textContent('Ukoliko')
-          .ariaLabel('Delete event')
+          .title('Would you like to delete your debt?')
+          .textContent('All of the banks have agreed to forgive you your debts.')
+          .ariaLabel('Lucky day')
           .targetEvent(ev)
-          .ok('Da, obrisi!')
-          .cancel('Ne, vrati me u listu');
+          .ok('Please do it!')
+          .cancel('Sounds like a scam');
     $mdDialog.show(confirm).then(function() {
-          $scope.status = 'You decided to get rid of your debt.';
-        }, function() {
-          $scope.status = 'You decided to keep your debt.';
-        });
-    };
-
+      $scope.status = 'You decided to get rid of your debt.';
+    }, function() {
+      $scope.status = 'You decided to keep your debt.';
+    });
+  };
+    
 
     // delete a todo after checking it
     $scope.deleteTodo = function(id) { 
@@ -435,10 +453,7 @@ $scope.showAdvanced = function(ev) {
     }, function(wantsFullScreen) {
       $scope.customFullscreen = (wantsFullScreen === true);
     });
-  };  
-//dijalog za brisnje
-
-    
+  };     
 }]);    
     
 
