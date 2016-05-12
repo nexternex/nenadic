@@ -77,15 +77,10 @@
                 <div>{{todo.place }}</div>
                 <div>{{todo.desc }}</div>
 <!--ng-click="deleteTodo(todo._id)-->
-                  <md-button class="md-primary md-raised" ng-click="showConfirm($event)" >
-                        Confirm Dialog
-                  </md-button>
                 <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm($event)" ></md-icon>
             </div>
-        <md-divider></md-divider> 
+            <md-divider></md-divider> 
           </md-list-item>
-        <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj se</md-button>
-
         </md-list>
         </div>
             <!-- FORM TO CREATE TODOS -->
