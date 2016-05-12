@@ -60,13 +60,13 @@
             </section>
     </md-content>
 </md-tab>
-<md-tab label="Moji Dogadjaji">
+<md-tab label="Moji Dogadjaji" ng-controller="dialogController">
   <md-content class="md-padding">
     <div class="md-whiteframe-2dp"  flex="90" layout="column">  
     <div md-card>   
         <md-list ng-controller="mainController">
           <md-toolbar class="md-no-sticky md-accent">Dogadjaji
-               <fieldlist  id="popupContainer" ng-controller="dialogController" layout="column" id="todo-form"> 
+               <fieldlist  id="popupContainer"  layout="column" id="todo-form"> 
                    <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
                 </fieldlist>  
             </md-toolbar>
@@ -77,7 +77,7 @@
                 <div>{{todo.place }}</div>
                 <div>{{todo.desc }}</div>
 <!--ng-click="deleteTodo(todo._id)-->
-                <md-icon ng-controller="dialogController" md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm($event)" ></md-icon>
+                <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm($event)" ></md-icon>
             </div>
         <md-divider></md-divider> 
           </md-list-item>
