@@ -369,7 +369,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         .textContent('Da li ste sigurni?')
         .ariaLabel('Alert Dialog Demo')
         .ok('Da, brisi!')
-        .cancel('Da, brisi!'))
+        .cancel('Da, brisi!')
         .targetEvent(ev)
     );
   };
