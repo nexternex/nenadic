@@ -427,6 +427,7 @@ $scope.showConfirm = function(ev) {
           .targetEvent(ev)
           .ok('Da, obrisi!')
           .cancel('Ne, vrati me u listu');
+    
     $mdDialog.show(confirm).then(function() {
         
         $scope.deleteTodo = function(id) { 
