@@ -363,7 +363,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
           .title('Obrisati dogadjaj?')
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
           .ariaLabel('Lucky day')
-          .targetEvent(ev)
+          .targetEvent(id)
           .ok('Da, obrisi!')
           .cancel('Otkazi');
     $mdDialog.show(confirm).then(function() {
