@@ -367,7 +367,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
           .ok('Da, obrisi!')
           .cancel('Otkazi');
     $mdDialog.show(confirm).then(function() {
-      $scope.status =  $scope.deleteTodo;
+      $scope.status =  $scope.deleteTodo();
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
