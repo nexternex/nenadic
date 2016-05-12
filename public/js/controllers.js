@@ -366,20 +366,11 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
           .ok('Da, obrisi!')
           .cancel('Ne, vrati me u listu');
     
-    $mdDialog.show(confirm).then(function() {
-        
-        $scope.deleteTodo = function(confirm.ev) { 
-            $http.delete('/api/todos/' + confirm.ev)
-            .success(function(data) {
-                $scope.todos = data;
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
+
+$mdDialog.show(confirm).then(function() {
+      $scope.status = 'You decided to get rid of your debt.';
     }, function() {
       $scope.status = 'You decided to keep your debt.';
-        };
     });
 };
     
