@@ -365,10 +365,11 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
       $mdDialog.alert()
         .parent(angular.element(document.querySelector('#popupContainer1')))
         .clickOutsideToClose(true)
-        .title('This is an alert title')
-        .textContent('You can specify some description text in here.')
+        .title('Brisanje dogadjaja')
+        .textContent('Da li ste sigurni?')
         .ariaLabel('Alert Dialog Demo')
-        .ok('Got it!')
+        .ok('Da, brisi!')
+        .cancel('Da, brisi!'))
         .targetEvent(ev)
     );
   };
