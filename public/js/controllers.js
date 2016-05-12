@@ -445,7 +445,7 @@ $scope.showConfirm = function(ev) {
         
         
     });
-    
+};
     
 }]);    
     
