@@ -355,9 +355,10 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
                 console.log('Error: ' + data);
             });
     };
-
+    
+// Appending dialog to document.body to cover sidenav in docs app
     $scope.showConfirm = function(ev) {
-    // Appending dialog to document.body to cover sidenav in docs app
+
     var confirm = $mdDialog.confirm()
           .title('Da li zelite da obriste ovaj dogadjaj?')
           .textContent('Ukoliko potvrdite, dogdjaj ce biti trajno ukonjen iz liste')
@@ -365,15 +366,13 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
           .targetEvent(ev)
           .ok('Da, obrisi!')
           .cancel('Ne, vrati me u listu');
-    
+    $mdDialog.show(confirm).then(function() {
+          $scope.status = 'You decided to get rid of your debt.';
+        }, function() {
+          $scope.status = 'You decided to keep your debt.';
+        });
+    };
 
-$mdDialog.show(confirm).then(function() {
-      $scope.status = 'You decided to get rid of your debt.';
-    }, function() {
-      $scope.status = 'You decided to keep your debt.';
-    });
-};
-    
 
     // delete a todo after checking it
     $scope.deleteTodo = function(id) { 
