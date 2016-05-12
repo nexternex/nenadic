@@ -77,6 +77,9 @@
                 <div>{{todo.place }}</div>
                 <div>{{todo.desc }}</div>
 <!--ng-click="deleteTodo(todo._id)-->
+                  <md-button class="md-primary md-raised" ng-click="showConfirm($event)" >
+                        Confirm Dialog
+                  </md-button>
                 <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm($event)" ></md-icon>
             </div>
         <md-divider></md-divider> 
