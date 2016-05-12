@@ -77,7 +77,7 @@
                 <div>{{todo.place }}</div>
                 <div>{{todo.desc }}</div>
 <!--ng-click="deleteTodo(todo._id)-->
-                <md-icon md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm($event)" ></md-icon>
+                <md-icon ng-controller="dialogController" md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm($event)" ></md-icon>
             </div>
         <md-divider></md-divider> 
           </md-list-item>

@@ -176,7 +176,7 @@ app.post('/api/photo',function(req,res){
 			// get and return all the todos after you create another
 			List.find(function(err, lists) {
 				if (err)
-					res.send(err)
+				res.send(err)
 				res.json(lists);
                 
 			});
