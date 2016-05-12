@@ -441,8 +441,10 @@ $scope.showConfirm = function(ev) {
             });
     }, function() {
       $scope.status = 'You decided to keep your debt.';
+    };
+        
+        
     });
-  )};
     
     
 }]);    
