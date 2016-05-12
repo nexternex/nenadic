@@ -356,6 +356,34 @@ erpagWeather.controller('mainController', ['$scope', '$http','setEvent', functio
             });
     };
 
+    $scope.showConfirm = function(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    var confirm = $mdDialog.confirm()
+          .title('Da li zelite da obriste ovaj dogadjaj?')
+          .textContent('Ukoliko potvrdite, dogdjaj ce biti trajno ukonjen iz liste')
+          .ariaLabel('Delete event')
+          .targetEvent(ev)
+          .ok('Da, obrisi!')
+          .cancel('Ne, vrati me u listu');
+    
+    $mdDialog.show(confirm).then(function() {
+        
+        $scope.deleteTodo = function(confirm.ev) { 
+            $http.delete('/api/todos/' + confirm.ev)
+            .success(function(data) {
+                $scope.todos = data;
+                console.log(data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    }, function() {
+      $scope.status = 'You decided to keep your debt.';
+        };
+    });
+};
+    
+
     // delete a todo after checking it
     $scope.deleteTodo = function(id) { 
         $http.delete('/api/todos/' + id)
@@ -418,34 +446,7 @@ $scope.showAdvanced = function(ev) {
     });
   };  
 //dijalog za brisnje
-$scope.showConfirm = function(ev) {
-    // Appending dialog to document.body to cover sidenav in docs app
-    var confirm = $mdDialog.confirm()
-          .title('Da li zelite da obriste ovaj dogadjaj?')
-          .textContent('Ukoliko potvrdite, dogdjaj ce biti trajno ukonjen iz liste')
-          .ariaLabel('Delete event')
-          .targetEvent(ev)
-          .ok('Da, obrisi!')
-          .cancel('Ne, vrati me u listu');
-    
-    $mdDialog.show(confirm).then(function() {
-        
-        $scope.deleteTodo = function(id) { 
-            $http.delete('/api/todos/' + id)
-            .success(function(data) {
-                $scope.todos = data;
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    }, function() {
-      $scope.status = 'You decided to keep your debt.';
-    };
-        
-        
-    });
-};
+
     
 }]);    
     
