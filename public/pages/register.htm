@@ -76,6 +76,9 @@
                 <div>{{todo.text }}</div>
                 <div>{{todo.place }}</div>
                 <div>{{todo.desc }}</div>
+                <fieldlist  id="popupContainer1" layout="column" id="todo-form"> 
+                   <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showDelete($event)">+</button>
+                </fieldlist>  
 <!--ng-click="deleteTodo(todo._id)-->
                 <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm($event)" ></md-icon>
             </div>

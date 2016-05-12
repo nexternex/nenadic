@@ -375,22 +375,27 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 //        });
 //    };
 
-    
-      $scope.showConfirm = function(ev) {
-    // Appending dialog to document.body to cover sidenav in docs app
-    var confirm = $mdDialog.confirm()
-          .title('Would you like to delete your debt?')
-          .textContent('All of the banks have agreed to forgive you your debts.')
-          .ariaLabel('Lucky day')
-          .targetEvent(ev)
-          .ok('Please do it!')
-          .cancel('Sounds like a scam');
-    $mdDialog.show(confirm).then(function() {
-      $scope.status = 'You decided to get rid of your debt.';
+$scope.showDelete = function(ev) {
+    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+    $mdDialog.show({
+      controller: 'mainController',
+      templateUrl: '../pages/dialog1.htm',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      fullscreen: useFullScreen
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
     }, function() {
-      $scope.status = 'You decided to keep your debt.';
+      $scope.status = 'You cancelled the dialog.';
     });
-  };
+    $scope.$watch(function() {
+      return $mdMedia('xs') || $mdMedia('sm');
+    }, function(wantsFullScreen) {
+      $scope.customFullscreen = (wantsFullScreen === true);
+    });
+  };   
     
 
     // delete a todo after checking it
