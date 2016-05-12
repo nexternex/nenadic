@@ -356,23 +356,22 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                 console.log('Error: ' + data);
             });
     };
-
-  $scope.showAlert = function(ev) {
+    
+ $scope.showConfirm = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app
-    // Modal dialogs should fully cover application
-    // to prevent interaction outside of dialog
-    $mdDialog.show(
-      $mdDialog.alert()
-        .parent(angular.element(document.querySelector('#popupContainer1')))
-        .clickOutsideToClose(true)
-        .title('Brisanje dogadjaja')
-        .textContent('Da li ste sigurni?')
-        .ariaLabel('Alert Dialog Demo')
-        .ok('Da, brisi!')
-        .cancel('Da, brisi!')
-        .targetEvent(ev)
-    );
-  };
+    var confirm = $mdDialog.confirm()
+          .title('Would you like to delete your debt?')
+          .textContent('All of the banks have agreed to forgive you your debts.')
+          .ariaLabel('Lucky day')
+          .targetEvent(ev)
+          .ok('Please do it!')
+          .cancel('Sounds like a scam');
+    $mdDialog.show(confirm).then(function() {
+      $scope.status = 'You decided to get rid of your debt.';
+    }, function() {
+      $scope.status = 'You decided to keep your debt.';
+    });
+  };    
     
 
     // delete a todo after checking it
