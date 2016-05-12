@@ -362,7 +362,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 
     var confirm = $mdDialog.confirm()
           .title('Da li zelite da obriste ovaj dogadjaj?')
-          .textContent('Ukoliko potvrdite, dogdjaj ce biti trajno ukonjen iz liste')
+          .textContent('Ukoliko potvrdite dogdjaj ce biti trajno ukonjen iz liste')
           .ariaLabel('Delete event')
           .targetEvent(ev)
           .ok('Da, obrisi!')
