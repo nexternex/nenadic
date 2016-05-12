@@ -357,7 +357,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             });
     };
     
- $scope.showConfirm = function(ev) {
+ $scope.showConfirm = function(id) {
     // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
           .title('Obrisati dogadjaj?')
@@ -367,7 +367,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
           .ok('Da, obrisi!')
           .cancel('Otkazi');
     $mdDialog.show(confirm).then(function() {
-      $scope.status =  $scope.deleteTodo();
+      $scope.status =  $scope.deleteTodo(id);
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
