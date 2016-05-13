@@ -74,18 +74,21 @@ $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function($q
         }]); 
 
 //factory koji vraca sve evente
-erpagWeather.factory('setEvent', function($http) {
+erpagWeather.factory('setEvent', ['$http', function($http) {
  return {
-    getAll:function(){ 
+        getAll:function(){ 
          $.getJSON("http://cors.io/spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json", function(data) {
           //first row "title" column
             
           console.log(data.feed.entry[0]['gsx$title']['$t']);
             });
-        return data;      
-        }
+            return data;      
+        },
+        getName:function(){ 
+            var nex='nenad nenadic';
+            return nex}
 
     };
-});
+}]);
 
 
