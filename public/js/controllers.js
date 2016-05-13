@@ -454,7 +454,7 @@ $scope.showAdvanced = function(ev) {
     
 
     
-erpagWeather.controller('list1Controller', ['$scope', '$http','nenadic', function ($scope, $http,nenadic) {
+erpagWeather.controller('list1Controller', ['$scope', '$http','nenadic', function ($scope, $http, nenadic) {
     $scope.formData = {};
     
     $scope.category={
