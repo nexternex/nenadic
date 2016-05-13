@@ -75,7 +75,7 @@ $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function($q
 
 //factory koji vraca sve evente
 erpagWeather.factory('setEvent', ['$http', function($http) {
- return {
+   return {
         getAll:function(){ 
          $.getJSON("http://cors.io/spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json", function(data) {
           //first row "title" column
