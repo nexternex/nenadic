@@ -454,7 +454,7 @@ $scope.showAdvanced = function(ev) {
     
 
     
-erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope, $http) {
+erpagWeather.controller('list1Controller', ['$scope', '$http','setEvent', function ($scope, $http,setEvent) {
     $scope.formData = {};
     
     $scope.category={
@@ -475,6 +475,8 @@ erpagWeather.controller('list1Controller', ['$scope', '$http', function ($scope,
       {id: '2', name: 'Velika'},
     ],
    };
+    
+    $scope.spredsheet = setEvent();
     
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
