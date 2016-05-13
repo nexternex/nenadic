@@ -95,8 +95,13 @@
 			</ul>
 			<div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
 		</section> <!-- cd-gallery -->
-        <section ng-controller="list1controller">
-            <div ng-repeat="spreadsheet.tip"></div>
+        <section ng-controller="list1Controller">
+            <div ng-repeat="item in spreadsheet">
+            <span>{{item.tip}}</span>
+            
+            
+            
+            </div>
         
         
         
