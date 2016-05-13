@@ -476,7 +476,8 @@ erpagWeather.controller('list1Controller', ['$scope', '$http','setEvent', functi
     ],
    };
     
-    $scope.spreadsheet = setEvent.all();
+    $scope.spreadsheet = setEvent.all;
+    console.log('spreadsheet'+spreadsheet[0]; )
     
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
