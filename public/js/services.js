@@ -86,7 +86,7 @@ erpagWeather.factory('nenadic', ['$http', function($http) {
         },
         getName:function(){ 
             var nex='nenad nenadic';
-            return nex}
+            return nex;}
 
     };
 }]);
