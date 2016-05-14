@@ -93,10 +93,10 @@ $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function($q
  
 erpagWeather.factory('setEvent', function(){
     return {
-        getAll: function(text){
+        say1: function(text){
             return "Factory says \"Hello " + text + "\"";
         },
-        getName: function(text){
+        say2: function(text){
             return "Factory says \"Goodbye " + text + "\"";
         }  
     }               
