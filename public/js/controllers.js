@@ -522,7 +522,7 @@ erpagWeather.factory('setEvent',function($http) {
          $.getJSON("https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?", function(data) {
           //first row "title" column
 //          console.log(data.feed.entry[0]['gsx$title']['$t']);
-             return data;
+             return data.feed.entry;
             });    
         }
 
@@ -530,26 +530,26 @@ erpagWeather.factory('setEvent',function($http) {
 })
 
 
-erpagWeather.controller('FetchController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
-    $scope.method = 'JSONP';
-    $scope.url = 'https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?';
-
-    $scope.fetch = function() {
-      $scope.code = null;
-      $scope.response = null;
-
-      $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
-        then(function(response) {
-          $scope.status = response.status;
-          $scope.data = response.data;
-        }, function(response) {
-          $scope.data = response.data || "Request failed";
-          $scope.status = response.status;
-      });
-    };
-
-    $scope.updateModel = function(method, url) {
-      $scope.method = method;
-      $scope.url = url;
-    };
-  }]); 
+//erpagWeather.controller('FetchController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
+//    $scope.method = 'JSONP';
+//    $scope.url = 'https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?';
+//
+//    $scope.fetch = function() {
+//      $scope.code = null;
+//      $scope.response = null;
+//
+//      $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
+//        then(function(response) {
+//          $scope.status = response.status;
+//          $scope.data = response.data;
+//        }, function(response) {
+//          $scope.data = response.data || "Request failed";
+//          $scope.status = response.status;
+//      });
+//    };
+//
+//    $scope.updateModel = function(method, url) {
+//      $scope.method = method;
+//      $scope.url = url;
+//    };
+//  }]); 
