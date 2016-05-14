@@ -506,15 +506,7 @@ erpagWeather.controller('FetchController', ['$scope', '$http', '$templateCache',
     
     
 //povuci sve iz google spreadsheet-a   ;
-    $scope.fromFactory = setEvent.getAll().then(function successCallback(response) {
-    // this callback will be called asynchronously
-    // when the response is available
-        console.log(response);
-  }, function errorCallback(response) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-        console.log('error feed')
-  });
+    $scope.fromFactory = setEvent.getAll();
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
