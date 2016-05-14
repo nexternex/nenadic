@@ -478,6 +478,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', functio
     
 //povuci sve iz google spreadsheet-a   ;
     $scope.fromFactory = setEvent.getAll();
+    console.log($scope.fromFactory);
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
@@ -530,26 +531,3 @@ erpagWeather.factory('setEvent',function($http) {
 })
 
 
-//erpagWeather.controller('FetchController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
-//    $scope.method = 'JSONP';
-//    $scope.url = 'https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?';
-//
-//    $scope.fetch = function() {
-//      $scope.code = null;
-//      $scope.response = null;
-//
-//      $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
-//        then(function(response) {
-//          $scope.status = response.status;
-//          $scope.data = response.data;
-//        }, function(response) {
-//          $scope.data = response.data || "Request failed";
-//          $scope.status = response.status;
-//      });
-//    };
-//
-//    $scope.updateModel = function(method, url) {
-//      $scope.method = method;
-//      $scope.url = url;
-//    };
-//  }]); 
