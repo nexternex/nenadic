@@ -454,7 +454,7 @@ $scope.showAdvanced = function(ev) {
     
 
     
-erpagWeather.controller('list1Controller', ['$scope','$http','nex', function ($scope,$http,nex) {
+erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', function ($scope,$http,setEvent) {
     $scope.formData = {};
     
     $scope.category={
@@ -479,8 +479,8 @@ erpagWeather.controller('list1Controller', ['$scope','$http','nex', function ($s
 //    $scope.spreadsheet = setEvent.getName();
 //    console.log('spreadsheet:'+setEvent.getName());
     
-       $scope.fromFactory = nex.say1("World");
-       console.log(nex.say1("World"));
+       $scope.fromFactory = setEvent.getAll();
+       console.log(setEvent.getName());
 //    $scope.fromService = testFactory.sayHello("World");
     
 // when landing on the page, get all lists and show them
@@ -521,3 +521,19 @@ erpagWeather.controller('list1Controller', ['$scope','$http','nex', function ($s
     
 }]);
 
+erpagWeather.factory('setEvent',function($http) {
+   return {
+        getAll:function(){ 
+         $.getJSON("http://cors.io/spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json", function(data) {
+          //first row "title" column
+            
+          console.log(data.feed.entry[0]['gsx$title']['$t']);
+            });
+            return data;      
+        },
+        getName:function(){ 
+            var nex='nenad nenadic';
+            return nex;}
+
+    };
+})
