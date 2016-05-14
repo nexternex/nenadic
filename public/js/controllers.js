@@ -531,7 +531,7 @@ erpagWeather.factory('setEvent',function($http) {
 
 
 erpagWeather.controller('FetchController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
-    $scope.method = 'GET';
+    $scope.method = '$.getJSON';
     $scope.url = 'https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?';
 
     $scope.fetch = function() {
