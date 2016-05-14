@@ -479,8 +479,8 @@ erpagWeather.controller('list1Controller', ['$scope','$http','nex', function ($s
 //    $scope.spreadsheet = setEvent.getName();
 //    console.log('spreadsheet:'+setEvent.getName());
     
-       $scope.fromFactory = nex.sayHello("World");
-       console.log(nex.sayHello("World"));
+       $scope.fromFactory = nex.say1("World");
+       console.log(nex.say1("World"));
 //    $scope.fromService = testFactory.sayHello("World");
     
 // when landing on the page, get all lists and show them
