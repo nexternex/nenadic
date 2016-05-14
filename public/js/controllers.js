@@ -454,7 +454,7 @@ $scope.showAdvanced = function(ev) {
     
 
     
-erpagWeather.controller('list1Controller', ['$scope', '$http','setEvent','testFactory', function ($scope, $http, setEvent, testFactory) {
+erpagWeather.controller('list1Controller', ['$scope','$http','setEvent','testFactory', function ($scope,$http,setEvent,testFactory) {
     $scope.formData = {};
     
     $scope.category={
