@@ -62,9 +62,9 @@
             <li class="mix color-{{item}}  check1 radio2 option3 " ng-repeat="item in fromFactory" on-finish-render="ngRepeatFinished">  
                     <md-card class="md-accent">
                         
-                        <md-card-title>
+                        <md-card-title ng-repeat="tem in items">
                               <md-card-title-text>
-                                <span class="md-headline">{{item}}</span>
+                                <span class="md-headline">{{item.adresa}}</span>
                               </md-card-title-text>
                         </md-card-title>
                         
