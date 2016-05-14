@@ -527,5 +527,7 @@ erpagWeather.factory('setEvent',function($http) {
 //          console.log(data.feed.entry[0]['gsx$title']['$t']);
              return data.feed.entry;
             });    
+        }
+
     };
 })
