@@ -74,29 +74,29 @@ $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function($q
         }]); 
 
 //factory koji vraca sve evente
-erpagWeather.factory('setEvent',function($http) {
-   return {
-        getAll:function(){ 
-         $.getJSON("http://cors.io/spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json", function(data) {
-          //first row "title" column
-            
-          console.log(data.feed.entry[0]['gsx$title']['$t']);
-            });
-            return data;      
-        },
-        getName:function(){ 
-            var nex='nenad nenadic';
-            return nex;}
-
-    };
-});
+//erpagWeather.factory('setEvent',function($http) {
+//   return {
+//        getAll:function(){ 
+//         $.getJSON("http://cors.io/spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json", function(data) {
+//          //first row "title" column
+//            
+//          console.log(data.feed.entry[0]['gsx$title']['$t']);
+//            });
+//            return data;      
+//        },
+//        getName:function(){ 
+//            var nex='nenad nenadic';
+//            return nex;}
+//
+//    };
+//});
  
-erpagWeather.factory('testFactory', function(){
+erpagWeather.factory('setEvent', function(){
     return {
-        sayHello: function(text){
+        getAll: function(text){
             return "Factory says \"Hello " + text + "\"";
         },
-        sayGoodbye: function(text){
+        getName: function(text){
             return "Factory says \"Goodbye " + text + "\"";
         }  
     }               
