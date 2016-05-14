@@ -57,15 +57,15 @@
 			</div> <!-- cd-tab-filter -->
 		</div> <!-- cd-tab-filter-wrapper -->
 
-		<section ng-controller="FetchController"  class="cd-gallery" >
+		<section ng-controller="ListController"  class="cd-gallery" >
             <button id="fetchbtn" ng-click="fetch()">fetch</button>
 			<ul>
-            <li class="mix color-{{item}}  check1 radio2 option3 " ng-repeat="item in data" on-finish-render="ngRepeatFinished">  
+            <li class="mix color-{{item}}  check1 radio2 option3 " ng-repeat="item in fromFactory" on-finish-render="ngRepeatFinished">  
                     <md-card class="md-accent">
                         
                         <md-card-title>
                               <md-card-title-text>
-                                <span class="md-headline">{{item.naziv}}</span>
+                                <span class="md-headline">{{item.naziv.$t}}</span>
                               </md-card-title-text>
                         </md-card-title>
                         
