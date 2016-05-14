@@ -524,7 +524,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', functio
 erpagWeather.factory('setEvent',function($http) {
    return {
         getAll:function(){ 
-         $.getJSON("http://cors.io/spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json", function(data) {
+         $.getJSON("http://cors.io/spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=jsonp", function(data) {
           //first row "title" column
             
           console.log(data.feed.entry[0]['gsx$title']['$t']);
