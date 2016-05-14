@@ -311,7 +311,6 @@ $scope.query = {
         };
     
 }]);
-
 // Logout controller
 erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
   auth.signout();
@@ -319,14 +318,11 @@ erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
   store.remove('token');
   $location.path('/timeline');
 });
-
 // UserInfoCtrl.js
 erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
   $scope.auth = auth;
   console.log('UserInfoCtrl controller used');  
 }]);
-
-
 //MAIN coontroler
 erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia', function ($scope, $http, $mdDialog, $mdMedia) {
      $scope.formData = {};
@@ -436,7 +432,6 @@ $scope.showAdvanced = function(ev) {
   };     
 }]);    
     
-
  erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
       this.bottomDirections = ['down', 'right'];
@@ -450,8 +445,6 @@ $scope.showAdvanced = function(ev) {
  erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
-    
-
 //LIST kontroler
 erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', function ($scope,$http,setEvent1) {
     $scope.formData = {};
@@ -477,7 +470,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', functi
         
     
 //povuci sve iz google spreadsheet-a   ;
-    $scope.fromFactory = setEvent.getAll();
+    $scope.fromFactory = setEvent1.getAll();
     console.log($scope.fromFactory);
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
