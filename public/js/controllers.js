@@ -454,7 +454,7 @@ $scope.showAdvanced = function(ev) {
     
 
     
-erpagWeather.controller('list1Controller', ['$scope', '$http','setEvent', function ($scope, $http, setEvent) {
+erpagWeather.controller('list1Controller', ['$scope', '$http','setEvent','testFactory', function ($scope, $http, setEvent,testFactory) {
     $scope.formData = {};
     
     $scope.category={
@@ -477,8 +477,9 @@ erpagWeather.controller('list1Controller', ['$scope', '$http','setEvent', functi
    };
  //povuci sve iz google spreadsheet-a   
     $scope.spreadsheet = setEvent.getName();
-    console.log('spreadsheet:'+setEvent.getname);
-    
+    console.log('spreadsheet:'+setEvent.getName);
+    console.log(testService.sayHello("World"));
+     $scope.fromService = testService.sayHello("World");
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {

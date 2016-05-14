@@ -91,4 +91,13 @@ erpagWeather.factory('setEvent',function($http) {
     };
 });
  
-
+erpagWeather.factory('testFactory', function(){
+    return {
+        sayHello: function(text){
+            return "Factory says \"Hello " + text + "\"";
+        },
+        sayGoodbye: function(text){
+            return "Factory says \"Goodbye " + text + "\"";
+        }  
+    }               
+});
