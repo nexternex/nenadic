@@ -453,7 +453,7 @@ $scope.showAdvanced = function(ev) {
     
 
 //LIST kontroler
-erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', function ($scope,$http,setEvent) {
+erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', function ($scope,$http,setEvent1) {
     $scope.formData = {};
     
     $scope.category={
@@ -517,7 +517,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', functio
     
 }]);
 
-erpagWeather.factory('setEvent',function($http) {
+erpagWeather.factory('setEvent1',function($http) {
    return {
         getAll:function(){ 
          $.getJSON("https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?", function(data) {
