@@ -91,7 +91,7 @@ $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function($q
 //    };
 //});
  
-erpagWeather.factory('setEvent', function(){
+erpagWeather.factory('nex', function(){
     return {
         say1: function(text){
             return "Factory says \"Hello " + text + "\"";
