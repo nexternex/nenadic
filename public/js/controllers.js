@@ -476,7 +476,7 @@ erpagWeather.controller('list1Controller', ['$scope', '$http','setEvent','testFa
     ],
    };
  //povuci sve iz google spreadsheet-a   
-    $scope.spreadsheet = setEvent.getName();
+    $scope.spreadsheet = setEvent.getName;
     console.log('spreadsheet:'+setEvent.getName);
     console.log(testService.sayHello("World"));
      $scope.fromService = testService.sayHello("World");
