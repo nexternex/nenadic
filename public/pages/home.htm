@@ -59,12 +59,12 @@
 
 		<section ng-controller="list1Controller"  class="cd-gallery" >
 			<ul>
-            <li class="mix color-{{list.gsx$adresa}}  check1 radio2 option3 " ng-repeat="item in fromFactory.items" on-finish-render="ngRepeatFinished">  
+            <li class="mix color-{{item.gsx$adresa}}  check1 radio2 option3 " ng-repeat="item in fromFactory.items" on-finish-render="ngRepeatFinished">  
                     <md-card class="md-accent">
                         
                         <md-card-title>
                               <md-card-title-text>
-                                <span class="md-headline">{{list.gsx$naziv}}</span>
+                                <span class="md-headline">{{item.gsx$naziv}}</span>
                               </md-card-title-text>
                         </md-card-title>
                         
