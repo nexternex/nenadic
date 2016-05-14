@@ -480,8 +480,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', functio
 //    console.log('spreadsheet:'+setEvent.getName());
     
        $scope.fromFactory = setEvent.sayHello("World");
-    
-//    console.log(testFactory.sayHello("World"));
+       console.log(setEvent.sayHello("World"));
 //    $scope.fromService = testFactory.sayHello("World");
     
 // when landing on the page, get all lists and show them
