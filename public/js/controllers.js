@@ -479,6 +479,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', functio
     
 //povuci sve iz google spreadsheet-a   ;
     $scope.fromFactory = setEvent.getAll();
+    console.log(fromFactory.data.)
     
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
@@ -523,7 +524,7 @@ erpagWeather.factory('setEvent',function($http) {
         getAll:function(){ 
          $.getJSON("https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?", function(data) {
           //first row "title" column
-          console.log(data.feed.entry);
+          console.log(data.feed.entry.[0]['gsx$title']['$t']);
              return data.feed.entry;
             });    
         },
