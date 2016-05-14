@@ -328,7 +328,6 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 
 
 //MAIN coontroler
-
 erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia', function ($scope, $http, $mdDialog, $mdMedia) {
      $scope.formData = {};
      $scope.status = '  ';
@@ -409,7 +408,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         };     
 }]);
 
-//Kontroler za unos novih eventa u listu eventa
+//Dialog Kontroler za unos novih eventa u listu eventa
 erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia', function ($scope,$mdDialog, $mdMedia) {
     $scope.status = '  ';
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
@@ -453,7 +452,7 @@ $scope.showAdvanced = function(ev) {
     }]);
     
 
-    
+//LIST kontroler
 erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', function ($scope,$http,setEvent) {
     $scope.formData = {};
     
@@ -475,9 +474,11 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', functio
       {id: '2', name: 'Velika'},
     ],
    };
- //povuci sve iz google spreadsheet-a   ;
-       $scope.fromFactory = setEvent.getAll();
-       console.log(setEvent.getName());
+    
+    
+    
+//povuci sve iz google spreadsheet-a   ;
+    $scope.fromFactory = setEvent.getAll();
     
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
@@ -523,6 +524,7 @@ erpagWeather.factory('setEvent',function($http) {
          $.getJSON("https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?", function(data) {
           //first row "title" column
           console.log(data.feed.entry);
+             return data.feed.entry;
             });    
         },
         getName:function(){ 
