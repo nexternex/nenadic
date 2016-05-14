@@ -475,6 +475,34 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent', functio
     ],
    };
     
+ 
+    
+erpagWeather.controller('FetchController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {
+    $scope.method = 'GET';
+    $scope.url = 'https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?';
+
+    $scope.fetch = function() {
+      $scope.code = null;
+      $scope.response = null;
+
+      $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
+        then(function(response) {
+          $scope.status = response.status;
+          $scope.data = response.data;
+        }, function(response) {
+          $scope.data = response.data || "Request failed";
+          $scope.status = response.status;
+      });
+    };
+
+    $scope.updateModel = function(method, url) {
+      $scope.method = method;
+      $scope.url = url;
+    };
+  }]);    
+    
+    
+    
     
     
 //povuci sve iz google spreadsheet-a   ;
