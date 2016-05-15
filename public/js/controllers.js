@@ -470,8 +470,11 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', functi
         
     
 //povuci sve iz google spreadsheet-a   ;
-    $scope.fromFactory = setEvent1.getAll();
-    console.log($scope.fromFactory);
+   var fromFactory = [];
+    
+    from.Factory=setEvent1.getAll();
+    
+    console.log(fromFactory);
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
