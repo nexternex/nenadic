@@ -470,8 +470,6 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', functi
         
     
 //povuci sve iz google spreadsheet-a   ;
-   var fromFactory = [];
-    
     $scope.fromFactory=setEvent1.getAll().then(function(){console.log(data)} ).error(function(){console.log('error')});
     
     console.log(fromFactory);
