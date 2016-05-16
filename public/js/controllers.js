@@ -542,3 +542,4 @@ erpagWeather.filter('sublist', function(){
   return function(input, range, start){
     return input.slice(start, start+range);
   };
+});
