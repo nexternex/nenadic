@@ -61,48 +61,43 @@
 		<section ng-controller="list1Controller"  class="cd-gallery" >
 <!--			<ul ng-repeat="item in lists" on-finish-render="ngRepeatFinished">-->
 
-                    <ul md-virtual-repeat="item in lists" on-finish-render="ngRepeatFinished">
-
-                        <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " >  
-                    
+                <ul md-virtual-repeat="item in lists" on-finish-render="ngRepeatFinished">
+                    <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " >  
                         <md-card class="md-accent">
-                        
-                        <md-card-title>
-                              <md-card-title-text>
-                                <span class="md-headline">{{item.gsx$naziv.$t}}</span>
-                              </md-card-title-text>
-                        </md-card-title>
-                        
+                            <md-card-title>
+                                  <md-card-title-text>
+                                    <span class="md-headline">{{item.gsx$naziv.$t}}</span>
+                                  </md-card-title-text>
+                            </md-card-title>
                         <span>{{item.gsx$tip.$t}}</span>
                         <span>{{item.gsx$telefon.$t}}</span>
                         <span>{{item.gsx$kontaktosoba.$t}}</span>     
                         <span>{{item.gsx$adresa.$t}}</span>
-<!--                        <img ng-src="../img/001.jpg" class="md-card-image" alt="Washed Out">-->
+                        <img ng-src="../img/001.jpg" class="md-card-image" alt="Washed Out">
                         
                         <md-card-actions layout="row" layout-align="end center">
                             
 <!--
-                          <md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
-                            <md-icon md-svg-icon="delete"></md-icon>
-                          </md-button>
+                              <md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
+                                <md-icon md-svg-icon="delete"></md-icon>
+                              </md-button>
 -->
                             
-                          <md-button class="md-icon-button" aria-label="Favorite">
-                            <md-icon md-svg-icon="favorite"></md-icon>
-                          </md-button>
-                            
-                          <md-button class="md-icon-button" aria-label="Settings">
-                            <md-icon md-svg-icon="calendar-plus"></md-icon>
-                          </md-button>
-                            
-                          <md-button class="md-icon-button" aria-label="Share">
-                            <md-icon md-svg-icon="open-in-new"></md-icon>
-                          </md-button>
+                              <md-button class="md-icon-button" aria-label="Favorite">
+                                <md-icon md-svg-icon="favorite"></md-icon>
+                              </md-button>
+
+                              <md-button class="md-icon-button" aria-label="Settings">
+                                <md-icon md-svg-icon="calendar-plus"></md-icon>
+                              </md-button>
+
+                              <md-button class="md-icon-button" aria-label="Share">
+                                <md-icon md-svg-icon="open-in-new"></md-icon>
+                              </md-button>
                             
                         </md-card-actions>
                     </md-card>
                 </li>
-                </div>
                 <li class="gap"></li>
 			</ul>
 			<div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
