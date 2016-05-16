@@ -485,7 +485,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', functi
 //            console.log('Error: ' + data);
 //        });
     
-    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?')
+    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
         .success(function(data) {
             $scope.lists = data;
             console.log('liste sam dobio iz baze:'+data);
