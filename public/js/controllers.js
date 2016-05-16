@@ -487,7 +487,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', functi
     
     $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
         .success(function(data) {
-            $scope.lists = data;
+            $scope.lists = data.feed.entry;
             console.log('liste sam dobio iz baze:'+data);
         })
         .error(function(data) {
