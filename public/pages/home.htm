@@ -58,10 +58,13 @@
 		</div> <!-- cd-tab-filter-wrapper -->
 
 		<section ng-controller="list1Controller"  class="cd-gallery" >
-			<ul>
-            <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " ng-repeat="item in lists" on-finish-render="ngRepeatFinished">  
+<!--			<ul ng-repeat="item in lists" on-finish-render="ngRepeatFinished">-->
+                <md-virtual-repeat-container>
+                    <div md-virtual-repeat="i in lists">
+
+                    <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " >  
                     
-                <md-card class="md-accent">
+                        <md-card class="md-accent">
                         
                         <md-card-title>
                               <md-card-title-text>
@@ -98,9 +101,11 @@
                         </md-card-actions>
                     </md-card>
                 </li>
+                </div>
                 <li class="gap"></li>
 			</ul>
 			<div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
+        <md-virtual-repeat-container>
 		</section> <!-- cd-gallery -->
         <section ng-controller="list1Controller">
             <div ng-repeat="item in fromFactory">
