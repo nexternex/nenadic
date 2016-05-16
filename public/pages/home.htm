@@ -104,10 +104,11 @@
             </md-virtual-repeat-container>
 		</section> <!-- cd-gallery -->
         <section ng-controller="list1Controller">
-            <div ng-repeat="item in fromFactory">
-                <span>{{item.gsx$adresa}}<span>
-                <span>{{item.gsx$adresa}}</span>
-            </div>
+            <md-virtual-repeat-container>
+                <div md-virtual-repeat>
+                    <span>{{item.gsx$tip.$t}}<span>
+                </div>
+            <md-virtual-repeat-container>
         
         
         
