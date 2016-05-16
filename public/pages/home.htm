@@ -59,8 +59,9 @@
 
 		<section ng-controller="list1Controller"  class="cd-gallery" >
 			<ul>
-            <li class="mix color-{{item}}  check1 radio2 option3 " ng-repeat="item in lists" on-finish-render="ngRepeatFinished">  
-                    <md-card class="md-accent">
+            <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " ng-repeat="item in lists" on-finish-render="ngRepeatFinished">  
+                    
+                <md-card class="md-accent">
                         
                         <md-card-title>
                               <md-card-title-text>
@@ -68,6 +69,10 @@
                               </md-card-title-text>
                         </md-card-title>
                         
+                        <span>{{item.gsx$tip.$t}}</span>
+                        <span>{{item.gsx$telefon.$t}}</span>
+                        <span>{{item.gsx$kontaktosoba.$t}}</span>     
+                        <span>{{item.gsx$adresa.$t}}</span>
 <!--                        <img ng-src="../img/001.jpg" class="md-card-image" alt="Washed Out">-->
                         
                         <md-card-actions layout="row" layout-align="end center">
