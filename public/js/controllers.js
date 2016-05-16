@@ -470,18 +470,28 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', functi
         
     
 //povuci sve iz google spreadsheet-a   ;
-    $scope.fromFactory=setEvent1.getAll();
+    $scope.fromFactory=setEvent1.getAll().then(function {});
     
     console.log($scope.fromFactory);
 // when landing on the page, get all lists and show them
-    $http.get('/api/lists')
+//    $http.get('/api/lists')
+//        .success(function(data) {
+//            $scope.lists = data;
+//            console.log('liste sam dobio iz baze:'+data);
+//        })
+//        .error(function(data) {
+//            console.log('Error: ' + data);
+//        });
+    
+    $http.get('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=?')
         .success(function(data) {
             $scope.lists = data;
             console.log('liste sam dobio iz baze:'+data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
-        });
+        });    
+    
 
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {
@@ -516,7 +526,7 @@ erpagWeather.factory('setEvent1',function($http) {
         getAll:function(){ 
          $.getJSON("https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK", function(data) {
           //first row "title" column
-          console.log("START:factory getAll");
+         console.log("START:factory getAll");
          console.log(data.feed.entry[0]['gsx$title']['$t']);
              return data.feed.entry;
             });    
