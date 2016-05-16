@@ -105,7 +105,7 @@
 		</section> <!-- cd-gallery -->
         <section ng-controller="list1Controller" class="cd-gallery" >
             <md-virtual-repeat-container>
-                <div md-virtual-repeat="item in lists" >
+                <div md-virtual-repeat="item in lists" on-finish-render="ngRepeatFinished" >
                     
                     <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " >  
                         <md-card class="md-accent">
