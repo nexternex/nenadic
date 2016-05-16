@@ -442,7 +442,7 @@ $scope.showAdvanced = function(ev) {
      console.log("maps kontroler entry");
     }]);
 //LIST1 kontroler
-erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', function ($scope,$http,setEvent1) {
+erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$http) {
     $scope.formData = {};
     
     $scope.category={
@@ -465,16 +465,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', functi
    };
         
     
-//povuci sve iz google spreadsheet-a   ;
-//    $scope.fromFactory=setEvent1.getAll()
-//        .then(function(res){
-//         console.log(res);
-//        })
-//        .error(function(err){
-//         console.log('error');
-//        });
-    
-    console.log($scope.fromFactory);
+
 // when landing on the page, get all lists and show them
 //    $http.get('/api/lists')
 //        .success(function(data) {
@@ -523,17 +514,17 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', functi
     
 }]);
 
-erpagWeather.factory('setEvent1',function($http) {
-   return {
-        getAll:function(){ 
-         $.getJSON("https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK", function(data) {
-          //first row "title" column
-         console.log("START:factory getAll");
-         console.log(data.feed.entry[0]['gsx$title']['$t']);
-             return data.feed.entry;
-            });    
-        }
-
-    };
-})
+//erpagWeather.factory('setEvent1',function($http) {
+//   return {
+//        getAll:function(){ 
+//         $.getJSON("https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK", function(data) {
+//          //first row "title" column
+//         console.log("START:factory getAll");
+//         console.log(data.feed.entry[0]['gsx$title']['$t']);
+//             return data.feed.entry;
+//            });    
+//        }
+//
+//    };
+//})
 
