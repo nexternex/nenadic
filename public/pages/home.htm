@@ -57,10 +57,10 @@
 			</div> <!-- cd-tab-filter -->
 		</div> <!-- cd-tab-filter-wrapper -->
         
-        <md-virtual-repeat-container>
+        
 		<section ng-controller="list1Controller"  class="cd-gallery" >
 <!--			<ul ng-repeat="item in lists" on-finish-render="ngRepeatFinished">-->
-
+            <md-virtual-repeat-container>
                 <ul md-virtual-repeat="item in lists" on-finish-render="ngRepeatFinished">
                     <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " >  
                         <md-card class="md-accent">
@@ -101,7 +101,7 @@
                 <li class="gap"></li>
 			</ul>
 			<div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
-        <md-virtual-repeat-container>
+            </md-virtual-repeat-container>
 		</section> <!-- cd-gallery -->
         <section ng-controller="list1Controller">
             <div ng-repeat="item in fromFactory">
