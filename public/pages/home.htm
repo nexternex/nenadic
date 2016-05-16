@@ -60,6 +60,7 @@
         
 		<section ng-controller="list1Controller"  class="cd-gallery" >
 <!--			<ul ng-repeat="item in lists" on-finish-render="ngRepeatFinished">-->
+<!--
             <md-virtual-repeat-container>
                 <ul md-virtual-repeat="item in lists" on-finish-render="ngRepeatFinished">
                     <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " >  
@@ -77,11 +78,9 @@
                         
                         <md-card-actions layout="row" layout-align="end center">
                             
-<!--
                               <md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
                                 <md-icon md-svg-icon="delete"></md-icon>
                               </md-button>
--->
                             
                               <md-button class="md-icon-button" aria-label="Favorite">
                                 <md-icon md-svg-icon="favorite"></md-icon>
@@ -102,10 +101,11 @@
 			</ul>
 			<div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
             </md-virtual-repeat-container>
+-->
 		</section> <!-- cd-gallery -->
         <section ng-controller="list1Controller">
             <md-virtual-repeat-container>
-                <div md-virtual-repeat>
+                <div md-virtual-repeat="item in lists" >
                     <span>{{item.gsx$tip.$t}}<span>
                 </div>
             <md-virtual-repeat-container>
