@@ -217,7 +217,6 @@ erpagWeather.controller('homeController',['$scope' ,function($scope){
    
     console.log('kraj home controlera');
 }]);
-
 // LOgin.js
 erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
     
@@ -243,9 +242,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
   console.log('pokusaj login controller used');
 
 }]);
-
 //factory return users
-
 erpagWeather.factory('setEvent', function($http) {
   return {
     loadEvents: function(data) {
@@ -311,14 +308,14 @@ $scope.query = {
         };
     
 }]);
-// Logout controller
+//Logout controller
 erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
   auth.signout();
   store.remove('profile');
   store.remove('token');
   $location.path('/timeline');
 });
-// UserInfoCtrl.js
+//UserInfoCtrl.js
 erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
   $scope.auth = auth;
   console.log('UserInfoCtrl controller used');  
@@ -403,7 +400,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         $scope.message = cbState;
         };     
 }]);
-
 //Dialog Kontroler za unos novih eventa u listu eventa
 erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia', function ($scope,$mdDialog, $mdMedia) {
     $scope.status = '  ';
@@ -431,7 +427,7 @@ $scope.showAdvanced = function(ev) {
     });
   };     
 }]);    
-    
+  //Menu controller  
  erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
       this.bottomDirections = ['down', 'right'];
@@ -441,11 +437,11 @@ $scope.showAdvanced = function(ev) {
       this.availableDirections = ['up', 'down', 'left', 'right'];
       this.selectedDirection = 'up';
     });
-
+//Maps controller
  erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
-//LIST kontroler
+//LIST1 kontroler
 erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', function ($scope,$http,setEvent1) {
     $scope.formData = {};
     
@@ -470,7 +466,15 @@ erpagWeather.controller('list1Controller', ['$scope','$http','setEvent1', functi
         
     
 //povuci sve iz google spreadsheet-a   ;
-    $scope.fromFactory=setEvent1.getAll().then(function {});
+    $scope.fromFactory=setEvent1.getAll()
+        .then(function(res){
+        
+        console.log(res);
+    })
+        .error(function(){
+        
+        console.log('eeror');
+    });
     
     console.log($scope.fromFactory);
 // when landing on the page, get all lists and show them
