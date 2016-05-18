@@ -512,7 +512,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 //            });
 //    };
 //    
-//}]);
+}]);
 
  erpagWeather.controller('list2Controller', function ($scope, $http, $timeout, cfpLoadingBar) {
     $scope.lists = [];
