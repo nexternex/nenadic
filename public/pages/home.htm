@@ -63,16 +63,14 @@
 			<ul>
                 
             <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " ng-repeat="item in  lists track by item.gsx$naziv.$t">  
-<!--                    <md-card class="md-primary hue-1">-->
+                    <md-card class="md-primary hue-1">
                         
-<!--
                         <md-card-title>
                               <md-card-title-text>
                                 <span class="md-headline">{{item.gsx$naziv.$t}}</span>
                               </md-card-title-text>
                         </md-card-title>
--->
-                        <md-card>
+                       
                         <span>{{item.gsx$tip.$t}}</span>
                         <span>{{item.gsx$telefon.$t}}</span>
                         <span>{{item.gsx$kontaktosoba.$t}}</span>     
@@ -80,16 +78,14 @@
                         <a href="{{item.gsx$web.$t}}"><p>{{item.gsx$web.$t}}</p></a>
 <!--                        <img ng-src="../img/001.jpg" class="md-card-image" alt="Washed Out">-->
                         
-                        <md-card-actions layout="row" layout-align="end center">
-                            </md-card>
-                            
 <!--
+                        <md-card-actions layout="row" layout-align="end center">
+                           
+                            
                           <md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
                             <md-icon md-svg-icon="delete"></md-icon>
                           </md-button>
--->
                             
-<!--
                           <md-button class="md-icon-button" aria-label="Settings">
                             <md-icon md-svg-icon="calendar-plus"></md-icon>
                           </md-button>
@@ -99,8 +95,8 @@
                           </md-button>
                             
                         </md-card-actions>
-                    </md-card>
 -->
+                    </md-card>
                 </li>
                 <li class="gap"></li>
 			</ul>
