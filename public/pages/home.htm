@@ -62,7 +62,7 @@
 		<section ng-controller="list2Controller"  class="cd-gallery" >
 			<ul>
                 
-            <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " ng-repeat="item in  ::lists track by item.gsx$naziv.$t">  
+            <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " ng-repeat="item in  lists track by item.gsx$naziv.$t">  
                     <md-card class="md-primary hue-1">
                         
                         <md-card-title>
@@ -76,7 +76,7 @@
                         <span>{{item.gsx$kontaktosoba.$t}}</span>     
                         <span>{{item.gsx$kontaktosoba.$t}}</span>
                         <a href="{{item.gsx$web.$t}}"><p>{{item.gsx$web.$t}}</p></a>
-<!--                        <img ng-src="../img/001.jpg" class="md-card-image" alt="Washed Out">-->
+                        <img ng-src="../img/001.jpg" class="md-card-image" alt="Washed Out">
                         
 <!--
                         <md-card-actions layout="row" layout-align="end center">
