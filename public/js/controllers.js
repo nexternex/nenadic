@@ -516,6 +516,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 
  erpagWeather.controller('list2Controller', function ($scope, $http, $timeout, cfpLoadingBar) {
     $scope.lists = [];
+    var lists_load=[];
     $scope.section = null;
   
 
@@ -523,7 +524,8 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 
       $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
           .success(function(data) {
-            $scope.lists = data.feed.entry;
+            lists_load = data.feed.entry;
+          $scope.lists=lists_load;
       });
     };
 
