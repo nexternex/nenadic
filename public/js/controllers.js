@@ -514,17 +514,34 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
 }]);
 
-//erpagWeather.factory('setEvent1',function($http) {
-//   return {
-//        getAll:function(){ 
-//         $.getJSON("https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK", function(data) {
-//          //first row "title" column
-//         console.log("START:factory getAll");
-//         console.log(data.feed.entry[0]['gsx$title']['$t']);
-//             return data.feed.entry;
-//            });    
-//        }
-//
-//    };
-//})
+ erpagWeather.controller('list2Controller', function ($scope, $http, $timeout, cfpLoadingBar) {
+    $scope.lists = [];
+    $scope.section = null;
+  
+
+    $scope.fetch = function() {
+
+      $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK').success(function(data) {
+        $scope.lists = data.feed.entry;
+      });
+    };
+
+    $scope.start = function() {
+      cfpLoadingBar.start();
+    };
+
+    $scope.complete = function () {
+      cfpLoadingBar.complete();
+    }
+
+
+    // fake the initial load so first time users can see it right away:
+    $scope.start();
+    $scope.fakeIntro = true;
+    $timeout(function() {
+      $scope.complete();
+      $scope.fakeIntro = false;
+    }, 750);
+
+});
 
