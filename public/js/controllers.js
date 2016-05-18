@@ -521,8 +521,9 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 
     $scope.fetch = function() {
 
-      $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK').success(function(data) {
-        $scope.lists = data.feed.entr;
+      $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
+          .success(function(data) {
+            $scope.lists = data.feed.entry;
       });
     };
 
