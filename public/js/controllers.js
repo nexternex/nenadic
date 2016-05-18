@@ -524,28 +524,12 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 
       $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
           .success(function(data) {
-            lists_load = data.feed.entry;
+         lists_load = data.feed.entry;
           $scope.lists=lists_load;
       });
     };
 
-    $scope.start = function() {
-      cfpLoadingBar.start();
-    };
-
-    $scope.complete = function () {
-      cfpLoadingBar.complete();
-    }
-    
     $scope.fetch();
-
-    // fake the initial load so first time users can see it right away:
-    $scope.start();
-    $scope.fakeIntro = true;
-    $timeout(function() {
-      $scope.complete();
-      $scope.fakeIntro = false;
-    }, 750);
 
 });
 
