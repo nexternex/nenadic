@@ -533,7 +533,8 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     $scope.complete = function () {
       cfpLoadingBar.complete();
     }
-
+    
+    $scope.fetch();
 
     // fake the initial load so first time users can see it right away:
     $scope.start();
