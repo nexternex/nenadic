@@ -60,10 +60,9 @@
 		</div> <!-- cd-tab-filter-wrapper -->
 
 		<section ng-controller="list2Controller"  class="cd-gallery" >
-        <a href="#" class="btn btn-primary btn-lg" ng-click="fetch()"><i class="glyphicon glyphicon-play-circle"></i> Real Example <span> (from reddit)</span></a>
 			<ul>
                 
-            <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " ng-repeat="item in lists track by item.gsx$naziv.$t">  
+            <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " ng-repeat="item in ::lists track by item.gsx$naziv.$t">  
                     <md-card class="md-primary hue-1">
                         
                         <md-card-title>
