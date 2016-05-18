@@ -476,43 +476,43 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 //            console.log('Error: ' + data);
 //        });
     
-    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
-        .success(function(data) {
-            $scope.lists = data.feed.entry;
-            console.log('liste sam dobio iz baze:'+data.feed.entry);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });    
-    
-
-// when submitting the add form, send the text to the node API
-    $scope.createList = function() {
-        $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
-            .success(function(data) {
-                $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.lists = data;
-                console.log(data);
-                alert("uspesno ste registrovali nalog koristeci list1");
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
-
-    // delete a list after checking it
-    $scope.deleteList = function(id) {
-        $http.delete('/api/lists/' + id)
-            .success(function(data) {
-                $scope.lists = data;
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
-    
-}]);
+//    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
+//        .success(function(data) {
+//            $scope.lists = data.feed.entry;
+//            console.log('liste sam dobio iz baze:'+data.feed.entry);
+//        })
+//        .error(function(data) {
+//            console.log('Error: ' + data);
+//        });    
+//    
+//
+//// when submitting the add form, send the text to the node API
+//    $scope.createList = function() {
+//        $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
+//            .success(function(data) {
+//                $scope.formData = {}; // clear the form so our user is ready to enter another
+//                $scope.lists = data;
+//                console.log(data);
+//                alert("uspesno ste registrovali nalog koristeci list1");
+//            })
+//            .error(function(data) {
+//                console.log('Error: ' + data);
+//            });
+//    };
+//
+//    // delete a list after checking it
+//    $scope.deleteList = function(id) {
+//        $http.delete('/api/lists/' + id)
+//            .success(function(data) {
+//                $scope.lists = data;
+//                console.log(data);
+//            })
+//            .error(function(data) {
+//                console.log('Error: ' + data);
+//            });
+//    };
+//    
+//}]);
 
  erpagWeather.controller('list2Controller', function ($scope, $http, $timeout, cfpLoadingBar) {
     $scope.lists = [];
@@ -522,7 +522,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     $scope.fetch = function() {
 
       $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK').success(function(data) {
-        $scope.lists = data.feed.entry;
+        $scope.lists = data.feed.entr;
       });
     };
 
