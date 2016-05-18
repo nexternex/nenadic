@@ -8,7 +8,7 @@ erpagWeather.run(function(auth) {
 });
  
 //config app
-erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,$mdThemingProvider,$mdIconProvider) {
+erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,$mdThemingProvider,$mdIconProvider,cfpLoadingBarProvider) {
   // ...
   authProvider.init({
     domain: 'myday.eu.auth0.com',
@@ -38,6 +38,9 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
       'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> cla
                     })
     .accentPalette('green');
+    
+    
+   cfpLoadingBarProvider.includeSpinner = false; 
     
 });
 
