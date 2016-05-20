@@ -55,11 +55,12 @@
 					<li class="filter" data-filter=".color-Fotograf"><a  data-type="color-4">Fotograf</a></li>
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
-<!--               <md-progress-linear  md-mode="indeterminate"></md-progress-linear>-->
+               <md-progress-linear ng-controller="list1Controller"  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear>
+<!--            <md-progress-circular md-mode="indeterminate" ng-show="isLoading"></md-progress-circular>-->
              
 		</div> <!-- cd-tab-filter-wrapper -->
 
-		<section ng-controller="list2Controller"  class="cd-gallery" >
+		<section ng-controller="list1Controller"  class="cd-gallery" >
 			<ul>
                 
             <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " ng-repeat="item in  lists track by item.gsx$naziv.$t">  
