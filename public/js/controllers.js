@@ -529,6 +529,16 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
       });
     };
 
+     
+    $scope.start = function() {
+      cfpLoadingBar.start();
+    };
+
+    $scope.complete = function () {
+      cfpLoadingBar.complete();
+    }
+     
+     
     $scope.fetch();
 
 });
