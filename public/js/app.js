@@ -8,7 +8,7 @@ erpagWeather.run(function(auth) {
 });
  
 //config app
-erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,$mdThemingProvider,$mdIconProvider,cfpLoadingBarProvider) {
+erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,$mdThemingProvider,$mdIconProvider) {
   // ...
   authProvider.init({
     domain: 'myday.eu.auth0.com',
@@ -40,7 +40,7 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     .accentPalette('green');
     
     
-   cfpLoadingBarProvider.includeSpinner = false; 
+  
     
 });
 
