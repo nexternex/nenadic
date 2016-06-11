@@ -428,7 +428,7 @@ $scope.showAdvanced = function(ev) {
   };     
 }]);    
   //Menu controller  
- erpagWeather.controller('MenuCtrl', function() {
+erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
       this.bottomDirections = ['down', 'right'];
       this.isOpen = false;
@@ -438,7 +438,7 @@ $scope.showAdvanced = function(ev) {
       this.selectedDirection = 'up';
     });
 //Maps controller
- erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
+erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
 //LIST1 kontroler
