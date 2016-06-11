@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
  
 //angular.module('angularRestfulAuth')
     erpagWeather.factory('Main', ['$http', '$localStorage', function($http, $localStorage){
