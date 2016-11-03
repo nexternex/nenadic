@@ -1,0 +1,7 @@
+- napisati detaljan opis za svaki serivs/direktivu{{"_file":"C:/Projekti/nenadic/public/js/services.js"}}
+
+# Nex App
+- proveriti strukturu{{"_file":"C:/Projekti/nenadic/public/js/app.js"}}
+- nauciti sve fajlove napamet{{"_file":"C:/Projekti/nenadic/public/js/app.js"}}
+- struktura angular/express{{"_file":"C:/Projekti/nenadic/views/partials/nav.ejs"}}
+

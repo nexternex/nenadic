@@ -258,7 +258,7 @@ erpagWeather.factory('setEvent', function($http) {
     }
   }; 
 });
-
+//ovde nedostaje opis
 erpagWeather.factory('todosService', function($http) {
   var getTodos = function() {
     return $http.get('/api/todos');
@@ -268,7 +268,7 @@ erpagWeather.factory('todosService', function($http) {
     getTodos: getTodos
   };
 });
-
+//ovde nedostaje opis
 erpagWeather.controller('tableController',['$scope','todosService','$http', function($scope, todosService,$http) {
 $scope.todos=[];    
 $scope.query = {
@@ -427,7 +427,7 @@ $scope.showAdvanced = function(ev) {
     });
   };     
 }]);    
-  //Menu controller  
+  //Menu controller ----ciricle meni 
 erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
       this.bottomDirections = ['down', 'right'];
@@ -441,7 +441,7 @@ erpagWeather.controller('MenuCtrl', function() {
 erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
-//LIST1 kontroler
+//LIST1 kontroler--sluzi da izlista sve ponude
 erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$http) {
     $scope.formData = {};
     
