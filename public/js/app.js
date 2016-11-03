@@ -17,7 +17,7 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   });
     
     jwtOptionsProvider.config({
-      whiteListedDomains: ['nenadic.heroku.com', 'localhost']
+      whiteListedDomains: ['nenadic.herokuapp.com', 'localhost']
     });
     
   // We're annotating this function so that the `store` is injected correctly when this file is minified
