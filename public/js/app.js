@@ -16,9 +16,9 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     loginUrl: '/index'
   });
     
-    jwtOptionsProvider.config({
-      whiteListedDomains: ['nenadic.herokuapp.com', 'localhost']
-    });
+//    jwtOptionsProvider.config({
+//      whiteListedDomains: ['nenadic.herokuapp.com', 'localhost']
+//    });
     
   // We're annotating this function so that the `store` is injected correctly when this file is minified
   jwtInterceptorProvider.tokenGetter = ['store', function(store) {
