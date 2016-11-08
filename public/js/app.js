@@ -16,6 +16,10 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     loginUrl: '/index'
   });
     
+     jwtOptionsProvider.config({
+      whiteListedDomains: ['nenadic.herokuapp.com', 'localhost']
+    });
+    
 //    jwtOptionsProvider.config({
 //      whiteListedDomains: ['nenadic.herokuapp.com', 'localhost']
 //    });
