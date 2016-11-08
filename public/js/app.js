@@ -16,10 +16,10 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     loginUrl: '/index'
     });
     
-//    jwtOptionsProvider.config({
-//      whiteListedDomains: ['nenadic.herokuapp.com', '*.google.com']
-//    });
-//    
+    jwtOptionsProvider.config({
+      whiteListedDomains: ['nenadic.herokuapp.com', 'spreadsheets.google.com']
+    });
+    
     
   // We're annotating this function so that the `store` is injected correctly when this file is minified
   jwtInterceptorProvider.tokenGetter = ['store', function(store) {
