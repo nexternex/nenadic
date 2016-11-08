@@ -65,13 +65,13 @@
   <md-content class="md-padding">
     <div class="md-whiteframe-2dp"  flex="90" layout="column">  
     <div md-card>   
-        <md-list ng-controller="mainController">
+        <md-content ng-controller="mainController">
           <md-toolbar class="md-no-sticky md-accent">Dogadjaji
                <fieldlist  id="popupContainer" ng-controller="dialogController" layout="column" id="todo-form"> 
                    <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
                 </fieldlist>  
             </md-toolbar>
-          <md-list-item  ng-repeat="todo in todos">
+          <md-content ng-repeat="todo in todos">
              
              <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="">
                 <md-card-title>
@@ -90,7 +90,7 @@
         </md-card>
 
 
-           <md-icon md-svg-icon="calendar" aria-label="cal" flex="20"></md-icon>
+<!--           <md-icon md-svg-icon="calendar" aria-label="cal" flex="20"></md-icon>-->
 <!--
             <div class="md-list-item-text" layout="row" flex="70" layout-align="space-between stretch">
                 <div>{{todo.text }}</div>
@@ -103,9 +103,9 @@
                 <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
             </div>
 -->
-            <md-divider></md-divider> 
-          </md-list-item>
-        </md-list>
+<!--            <md-divider></md-divider> -->
+          </md-content>
+        </md-content>
         </div>
             <!-- FORM TO CREATE TODOS -->
       
