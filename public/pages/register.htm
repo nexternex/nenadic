@@ -74,8 +74,7 @@
                     </fieldlist>  
                 </md-toolbar>
               <md-content >
-                <div flex-xs="20" flex-gt-xs="20" layout="row">
-                 <md-card md-accent  ng-repeat="todo in todos">
+                 <md-card md-accent   flex="33" ng-repeat="todo in todos">
                     <md-card-title>
                         <md-card-title-text>
                             <span class="md-headline">{{todo.text }}</span>
@@ -91,8 +90,6 @@
                             <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
                         </md-card-actions>
                     </md-card>
-                  </div>
-
               </md-content>
         </md-content>
         </div>
