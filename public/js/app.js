@@ -14,15 +14,12 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     domain: 'myday.eu.auth0.com',
     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
     loginUrl: '/index'
-  });
-    
-     jwtOptionsProvider.config({
-      whiteListedDomains: ['nenadic.herokuapp.com', '*.google.com']
     });
     
 //    jwtOptionsProvider.config({
-//      whiteListedDomains: ['nenadic.herokuapp.com', 'localhost']
+//      whiteListedDomains: ['nenadic.herokuapp.com', '*.google.com']
 //    });
+//    
     
   // We're annotating this function so that the `store` is injected correctly when this file is minified
   jwtInterceptorProvider.tokenGetter = ['store', function(store) {
