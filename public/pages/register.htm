@@ -61,50 +61,39 @@
             </section>
     </md-content>
 </md-tab>
+
+<!--Pocinje drugi tab-->
 <md-tab label="Moji Dogadjaji">
   <md-content class="md-padding">
-    <div class="md-whiteframe-2dp"  flex="90" layout="column">  
+    <div class="md-whiteframe-2dp md-background-purple"  flex="90" layout="column">  
     <div md-card>   
         <md-content ng-controller="mainController">
-          <md-toolbar class="md-no-sticky md-accent">Dogadjaji
-               <fieldlist  id="popupContainer" ng-controller="dialogController" layout="column" id="todo-form"> 
-                   <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
-                </fieldlist>  
-            </md-toolbar>
-          <md-content ng-repeat="todo in todos">
-            <div flex-xs="" flex-gt-xs="50" layout="column">
-             <md-card md-theme="'hue-1'" md-theme-watch="">
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">{{todo.text }}</span>
-                        <span class="md-subhead">{{todo.place }}</span>
-                    </md-card-title-text>
-                        <md-card-title-media>
-                            <div class="md-media-lg card-media"></div>
-                        </md-card-title-media>
-                    </md-card-title>
-                    <md-card-actions layout="row" layout-align="end center">
-                        <md-icon  md-svg-icon="account-alert" aria-label="edit"  ng-click="showConfirm(todo._id)" ></md-icon>
-                        <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
-                    </md-card-actions>
-                </md-card>
-              </div>
+              <md-toolbar class="md-no-sticky md-accent">Dogadjaji
+                   <fieldlist  id="popupContainer" ng-controller="dialogController" layout="column" id="todo-form"> 
+                       <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
+                    </fieldlist>  
+                </md-toolbar>
+              <md-content ng-repeat="todo in todos">
+                <div flex-xs="" flex-gt-xs="50" layout="column">
+                 <md-card md-theme="default" md-theme-watch="">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{todo.text }}</span>
+                            <span class="md-subhead">{{todo.place }}</span>
+                            <span class="md-subhead">{{todo.desc }}</span>
+                        </md-card-title-text>
+                            <md-card-title-media>
+                                <div class="md-media-lg card-media"></div>
+                            </md-card-title-media>
+                        </md-card-title>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-icon  md-svg-icon="account-alert" aria-label="edit"  ng-click="showConfirm(todo._id)" ></md-icon>
+                            <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
+                        </md-card-actions>
+                    </md-card>
+                  </div>
 
-<!--           <md-icon md-svg-icon="calendar" aria-label="cal" flex="20"></md-icon>-->
-<!--
-            <div class="md-list-item-text" layout="row" flex="70" layout-align="space-between stretch">
-                <div>{{todo.text }}</div>
-                <div>{{todo.place }}</div>
-                <div>{{todo.desc }}</div>
-                <fieldlist  id="popupContainer1" layout="column" id="todo-form"> 
-                   <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showDelete($event)">+</button>
-                </fieldlist>  
-                    ng-click="deleteTodo(todo._id)
-                <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
-            </div>
--->
-<!--            <md-divider></md-divider> -->
-          </md-content>
+              </md-content>
         </md-content>
         </div>
             <!-- FORM TO CREATE TODOS -->
