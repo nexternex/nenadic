@@ -72,7 +72,26 @@
                 </fieldlist>  
             </md-toolbar>
           <md-list-item  ng-repeat="todo in todos">
+             
+             <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{todo.text }}</span>
+                        <span class="md-subhead">{{todo.place }}</span>
+                    </md-card-title-text>
+                        <md-card-title-media>
+                            <div class="md-media-lg card-media"></div>
+                        </md-card-title-media>
+                    </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-icon  md-svg-icon="account-alert" aria-label="edit"  ng-click="showConfirm(todo._id)" ></md-icon>
+                <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
+            </md-card-actions>
+        </md-card>
+
+
            <md-icon md-svg-icon="calendar" aria-label="cal" flex="20"></md-icon>
+<!--
             <div class="md-list-item-text" layout="row" flex="70" layout-align="space-between stretch">
                 <div>{{todo.text }}</div>
                 <div>{{todo.place }}</div>
@@ -80,9 +99,10 @@
                 <fieldlist  id="popupContainer1" layout="column" id="todo-form"> 
                    <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showDelete($event)">+</button>
                 </fieldlist>  
-<!--ng-click="deleteTodo(todo._id)-->
+                    ng-click="deleteTodo(todo._id)
                 <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
             </div>
+-->
             <md-divider></md-divider> 
           </md-list-item>
         </md-list>
