@@ -25,7 +25,11 @@ body {
   color: #331d35;
   background-color: #e7e7e7;
 }
-
+.company_name{
+    font-family:'Shrikhand'!important;
+    font-weight: 800;    
+    color: #331d35;
+}
 a {
   color: #41307c;
   text-decoration: none;
