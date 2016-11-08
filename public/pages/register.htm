@@ -72,7 +72,7 @@
                 </fieldlist>  
             </md-toolbar>
           <md-content ng-repeat="todo in todos">
-             
+            <div flex-xs="" flex-gt-xs="50" layout="column">
              <md-card md-theme="'hue-1'" md-theme-watch="">
                 <md-card-title>
                     <md-card-title-text>
@@ -83,12 +83,12 @@
                             <div class="md-media-lg card-media"></div>
                         </md-card-title-media>
                     </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-icon  md-svg-icon="account-alert" aria-label="edit"  ng-click="showConfirm(todo._id)" ></md-icon>
-                <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
-            </md-card-actions>
-        </md-card>
-
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-icon  md-svg-icon="account-alert" aria-label="edit"  ng-click="showConfirm(todo._id)" ></md-icon>
+                        <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
+                    </md-card-actions>
+                </md-card>
+              </div>
 
 <!--           <md-icon md-svg-icon="calendar" aria-label="cal" flex="20"></md-icon>-->
 <!--
