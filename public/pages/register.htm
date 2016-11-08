@@ -73,9 +73,9 @@
                        <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
                     </fieldlist>  
                 </md-toolbar>
-              <md-content ng-repeat="todo in todos">
+              <md-content >
                 <div flex-xs="" flex-gt-xs="50" layout="column">
-                 <md-card md-theme="default" md-theme-watch="">
+                 <md-card md-theme="default" md-theme-watch="" ng-repeat="todo in todos">
                     <md-card-title>
                         <md-card-title-text>
                             <span class="md-headline">{{todo.text }}</span>
