@@ -45,9 +45,6 @@
 					<li class="placeholder"> 
 						<a data-type="all">All</a> <!-- selected option on mobile -->
 					</li>
-                    <li class="filter"><a class="day"  data-type="mesec">Dan</a></li>
-                    <li class="filter"><a class="month"  data-type="mesec">Mesec</a></li>
-                    <li class="filter"><a class="year"  data-type="mesec">Godina</a></li>
 					<li class="filter"><a class="selected"  data-type="all">All</a></li>
 					<li class="filter" data-filter=".color-Sale"><a  data-type="color-Sale">Sale</a></li>
 					<li class="filter" data-filter=".color-Muzika"><a  data-type="color-Muzika">Muzika</a></li>
@@ -77,12 +74,8 @@
                         <span>{{item.gsx$kontaktosoba.$t}}</span>     
                         <span>{{item.gsx$kontaktosoba.$t}}</span>
                         <a href="{{item.gsx$web.$t}}"><p>{{item.gsx$web.$t}}</p></a>
-                        
-                        
-<!--
+<!--                        action ikone na svakom od katloga-->
                         <md-card-actions layout="row" layout-align="end center">
-                           
-                            
                           <md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
                             <md-icon md-svg-icon="delete"></md-icon>
                           </md-button>
@@ -94,9 +87,8 @@
                           <md-button class="md-icon-button" aria-label="Share">
                             <md-icon md-svg-icon="open-in-new"></md-icon>
                           </md-button>
-                            
                         </md-card-actions>
--->
+
                     </md-card>
                 </li>
                 <li class="gap"></li>
