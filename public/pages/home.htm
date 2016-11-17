@@ -60,7 +60,7 @@
 		<section ng-controller="list1Controller"  class="cd-gallery" >
 			<ul>
             <md-virtual-repeat-container>  
-            <div class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-virtual-repeat="item in lists" > 
+            <div class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-virtual-repeat="item in lists" md-item-size="120" > 
 <!--            <li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in  lists track by item.gsx$naziv.$t" >  -->
                     <md-card class="md-accent">
                         <img ng-src="{{item.gsx$img.$t}}" class="md-card-image" alt="Washed Out">
