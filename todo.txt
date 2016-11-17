@@ -1,4 +1,5 @@
 - napisati detaljan opis za svaki serivs/direktivu{{"_file":"C:/Projekti/nenadic/public/js/services.js"}}
+- napraviti cutomer portal
 
 # Nex App
 - proveriti strukturu{{"_file":"C:/Projekti/nenadic/public/js/app.js"}}
