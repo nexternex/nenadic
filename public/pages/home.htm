@@ -63,11 +63,11 @@
             <li class="mix color-{{item.gsx$tip.$t}}  check1 radio2 option3 " ng-repeat="item in  lists track by item.gsx$naziv.$t">  
                     <md-card class="md-accent">
                         <img ng-src="{{item.gsx$img.$t}}" class="md-card-image" alt="Washed Out">
-                            <md-card-title>
-                                  <md-card-title-text>
-                                    <span class="md-headline company_name">{{item.gsx$naziv.$t}}</span>
-                                  </md-card-title-text>
-                            </md-card-title>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline company_name">{{item.gsx$naziv.$t}}</span>
+                            </md-card-title-text>
+                        </md-card-title>
                        
                         <span>{{item.gsx$tip.$t}}</span>
                         <span>{{item.gsx$telefon.$t}}</span>
@@ -79,11 +79,9 @@
                           <md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
                             <md-icon md-svg-icon="delete"></md-icon>
                           </md-button>
-                            
                           <md-button class="md-icon-button" aria-label="Settings">
                             <md-icon md-svg-icon="calendar-plus"></md-icon>
                           </md-button>
-                            
                           <md-button class="md-icon-button" aria-label="Share">
                             <md-icon md-svg-icon="open-in-new"></md-icon>
                           </md-button>
