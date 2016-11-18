@@ -562,7 +562,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 
 //conroler za infinite scroll
 
-erpagWeather.controller('infController', function($scope, Reddit) {
+erpagWeather.controller('InfController', function($scope, Reddit) {
   $scope.reddit = new Reddit();
 });
 
