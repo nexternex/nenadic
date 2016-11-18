@@ -587,8 +587,9 @@ erpagWeather.factory('Reddit', function($http) {
 //        .error(function(data) {
 //            console.log('Error: ' + data);
 //        });      
-
-    var url = "https://api.reddit.com/hot?after=" + this.after + "&jsonp=JSON_CALLBACK";
+     var url = "https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK";
+      
+//    var url = "https://api.reddit.com/hot?after=" + this.after + "&jsonp=JSON_CALLBACK";
     $http.jsonp(url).success(function(data) {
       var items = data.data.children;
       for (var i = 0; i < items.length; i++) {
