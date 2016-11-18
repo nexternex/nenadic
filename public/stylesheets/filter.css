@@ -229,6 +229,7 @@ xtab-filter
   }
   .no-touch .cd-tab-filter a:hover {
     color: #41307c;
+    cursor:pointer;
   }
   .cd-tab-filter a.selected {
     background: transparent;
