@@ -57,6 +57,7 @@
              
 		</div> <!-- cd-tab-filter-wrapper -->
 
+<!--
         <div  ng-controller='InfController'>
           <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
             <div ng-repeat='item in reddit.items'>
@@ -72,9 +73,10 @@
             <div ng-show='reddit.busy'>Loading data...</div>
           </div>
         </div>
+-->
         
-		<section ng-controller="infController"  class="cd-gallery" >
-          <div infinite-scroll="addMoreItems()">  
+		<section ng-controller="InfController"  class="cd-gallery" >
+          <div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
             <div class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in reddit.items" md-item-size="120" > 
 <!--            <li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in  lists track by item.gsx$naziv.$t" >  -->
                     <md-card class="md-accent">
