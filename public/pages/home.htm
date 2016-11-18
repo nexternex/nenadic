@@ -58,8 +58,7 @@
 		</div> <!-- cd-tab-filter-wrapper -->
 
 		<section ng-controller="list1Controller"  class="cd-gallery" >
-			<ul>
-            <md-container>  
+			<ul> 
             <div class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in lists"  > 
 <!--            <li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in  lists track by item.gsx$naziv.$t" >  -->
                     <md-card class="md-accent">
@@ -94,7 +93,6 @@
                     </md-card>
                 </div>
                 <li class="gap"></li>
-                </md-container>
 			</ul>
             <div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
         </section>
