@@ -567,7 +567,7 @@ erpagWeather.controller('InfController', function($scope, Reddit) {
 });
 
 // Reddit constructor function to encapsulate HTTP and pagination logic
-myApp.factory('Reddit', function($http) {
+erpagWeather.factory('Reddit', function($http) {
   var Reddit = function() {
     this.items = [];
     this.busy = false;
