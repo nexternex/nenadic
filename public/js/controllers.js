@@ -560,5 +560,45 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
 }]);
 
+//conroler za infinite scroll
 
+erpagWeather.controller('infController', function($scope, Reddit) {
+  $scope.reddit = new Reddit();
+});
+
+// Reddit constructor function to encapsulate HTTP and pagination logic
+myApp.factory('Reddit', function($http) {
+  var Reddit = function() {
+    this.items = [];
+    this.busy = false;
+    this.after = '';
+  };
+
+  Reddit.prototype.nextPage = function() {
+    if (this.busy) return;
+    this.busy = true;
+      
+//    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
+//        .success(function(data) {
+//            $scope.lists = data.feed.entry;
+//            $scope.isLoading = false;
+//            console.log('liste sam dobio iz baze:'+data.feed.entry);
+//        })
+//        .error(function(data) {
+//            console.log('Error: ' + data);
+//        });      
+
+    var url = "https://api.reddit.com/hot?after=" + this.after + "&jsonp=JSON_CALLBACK";
+    $http.jsonp(url).success(function(data) {
+      var items = data.data.children;
+      for (var i = 0; i < items.length; i++) {
+        this.items.push(items[i].data);
+      }
+      this.after = "t3_" + this.items[this.items.length - 1].id;
+      this.busy = false;
+    }.bind(this));
+  };
+
+  return Reddit;
+});
 
