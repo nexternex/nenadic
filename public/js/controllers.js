@@ -596,7 +596,7 @@ erpagWeather.factory('Reddit', function($http) {
       for (var i = 0; i < index.$t; i++) {
         this.items.push(items[i].data);
       }
-      this.after = "t3_" + this.index[this.index.$t - 1].id;
+//      this.after = "t3_" + this.index[this.index.$t - 1].id;
       this.busy = false;
     }.bind(this));
   };
