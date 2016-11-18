@@ -591,7 +591,7 @@ erpagWeather.factory('Reddit', function($http) {
       
 //    var url = "https://api.reddit.com/hot?after=" + this.after + "&jsonp=JSON_CALLBACK";
     $http.jsonp(url).success(function(data) {
-      var items = data.data.children;
+      var items = data.feed.entry;
       for (var i = 0; i < items.length; i++) {
         this.items.push(items[i].data);
       }
