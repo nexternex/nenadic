@@ -123,7 +123,7 @@ jQuery(document).ready(function($){
 	      		// resets the filter to show all item if input is empty
 	      		$('.cd-gallery ul').mixItUp('filter', 'all');
 	    	}
-	  	}, 200 );
+	  	}, 500 );
 	});
 });
 
