@@ -94,7 +94,7 @@ jQuery(document).ready(function($){
 	var $matching = $();
 
 	var delay = (function(){
-		var timer = 200;
+		var timer = 0;
 		return function(callback, ms){
 			clearTimeout (timer);
 		    timer = setTimeout(callback, ms);
@@ -106,7 +106,7 @@ jQuery(document).ready(function($){
 	  	delay(function(){
 	    	inputText = $(".cd-filter-content input[type='search']").val().toLowerCase();
 	   		// Check to see if input field is empty
-	    	if ((inputText.length) > 0) {            
+	    	if ((inputText.length) > 2) {            
 	      		$('.mix').each(function() {
 		        	var $this = $(this);
 		        
