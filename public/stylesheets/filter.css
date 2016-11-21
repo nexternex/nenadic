@@ -597,7 +597,7 @@ xcustom form elements
   content: '';
   display: block;
   position: absolute;
-    
+  left:0px;  
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
