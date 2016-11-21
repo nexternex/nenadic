@@ -106,7 +106,7 @@ jQuery(document).ready(function($){
 	  	delay(function(){
 	    	inputText = $(".cd-filter-content input[type='search']").val().toLowerCase();
 	   		// Check to see if input field is empty
-	    	if ((inputText.length) > 2) {            
+	    	if ((inputText.length) > 3) {            
 	      		$('.mix').each(function() {
 		        	var $this = $(this);
 		        
@@ -123,7 +123,7 @@ jQuery(document).ready(function($){
 	      		// resets the filter to show all item if input is empty
 	      		$('.cd-gallery ul').mixItUp('filter', 'all');
 	    	}
-	  	}, 500 );
+	  	},300 );
 	});
 });
 
