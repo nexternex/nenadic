@@ -58,6 +58,7 @@
 		</div> <!-- cd-tab-filter-wrapper -->
 
 		<section ng-controller="list1Controller"  class="cd-gallery" >
+            <div class="cd-fail-message">Želite da se vidi i Vaš oglas<strong>Registrujte se!</strong></div>
 			<ul> 
             <li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in  lists track by item.gsx$naziv.$t" >  
                     <md-card class="md-accent">
