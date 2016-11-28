@@ -22,46 +22,64 @@
                    <fieldlist ng-model="formData" ng-disabled="data.cb2" class="md-primary hue-1">
                        <!--prva grupa podataka-->
                     <md-content layout="column" flex="50">
-                        <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary">
-                        </md-switch>
-                    <div layout='row' flex="100">
-                        <md-input-container flex="45" ngmodel="state">
-                             <label>Ime:{{data.cb2}}</label>
-                            </br><input  type="text" name="name"  ng-model="formData.name"></input>{{name}}<br>
-                        </md-input-container>
+                            <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary">
+                            </md-switch>
+                            <div layout='row' flex="100">
+                                <md-input-container flex="45" ngmodel="state">
+                                     <label>Ime:{{data.cb2}}</label>
+                                    </br><input  type="text" name="name"  ng-model="formData.name"></input>{{name}}<br>
+                                </md-input-container>
 
-                         <md-input-container flex="45">
-                             <label> Prezime:</label> 		   
-                             </br><input  type="text" name="lastname"  ng-readonly="data.cb2"  ng-model="formData.lastname">{{ lastname }}<br>
-                        </md-input-container>
-                    </div>
-                    <div layout='row' flex="100">
-                         <md-input-container flex="45">
-                           <label>Naziv preduzeca:</label> 
-                             </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company">{{company}}<br>
-                         </md-input-container>
+                                 <md-input-container flex="45">
+                                     <label> Prezime:</label> 		   
+                                     </br><input  type="text" name="lastname"  ng-readonly="data.cb2"  ng-model="formData.lastname">{{ lastname }}<br>
+                                </md-input-container>
+                            </div>
+                            <div layout='row' flex="100">
+                                 <md-input-container flex="45">
+                                   <label>Naziv preduzeca:</label> 
+                                     </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company">{{company}}<br>
+                                 </md-input-container>
 
-                         <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" flex="45">
-                             <label>email:</label> 		   
-                             </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address">{{address}}<br>
-                         </md-input-container>
-                    </div>
-                    <div layout='row' flex="100">
-                        <md-input-container ng-disabled="data.cb2" flex='45'>
-                            <label for="category">Vrsta delatnosti: </label></br>
-                            <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
-                              <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
-                            </md-select>
-                        </md-input-container>
-                        <md-input-container flex='45'>
-                            <label for="size" >Velicina prikaza: </label></br>
-                            <md-select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
-                              <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
-                            </md-select>
-                        </md-input-container>
-                    </div>
-                            <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj se</md-button>
+                                 <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" flex="45">
+                                     <label>email:</label> 		   
+                                     </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address">{{address}}<br>
+                                 </md-input-container>
+                            </div>
+                            <div layout='row' flex="100">
+                                <md-input-container ng-disabled="data.cb2" flex='45'>
+                                    <label for="category">Vrsta delatnosti: </label></br>
+                                    <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
+                                      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                                    </md-select>
+                                </md-input-container>
+                                <md-input-container flex='45'>
+                                    <label for="size" >Velicina prikaza: </label></br>
+                                    <md-select name="size" ng-model="size.singleSelect" value="{{size.singleSelect}}">
+                                      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                            <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Snimi izmene</md-button>
                         </md-content>
+                     <!--druga grupa podataka-->
+                    <md-content layout="column" flex="50">
+                            <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary">
+                            </md-switch>
+                            <div layout='row' flex="100">
+                                <md-input-container flex="45" ngmodel="state">
+                                     <label>Adresa:{{data.cb2}}</label>
+                                    </br><input  type="text" name="name"  ng-model="formData.name"></input>{{name}}<br>
+                                </md-input-container>
+
+                                 <md-input-container flex="45">
+                                     <label> Grad:</label> 		   
+                                     </br><input  type="text" name="lastname"  ng-readonly="data.cb2"  ng-model="formData.lastname">{{ lastname }}<br>
+                                </md-input-container>
+                            </div>
+                            <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Snimi izmene</md-button>
+                        </md-content>
+
 
                         <div layout="column"></div>
                         <div layout="column"></div> 
