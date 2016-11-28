@@ -21,10 +21,10 @@
         <md-content class="md-padding">  
                    <fieldlist ng-model="formData" ng-disabled="data.cb2" class="md-primary hue-1">
                        <!--prva grupa podataka-->
-                    <md-content layout="row" flex="50">
+                    <md-content layout="column" flex="50">
                         <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary">
                         </md-switch>
-
+                    <div layout='row' flex="100">
                         <md-input-container flex="45" ngmodel="state">
                              <label>Ime:{{data.cb2}}</label>
                             </br><input  type="text" name="name"  ng-model="formData.name"></input>{{name}}<br>
@@ -34,7 +34,8 @@
                              <label> Prezime:</label> 		   
                              </br><input  type="text" name="lastname"  ng-readonly="data.cb2"  ng-model="formData.lastname">{{ lastname }}<br>
                         </md-input-container>
-
+                    </div>
+                    <div layout='row' flex="100">
                          <md-input-container flex="45">
                            <label>Naziv preduzeca:</label> 
                              </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company">{{company}}<br>
@@ -44,7 +45,8 @@
                              <label>email:</label> 		   
                              </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address">{{address}}<br>
                          </md-input-container>
-
+                    </div>
+                    <div layout='row' flex="100">
                         <md-input-container ng-disabled="data.cb2" flex='45'>
                             <label for="category">Vrsta delatnosti: </label></br>
                             <md-select name="category" ng-model="category.singleSelect" value="{{category.singleSelect}}">
@@ -57,6 +59,7 @@
                               <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
                             </md-select>
                         </md-input-container>
+                    </div>
                             <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Registruj se</md-button>
                         </md-content>
 
