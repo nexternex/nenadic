@@ -65,8 +65,6 @@
                         </md-content>
                      <!--druga grupa podataka-->
                     <md-content layout="column" flex="40">
-                            <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary">
-                            </md-switch>
                             <div layout='row' flex="100">
                                 <md-input-container flex="45" ngmodel="state">
                                      <label>Adresa:{{data.cb2}}</label>
@@ -78,12 +76,7 @@
                                      </br><input  type="text" name="lastname"  ng-readonly="data.cb2"  ng-model="formData.lastname">{{ lastname }}<br>
                                 </md-input-container>
                             </div>
-                            <md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Snimi izmene</md-button>
                         </md-content>
-
-
-                        <div layout="column"></div>
-                        <div layout="column"></div> 
                 </fieldlist>
     </md-content>
 </md-tab>
