@@ -27,22 +27,22 @@
                         <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary">
                         </md-switch>
 
-                        <md-input-container style="width:45%" ngmodel="state">
+                        <md-input-container flex="45" ngmodel="state">
                              <label>Ime:{{data.cb2}}</label>
                             </br><input  type="text" name="name"  ng-model="formData.name"></input>{{name}}<br>
                         </md-input-container>
 
-                         <md-input-container style="width:45%">
+                         <md-input-container flex="45">
                              <label> Prezime:</label> 		   
                              </br><input  type="text" name="lastname"  ng-readonly="data.cb2"  ng-model="formData.lastname">{{ lastname }}<br>
                         </md-input-container>
 
-                         <md-input-container style="width:45%">
+                         <md-input-container flex="45">
                            <label>Naziv preduzeca:</label> 
                              </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company">{{company}}<br>
                          </md-input-container>
 
-                         <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" style="width:45%">
+                         <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" flex="45">
                              <label>email:</label> 		   
                              </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address">{{address}}<br>
                          </md-input-container>
