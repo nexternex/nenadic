@@ -2,7 +2,7 @@
 <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
 <!-- Ovaj dijalog se koristi za unos dogadjaja-->
 <md-container layot="column" flex="90" layout-padding layout-margin ng-controller="mainController">
-     <h1>USER_ID: {{auth.profile.user_id}} </h1>
+     <h1 ng-model="formData.user_id" ng-show="false">{{auth.profile.user_id}}</h1>
     <md-input-container flex="90" >
       <label>Naslov</label>
       <input ng-model="formData.text" flex="90">
