@@ -8,7 +8,7 @@
         <md-fab-actions>
             
           <md-button aria-label="Uloguj se" class="md-fab md-raised md-mini md-primary" md-visible="tooltipVisible">
-            <md-icon md-svg-icon="android" aria-label="Uloguj se"></md-icon>
+            <md-icon md-svg-icon="android" aria-label="Uloguj se" ng-controller="LoginCtrl" ng-click="login()"></md-icon>
           </md-button>
             
           <md-button aria-label="Keiraj nalog" class="md-fab md-raised md-mini md-primary" ng-controller="LoginCtrl" ng-click="login()">
@@ -22,6 +22,11 @@
           <md-button aria-label="Timeline" class="md-fab md-raised md-mini">
             <md-icon md-svg-icon="alarm" aria-label="Raspored desavanja" ng-href="#timeline" md-visible="tooltipVisible"></md-icon>
           </md-button>
+            
+             <md-button aria-label="login" class="md-fab md-raised md-mini">
+            <md-icon md-svg-icon="map" aria-label="mapa" ng-href="#login" md-visible="tooltipVisible"></md-icon>
+          </md-button>
+            
         </md-fab-actions>
       </md-fab-speed-dial>
   </md-content>
