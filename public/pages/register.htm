@@ -9,8 +9,9 @@
 <md-toolbar md-scroll-shrink>
             <div class="md-toolbar-tools" ng-controller="UserInfoCtrl" >
                 Welcome {{auth.profile.nickname}} 
+                <p>{{auth.profile.user_id}} </p>
                 <img src="{{auth.profile.picture}}"></img>
-    <a href="#/">Switch to browser</a>
+                <a href="#/">Switch to browser</a>
             </div>
 </md-toolbar>
 <!--\\\\\\\\\starting form layout-->
@@ -91,6 +92,7 @@
                        <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
                     </fieldlist>  
                 </md-toolbar>
+            
               <md-content >
                  <md-card md-accent   flex="33" ng-repeat="todo in todos">
                     <md-card-title>

@@ -109,6 +109,7 @@ app.post('/api/photo',function(req,res){
             place : req.body.place,
             desc : req.body.desc,
             date : req.body.date,
+            id:req.body.id,
 			done : false
 		}, function(err, todo) {
 			if (err)
@@ -117,7 +118,7 @@ app.post('/api/photo',function(req,res){
 			// get and return all the todos after you create another
 			Todo.find(function(err, todos) {
 				if (err)
-					res.send(err)
+				res.send(err)
 				res.json(todos);
                 
 			});
