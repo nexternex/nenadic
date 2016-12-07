@@ -105,11 +105,11 @@ app.post('/api/photo',function(req,res){
 
 		// create a todo, information comes from AJAX request from Angular
 		Todo.create({
-			text : req.body.text,
+			text : req.body.text+"nexnexter",
             place : req.body.place,
             desc : req.body.desc,
             date : req.body.date,
-            id:req.body.user_id,
+            id:req.body.id,
 			done : false
 		}, function(err, todo) {
 			if (err)
