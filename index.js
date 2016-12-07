@@ -109,7 +109,7 @@ app.post('/api/photo',function(req,res){
             place : req.body.place,
             desc : req.body.desc,
             date : req.body.date,
-            id:req.body.id,
+            id:req.body.id+"moj_id",
 			done : false
 		}, function(err, todo) {
 			if (err)
