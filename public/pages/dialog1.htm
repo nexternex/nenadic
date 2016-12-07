@@ -1,24 +1,24 @@
 
 <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
 <!-- Ovaj dijalog se koristi za unos dogadjaja-->
-<md-container layot="column" flex="60" layout-padding layout-margin ng-controller="mainController">
+<md-container layot="column" flex="50" layout-padding layout-margin ng-controller="mainController">
     
-    <md-input-container flex="50" >
+    <md-input-container flex="70" >
       <label>Naslov</label>
-      <input ng-model="formData.text" flex="50">
+      <input ng-model="formData.text" flex="70">
     </md-input-container> 
 
-    <md-input-container flex="50">
+    <md-input-container flex="70">
       <label>Lokacija</label>
-      <input ng-model="formData.place" flex="50">
+      <input ng-model="formData.place" flex="70">
     </md-input-container>   
 
-    <md-input-container flex="50">
+    <md-input-container flex="70">
       <label>Opis</label>
-      <input ng-model="formData.desc" flex="50">
+      <input ng-model="formData.desc" flex="70">
     </md-input-container>   
 
-      <md-datepicker  flex="99" ng-model="formData.date" md-placeholder="Enter date" ></md-datepicker>
+      <md-datepicker  flex="70" ng-model="formData.date" md-placeholder="Enter date" ></md-datepicker>
       <!-- createToDo() WILL CREATE NEW TODOS -->
       <md-button  type="submit" class="md-fab md-primary" ng-click="createTodo()">
           <md-icon  md-svg-icon="content-save" aria-label="save"></md-icon>
