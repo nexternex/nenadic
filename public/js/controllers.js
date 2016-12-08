@@ -323,12 +323,13 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 //MAIN coontroler
 erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
      $scope.auth = auth;
+     $scope.user_id=auth.profile.user_id;
      $scope.formData = {};
      $scope.status = '  ';
      $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
      //when landing on the page, get all todos and show them
-    $http.get('/api/todos')
+    $http.get('/api/todos:id')
         .success(function(data) {
             $scope.todos = data;
             console.log('ovo sam dobio iz baze:'+data);
@@ -337,6 +338,20 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             console.log('Error: ' + data);
         });
 
+    $scope.getTodsId(function(user_id){
+    
+        $http.get('/api/todos'+id)
+        .success(function(data) {
+            $scope.todos = data;
+            console.log('ovo sam dobio iz baze:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+        
+        
+    });
+    
     // when submitting the add form, send the text to the node API
     $scope.createTodo = function() {
         
@@ -351,7 +366,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             });
     };
     
- $scope.showConfirm = function(id) {
+    $scope.showConfirm = function(id) {
     // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
           .title('Obrisati dogadjaj?')

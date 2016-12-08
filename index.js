@@ -86,10 +86,10 @@ app.post('/api/photo',function(req,res){
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
-	app.get('/api/todos', function(req, res) {
+	app.get('/api/todos:todo_id', function(req, res) {
 
 		// use mongoose to get all todos in the database
-		Todo.find(function(err, todos) {
+		Todo.find({ 'id': todo_id },function(err, todos) {
 
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
