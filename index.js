@@ -40,7 +40,7 @@ console.log('MongoDB connection successful.');
 });
 
 //database model
-var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',user_id:'string' });
+var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',id:'string' });
 var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string' });
 
 var Todo = mongoose.model('Todo', schema);
@@ -96,7 +96,7 @@ app.post('/api/photo',function(req,res){
 				res.send(err)
 
 			res.json(todos); // return all todos in JSON format
-            console.log("R2D2 says:nasao sam:"+todos);
+//            console.log("R2D2 says:nasao sam:"+todos);
 		});
 	});
 
@@ -108,7 +108,7 @@ app.post('/api/photo',function(req,res){
             place : req.body.place,
             desc : req.body.desc,
             date : req.body.date,
-            user_id: req.body.id,
+            id: req.body.id+"AL SAM GLADAN",
 			done : false
             
 		}, function(err, todo) {
