@@ -86,7 +86,7 @@ app.post('/api/photo',function(req,res){
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
-	app.get('/api/todos', function(req, res) {
+	app.get('/api/todos:id', function(req, res) {
 
 		// use mongoose to get all todos in the database
 		Todo.find(function(err, todos) {
@@ -108,7 +108,7 @@ app.post('/api/photo',function(req,res){
             place : req.body.place,
             desc : req.body.desc,
             date : req.body.date,
-            id: req.body.id,
+            user_id: req.body.id,
 			done : false
             
 		}, function(err, todo) {
@@ -148,10 +148,10 @@ app.post('/api/photo',function(req,res){
 	app.get('/api/lists', function(req, res) {
         
 
-		// use mongoose to get all todos in the database
+// use mongoose to get all todos in the database
 		List.find(function(err, lists) {
 
-			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
 
@@ -159,7 +159,7 @@ app.post('/api/photo',function(req,res){
             console.log("R2D2 says:nasao sam list:"+lists);
 		});
 	});
-// create list and send back all lists after creation
+// create oglasi/lisitng and send back all lists after creation
 	app.post('/api/lists', function(req, res) {
         console.log(req.body.formData.name+":"+req.body.size.singleSelect);
 		// create a list, information comes from AJAX request from Angular
@@ -173,16 +173,13 @@ app.post('/api/photo',function(req,res){
 		}, function(err, list) {
 			if (err)
 				res.send(err);
-
 			// get and return all the todos after you create another
 			List.find(function(err, lists) {
 				if (err)
 				res.send(err)
-				res.json(lists);
-                
+				res.json(lists);  
 			});
 		});
-
 	});
 // delete a list
 	app.delete('/api/lists/:list_id', function(req, res) {
@@ -195,7 +192,7 @@ app.post('/api/photo',function(req,res){
 			// get and return all the todos after you create another
 			List.find(function(err, lists) {
 				if (err)
-					res.send(err)
+				res.send(err)
 				res.json(lists);
 			});
 		});
