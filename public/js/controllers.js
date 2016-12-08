@@ -341,6 +341,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.createTodo = function() {
         
         $scope.formData.id=auth.profile.user_id;
+        console.log(formData.id);
         
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
