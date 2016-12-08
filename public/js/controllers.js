@@ -323,6 +323,9 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 //MAIN coontroler
 erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
      $scope.auth = auth;
+    
+     var user_id=auth.profile.iser_id;
+    
      $scope.formData = {};
      $scope.status = '  ';
      $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
@@ -340,7 +343,8 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     // when submitting the add form, send the text to the node API
     $scope.createTodo = function() {
         
-        $scope.formData.id=$scope.auth.profile.user_id;
+        $scope.formData.id=user_id;
+        
         console.log(formData.id);
         
         $http.post('/api/todos', $scope.formData)
