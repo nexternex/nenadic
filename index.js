@@ -108,7 +108,7 @@ app.post('/api/photo',function(req,res){
             place : req.body.place,
             desc : req.body.desc,
             date : req.body.date,
-            id: req.body.id+"AL SAM GLADAN",
+            id: req.body.id,
 			done : false
             
 		}, function(err, todo) {
