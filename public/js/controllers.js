@@ -329,21 +329,21 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
      $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
      //when landing on the page, get all todos and show them
-    $http.get('/api/todos:id')
-        .success(function(data) {
-            $scope.todos = data;
-            console.log('ovo sam dobio iz baze:'+data);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
+//    $http.get('/api/todos')
+//        .success(function(data) {
+//            $scope.todos = data;
+//            console.log('ovo sam dobio iz baze:'+data);
+//        })
+//        .error(function(data) {
+//            console.log('Error: ' + data);
+//        });
 
     $scope.getTodsId(function(user_id){
     
         $http.get('/api/todos'+id)
         .success(function(data) {
             $scope.todos = data;
-            console.log('ovo sam dobio iz baze:'+data);
+            console.log('ovo sam dobio iz baze kao filetr:'+data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
