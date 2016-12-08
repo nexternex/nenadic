@@ -40,7 +40,7 @@ console.log('MongoDB connection successful.');
 });
 
 //database model
-var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',id:'string' });
+var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',user_id:'string' });
 var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string' });
 
 var Todo = mongoose.model('Todo', schema);
