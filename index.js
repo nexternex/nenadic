@@ -86,7 +86,7 @@ app.post('/api/photo',function(req,res){
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
-	app.get('/api/todos:id', function(req, res) {
+	app.get('/api/todos', function(req, res) {
 
 		// use mongoose to get all todos in the database
 		Todo.find(function(err, todos) {
