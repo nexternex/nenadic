@@ -100,33 +100,33 @@ app.post('/api/photo',function(req,res){
 		});
 	});
 
-	// create todo and send back all todos after creation
+// create todo and send back all todos after creation
 	app.post('/api/todos', function(req, res) {
-
 		// create a todo, information comes from AJAX request from Angular
 		Todo.create({
-			text : req.body.text+"nexnexter",
+			text : req.body.text,
             place : req.body.place,
             desc : req.body.desc,
             date : req.body.date,
-            id:req.body.id+"moj_id",
+            id: req.body.id,
 			done : false
+            
 		}, function(err, todo) {
 			if (err)
 				res.send(err);
 
-			// get and return all the todos after you create another
-			Todo.find(function(err, todos) {
+// get and return all the todos after you create another
+        Todo.find(function(err, todos) {
 				if (err)
 				res.send(err)
-				res.json(todos);
-                
+				res.json(todos); 
+            console.log("Liste posle upisa:"+ todos)
 			});
 		});
 
 	});
 
-	// delete a todo
+// delete a todo
 	app.delete('/api/todos/:todo_id', function(req, res) {
 		Todo.remove({
 			_id : req.params.todo_id
@@ -134,7 +134,7 @@ app.post('/api/photo',function(req,res){
 			if (err)
 				res.send(err);
 
-			// get and return all the todos after you create another
+// get and return all the todos after you create another
 			Todo.find(function(err, todos) {
 				if (err)
 					res.send(err)
