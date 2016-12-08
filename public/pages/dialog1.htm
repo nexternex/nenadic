@@ -2,7 +2,7 @@
 <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
 <!-- Ovaj dijalog se koristi za unos dogadjaja-->
 <md-container layot="column" flex="90" layout-padding layout-margin ng-controller="mainController">
-     <h1 ng-model="formData.id" ng-value="{{auth.profile.user_id}}">{{auth.profile.user_id}}</h1>
+     <h1 ng-model="formData.id" ng-value={{auth.profile.user_id}}>{{auth.profile.user_id}}</h1>
     <md-input-container flex="90" >
       <label>Naslov</label>
       <input ng-model="formData.text" flex="90">
@@ -22,6 +22,6 @@
       <!-- createToDo() WILL CREATE NEW TODOS -->
       <md-button  type="submit" class="md-fab md-primary" ng-click="createTodo()">
           <md-icon  md-svg-icon="content-save" aria-label="save"></md-icon>
-     </button>
+      </md-button>
     
 </md-container>
