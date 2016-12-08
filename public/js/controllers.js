@@ -338,7 +338,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 //            console.log('Error: ' + data);
 //        });
 
-    $scope.getTodsId=function(user_id){
+   
     
        $http.get('/api/todos'+user_id)
         .success(function(data) {
@@ -350,7 +350,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         });
         
         
-    };
+    
     
     // when submitting the add form, send the text to the node API
     $scope.createTodo = function() {
