@@ -340,10 +340,10 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 
     $scope.getTodsId=function(user_id){
     
-        $http.get('/api/todos'+id)
+       $http.get('/api/todos'+id)
         .success(function(data) {
             $scope.todos = data;
-            console.log('ovo sam dobio iz baze kao filetr:'+data);
+            console.log('filetr data by id:'+data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
