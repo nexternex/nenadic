@@ -126,7 +126,7 @@ app.post('/api/photo',function(req,res){
 	});
 
 // delete a todo
-	app.delete('/api/todos/:todo_id/:user_id', function(req, res) {
+	app.delete('/api/todos/:todo_id', function(req, res) {
 		Todo.remove({
 			_id : req.params.todo_id
 		}, function(err, todo) {
@@ -134,7 +134,7 @@ app.post('/api/photo',function(req,res){
 				res.send(err);
 
 // get and return all the todos after you delete another
-			Todo.find({ 'id': req.params.user_id },function(err, todos) {
+			Todo.find(function(err, todos) {
 				if (err)
 					res.send(err)
 				    res.json(todos);
