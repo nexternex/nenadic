@@ -342,8 +342,8 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
-                $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.todos = data;
+                $scope.formData = {}; // clear the form so our user is ready to enter another
                 console.log('unos eventa: '+data);
             })
             .error(function(data) {
