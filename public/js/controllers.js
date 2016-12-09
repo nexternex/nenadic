@@ -217,7 +217,7 @@ erpagWeather.controller('homeController',['$scope' ,function($scope){
    
     console.log('kraj home controlera');
 }]);
-// LOgin.js
+// Login.js
 erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
     
   $scope.login = function () {
@@ -241,72 +241,6 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 
   console.log('pokusaj login controller used');
 
-}]);
-//factory return users
-erpagWeather.factory('setEvent', function($http) {
-  return {
-    loadEvents: function(data) {
-    $http.get('/api/todos')
-        .success(function(data) {
-             console.log('1001:return events from database'+data);
-             return data;
-            })
-        .error(function(data) {
-            console.log('101:error retur events from database');
-            });
-        return data;
-    }
-  }; 
-});
-//ovde nedostaje opis
-erpagWeather.factory('todosService', function($http) {
-  var getTodos = function() {
-    return $http.get('/api/todos');
-  };
-
-  return {
-    getTodos: getTodos
-  };
-});
-//ovde nedostaje opis
-erpagWeather.controller('tableController',['$scope','todosService','$http', function($scope, todosService,$http) {
-$scope.todos=[];    
-$scope.query = {
-    order: 'text',
-    limit: 5,
-    page: 1
-  };           
-  
-    
-    $http.get('/api/todos')
-        .success(function(data) {
-            $scope.todos = data;
-            console.log('ovo sam dobio iz baze:'+data);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });    
-    
-    
-//               
-  todosService.getTodos().then(function(data) {
-      console.log('paket iz faktorija:'+data);
-    $scope.todos = data;
-        },function() {
-    $scope.error = 'unable to get the todos';
-        });
-    
-//    console.log($scope.todos.every);
-////  $scope.getTodos1 = function () {
-////    $scope.promise = $http.get('/api/todos', success).$promise;
-////  };
-////    
-    
-    $scope.message=true;
-    $scope.onChange = function(cbState) {
-        $scope.message = cbState;
-        };
-    
 }]);
 //Logout controller
 erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
@@ -343,9 +277,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
                 $scope.todos = data;
-                console.log($scope.todos);
-//                $scope.formData = {}; // clear the form so our user is ready to enter another
-                alert('unos eventa: '+data);
+                $scope.formData = {}; // clear the form so our user is ready to enter another
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -391,7 +323,7 @@ erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia', f
     $scope.status = '  ';
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
   //Dialog za unos novog eventa    
-$scope.showAdvanced = function(ev) {
+    $scope.showAdvanced = function(ev) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
     $mdDialog.show({
       controller: 'mainController',
@@ -545,45 +477,32 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
     
 }]);
-//conroler za infinite scroll
-erpagWeather.controller('InfController', function($scope, Reddit) {
-  $scope.reddit = new Reddit();
+
+
+//FACTORY return users
+erpagWeather.factory('setEvent', function($http) {
+  return {
+    loadEvents: function(data) {
+    $http.get('/api/todos')
+        .success(function(data) {
+             console.log('1001:return events from database'+data);
+             return data;
+            })
+        .error(function(data) {
+            console.log('101:error retur events from database');
+            });
+        return data;
+    }
+  }; 
 });
-// Reddit constructor function to encapsulate HTTP and pagination logic
-erpagWeather.factory('Reddit', function($http) {
-  var Reddit = function() {
-    this.items = [];
-    this.busy = false;
-    this.after = '';
+//ovde nedostaje opis
+erpagWeather.factory('todosService', function($http) {
+  var getTodos = function() {
+    return $http.get('/api/todos');
   };
 
-  Reddit.prototype.nextPage = function() {
-    if (this.busy) return;
-    this.busy = true;
-      
-//    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
-//        .success(function(data) {
-//            $scope.lists = data.feed.entry;
-//            $scope.isLoading = false;
-//            console.log('liste sam dobio iz baze:'+data.feed.entry);
-//        })
-//        .error(function(data) {
-//            console.log('Error: ' + data);
-//        });      
-     var url = "https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK";
-      
-//    var url = "https://api.reddit.com/hot?after=" + this.after + "&jsonp=JSON_CALLBACK";
-    $http.jsonp(url).success(function(data) {
-      var items = data.feed.entry;
-      var index=data.feed.openSearch$startIndex;
-      for (var i = 0; i < index.$t; i++) {
-        this.items.push(items[i].data);
-      }
-//      this.after = "t3_" + this.index[this.index.$t - 1].id;
-      this.busy = false;
-    }.bind(this));
+  return {
+    getTodos: getTodos
   };
-
-  return Reddit;
 });
 
