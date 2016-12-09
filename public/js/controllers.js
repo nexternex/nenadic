@@ -295,6 +295,22 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             });
     };
     
+    
+$scope.showCreate = function(id) {
+// Appending dialog to document.body to cover sidenav in docs app
+    var confirm = $mdDialog.confirm()
+          .title('Kreirati novi dogadjaj?')
+          .textContent('Unesite neophodne podatke')
+          .ariaLabel('Lucky day')
+          .targetEvent(id)
+          .ok('Obrisi!')
+          .cancel('Otkazi');
+    $mdDialog.show(confirm).then(function() {
+      $scope.status =  $scope.deleteTodo(id);
+    }, function() {
+      $scope.status = 'You decided to keep your debt.';
+    });
+    
     $scope.showConfirm = function(id) {
 // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
@@ -302,6 +318,8 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
           .ariaLabel('Lucky day')
           .targetEvent(id)
+          .controller: 'mainController'
+          .templateUrl: '../pages/dialog1.htm'
           .ok('Obrisi!')
           .cancel('Otkazi');
     $mdDialog.show(confirm).then(function() {
