@@ -321,6 +321,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 //Dialog Kontroler za unos novih eventa u listu eventa
 erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia','$rootScope', function ($scope,$mdDialog, $mdMedia,$rootScope) {
     $scope.status = '  ';
+    $scope.answer = 'Jovan';
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
   //Dialog za unos novog eventa    
     $scope.showAdvanced = function(ev) {
