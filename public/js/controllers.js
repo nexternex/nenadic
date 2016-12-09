@@ -323,23 +323,11 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 //MAIN coontroler
 erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
      $scope.auth = auth;
-//     $scope.user_id=$scope.auth.profile.user_id;
      $scope.formData = {};
      $scope.status = '  ';
      $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
-     //when landing on the page, get all todos and show them
-//    $http.get('/api/todos')
-//        .success(function(data) {
-//            $scope.todos = data;
-//            console.log('ovo sam dobio iz baze:'+data);
-//        })
-//        .error(function(data) {
-//            console.log('Error: ' + data);
-//        });
-
-   
-    
+//when landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
         .success(function(data) {
             $scope.todos = data;
@@ -348,18 +336,15 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         .error(function(data) {
             console.log('Error: ' + data);
         });
-        
-        
     
-    
-    // when submitting the add form, send the text to the node API
+// when submitting the add form, send the text to the node API
     $scope.createTodo = function() {
         
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.todos = data;
-                console.log('unos eventa'+data);
+                console.log('unos eventa: '+data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -367,13 +352,13 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     };
     
     $scope.showConfirm = function(id) {
-    // Appending dialog to document.body to cover sidenav in docs app
+// Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
           .title('Obrisati dogadjaj?')
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
           .ariaLabel('Lucky day')
           .targetEvent(id)
-          .ok('Da, obrisi!')
+          .ok('Obrisi!')
           .cancel('Otkazi');
     $mdDialog.show(confirm).then(function() {
       $scope.status =  $scope.deleteTodo(id);
@@ -383,34 +368,18 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
   };    
     
 
-    // delete a todo after checking it
+// delete a todo after checking it
     $scope.deleteTodo = function(id) { 
         $http.delete('/api/todos/' + id)
             .success(function(data) {
                 $scope.todos = data;
-                console.log(data);
-            
             })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
     };
     
-///Material table parts
-    
-      $scope.query = {
-        order: 'text',
-        limit: 5,
-        page: 1
-      };
-//
-//  function success(data) {
-//    $scope.todos = todos;
-//  }
-////
-  $scope.getTodos = function () {
-    $scope.promise = $http.get('/api/todos', success).$promise;
-  };
+//switch za readonly detalje naloga//
     
     $scope.message=true;
     $scope.onChange = function(cbState) {
@@ -458,7 +427,7 @@ erpagWeather.controller('MenuCtrl', function() {
 erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
-//LIST1 kontroler--sluzi da izlista sve ponude
+//LIST1 kontroler--dropdown komponente
 erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$http) {
     $scope.formData = {};
     
@@ -576,13 +545,10 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
     
 }]);
-
 //conroler za infinite scroll
-
 erpagWeather.controller('InfController', function($scope, Reddit) {
   $scope.reddit = new Reddit();
 });
-
 // Reddit constructor function to encapsulate HTTP and pagination logic
 erpagWeather.factory('Reddit', function($http) {
   var Reddit = function() {
