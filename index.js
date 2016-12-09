@@ -116,7 +116,7 @@ app.post('/api/photo',function(req,res){
 				res.send(err);
 
         // get and return all the todos after you create another
-        Todo.find({ 'id': req.params.user_id },function(err, todos) {
+        Todo.find(function(err, todos) {
 				if (err)
                     res.send(err)
                     res.json(todos); 
