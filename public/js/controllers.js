@@ -339,7 +339,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     
 // when submitting the add form, send the text to the node API
     $scope.createTodo = function() {
-        
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
                 $scope.todos = data;
@@ -353,7 +352,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     
 // delete a todo after checking it
     $scope.deleteTodo = function(id) { 
-        $http.delete('/api/todos/' + id)
+        $http.delete('/api/todos/' + id'/user_id'+auth.profile.user_id)
             .success(function(data) {
                 $scope.todos = data;
             })
