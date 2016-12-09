@@ -352,7 +352,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     
 // delete a todo after checking it
     $scope.deleteTodo = function(id) { 
-        $http.delete('/api/todos/' + id'/user_id'+auth.profile.user_id)
+        $http.delete('/api/todos/' + id'/'+auth.profile.user_id)
             .success(function(data) {
                 $scope.todos = data;
             })
