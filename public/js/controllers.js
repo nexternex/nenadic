@@ -343,8 +343,19 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
                 $scope.todos = data;
-                $scope.formData = {}; // clear the form so our user is ready to enter another
-                console.log('unos eventa: '+data);
+//                $scope.formData = {}; // clear the form so our user is ready to enter another
+                alert('unos eventa: '+data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
+    
+// delete a todo after checking it
+    $scope.deleteTodo = function(id) { 
+        $http.delete('/api/todos/' + id)
+            .success(function(data) {
+                $scope.todos = data;
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -366,19 +377,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
       $scope.status = 'You decided to keep your debt.';
     });
   };    
-    
-
-// delete a todo after checking it
-    $scope.deleteTodo = function(id) { 
-        $http.delete('/api/todos/' + id)
-            .success(function(data) {
-                $scope.todos = data;
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
-    
+     
 //switch za readonly detalje naloga//
     
     $scope.message=true;
