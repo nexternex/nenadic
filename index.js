@@ -117,7 +117,9 @@ app.post('/api/photo',function(req,res){
 
         // get and return all the todos after you create another
         Todo.find(function(err, todos) {
-				if (err)res.send(err)res.json(todos); 
+				if (err)
+                    res.send(err)
+                    res.json(todos); 
 			});
 		});
 
