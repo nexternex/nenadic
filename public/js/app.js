@@ -1,10 +1,13 @@
 //MODULE Angular
 var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','ngAnimate','ngAria','ngMaterial','auth0','angular-storage', 'angular-jwt','md.data.table','infinite-scroll']);
-
+erpagWeather.run(function($rootScope) {
+    $rootScope.todos = '';
+})
 erpagWeather.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
   auth.hookEvents();
   console.log('step0001-a');
+ 
 });
  
 //config app
