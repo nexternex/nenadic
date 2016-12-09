@@ -90,7 +90,11 @@
               <md-toolbar class="md-no-sticky md-accent">Dogadjaji
                    <fieldlist  id="popupContainer" ng-controller="dialogController" layout="column" id="todo-form"> 
                        <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showAdvanced($event)">+</button>
-                    </fieldlist>  
+                    </fieldlist>
+                        <!-- createToDo() WILL CREATE NEW TODOS -->
+                      <md-button  type="submit" class="md-fab md-primary" ng-click="createTodo()">
+                          <md-icon  md-svg-icon="content-save" aria-label="save"></md-icon>
+                      </md-button>
                 </md-toolbar>
             
               <md-content >
