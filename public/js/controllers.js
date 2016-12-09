@@ -265,7 +265,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
        $http.get('/api/todos'+auth.profile.user_id)
         .success(function(data) {
             $scope.todos = data;
-           
             console.log('filter data by id:'+data);
         })
         .error(function(data) {
@@ -278,6 +277,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             .success(function(data) {
                 $scope.todos = data;
                 $scope.formData = {}; // clear the form so our user is ready to enter another
+                console.log('create data completed returning:'+data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
