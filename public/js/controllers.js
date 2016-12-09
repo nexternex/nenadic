@@ -320,6 +320,7 @@ $scope.showCreate = function(id) {
           .targetEvent(id)
           .controller: 'mainController'
           .templateUrl: '../pages/dialog1.htm'
+          .clickOutsideToClose:true
           .ok('Obrisi!')
           .cancel('Otkazi');
     $mdDialog.show(confirm).then(function() {
