@@ -126,7 +126,7 @@ app.post('/api/photo',function(req,res){
 	});
 
 // delete a todo
-	app.delete('/api/todos/:todo_id/user_id/:user_id', function(req, res) {
+	app.delete('/api/todos/:todo_id/:user_id', function(req, res) {
 		Todo.remove({
 			_id : req.params.todo_id
 		}, function(err, todo) {
