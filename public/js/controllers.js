@@ -305,7 +305,14 @@ $scope.showCreate = function(ev) {
       targetEvent: ev,
       clickOutsideToClose:true
     }).then(function() {
-      $scope.status =  "uspesno kreiran";
+      $scope.status =  $http.get('/api/todos'+auth.profile.user_id)
+        .success(function(data) {
+            $scope.todos = data;
+            console.log('filter data by id:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
