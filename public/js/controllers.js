@@ -295,8 +295,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             });
     };
     
-$scope.showCreate = function(ev) {
-// Appending dialog to document.body to cover sidenav in docs app        
+//    dijalog koji kreira todo
+    
+$scope.showCreate = function(ev) {     
     $mdDialog.show({ 
       controller: 'mainController',
       templateUrl: '../pages/dialog1.htm',
@@ -305,16 +306,14 @@ $scope.showCreate = function(ev) {
       clickOutsideToClose:true,
       fullscreen: useFullScreen
     }).then(function() {
-      $scope.status =  "uspesno kreiran"
+      $scope.status =  "uspesno kreiran";
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
   }; 
     
-    
-    
-    $scope.showConfirm = function(id) {
-// Appending dialog to document.body to cover sidenav in docs app
+ //    dijalog koji potvrdjuje brisanje
+$scope.showConfirm = function(id) {
     var confirm = $mdDialog.confirm()
           .title('Obrisati dogadjaj?')
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
