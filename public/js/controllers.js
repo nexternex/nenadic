@@ -296,7 +296,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     };
     
     $scope.showConfirm = function(id) {
-        // Appending dialog to document.body to cover sidenav in docs app
+// Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
           .title('Obrisati dogadjaj?')
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
@@ -310,26 +310,8 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
-        console.log(status);
   };    
      
-    $scope.showAdvanced = function(ev) {
-        // Appending dialog to document.body to cover sidenav in docs app
-    var confirm = $mdDialog.confirm()
-          .title('Obrisati dogadjaj?')
-          .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
-          .templateUrl('../pages/dialog1.htm')
-          .targetEvent(ev)
-          .cancel('Otkazi');
-        
-    $mdDialog.show(confirm).then(function() {
-      $scope.status ="";
-    }, function() {
-      $scope.status = 'Obrisano!';
-    });
-        console.log(status);
-  };        
-    
 //switch za readonly detalje naloga//
     
     $scope.message=true;
@@ -338,35 +320,36 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         };     
 }]);
 //Dialog Kontroler za unos novih todo u listu todos
-//erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia','$rootScope', function ($scope,$mdDialog, $mdMedia,$rootScope) {
-//    $scope.status = '  ';
-//    $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-//  //Dialog za unos novog eventa    
-//    $scope.showAdvanced = function(ev) {
-//        
-//    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-//        
-//    $mdDialog.show({
-//      controller: 'mainController',
-//      templateUrl: '../pages/dialog1.htm',
-//      parent: angular.element(document.body),
-//      targetEvent: ev,
-//      clickOutsideToClose:true,
-//      fullscreen: useFullScreen
-//    })
-//    .then(function(answer) {
-//      $scope.status = 'You said the information was "' + answer + '".';
-//    }, function() {
-//      $scope.status = 'You cancelled the dialog.';
-//    });
-//        
-//    $scope.$watch(function() {
-//      return $mdMedia('xs') || $mdMedia('sm');
-//    }, function(wantsFullScreen) {
-//      $scope.customFullscreen = (wantsFullScreen === true);
-//    });
-//  };     
-//}]);    
+erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia','$rootScope', function ($scope,$mdDialog, $mdMedia,$rootScope) {
+    $scope.status = '  ';
+    $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+  //Dialog za unos novog eventa    
+    $scope.showAdvanced = function(ev) {
+        
+    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+        
+    $mdDialog.show({
+      controller: 'mainController',
+      templateUrl: '../pages/dialog1.htm',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      fullscreen: useFullScreen
+    })
+    .then(function(answer) {
+    
+    $scope.todos=$scope.todos;
+      $scope.status = 'You said the information was "' + answer + '".';
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+    $scope.$watch(function() {
+      return $mdMedia('xs') || $mdMedia('sm');
+    }, function(wantsFullScreen) {
+      $scope.customFullscreen = (wantsFullScreen === true);
+    });
+  };     
+}]);    
 //Menu controller ----ciricle meni 
 erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
@@ -499,6 +482,8 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
     
 }]);
+
+
 //FACTORY return users
 erpagWeather.factory('setEvent', function($http) {
   return {
