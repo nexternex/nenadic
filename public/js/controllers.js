@@ -313,12 +313,11 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         console.log(status);
   };    
      
-$scope.showAdvanced = function(ev) {
+    $scope.showAdvanced = function(ev) {
         // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
           .title('Obrisati dogadjaj?')
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
-          .ariaLabel('Lucky day')
           .controller: 'mainController'
           .templateUrl: '../pages/dialog1.htm'
           .targetEvent(ev)
@@ -327,7 +326,7 @@ $scope.showAdvanced = function(ev) {
     $mdDialog.show(confirm).then(function() {
       $scope.status ="";
     }, function() {
-      $scope.status = 'You decided to keep your debt.';
+      $scope.status = 'Obrisano!';
     });
         console.log(status);
   };        
@@ -501,8 +500,6 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
     
 }]);
-
-
 //FACTORY return users
 erpagWeather.factory('setEvent', function($http) {
   return {
