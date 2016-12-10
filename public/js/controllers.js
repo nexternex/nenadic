@@ -295,22 +295,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             });
     };
     
-    
-$scope.showCreate = function(id) {
-// Appending dialog to document.body to cover sidenav in docs app
-    var confirm = $mdDialog.confirm()
-          .title('Kreirati novi dogadjaj?')
-          .textContent('Unesite neophodne podatke')
-          .ariaLabel('Lucky day')
-          .targetEvent(id)
-          .ok('Obrisi!')
-          .cancel('Otkazi');
-    $mdDialog.show(confirm).then(function() {
-      $scope.status =  $scope.deleteTodo(id);
-    }, function() {
-      $scope.status = 'You decided to keep your debt.';
-    });
-    
     $scope.showConfirm = function(id) {
 // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
@@ -318,16 +302,10 @@ $scope.showCreate = function(id) {
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
           .ariaLabel('Lucky day')
           .targetEvent(id)
-          .controller: 'mainController'
-          .templateUrl: '../pages/dialog1.htm'
-          .clickOutsideToClose:true
           .ok('Obrisi!')
           .cancel('Otkazi');
-    $mdDialog.show(confirm).then(function() {
-      $scope.status =  $scope.deleteTodo(id);
-    }, function() {
-      $scope.status = 'You decided to keep your debt.';
-    });
+        
+    $mdDialog.show(confirm);
   };    
      
 //switch za readonly detalje naloga//
@@ -337,27 +315,29 @@ $scope.showCreate = function(id) {
         $scope.message = cbState;
         };     
 }]);
-//Dialog Kontroler za unos novih eventa u listu eventa
+//Dialog Kontroler za unos novih todo u listu todos
 erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia','$rootScope', function ($scope,$mdDialog, $mdMedia,$rootScope) {
     $scope.status = '  ';
-    $scope.answer = 'Jovan';
     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
   //Dialog za unos novog eventa    
     $scope.showAdvanced = function(ev) {
-    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-    $mdDialog.show({
-      controller: 'mainController',
-      templateUrl: '../pages/dialog1.htm',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-      clickOutsideToClose:true,
-      fullscreen: useFullScreen
-    })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
-    });
+
+        var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+
+        $mdDialog.show({
+          controller: 'mainController',
+          templateUrl: '../pages/dialog1.htm',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose:true,
+          fullscreen: useFullScreen
+        })
+        .then(function(answer) {
+          $scope.status = 'You said the information was "' + answer + '".';
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+        
     $scope.$watch(function() {
       return $mdMedia('xs') || $mdMedia('sm');
     }, function(wantsFullScreen) {
