@@ -318,7 +318,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     var confirm = $mdDialog.confirm()
           .title('Obrisati dogadjaj?')
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
-          .controller('mainController')
           .templateUrl('../pages/dialog1.htm')
           .targetEvent(ev)
           .cancel('Otkazi');
