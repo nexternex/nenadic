@@ -295,6 +295,24 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             });
     };
     
+$scope.showCreate = function(ev) {
+// Appending dialog to document.body to cover sidenav in docs app        
+    $mdDialog.show({ 
+      controller: 'mainController',
+      templateUrl: '../pages/dialog1.htm',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      fullscreen: useFullScreen
+    }).then(function() {
+      $scope.status =  "uspesno kreiran"
+    }, function() {
+      $scope.status = 'You decided to keep your debt.';
+    });
+  }; 
+    
+    
+    
     $scope.showConfirm = function(id) {
 // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
@@ -337,12 +355,11 @@ erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia','$
       fullscreen: useFullScreen
     })
     .then(function(answer) {
-    
-    $scope.todos=$scope.todos;
       $scope.status = 'You said the information was "' + answer + '".';
     }, function() {
       $scope.status = 'You cancelled the dialog.';
     });
+        
     $scope.$watch(function() {
       return $mdMedia('xs') || $mdMedia('sm');
     }, function(wantsFullScreen) {
