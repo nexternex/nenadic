@@ -300,10 +300,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 $scope.showCreate = function(ev) {     
     $mdDialog.show({ 
       controller: 'mainController',
-//      templateUrl: '../pages/dialog1.htm',
+      templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
-      targetEvent: ev,
-      ok:'Obrisi!',
+      ok:get,
       cancel:'Otkazi',
       clickOutsideToClose:true
     }).then(function() {
