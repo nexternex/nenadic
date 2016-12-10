@@ -325,7 +325,7 @@ $scope.showAdvanced = function(ev) {
           .cancel('Otkazi');
         
     $mdDialog.show(confirm).then(function() {
-      $scope.status =  $scope.deleteTodo(id);
+      $scope.status ="";
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
