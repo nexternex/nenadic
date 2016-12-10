@@ -303,8 +303,7 @@ $scope.showCreate = function(ev) {
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
       targetEvent: ev,
-      clickOutsideToClose:true,
-      fullscreen: useFullScreen
+      clickOutsideToClose:true
     }).then(function() {
       $scope.status =  "uspesno kreiran";
     }, function() {
