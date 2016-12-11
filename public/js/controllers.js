@@ -307,7 +307,7 @@ $scope.showCreate = function(ev) {
       parent: angular.element(document.body),
       clickOutsideToClose:true
     }).then(function() {
-      $scope.status = "";   
+      $scope.status = $scope.todos;   
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
