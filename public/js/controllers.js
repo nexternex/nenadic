@@ -308,9 +308,7 @@ $scope.showCreate = function(formData) {
       parent: angular.element(document.body),
       clickOutsideToClose:true
     }).then(function() {
-        var newTodo=$scope.formData;
-        console.log(newTodo);
-        $scope.createTodo(newTodo);
+        $scope.createTodo();
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
