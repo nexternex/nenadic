@@ -275,12 +275,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.createTodo = function() {
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
-               
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.hide(data);
-                console.log("create001");
-            
-            
+                console.log("create-kraj");
             })
             .error(function(data) {
                 console.log('Error: ' + data);
