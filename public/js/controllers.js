@@ -255,7 +255,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
   console.log('UserInfoCtrl controller used');  
 }]);
 //MAIN coontroler
-erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth','$rootScope', function ($scope, $http, $mdDialog, $mdMedia, auth,$rootScope) {
+erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
      $scope.auth = auth;
      $scope.formData = {};
      $scope.status = '  ';
