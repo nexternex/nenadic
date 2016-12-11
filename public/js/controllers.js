@@ -279,8 +279,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             .success(function(data) {
                   $scope.todos = data;
 //                  $scope.formData = {}; // clear the form so our user is ready to enter another
-                  $mdDialog.hide();
+//                  $mdDialog.hide();
                   console.log("upisano");
+                  $scope.status  =data;
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -308,7 +309,7 @@ $scope.showCreate = function(ev) {
       clickOutsideToClose:true
     }).then(function() {
          $scope.createTodo();
-         $scope.status = $scope.todos; 
+         $scope.status = ""; 
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
