@@ -304,11 +304,9 @@ $scope.showCreate = function() {
     $mdDialog.show({ 
       controller: 'mainController',
       templateUrl: '../pages/dialog1.htm',
-      parent: angular.element(document.body),
       clickOutsideToClose:true
     }).then(function() {
         $scope.status="idemoo";
-        $scope.$apply();
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
