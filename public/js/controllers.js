@@ -298,7 +298,7 @@ $scope.deleteTodo = function(id) {
             });
     };  
 //    dijalog koji kreira todo
-$scope.showCreate = function(auth.profile.user_id) {     
+$scope.showCreate = function() {     
     $mdDialog.show({ 
               controller: 'mainController',
               templateUrl: '../pages/dialog1.htm',
