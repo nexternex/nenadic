@@ -278,7 +278,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.hide(data);
-                 console.log("creat001");
+                console.log("create001");
             
             
             })
@@ -334,10 +334,10 @@ $scope.showConfirm = function(id) {
   };  
 //    Basic mddialog contollers
      $scope.hide = function(data) {
-      $mdDialog.hide();
-    console.log("create002:"+$scope.todos);
-      $scope.todos = data;
-      console.log("todos:"+$scope.todos);
+          console.log("create002:"+$scope.todos);
+          $scope.todos = data;
+          console.log("todos:"+$scope.todos);
+          $mdDialog.hide();
     };
 
     $scope.cancel = function() {
