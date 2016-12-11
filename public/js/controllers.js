@@ -278,7 +278,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                 $scope.todos = data;
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 console.log('create data completed returning:'+data);
-                $scope.hide();
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -303,9 +302,8 @@ $scope.showCreate = function(ev) {
       controller: 'mainController',
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
-      ok:'OK',
-      cancel:'Otkazi'
     }).then(function() {
+        $scope.status = 'True';
     }, function() {
       $scope.status = 'False';
     });
