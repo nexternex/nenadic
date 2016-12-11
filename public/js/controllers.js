@@ -329,6 +329,7 @@ $scope.showConfirm = function(id) {
 //    Basic mddialog contollers
     $scope.hide = function() {
         todoData=$scope.formData;
+        console.log(todoData);
         $mdDialog.hide();
     };
     $scope.cancel = function() {
