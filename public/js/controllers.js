@@ -303,8 +303,7 @@ $scope.showCreate = function(ev) {
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
       ok:'OK',
-      cancel:'Otkazi',
-      clickOutsideToClose:true
+      cancel:'Otkazi'
     }).then(function() {
     }, function() {
       $scope.status = 'False';
