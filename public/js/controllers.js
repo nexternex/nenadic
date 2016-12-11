@@ -256,7 +256,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 }]);
 //MAIN coontroler
 erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
-     
+     var todoData={};
      $scope.auth = auth;
      $scope.formData = {};
      $scope.status = '  ';
@@ -273,9 +273,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             console.log('Error: ' + data);
         });
     
-// when submitting the add form, send the text to the node API
+// API CREATE
     $scope.createTodo = function() {
-        $http.post('/api/todos',$scope.formData)
+        $http.post('/api/todos',todoData)
             .success(function(data) {
                   $scope.todos = data;
                   $scope.formData = {}; // clear the form so our user is ready to enter another
@@ -287,7 +287,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     };
     
 // delete a todo after checking it
-    $scope.deleteTodo = function(id) { 
+$scope.deleteTodo = function(id) { 
         $http.delete('/api/todos/' + id)
             .success(function(data) {
                 $scope.todos = data;
@@ -295,10 +295,8 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             .error(function(data) {
                 console.log('Error: ' + data);
             });
-    };
-    
+    };  
 //    dijalog koji kreira todo
-    
 $scope.showCreate = function() {     
     $mdDialog.show({ 
         
@@ -307,10 +305,6 @@ $scope.showCreate = function() {
               clickOutsideToClose:true
         
     }).then(function() {
-
-        console.log("ovoje nex:"+Nex);
-        
-        $scope.status="idemoo";
         $scope.createTodo();
     }, function() {
       $scope.status = 'You decided to keep your debt.';
@@ -333,15 +327,13 @@ $scope.showConfirm = function(id) {
     });
   };  
 //    Basic mddialog contollers
-     $scope.hide = function() {
-        
+    $scope.hide = function() {
+        todoData=$scope.formData;
         $mdDialog.hide();
     };
-
     $scope.cancel = function() {
       $mdDialog.cancel();
     };
-
     $scope.answer = function(answer) {
       $mdDialog.hide(answer);
     };
