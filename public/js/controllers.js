@@ -283,11 +283,12 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                 .success(function(data) {
                     $scope.todos = data;
                     console.log('filter data by id:'+data);
+                    $scope.apply();
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
                 });
-            $scope.apply();
+         
 
             })
             .error(function(data) {
