@@ -275,10 +275,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.createTodo = function() {
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
-                
+                $scope.todos = data;
                 $scope.formData = {}; // clear the form so our user is ready to enter another
-                console.log('create data completed returning:');
-                $scope.hide(data);
+                console.log('create data completed returning:'+data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -303,10 +302,20 @@ $scope.showCreate = function(ev) {
       controller: 'mainController',
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
+      ok:'OK',
+      cancel:'Otkazi'
+      clickOutsideToClose:true
     }).then(function() {
-        $scope.status = 'True';
+      $scope.status =  $http.get('/api/todos'+auth.profile.user_id)
+        .success(function(data) {
+            $scope.todos = data;
+            console.log('NN:filter data by id:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
     }, function() {
-      $scope.status = 'False';
+      $scope.status = 'You decided to keep your debt.';
     });
   }; 
     
@@ -317,32 +326,29 @@ $scope.showConfirm = function(id) {
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
           .ariaLabel('Lucky day')
           .targetEvent(id)
-          .ok('Obrisi!')
+          .ok('Obrisi')
           .cancel('Otkazi');
         
     $mdDialog.show(confirm).then(function() {
-      $scope.status = 'True';
+      $scope.status =  $scope.deleteTodo(id);
     }, function() {
-      $scope.status = 'False';
+      $scope.status = 'You decided to keep your debt.';
     });
-  };    
-     
-//switch za readonly detalje naloga//
-    
-      $scope.hide = function(dt) {
+  };  
+//    Basic mddialog contollers
+     $scope.hide = function() {
       $mdDialog.hide();
-      $scope.todos = dt;
-      console.log('Scope.hide:' +$scope.todos);
     };
 
     $scope.cancel = function() {
       $mdDialog.cancel();
     };
 
-//    $scope.answer = function(answer) {
-//      $mdDialog.hide(answer);
-//    };
-//    
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    
+     
+//switch za readonly detalje naloga//
     
     $scope.message=true;
     $scope.onChange = function(cbState) {
