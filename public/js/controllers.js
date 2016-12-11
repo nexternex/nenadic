@@ -300,14 +300,13 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     
 //    dijalog koji kreira todo
     
-$scope.showCreate = function(formData) {     
+$scope.showCreate = function() {     
     $mdDialog.show({ 
       controller: 'mainController',
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
       clickOutsideToClose:true
     }).then(function() {
-       $scope.createTodo(formData);
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
