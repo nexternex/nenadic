@@ -440,7 +440,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
         .success(function(data) {
             $scope.lists = data.feed.entry;
             $scope.isLoading = false;
-            console.log('liste sam dobio iz baze:'+data.feed.entry);
+//            console.log('liste sam dobio iz baze:'+data.feed.entry);
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -453,7 +453,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
             .success(function(data) {
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.lists = data;
-                console.log(data);
+//                console.log(data);
                 alert("uspesno ste registrovali nalog koristeci list1");
             })
             .error(function(data) {
@@ -466,7 +466,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
         $http.delete('/api/lists/' + id)
             .success(function(data) {
                 $scope.lists = data;
-                console.log(data);
+//                console.log(data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
