@@ -329,10 +329,10 @@ $scope.showConfirm = function(id) {
      
 //switch za readonly detalje naloga//
     
-     $scope.hide = function() {
+      $scope.hide = function(dt) {
       $mdDialog.hide();
-      $scope.todos = data;
-      console.log('Scope.hide:' +data);
+      $scope.todos = dt;
+      console.log('Scope.hide:' +dt);
     };
 
     $scope.cancel = function() {
