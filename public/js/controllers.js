@@ -274,8 +274,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         });
     
 // when submitting the add form, send the text to the node API
-    $scope.createTodo = function(ev) {
-        $http.post('/api/todos'+ev)
+    $scope.createTodo = function(ev1) {
+        console.log(ev1);
+        $http.post('/api/todos'+ev1)
             .success(function(data) {
                   $scope.todos = data;
 //                  $scope.formData = {}; // clear the form so our user is ready to enter another
