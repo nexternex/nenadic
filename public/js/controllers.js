@@ -306,14 +306,7 @@ $scope.showCreate = function(ev) {
       cancel:'Otkazi',
       clickOutsideToClose:true
     }).then(function() {
-      $scope.status =  $http.get('/api/todos'+auth.profile.user_id)
-        .success(function(data) {
-            $scope.todos = data;
-            console.log('NN:filter data by id:'+data);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
+      $scope.status =  $scope.createTodo();
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
