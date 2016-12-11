@@ -275,11 +275,19 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.createTodo = function() {
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
-                  
                   $scope.formData = {}; // clear the form so our user is ready to enter another
                   $mdDialog.hide();
                   console.log("upisano");
-                  $scope.$apply({$scope.todos = data; } );
+            
+              $http.get('/api/todos'+auth.profile.user_id)
+                .success(function(data) {
+                    $scope.todos = data;
+                    console.log('filter data by id:'+data);
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });
+
             })
             .error(function(data) {
                 console.log('Error: ' + data);
