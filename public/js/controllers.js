@@ -278,7 +278,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                   $scope.formData = {}; // clear the form so our user is ready to enter another
                   $mdDialog.hide();
                   console.log("upisano");
-            
+                              
               $http.get('/api/todos'+auth.profile.user_id)
                 .success(function(data) {
                     $scope.todos = data;
@@ -287,6 +287,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                 .error(function(data) {
                     console.log('Error: ' + data);
                 });
+            $scope.apply();
 
             })
             .error(function(data) {
