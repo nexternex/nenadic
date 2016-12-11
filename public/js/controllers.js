@@ -279,7 +279,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             .success(function(data) {
                   $scope.todos = data;
 //                  $scope.formData = {}; // clear the form so our user is ready to enter another
-//                  $mdDialog.hide();
+                  $mdDialog.hide();
                   console.log("upisano");
                   $scope.status="upisano";
             })
@@ -308,7 +308,7 @@ $scope.showCreate = function(formData) {
       parent: angular.element(document.body),
       clickOutsideToClose:true
     }).then(function() {
-         $scope.createTodo(); 
+         $scope.status="upisano";
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
