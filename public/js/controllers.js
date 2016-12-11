@@ -330,6 +330,7 @@ $scope.showConfirm = function(id) {
     
      $scope.hide = function() {
       $mdDialog.hide();
+      $scopee.createTodo();
     };
 
     $scope.cancel = function() {
