@@ -274,13 +274,13 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         });
     
 // when submitting the add form, send the text to the node API
-    $scope.createTodo = function() {
-        $http.post('/api/todos', $scope.formData)
+    $scope.createTodo = function(formData) {
+        $http.post('/api/todos', formData)
             .success(function(data) {
                   $scope.todos = data;
-//                  $scope.formData = {}; // clear the form so our user is ready to enter another
-                  console.log("upisano");
+                  $scope.formData = {}; // clear the form so our user is ready to enter another
                   $scope.status="upisano";
+                  $mdDialog.hide();
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -307,8 +307,7 @@ $scope.showCreate = function(formData) {
       parent: angular.element(document.body),
       clickOutsideToClose:true
     }).then(function() {
-       console.log($scope.formData);
-       $scope.createTodo();
+       $scope.createTodo(formData);
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
