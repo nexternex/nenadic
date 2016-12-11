@@ -302,7 +302,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     
 $scope.showCreate = function(ev) {     
     $mdDialog.show({ 
-      controller: 'mainController',
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
       clickOutsideToClose:true
