@@ -279,8 +279,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             .success(function(data) {
                   $scope.todos = data;
                   $scope.formData = {}; // clear the form so our user is ready to enter another
-                  $mdDialog.hide();
-                  $scope.status="idemoo";
+                  
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -302,11 +301,18 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     
 $scope.showCreate = function() {     
     $mdDialog.show({ 
-      controller: 'mainController',
-      templateUrl: '../pages/dialog1.htm',
-      clickOutsideToClose:true
+        
+              controller: 'mainController',
+              templateUrl: '../pages/dialog1.htm',
+              clickOutsideToClose:true
+        
     }).then(function() {
-
+        var Nex={};
+        Nex=$scope.formData;
+        console.log(Nex);
+        
+        $scope.status="idemoo";
+        $scope.createTodo(Nex);
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
@@ -317,7 +323,6 @@ $scope.showConfirm = function(id) {
     var confirm = $mdDialog.confirm()
           .title('Obrisati dogadjaj?')
           .textContent('Brisanjem trajno uklanjeate dogadjaj iz liste')
-          .ariaLabel('Lucky day')
           .targetEvent(id)
           .ok('Obrisi')
           .cancel('Otkazi');
