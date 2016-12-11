@@ -275,9 +275,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.createTodo = function() {
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
-                $scope.todos = data;
+               
                 $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.hide();
+                $scope.hide(data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -329,8 +329,9 @@ $scope.showConfirm = function(id) {
     });
   };  
 //    Basic mddialog contollers
-     $scope.hide = function() {
+     $scope.hide = function(data) {
       $mdDialog.hide();
+      $scope.todos = data;
     };
 
     $scope.cancel = function() {
