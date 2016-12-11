@@ -256,11 +256,13 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 }]);
 //MAIN coontroler
 erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
+     
      $scope.auth = auth;
      $scope.formData = {};
      $scope.status = '  ';
      $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
      $scope.todos='';
+    
 //when landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
         .success(function(data) {
@@ -276,21 +278,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
                   $scope.todos = data;
-                  $scope.formData = {}; // clear the form so our user is ready to enter another
+//                  $scope.formData = {}; // clear the form so our user is ready to enter another
                   $mdDialog.hide();
-                  console.log("upisano");
-                              
-              $http.get('/api/todos'+auth.profile.user_id)
-                .success(function(data) {
-                    $scope.todos = data;
-                    console.log('filter data by id:'+data);
-                    $scope.apply();
-                })
-                .error(function(data) {
-                    console.log('Error: ' + data);
-                });
-         
-
+//                  console.log("upisano");
             })
             .error(function(data) {
                 console.log('Error: ' + data);
