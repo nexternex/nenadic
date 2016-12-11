@@ -309,7 +309,7 @@ $scope.showCreate = function() {
     }).then(function() {
         var Nex={};
         Nex=$scope.formData;
-        console.log("ovoje nex:"Nex);
+        console.log("ovoje nex:"+Nex);
         
         $scope.status="idemoo";
         $scope.createTodo(Nex);
