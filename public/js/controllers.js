@@ -336,10 +336,10 @@ $scope.showConfirm = function(id) {
       $mdDialog.cancel();
     };
 
-    $scope.answer = function(answer) {
-      $mdDialog.hide(answer);
-    };
-    
+//    $scope.answer = function(answer) {
+//      $mdDialog.hide(answer);
+//    };
+//    
     
     $scope.message=true;
     $scope.onChange = function(cbState) {
