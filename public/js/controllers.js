@@ -307,12 +307,11 @@ $scope.showCreate = function() {
               clickOutsideToClose:true
         
     }).then(function() {
-        var Nex={};
-        Nex=$scope.formData;
+
         console.log("ovoje nex:"+Nex);
         
         $scope.status="idemoo";
-        $scope.createTodo(Nex);
+        $scope.createTodo();
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
