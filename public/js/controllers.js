@@ -279,7 +279,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             .success(function(data) {
                   $scope.todos = data;
 //                  $scope.formData = {}; // clear the form so our user is ready to enter another
-                  $mdDialog.hide();
                   console.log("upisano");
                   $scope.status="upisano";
             })
@@ -314,7 +313,7 @@ $scope.showCreate = function(formData) {
     });
   }; 
     
- //    dijalog koji potvrdjuje brisanje
+ // dijalog koji potvrdjuje brisanje
 $scope.showConfirm = function(id) {
     var confirm = $mdDialog.confirm()
           .title('Obrisati dogadjaj?')
