@@ -303,7 +303,7 @@ $scope.showCreate = function(ev) {
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
       ok:'OK',
-      cancel:'Otkazi'
+      cancel:'Otkazi',
       clickOutsideToClose:true
     }).then(function() {
       $scope.status =  $http.get('/api/todos'+auth.profile.user_id)
