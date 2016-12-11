@@ -328,7 +328,7 @@ $scope.showConfirm = function(id) {
     });
   };  
 //    Basic mddialog contollers
-     $scope.hide = function(data) {
+     $scope.hide = function() {
         $mdDialog.hide();
     };
 
