@@ -277,7 +277,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             .success(function(data) {
                 
                 $scope.formData = {}; // clear the form so our user is ready to enter another
-                console.log('create data completed returning:'+data);
+                console.log('create data completed returning:');
                 $scope.hide(data);
             })
             .error(function(data) {
@@ -332,6 +332,7 @@ $scope.showConfirm = function(id) {
      $scope.hide = function() {
       $mdDialog.hide();
       $scope.todos = data;
+      console.log('Scope.hide:' +data);
     };
 
     $scope.cancel = function() {
