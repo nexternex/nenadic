@@ -275,9 +275,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.createTodo = function() {
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
-                $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.hide(data);
-                console.log("create-kraj");
+                  $scope.formData = {}; // clear the form so our user is ready to enter another
+                  $scope.todos = data;
+                  $mdDialog.hide();
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -288,7 +288,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.deleteTodo = function(id) { 
         $http.delete('/api/todos/' + id)
             .success(function(data) {
-            $scope.todos = data;
+                $scope.todos = data;
            
             })
             .error(function(data) {
@@ -331,10 +331,7 @@ $scope.showConfirm = function(id) {
   };  
 //    Basic mddialog contollers
      $scope.hide = function(data) {
-          console.log("create002:"+$scope.todos);
-          $scope.todos = data;
-          console.log("todos:"+$scope.todos);
-          $mdDialog.hide();
+      
     };
 
     $scope.cancel = function() {
