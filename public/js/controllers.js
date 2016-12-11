@@ -274,9 +274,8 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         });
     
 // when submitting the add form, send the text to the node API
-    $scope.createTodo = function(ev1) {
-        console.log(ev1);
-        $http.post('/api/todos'+ev1)
+    $scope.createTodo = function() {
+        $http.post('/api/todos', $scope.formData)
             .success(function(data) {
                   $scope.todos = data;
 //                  $scope.formData = {}; // clear the form so our user is ready to enter another
@@ -288,7 +287,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                 console.log('Error: ' + data);
             });
     };
-     
+    
 // delete a todo after checking it
     $scope.deleteTodo = function(id) { 
         $http.delete('/api/todos/' + id)
@@ -302,14 +301,14 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     
 //    dijalog koji kreira todo
     
-$scope.showCreate = function() {     
+$scope.showCreate = function(formData) {     
     $mdDialog.show({ 
       controller: 'mainController',
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
       clickOutsideToClose:true
     }).then(function() {
-         $scope.createTodo($scope.formData); 
+         $scope.createTodo(); 
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
