@@ -275,10 +275,11 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     
 // API CREATE
     $scope.createTodo = function() {
-        $http.post('/api/todos',todoData)
+        $http.post('/api/todos',$scope.formData)
             .success(function(data) {
                   $scope.todos = data;
                   $scope.formData = {}; // clear the form so our user is ready to enter another
+                  $mdDialog.hide();
                   
             })
             .error(function(data) {
@@ -297,15 +298,20 @@ $scope.deleteTodo = function(id) {
             });
     };  
 //    dijalog koji kreira todo
-$scope.showCreate = function() {     
+$scope.showCreate = function(auth.profile.user_id) {     
     $mdDialog.show({ 
-        
               controller: 'mainController',
               templateUrl: '../pages/dialog1.htm',
               clickOutsideToClose:true
-        
     }).then(function() {
-        $scope.createTodo();
+        $http.get('/api/todos'+auth.profile.user_id)
+        .success(function(data) {
+            $scope.todos = data;
+            console.log('filter data by id:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
@@ -328,8 +334,6 @@ $scope.showConfirm = function(id) {
   };  
 //    Basic mddialog contollers
     $scope.hide = function() {
-        todoData=$scope.formData;
-        console.log(todoData);
         $mdDialog.hide();
     };
     $scope.cancel = function() {
