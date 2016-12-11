@@ -303,8 +303,6 @@ $scope.showCreate = function(ev) {
       controller: 'mainController',
       templateUrl: '../pages/dialog1.htm',
       parent: angular.element(document.body),
-      ok:'OK',
-      cancel:'Otkazi',
       clickOutsideToClose:true
     }).then(function() {
       $scope.status =  $scope.createTodo();
@@ -331,7 +329,7 @@ $scope.showConfirm = function(id) {
   };  
 //    Basic mddialog contollers
      $scope.hide = function(data) {
-      
+        $mdDialog.hide();
     };
 
     $scope.cancel = function() {
