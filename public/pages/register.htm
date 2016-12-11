@@ -88,7 +88,7 @@
     <div md-card>   
         <md-content ng-controller="mainController">
               <md-toolbar class="md-no-sticky md-accent">Dogadjaji
-                   <fieldlist  id="popupContainer" ng-controller="dialogController" layout="column" id="todo-form"> 
+                   <fieldlist  id="popupContainer" ng-controller="mainController" layout="column" id="todo-form"> 
                         <md-button flex="100" type="submit" class="md-fab md-primary" ng-click="showCreate($event)">
                            <md-icon  md-svg-icon="content-save" aria-label="save"></md-icon>
                         </md-button>
@@ -113,7 +113,6 @@
                             </md-card-title-media>
                         </md-card-title>
                         <md-card-actions layout="row" layout-align="end center" flex="40">
-                            <md-icon  md-svg-icon="account-alert" aria-label="edit"  ng-click="showConfirm(todo._id)" ></md-icon>
                             <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
                         </md-card-actions>
                     </md-card>
