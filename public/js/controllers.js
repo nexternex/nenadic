@@ -278,6 +278,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                 $scope.todos = data;
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 console.log('create data completed returning:'+data);
+                $mdDialog.hide();
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -328,6 +329,19 @@ $scope.showConfirm = function(id) {
   };    
      
 //switch za readonly detalje naloga//
+    
+     $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+    
     
     $scope.message=true;
     $scope.onChange = function(cbState) {
