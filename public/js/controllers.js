@@ -308,7 +308,7 @@ $scope.showCreate = function(formData) {
       parent: angular.element(document.body),
       clickOutsideToClose:true
     }).then(function() {
-        $scope.createTodo();
+       
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
@@ -332,6 +332,7 @@ $scope.showConfirm = function(id) {
   };  
 //    Basic mddialog contollers
      $scope.hide = function() {
+        $scope.createTodo();
         $mdDialog.hide();
     };
 
