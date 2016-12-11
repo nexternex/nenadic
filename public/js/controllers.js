@@ -309,6 +309,7 @@ $scope.showCreate = function(formData) {
       clickOutsideToClose:true
     }).then(function() {
         var newTodo=$scope.formData;
+        console.log(newTodo);
         $scope.createTodo(newTodo);
     }, function() {
       $scope.status = 'You decided to keep your debt.';
