@@ -308,6 +308,7 @@ $scope.showCreate = function() {
       clickOutsideToClose:true
     }).then(function() {
         $scope.status="idemoo";
+        $scope.$apply();
     }, function() {
       $scope.status = 'You decided to keep your debt.';
     });
