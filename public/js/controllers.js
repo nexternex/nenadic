@@ -339,7 +339,7 @@ $scope.showConfirm = function(id) {
 
     $scope.answer = function(answer) {
       $mdDialog.hide(answer);
-    
+    };
      
 //switch za readonly detalje naloga//
     
