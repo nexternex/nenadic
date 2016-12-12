@@ -19,7 +19,7 @@
 <md-tab label="Moj Nalog">
     
         <md-content class="md-padding">  
-                   <fieldlist ng-model="formDataC" ng-disabled="data.cb2" class="md-primary hue-2" layout="row">
+                   <fieldlist ng-model="formData" ng-disabled="data.cb2" class="md-primary hue-2" layout="row">
                        <!--prva grupa podataka-->
                     <md-content layout="column" flex="60">
                         
@@ -29,26 +29,26 @@
                         
                             <div layout='row' flex="100" >
                                 <md-input-container flex="45" ngmodel="state">
-                                   <h1 ng-model="formDataC.id" ng-init="formDataC.id=auth.profile.user_id" ng-hide="true"></h1>
+                                   <h1 ng-model="formData.id" ng-init="formDataC.id=auth.profile.user_id" ng-hide="true"></h1>
                                      <label>Ime:{{data.cb2}}</label>
-                                    </br><input  type="text" name="name"  ng-model="formDataC.name"></input>{{name}}<br>
+                                    </br><input  type="text" name="name"  ng-model="formData.name"></input>{{name}}<br>
                                 </md-input-container>
 
                                  <md-input-container flex="45">
                                      <label> Prezime:</label> 		   
-                                     </br><input  type="text" name="lastname"  ng-readonly="data.cb2"  ng-model="formDataC.lastname">{{ lastname }}<br>
+                                     </br><input  type="text" name="lastname"  ng-readonly="data.cb2"  ng-model="formData.lastname">{{ lastname }}<br>
                                 </md-input-container>
                             </div>
     
                             <div layout='row' flex="100">
                                  <md-input-container flex="45">
                                    <label>Naziv preduzeca:</label> 
-                                     </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formDataC.company">{{company}}<br>
+                                     </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company">{{company}}<br>
                                  </md-input-container>
 
                                  <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" flex="45">
                                      <label>email:</label> 		   
-                                     </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formDataC.address">{{address}}<br>
+                                     </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address">{{address}}<br>
                                  </md-input-container>
                             </div>
 
@@ -75,12 +75,12 @@
                             <div layout='row' flex="100">
                                 <md-input-container flex="45" ngmodel="state">
                                      <label>Adresa:{{data.cb2}}</label>
-                                    </br><input  type="text" name="name"  ng-model="formData.name"></input>{{name}}<br>
+                                    </br><input  type="text" name="namex"  ng-model="formData.namex"></input>{{namex}}<br>
                                 </md-input-container>
 
                                  <md-input-container flex="45">
                                      <label> Grad:</label> 		   
-                                     </br><input  type="text" name="lastname"  ng-readonly="data.cb2"  ng-model="formData.lastname">{{ lastname }}<br>
+                                     </br><input  type="text" name="lastnamex"  ng-readonly="data.cb2"  ng-model="formData.lastnamex">{{ lastnamex }}<br>
                                 </md-input-container>
                             </div>
                         </md-content>

@@ -495,10 +495,10 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
 //        });
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {
-        $http.post('/api/lists',$scope.formDataC)
+        $http.post('/api/lists',$scope.formData)
             .success(function(data) {
 //                $scope.formDataC = {}; // clear the form so our user is ready to enter another
-                $scope.formDataC = data;
+                $scope.formData = data;
 //                console.log(data);
                 alert("uspesno ste registrovali nalog koristeci profileController");
             })
@@ -511,7 +511,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     $scope.deleteList = function(id) {
         $http.delete('/api/lists/' + id)
             .success(function(data) {
-                $scope.formDataC = data;
+                $scope.formData = data;
 //                console.log(data);
             })
             .error(function(data) {
