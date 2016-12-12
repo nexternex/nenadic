@@ -351,6 +351,7 @@ $scope.showConfirm = function(id) {
         };     
 }]);
 //Dialog Kontroler za unos novih todo u listu todos
+
 //erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia','$rootScope', function ($scope,$mdDialog, $mdMedia,$rootScope) {
 //    $scope.status = '  ';
 //    $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
@@ -379,7 +380,8 @@ $scope.showConfirm = function(id) {
 //      $scope.customFullscreen = (wantsFullScreen === true);
 //    });
 //  };     
-//}]);    
+//}]); 
+
 //Menu controller ----ciricle meni 
 erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
@@ -394,7 +396,7 @@ erpagWeather.controller('MenuCtrl', function() {
 erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
-//LIST1 kontroler--dropdown komponente
+//LIST1 kontroler
 erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($scope,$http,auth) {
 
 // when landing on the page, get all lists and show them
@@ -486,7 +488,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     $http.get('/api/lists'+auth.profile.user_id)
         .success(function(data) {
             $scope.formDataC = data;
-            console.log('liste sam dobio iz baze:'+data);
+            console.log('profile sam dobio iz baze:'+data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -498,7 +500,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
 //                $scope.formDataC = {}; // clear the form so our user is ready to enter another
                 $scope.formDataC = data;
 //                console.log(data);
-                alert("uspesno ste registrovali nalog koristeci list1");
+                alert("uspesno ste registrovali nalog koristeci profileController");
             })
             .error(function(data) {
                 console.log('Error: ' + data);
