@@ -395,7 +395,7 @@ erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','F
      console.log("maps kontroler entry");
     }]);
 //LIST1 kontroler--dropdown komponente
-erpagWeather.controller('list1Controller', ['$scope','$http','auth' function ($scope,$http,auth) {
+erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($scope,$http,auth) {
     $scope.formDataC = {};
     $scope.auth = auth;
     
