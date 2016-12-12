@@ -396,7 +396,8 @@ erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','F
     }]);
 //LIST1 kontroler--dropdown komponente
 erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$http) {
-    $scope.formData = {};
+    $scope.formDataC = {};
+    $scope.auth = auth;
     
     $scope.category={
     singleSelect: null,
@@ -419,15 +420,15 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
         
     
 
-// when landing on the page, get all lists and show them
-//    $http.get('/api/lists')
-//        .success(function(data) {
-//            $scope.lists = data;
-//            console.log('liste sam dobio iz baze:'+data);
-//        })
-//        .error(function(data) {
-//            console.log('Error: ' + data);
-//        });
+ when landing on the page, get all lists and show them
+    $http.get('/api/lists'+auth.profile.user_id)
+        .success(function(data) {
+            $scope.lists = data;
+            console.log('liste sam dobio iz baze:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
     
     $scope.isLoading = true;
 
@@ -445,9 +446,9 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {
-        $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
+        $http.post('/api/lists',$scope.formDataC)
             .success(function(data) {
-                $scope.formData = {}; // clear the form so our user is ready to enter another
+                $scope.formDataC = {}; // clear the form so our user is ready to enter another
                 $scope.lists = data;
 //                console.log(data);
                 alert("uspesno ste registrovali nalog koristeci list1");
