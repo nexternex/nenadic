@@ -420,7 +420,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
         
     
 
- when landing on the page, get all lists and show them
+// when landing on the page, get all lists and show them
     $http.get('/api/lists'+auth.profile.user_id)
         .success(function(data) {
             $scope.lists = data;
