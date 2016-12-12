@@ -351,7 +351,6 @@ $scope.showConfirm = function(id) {
         };     
 }]);
 //Dialog Kontroler za unos novih todo u listu todos
-
 //erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia','$rootScope', function ($scope,$mdDialog, $mdMedia,$rootScope) {
 //    $scope.status = '  ';
 //    $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
@@ -380,8 +379,7 @@ $scope.showConfirm = function(id) {
 //      $scope.customFullscreen = (wantsFullScreen === true);
 //    });
 //  };     
-//}]); 
-
+//}]);    
 //Menu controller ----ciricle meni 
 erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
@@ -396,8 +394,8 @@ erpagWeather.controller('MenuCtrl', function() {
 erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
-//LIST1 kontroler
-erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($scope,$http,auth) {
+//LIST1 kontroler--dropdown komponente
+erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$http) {
 
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
@@ -421,6 +419,34 @@ erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($
         .error(function(data) {
             console.log('Error: ' + data);
         });    
+    
+
+// when submitting the add form, send the text to the node API
+//    $scope.createList = function() {
+//        $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
+//            .success(function(data) {
+//                $scope.formData = {}; // clear the form so our user is ready to enter another
+//                $scope.lists = data;
+////                console.log(data);
+//                alert("uspesno ste registrovali nalog koristeci list1");
+//            })
+//            .error(function(data) {
+//                console.log('Error: ' + data);
+//            });
+//    };
+
+    // delete a list after checking it
+//    $scope.deleteList = function(id) {
+//        $http.delete('/api/lists/' + id)
+//            .success(function(data) {
+//                $scope.lists = data;
+////                console.log(data);
+//            })
+//            .error(function(data) {
+//                console.log('Error: ' + data);
+//            });
+//    };
+    
     
 
         // In this example, we set up our model using a plain object.
@@ -460,12 +486,15 @@ erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($
             }
           }
         };
+
+    
+    
 }]);
 
-erpagWeather.controller('profileController', ['$scope','$http','auth', function ($scope,$http,auth) {
-    console.log('START PROFILEC');
+erpagWeather.controller('profileController', ['$scope','$http', function ($scope,$http) {
+    $scope.formData = {};
     $scope.auth = auth;
- //dropdowns za tip   
+    
     $scope.category={
     singleSelect: null,
     availableOptions: [
@@ -475,7 +504,8 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
       {id: '4', name: 'Poslasticarnica'},
       {id: '5', name: 'Efekti'}
     ],
-   };    
+   };
+    
     $scope.size={
     singleSelect: null,
     availableOptions: [
@@ -484,23 +514,26 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     ],
    };
         
+    
+
 // when landing on the page, get all lists and show them
-//    $http.get('/api/lists'+auth.profile.user_id)
-//        .success(function(data) {
-//            $scope.formData = data;
-//            console.log('profile sam dobio iz baze:');
-//        })
-//        .error(function(data) {
-//            console.log('Error: ' + data);
-//        });
+    $http.get('/api/lists'+auth.profile.user_id)
+        .success(function(data) {
+            $scope.lists = data;
+            console.log('liste sam dobio iz baze:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {
-        $http.post('/api/lists',{formData: $scope.formData,size:$scope.size,category:$scope.category,c_id:$scope.c_id})
+        $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
             .success(function(data) {
-//                $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.formData = data;
+                $scope.formData = {}; // clear the form so our user is ready to enter another
+                $scope.lists = data;
 //                console.log(data);
-                alert("uspesno ste registrovali nalog koristeci profileController");
+                alert("uspesno ste registrovali nalog koristeci list1");
             })
             .error(function(data) {
                 console.log('Error: ' + data);
@@ -511,14 +544,14 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     $scope.deleteList = function(id) {
         $http.delete('/api/lists/' + id)
             .success(function(data) {
-                $scope.formData = data;
+                $scope.lists = data;
 //                console.log(data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
             });
-    };
- 
+    };    
+    
 }]);
 //FACTORY return users
 erpagWeather.factory('setEvent', function($http) {
