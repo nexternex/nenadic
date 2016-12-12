@@ -495,7 +495,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
 //        });
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {
-        $http.post('/api/lists',{formDataC: $scope.formDataC,size:$scope.size,category:$scope.category,$scope.id})
+        $http.post('/api/lists',{formDataC: $scope.formDataC,size:$scope.size,category:$scope.category,c_id:$scope.c_id})
             .success(function(data) {
 //                $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.formData = data;
