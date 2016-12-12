@@ -163,9 +163,9 @@ app.post('/api/photo',function(req,res){
 		// create a list, information comes from AJAX request from Angular
 		List.create({
 			name :req.body.name,
-            lastname : req.body.formData.name,
-            company : req.body.formData.company,
-            address : req.body.formData.address,
+            lastname : req.body.formDataC.name,
+            company : req.body.formDataC.company,
+            address : req.body.formDataC.address,
             size : req.body.size.singleSelect,
             category : req.body.category.singleSelect,
             id:req.body.id,

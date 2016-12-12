@@ -489,7 +489,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     $http.get('/api/lists'+auth.profile.user_id)
         .success(function(data) {
             $scope.formDataC = data;
-            console.log('profile sam dobio iz baze:'+data);
+            console.log('profile sam dobio iz baze:');
         })
         .error(function(data) {
             console.log('Error: ' + data);
