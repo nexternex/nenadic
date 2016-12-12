@@ -22,7 +22,7 @@ erpagWeather.config(function ($routeProvider){
     })
     .when('/register', {
     templateUrl: '../pages/register.htm',
-    controller: 'list1Controller',
+    controller: 'profileController',
     requiresLogin: true   
     })
     .when('/mypage', {
