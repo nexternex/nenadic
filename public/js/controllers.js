@@ -464,7 +464,6 @@ erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($
 
 erpagWeather.controller('profileController', ['$scope','$http','auth', function ($scope,$http,auth) {
     console.log('START PROFILEC');
-    $scope.formDataC = {};
     $scope.auth = auth;
  //dropdowns za tip   
     $scope.category={
