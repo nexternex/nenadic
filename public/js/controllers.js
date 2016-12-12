@@ -530,8 +530,8 @@ erpagWeather.controller('profileController', ['$scope','$http', function ($scope
     $scope.createList = function() {
         $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
             .success(function(data) {
-                $scope.formData = {}; // clear the form so our user is ready to enter another
-                $scope.lists = data;
+//                $scope.formData = {}; // clear the form so our user is ready to enter another
+                $scope.formData = data;
 //                console.log(data);
                 alert("uspesno ste registrovali nalog koristeci list1");
             })
@@ -544,7 +544,7 @@ erpagWeather.controller('profileController', ['$scope','$http', function ($scope
     $scope.deleteList = function(id) {
         $http.delete('/api/lists/' + id)
             .success(function(data) {
-                $scope.lists = data;
+                $scope.formData = data;
 //                console.log(data);
             })
             .error(function(data) {
