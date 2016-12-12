@@ -491,7 +491,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
 }]);
 
-erpagWeather.controller('profileController', ['$scope','$http', function ($scope,$http) {
+erpagWeather.controller('profileController', ['$scope','$http','auth', function ($scope,$http,auth) {
     $scope.formData = {};
     $scope.auth = auth;
     
