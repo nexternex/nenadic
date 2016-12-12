@@ -396,27 +396,6 @@ erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','F
     }]);
 //LIST1 kontroler--dropdown komponente
 erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($scope,$http,auth) {
-    $scope.formDataC = {};
- //dropdowns za tip   
-    $scope.category={
-    singleSelect: null,
-    availableOptions: [
-      {id: '1', name: 'Svecane sale'},
-      {id: '2', name: 'Bend za svadbe'},
-      {id: '3', name: 'Dekoracija'},
-      {id: '4', name: 'Poslasticarnica'},
-      {id: '5', name: 'Efekti'}
-    ],
-   };    
-    $scope.size={
-    singleSelect: null,
-    availableOptions: [
-      {id: '1', name: 'Standardna'},
-      {id: '2', name: 'Velika'},
-    ],
-   };
-        
-    
 
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
@@ -479,9 +458,6 @@ erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($
             }
           }
         };
-
-    
-    
 }]);
 
 erpagWeather.controller('profileController', ['$scope','$http','auth', function ($scope,$http,auth) {
