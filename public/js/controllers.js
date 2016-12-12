@@ -485,14 +485,14 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
    };
         
 // when landing on the page, get all lists and show them
-    $http.get('/api/lists'+auth.profile.user_id)
-        .success(function(data) {
-            $scope.formDataC = data;
-            console.log('profile sam dobio iz baze:');
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
+//    $http.get('/api/lists'+auth.profile.user_id)
+//        .success(function(data) {
+//            $scope.formDataC = data;
+//            console.log('profile sam dobio iz baze:');
+//        })
+//        .error(function(data) {
+//            console.log('Error: ' + data);
+//        });
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {
         $http.post('/api/lists',$scope.formDataC)
