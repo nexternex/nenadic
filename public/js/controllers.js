@@ -485,7 +485,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
 // when landing on the page, get all lists and show them
     $http.get('/api/lists'+auth.profile.user_id)
         .success(function(data) {
-            $scope.lists = data;
+            $scope.formDataC = data;
             console.log('liste sam dobio iz baze:'+data);
         })
         .error(function(data) {
@@ -495,8 +495,8 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     $scope.createList = function() {
         $http.post('/api/lists',$scope.formDataC)
             .success(function(data) {
-                $scope.formDataC = {}; // clear the form so our user is ready to enter another
-                $scope.lists = data;
+//                $scope.formDataC = {}; // clear the form so our user is ready to enter another
+                $scope.formDataC = data;
 //                console.log(data);
                 alert("uspesno ste registrovali nalog koristeci list1");
             })
@@ -509,7 +509,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     $scope.deleteList = function(id) {
         $http.delete('/api/lists/' + id)
             .success(function(data) {
-                $scope.lists = data;
+                $scope.formDataC = data;
 //                console.log(data);
             })
             .error(function(data) {
