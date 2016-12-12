@@ -398,7 +398,7 @@ erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','F
 erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($scope,$http,auth) {
     $scope.formDataC = {};
     $scope.auth = auth;
-    
+ //dropdowns za tip   
     $scope.category={
     singleSelect: null,
     availableOptions: [
@@ -408,8 +408,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($
       {id: '4', name: 'Poslasticarnica'},
       {id: '5', name: 'Efekti'}
     ],
-   };
-    
+   };    
     $scope.size={
     singleSelect: null,
     availableOptions: [
@@ -514,7 +513,64 @@ erpagWeather.controller('list1Controller', ['$scope','$http','auth', function ($
     
 }]);
 
+erpagWeather.controller('profileController', ['$scope','$http','auth', function ($scope,$http,auth) {
+    $scope.formDataC = {};
+    $scope.auth = auth;
+ //dropdowns za tip   
+    $scope.category={
+    singleSelect: null,
+    availableOptions: [
+      {id: '1', name: 'Svecane sale'},
+      {id: '2', name: 'Bend za svadbe'},
+      {id: '3', name: 'Dekoracija'},
+      {id: '4', name: 'Poslasticarnica'},
+      {id: '5', name: 'Efekti'}
+    ],
+   };    
+    $scope.size={
+    singleSelect: null,
+    availableOptions: [
+      {id: '1', name: 'Standardna'},
+      {id: '2', name: 'Velika'},
+    ],
+   };
+        
+// when landing on the page, get all lists and show them
+    $http.get('/api/lists'+auth.profile.user_id)
+        .success(function(data) {
+            $scope.lists = data;
+            console.log('liste sam dobio iz baze:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+// when submitting the add form, send the text to the node API
+    $scope.createList = function() {
+        $http.post('/api/lists',$scope.formDataC)
+            .success(function(data) {
+                $scope.formDataC = {}; // clear the form so our user is ready to enter another
+                $scope.lists = data;
+//                console.log(data);
+                alert("uspesno ste registrovali nalog koristeci list1");
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
 
+    // delete a list after checking it
+    $scope.deleteList = function(id) {
+        $http.delete('/api/lists/' + id)
+            .success(function(data) {
+                $scope.lists = data;
+//                console.log(data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
+ 
+}]);
 //FACTORY return users
 erpagWeather.factory('setEvent', function($http) {
   return {
