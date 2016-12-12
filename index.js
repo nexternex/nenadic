@@ -159,13 +159,13 @@ app.post('/api/photo',function(req,res){
 	});
 // create oglasi/lisitng and send back all lists after creation
 	app.post('/api/lists', function(req, res) {
-        console.log(req.body.formData.name+":"+req.body.size.singleSelect);
+//        console.log(req.body.formData.name+":"+req.body.size.singleSelect);
 		// create a list, information comes from AJAX request from Angular
 		List.create({
-			name :req.body.formDataC.name,
-            lastname : req.body.formDataC.name,
-            company : req.body.formDataC.company,
-            address : req.body.formDataC.address,
+			name :req.body.name,
+            lastname : req.body.name,
+            company : req.body.company,
+            address : req.body.address,
             size : req.body.size.singleSelect,
             category : req.body.category.singleSelect,
             id:req.body.id,
