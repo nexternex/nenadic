@@ -41,7 +41,7 @@ console.log('MongoDB connection successful.');
 
 //database model
 var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',id:'string' });
-var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string' });
+var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string',id:'string'});
 
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
@@ -167,7 +167,8 @@ app.post('/api/photo',function(req,res){
             company : req.body.formData.company,
             address : req.body.formData.address,
             size : req.body.size.singleSelect,
-            category : req.body.category.singleSelect
+            category : req.body.category.singleSelect,
+            id:req.body.id,
 		}, function(err, list) {
 			if (err)
 				res.send(err);
