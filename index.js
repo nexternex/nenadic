@@ -133,7 +133,7 @@ app.post('/api/photo',function(req,res){
 				res.send(err);
 
             // get and return all the todos after you delete another
-			Todo.find({ 'id': req.params.profile_id },function(err, todos) {
+			Todo.find(function(err, todos) {
 				if (err)
 					res.send(err)
 				    res.json(todos);
@@ -162,7 +162,7 @@ app.post('/api/photo',function(req,res){
 //FIND USER PROFILE//
 	app.get('/api/profile:profile_id', function(req, res) {
         // use mongoose to get all profiles in the database
-		Profile.find(function(err, profile) {
+		Profile.find({ 'id': req.params.profile_id },function(err, profile) {
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
