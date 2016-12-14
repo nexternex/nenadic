@@ -489,11 +489,11 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
             $scope.formData = data;
-            console.log('profil sam dobio iz baze:');
+            console.log('profil sam dobio iz baze:'+data);
         })
         .error(function(data) {
             console.log('Error: ' + data);
-        });
+        });    
 
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {
