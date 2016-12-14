@@ -461,7 +461,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
 }]);
 //PROFIL KORISNIKA//
-erpagWeather.controller('profileController', ['$scope','$http','auth', function ($scope,$http,auth) {
+erpagWeather.controller('profileController', ['$scope','$http','auth','$q', function ($scope,$http,auth,q) {
     $scope.formData = {};
 //    $scope.formData = 
 //  {
@@ -496,14 +496,38 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     
 
 // when landing on the page, get all lists and show them
-    $http.get('/api/profile'+auth.profile.user_id)
-        .success(function(data) {
-            $scope.formData = data;
-            console.log('profil sam dobio iz baze:'+$scope.formData);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });    
+//    $http.get('/api/profile'+auth.profile.user_id)
+//        .success(function(data) {
+//            $scope.formData = data;
+//            console.log('profil sam dobio iz baze:'+$scope.formData);
+//        })
+//        .error(function(data) {
+//            console.log('Error: ' + data);
+//        });   
+
+    $scope.loadAllMeasure = function(){
+           loadData().then(function(data){
+             $scope.formData = data;
+           });
+         };
+
+        function loadData(){
+            var deferred = $q.defer();
+            setTimeout(function(){
+                $http.get('/api/profile'+auth.profile.user_id)
+                    .success(function(data) {
+                        $scope.formData = data;
+                        console.log('profil sam dobio iz baze:'+$scope.formData);
+                    })
+                    .error(function(data) {
+                        console.log('Error: ' + data);
+                    });   
+                deferred.resolve(data);
+            }, 3000);
+           return deferred.promise;
+        }
+
+
 
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {
