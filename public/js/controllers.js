@@ -461,7 +461,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
 }]);
 //PROFIL KORISNIKA//
-erpagWeather.controller('profileController', ['$scope','$http','auth','$q', function ($scope,$http,auth,q) {
+erpagWeather.controller('profileController', ['$scope','$http','auth','$q', function ($scope,$http,auth,$q) {
     $scope.formData = {};
 //    $scope.formData = 
 //  {
