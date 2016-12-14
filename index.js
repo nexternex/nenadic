@@ -158,20 +158,19 @@ app.post('/api/photo',function(req,res){
 		});
 	});
 
+
+//FIND USER PROFILE//
 	app.get('/api/profile:profile_id', function(req, res) {
-        
-
-// use mongoose to get all todos in the database
-		List.find(function(err, lists) {
-
-// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+        // use mongoose to get all profiles in the database
+		Profile.find(function(err, profile) {
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
-
-			res.json(lists); // return all todos in JSON format
-            console.log("R2D2 says:nasao sam list:"+lists);
+			res.json(profile); // return all todos in JSON format
+            console.log("R2D2 says:nasao sam profile:"+profile);
 		});
 	});
+
 // create oglasi/lisitng and send back all lists after creation
 	app.post('/api/lists', function(req, res) {
         console.log(req.body.formData.name+":"+req.body.size.singleSelect);

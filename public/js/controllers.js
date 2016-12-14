@@ -349,37 +349,7 @@ $scope.showConfirm = function(id) {
     $scope.onChange = function(cbState) {
         $scope.message = cbState;
         };     
-}]);
-//Dialog Kontroler za unos novih todo u listu todos
-//erpagWeather.controller('dialogController', ['$scope','$mdDialog', '$mdMedia','$rootScope', function ($scope,$mdDialog, $mdMedia,$rootScope) {
-//    $scope.status = '  ';
-//    $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-//  //Dialog za unos novog eventa    
-//    $scope.showAdvanced = function(ev) {
-//        
-//    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-//        
-//    $mdDialog.show({
-//      controller: 'mainController',
-//      templateUrl: '../pages/dialog1.htm',
-//      parent: angular.element(document.body),
-//      targetEvent: ev,
-//      clickOutsideToClose:true,
-//      fullscreen: useFullScreen
-//    })
-//    .then(function(answer) {
-//      $scope.status = 'You said the information was "' + answer + '".';
-//    }, function() {
-//      $scope.status = 'You cancelled the dialog.';
-//    });
-//        
-//    $scope.$watch(function() {
-//      return $mdMedia('xs') || $mdMedia('sm');
-//    }, function(wantsFullScreen) {
-//      $scope.customFullscreen = (wantsFullScreen === true);
-//    });
-//  };     
-//}]);    
+}]);  
 //Menu controller ----ciricle meni 
 erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
@@ -516,7 +486,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     
 
 // when landing on the page, get all lists and show them
-    $http.get('/api/lists'+auth.profile.user_id)
+    $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
             $scope.formData = data;
             console.log('liste sam dobio iz baze:');
