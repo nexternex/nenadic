@@ -510,14 +510,13 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
              $scope.formData = data;
                console.log('promise: '+formData.name);
            });
-         };
+         }; 
 
         function loadData(){
             var deferred = $q.defer();
             setTimeout(function(){
-                $http.get('/api/profile'+auth.profile.user_id)
+                var data = $http.get('/api/profile'+auth.profile.user_id)
                     .success(function(data) {
-                        var data = data;
                         console.log('profil sam dobio iz baze:'+$scope.formData.lastname);
                     })
                     .error(function(data) {
