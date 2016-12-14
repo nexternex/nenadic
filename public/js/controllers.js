@@ -463,7 +463,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 //PROFIL KORISNIKA//
 erpagWeather.controller('profileController', ['$scope','$http','auth', function ($scope,$http,auth) {
     $scope.formData = {};
-    $scope.nex = 
+    $scope.formData = 
   {
     "_id": "584f34c248b8700400f3b0ed",
     "lastname": "test",
@@ -472,6 +472,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
     "c_id": "auth0|560bc8e4356e91543abd8704",
     "__v": 0
   };
+    alert($scope.nex);
     $scope.auth = auth;
     
     $scope.category={
