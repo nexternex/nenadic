@@ -17,8 +17,8 @@
 <md-tabs md-dynamic-height md-border-bottom flex="100">
 <!--Pocinje prvi tab-->
 <md-tab label="Moj Nalog">
-                                  </br><span ng-model="nex._id"></span>Ime: {{nex._id}}<br>
-                                  </br><span  ng-model="nex.lastname"></span>Prezime: {{nex.lastname}}<br>
+                                  </br><span ng-model="profiles._id"></span>Ime: {{profiles._id}}<br>
+                                  </br><span  ng-model="profiles.lastname"></span>Prezime: {{profiles.lastname}}<br>
                                     <md-card-actions layout="row" layout-align="end center" flex="40">
                                             <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="loadAllMeasure()" >Osvezi podatke</md-icon>
                                     </md-card-actions>
@@ -77,7 +77,7 @@
                         </md-content>
                      <!--druga grupa podataka-->
             <md-content >
-                 <md-card md-accent   flex="33" ng-repeat="profile in nex">
+                 <md-card md-accent   flex="33" ng-repeat="profile in profiles">
                     <md-card-title>
                         <md-card-title-text>
                             <span class="md-headline">{{profile.name }}</span>
