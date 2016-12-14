@@ -523,7 +523,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
                         console.log('Error: ' + data);
                     });   
                 deferred.resolve(data);
-            }, 3000);
+            }, 1000);
            return deferred.promise;
         };
 
