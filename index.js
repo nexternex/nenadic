@@ -133,7 +133,7 @@ app.post('/api/photo',function(req,res){
 				res.send(err);
 
             // get and return all the todos after you delete another
-			Todo.find(function(err, todos) {
+			Todo.find({ 'id': req.params.profile_id },function(err, todos) {
 				if (err)
 					res.send(err)
 				    res.json(todos);
@@ -144,6 +144,21 @@ app.post('/api/photo',function(req,res){
 ////////////////////////////////////////// LIST | ROUTES ///////////////////////////////////////
 
 	app.get('/api/lists', function(req, res) {
+        
+
+// use mongoose to get all todos in the database
+		List.find(function(err, lists) {
+
+// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err)
+
+			res.json(lists); // return all todos in JSON format
+            console.log("R2D2 says:nasao sam list:"+lists);
+		});
+	});
+
+	app.get('/api/profile:profile_id', function(req, res) {
         
 
 // use mongoose to get all todos in the database

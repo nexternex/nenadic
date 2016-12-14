@@ -490,7 +490,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
     
 }]);
-
+//PROFIL KORISNIKA//
 erpagWeather.controller('profileController', ['$scope','$http','auth', function ($scope,$http,auth) {
     $scope.formData = {};
     $scope.auth = auth;
@@ -504,8 +504,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
       {id: '4', name: 'Poslasticarnica'},
       {id: '5', name: 'Efekti'}
     ],
-   };
-    
+   };  
     $scope.size={
     singleSelect: null,
     availableOptions: [
