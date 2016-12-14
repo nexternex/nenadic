@@ -527,7 +527,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
             }, 3000);
            return deferred.promise;
         }
-    
+    $scope.LoadAllMeasure();
 
 
 // when submitting the add form, send the text to the node API
