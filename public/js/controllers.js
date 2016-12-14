@@ -463,7 +463,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 //PROFIL KORISNIKA//
 erpagWeather.controller('profileController', ['$scope','$http','auth', function ($scope,$http,auth) {
     $scope.formData = {};
-    $scope.profile = {};
+    $scope.profiles = {};
     $scope.auth = auth;
     
     $scope.category={
@@ -489,7 +489,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth', function 
 // when landing on the page, get all lists and show them
     $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
-            $scope.profile = data;
+            $scope.profiles = data;
             console.log('profil sam dobio iz baze:'+data);
         })
         .error(function(data) {
