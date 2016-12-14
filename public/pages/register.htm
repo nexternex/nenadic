@@ -20,11 +20,12 @@
                                   </br><span ng-model="formData._id"></span>Ime: {{formData._id}}<br>
                                   </br><span  ng-model="formData.lastname"></span>Prezime: {{formData.lastname}}<br>
                                     <md-card-actions layout="row" layout-align="end center" flex="40">
-                                            <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="loadAllMeasure()" ></md-icon>
+                                            <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="loadAllMeasure()" >Osvezi podatke</md-icon>
                                     </md-card-actions>
         <md-content class="md-padding">  
                    <fieldlist ng-model="formData" ng-disabled="data.cb2" class="md-primary hue-2" layout="row">
-                       <!--prva grupa podataka-->
+                      
+                    <!--prva grupa podataka-->
                     <md-content ng-model="formData" layout="column" flex="60">
                                  
                             <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
