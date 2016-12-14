@@ -24,19 +24,22 @@
                     <md-content layout="column" flex="60">
                         
                             <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
-                                Izmeni podatke
+                                Izmeni podatke:
+                                  </br><input  type="text" name="name" ng-model="formData.name"></input>{{formData.name}}<br>
+                                  </br><input  type="text" name="name" ng-model="formData.lastname"></input>{{formData.name}}<br>
+                                 
                             </md-switch>
                          <h1 ng-model="formData" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
                             <div layout='row' flex="100" >
                                 <md-input-container flex="45" ngmodel="state">
                                    <h1 ng-model="formData.c_id" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
                                      <label>Ime:{{data.cb2}}</label>
-                                    </br><input  type="text" name="name"  ng-init="formData.name" ng-model="formData.name"></input>{{formData.name}}<br>
+                                    </br><input  type="text" name="name" ng-model="formData.name"></input>{{formData.name}}<br>
                                 </md-input-container>
 
                                  <md-input-container flex="45">
                                      <label> Prezime:</label> 		   
-                                     </br><input  type="text" name="lastname"  ng-init="formData.lastname" ng-readonly="data.cb2"  ng-model="formData.lastname">{{ formData.lastname }}<br>
+                                     </br><input  type="text" name="lastname" ng-readonly="data.cb2"  ng-model="formData.lastname">{{ formData.lastname }}<br>
                                 </md-input-container>
                             </div>
     
