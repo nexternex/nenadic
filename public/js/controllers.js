@@ -508,6 +508,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
     $scope.loadAllMeasure = function(){
            loadData().then(function(data){
              $scope.formData = data;
+               console.log('promise: 'formData.name);
            });
          };
 
@@ -517,7 +518,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
                 $http.get('/api/profile'+auth.profile.user_id)
                     .success(function(data) {
                         $scope.formData = data;
-                        console.log('profil sam dobio iz baze:'+$scope.formData);
+                        console.log('profil sam dobio iz baze:'+$scope.formData.lastname);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
@@ -526,7 +527,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
             }, 3000);
            return deferred.promise;
         }
-
+    
 
 
 // when submitting the add form, send the text to the node API
