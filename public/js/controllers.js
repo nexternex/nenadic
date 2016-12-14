@@ -508,8 +508,10 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
 
     $scope.loadAllMeasure = function(){
            loadData().then(function(data){
+               $scope.$apply(function() {
              $scope.nex = data;
                console.log('promise: '+$scope.nex);
+                     });
            });
          }; 
 
