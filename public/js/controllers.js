@@ -461,7 +461,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
 }]);
 //PROFIL KORISNIKA//
-erpagWeather.controller('profileController', ['$scope','$http','auth','$q', function ($scope,$http,auth,$q) {
+erpagWeather.controller('profileController', ['$scope','$http','auth','$q',,'$timeout', function ($scope,$http,auth,$q,$timeout) {
     $scope.formData = {};
 //    $scope.profiles = {
 //    "_id": "Crvena Zvezda",
@@ -514,7 +514,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
 
         function loadData(){
             var deferred = $q.defer();
-            setTimeout(function(){
+            $timeout(function(){
                 var data = $http.get('/api/profile'+auth.profile.user_id)
                     .success(function(data) {
                         console.log('profil sam dobio iz baze linux:'+$scope.formData);
@@ -523,7 +523,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
                         console.log('Error: ' + data);
                     });   
                 deferred.resolve(data);
-            }, 1000);
+            }, 3000);
            return deferred.promise;
         };
 
