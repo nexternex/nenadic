@@ -493,13 +493,13 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
     ],
    };
         
-    
-
 // when landing on the page, get all lists and show them
     $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
             $scope.profiles = data;
-            console.log('profil sam dobio iz baze:'+$scope.profiles);
+            $scope.my_profile=$scope.profiles[0];
+        
+            console.log('profil sam dobio iz baze:'+$scope.my_profile);
         })
         .error(function(data) {
             console.log('Error: ' + data);
