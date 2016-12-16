@@ -534,7 +534,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
 //                $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.formData = data;
 //                console.log(data);
-                alert("uspesno ste registrovali nalog koristeci profileController");
+                alert("uspesno ste registrovali nalog koristeci profileController linux");
             })
             .error(function(data) {
                 console.log('Error: ' + data);
