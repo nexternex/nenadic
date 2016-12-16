@@ -463,16 +463,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 //PROFIL KORISNIKA//
 erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
     $scope.formData = {};
-     $scope.profiles = [];
-//    $scope.profiles = {
-//    "_id": "Crvena Zvezda",
-//    "lastname": "Marakana",
-//    "size": null,
-//    "category": null,
-//    "c_id": "auth0|560bc8e4356e91543abd8704",
-//    "__v": 0
-//  };
-
+    $scope.profiles = [];
     $scope.auth = auth;
     
     $scope.category={
@@ -497,37 +488,13 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
     $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
             $scope.profiles = data;
-            $scope.my_profile=$scope.profiles[0];
+            $scope.formData=$scope.profiles[0];
         
             console.log('profil sam dobio iz baze:'+$scope.my_profile);
         })
         .error(function(data) {
             console.log('Error: ' + data);
         });    
-
-//    $scope.loadAllMeasure = function(){
-//           loadData().then(function(data){
-//               
-//               $scope.profiles = data;
-//               console.log('promise: '+$scope.profiles.lastname);
-//           });
-//         }; 
-//
-//        function loadData(){
-//            var deferred = $q.defer();
-//            
-//            $timeout(function(){
-//                var data = $http.get('/api/profile'+auth.profile.user_id)
-//                    .success(function(data) {
-//                        console.log('profil sam dobio iz baze linux:'+$scope.profiles.lastname);
-//                    })
-//                    .error(function(data) {
-//                        console.log('Error: ' + data);
-//                    });   
-//                deferred.resolve(data);
-//            }, 3000);
-//           return deferred.promise;
-//        };
 
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {
