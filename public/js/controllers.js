@@ -496,38 +496,38 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
     
 
 // when landing on the page, get all lists and show them
-//    $http.get('/api/profile'+auth.profile.user_id)
-//        .success(function(data) {
-//            $scope.formData = data;
-//            console.log('profil sam dobio iz baze:'+$scope.formData);
-//        })
-//        .error(function(data) {
-//            console.log('Error: ' + data);
-//        });   
+    $http.get('/api/profile'+auth.profile.user_id)
+        .success(function(data) {
+            $scope.formData = data;
+            console.log('profil sam dobio iz baze:'+$scope.profiles);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });   
 
-    $scope.loadAllMeasure = function(){
-           loadData().then(function(data){
-               
-               $scope.profiles = data;
-               console.log('promise: '+$scope.profiles.lastname);
-           });
-         }; 
-
-        function loadData(){
-            var deferred = $q.defer();
-            
-            $timeout(function(){
-                var data = $http.get('/api/profile'+auth.profile.user_id)
-                    .success(function(data) {
-                        console.log('profil sam dobio iz baze linux:'+$scope.profiles.lastname);
-                    })
-                    .error(function(data) {
-                        console.log('Error: ' + data);
-                    });   
-                deferred.resolve(data);
-            }, 3000);
-           return deferred.promise;
-        };
+//    $scope.loadAllMeasure = function(){
+//           loadData().then(function(data){
+//               
+//               $scope.profiles = data;
+//               console.log('promise: '+$scope.profiles.lastname);
+//           });
+//         }; 
+//
+//        function loadData(){
+//            var deferred = $q.defer();
+//            
+//            $timeout(function(){
+//                var data = $http.get('/api/profile'+auth.profile.user_id)
+//                    .success(function(data) {
+//                        console.log('profil sam dobio iz baze linux:'+$scope.profiles.lastname);
+//                    })
+//                    .error(function(data) {
+//                        console.log('Error: ' + data);
+//                    });   
+//                deferred.resolve(data);
+//            }, 3000);
+//           return deferred.promise;
+//        };
 
 // when submitting the add form, send the text to the node API
     $scope.createList = function() {

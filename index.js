@@ -166,7 +166,7 @@ app.post('/api/photo',function(req,res){
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
-			res.json(List); // return all todos in JSON format
+			res.json(profile); // return all todos in JSON format
             console.log("R2D2 says:nasao sam profile:"+List);
 		});
 	});
