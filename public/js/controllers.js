@@ -390,6 +390,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
             console.log('Error: ' + data);
         });    
     
+
 // when submitting the add form, send the text to the node API
 //    $scope.createList = function() {
 //        $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
@@ -482,38 +483,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
       {id: '2', name: 'Velika'},
     ],
    };
-
-// // Upload image
-// $scope.saveuserImage =  function(){
-//     $scope.upload = $upload.upload({  // Using $upload
-//         url: '/user/'+$stateParams.id+'/userImage',  // Direct Server Call.
-//         method:'put',
-//         data:'',  // Where the image is going to be set.
-//         file: $scope.file
-//     }).progress(function (evt) {})
-//         .success(function () {
-//             var logo = new FileReader();  // FileReader.
-
-//             $scope.onAttachmentSelect = function(file){
-//                 logo.onload = function (e) {
-//                     $scope.image = e.target.result;  // Assigns the image on the $scope variable.
-//                     $scope.logoName = file[0].name; // Assigns the file name.
-//                     $scope.$apply();
-//                 };
-//                 logo.readAsDataURL(file[0]);
-//                 $scope.file = file[0];
-//                 $scope.getFileData = file[0].name
-//             };
-//             location.reload();
-//             $scope.file = "";
-//             $scope.hideUpload = 'true'
-//         });
-//     $scope.getFileData = '';
-//  //        location.reload()
-// };
-
-
-
+        
 // when landing on the page, get all lists and show them
     $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
