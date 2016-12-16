@@ -515,10 +515,11 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
 
         function loadData(){
             var deferred = $q.defer();
+            
             $timeout(function(){
                 var data = $http.get('/api/profile'+auth.profile.user_id)
                     .success(function(data) {
-                        console.log('profil sam dobio iz baze linux:'+$scope.profiles);
+                        console.log('profil sam dobio iz baze linux:'+$scope.profiles.lastname);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
