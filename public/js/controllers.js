@@ -483,34 +483,34 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
     ],
    };
 
-// Upload image
-$scope.saveuserImage =  function(){
-    $scope.upload = $upload.upload({  // Using $upload
-        url: '/user/'+$stateParams.id+'/userImage',  // Direct Server Call.
-        method:'put',
-        data:'',  // Where the image is going to be set.
-        file: $scope.file
-    }).progress(function (evt) {})
-        .success(function () {
-            var logo = new FileReader();  // FileReader.
+// // Upload image
+// $scope.saveuserImage =  function(){
+//     $scope.upload = $upload.upload({  // Using $upload
+//         url: '/user/'+$stateParams.id+'/userImage',  // Direct Server Call.
+//         method:'put',
+//         data:'',  // Where the image is going to be set.
+//         file: $scope.file
+//     }).progress(function (evt) {})
+//         .success(function () {
+//             var logo = new FileReader();  // FileReader.
 
-            $scope.onAttachmentSelect = function(file){
-                logo.onload = function (e) {
-                    $scope.image = e.target.result;  // Assigns the image on the $scope variable.
-                    $scope.logoName = file[0].name; // Assigns the file name.
-                    $scope.$apply();
-                };
-                logo.readAsDataURL(file[0]);
-                $scope.file = file[0];
-                $scope.getFileData = file[0].name
-            };
-            location.reload();
-            $scope.file = "";
-            $scope.hideUpload = 'true'
-        });
-    $scope.getFileData = '';
- //        location.reload()
-};
+//             $scope.onAttachmentSelect = function(file){
+//                 logo.onload = function (e) {
+//                     $scope.image = e.target.result;  // Assigns the image on the $scope variable.
+//                     $scope.logoName = file[0].name; // Assigns the file name.
+//                     $scope.$apply();
+//                 };
+//                 logo.readAsDataURL(file[0]);
+//                 $scope.file = file[0];
+//                 $scope.getFileData = file[0].name
+//             };
+//             location.reload();
+//             $scope.file = "";
+//             $scope.hideUpload = 'true'
+//         });
+//     $scope.getFileData = '';
+//  //        location.reload()
+// };
 
 
 

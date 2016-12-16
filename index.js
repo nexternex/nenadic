@@ -89,28 +89,28 @@ app.post('/api/photo',function(req,res){
 
 
 
-var userPicture = function(req,res){             // Stores Picture for a user matching the ID.
-user.findById(req.param('id'), function (err, user) {
-    console.log(req.files) // File from Client
-    if(req.files.file){   // If the Image exists
-        var fs = require('node-fs');
-        fs.readFile(req.files.file.path, function (dataErr, data) {
-            if(data) {
-                user.photo ='';
-                user.photo = data;  // Assigns the image to the path.
-                user.save(function (saveerr, saveuser) {
-                    if (saveerr) {
-                        throw saveerr;
-                    }
-                    res.json(HttpStatus.OK, saveuser);                        
-                });
-            }
-        });
-        return
-    }
-    res.json(HttpStatus.BAD_REQUEST,{error:"Error in file upload"});
-});
-};
+// 	var userPicture = function(req,res){             // Stores Picture for a user matching the ID.
+// 	user.findById(req.param('id'), function (err, user) {
+// 		console.log(req.files) // File from Client
+// 		if(req.files.file){   // If the Image exists
+// 			var fs = require('node-fs');
+// 			fs.readFile(req.files.file.path, function (dataErr, data) {
+// 				if(data) {
+// 					user.photo ='';
+// 					user.photo = data;  // Assigns the image to the path.
+// 					user.save(function (saveerr, saveuser) {
+// 						if (saveerr) {
+// 							throw saveerr;
+// 						}
+// 						res.json(HttpStatus.OK, saveuser);                        
+// 					});
+// 				}
+// 			});
+// 			return
+// 		}
+// 		res.json(HttpStatus.BAD_REQUEST,{error:"Error in file upload"});
+// 	});
+// };
 
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
