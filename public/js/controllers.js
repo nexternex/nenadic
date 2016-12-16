@@ -509,7 +509,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
            loadData().then(function(data){
                
                $scope.profiles = data;
-               console.log('promise: '+$scope.profiles[0].lastname);
+               console.log('promise: '+$scope.profiles.lastname);
            });
          }; 
 
