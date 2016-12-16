@@ -517,7 +517,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q', func
             setTimeout(function(){
                 var data = $http.get('/api/profile'+auth.profile.user_id)
                     .success(function(data) {
-                        console.log('profil sam dobio iz baze:'+$scope.formData);
+                        console.log('profil sam dobio iz baze linux:'+$scope.formData);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
