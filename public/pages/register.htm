@@ -84,7 +84,9 @@
                             </md-card-title-media>
                         </md-card-title>
                         <md-card-actions layout="row" layout-align="end center" flex="40">
-                            <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
+                            <button>
+                                Upload <input type="file" ng-file-select="onFileSelect($files)">
+                                </button>
                         </md-card-actions>
                     </md-card>
               </md-content>
