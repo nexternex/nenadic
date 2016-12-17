@@ -64,10 +64,10 @@ app.post('/api/photo',function(req,res){
         console.log(req.body.user_id);
         console.log(req.files);
 
-		List.findByIdAndUpdate(req.body.user_id, { $set: { img: req.files }}, { new: true }, function (err, List) {
-			if (err) return handleError(err);
-			res.send(List);
-		});
+		// List.findByIdAndUpdate(req.body.user_id, { $set: { img: req.files }}, { new: true }, function (err, List) {
+		// 	if (err) return handleError(err);
+		// 	res.send(List);
+		// });
 
 
         if(err) {
