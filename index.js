@@ -75,14 +75,16 @@ app.use(multer({ dest: './uploads/',
 // })
 
 app.post('/api/photo',function(req,res){
-    
     upload(req,res,function(err) {
+        console.log(req.body);
+        console.log(req.files);
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.end("Upisah");
+        res.end("File is uploaded");
     });
 });
+
 
 
 //BACKEND ROUTES
