@@ -6,30 +6,16 @@ var express = require('express'),
     errorHandler = require('error-handler'),
     morgan = require('morgan'),
     multer = require('multer'),
-    // upload = multer({ dest: './uploads/'});
+    upload = multer({ dest: './uploads/'});
     fs = require('fs'),
     routes = require('./routes'),
 //    api = require('./routes/api'),
     http = require('http'),
     path = require('path');
 
- ///
-// var storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, '/uploads')
-//   },
-//   filename: function (req, file, cb) {
-//     cb(null, file.fieldname + '-' + Date.now())
-//   }
-// })
-
-// var upload = multer({ storage: storage });
-
-
-
 var app = module.exports=express();
 var mongoose = require('mongoose');
-//var uristring='mongodb://nexnexter:n1g22s581,@waffle.modulusmongo.net:27017/bOs4amos?authMode=scram-sha1';
+
 var uristring='mongodb://goran:n1g22s5@ds035014.mongolab.com:35014/nenadic';
 var options = {
   db: { native_parser: true },
