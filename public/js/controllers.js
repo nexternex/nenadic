@@ -131,7 +131,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 //switch za readonly detalje naloga//
     
     $scope.message=true;
-    cbState=true;
+    $scope.onChange=true;
     $scope.onChange = function(cbState) {
         $scope.message = cbState;
         };     
