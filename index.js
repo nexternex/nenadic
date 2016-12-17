@@ -64,7 +64,7 @@ app.post('/api/photo',function(req,res){
         console.log(req.body);
         console.log(req.files);
 
-		List.findByIdAndUpdate(reg.body.user_id, { $set: { img: reg.body.submit }}, { new: true }, function (err, List) {
+		List.findByIdAndUpdate(reg.body.user_id, { $set: { img: reg.files }}, { new: true }, function (err, List) {
 			if (err) return handleError(err);
 			res.send(List);
 		});
