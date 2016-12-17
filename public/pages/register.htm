@@ -78,7 +78,7 @@
                         method="post">
                     <input type="file" name="userPhoto" multiple />
                     <input type="submit" value="Upload Image" name="submit">
-                    <input type='text' id='random' name='random'><br>
+                    <input type='text' id={{profile.c_id}} name='user_id'><br>
                     <span id = "status"></span>
                 </form>
                  <md-card md-accent   flex="33" ng-repeat="profile in profiles">

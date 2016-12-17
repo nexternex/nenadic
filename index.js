@@ -38,7 +38,7 @@ console.log('MongoDB connection successful.');
 
 //database model
 var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',id:'string' });
-var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string',c_id:'string' });
+var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string',c_id:'string',img:'Buffer' });
 
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
@@ -63,14 +63,24 @@ app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
         console.log(req.body);
         console.log(req.files);
+
+		List.findByIdAndUpdate(reg.body.user_id, { $set: { img: reg.body }}, { new: true }, function (err, List) {
+			if (err) return handleError(err);
+			res.send(List);
+		});
+
+
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.end("File is uploaded");
+        res.end(List);
     });
 });
-
-
+//update image in database MONGO
+List.findByIdAndUpdate(id, { $set: { img: reg.body.user_id }}, { new: true }, function (err, List) {
+  if (err) return handleError(err);
+  res.send(List);
+});
 
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
