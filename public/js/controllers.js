@@ -57,7 +57,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         .error(function(data) {
             console.log('Error: ' + data);
         });
-    
 // API CREATE
     $scope.createTodo = function() {
         $http.post('/api/todos',$scope.formData)
@@ -82,7 +81,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
                     console.log('Error: ' + data);
                 });
         };  
-    //    dijalog koji kreira todo
+    //    dijalog koji podize modal za kreiranje  todo
     $scope.showCreate = function() {     
         $mdDialog.show({ 
                 controller: 'mainController',
@@ -217,6 +216,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
     
     
 }]);
+
 //PROFIL KORISNIKA//
 erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
     $scope.formData = {};
