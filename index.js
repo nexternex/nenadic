@@ -6,7 +6,7 @@ var express = require('express'),
     errorHandler = require('error-handler'),
     morgan = require('morgan'),
     multer = require('multer'),
-    upload = multer({ dest: './uploads/'});
+    // upload = multer({ dest: './uploads/'});
     fs = require('fs'),
     routes = require('./routes'),
 //    api = require('./routes/api'),
@@ -14,6 +14,17 @@ var express = require('express'),
     path = require('path');
 
  ///
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, '/uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now())
+  }
+});
+
+var upload = multer({ storage: storage });
+
 
 
 var app = module.exports=express();
@@ -71,6 +82,11 @@ app.use(multer({ dest: './uploads/',
         console.log(file.fieldname + ' uploaded to  ' + file.path)
     }
 }));
+
+app.post('api/profile_img', upload.single('avatar'), function (req, res, next) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+})
 
 app.post('/api/photo',function(req,res){
     
