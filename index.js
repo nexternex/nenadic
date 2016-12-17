@@ -77,10 +77,10 @@ app.post('/api/photo',function(req,res){
     });
 });
 //update image in database MONGO
-List.findByIdAndUpdate(id, { $set: { img: reg.body.user_id }}, { new: true }, function (err, List) {
-  if (err) return handleError(err);
-  res.send(List);
-});
+// List.findByIdAndUpdate(id, { $set: { img: reg.body.user_id }}, { new: true }, function (err, List) {
+//   if (err) return handleError(err);
+//   res.send(List);
+// });
 
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
