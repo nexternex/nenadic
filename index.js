@@ -6,7 +6,7 @@ var express = require('express'),
     errorHandler = require('error-handler'),
     morgan = require('morgan'),
     multer = require('multer'),
-    upload = multer({ dest: '/public/uploads/'});
+    upload = multer({ dest: '/uploads/'});
     fs = require('fs'),
     routes = require('./routes'),
 //    api = require('./routes/api'),
@@ -57,17 +57,7 @@ app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //IMAGES//
-app.use(multer({ dest: './public/uploads/',
-    rename: function (fieldname, filename) {
-        return filename+Date.now();
-    },
-    onFileUploadStart: function (file) {
-        console.log(file.originalname + ' is starting ...');
-    },
-    onFileUploadComplete: function (file) {
-        console.log(file.fieldname + ' uploaded to  ' + file.path)
-    }
-}));
+
 
 app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
