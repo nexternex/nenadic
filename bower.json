@@ -22,6 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#1.1.0"
+    "polymer": "Polymer/polymer#1.1.0",
+    "angular-filepicker": "^1.1.4"
   }
 }
