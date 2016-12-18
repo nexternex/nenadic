@@ -64,17 +64,19 @@ app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
         console.log("user_id:"+req.body.user_id);
         console.log("path:"+req.files.userPhoto.path);
-		List.update({ c_id: req.body.user_id }, { $set: { img: "nex" }},function(err, lists) {
-				if (err)
-					res.send(err)
-					res.json(lists);
-				});
+		
 		
         if(err) {
             return res.end("Error uploading file.");
         }
         res.end('File uploaded');
     });
+
+	List.update({ c_id: req.body.user_id }, { $set: { img: "nex" }},function(err, lists) {
+				if (err)
+					res.send(err)
+					res.json(lists);
+				});
 });
 //update image in database MONGO
 //BACKEND ROUTES
