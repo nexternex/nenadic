@@ -64,13 +64,8 @@ app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
         console.log(req.body.user_id);
         console.log(req.files.userPhoto.path);
-
-		// List.findByIdAndUpdate({c_id:req.body.user_id}, { $set: { img: req.files.userPhoto.path }}, { new: true }, function (err, List) {
-		// 	if (err) return handleError(err);
-		// 	res.send(List);
-		// });
-    	//  List.update({ c_id:req.body.user_id }, { $set: { img: 'large' }}, callback);
-		List.findById({ c_id:req.body.user_id }, function (err, tank) {
+		
+		List.findById({ c_id:req.body.user_id }, function (err, List) {
 		if (err) return handleError(err);
 		
 		List.img = 'large';
