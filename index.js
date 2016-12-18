@@ -71,13 +71,7 @@ app.post('/api/photo',function(req,res){
 //update image in database MONGO
 	app.post('/api/photo1:user_id',function(req,res){
   			console.log(req.params.user_id);
-		
-				List.update({c_id: req.params.user_id}, {img: "some new info"}, function(err, affected, resp) {
-					if (err)
-
-					res.json(List);
-					console.log(res);
-				});
+			List.update({ c_id: req.params.user_id }, { $set: { img: 'changed' }}).exec();
 
 	});
 
