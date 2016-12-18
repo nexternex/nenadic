@@ -58,19 +58,17 @@ app.use(express.static(path.join(__dirname, 'public')));
  
 //IMAGES//
 
-
-
 app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
         console.log(req.body.user_id);
         console.log(req.files.userPhoto.path);
-		
-		List.findById({ c_id:req.body.user_id }, function (err, List) {
-		if (err) return handleError(err);
+
+		List.find({ c_id:req.body.user_id }, function (err, List) {
+		if (err) return send(err);
 		
 		List.img = 'large';
 		List.save(function (err, updatedTank) {
-			if (err) return handleError(err);
+			if (err) return send(err);
 			res.send(updatedTank);
 			});
 		});
