@@ -60,7 +60,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  
 //IMAGES//
 
-app.post('/api/photo',function(req,res){
+app.post('/api/photo',function(req,res,next){
     upload(req,res,function(err) {
         console.log("user_id:"+req.body.user_id);
         console.log("path:"+req.files.userPhoto.path);
