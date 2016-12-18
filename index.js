@@ -61,10 +61,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
-        console.log(req.body.user_id);
-        console.log(req.files.userPhoto.path);
+        console.log("user_id:"+req.body.user_id);
+        console.log("path:"+req.files.userPhoto.path);
 
-			List.update({ c_id: req.params.user_id }, { $set: { img: req.files.userPhoto.path }},function(err, lists) {
+			List.update({ c_id: req.params.user_id }, { $set: { img: "nex" }},function(err, lists) {
 				if (err)
 					res.send(err)
 					res.json(lists);
@@ -77,15 +77,7 @@ app.post('/api/photo',function(req,res){
     });
 });
 //update image in database MONGO
-	app.post('/api/photo1:user_id',function(req,res){
-  			console.log(req.params.user_id);
 
-			List.update({ c_id: req.params.user_id }, { $set: { img: 'changed' }},function(err, lists) {
-				if (err)
-					res.send(err)
-					res.json(lists);
-				});
-	});
 
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
