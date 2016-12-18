@@ -71,36 +71,16 @@ app.post('/api/photo',function(req,res){
 //update image in database MONGO
 	app.post('/api/photo1:user_id',function(req,res){
   			console.log(req.params.user_id);
-			
-			// List.findOneAndUpdate({c_id:user_id}, {img:nova}, {upsert:false}, function(err, doc){
-			// 	if (err) return res.send(500, { error: err });
-			// 	return res.send("succesfully saved");
-			// });
+		
+				List.update({c_id: req.params.user_id}, {img: "some new info"}, function(err, affected, resp) {
+					if (err)
 
-				List.update({c_id: req.params.user_id}, {
-					img: "some new info"
-				}, function(err, affected, resp) {
-				console.log(resp);
+					res.json(List);
+					console.log(resp);
 				});
 
-});
+	});
 
-
-	// app.post('/api/photo1/:user_id', function(req, res) {
-	// 	List.update({
-	// 		c_id : req.params.user_id
-	// 	}, function(err, lists) {
-	// 		if (err)
-	// 			res.send(err);
-
-    //         // get and return all the todos after you delete another
-	// 		List.find(function(err, lists) {
-	// 			if (err)
-	// 				res.send(err)
-	// 			    res.json(todos);
-	// 		});
-	// 	});
-	// });
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
