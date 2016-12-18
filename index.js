@@ -62,19 +62,6 @@ app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
         console.log(req.body.user_id);
         console.log(req.files.userPhoto.path);
-
-		List.find({ c_id:req.body.user_id }, function (err, List) {
-		if (err) return send(err);
-		
-		List.img = 'large';
-		List.save(function (err, updatedTank) {
-			if (err) return send(err);
-			res.send(updatedTank);
-			});
-		});
-
-
-
         if(err) {
             return res.end("Error uploading file.");
         }
@@ -82,7 +69,15 @@ app.post('/api/photo',function(req,res){
     });
 });
 //update image in database MONGO
-	
+app.post('/api/photo1:user_id',function(req,res){
+    
+			List.findOneAndUpdate({c_id:user_id}, {img:nova}, {upsert:false}, function(err, doc){
+				if (err) return res.send(500, { error: err });
+				return res.send("succesfully saved");
+			});
+
+
+});
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
