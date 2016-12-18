@@ -62,7 +62,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
         console.log(req.body);
-        console.log(req.files);
+        console.log(req.files.userPhoto.path);
 
 		// List.findByIdAndUpdate(req.body.user_id, { $set: { img: req.files }}, { new: true }, function (err, List) {
 		// 	if (err) return handleError(err);
