@@ -44,6 +44,7 @@ var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
 
 
+
 //app settings
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
