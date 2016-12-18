@@ -78,7 +78,7 @@ app.post('/api/photo',function(req,res){
     });
 });
 //update image in database MONGO
-	List.update({ c_id: id }, { $set: { size: 'large' }}, callback);
+	
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
