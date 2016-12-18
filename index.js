@@ -71,12 +71,12 @@ app.post('/api/photo',function(req,res){
 //update image in database MONGO
 	app.post('/api/photo1:user_id',function(req,res){
   			console.log(req.params.user_id);
-			List.update({ c_id: req.params.user_id }, { $set: { img: 'changed' }}).exec();
-
+			List.update({ c_id: req.params.user_id }, { $set: { img: 'changed' }},function(err, lists) {
 			if (err)
 				res.send(err)
 
-				res.json(lists);
+				res.json(todos);
+			});
 	});
 
 //BACKEND ROUTES
