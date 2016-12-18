@@ -59,6 +59,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //IMAGES//
 
 
+
 app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
         console.log(req.body.user_id);
