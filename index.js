@@ -38,7 +38,7 @@ console.log('MongoDB connection successful.');
 
 //database model
 var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',id:'string' });
-var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string',c_id:'string',img:Buffer });
+var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string',c_id:'string',img:'string' });
 
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
@@ -72,7 +72,7 @@ app.post('/api/photo',function(req,res){
         res.end('File uploaded');
     });
 
-	List.update({ c_id: req.body.user_id }, { $set: { img: "nex" }},function(err, lists) {
+	List.update({ c_id: req.body.user_id }, { $set: { img: req.files.userPhoto.path }},function(err, lists) {
 				if (err)
 					res.send(err)
 					res.json(lists);
