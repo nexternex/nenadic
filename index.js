@@ -76,7 +76,7 @@ app.post('/api/photo',function(req,res){
 					if (err)
 
 					res.json(List);
-					console.log(resp);
+					console.log(res);
 				});
 
 	});
