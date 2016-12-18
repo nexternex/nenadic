@@ -81,7 +81,7 @@ app.post('/api/photo',function(req,res){
 // });
 
 
-	app.update('/api/photo1/:user_id', function(req, res) {
+	app.post('/api/photo1/:user_id', function(req, res) {
 		List.update({
 			c_id : req.params.user_id
 		}, function(err, lists) {
