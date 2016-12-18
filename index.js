@@ -38,7 +38,7 @@ console.log('MongoDB connection successful.');
 
 //database model
 var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',id:'string' });
-var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string',c_id:'string',img:'Buffer' });
+var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string',c_id:'string',img:'string' });
 
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
@@ -69,7 +69,18 @@ app.post('/api/photo',function(req,res){
 		// 	if (err) return handleError(err);
 		// 	res.send(List);
 		// });
-    	 List.update({ c_id:req.body.user_id }, { $set: { img: 'large' }}, callback);
+    	//  List.update({ c_id:req.body.user_id }, { $set: { img: 'large' }}, callback);
+		List.findById({ c_id:req.body.user_id }, function (err, tank) {
+		if (err) return handleError(err);
+		
+		List.img = 'large';
+		List.save(function (err, updatedTank) {
+			if (err) return handleError(err);
+			res.send(updatedTank);
+			});
+		});
+
+
 
         if(err) {
             return res.end("Error uploading file.");
