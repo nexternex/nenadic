@@ -73,6 +73,10 @@ app.post('/api/photo',function(req,res){
   			console.log(req.params.user_id);
 			List.update({ c_id: req.params.user_id }, { $set: { img: 'changed' }}).exec();
 
+			if (err)
+				res.send(err)
+
+				res.json(lists);
 	});
 
 //BACKEND ROUTES
