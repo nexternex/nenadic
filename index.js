@@ -61,14 +61,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
-        console.log(req.body);
+        console.log(req.body.user_id);
         console.log(req.files.userPhoto.path);
 
-		List.findByIdAndUpdate({c_id:req.body.user_id}, { $set: { img: req.files.userPhoto.path }}, { new: true }, function (err, List) {
-			if (err) return handleError(err);
-			res.send(List);
-		});
-
+		// List.findByIdAndUpdate({c_id:req.body.user_id}, { $set: { img: req.files.userPhoto.path }}, { new: true }, function (err, List) {
+		// 	if (err) return handleError(err);
+		// 	res.send(List);
+		// });
+    	 List.update({ c_id: c_id:req.body.user_id }, { $set: { img: 'large' }}, callback);
 
         if(err) {
             return res.end("Error uploading file.");
@@ -77,11 +77,7 @@ app.post('/api/photo',function(req,res){
     });
 });
 //update image in database MONGO
-// List.findByIdAndUpdate(id, { $set: { img: reg.body.user_id }}, { new: true }, function (err, List) {
-//   if (err) return handleError(err);
-//   res.send(List);
-// });
-
+	List.update({ c_id: id }, { $set: { size: 'large' }}, callback);
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
