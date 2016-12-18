@@ -68,7 +68,7 @@ app.post('/api/photo',function(req,res){
 		// 	if (err) return handleError(err);
 		// 	res.send(List);
 		// });
-    	 List.update({ c_id: c_id:req.body.user_id }, { $set: { img: 'large' }}, callback);
+    	 List.update({ c_id:req.body.user_id }, { $set: { img: 'large' }}, callback);
 
         if(err) {
             return res.end("Error uploading file.");
