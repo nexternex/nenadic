@@ -47,6 +47,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
      $scope.status = '  ';
      $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
      $scope.todos='';
+
+     $scope.photo='';
+     $scope.photo.user_id=auth.profile.user_id;
     
 //when landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
