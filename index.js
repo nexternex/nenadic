@@ -55,7 +55,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 // Host most stuff in the public folder
 app.use(express.static(path.join(__dirname, 'public')));
-
+ 
 //IMAGES//
 
 
