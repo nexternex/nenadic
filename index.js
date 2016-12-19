@@ -43,6 +43,7 @@ var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
 
+var tx_path='';
 
 
 
@@ -69,7 +70,7 @@ app.post('/api/photo',function(req,res,next){
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.end('File uploaded');
+        res.end(tx_path);
     });
 
 
