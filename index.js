@@ -67,7 +67,7 @@ app.post('/api/photo',function(req,res,next){
         console.log("path:"+req.files.userPhoto.path);
 		var tx_path=req.files.userPhoto.path;
 		var tx_user_id=tx_path;
-		
+		List.update();
         if(err) {
             return res.end("Error uploading file.");
         }
@@ -80,6 +80,7 @@ app.post('/api/photo',function(req,res,next){
 
 	List.update({ c_id: tx_user_id }, { $set: { img: tx_path }},function(err, lists) {
 		console.log('start mongo update')
+
 				if (err)
 					res.send(err)
 
