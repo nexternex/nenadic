@@ -82,7 +82,7 @@ app.post('/api/photo',function(req,res,next){
 		console.log('start mongo update')
 				if (err)
 					res.send(err)
-					res.json(lists);
+					res.send('ok_mongo_update');
 				});
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
