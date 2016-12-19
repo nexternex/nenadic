@@ -23,7 +23,7 @@ var options = {
   user: 'nexnexter@gmail.com',
   pass: 'n1g22s581,'
 }
-console.log('app_started');
+console.log('test_001');
 mongoose.connect(uristring,options, function (err, res) {
       if (err) {
       console.log ('ERROR connecting to: ' + uristring + '. ' + err);
@@ -43,8 +43,7 @@ var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
 
-var tx_path='';
-var tx_user_id='';
+
 
 
 //app settings
@@ -60,32 +59,24 @@ app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
  
 //IMAGES//
-app.post('/api/photo',function(req,res,next){
 
+app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
         console.log("user_id:"+req.body.user_id);
         console.log("path:"+req.files.userPhoto.path);
-		var tx_path=req.files.userPhoto.path;
-		var tx_user_id=tx_path;
-		List.update();
+
+		List.update({ c_id: req.body.user_id }, { $set: { img: "nex" }},function(err, lists) {
+				if (err)
+					res.send(err)
+				});
+		
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.end(tx_path);
+        res.end('File uploaded');
     });
-
-
 });
 //update image in database MONGO
-
-	List.update({ c_id: tx_user_id }, { $set: { img: tx_path }},function(err, lists) {
-		console.log('start mongo update')
-
-				if (err)
-					res.send(err)
-
-					// res.send('ok_mongo_update');
-				});
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
@@ -152,7 +143,7 @@ app.post('/api/photo',function(req,res,next){
 // use mongoose to get all todos in the database
 		List.find(function(err, lists) {
 
-		// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
 
@@ -173,7 +164,6 @@ app.post('/api/photo',function(req,res,next){
             console.log("R2D2 says:nasao sam profile:"+List);
 		});
 	});
-
 
 // create oglasi/lisitng and send back all lists after creation
 	app.post('/api/lists', function(req, res) {
