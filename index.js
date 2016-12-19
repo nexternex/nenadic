@@ -60,10 +60,11 @@ app.use(express.static(path.join(__dirname, 'public')));
  
 //IMAGES//
 app.post('/api/photo',function(req,res,next){
+
     upload(req,res,function(err) {
         console.log("user_id:"+req.body.user_id);
         console.log("path:"+req.files.userPhoto.path);
-		
+		var tx_path=req.files.userPhoto.path;
 		
         if(err) {
             return res.end("Error uploading file.");
@@ -71,14 +72,16 @@ app.post('/api/photo',function(req,res,next){
         res.end('File uploaded');
     });
 
-	// List.update({ c_id: req.body.user_id }, { $set: { img: req.files.userPhoto.path }},function(err, lists) {
-	// 	console.log('start mongo update')
-	// 			if (err)
-	// 				res.send(err)
-	// 				res.json(lists);
-	// 			});
+
 });
 //update image in database MONGO
+
+	List.update({ c_id: req.body.user_id }, { $set: { img: req.files.userPhoto.path }},function(err, lists) {
+		console.log('start mongo update')
+				if (err)
+					res.send(err)
+					res.json(lists);
+				});
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
