@@ -73,7 +73,7 @@ app.post('/api/photo',function(req,res){
         if(err) {
             return res.end("Error uploading file.");
         }
-        res.end('File uploaded');
+        res.end(lists);
     });
 });
 //update image in database MONGO
