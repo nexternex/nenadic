@@ -73,6 +73,7 @@ app.post('/api/photo',function(req,res,next){
     });
 
 	List.update({ c_id: req.body.user_id }, { $set: { img: req.files.userPhoto.path }},function(err, lists) {
+		console.log('start mongo update')
 				if (err)
 					res.send(err)
 					res.json(lists);
