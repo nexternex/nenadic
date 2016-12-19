@@ -59,7 +59,6 @@ app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
  
 //IMAGES//
-
 app.post('/api/photo',function(req,res,next){
     upload(req,res,function(err) {
         console.log("user_id:"+req.body.user_id);
@@ -72,12 +71,12 @@ app.post('/api/photo',function(req,res,next){
         res.end('File uploaded');
     });
 
-	List.update({ c_id: req.body.user_id }, { $set: { img: req.files.userPhoto.path }},function(err, lists) {
-		console.log('start mongo update')
-				if (err)
-					res.send(err)
-					res.json(lists);
-				});
+	// List.update({ c_id: req.body.user_id }, { $set: { img: req.files.userPhoto.path }},function(err, lists) {
+	// 	console.log('start mongo update')
+	// 			if (err)
+	// 				res.send(err)
+	// 				res.json(lists);
+	// 			});
 });
 //update image in database MONGO
 //BACKEND ROUTES
@@ -167,7 +166,7 @@ app.post('/api/photo',function(req,res,next){
             console.log("R2D2 says:nasao sam profile:"+List);
 		});
 	});
-	
+
 
 // create oglasi/lisitng and send back all lists after creation
 	app.post('/api/lists', function(req, res) {
