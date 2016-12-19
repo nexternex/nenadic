@@ -44,7 +44,7 @@ var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
 
 var tx_path='';
-
+var tx_user_id='';
 
 
 //app settings
@@ -66,6 +66,7 @@ app.post('/api/photo',function(req,res,next){
         console.log("user_id:"+req.body.user_id);
         console.log("path:"+req.files.userPhoto.path);
 		var tx_path=req.files.userPhoto.path;
+		var tx_user_id=tx_path;
 		
         if(err) {
             return res.end("Error uploading file.");
@@ -77,7 +78,7 @@ app.post('/api/photo',function(req,res,next){
 });
 //update image in database MONGO
 
-	List.update({ c_id: tx_path }, { $set: { img: req.files.userPhoto.path }},function(err, lists) {
+	List.update({ c_id: tx_user_id }, { $set: { img: tx_path }},function(err, lists) {
 		console.log('start mongo update')
 				if (err)
 					res.send(err)
