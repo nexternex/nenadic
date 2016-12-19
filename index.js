@@ -65,7 +65,7 @@ app.post('/api/photo',function(req,res){
         console.log("user_id:"+req.body.user_id);
         console.log("path:"+req.files.userPhoto.path);
 
-		List.update({ c_id: req.body.user_id }, { $set: { img: "nex" }},function(err, lists) {
+		List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
 				if (err)
 					res.send(err)
 				});
