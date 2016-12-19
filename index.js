@@ -23,7 +23,7 @@ var options = {
   user: 'nexnexter@gmail.com',
   pass: 'n1g22s581,'
 }
-console.log('test_001');
+console.log('app_started');
 mongoose.connect(uristring,options, function (err, res) {
       if (err) {
       console.log ('ERROR connecting to: ' + uristring + '. ' + err);
@@ -149,7 +149,7 @@ app.post('/api/photo',function(req,res,next){
 // use mongoose to get all todos in the database
 		List.find(function(err, lists) {
 
-// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+		// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
 
