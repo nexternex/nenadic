@@ -64,7 +64,6 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Import required packages.
  * Packages should be installed with "npm install".
  */
-const express = require('express');
 const aws = require('aws-sdk');
 
 /*
