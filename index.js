@@ -108,10 +108,10 @@ app.get('/sign-s3', (req, res) => {
 					res.send(err)
 				});
 		
-        if(err) {
-            return res.end("Error uploading file.");
-        }
-        res.end('File uploaded');
+				if(err) {
+					return res.end("Error uploading file.");
+				}
+        res.end('mONGO  uploaded');
 
 
 });
