@@ -91,7 +91,7 @@ app.get('/account', (req, res) => res.render('account.html'));
  * the anticipated URL of the image.
  */
 app.get('/sign-s3', (req, res) => {
-  const s3 = new aws.S3();
+  const s3 = new aws.S3({signatureVersion: 'v4'});
   const fileName = req.query['file-name'];
   const fileType = req.query['file-type'];
   const s3Params = {
