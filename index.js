@@ -102,6 +102,21 @@ app.get('/sign-s3', (req, res) => {
     ACL: 'public-read'
   };
 
+  upload(req,res,function(err) {
+        console.log("user_id:"+req.body.user_id);
+        console.log("path:"+req.files.userPhoto.path);
+
+		List.update({ c_id: req.body.user_id }, { $set: { img:fileName }},function(err, lists) {
+				if (err)
+					res.send(err)
+				});
+		
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.end('File uploaded');
+    });
+
   s3.getSignedUrl('putObject', s3Params, (err, data) => {
     if(err){
       console.log(err);
