@@ -69,11 +69,10 @@ const aws = require('aws-sdk');
 /*
  * Set-up and run the Express app.
  */
-const app = express();
-app.set('views', './views');
-app.use(express.static('./public'));
-app.engine('html', require('ejs').renderFile);
-app.listen(process.env.PORT || 3000);
+// app.set('views', './views');
+// app.use(express.static('./public'));
+// app.engine('html', require('ejs').renderFile);
+// app.listen(process.env.PORT || 3000);
 
 /*
  * Load the S3 information from the environment variables.
