@@ -103,7 +103,7 @@ app.get('/sign-s3', (req, res) => {
     res.end();
   });
 
-	List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
+	List.update({ c_id: req.body.user_id }, { $set: { img:`https://${S3_BUCKET}.s3.amazonaws.com/${fileName}` }},function(err, lists) {
 				if (err)
 					res.send(err)
 				});
