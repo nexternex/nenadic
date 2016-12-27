@@ -57,22 +57,10 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 // Host most stuff in the public folder
 app.use(express.static(path.join(__dirname, 'public')));
- 
+
+const aws = require('aws-sdk');
 //IMAGES//
 
-/*
- * Import required packages.
- * Packages should be installed with "npm install".
- */
-const aws = require('aws-sdk');
-
-/*
- * Set-up and run the Express app.
- */
-// app.set('views', './views');
-// app.use(express.static('./public'));
-// app.engine('html', require('ejs').renderFile);
-// app.listen(process.env.PORT || 3000);
 
 /*
  * Load the S3 information from the environment variables.
@@ -114,8 +102,19 @@ app.get('/sign-s3', (req, res) => {
     res.write(JSON.stringify(returnData));
     res.end();
   });
-});
 
+	List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
+				if (err)
+					res.send(err)
+				});
+		
+        if(err) {
+            return res.end("Error uploading file.");
+        }
+        res.end('File uploaded');
+
+
+});
 /*
  * Respond to POST requests to /submit_form.
  * This function needs to be completed to handle the information in
@@ -126,27 +125,6 @@ app.post('/save-details', (req, res) => {
   console.log("save-detail");
 });
 
-
-// image 2
-
-
-
-app.post('/api/photo',function(req,res){
-    upload(req,res,function(err) {
-        console.log("user_id:"+req.body.user_id);
-        console.log("path:"+req.files.userPhoto.path);
-
-		List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
-				if (err)
-					res.send(err)
-				});
-		
-        if(err) {
-            return res.end("Error uploading file.");
-        }
-        res.end('File uploaded');
-    });
-});
 //update image in database MONGO
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------

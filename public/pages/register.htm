@@ -72,24 +72,13 @@
                         </md-content>
                      <!--druga grupa podataka-->
             <md-content >
-                 <!--<form ng-model="photo" id="uploadForm" enctype="multipart/form-data" action="/api/photo" method="post">
-                    <input type="file" name="userPhoto" multiple />
-                    <input type="submit" value="Upload Image" name="submit">
-                    <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
-                    <span id = "status"></span>
-                </form>-->
                         <h1>Edit your account</h1>
-
                         <hr>
-
-                        <h2>Your avatar</h2>
+                        <h2>Slika</h2>
 
                         <input type="file" id="file-input">
                         <p id="status">Please select a file</p>
-                        <img style="border:1px solid gray;width:300px;"  id="preview" src="/images/default.png">
-
-                        <h2>Your information</h2>
-
+                        <img style="border:1px solid gray;width:300px;"  id="preview" src="/img/default.png">
                         <form method="POST" action="/save-details">
                             <input type="hidden" id="avatar-url" name="avatar-url" value="/images/default.png">
                             <hr>
@@ -111,12 +100,6 @@
                                 <div class="md-media-lg card-media"><img  src={{profile.img}} /></div>
                             </md-card-title-media>
                         </md-card-title>
-                        <!--<md-card-actions layout="row" layout-align="end center" flex="40">
-                            <input type="file" name="userPhoto" multiple />
-                            <input type="submit" value="Upload Image" name="submit">
-                            <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
-                            <span id = "status"></span>
-                        </md-card-actions>-->
                     </md-card>
               </md-content>
  
@@ -165,63 +148,6 @@
     </md-content>
 </md-tab>
 </md-tabs>
-
-
-<!--
-    <script type="text/javascript">
-      console.log('usao u gscript');
-      google.charts.load("current", {packages:["calendar"]});
-      google.charts.setOnLoadCallback(drawChart);
-
-   function drawChart() {
-       console.log('drawchart');
-       var dataTable = new google.visualization.DataTable();
-       dataTable.addColumn({ type: 'date', id: 'Date' });
-       dataTable.addColumn({ type: 'number', id: 'Won/Loss' });
-       dataTable.addRows([
-          [ new Date(2012, 3, 13), 37032 ],
-          [ new Date(2012, 3, 14), 38024 ],
-          [ new Date(2012, 3, 15), 38024 ],
-          [ new Date(2012, 3, 16), 38108 ],
-          [ new Date(2012, 3, 17), 38229 ],
-          // Many rows omitted for brevity.
-          [ new Date(2013, 9, 4), 38177 ],
-          [ new Date(2013, 9, 5), 38705 ],
-          [ new Date(2013, 9, 12), 38210 ],
-          [ new Date(2013, 9, 13), 38029 ],
-          [ new Date(2013, 9, 19), 38823 ],
-          [ new Date(2013, 9, 23), 38345 ],
-          [ new Date(2013, 9, 24), 38436 ],
-          [ new Date(2013, 9, 30), 38447 ]
-        ]);
-
-       var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
-
-       var options = {
-         title: "Kalendar rezervacija",
-         height: 350,
-       };
-
-       chart.draw(dataTable, options);
-   }
-    </script>
--->
-<!--FIEL UPLOAD-->
-<!--
-        <section >
-             <div ng-controller='listController'>
-                  <form  id        =  "uploadForm"
-                         enctype   =  "multipart/form-data"
-                         action    =  "/api/photo"
-                         method    =  "post"
-                    >
-                    <input type="file" name="userPhoto" />
-                    <input type="submit" value="Upload Image" name="submit">
-                    </form>
-            </div>
-        </section>
--->
-<!--FIEL UPLOAD-->
 </md-content>
 
     <script>
