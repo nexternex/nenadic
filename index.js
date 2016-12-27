@@ -102,20 +102,20 @@ app.get('/sign-s3', (req, res) => {
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     };
 
-		upload(req,res,function(err) {
-			console.log("user_id:"+fileName);
-			console.log("path:"+`https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`);
+		// upload(req,res,function(err) {
+		// 	console.log("user_id:"+fileName);
+		// 	console.log("path:"+`https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`);
 
-			List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
-					if (err)
-						res.send(err)
-					});
+		// 	List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
+		// 			if (err)
+		// 				res.send(err)
+		// 			});
 			
-			if(err) {
-				return res.end("Error uploading file.");
-			}
-			res.end('File uploaded');
-		});
+		// 	if(err) {
+		// 		return res.end("Error uploading file.");
+		// 	}
+		// 	res.end('File uploaded');
+		// });
 
 
 
