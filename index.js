@@ -60,19 +60,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  
 //IMAGES//
 
-/*
- * Import required packages.
- * Packages should be installed with "npm install".
- */
 const aws = require('aws-sdk');
-
-/*
- * Set-up and run the Express app.
- */
-// app.set('views', './views');
-// app.use(express.static('./public'));
-// app.engine('html', require('ejs').renderFile);
-// app.listen(process.env.PORT || 3000);
 
 /*
  * Load the S3 information from the environment variables.
@@ -113,6 +101,24 @@ app.get('/sign-s3', (req, res) => {
       signedRequest: data,
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     };
+
+		upload(req,res,function(err) {
+			console.log("user_id:"+fileName);
+			console.log("path:"+`https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`);
+
+			List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
+					if (err)
+						res.send(err)
+					});
+			
+			if(err) {
+				return res.end("Error uploading file.");
+			}
+			res.end('File uploaded');
+		});
+
+
+
     res.write(JSON.stringify(returnData));
     res.end();
   });
@@ -128,11 +134,7 @@ app.post('/save-details', (req, res) => {
   console.log("save-detail")
 });
 
-
 // image 2
-
-
-
 app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
         console.log("user_id:"+req.body.user_id);
