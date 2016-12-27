@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "ejs": "2.3.3",
+    "aws-sdk": "2.7.19",
     "express": "4.13.3",
     "connect-multiparty": "^1.0.4", 
     "mongoose"   : "~4.1.10",
