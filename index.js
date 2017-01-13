@@ -43,9 +43,6 @@ var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
 
-
-
-
 //app settings
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
@@ -58,7 +55,7 @@ app.use(methodOverride());
 // Host most stuff in the public folder
 app.use(express.static(path.join(__dirname, 'public')));
  
-//IMAGES//
+//S3 Bucket IMAGES//
 
 const aws = require('aws-sdk');
 
@@ -102,20 +99,22 @@ app.get('/sign-s3', (req, res) => {
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     };
 
-		// upload(req,res,function(err) {
-		// 	console.log("user_id:"+fileName);
-		// 	console.log("path:"+`https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`);
+	upload(req,res,function(err) {
+		console.log("user_id:"+fileName);
+		console.log("path:"+`https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`);
 
-		// 	List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
-		// 			if (err)
-		// 				res.send(err)
-		// 			});
+			var path =`https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`;
+
+			List.update({ c_id: req.body.user_id }, { $set: { img:path }},function(err, lists) {
+					if (err)
+						res.send(err)
+					});
 			
-		// 	if(err) {
-		// 		return res.end("Error uploading file.");
-		// 	}
-		// 	res.end('File uploaded');
-		// });
+			if(err) {
+				return res.end("Error uploading file.");
+			}
+			res.end('File uploaded');
+		});
 
 
 
@@ -132,11 +131,13 @@ app.get('/sign-s3', (req, res) => {
 app.post('/save-details', (req, res) => {
   // TODO: Read POSTed form data and do something useful
   console.log("save-detail")
+
 });
 
 // image 2
 app.post('/api/photo',function(req,res){
     upload(req,res,function(err) {
+
         console.log("user_id:"+req.body.user_id);
         console.log("path:"+req.files.userPhoto.path);
 
@@ -151,6 +152,7 @@ app.post('/api/photo',function(req,res){
         res.end('File uploaded');
     });
 });
+
 //update image in database MONGO
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
