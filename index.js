@@ -114,8 +114,8 @@ app.get('/sign-s3', (req, res) => {
 
 app.post('/save-details', (req, res,err) => {
   // TODO: Read POSTed form data and do something useful
-  console.log("save-detail: " + S3url+":"+req.body.user_id );
-  		List.update({ c_id: req.body.user_id }, { $set: { img:S3url }},function(err, lists) {
+  console.log("save-detail: " + S3url+":"+req.params.user_id );
+  		List.update({ c_id: req.params.user_id }, { $set: { img:S3url }},function(err, lists) {
 				if (err)
 					res.send(err)
 				});

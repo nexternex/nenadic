@@ -51,7 +51,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
      $scope.photo='';
     //  $scope.photo.user_id=auth.profile.user_id;
     
-//when landing on the page, get all todos and show them    
+// When landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
         .success(function(data) {
             $scope.todos = data;
@@ -74,7 +74,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             });
     };
     
-// delete a todo after checking it
+// Delete a todo after checking it
     $scope.deleteTodo = function(id) { 
             $http.delete('/api/todos/' + id)
                 .success(function(data) {
@@ -119,7 +119,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         $scope.status = 'You decided to keep your debt.';
         });
     };  
-//    Basic mddialog contollers
+// Basic mddialog contollers
     $scope.hide = function() {
         $mdDialog.hide();
     };
@@ -130,7 +130,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
       $mdDialog.hide(answer);
     };
      
-//switch za readonly detalje naloga//
+// Switch za readonly detalje naloga//
     
     $scope.message=true;
     $scope.onChange=true;
@@ -215,9 +215,6 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
             }
           }
         };
-
-    
-    
 }]);
 
 //PROFIL KORISNIKA//
