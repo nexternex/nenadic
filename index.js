@@ -99,7 +99,7 @@ app.get('/sign-s3', (req, res) => {
 	
     };
 
-	console.log(returnData.url);
+	console.log("Log za putanju na sS3: "+returnData.url);
 	S3url=returnData.url;
     res.write(JSON.stringify(returnData));
     res.end();
