@@ -97,7 +97,7 @@ app.get('/sign-s3', (req, res) => {
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     };
 
-	upload(req,res,function(err) {
+	upload(req,res,function(err,returnData) {
 			console.log("user_id:"+fileName);
 				List.update({ c_id: req.body.user_id }, { $set: { img:returnData.url }},function(err, lists) {
 					if (err)
@@ -114,10 +114,6 @@ app.get('/sign-s3', (req, res) => {
     res.write(JSON.stringify(returnData));
     res.end();
   });
-
-  
-
-
 });
 
 /*
@@ -125,11 +121,11 @@ app.get('/sign-s3', (req, res) => {
  * This function needs to be completed to handle the information in
  * a way that suits your application.
  */
-app.post('/save-details', (req, res) => {
-  // TODO: Read POSTed form data and do something useful
-  console.log("save-detail")
+// app.post('/save-details', (req, res) => {
+//   // TODO: Read POSTed form data and do something useful
+//   console.log("save-detail")
 
-});
+// });
 
 // Image 2 DRUGI METOD UPIS NA DISK
 
