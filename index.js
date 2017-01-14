@@ -99,7 +99,7 @@ app.get('/sign-s3', (req, res) => {
 	
     };
 
-	console.log("Log za putanju na sS3: "+returnData.url);
+	console.log("Log za putanju na S3: " + returnData.url);
 	S3url=returnData.url;
     res.write(JSON.stringify(returnData));
     res.end();
@@ -112,7 +112,7 @@ app.get('/sign-s3', (req, res) => {
  * a way that suits your application.
  */
 
-app.post('/api/save-details:user_id', (req, res,err) => {
+app.post('/api/save-details/:user_id', (req, res,err) => {
   // TODO: Read POSTed form data and do something useful
 
  		console.log("save-detail: " + S3url + ":" + req.params.user_id );
