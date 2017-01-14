@@ -87,8 +87,6 @@ app.get('/sign-s3', (req, res) => {
     ACL: 'public-read'
   };
 
-  
-
   s3.getSignedUrl('putObject', s3Params, (err, data) => {
     if(err){
       console.log(err);
@@ -102,10 +100,10 @@ app.get('/sign-s3', (req, res) => {
 	upload(req,res,function(err) {
 		console.log("user_id:"+fileName);
 		console.log("path:"+`https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`);
-
+ 
 			var path =`https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`;
 
-			List.update({ c_id: req.body.user_id }, { $set: { img:path }},function(err, lists) {
+			List.update({ c_id: req.body.user_id }, { $set: { img:returnData.url }},function(err, lists) {
 					if (err)
 						res.send(err)
 					});
@@ -134,24 +132,25 @@ app.post('/save-details', (req, res) => {
 
 });
 
-// image 2
-app.post('/api/photo',function(req,res){
-    upload(req,res,function(err) {
+// Image 2 DRUGI METOD UPIS NA DISK
 
-        console.log("user_id:"+req.body.user_id);
-        console.log("path:"+req.files.userPhoto.path);
+// app.post('/api/photo',function(req,res){
+//     upload(req,res,function(err) {
 
-		List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
-				if (err)
-					res.send(err)
-				});
+//         console.log("user_id:"+req.body.user_id);
+//         console.log("path:"+req.files.userPhoto.path);
+
+// 		List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
+// 				if (err)
+// 					res.send(err)
+// 				});
 		
-        if(err) {
-            return res.end("Error uploading file.");
-        }
-        res.end('File uploaded');
-    });
-});
+//         if(err) {
+//             return res.end("Error uploading file.");
+//         }
+//         res.end('File uploaded');
+//     });
+// });
 
 //update image in database MONGO
 //BACKEND ROUTES
