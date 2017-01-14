@@ -100,16 +100,7 @@ app.get('/sign-s3', (req, res) => {
     res.write(JSON.stringify(returnData));
     res.end();
   });
-});
 
-/*
- * Respond to POST requests to /submit_form.
- * This function needs to be completed to handle the information in
- * a way that suits your application.
- */
-app.post('/save-details', (req, res) => {
-  // TODO: Read POSTed form data and do something useful
-  console.log("save-detail")
   	upload(req,res,function(err) {
 		console.log("user_id:"+fileName);
 			List.update({ c_id: req.body.user_id }, { $set: { img:returnData.url }},function(err, lists) {
@@ -123,6 +114,17 @@ app.post('/save-details', (req, res) => {
 			res.end('File uploaded');
 		});
 
+
+});
+
+/*
+ * Respond to POST requests to /submit_form.
+ * This function needs to be completed to handle the information in
+ * a way that suits your application.
+ */
+app.post('/save-details', (req, res) => {
+  // TODO: Read POSTed form data and do something useful
+  console.log("save-detail")
 
 });
 
