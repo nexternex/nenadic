@@ -112,7 +112,7 @@ app.get('/sign-s3', (req, res) => {
  * a way that suits your application.
  */
 
-app.post('/save-details', (req, res) => {
+app.post('/save-details', (req, res,err) => {
   // TODO: Read POSTed form data and do something useful
   		List.update({ c_id: req.body.user_id }, { $set: { img:S3url }},function(err, lists) {
 				if (err)
