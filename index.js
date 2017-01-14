@@ -97,22 +97,25 @@ app.get('/sign-s3', (req, res) => {
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     };
 
-    res.write(JSON.stringify(returnData));
-    res.end();
-  });
-
-  	upload(req,res,function(err) {
-		console.log("user_id:"+fileName);
-			List.update({ c_id: req.body.user_id }, { $set: { img:returnData.url }},function(err, lists) {
+	upload(req,res,function(err) {
+			console.log("user_id:"+fileName);
+				List.update({ c_id: req.body.user_id }, { $set: { img:returnData.url }},function(err, lists) {
 					if (err)
 						res.send(err)
 					});
 			
-					if(err) {
+			if(err) {
 						return res.end("Error uploading file.");
 					}
 			res.end('File uploaded');
 		});
+
+
+    res.write(JSON.stringify(returnData));
+    res.end();
+  });
+
+  
 
 
 });
