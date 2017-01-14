@@ -100,6 +100,7 @@ app.get('/sign-s3', (req, res) => {
     };
 
 	console.log(returnData.url);
+	S3url=returnData.url
     res.write(JSON.stringify(returnData));
     res.end();
   });
@@ -111,26 +112,26 @@ app.get('/sign-s3', (req, res) => {
  * a way that suits your application.
  */
 
-// app.post('/save-details', (req, res) => {
-//   // TODO: Read POSTed form data and do something useful
-//   console.log("save-detail")
-// 	upload(req,res,function(err,returnData) {
+app.post('/save-details', (req, res) => {
+  // TODO: Read POSTed form data and do something useful
+  console.log("save-detail")
+	upload(req,res,function(err,returnData) {
 		
-// 			this.returnData=returnData;
+			this.returnData=returnData;
 
-// 			console.log("user_id:"+fileName);
-// 				List.update({ c_id: req.body.user_id }, { $set: { img:returnData.url }},function(err, lists) {
-// 					if (err)
-// 						res.send(err)
-// 					});
+			console.log("user_id:"+fileName);
+				List.update({ c_id: req.body.user_id }, { $set: { img:S3url }},function(err, lists) {
+					if (err)
+						res.send(err)
+					});
 			
-// 			if(err) {
-// 						return res.end("Error uploading file.");
-// 					}
-// 			res.end('File uploaded');
-// 		});
+			if(err) {
+						return res.end("Error uploading file.");
+					}
+			res.end('File uploaded');
+		});
 
-// });
+});
 
 // Image 2 DRUGI METOD UPIS NA DISK
 
