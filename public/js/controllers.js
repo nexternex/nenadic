@@ -141,9 +141,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         };     
 // UPDATE IMAGE URL
  $scope.updateImageUrl = function() {
-       $http.post('/api/save-details/'+ auth.profile.user_id)
+       $http.post('/api/save-details'+ auth.profile.user_id)
         .success(function(data) {
-            console.log('Update image url:');
+            console.log('Update image url');
         })
         .error(function(data) {
             console.log('Error: ');
