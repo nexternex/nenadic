@@ -42,6 +42,7 @@ var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company
 
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
+var S3url="";
 
 //app settings
 app.set('port', (process.env.PORT || 5000));
@@ -94,9 +95,11 @@ app.get('/sign-s3', (req, res) => {
     }
     const returnData = {
       signedRequest: data,
-      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
+      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`,
+	
     };
 
+	console.log(returnData.url);
     res.write(JSON.stringify(returnData));
     res.end();
   });
@@ -107,28 +110,27 @@ app.get('/sign-s3', (req, res) => {
  * This function needs to be completed to handle the information in
  * a way that suits your application.
  */
-app.post('/save-details', (req, res) => {
-  // TODO: Read POSTed form data and do something useful
-  console.log("save-detail")
 
-
-	upload(req,res,function(err,returnData) {
+// app.post('/save-details', (req, res) => {
+//   // TODO: Read POSTed form data and do something useful
+//   console.log("save-detail")
+// 	upload(req,res,function(err,returnData) {
 		
-			this.returnData=returnData;
+// 			this.returnData=returnData;
 
-			console.log("user_id:"+fileName);
-				List.update({ c_id: req.body.user_id }, { $set: { img:returnData.url }},function(err, lists) {
-					if (err)
-						res.send(err)
-					});
+// 			console.log("user_id:"+fileName);
+// 				List.update({ c_id: req.body.user_id }, { $set: { img:returnData.url }},function(err, lists) {
+// 					if (err)
+// 						res.send(err)
+// 					});
 			
-			if(err) {
-						return res.end("Error uploading file.");
-					}
-			res.end('File uploaded');
-		});
+// 			if(err) {
+// 						return res.end("Error uploading file.");
+// 					}
+// 			res.end('File uploaded');
+// 		});
 
-});
+// });
 
 // Image 2 DRUGI METOD UPIS NA DISK
 
