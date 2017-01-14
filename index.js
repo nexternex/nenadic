@@ -98,6 +98,8 @@ app.get('/sign-s3', (req, res) => {
     };
 
 	upload(req,res,function(err,returnData) {
+		this.returnData=returnData;
+		
 			console.log("user_id:"+fileName);
 				List.update({ c_id: req.body.user_id }, { $set: { img:returnData.url }},function(err, lists) {
 					if (err)
