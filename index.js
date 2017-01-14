@@ -127,8 +127,7 @@ app.post('/save-details', (req, res,err) => {
  		console.log("uspesno zavrsen update url-a")
 });
 
-// Image 2 DRUGI METOD UPIS NA DISK
-
+// Image 2 DRUGI METOD UPIS NA DISK--trenutno rem zbog upisa na S3
 // app.post('/api/photo',function(req,res){
 //     upload(req,res,function(err) {
 
