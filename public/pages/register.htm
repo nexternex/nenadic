@@ -91,11 +91,11 @@
 
                         <h2>Your information</h2>
 
-                        <form method="POST" action="/save-details:{{auth.profile.user_id}}">
+                        <form>
                             <input type="hidden" id="avatar-url" name="avatar-url" value="{{auth.profile.user_id}}">
                             <hr>
                             <h2>Save changes</h2>
-                            <input type="submit" value="Update profile">
+                            <input type="submit" value="Update profile" ng-click="updateImageUrl">
                           </form>
 
 

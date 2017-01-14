@@ -47,7 +47,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
      $scope.status = '  ';
      $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
      $scope.todos='';
-
      $scope.photo='';
     //  $scope.photo.user_id=auth.profile.user_id;
     
@@ -75,6 +74,9 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     };
     
 // Delete a todo after checking it
+
+
+
     $scope.deleteTodo = function(id) { 
             $http.delete('/api/todos/' + id)
                 .success(function(data) {
@@ -119,7 +121,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         $scope.status = 'You decided to keep your debt.';
         });
     };  
-// Basic mddialog contollers
+// Basic md-dialog contollers
     $scope.hide = function() {
         $mdDialog.hide();
     };
@@ -137,6 +139,16 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.onChange = function(cbState) {
         $scope.message = cbState;
         };     
+//UPDATE IMAGE URL
+ $scope.updateImageUrl = function() {
+       $http.get('/api/save-detail'+auth.profile.user_id)
+        .success(function(data) {
+            console.log('Update image url:');
+        })
+        .error(function(data) {
+            console.log('Error: ');
+        });
+    };
 }]);  
 //Menu controller ----ciricle meni 
 erpagWeather.controller('MenuCtrl', function() {
