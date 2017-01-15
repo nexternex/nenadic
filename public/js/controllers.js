@@ -150,17 +150,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         });
     };
 
-// UPDATE LIST
- $scope.updateList = function() {
-       console.log("UPDATE LIST Start");
-       $http.post('/api/lists_update/',{formData: $scope.formData,size:$scope.size,category:$scope.category,c_id:auth.profile.user_id})
-        .success(function(data) {
-            console.log('Update List completed');
-        })
-        .error(function(data) {
-            console.log('Error: ');
-        });
-    };
+
 // <-----------Main controler END------------------------>    
 }]);   
 //Menu controller ----ciricle meni 
@@ -293,7 +283,7 @@ $scope.onFileSelect = function(image) {
   });
 };
 
-// when landing on the page, get profile and show them
+// LOAD PROFILE when landing on the page, get profile and show them
     $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
             $scope.profiles = data;
@@ -305,13 +295,12 @@ $scope.onFileSelect = function(image) {
             console.log('Error: ' + data);
         });    
 
-// when submitting the add form, send the text to the node API
+// ++when submitting the add form, send the text to the node API
     $scope.createList = function() {
         $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
             .success(function(data) {
-//                $scope.formData = {}; // clear the form so our user is ready to enter another
+// ++$scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.formData = data;
-//                console.log(data);
                 alert("uspesno ste registrovali nalog koristeci profileController linux");
             })
             .error(function(data) {
@@ -319,7 +308,7 @@ $scope.onFileSelect = function(image) {
             });
     };
 
-    // delete a list after checking it
+// DELETE a list after checking it
     $scope.deleteList = function(id) {
         $http.delete('/api/lists/' + id)
             .success(function(data) {
@@ -329,7 +318,18 @@ $scope.onFileSelect = function(image) {
             .error(function(data) {
                 console.log('Error: ' + data);
             });
-    };    
+    };
+// UPDATE LIST
+ $scope.updateList = function() {
+       console.log("UPDATE LIST Start");
+       $http.post('/api/lists_update/',{formData: $scope.formData,size:$scope.size,category:$scope.category,c_id:auth.profile.user_id})
+        .success(function(data) {
+            console.log('Update List completed');
+        })
+        .error(function(data) {
+            console.log('Error: ');
+        });
+    };        
     
 }]);
 //FACTORY return users
