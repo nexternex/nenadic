@@ -266,6 +266,8 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
         })
         .error(function(data) {
             console.log('Error: ' + data);
+            $scope.profiles = data;
+            $scope.formData=$scope.profiles[0];
         });    
 
 // ++when submitting the add form, send the text to the node API
@@ -295,7 +297,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
 // UPDATE LIST
  $scope.updateList = function() {
        console.log("UPDATE LIST Start");
-       $http.post('/api/lists_update/',{formData: $scope.formData,size:$scope.size,category:$scope.category,user_id:auth.profile.user_id})
+       $http.post('/api/lists_update/',{formData: $scope.formData,name:$scope.name,size:$scope.size,category:$scope.category,user_id:auth.profile.user_id})
         .success(function(data) {
             console.log('Update List completed');
         })
