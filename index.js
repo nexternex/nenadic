@@ -148,9 +148,8 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 	//     });
 // });
 
-//BACKEND ROUTES
-	// api ---------------------------------------------------------------------
-	// get all todos
+//BACKEND ROUTES api/////////////////////////////////////////////////////////////////////////////
+// GET ALL TODOS
 	app.get('/api/todos:user_id', function(req, res) {
 
 		// use mongoose to get all todos in the database
@@ -161,11 +160,11 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 				res.send(err)
 
 			res.json(todos); // return all todos in JSON format
-//            console.log("R2D2 says:nasao sam:"+todos);
+
 		});
 	});
 
-// CREATE todo and send back all todos after creation
+// CREATE TODO and send back all todos after creation
 	app.post('/api/todos', function(req, res) {
 		// create a todo, information comes from AJAX request from Angular
 		Todo.create({
@@ -189,7 +188,7 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 		});
 
 	});
-// DELETE todo
+// DELETE TODO
 	app.delete('/api/todos/:todo_id', function(req, res) {
 		Todo.remove({
 			_id : req.params.todo_id
@@ -209,12 +208,8 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 ////////////////////////////////////////// LIST | ROUTES ///////////////////////////////////////
 
 	app.get('/api/lists', function(req, res) {
-        
-
-// Use mongoose to get all todos in the database
+		// Use mongoose to get all todos in the database
 		List.find(function(err, lists) {
-
-// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
 
@@ -281,7 +276,9 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 			});
 		});
 	});
-// delete a list
+// DELETE LIST
+
+
 	app.delete('/api/lists/:list_id', function(req, res) {
 		List.remove({
 			_id : req.params.list_id
