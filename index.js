@@ -120,9 +120,8 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 		  List.update({ 'c_id': req.params.user_id }, { $set: { img:S3url }},function(err, lists) {
 				if (err)
 					res.send(err)
-
 				});
-		
+						
         if(err) {
             return res.end("Error uploading file.");
         }
