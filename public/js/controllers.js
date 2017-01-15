@@ -152,7 +152,8 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
 
 // UPDATE LIST
  $scope.updateList = function() {
-       $http.post('/api/List_update/:'+auth.profile.user_id,{formData: $scope.formData,size:$scope.size,category:$scope.category})
+     console.log("UPDATE LIST Start");
+       $http.post('/api/lists_update/:'+auth.profile.user_id,{formData: $scope.formData,size:$scope.size,category:$scope.category})
         .success(function(data) {
             console.log('Update List completed');
         })

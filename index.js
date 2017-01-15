@@ -64,13 +64,11 @@ const aws = require('aws-sdk');
  * Load the S3 information from the environment variables.
  */
 const S3_BUCKET = process.env.S3_BUCKET;
-
 /*
  * Respond to GET requests to /account.
  * Upon request, render the 'account.html' web page in views/ directory.
  */
 app.get('/account', (req, res) => res.render('account.html'));
-
 /*
  * Respond to GET requests to /sign-s3.
  * Upon request, return JSON containing the temporarily-signed S3 request and
@@ -105,7 +103,6 @@ app.get('/sign-s3', (req, res) => {
     res.end();
   });
 });
-
 /*
  * Respond to POST requests to /submit_form.
  * This function needs to be completed to handle the information in
@@ -205,10 +202,8 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 		});
 	});
 
-////////////////////////////////////////// LIST | ROUTES ///////////////////////////////////////
-
+// GET LISTS 
 	app.get('/api/lists', function(req, res) {
-		// Use mongoose to get all todos in the database
 		List.find(function(err, lists) {
 			if (err)
 				res.send(err)
@@ -231,7 +226,8 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 		});
 	});
 
-// Update oglasi/lisitng and send back all lists after creation
+// UPDATE LIST 
+// ++ oglasi/lisitng and send back all lists after creation
 	app.post('/api/lists_update/:user_id', function(req, res) {
         console.log(req.body.formData.name+":"+req.body.size.singleSelect);
 		// create a list, information comes from AJAX request from Angular
@@ -277,8 +273,6 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 		});
 	});
 // DELETE LIST
-
-
 	app.delete('/api/lists/:list_id', function(req, res) {
 		List.remove({
 			_id : req.params.list_id
@@ -294,6 +288,10 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 			});
 		});
 	});
+
+
+
+
 
 //GET ROUTES//
 app.get('/', routes.index);
