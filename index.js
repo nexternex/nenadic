@@ -240,7 +240,7 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 	app.post('/api/lists_update/:user_id', function(req, res) {
         console.log(req.body.formData.name+":"+req.body.size.singleSelect);
 		// create a list, information comes from AJAX request from Angular
-		List.update({ 'c_id': req.params.user_id },
+		List.update({ 'c_id': req.body.user_id },
 			 { $set: { 
 				name :req.body.name,
 				lastname : req.body.formData.name,
