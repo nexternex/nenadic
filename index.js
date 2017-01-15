@@ -242,12 +242,12 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 			 }}, function(err, list) {
 			if (err)
 				res.send(err);
-			// get and return all the todos after you create another
+			// get and return all the lists after you create another
 			List.find({ 'c_id': req.params.profile_id },function(err, profile) {
 				// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 				if (err)
 					res.send(err)
-				res.json(profile); // return all todos in JSON format
+				res.json(profile); // return all lists in JSON format
 				console.log("R2D2 says:nasao sam profile:"+List);
 				});
 			});
