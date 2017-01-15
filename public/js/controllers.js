@@ -149,7 +149,19 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
             console.log('Error: ');
         });
     };
-}]);  
+
+// UPDATE LIST
+ $scope.updateList = function() {
+       $http.post('/api/List_update/:'+auth.profile.user_id,{formData: $scope.formData,size:$scope.size,category:$scope.category})
+        .success(function(data) {
+            console.log('Update List completed');
+        })
+        .error(function(data) {
+            console.log('Error: ');
+        });
+    };
+// <-----------Main controler END------------------------>    
+}]);   
 //Menu controller ----ciricle meni 
 erpagWeather.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];

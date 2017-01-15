@@ -121,7 +121,7 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 				if (err)
 					res.send(err)
 				});
-						
+
         if(err) {
             return res.end("Error uploading file.");
         }
@@ -130,25 +130,24 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 });
 
 // Image 2 DRUGI METOD UPIS NA DISK--trenutno rem zbog upisa na S3
-// app.post('/api/photo',function(req,res){
-//     upload(req,res,function(err) {
+	// app.post('/api/photo',function(req,res){
+	//     upload(req,res,function(err) {
 
-//         console.log("user_id:"+req.body.user_id);
-//         console.log("path:"+req.files.userPhoto.path);
+	//         console.log("user_id:"+req.body.user_id);
+	//         console.log("path:"+req.files.userPhoto.path);
 
-// 		List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
-// 				if (err)
-// 					res.send(err)
-// 				});
-		
-//         if(err) {
-//             return res.end("Error uploading file.");
-//         }
-//         res.end('File uploaded');
-//     });
+	// 		List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
+	// 				if (err)
+	// 					res.send(err)
+	// 				});
+			
+	//         if(err) {
+	//             return res.end("Error uploading file.");
+	//         }
+	//         res.end('File uploaded');
+	//     });
 // });
 
-//update image in database MONGO
 //BACKEND ROUTES
 	// api ---------------------------------------------------------------------
 	// get all todos
@@ -190,7 +189,7 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 		});
 
 	});
-// DELETE a todo
+// DELETE todo
 	app.delete('/api/todos/:todo_id', function(req, res) {
 		Todo.remove({
 			_id : req.params.todo_id
@@ -212,7 +211,7 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 	app.get('/api/lists', function(req, res) {
         
 
-// use mongoose to get all todos in the database
+// Use mongoose to get all todos in the database
 		List.find(function(err, lists) {
 
 // if there is an error retrieving, send the error. nothing after res.send(err) will execute
@@ -225,7 +224,7 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 	});
 
 
-//FIND USER PROFILE//
+// FIND USER PROFILE//
 	app.get('/api/profile:profile_id', function(req, res) {
         // use mongoose to get all profiles in the database
 		List.find({ 'c_id': req.params.profile_id },function(err, profile) {
@@ -237,8 +236,30 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 		});
 	});
 
-// create oglasi/lisitng and send back all lists after creation
-	app.post('/api/lists', function(req, res) {
+// Update oglasi/lisitng and send back all lists after creation
+	app.post('/api/lists_update/:user_id', function(req, res) {
+        console.log(req.body.formData.name+":"+req.body.size.singleSelect);
+		// create a list, information comes from AJAX request from Angular
+		List.update({ 'c_id': req.params.user_id },
+			 { $set: { 
+				name :req.body.name,
+				lastname : req.body.formData.name,
+				company : req.body.formData.company,
+				address : req.body.formData.address,
+				size : req.body.size.singleSelect,
+				category : req.body.category.singleSelect
+			 }}, function(err, list) {
+			if (err)
+				res.send(err);
+			// get and return all the todos after you create another
+			List.find(function(err, lists) {
+				if (err)
+				res.send(err)
+				res.json(lists);  
+				});
+			});
+		});
+		app.post('/api/lists_data/:user_id', function(req, res) {
         console.log(req.body.formData.name+":"+req.body.size.singleSelect);
 		// create a list, information comes from AJAX request from Angular
 		List.create({
