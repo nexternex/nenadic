@@ -232,13 +232,12 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
         console.log(req.body.formData.user_id+":"+ req.body.formData.company);
 		// create a list, information comes from AJAX request from Angular
 		List.update({ 'c_id': req.body.user_id },
-			 { $set: { 
-				name :req.body.name,
-				lastname : req.body.formData.name,
-				company : req.body.formData.company,
-				address : req.body.formData.address,
-				size : req.body.size.singleSelect,
-				category : req.body.category.singleSelect
+			 { $set: { name :req.body.name
+				// lastname : req.body.formData.name,
+				// company : req.body.formData.company,
+				// address : req.body.formData.address,
+				// size : req.body.size.singleSelect,
+				// category : req.body.category.singleSelect
 			 }}, function(err, list) {
 			if (err)
 				res.send(err);
