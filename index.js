@@ -228,7 +228,7 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 
 // UPDATE LIST 
 // ++ oglasi/lisitng and send back all lists after creation
-	app.post('/api/lists_update:user_id', function(req, res) {
+	app.post('/api/lists_update', function(req, res) {
         console.log(req.body.formData.user_id+":"+ req.body.formData.company);
 		// create a list, information comes from AJAX request from Angular
 		List.update({ 'c_id': req.body.user_id },
