@@ -228,7 +228,7 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 
 // UPDATE LIST 
 // ++ oglasi/lisitng and send back all lists after creation
-	app.post('/api/lists_update/', function(req, res) {
+	app.post('/api/lists_update', function(req, res) {
         console.log(req.body.formData.name+":"+req.body.size.singleSelect);
 		// create a list, information comes from AJAX request from Angular
 		List.update({ 'c_id': req.body.user_id },
@@ -243,10 +243,12 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 			if (err)
 				res.send(err);
 			// get and return all the todos after you create another
-			List.find(function(err, lists) {
+			List.find({ 'c_id': req.params.profile_id },function(err, profile) {
+				// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 				if (err)
-				res.send(err)
-				res.json(lists);  
+					res.send(err)
+				res.json(profile); // return all todos in JSON format
+				console.log("R2D2 says:nasao sam profile:"+List);
 				});
 			});
 		});
