@@ -21,7 +21,7 @@
                    <fieldlist ng-model="formData" ng-disabled="data.cb2" class="md-primary hue-2" layout="row">
                       
                     <!--prva grupa podataka-->
-                    <md-content ng-controller="profileController" ng-model="formData" layout="column" flex="60">
+                    <md-content  ng-controller="profileController" ng-model="formData" layout="column" flex="60">
                                  
                             <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
                                 Izmeni podatke:
@@ -71,34 +71,37 @@
                             <md-button class="md-raised md-accent" value="Register" ng-click="updateList()" width="100px">Update izmene</md-button>
 
                         </md-content>
-                    <!--druga grupa podataka-->
-                    <md-content ng-controller="profileController" >
+            <!--druga grupa podataka-->
+            <md-content ng-controller="profileController" >
+                        <h2>Logo Firme</h2>
+                        <input type="file" id="file-input">
+                        <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
+                        <p id="status">Please select a file</p>
+                        <img style="border:1px solid gray;width:300px;"  id="preview" src="{{profile.img}}">
+
+                        <h2>Kontakt Info</h2>
+                        <form>
+                            <input type="hidden" id="avatar-url" name="avatar-url" value="{{auth.profile.user_id}}">
+                            <hr>
+                            <input type="submit" value="Update profile" ng-click="updateImageUrl()">
+                             <md-button flex="100" type="submit" class=" md-primary" ng-click="updateImageUrl($event)">
+                                <md-icon  md-svg-icon="content-save" aria-label="save">Sacuvaj sliku</md-icon>
+                             </md-button>
+                          </form>
                         <!--preview kartice listinga-->
-                        <md-card md-accent   flex="33" ng-repeat="profile in profiles">
+                        <!--<md-card md-accent   flex="33" ng-repeat="profile in profiles">
                             <md-card-title>
                                 <md-card-title-text>
-                                    <h2>Logo Firme</h2>
-                                    <input type="file" id="file-input">
-                                    <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
-                                    <p id="status">Please select a file</p>
-                                    <img style="border:1px solid gray;width:300px;height:300px" id="preview" src="{{profile.img}}">
-                                    <h2>Kontakt Info</h2>
-                                    <form>
-                                        <input type="hidden" id="avatar-url" name="avatar-url" value="{{auth.profile.user_id}}">
-                                        <hr>
-                                        <md-button flex="100" type="submit" class=" md-primary" ng-click="updateImageUrl($event)">
-                                            <md-icon  md-svg-icon="content-save" aria-label="save">Sacuvaj sliku</md-icon>
-                                        </md-button>
-                                    </form>
+                            
                                     <span class="md-headline">{{profile.name}}</span>
                                     <span class="md-subhead">{{profile.lastname}}</span>
                                     <span class="md-subhead">{{profile.c_id}}</span>
                                 </md-card-title-text>
-                                    <!--<md-card-title-media>
+                                    <md-card-title-media>
                                         <div class="md-media-lg card-media"><img  src={{profile.img}} /></div>
-                                    </md-card-title-media>-->
+                                    </md-card-title-media>
                                 </md-card-title>
-                            </md-card>
+                            </md-card>-->
               </md-content>
                 </fieldlist>
     </md-content>
