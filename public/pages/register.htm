@@ -71,8 +71,8 @@
                             <md-button class="md-raised md-accent" value="Register" ng-click="updateList()" width="100px">Update izmene</md-button>
 
                         </md-content>
-            <!--druga grupa podataka-->
-                    <md-content ng-controller="profileController" ng-model="formData" >
+                    <!--druga grupa podataka-->
+                    <md-content ng-controller="profileController" >
                         <!--preview kartice listinga-->
                         <md-card md-accent   flex="33" ng-repeat="profile in profiles">
                             <md-card-title>
@@ -81,7 +81,7 @@
                                     <input type="file" id="file-input">
                                     <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
                                     <p id="status">Please select a file</p>
-                                    <img style="border:1px solid gray;width:300px;"  id="preview" src="{{profile.img}}">
+                                    <img style="border:1px solid gray;width:300px;height:300px" id="preview" src="{{profile.img}}">
                                     <h2>Kontakt Info</h2>
                                     <form>
                                         <input type="hidden" id="avatar-url" name="avatar-url" value="{{auth.profile.user_id}}">
