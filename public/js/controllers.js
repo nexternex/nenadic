@@ -255,7 +255,9 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
 // LOAD PROFILE when landing on the page, get profile and show them
     $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
+            //rezultat 1 profila ide u data
             $scope.profiles = data;
+            //setujem formData da je jednak prvom objektu iz niza
             $scope.formData=$scope.profiles[0];
             console.log('profil sam dobio iz baze:'+$scope.my_profile);
         })
