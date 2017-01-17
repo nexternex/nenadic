@@ -73,20 +73,6 @@
                         </md-content>
             <!--druga grupa podataka-->
                     <md-content ng-controller="profileController" ng-model="formData" >
-                        <h2>Logo Firme</h2>
-                        <input type="file" id="file-input">
-                        <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
-                        <p id="status">Please select a file</p>
-                        <img style="border:1px solid gray;width:300px;"  id="preview" src="{{formData.img}}">
-
-                        <h2>Kontakt Info</h2>
-                        <form>
-                            <input type="hidden" id="avatar-url" name="avatar-url" value="{{auth.profile.user_id}}">
-                            <hr>
-                             <md-button flex="100" type="submit" class=" md-primary" ng-click="updateImageUrl($event)">
-                                <md-icon  md-svg-icon="content-save" aria-label="save">Sacuvaj sliku</md-icon>
-                             </md-button>
-                          </form>
                         <!--preview kartice listinga-->
                         <md-card md-accent   flex="33" ng-repeat="profile in profiles">
                             <md-card-title>
