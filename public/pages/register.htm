@@ -8,7 +8,7 @@
 <md-toolbar md-scroll-shrink>
             <div class="md-toolbar-tools" ng-controller="UserInfoCtrl" >
                 Welcome {{auth.profile.nickname}} 
-                <p>{{auth.profile.user_id}} </p>
+                <!--<p>{{auth.profile.user_id}} </p>-->
                 <img src="{{auth.profile.picture}}"></img>
                 <a href="#/">Switch to browser</a>
             </div>
@@ -73,47 +73,36 @@
                         </md-content>
             <!--druga grupa podataka-->
             <md-content ng-controller="mainController" >
-                 <!--<form ng-model="photo" id="uploadForm" enctype="multipart/form-data" action="/api/photo" method="post">
-                    <input type="file" name="userPhoto" multiple />
-                    <input type="submit" value="Upload Image" name="submit">
-                    <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
-                    <span id = "status"></span>
-                </form>-->
-                        <h1>Detalji preduzeca</h1>
-                        <hr>
                         <h2>Logo Firme</h2>
-
                         <input type="file" id="file-input">
                         <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
                         <p id="status">Please select a file</p>
                         <img style="border:1px solid gray;width:300px;"  id="preview" src="/img/default.png">
 
                         <h2>Kontakt Info</h2>
-
                         <form>
                             <input type="hidden" id="avatar-url" name="avatar-url" value="{{auth.profile.user_id}}">
                             <hr>
-                            <h2>Save changes</h2>
                             <input type="submit" value="Update profile" ng-click="updateImageUrl()">
                              <md-button flex="100" type="submit" class=" md-primary" ng-click="updateImageUrl($event)">
                                 <md-icon  md-svg-icon="content-save" aria-label="save">Sacuvaj sliku</md-icon>
                              </md-button>
                           </form>
 
-
-                 <md-card md-accent   flex="33" ng-repeat="profile in profiles">
-                    <md-card-title>
-                        <md-card-title-text>
-                       
-                            <span class="md-headline">{{profile.name}}</span>
-                            <span class="md-subhead">{{profile.lastname}}</span>
-                            <span class="md-subhead">{{profile.c_id}}</span>
-                        </md-card-title-text>
-                             <md-card-title-media>
-                                <div class="md-media-lg card-media"><img  src={{profile.img}} /></div>
-                            </md-card-title-media>
-                        </md-card-title>
-                    </md-card>
+                        <!--preview kartice listinga-->
+                        <md-card md-accent   flex="33" ng-repeat="profile in profiles">
+                            <md-card-title>
+                                <md-card-title-text>
+                            
+                                    <span class="md-headline">{{profile.name}}</span>
+                                    <span class="md-subhead">{{profile.lastname}}</span>
+                                    <span class="md-subhead">{{profile.c_id}}</span>
+                                </md-card-title-text>
+                                    <md-card-title-media>
+                                        <div class="md-media-lg card-media"><img  src={{profile.img}} /></div>
+                                    </md-card-title-media>
+                                </md-card-title>
+                            </md-card>
               </md-content>
  
                 </fieldlist>
