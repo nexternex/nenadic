@@ -41,14 +41,14 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
 }]);
 //MAIN coontroler
 erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
-     var todoData={};
-     $scope.auth = auth;
-     $scope.formData = {};
-     $scope.status = '  ';
-     $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-     $scope.todos='';
-     $scope.photo='';
-    //  $scope.photo.user_id=auth.profile.user_id;
+        var todoData={};
+        $scope.auth = auth;
+        $scope.formData = {};
+        $scope.status = '  ';
+        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+        $scope.todos='';
+        $scope.photo='';
+        //  $scope.photo.user_id=auth.profile.user_id;
     
 // When landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
@@ -59,7 +59,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
         .error(function(data) {
             console.log('Error: ' + data);
         });
-// API CREATE
+// Api create a todo
     $scope.createTodo = function() {
         $http.post('/api/todos',$scope.formData)
             .success(function(data) {
@@ -74,9 +74,6 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     };
     
 // Delete a todo after checking it
-
-
-
     $scope.deleteTodo = function(id) { 
             $http.delete('/api/todos/' + id)
                 .success(function(data) {
@@ -139,7 +136,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.onChange = function(cbState) {
         $scope.message = cbState;
         };     
-// UPDATE IMAGE URL
+// Update image url
  $scope.updateImageUrl = function() {
        $http.post('/api/save-details/'+ auth.profile.user_id)
         .success(function(data) {
@@ -169,7 +166,6 @@ erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','F
     }]);
 //LIST1 kontroler--dropdown komponente
 erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$http) {
-
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
@@ -261,7 +257,6 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
         .success(function(data) {
             $scope.profiles = data;
             $scope.formData=$scope.profiles[0];
-        
             console.log('profil sam dobio iz baze:'+$scope.my_profile);
         })
         .error(function(data) {
