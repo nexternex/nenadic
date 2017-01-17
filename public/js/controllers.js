@@ -263,8 +263,8 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
         })
         .error(function(data) {
             console.log('Error: ' + data);
-            // $scope.profiles = data;
-            // $scope.formData=$scope.profiles[0];
+            $scope.profiles = data;
+            $scope.formData=$scope.profiles[0];
         });    
 
 // ++when submitting the add form, send the text to the node API
