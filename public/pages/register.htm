@@ -18,9 +18,9 @@
 <!--Pocinje prvi tab-->
 <md-tab label="Moj Nalog">
         <md-content class="md-padding">  
-                   <fieldlist ng-model="formData" ng-disabled="data.cb2" class="md-primary hue-2" layout="row">
+             <fieldlist ng-model="formData" ng-disabled="data.cb2" class="md-primary hue-2" layout="row">
                       
-                    <!--prva grupa podataka-->
+            <!--prva grupa podataka-->
                     <md-content  ng-controller="profileController" ng-model="formData" layout="column" flex="60">
                                  
                             <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
@@ -72,7 +72,8 @@
 
                         </md-content>
             <!--druga grupa podataka-->
-            <md-content ng-controller="profileController" >
+                    <md-content ng-controller="profileController" >
+                        <md-card md-accent   flex="33" ng-repeat="profile in profiles">
                         <h2>Logo Firme</h2>
                         <input type="file" id="file-input">
                         <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
@@ -88,6 +89,7 @@
                                 <md-icon  md-svg-icon="content-save" aria-label="save">Sacuvaj sliku</md-icon>
                              </md-button>
                           </form>
+                    </md-card>
                         <!--preview kartice listinga-->
                         <!--<md-card md-accent   flex="33" ng-repeat="profile in profiles">
                             <md-card-title>
@@ -102,7 +104,7 @@
                                     </md-card-title-media>
                                 </md-card-title>
                             </md-card>-->
-              </md-content>
+                     </md-content>
                 </fieldlist>
     </md-content>
 </md-tab>
