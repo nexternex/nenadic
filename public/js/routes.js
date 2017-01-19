@@ -6,11 +6,11 @@ erpagWeather.config(function ($routeProvider){
         
     .when('/',{
     templateUrl:'../pages/home.htm',
-    controller:'list1Controller'
+    controller:'ListController'
     })
     .when('/Home',{
     templateUrl:'../pages/home.htm',
-    controller:'list1Controller',
+    controller:'ListController',
     })
     .when('/login', {
     templateUrl: '../pages/login.htm',
@@ -18,16 +18,16 @@ erpagWeather.config(function ($routeProvider){
     })
     .when('/list', {
     templateUrl: '../pages/list.htm',
-    controller: 'list1Controller'        
+    controller: 'ListController'        
     })
     .when('/register', {
     templateUrl: '../pages/register.htm',
-    controller: 'profileController',
+    controller: 'ProfileController',
     requiresLogin: true   
     })
     .when('/mypage', {
     templateUrl: '../pages/mypage.htm',
-    controller: 'list1Controller',
+    controller: 'ListController',
     requiresLogin: false  
     })
     .when('/timeline', {
@@ -37,13 +37,13 @@ erpagWeather.config(function ($routeProvider){
     })
     .when('/login2', {
     templateUrl: '../pages/login.htm',
-    controller: 'mainController',
+    controller: 'MainController',
     requiresLogin: false
     })
     // Logged in route
     .when('/userInfo', {
     templateUrl: '../pages/userInfo.htm',
-    controller: 'mainController',
+    controller: 'MainController',
     requiresLogin: true
     });
     

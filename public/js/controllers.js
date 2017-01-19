@@ -40,7 +40,7 @@ erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth)
   console.log('UserInfoCtrl controller used');  
 }]);
 //MAIN coontroler
-erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
+erpagWeather.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
         var todoData={};
         $scope.auth = auth;
         $scope.formData = {};
@@ -155,7 +155,7 @@ erpagWeather.controller('MenuCtrl', function() {
 erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
-//LIST1 kontroler--dropdown komponente
+//LIST kontroler--dropdown komponente
 erpagWeather.controller('ListController', ['$scope','$http', function ($scope,$http) {
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
@@ -217,6 +217,7 @@ erpagWeather.controller('ListController', ['$scope','$http', function ($scope,$h
             }
           }
         };
+
 }]);
 
 //PROFIL KORISNIKA//
