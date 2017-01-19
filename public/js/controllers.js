@@ -1,5 +1,5 @@
 //CONTROLERS
-erpagWeather.controller('homeController',['$scope' ,function($scope){
+erpagWeather.controller('HomeController',['$scope' ,function($scope){
     console.log('kraj home controlera');
 }]);
 // Login.js
@@ -156,7 +156,7 @@ erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','F
      console.log("maps kontroler entry");
     }]);
 //LIST1 kontroler--dropdown komponente
-erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$http) {
+erpagWeather.controller('ListController', ['$scope','$http', function ($scope,$http) {
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
@@ -220,7 +220,7 @@ erpagWeather.controller('list1Controller', ['$scope','$http', function ($scope,$
 }]);
 
 //PROFIL KORISNIKA//
-erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
+erpagWeather.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
     $scope.formData = {};
     $scope.profiles = [];
     $scope.auth = auth;
@@ -262,7 +262,6 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
     $scope.createList = function() {
         $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
             .success(function(data) {
-// ++$scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.formData = data;
                 alert("uspesno ste registrovali nalog koristeci profileController linux");
             })
