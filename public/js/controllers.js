@@ -136,16 +136,7 @@ erpagWeather.controller('mainController', ['$scope', '$http','$mdDialog', '$mdMe
     $scope.onChange = function(cbState) {
         $scope.message = cbState;
         };     
-// Update image url
- $scope.updateImageUrl = function() {
-       $http.post('/api/save-details/'+ auth.profile.user_id)
-        .success(function(data) {
-            console.log('Update image url');
-        })
-        .error(function(data) {
-            console.log('Error: ');
-        });
-    };
+
 
 
 // <-----------Main controler END------------------------>    
@@ -292,7 +283,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
             });
     };
 // UPDATE LIST
- $scope.updateList = function() {
+    $scope.updateList = function() {
        console.log("UPDATE LIST Start");
        $http.post('/api/lists_update/',{formData: $scope.formData,name:$scope.name,size:$scope.size,category:$scope.category,user_id:auth.profile.user_id})
         .success(function(data) {
@@ -301,7 +292,18 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
         .error(function(data) {
             console.log('Error: ');
         });
-    };        
+    }; 
+// UPDATE image url
+ $scope.updateImageUrl = function() {
+       $http.post('/api/save-details/'+ auth.profile.user_id)
+        .success(function(data) {
+            console.log('Update image url');
+        })
+        .error(function(data) {
+            console.log('Error: ');
+        });
+    };   
+           
 //<------------------------END PROFILE CONTROLER------------------->    
 }]);
 //FACTORY return users
