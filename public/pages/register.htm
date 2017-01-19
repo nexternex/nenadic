@@ -78,13 +78,12 @@
                         <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
                         <p id="status">Please select a file</p>
                         <img style="border:1px solid gray;width:300px;"  id="preview" src="{{formData.img}}">
-                        <md-progress-circular md-mode="indeterminate" ng-show="isLoading"></md-progress-circular>
+                       
 
                         <h2>Kontakt Info</h2>
                         <form>
                             <input type="hidden" id="avatar-url" name="avatar-url" value="{{auth.profile.user_id}}">
                             <hr>
-                            <!--<input type="submit" value="Update profile" ng-click="updateImageUrl()">-->
                              <md-button flex="100" type="submit" class=" md-primary" ng-click="updateImageUrl($event)">
                                 <md-icon  md-svg-icon="content-save" aria-label="save">Sacuvaj sliku</md-icon>
                              </md-button>
