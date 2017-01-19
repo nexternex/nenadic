@@ -290,7 +290,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
             console.log('Update List completed');
         })
         .error(function(data) {
-            console.log('Error: ');
+            console.log('Error: '+ data);
         });
     }; 
 // UPDATE image url
@@ -300,7 +300,7 @@ erpagWeather.controller('profileController', ['$scope','$http','auth','$q','$tim
             console.log('Update image url');
         })
         .error(function(data) {
-            console.log('Error: ');
+            console.log('Error update_list_f: '+ data);
         });
     };   
            
