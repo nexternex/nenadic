@@ -43,12 +43,12 @@
                             <div layout='row' flex="100">
                                  <md-input-container flex="45">
                                    <label>Naziv preduzeca:</label> 
-                                     </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company">{{formData.company}}<br>
+                                     </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company"><br>
                                  </md-input-container>
 
                                  <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" flex="45">
                                      <label>email:</label> 		   
-                                     </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address">{{formData.address}}<br>
+                                     </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address"><br>
                                  </md-input-container>
                             </div>
 
@@ -56,13 +56,13 @@
                                 <md-input-container ng-disabled="data.cb2" flex='45'>
                                     <label for="category">Vrsta delatnosti: </label></br>
                                     <md-select name="category" ng-readonly="data.cb2" ng-model="category.singleSelect" value="{{category.singleSelect}}">
-                                      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                                      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}"></option>
                                     </md-select>
                                 </md-input-container>
                                 <md-input-container flex='45'>
                                     <label for="size" >Velicina prikaza: </label></br>
                                     <md-select name="size" ng-readonly="data.cb2"  ng-model="size.singleSelect" value="{{size.singleSelect}}">
-                                      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">{{option.name}}</option>
+                                      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}">s</option>
                                     </md-select>
                                 </md-input-container>
                             </div>
