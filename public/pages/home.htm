@@ -62,7 +62,7 @@
              
 		</div> <!-- cd-tab-filter-wrapper -->
 
-		<section ng-controller="list1Controller"  class="cd-gallery" >
+		<section ng-controller="ListController"  class="cd-gallery" >
             <div class="">Želite da se vidi i Vaš oglas<strong>Registrujte se!</strong></div>
 			<ul> 
             <li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in lists track by item.gsx$naziv.$t" >  
@@ -99,7 +99,7 @@
                 </div>
                 <li class="gap"></li>
 			</ul>
-            <div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
+        <div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
         </section>
 		<div class="cd-filter">
 			<form>
