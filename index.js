@@ -9,7 +9,7 @@ var express = require('express'),
     upload = multer({ dest: './uploads/'});
     fs = require('fs'),
     routes = require('./routes'),
-    api = require('./routes/api'),
+    // api = require('./routes/api'),
     http = require('http'),
     path = require('path');
 
