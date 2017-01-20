@@ -8,7 +8,7 @@ erpagWeather.run(function(auth) {
 });
  
 //config app
-erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
+erpagWeather.config(function (authProvider,lockProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
   // ...
   authProvider.init({
     domain: 'myday.eu.auth0.com',
