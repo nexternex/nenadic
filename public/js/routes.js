@@ -6,29 +6,23 @@ erpagWeather.config(function ($routeProvider){
         
     .when('/',{
     templateUrl:'../pages/home.htm',
-    controller:'ListController'
+    controller:'ListController',
+    requiresLogin: false 
     })
     .when('/Home',{
     templateUrl:'../pages/home.htm',
     controller:'ListController',
+    requiresLogin: false 
     })
     .when('/login', {
     templateUrl: '../pages/login.htm',
-    controller: 'LoginCtrl'       
-    })
-    .when('/list', {
-    templateUrl: '../pages/list.htm',
-    controller: 'ListController'        
+    controller: 'LoginCtrl', 
+    requiresLogin: false       
     })
     .when('/register', {
     templateUrl: '../pages/register.htm',
     controller: 'ProfileController',
     requiresLogin: true   
-    })
-    .when('/mypage', {
-    templateUrl: '../pages/mypage.htm',
-    controller: 'ListController',
-    requiresLogin: false  
     })
     .when('/timeline', {
     templateUrl: '../pages/timeline.htm',
