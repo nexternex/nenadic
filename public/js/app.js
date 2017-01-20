@@ -19,7 +19,7 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
           logo: 'http://media.geppetto.rs/2016/10/geppetto-1.png',
           primaryColor: '#31324F',
           },
-          language: 'es' 
+        language: 'es' 
       } 
     });
     
@@ -35,6 +35,8 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   }];
 
   $httpProvider.interceptors.push('jwtInterceptor');
+
+  // Tema aplikacije Angular Theming
   $mdIconProvider.defaultIconSet('../fonts/mdi.svg'); 
   $mdThemingProvider.theme('default')
     .primaryPalette('purple',  {                  
@@ -50,10 +52,6 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
       'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> cla
                     })
     .accentPalette('green');
-    
-    
-  
-    
 });
 
 erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
