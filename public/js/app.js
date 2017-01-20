@@ -17,7 +17,7 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     options: {
         theme: {
           logo: 'http://media.geppetto.rs/2016/10/geppetto-1.png',
-          primaryColor: '#31324F',
+          primaryColor: '#31324F'
           },
         language: 'es' 
       } 
