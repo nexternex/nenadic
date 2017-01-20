@@ -290,10 +290,6 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 		});
 	});
 
-
-
-
-
 //GET ROUTES//
 app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
