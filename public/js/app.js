@@ -13,7 +13,12 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   authProvider.init({
     domain: 'myday.eu.auth0.com',
     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-    loginUrl: '/index'
+    loginUrl: '/index',
+    theme: {
+        logo: 'https://example.com/logo.png',
+        primaryColor: '#31324F',
+        language: 'es'
+       }  
     });
     
     jwtOptionsProvider.config({
