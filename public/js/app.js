@@ -13,14 +13,19 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   authProvider.init({
     domain: 'myday.eu.auth0.com',
     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-    loginUrl: '/index',
-    options: {
+    loginUrl: '/index'
+    });
+
+
+  lockProvider.init({
+      clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
+      domain: 'myday.eu.auth0.com',
+      options: {
         theme: {
-          logo: 'http://media.geppetto.rs/2016/10/geppetto-1.png',
-          primaryColor: '#31324F'
-          },
-        language: 'es' 
-      } 
+          logo: 'https://auth0.com/lib/homepage/img/logo-tmz.svg',
+          primaryColor: "#b81b1c"
+        }
+      }
     });
     
     jwtOptionsProvider.config({
