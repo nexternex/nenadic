@@ -16,9 +16,9 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     loginUrl: '/index',
     options: {
         theme: {
-          logo: 'https://example.com/logo.png',
+          logo: 'http://media.geppetto.rs/2016/10/geppetto-1.png',
           primaryColor: '#31324F',
-         },
+          },
           language: 'es' 
       } 
     });
