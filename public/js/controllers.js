@@ -86,7 +86,7 @@ erpagWeather.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMe
     //    dijalog koji podize modal za kreiranje  todo
     $scope.showCreate = function() {     
         $mdDialog.show({ 
-                controller: 'mainController',
+                controller: 'MainController',
                 templateUrl: '../pages/dialog1.htm',
                 clickOutsideToClose:true
         }).then(function() {
