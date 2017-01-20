@@ -16,14 +16,14 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     loginUrl: '/index'
     });
 
-
+//  Konfiguracija izgleda login widgeta
   lockProvider.init({
       clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
       domain: 'myday.eu.auth0.com',
       options: {
         theme: {
           logo: 'https://auth0.com/lib/homepage/img/logo-tmz.svg',
-          primaryColor: "#b81b1c"
+          primaryColor: "purple"
         }
       }
     });
