@@ -94,7 +94,7 @@ jQuery(document).ready(function($){
 	var $matching = $();
 
 	var delay = (function(){
-		var timer = 0;
+		var timer = 3;
 		return function(callback, ms){
 			clearTimeout (timer);
 		    timer = setTimeout(callback, ms);
