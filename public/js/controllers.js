@@ -1,6 +1,13 @@
 //CONTROLERS
 erpagWeather.controller('HomeController',['$scope' ,function($scope){
     console.log('kraj home controlera');
+    $scope.isOpen = false;
+
+      $scope.demo = {
+        isOpen: false,
+        count: 0,
+        selectedDirection: 'left'
+      };
 }]);
 // Login.js
 erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
