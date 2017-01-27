@@ -13,18 +13,19 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
   authProvider.init({
     domain: 'myday.eu.auth0.com',
     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-    loginUrl: '/index'
+    loginUrl: '/index',
+    language: 'es'
     });
 
-var options = {
-  language: 'es',
-  theme: {
-          logo: 'https://auth0.com/lib/homepage/img/logo-tmz.svg',
-          primaryColor: "purple"
-        }
-};    
+// var options = {
+//   language: 'es',
+//   theme: {
+//           logo: 'https://auth0.com/lib/homepage/img/logo-tmz.svg',
+//           primaryColor: "purple"
+//         }
+// };    
 
-var lock = new Auth0Lock('oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl', 'myday.eu.auth0.com', options);
+// var lock = new Auth0Lock('oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl', 'myday.eu.auth0.com', options);
 
 //  Konfiguracija izgleda login widgeta
   // lockProvider.init({
