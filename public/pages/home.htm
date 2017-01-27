@@ -1,5 +1,6 @@
 <header  class="cd-header" ng-controller="MenuCtrl">
- <md-fab-speed-dial md-open="false" md-direction="right">
+<!-- #region SpeedDial -->
+ <!--<md-fab-speed-dial md-open="false" md-direction="right">
         <md-fab-trigger>
           <md-button aria-label="menu" class="md-fab md-accent" md-visible="tooltipVisible">
             <md-icon md-svg-src="menu"></md-icon>
@@ -19,17 +20,41 @@
             <md-icon md-svg-icon="power" aria-label="logout" md-visible="tooltipVisible"></md-icon>
           </md-button>
               
-          <!--<md-button aria-label="Timeline" class="md-fab md-raised md-mini">
+          <md-button aria-label="Timeline" class="md-fab md-raised md-mini">
             <md-icon md-svg-icon="alarm" aria-label="Raspored desavanja" ng-href="timeline" md-visible="tooltipVisible"></md-icon>
           </md-button>
             
           <md-button aria-label="login" class="md-fab md-raised md-mini">
             <md-icon md-svg-icon="map" aria-label="mapa" ng-href="login2" md-visible="tooltipVisible"></md-icon>
-          </md-button>-->
+          </md-button>
             
         </md-fab-actions>
-      </md-fab-speed-dial>
-  </md-content>
+      </md-fab-speed-dial>-->
+			  <md-fab-toolbar md-open="demo.isOpen" count="demo.count" md-direction="left">
+					<md-fab-trigger class="align-with-text">
+						<md-button aria-label="menu" class="md-fab md-primary">
+							<md-icon md-svg-src="img/icons/menu.svg"></md-icon>
+						</md-button>
+					</md-fab-trigger>
+
+					<md-toolbar>
+						<md-fab-actions class="md-toolbar-tools">
+							<md-button aria-label="comment" class="md-icon-button">
+								<md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
+							</md-button>
+							<md-button aria-label="label" class="md-icon-button">
+								<md-icon md-svg-src="img/icons/ic_label_24px.svg"></md-icon>
+							</md-button>
+							<md-button aria-label="photo" class="md-icon-button">
+								<md-icon md-svg-src="img/icons/ic_photo_24px.svg"></md-icon>
+							</md-button>
+						</md-fab-actions>
+					</md-toolbar>
+				</md-fab-toolbar>
+ 	 </md-content>
+	<!-- #endregion SpeedDial -->
+
+
 <!-- info o logu -->
         <a href="register"><h2 class="white" ng-controller="UserInfoCtrl">{{auth.profile.nickname}}</h2></a>
     </div>
