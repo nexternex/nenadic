@@ -1,35 +1,5 @@
 <header  class="cd-header" ng-controller="MenuCtrl">
 <!-- #region SpeedDial -->
- <!--<md-fab-speed-dial md-open="false" md-direction="right">
-        <md-fab-trigger>
-          <md-button aria-label="menu" class="md-fab md-accent" md-visible="tooltipVisible">
-            <md-icon md-svg-src="menu"></md-icon>
-          </md-button>
-        </md-fab-trigger>
-        <md-fab-actions>
-            
-          <md-button aria-label="Uloguj se" class="md-fab md-raised md-mini md-primary" md-visible="tooltipVisible">
-            <md-icon md-svg-icon="android" aria-label="Uloguj se" ng-controller="LoginCtrl" ng-click="login()"></md-icon>
-          </md-button>
-            
-          <md-button aria-label="Kreiraj nalog" class="md-fab md-raised md-mini md-primary" ng-controller="LoginCtrl" ng-click="login()">
-            <md-icon md-svg-icon="account" aria-label="login" md-visible="tooltipVisible"></md-icon>
-          </md-button>
-            
-          <md-button aria-label="LogIN" class="md-fab md-raised md-mini" ng-controller="LoginCtrl" ng-click="logout()">
-            <md-icon md-svg-icon="power" aria-label="logout" md-visible="tooltipVisible"></md-icon>
-          </md-button>
-              
-          <md-button aria-label="Timeline" class="md-fab md-raised md-mini">
-            <md-icon md-svg-icon="alarm" aria-label="Raspored desavanja" ng-href="timeline" md-visible="tooltipVisible"></md-icon>
-          </md-button>
-            
-          <md-button aria-label="login" class="md-fab md-raised md-mini">
-            <md-icon md-svg-icon="map" aria-label="mapa" ng-href="login2" md-visible="tooltipVisible"></md-icon>
-          </md-button>
-            
-        </md-fab-actions>
-      </md-fab-speed-dial>-->
 			  <md-fab-toolbar md-open="demo.isOpen" count="demo.count" md-direction="right">
 					<md-fab-trigger class="align-with-text">
 						<md-button aria-label="menu" class="md-fab md-primary">
@@ -55,10 +25,7 @@
  	 </md-content>
 	<!-- #endregion SpeedDial -->
 
-
 <!-- info o logu -->
-        
-    </div>
 		<nav class="main-nav">
 			<ul>
 			</ul>
@@ -107,19 +74,19 @@
                         <a href="{{item.gsx$web.$t}}"><p>{{item.gsx$web.$t}}</p></a>-->
 <!--action ikone na svakom od kataloga-->
 <!--rem zbog sporosti generisanja objekata-->
-                        <!--<md-card-actions layout="row" layout-align="end center">
+                        <md-card-actions layout="row" layout-align="end center">
 
-                          <md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
+                          <!--<md-button class="md-icon-button md-warn" aria-label="Delete" data={{list._id}} dataSize={{list.size}} value="Delete"  ng-click="deleteList(list._id)">
                             <md-icon md-svg-icon="delete"></md-icon>
                           </md-button>
                           <button class="md-icon-button" aria-label="Settings">
                             <icon>a</icon>
-                          </button>
+                          </button>-->
                           <md-button class="md-icon-button" aria-label="Share">
                             <md-icon md-svg-icon="open-in-new"></md-icon>
                           </md-button>
 
-                        </md-card-actions>-->
+                        </md-card-actions>
 
                     </md-card>
                 </div>
