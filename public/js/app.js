@@ -25,6 +25,7 @@ var options = {
 };    
 
 var lock = new Auth0Lock('clientID', 'myday.eu.auth0.com', options);
+  lock.show();
 //  Konfiguracija izgleda login widgeta
   // lockProvider.init({
   //     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
