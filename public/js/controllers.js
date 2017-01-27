@@ -1,6 +1,6 @@
 //CONTROLERS
 erpagWeather.controller('HomeController',['$scope' ,function($scope){
-    console.log('kraj home controlera');
+    
     $scope.isOpen = false;
 
       $scope.demo = {
