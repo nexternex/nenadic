@@ -16,17 +16,26 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     loginUrl: '/index'
     });
 
-//  Konfiguracija izgleda login widgeta
-  lockProvider.init({
-      clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-      domain: 'myday.eu.auth0.com',
-      options: {
-        theme: {
+var options = {
+  language: 'es',
+  theme: {
           logo: 'https://auth0.com/lib/homepage/img/logo-tmz.svg',
           primaryColor: "purple"
         }
-      }
-    });
+};    
+
+var lock = new Auth0Lock('clientID', 'myday.eu.auth0.com', options);
+//  Konfiguracija izgleda login widgeta
+  // lockProvider.init({
+  //     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
+  //     domain: 'myday.eu.auth0.com',
+  //     options: {
+  //       theme: {
+  //         logo: 'https://auth0.com/lib/homepage/img/logo-tmz.svg',
+  //         primaryColor: "purple"
+  //       }
+  //     }
+  //   });
     
     jwtOptionsProvider.config({
       whiteListedDomains: ['nenadic.herokuapp.com', 'spreadsheets.google.com']
