@@ -1,7 +1,7 @@
  'use strict';
  
 //angular.module('angularRestfulAuth')
-    erpagWeather.factory('Main', ['$http', '$localStorage', function($http, $localStorage){
+    myDay.factory('Main', ['$http', '$localStorage', function($http, $localStorage){
         var baseUrl = "your_service_url";
         function changeUser(user) {
             angular.extend(currentUser, user);

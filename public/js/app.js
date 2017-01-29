@@ -1,6 +1,6 @@
 //MODULE Angular
-var erpagWeather=angular.module('erpagWeather',['ngRoute','ngResource','ngAnimate','ngAria','ngMaterial','auth0','angular-storage', 'angular-jwt','md.data.table','infinite-scroll']);
-erpagWeather.run(function(auth) {
+var myDay=angular.module('myDay',['ngRoute','ngResource','ngAnimate','ngAria','ngMaterial','auth0','angular-storage', 'angular-jwt','md.data.table','infinite-scroll']);
+myDay.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
   auth.hookEvents();
   console.log('step0001-a');
@@ -8,7 +8,7 @@ erpagWeather.run(function(auth) {
 });
  
 //config app
-erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
+myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
   // ...
   authProvider.init({
     domain: 'myday.eu.auth0.com',
@@ -59,7 +59,7 @@ erpagWeather.config(function (authProvider, $routeProvider, $httpProvider, jwtIn
     .accentPalette('green');
 });
 
-erpagWeather.run(function($rootScope, auth, store, jwtHelper, $location) {
+myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
   // This events gets triggered on refresh or URL change
   $rootScope.$on('$locationChangeStart', function() {
     var token = store.get('token');

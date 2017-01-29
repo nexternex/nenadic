@@ -1,6 +1,6 @@
 //ROUTES
 
-erpagWeather.config(function ($routeProvider){
+myDay.config(function ($routeProvider){
 
     $routeProvider
         

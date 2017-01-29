@@ -1,5 +1,5 @@
 //CONTROLERS
-erpagWeather.controller('HomeController',['$scope' ,function($scope){
+myDay.controller('HomeController',['$scope' ,function($scope){
     
     $scope.isOpen = false;
 
@@ -10,7 +10,7 @@ erpagWeather.controller('HomeController',['$scope' ,function($scope){
       };
 }]);
 // Login.js
-erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
+myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
     
   $scope.login = function () {
     auth.signin({}, function (profile, token) {
@@ -36,19 +36,19 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
 
 }]);
 //Logout controller
-erpagWeather.controller('LogoutCtrl', function (auth, $location, store) {
+myDay.controller('LogoutCtrl', function (auth, $location, store) {
   auth.signout();
   store.remove('profile');
   store.remove('token');
   $location.path('/timeline');
 });
 //UserInfoCtrl.js
-erpagWeather.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
+myDay.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
   $scope.auth = auth;
   console.log('UserInfoCtrl controller used');  
 }]);
 //MAIN coontroler
-erpagWeather.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
+myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
         var todoData={};
         $scope.auth = auth;
         $scope.formData = {};
@@ -150,7 +150,7 @@ erpagWeather.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMe
 // <-----------Main controler END------------------------>    
 }]);   
 //Menu controller ----ciricle meni 
-erpagWeather.controller('MenuCtrl', function() {
+myDay.controller('MenuCtrl', function() {
       this.topDirections = ['left', 'up'];
       this.bottomDirections = ['down', 'right'];
       this.isOpen = false;
@@ -160,11 +160,11 @@ erpagWeather.controller('MenuCtrl', function() {
       this.selectedDirection = 'up';
     });
 //Maps controller
-erpagWeather.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
+myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
 //LIST kontroler--dropdown komponente
-erpagWeather.controller('ListController', ['$scope','$http', function ($scope,$http) {
+myDay.controller('ListController', ['$scope','$http', function ($scope,$http) {
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
@@ -229,7 +229,7 @@ erpagWeather.controller('ListController', ['$scope','$http', function ($scope,$h
 }]);
 
 //PROFIL KORISNIKA//
-erpagWeather.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
+myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
     $scope.formData = {};
     $scope.profiles = [];
     $scope.auth = auth;
@@ -315,7 +315,7 @@ erpagWeather.controller('ProfileController', ['$scope','$http','auth','$q','$tim
 //<------------------------END PROFILE CONTROLER------------------->    
 }]);
 //FACTORY return users
-erpagWeather.factory('setEvent', function($http) {
+myDay.factory('setEvent', function($http) {
   return {
     loadEvents: function(data) {
     $http.get('/api/todos')
@@ -331,7 +331,7 @@ erpagWeather.factory('setEvent', function($http) {
   }; 
 });
 //ovde nedostaje opis
-erpagWeather.factory('todosService', function($http) {
+myDay.factory('todosService', function($http) {
   var getTodos = function() {
     return $http.get('/api/todos');
   };
