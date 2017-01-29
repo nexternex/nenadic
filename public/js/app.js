@@ -5,9 +5,6 @@ myDay.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
   auth.hookEvents();
   console.log('step0001-a');
-  lock.show({
-    icon: 'https://nenadic.herokuapp.com/img/187.jpg'
-  });
 });
  
 //config app
