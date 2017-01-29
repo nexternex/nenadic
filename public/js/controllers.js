@@ -13,11 +13,13 @@ myDay.controller('HomeController',['$scope' ,function($scope){
 myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
 $scope.auth = auth;
   $scope.login = function () {
+// podesavanje opcija za auth Lock widget
     auth.signin({
 
         icon: 'https://nenadic.herokuapp.com/img/myday.png',
         language: 'es',
         primaryColor: 'purple',
+         foregroundColor: "#000000",
         displayName:'MyDAy event service'
   
     }, function (profile, token) {
