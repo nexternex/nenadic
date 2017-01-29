@@ -14,12 +14,7 @@ myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',f
 $scope.auth = auth;
   $scope.login = function () {
     auth.signin({
-        dict: {
-                "loadingTitle": "Ucitavam...",
-                "close": "Zatvori",
-                "signin":"Prijavi se",
-                "signout":"Odjavi se"
-            },
+
         icon: 'https://nenadic.herokuapp.com/img/187.jpg',
         language: 'es',
         primaryColor: 'purple',
