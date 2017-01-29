@@ -19,7 +19,7 @@ $scope.auth = auth;
         icon: 'https://nenadic.herokuapp.com/img/myday.png',
         language: 'es',
         primaryColor: 'purple',
-         foregroundColor: "#000000",
+         foregroundColor: "red",
         displayName:'MyDAy event service'
   
     }, function (profile, token) {
