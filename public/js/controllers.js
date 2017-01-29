@@ -14,7 +14,15 @@ myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',f
 $scope.auth = auth;
   $scope.login = function () {
     auth.signin({
-        icon: 'https://nenadic.herokuapp.com/img/187.jpg'
+        theme: {
+            authButtons: {
+            "testConnection": {
+                displayName: "Test Conn", 
+                primaryColor: "#b7b7b7", 
+                foregroundColor: "#000000", 
+                icon: 'https://nenadic.herokuapp.com/img/187.jpg'
+      }
+       
     }, function (profile, token) {
       // Success callback
       store.set('profile', profile);
