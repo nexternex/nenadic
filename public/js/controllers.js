@@ -14,11 +14,11 @@ myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',f
 $scope.auth = auth;
   $scope.login = function () {
     auth.signin({
-        theme: {
-            icon: 'https://nenadic.herokuapp.com/img/shirt.png',
-            primaryColor: 'green'
-        },  
-        // icon: 'https://nenadic.herokuapp.com/img/187.jpg',
+        // theme: {
+        //     icon: 'https://nenadic.herokuapp.com/img/shirt.png',
+        //     primaryColor: 'green'
+        // },  
+        icon: 'https://nenadic.herokuapp.com/img/187.jpg',
         language: 'es'
     }, function (profile, token) {
       // Success callback
