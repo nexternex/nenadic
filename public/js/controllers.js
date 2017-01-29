@@ -29,6 +29,7 @@ erpagWeather.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$loca
       auth.signout();
       store.remove('profile');
       store.remove('token');
+      $location.path('/home');
   };
 
   console.log('pokusaj login controller used');

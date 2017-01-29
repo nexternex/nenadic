@@ -9,10 +9,17 @@
 
 					<md-toolbar>
 						<md-fab-actions class="md-toolbar-tools">
-								<md-button aria-label="comment" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="login()" ng-controller="LoginCtrl"  md-visible="tooltipVisible">
+								<md-button 
+								aria-label="Login" 
+								class="md-fab md-raised md-mini hue-2 md-primary" 
+								ng-click="login()" 
+								ng-controller="LoginCtrl"  
+								md-visible="tooltipVisible"
+								ng-if="!auth.isAuthenticated"
+								>
 									<md-icon md-svg-src="account"></md-icon>
 								</md-button>
-								<md-button aria-label="label" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="logout()" ng-controller="LoginCtrl"  md-visible="tooltipVisible">
+								<md-button aria-label="label" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="logout()" ng-if="auth.isAuthenticated" ng-controller="LoginCtrl"  md-visible="tooltipVisible">
 									<md-icon md-svg-src="power"></md-icon>
 								</md-button>
 								<md-button aria-label="photo" class="md-fab md-raised md-mini hue-3 md-primary">
