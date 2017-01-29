@@ -7,14 +7,14 @@
 						</md-button>
 					</md-fab-trigger>
 
-					<md-toolbar>
+					<md-toolbar ng-controller="LoginCtrl">
 						<md-fab-actions class="md-toolbar-tools">
-								<md-button aria-label="Login" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="login()" ng-controller="LoginCtrl">
-								  <md-tooltip md-direction="top" md-visible="tooltipVisible">Uloguj se</md-tooltip>
+								<md-button aria-label="Login" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="login()" >
+								  <md-tooltip md-direction="demo.showTooltip" md-visible="{{demo.tipDirection}}">Uloguj se</md-tooltip>
 									<md-icon md-svg-src="account"></md-icon>
 								</md-button>
 
-								<md-button aria-label="label" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="logout()" ng-controller="LoginCtrl">
+								<md-button aria-label="label" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="logout()" >
 								 <md-tooltip md-direction="{{demo.tipDirection}}" md-visible="demo.showTooltip">Izloguj se</md-tooltip>
 									<md-icon md-svg-src="power"></md-icon>
 								</md-button>
