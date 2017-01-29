@@ -15,7 +15,7 @@ $scope.auth = auth;
   $scope.login = function () {
     auth.signin({
         theme: {
-            logo: 'https://nenadic.herokuapp.com/img/shirt.png',
+            icon: 'https://nenadic.herokuapp.com/img/shirt.png',
             primaryColor: 'green'
         },  
         // icon: 'https://nenadic.herokuapp.com/img/187.jpg',
