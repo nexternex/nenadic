@@ -20,7 +20,10 @@ $scope.auth = auth;
         icon: 'https://nenadic.herokuapp.com/img/myday.png',
         language: 'es',
         primaryColor: 'purple',
-  
+        languageDictionary: {
+            emailInputPlaceholder: "something@youremail.com",
+            title: "Uloguj me"
+            }
     }, function (profile, token) {
       // Success callback
       store.set('profile', profile);
