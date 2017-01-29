@@ -14,7 +14,6 @@
 								class="md-fab md-raised md-mini hue-2 md-primary" 
 								ng-click="login()" 
 								ng-controller="LoginCtrl"  
-								md-visible="tooltipVisible"
 								>
 								  <md-tooltip md-direction="top" md-visible="tooltipVisible">Uloguj se</md-tooltip>
 									<md-icon md-svg-src="account"></md-icon>
@@ -25,8 +24,6 @@
 								class="md-fab md-raised md-mini hue-2 md-primary" 
 								ng-click="logout()" ng-if="auth.isAuthenticated" 
 								ng-controller="LoginCtrl"  
-								md-visible="tooltipVisible"
-							
 								>
 									<md-icon md-svg-src="power"></md-icon>
 								</md-button>
