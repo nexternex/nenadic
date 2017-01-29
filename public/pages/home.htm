@@ -22,9 +22,10 @@
 								<md-button 
 								aria-label="label" 
 								class="md-fab md-raised md-mini hue-2 md-primary" 
-								ng-click="logout()" ng-if="auth.isAuthenticated" 
+								ng-click="logout()"
 								ng-controller="LoginCtrl"  
 								>
+								 <md-tooltip md-direction="top" md-visible="tooltipVisible">Izloguj se</md-tooltip>
 									<md-icon md-svg-src="power"></md-icon>
 								</md-button>
 
