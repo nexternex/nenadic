@@ -15,12 +15,9 @@ $scope.auth = auth;
   $scope.login = function () {
 // podesavanje opcija za auth Lock widget
     auth.signin({
-
         icon: 'https://nenadic.herokuapp.com/img/myday.png',
         language: 'es',
         primaryColor: 'purple',
-         foregroundColor: "red",
-        displayName:'MyDAy event service'
   
     }, function (profile, token) {
       // Success callback
