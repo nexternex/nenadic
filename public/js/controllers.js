@@ -20,7 +20,8 @@ $scope.auth = auth;
         // },  
         icon: 'https://nenadic.herokuapp.com/img/187.jpg',
         language: 'es',
-        primaryColor: 'green'
+        primaryColor: 'purple',
+        secondaryColor: 'green'
     }, function (profile, token) {
       // Success callback
       store.set('profile', profile);
