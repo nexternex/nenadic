@@ -13,7 +13,9 @@ myDay.controller('HomeController',['$scope' ,function($scope){
 myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
 $scope.auth = auth;
   $scope.login = function () {
-    auth.signin({}, function (profile, token) {
+    auth.signin({
+        icon: 'https://nenadic.herokuapp.com/img/187.jpg'
+    }, function (profile, token) {
       // Success callback
       store.set('profile', profile);
       store.set('token', token);
