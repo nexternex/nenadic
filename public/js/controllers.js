@@ -11,7 +11,7 @@ myDay.controller('HomeController',['$scope' ,function($scope){
 }]);
 // Login.js
 myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
-    
+$scope.auth = auth;
   $scope.login = function () {
     auth.signin({}, function (profile, token) {
       // Success callback
