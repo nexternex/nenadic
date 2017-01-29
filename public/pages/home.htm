@@ -10,7 +10,7 @@
 					<md-toolbar ng-controller="LoginCtrl">
 						<md-fab-actions class="md-toolbar-tools">
 								<md-button aria-label="Login" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="login()" >
-								  <md-tooltip md-direction="demo.showTooltip" md-visible="{{demo.tipDirection}}">Uloguj se</md-tooltip>
+								  <md-tooltip md-direction="{{demo.tipDirection}}" md-visible="demo.showTooltip">Uloguj se</md-tooltip>
 									<md-icon md-svg-src="account"></md-icon>
 								</md-button>
 
