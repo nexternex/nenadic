@@ -14,14 +14,16 @@ myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',f
 $scope.auth = auth;
   $scope.login = function () {
     auth.signin({
-        // theme: {
-        //     icon: 'https://nenadic.herokuapp.com/img/shirt.png',
-        //     primaryColor: 'green'
-        // },  
+        dict: {
+                "loadingTitle": "Ucitavam...",
+                "close": "Zatvori",
+                "signin":"Prijavi se",
+                "signout":"Odjavi se"
+            },
         icon: 'https://nenadic.herokuapp.com/img/187.jpg',
         language: 'es',
         primaryColor: 'purple',
-        secondaryColor: 'green'
+  
     }, function (profile, token) {
       // Success callback
       store.set('profile', profile);
