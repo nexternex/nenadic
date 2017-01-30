@@ -11,8 +11,7 @@
 
 						<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl">
 								<md-button aria-label="Login" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="login()" >
-								  <md-tooltip md-direction="{{demo.tipDirection}}" md-visible="demo.showTooltip">Login</md-tooltip>
-									<md-icon md-svg-src="account"></md-icon>
+									<md-icon md-svg-src="account"><md-tooltip md-direction="{{demo.tipDirection}}" md-visible="demo.showTooltip">Login</md-tooltip></md-icon>
 								</md-button>
 
 								<md-button aria-label="Logout" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="logout()" >
