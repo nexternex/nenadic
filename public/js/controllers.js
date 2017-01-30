@@ -6,7 +6,7 @@ myDay.controller('HomeController',['$scope' ,function($scope){
       $scope.demo = {
         isOpen: false,
         count: 0,
-        selectedDirection: 'left',
+        selectedDirection: 'down',
         showTooltip : false,
         tipDirection : ''
       };
