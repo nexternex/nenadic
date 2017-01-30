@@ -18,8 +18,8 @@ $scope.auth = auth;
 // podesavanje opcija za auth Lock widget
     auth.signin({
         icon: 'https://nenadic.herokuapp.com/img/myday.png',
-        language: 'es',
         primaryColor: 'purple',
+        language:'es',
         languageDictionary: {
             emailInputPlaceholder: "something@youremail.com",
             title: "Uloguj me"
