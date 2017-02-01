@@ -1,5 +1,6 @@
 //CONTROLERS
 myDay.controller('HomeController',['$scope' ,function($scope){
+     
       $scope.fab = {
         isOpen: false,
         count: 0,
@@ -9,10 +10,9 @@ myDay.controller('HomeController',['$scope' ,function($scope){
       };
 
       $scope.slides=[{name:'Jessie', txt:'neki text', src:'/img/001.jpg'},
-        {name:'Jessie', txt:'Best a name', src:'/img/001.jpg'},
-        {name:'Jessie', txt:'Best a name', src:'/img/002.jpg'},
-
-    ];
+                     {name:'Jessie', txt:'Best a name', src:'/img/001.jpg'},
+                     {name:'Jessie', txt:'Best a name', src:'/img/002.jpg'}
+                        ];
 
 }]);
 // Login.js
