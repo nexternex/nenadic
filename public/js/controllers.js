@@ -174,28 +174,31 @@ myDay.controller('MenuCtrl', function() {
       this.availableDirections = ['up', 'down', 'left', 'right'];
       this.selectedDirection = 'up';
 
-        $scope.changeImage=function(temax){
 
-var tema=temax;
 
-                if( this.tema=="sale") {
+        $scope.changeImage=function(tema){
+                var ln_tema=tema;
+                console.log(ln_tema);
+                
+
+                if( ln_tema=="sale") {
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
-                    alert(this.tema);
+                    alert(ln_tema);
                     }
-                else if(tema=="cake"){
+                else if(ln_tema=="cake"){
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/002.jpg')";
-                    alert(tema);
+                    alert(ln_tema);
                 }
-                else if(tema=="music"){
+                else if(ln_tema=="music"){
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/003.jpg')";
-                    alert(tema);
+                    alert(ln_tema);
                 }
-                else if(tema=="foto"){
+                else if(ln_tema=="foto"){
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/004.jpg')";
-                    alert(tema);
+                    alert(ln_tema);
                 }
                 else{
-                    console.log("nema parametra:f(temax)");
+                    console.log("nema parametra:f(temax)")
                 }
 
             };
