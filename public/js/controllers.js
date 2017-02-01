@@ -177,8 +177,8 @@ myDay.controller('MenuCtrl', function() {
 
 
         $scope.changeImage=function(tema){
-                 this.nex=tema;
-                console.log(this.tema);
+
+                console.log(tema);
                 
 
                 if( tema=="sale") {
