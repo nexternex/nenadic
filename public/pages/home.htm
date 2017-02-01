@@ -42,7 +42,7 @@
 			<ul>
 			</ul>
 		</nav>
-		<div class="slideshow-container" ng-repeat="slide in slides" drawSlides>
+		<div ng-controller="HomeController" class="slideshow-container" ng-repeat="slide in slides" drawSlides>
 			<div class="mySlides fade">
 				<div class="numbertext">{{slide.pg}}</div>
 				<img src={{slide.src}} style="width:100%">
