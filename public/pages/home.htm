@@ -42,8 +42,8 @@
 			<ul>
 			</ul>
 		</nav>
-		<div ng-controller="HomeController" class="slideshow-container" ng-repeat="slide in slides" drawSlides>
-			<div class="mySlides fade">
+		<div ng-controller="HomeController" class="slideshow-container" >
+			<div class="mySlides fade" ng-repeat="slide in slides" drawSlides>
 				<div class="numbertext">{{slide.name}}</div>
 				<img src={{slide.src}} style="width:100%">
 				<div class="text">{{slide.txt}}</div>
