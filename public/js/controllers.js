@@ -196,6 +196,10 @@ myDay.controller('MenuCtrl', function() {
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/004.jpg')";
                     alert(tema);
                 }
+                else{
+                    console.log("nema parametra:f(temax)")
+                }
+
             };
     });
 
