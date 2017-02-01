@@ -1,6 +1,7 @@
 <header  class="cd-header" ng-controller="MenuCtrl">
 <!-- #region SpeedDial -->
-			  <md-fab-toolbar md-open="demo.isOpen" count="demo.count" md-direction="right">
+			  <md-fab-md-fab-speed-dial md-open="demo.isOpen" count="demo.count" md-direction="right">
+				  
 					<md-fab-trigger class="align-with-text">
 						<md-button aria-label="menu" class="md-fab md-primary">
 							<md-tooltip md-direction="down">Login</md-tooltip>
@@ -8,7 +9,7 @@
 						</md-button>
 					</md-fab-trigger>
 
-					<md-toolbar>
+					<!--<md-toolbar>-->
 
 						<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl">
 
@@ -31,23 +32,8 @@
 								</a>
 						</md-fab-actions>
 
-					</md-toolbar>
-					
-					<md-toolbar class="md-toolbar-tools">
-
-						<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl">
-								<md-button aria-label="Login" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="login()" >
-									<md-icon md-svg-src="account"></md-icon>
-									<md-tooltip md-direction="power">Anita</md-tooltip>
-								</md-button>
-
-								<md-button aria-label="Logout" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="logout()">
-									<md-icon md-svg-src="power"></md-icon>
-								</md-button>
-						</md-fab-actions>
-
-					</md-toolbar>
-				</md-fab-toolbar>
+					<!--</md-toolbar>-->
+			  </md-fab-md-fab-speed-dial>
  	 </md-content>
 	<!-- #endregion SpeedDial -->
 
