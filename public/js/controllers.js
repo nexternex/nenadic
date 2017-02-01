@@ -173,29 +173,33 @@ myDay.controller('MenuCtrl', function() {
       this.selectedMode = 'md-fling';
       this.availableDirections = ['up', 'down', 'left', 'right'];
       this.selectedDirection = 'up';
+
+
+
+        $scope.changeImage=function(temax){
+                console.log(temax);
+                var tema=temax;
+
+                if( tema=="sale") {
+                    document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
+                    alert(tema);
+                    }
+                else if(tema=="cake"){
+                    document.getElementById('.cd-header').style.backgroundImage = "url('/img/002.jpg')";
+                    alert(tema);
+                }
+                else if(tema=="music"){
+                    document.getElementById('.cd-header').style.backgroundImage = "url('/img/003.jpg')";
+                    alert(tema);
+                }
+                else if(tema=="foto"){
+                    document.getElementById('.cd-header').style.backgroundImage = "url('/img/004.jpg')";
+                    alert(tema);
+                }
+            };
     });
 
-    changeImage=function(temax){
-        console.log(temax);
-        var tema=temax;
-
-        if( tema=="sale") {
-            document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
-            alert(tema);
-            }
-          else if(tema=="cake"){
-            document.getElementById('.cd-header').style.backgroundImage = "url('/img/002.jpg')";
-            alert(tema);
-        }
-          else if(tema=="music"){
-            document.getElementById('.cd-header').style.backgroundImage = "url('/img/003.jpg')";
-            alert(tema);
-        }
-          else if(tema=="foto"){
-            document.getElementById('.cd-header').style.backgroundImage = "url('/img/004.jpg')";
-            alert(tema);
-        }
-    };
+    
 
 //Maps controller
 myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
