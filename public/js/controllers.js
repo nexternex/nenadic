@@ -178,9 +178,9 @@ myDay.controller('MenuCtrl', function() {
 
 var tema=temax;
 
-                if( tema=="sale") {
+                if( this.tema=="sale") {
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
-                    alert(tema);
+                    alert(this.tema);
                     }
                 else if(tema=="cake"){
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/002.jpg')";
