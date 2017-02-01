@@ -38,27 +38,15 @@
 	<!-- #endregion SpeedDial -->
 
 <!-- info o logu -->
-		<nav class="main-nav"> 
+		<nav class="main-nav">
 			<ul>
 			</ul>
 		</nav>
-		<div ng-controller="HomeController" class="slideshow-container">
-		 	<div  ng-repeat="slide in slides">
-				<div class="mySlides fade" >
-					<div class="numbertext">{{slide.name}}</div>
-					<img src={{slide.src}} style="width:100%">
-					<div class="text">{{slide.txt}}</div>
-				</div>
-			</div>
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1)">&#10095;</a>
-			</div>
-			<br>
-			<div style="text-align:center">
-				<span class="dot" onclick="currentSlide(1)"></span> 
-				<span class="dot" onclick="currentSlide(2)"></span> 
-				<span class="dot" onclick="currentSlide(3)"></span> 
-			</div>
+            <h1>
+                MyDay</br>
+                <p class="slogan"> ...the best day in your life starts right here! :) </p>
+            </h1>
+     
 	</header>
 	<main class="cd-main-content">
 		<div class="cd-tab-filter-wrapper">
@@ -75,14 +63,14 @@
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
       <md-progress-linear ng-controller="ListController"  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear>
-
+<!--            <md-progress-circular md-mode="indeterminate" ng-show="isLoading"></md-progress-circular>-->
              
 		</div> <!-- cd-tab-filter-wrapper -->
 
 		<section ng-controller="ListController"  class="cd-gallery" >
             <div class="">Želite da se vidi i Vaš oglas<strong>Registrujte se!</strong></div>
 			<ul> 
-            <li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in lists track by item.gsx$naziv.$t"  drawSlides>  
+            <li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in lists track by item.gsx$naziv.$t" >  
                     <md-card class="md-accent">
                         <img ng-src="{{item.gsx$img.$t}}" class="md-card-image" alt="Washed Out">
                         <md-card-title>
@@ -193,7 +181,8 @@
 		<a  class="cd-filter-trigger">Filteri</a>
 	</main> <!-- cd-main-content -->
 
-		<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/modernizr.js"></script>
         <script src="js/jquery.mixitup.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/flickity.pkgd.min.js"></script>
