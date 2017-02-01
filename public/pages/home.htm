@@ -44,7 +44,7 @@
 		</nav>
 		<div ng-controller="HomeController" class="slideshow-container" ng-repeat="slide in slides" drawSlides>
 			<div class="mySlides fade">
-				<div class="numbertext">{{slide.pg}}</div>
+				<div class="numbertext">{{slide.name}}</div>
 				<img src={{slide.src}} style="width:100%">
 				<div class="text">{{slide.txt}}</div>
 			</div>
