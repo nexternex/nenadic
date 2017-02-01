@@ -175,9 +175,9 @@ myDay.controller('MenuCtrl', function() {
       this.selectedDirection = 'up';
     });
 
-    changeImage=function(tema){
-
-        var tema=this.tema;
+    changeImage=function(temax){
+        console.log(temax);
+        var tema=temax;
 
         if( tema=="sale") {
             document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";}
