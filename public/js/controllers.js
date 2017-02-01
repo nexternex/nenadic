@@ -9,9 +9,9 @@ myDay.controller('HomeController',['$scope' ,function($scope){
         tipDirection : 'down'
       };
 
-      $scope.slides=[{name:'Jessie', txt:'neki text', src:'/img/001.jpg'},
-                     {name:'Jessie', txt:'Best a name', src:'/img/001.jpg'},
-                     {name:'Jessie', txt:'Best a name', src:'/img/002.jpg'}
+      $scope.slides=[{name:'1/3', txt:'neki text', src:'/img/001.jpg'},
+                     {name:'2/3', txt:'tekst do bola', src:'/img/001.jpg'},
+                     {name:'3/3', txt:'Best a name', src:'/img/002.jpg'}
                         ];
 
 }]);
