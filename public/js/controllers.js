@@ -190,7 +190,7 @@ myDay.controller('MenuCtrl', function() {
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/003.jpg')";
                     alert(tema);
                 }
-                else if(ln_tema=="foto"){
+                else if(tema=="foto"){
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/004.jpg')";
                     alert(tema);
                 }
