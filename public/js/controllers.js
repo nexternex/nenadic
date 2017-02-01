@@ -177,6 +177,7 @@ myDay.controller('MenuCtrl', function() {
 
 
         $scope.changeImage=function(tema){
+            console.log(tema);
 
                 if( tema=="sale") {
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
