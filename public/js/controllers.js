@@ -174,9 +174,8 @@ myDay.controller('MenuCtrl', function() {
       this.availableDirections = ['up', 'down', 'left', 'right'];
       this.selectedDirection = 'up';
 
-
-
         $scope.changeImage=function(tema){
+            
             console.log(tema);
 
                 if( tema=="sale") {
@@ -196,7 +195,7 @@ myDay.controller('MenuCtrl', function() {
                     alert(tema);
                 }
                 else{
-                    console.log("nema parametra:f(temax)")
+                    console.log("nema parametra:f(temax)");
                 }
 
             };
