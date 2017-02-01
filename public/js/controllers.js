@@ -1,9 +1,6 @@
 //CONTROLERS
 myDay.controller('HomeController',['$scope' ,function($scope){
-    
-    $scope.isOpen = false;
-
-      $scope.demo = {
+      $scope.fab = {
         isOpen: false,
         count: 0,
         selectedDirection: 'right',
