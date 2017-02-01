@@ -1,6 +1,10 @@
 <header  class="cd-header" ng-controller="MenuCtrl">
 <!-- #region SpeedDial -->
-			  <md-fab-speed-dial md-open="fab.isOpen" class="md-fling"  md-direction="fab.selectedDirection">
+			  <md-fab-speed-dial 
+			  md-open="fab.isOpen" 
+			  class="md-fling"  
+			  md-direction="fab.selectedDirection"
+			  ng-mouseenter="fab.isOpen=true" ng-mouseleave="fab.isOpen=false">
 
 					<md-fab-trigger class="align-with-text">
 						<md-button aria-label="menu" class="md-fab md-primary">
