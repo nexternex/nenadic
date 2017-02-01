@@ -180,13 +180,21 @@ myDay.controller('MenuCtrl', function() {
         var tema=temax;
 
         if( tema=="sale") {
-            document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";}
+            document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
+            alert(tema);
+            }
           else if(tema=="cake"){
-            document.getElementById('.cd-header').style.backgroundImage = "url('/img/002.jpg')";}
+            document.getElementById('.cd-header').style.backgroundImage = "url('/img/002.jpg')";
+            alert(tema);
+        }
           else if(tema=="music"){
-            document.getElementById('.cd-header').style.backgroundImage = "url('/img/003.jpg')";}
+            document.getElementById('.cd-header').style.backgroundImage = "url('/img/003.jpg')";
+            alert(tema);
+        }
           else if(tema=="foto"){
-            document.getElementById('.cd-header').style.backgroundImage = "url('/img/004.jpg')";}
+            document.getElementById('.cd-header').style.backgroundImage = "url('/img/004.jpg')";
+            alert(tema);
+        }
     };
 
 //Maps controller
