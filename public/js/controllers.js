@@ -175,7 +175,7 @@ myDay.controller('MenuCtrl', function() {
       this.selectedDirection = 'up';
     });
 
-    $scope.changeImage=function(tema){
+    changeImage=function(tema){
 
         var tema=this.tema;
 
