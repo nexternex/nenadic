@@ -6,9 +6,9 @@ myDay.controller('HomeController',['$scope' ,function($scope){
       $scope.demo = {
         isOpen: false,
         count: 0,
-        selectedDirection: 'down',
+        selectedDirection: 'right',
         showTooltip : false,
-        tipDirection : ''
+        tipDirection : 'down'
       };
 }]);
 // Login.js
