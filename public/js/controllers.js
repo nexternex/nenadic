@@ -3,7 +3,6 @@ myDay.controller('HomeController',['$scope' ,function($scope){
       $scope.fab = {
         isOpen: false,
         count: 0,
-        selectedMode:'md-fling',
         selectedDirection: 'right',
         showTooltip : false,
         tipDirection : 'down'
