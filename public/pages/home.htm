@@ -42,13 +42,21 @@
 			<ul>
 			</ul>
 		</nav>
-		<div class="main-carousel">
-			<div class="carousel-cell">   
-				<h1>MyDay</br><p class="slogan"> ...the best day in your life starts right here! :) </p></h1>
+		<div class="slideshow-container" ng-repeat="slide in slides">
+			<div class="mySlides fade">
+				<div class="numbertext">{{slide.pg}}</div>
+				<img src={{slide.src}} style="width:100%">
+				<div class="text">{{slide.txt}}</div>
 			</div>
-			<div class="carousel-cell">2</div>
-			<div class="carousel-cell">3</div>
-		</div>
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+			<div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)"></span> 
+				<span class="dot" onclick="currentSlide(2)"></span> 
+				<span class="dot" onclick="currentSlide(3)"></span> 
+			</div>
 	</header>
 	<main class="cd-main-content">
 		<div class="cd-tab-filter-wrapper">
@@ -188,3 +196,19 @@
         <script src="js/jquery.mixitup.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/flickity.pkgd.min.js"></script>
+<script>
+	var slideIndex = 0;
+	showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1} 
+    slides[slideIndex-1].style.display = "block"; 
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>

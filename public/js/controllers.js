@@ -7,6 +7,13 @@ myDay.controller('HomeController',['$scope' ,function($scope){
         showTooltip : false,
         tipDirection : 'down'
       };
+
+      $scope.slides=[{name:'Jessie', txt:'neki text', src:'/img/001.jpg'},
+        {name:'Jessie', txt:'Best a name', src:'/img/001.jpg'},
+        {name:'Jessie', txt:'Best a name', src:'/img/002.jpg'},
+
+    ];
+
 }]);
 // Login.js
 myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
