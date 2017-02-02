@@ -174,12 +174,10 @@ myDay.controller('MenuCtrl', function() {
       this.availableDirections = ['up', 'down', 'left', 'right'];
       this.selectedDirection = 'up';
 
-
-
+ 
         $scope.changeImage=function(tema){
                 var ln_tema=tema;
                 console.log(ln_tema);
-                
 
                 if( ln_tema=="sale") {
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
