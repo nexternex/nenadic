@@ -176,13 +176,13 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
             this.selectedDirection = 'up';
 
         $scope.changeImage=function(tema){
-                var ln_tema=tema;
-                console.log(ln_tema);
+ 
+                console.log(tema);
                 
 
-                if( ln_tema=="sale") {
+                if( tema=="sale") {
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
-                    alert(ln_tema);
+                    alert(tema);
                     }
                 else if(ln_tema=="cake"){
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/002.jpg')";
