@@ -128,8 +128,8 @@
 
 					<ul class="cd-filter-content cd-filters list" ng-repeat="option in filters">{{option[0]}}
 						<li ng-repeat="suboption in option[1]">
-							<input class="filter" data-filter="{{suboption}" type="checkbox" id="checkbox1">
-			    			<label class="checkbox-label" for="checkbox1">{{suboption}</label>
+							<input class="filter" data-filter=".{{suboption}}" type="checkbox" id="checkbox1">
+			    			<label class="checkbox-label" for="checkbox1">{{suboption}}</label>
 						</li>
 					</ul> <!-- cd-filter-content -->
 
