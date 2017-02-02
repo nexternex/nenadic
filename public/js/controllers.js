@@ -181,19 +181,19 @@ console.log("MenuCtrl");
                 
 
                 if( tema=="sale") {
-                    document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
+                    document.getElementsByClassName('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
                     alert(tema);
                     }
                 else if(tema=="cake"){
-                    document.getElementById('.cd-header').style.backgroundImage = "url('/img/002.jpg')";
+                    document.getElementsByClassName('.cd-header').style.backgroundImage = "url('/img/002.jpg')";
                     alert(tema);
                 }
                 else if(ln_tema=="music"){
-                    document.getElementById('.cd-header').style.backgroundImage = "url('/img/003.jpg')";
+                    document.getElementsByClassName('.cd-header').style.backgroundImage = "url('/img/003.jpg')";
                     alert(tema);
                 }
                 else if(ln_tema=="foto"){
-                    document.getElementById('.cd-header').style.backgroundImage = "url('/img/004.jpg')";
+                    document.getElementsByClassName('.cd-header').style.backgroundImage = "url('/img/004.jpg')";
                     alert(tema);
                 }
                 else{
