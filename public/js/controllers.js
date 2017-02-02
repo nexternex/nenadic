@@ -181,7 +181,7 @@ console.log("MenuCtrl");
                 
 
                 if( tema=="sale") {
-                    document.getElementBy('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     alert(tema);
                     }
                 else if(tema=="cake"){
