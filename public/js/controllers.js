@@ -196,7 +196,7 @@ console.log("MenuCtrl");
                 sectionFeat:["pirotehnika","muzicke","efekti"]
              }];
 
-        $scope.filters=MyDay_filterSetMuzika;
+        $scope.filters=MyDay_filterSetSale;
         console.log($scope.filters);
 
 
