@@ -166,15 +166,14 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
 }]);   
 //Menu controller ----ciricle meni 
 myDay.controller('MenuCtrl',['$scope', function($scope) {
-      this.topDirections = ['left', 'up'];
-      this.bottomDirections = ['down', 'right'];
-      this.isOpen = false;
-      this.availableModes = ['md-fling', 'md-scale'];
-      this.selectedMode = 'md-fling';
-      this.availableDirections = ['up', 'down', 'left', 'right'];
-      this.selectedDirection = 'up';
 
-
+            this.topDirections = ['left', 'up'];
+            this.bottomDirections = ['down', 'right'];
+            this.isOpen = false;
+            this.availableModes = ['md-fling', 'md-scale'];
+            this.selectedMode = 'md-fling';
+            this.availableDirections = ['up', 'down', 'left', 'right'];
+            this.selectedDirection = 'up';
 
         $scope.changeImage=function(tema){
                 var ln_tema=tema;
