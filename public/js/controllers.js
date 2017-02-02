@@ -202,7 +202,7 @@ myDay.controller('MenuCtrl', function() {
     //             }
 
     //         };
-    // });
+     });
 
     
 
