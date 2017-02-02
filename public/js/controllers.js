@@ -182,19 +182,19 @@ console.log("MenuCtrl");
                 sectionFeat:["bazen","terasa","otvoren"]
             }];
         // filteri za muziku
-            var MyDay_filterSetMuzika={  
+            var MyDay_filterSetMuzika=[{  
                 sectionNoBend:[100,200,300],
                 sectionTip:["moderan","klasican","starogradski","rock/pop","akusticni"],
                 sectionCena:[500,600,700,800,1000,2000,3000,4000],
                 sectionFeat:["kostimi","koreografija","efekti"]
-            };
+            }];
         // filteri za torte
-            var MyDay_filterSetTorte={  
+            var MyDay_filterSetTorte=[{  
                 sectionTezina:[10,20,30],
                 sectionTip:["moderane","klasicane","domace"],
                 sectionCena:[500,600,700,800,1000,2000,3000,4000],
                 sectionFeat:["pirotehnika","muzicke","efekti"]
-             };
+             }];
 
         $scope.filters=MyDay_filterSetMuzika;
         console.log($scope.filters);
