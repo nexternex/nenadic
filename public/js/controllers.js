@@ -184,17 +184,17 @@ console.log("MenuCtrl");
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/001.jpg')";
                     alert(tema);
                     }
-                else if(ln_tema=="cake"){
+                else if(tema=="cake"){
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/002.jpg')";
-                    alert(ln_tema);
+                    alert(tema);
                 }
                 else if(ln_tema=="music"){
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/003.jpg')";
-                    alert(ln_tema);
+                    alert(tema);
                 }
                 else if(ln_tema=="foto"){
                     document.getElementById('.cd-header').style.backgroundImage = "url('/img/004.jpg')";
-                    alert(ln_tema);
+                    alert(tema);
                 }
                 else{
                     console.log("nema parametra:f(temax)")
