@@ -175,12 +175,12 @@ console.log("MenuCtrl");
             this.selectedDirection = 'up';
 
         // filteri za sale
-            var MyDay_filterSetSale={  
+            var MyDay_filterSetSale=[{  
                 sectionCap:[100,200,300],
                 sectionTip:["moderan","rustican","kafana","restoran","hotel","motel"],
                 sectionCena:[12,14,15,16,17,18,19,20],
                 sectionFeat:["bazen","terasa","otvoren"]
-            };
+            }];
         // filteri za muziku
             var MyDay_filterSetMuzika={  
                 sectionNoBend:[100,200,300],
@@ -191,7 +191,7 @@ console.log("MenuCtrl");
         // filteri za torte
             var MyDay_filterSetTorte={  
                 sectionTezina:[10,20,30],
-                sectionTip:["moderane","klasicane","domace",],
+                sectionTip:["moderane","klasicane","domace"],
                 sectionCena:[500,600,700,800,1000,2000,3000,4000],
                 sectionFeat:["pirotehnika","muzicke","efekti"]
              };
