@@ -175,12 +175,12 @@ console.log("MenuCtrl");
             this.selectedDirection = 'up';
 
         // filteri za sale
-            var MyDay_filterSetSale=[{  
-                sectionCap:[100,200,300],
-                sectionTip:["moderan","rustican","kafana","restoran","hotel","motel"],
-                sectionCena:[12,14,15,16,17,18,19,20],
-                sectionFeat:["bazen","terasa","otvoren"]
-            }];
+            var MyDay_filterSetSale=[  
+                ["sectionCap",[100,200,300]],
+                ["sectionTip",["moderan","rustican","kafana","restoran","hotel","motel"]],
+                ["sectionCena",[12,14,15,16,17,18,19,20]],
+                ["sectionFeat",["bazen","terasa","otvoren"]]
+            ];
         // filteri za muziku
             var MyDay_filterSetMuzika=[{  
                 sectionNoBend:[100,200,300],
