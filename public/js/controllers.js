@@ -177,20 +177,17 @@ console.log("MenuCtrl");
 
         $scope.changeImage=function(tema){
  
-                console.log(tema);
-                
-
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
-                    alert(tema);
+     
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
-                    alert(tema);
+      
                 }
                 else if(tema=="music"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/003.jpg')";
-                    alert(tema);
+
                 }
                 else if(tema=="foto"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/004.jpg')";
