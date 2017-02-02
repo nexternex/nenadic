@@ -166,7 +166,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
 }]);   
 //Menu controller ----ciricle meni 
 myDay.controller('MenuCtrl',['$scope', function($scope) {
-
+console.log("MenuCtrl");
             this.topDirections = ['left', 'up'];
             this.bottomDirections = ['down', 'right'];
             this.isOpen = false;
