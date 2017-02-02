@@ -11,22 +11,11 @@ myDay.run(function(auth) {
 myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
   // ...
   authProvider.init({
-    domain: 'myday.eu.auth0.com',
-    clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-    loginUrl: '/index'
+      domain: 'myday.eu.auth0.com',
+      clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
+      loginUrl: '/index'
     });
 
-//  Konfiguracija izgleda login widgeta
-  // lockProvider.init({
-  //     clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-  //     domain: 'myday.eu.auth0.com',
-  //     options: {
-  //       theme: {
-  //         logo: 'https://auth0.com/lib/homepage/img/logo-tmz.svg',
-  //         primaryColor: "purple"
-  //       }
-  //     }
-  //   });
     
     jwtOptionsProvider.config({
       whiteListedDomains: ['nenadic.herokuapp.com', 'spreadsheets.google.com']
