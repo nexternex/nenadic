@@ -73,15 +73,16 @@
 <!--SEKCIJA:TABLE-->
 		<section ng-controller="ListController"  class="cd-gallery" >
             <div class="">Želite da se vidi i Vaš oglas<strong>Registrujte se!</strong></div>
-			<ul> 
-            <li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" ng-repeat="item in ::lists track by item.gsx$naziv.$t" >  
+			<ul ng-repeat="item in ::lists track by item.gsx$naziv.$t"> 
+            <li class="mix color-{{::item.gsx$tip.$t}} {{::item.gsx$naziv.$t}}"  >  
                     <md-card class="md-accent">
-                        <img ng-src="{{item.gsx$img.$t}}" class="md-card-image" alt="Washed Out">
+                        <img ng-src="{{::item.gsx$img.$t}}" class="md-card-image" alt="Washed Out">
                         <md-card-title>
                             <md-card-title-text>
-                                <span class="md-headline company_name">{{item.gsx$naziv.$t}}</span>
+                                <span class="md-headline company_name">{{::item.gsx$naziv.$t}}</span>
                             </md-card-title-text>
                          </md-card-title>
+			</ul>
                        
                         <!--<span>{{item.gsx$tip.$t}}</span>
                         <span>{{item.gsx$telefon.$t}}</span>
