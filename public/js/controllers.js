@@ -196,7 +196,8 @@ console.log("MenuCtrl");
              ];
 
         $scope.changeSet=function(tema){
-            $scope.filters=MyDay_filterSetSale;
+            
+            $scope.filters=this.MyDay_filterSetSale;
 
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
