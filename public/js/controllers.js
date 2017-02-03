@@ -203,8 +203,8 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
 
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
-                    $scope.filters=MyDay_filterSetSale;
-                    console.log("sale: "+$scope.filters);
+                    filters=MyDay_filterSetSale;
+                    console.log("sale: "+filters);
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
