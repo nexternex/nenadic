@@ -174,24 +174,24 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
             this.selectedMode = 'md-fling';
             this.availableDirections = ['up', 'down', 'left', 'right'];
             this.selectedDirection = 'up';
-            $scope.filters= this.MyDay_filterSetSale;
+            $scope.filters=MyDay_filterSetSale;
 
         // filteri za sale
-            this.MyDay_filterSetSale=[  
+            var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
                 ["sectionTip",["moderan","rustican","kafana","restoran","hotel","motel"]],
                 ["sectionCena",[12,14,15,16,17,18,19,20]],
                 ["sectionFeat",["bazen","terasa","otvoren"]]
             ];
         // filteri za muziku
-           this.MyDay_filterSetMuzika=[ 
+            var MyDay_filterSetMuzika=[ 
                 ["Clanova Benda",[2,4,6]],
                 ["Vrsta Benda",["moderan","rockpop","tamburaski","starogradski"]],
                 ["Cena",[120,140,150,160,170,1800,1900,2000]],
                 ["Efekti",["koreografija","ozvucenje","svetla"]]
             ];
         // filteri za torte
-           this.MyDay_filterSetTorte=[ 
+            var MyDay_filterSetTorte=[ 
                 ["Velicina",[2,4,6]],
                 ["Tezina",["1","5","10","15","20","30"]],
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
@@ -201,17 +201,17 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
 
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
-                    $scope.filters=this.MyDay_filterSetSale;
+                    $scope.filters=MyDay_filterSetSale;
                     console.log("sale: "+$scope.filters);
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
-                     $scope.filters=this.MyDay_filterSetTorte;
+                     $scope.filters=MyDay_filterSetTorte;
                      console.log("torte: "+$scope.filters);
                 }
                 else if(tema=="music"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/003.jpg')";
-                    $scope.filters=this.MyDay_filterSetMuzika;
+                    $scope.filters=MyDay_filterSetMuzika;
                     console.log("music: "+$scope.filters);
                 }
                 else if(tema=="foto"){
