@@ -174,8 +174,8 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
             this.selectedMode = 'md-fling';
             this.availableDirections = ['up', 'down', 'left', 'right'];
             this.selectedDirection = 'up';
-            this.filters=[];
-            
+            $scope.filters=[];
+
         // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
