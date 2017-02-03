@@ -201,18 +201,18 @@ console.log("MenuCtrl");
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
-                    console.log("sale: "+filters);
+                    console.log("sale: "+$scope.filters);
                     $scope.$apply();
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
                      $scope.filters=MyDay_filterSetTorte;
-                     console.log("torte: "+filters);
+                     console.log("torte: "+$scope.filters);
                 }
                 else if(tema=="music"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/003.jpg')";
                     $scope.filters=MyDay_filterSetMuzika;
-                    console.log("music: "+filters);
+                    console.log("music: "+$scope.filters);
                 }
                 else if(tema=="foto"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/004.jpg')";
