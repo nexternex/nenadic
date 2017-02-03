@@ -195,25 +195,26 @@ console.log("MenuCtrl");
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
              ];
 
-        $scope.filters=MyDay_filterSetSale;
+       
         console.log($scope.filters);
 
 
         $scope.changeSet=function(tema){
- 
+            $scope.filters=MyDay_filterSetSale;
+
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
-                    filters=MyDay_filterSetSale;
+                    $scope.filters=MyDay_filterSetSale;
                     console.log("sale: "+filters);
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
-                     filters=MyDay_filterSetTorte;
+                     $scope.filters=MyDay_filterSetTorte;
                      console.log("torte: "+filters);
                 }
                 else if(tema=="music"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/003.jpg')";
-                    filters=MyDay_filterSetMuzika;
+                    $scope.filters=MyDay_filterSetMuzika;
                     console.log("music: "+filters);
                 }
                 else if(tema=="foto"){
