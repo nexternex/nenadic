@@ -165,9 +165,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
 }]);   
 //Menu controller ----ciricle meni 
 myDay.controller('MenuCtrl',['$scope', function($scope) {
-            
-            console.log("MenuCtrl");
-
+console.log("MenuCtrl");
             this.topDirections = ['left', 'up'];
             this.bottomDirections = ['down', 'right'];
             this.isOpen = false;
@@ -176,14 +174,12 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
             this.availableDirections = ['up', 'down', 'left', 'right'];
             this.selectedDirection = 'up';
 
-            $scope.filters=MyDay_filterSetSale;
-
         // filteri za sale
             var MyDay_filterSetSale=[  
-                ["Kapacitet",[100,200,300]],
-                ["Tip",["moderan","rustican","kafana","restoran","hotel","motel"]],
-                ["Prosecne cene",[12,14,15,16,17,18,19,20]],
-                ["Dodatni elementi",["bazen","terasa","otvoren"]]
+                ["sectionCap",[100,200,300]],
+                ["sectionTip",["moderan","rustican","kafana","restoran","hotel","motel"]],
+                ["sectionCena",[12,14,15,16,17,18,19,20]],
+                ["sectionFeat",["bazen","terasa","otvoren"]]
             ];
         // filteri za muziku
             var MyDay_filterSetMuzika=[ 
@@ -199,12 +195,16 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
              ];
 
-        $scope.changeSet=function(tema){
+        $scope.filters=MyDay_filterSetSale;
+        console.log($scope.filters);
 
+
+        $scope.changeSet=function(tema){
+ 
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
-                    this.filters=MyDay_filterSetSale;
-                    console.log("sale: "+this.filters);
+                    $scope.filters=MyDay_filterSetSale;
+                    console.log("sale: "+$scope.filters);
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
