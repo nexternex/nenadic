@@ -165,7 +165,8 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
 }]);   
 //Menu controller ----ciricle meni 
 myDay.controller('MenuCtrl',['$scope', function($scope) {
-console.log("MenuCtrl");
+    console.log("MenuCtrl");
+
             this.topDirections = ['left', 'up'];
             this.bottomDirections = ['down', 'right'];
             this.isOpen = false;
@@ -173,7 +174,8 @@ console.log("MenuCtrl");
             this.selectedMode = 'md-fling';
             this.availableDirections = ['up', 'down', 'left', 'right'];
             this.selectedDirection = 'up';
-
+            this.filters=[];
+            
         // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
@@ -196,8 +198,6 @@ console.log("MenuCtrl");
              ];
 
         $scope.changeSet=function(tema){
-            
-            $scope.filters=this.MyDay_filterSetSale;
 
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
