@@ -175,21 +175,21 @@ console.log("MenuCtrl");
             this.selectedDirection = 'up';
 
         // filteri za sale
-            var MyDay_filterSetSale=[  
+            $scope.MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
                 ["sectionTip",["moderan","rustican","kafana","restoran","hotel","motel"]],
                 ["sectionCena",[12,14,15,16,17,18,19,20]],
                 ["sectionFeat",["bazen","terasa","otvoren"]]
             ];
         // filteri za muziku
-            var MyDay_filterSetMuzika=[ 
+              $scope.MyDay_filterSetMuzika=[ 
                 ["Clanova Benda",[2,4,6]],
                 ["Vrsta Benda",["moderan","rockpop","tamburaski","starogradski"]],
                 ["Cena",[120,140,150,160,170,1800,1900,2000]],
                 ["Efekti",["koreografija","ozvucenje","svetla"]]
             ];
         // filteri za torte
-            var MyDay_filterSetTorte=[ 
+             $scope.MyDay_filterSetTorte=[ 
                 ["Velicina",[2,4,6]],
                 ["Tezina",["1","5","10","15","20","30"]],
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
@@ -203,7 +203,7 @@ console.log("MenuCtrl");
  
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
-                    $scope.filters=MyDay_filterSetSale;
+                    $scope.filters=  $scope.MyDay_filterSetSale;
                     console.log("sale: "+$scope.filters);
                     }
                 else if(tema=="cake"){
