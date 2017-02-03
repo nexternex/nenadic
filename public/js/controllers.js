@@ -180,10 +180,10 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
 
         // filteri za sale
             var MyDay_filterSetSale=[  
-                ["sectionCap",[100,200,300]],
-                ["sectionTip",["moderan","rustican","kafana","restoran","hotel","motel"]],
-                ["sectionCena",[12,14,15,16,17,18,19,20]],
-                ["sectionFeat",["bazen","terasa","otvoren"]]
+                ["Kapacitet",[100,200,300]],
+                ["Tip",["moderan","rustican","kafana","restoran","hotel","motel"]],
+                ["Prosecne cene",[12,14,15,16,17,18,19,20]],
+                ["Dodatni elementi",["bazen","terasa","otvoren"]]
             ];
         // filteri za muziku
             var MyDay_filterSetMuzika=[ 
