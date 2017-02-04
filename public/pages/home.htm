@@ -74,8 +74,10 @@
 		<section ng-controller="ListController"  class="cd-gallery" >
 				<label>Search: <input ng-model="searchText"></label> 
 				<ul > 
+					
 				         <md-grid-list md-cols-xs="1" md-cols-sm="2"  md-cols-md="4"  md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
-								<md-grid-tile ng-repeat="item in lists | filter:myDaySearch:searchText track by item.gsx$naziv.$t"
+							 <li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" id="{{item.gsx$naziv.$t}}" ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t" >
+								<md-grid-tile
 
 								md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 								md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
