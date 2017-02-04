@@ -73,7 +73,7 @@
 <!--SEKCIJA:TABLE-->
 		<section ng-controller="ListController"  class="cd-gallery" >
 				<ul > 
-				<li class="mix color-{{::item.gsx$tip.$t}} {{::item.gsx$naziv.$t}}" ng-repeat="item in lists track by item.gsx$naziv.$t" >  
+				<li class="mix color-{{::item.gsx$tip.$t}} {{::item.gsx$naziv.$t}}" ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t" >  
 							<md-card class="md-accent">
 							<img ng-src="{{::item.gsx$img.$t}}" class="md-card-image" alt="Washed Out">
 							<md-card-title>
@@ -119,6 +119,7 @@
 					<h4>Pretraga</h4>
 					
 					<div class="cd-filter-content">
+						<label>Search: <input ng-model="searchText"></label>
 						<input type="search" placeholder="Probajte sa tri sesira i sl....">
 					</div> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
