@@ -9,7 +9,7 @@
 <table id="searchTextResults">
   <tr><th>Name</th><th>Phone</th></tr>
   <tr ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t">
-    <td><img ng-src="{{item.gsx$img.$t}}"  alt="Washed Out"></td>
+    <!--<td><img ng-src="{{item.gsx$img.$t}}"  alt="Washed Out"></td>-->
     <td>{{item.gsx$naziv.$t}}</td>
   </tr>
 </table>
