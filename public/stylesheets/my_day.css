@@ -86,6 +86,7 @@ Hero
     color: #82FFA9;
     text-shadow: 1px 1px 1px black;
     font-weight: 900;
+    display: inline-flex;
     
 }
 .navigation {
