@@ -10,10 +10,10 @@
 
   <div ng-repeat="item in lists | filter:searchText">
     <!--<td><img ng-src="{{item.gsx$img.$t}}"  alt="Washed Out"></td>-->
-    <<md-card>>
+    <md-card class="md-primary">
        <span>Naziv: {{item.gsx$naziv.$t}}</span>
        <span>Telefon:{{item.gsx$telefon.$t}}</span>
        <span>Web: {{item.gsx$web.$t}}</span>
-    </<md-card>>
+    </md-card>
   </div>
 </table>
