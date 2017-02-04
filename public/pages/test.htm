@@ -6,10 +6,10 @@
                          {name:'Juliette', phone:'555-5678'}]"></div>
 
 <label>Search: <input ng-model="searchText"></label>
-<table id="searchTextResults">
-  <tr><th>Name</th><th>Phone</th></tr>
-  <tr ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t">
+<div id="searchTextResults">
+
+  <div ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t">
     <!--<td><img ng-src="{{item.gsx$img.$t}}"  alt="Washed Out"></td>-->
-    <td>{{item.gsx$naziv.$t}}</td>
-  </tr>
+    <<md-card>>{{item.gsx$naziv.$t}}</<md-card>>
+  </div>
 </table>
