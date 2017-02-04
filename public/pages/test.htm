@@ -8,7 +8,7 @@
 <label>Search: <input ng-model="searchText"></label>
 <div id="searchTextResults">
 
-  <div ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t">
+  <div ng-repeat="item in lists | filter:searchText">
     <!--<td><img ng-src="{{item.gsx$img.$t}}"  alt="Washed Out"></td>-->
     <<md-card>>{{item.gsx$naziv.$t}}</<md-card>>
   </div>
