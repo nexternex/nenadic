@@ -61,21 +61,6 @@
                     <li class="filter" data-filter=".color-Torte"><a  data-type="color-Torte" ng-click='changeSet("cake")'>Torte</a></li>
 					<li class="filter" data-filter=".color-Fotograf"><a  data-type="color-Fotograf" ng-click='changeSet("foto")'>Fotograf</a></li>
 				
-				<div class="cd-filter-block" ng-controller="ListController">
-					<h4>Dodatni fileri</h4>
-					<div class="cd-filter-content">
-						<div class="cd-select cd-filters">
-							<select class="filter" name="selectThis" id="selectThis" ng-model="search.gsx$tip.$t">
-								<option value="">Izaberite opciju</option>
-								<option value="Muzika">Muzika</option>
-								<option value="Torte">Torte</option>
-								<option value="Sale">Sale</option>
-								<option value="Foto">Foto</option>
-							</select>
-						</div> <!-- cd-select -->
-					</div> <!-- cd-filter-content -->
-				</div> <!-- cd-filter-block -->
-
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
       <md-progress-linear ng-controller="ListController"  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear>
@@ -133,6 +118,7 @@
 
 				<div class="cd-filter-block">
 					<h4>Dodatni fileri</h4>
+					
 					<div class="cd-filter-content">
 						<div class="cd-select cd-filters">
 							<select class="filter" name="selectThis" id="selectThis" ng-model="search.gsx$tip.$t">
