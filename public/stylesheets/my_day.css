@@ -80,6 +80,14 @@ Hero
     font-weight: 900;
     
 }
+.nav_links{
+    font-size: 1em;
+    font-family: 'Indie Flower', cursive!important;
+    color: #82FFA9;
+    text-shadow: 1px 1px 1px black;
+    font-weight: 900;
+    
+}
 .navigation {
   -webkit-transition: all 300ms ease-in-out;
           transition: all 300ms ease-in-out;
