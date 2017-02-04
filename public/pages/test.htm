@@ -7,6 +7,34 @@
 
 <label>Search: <input ng-model="searchText"></label>
 <div id="searchTextResults">
+<!--
+<md-content layout-padding>
+    <md-grid-list
+        md-cols-gt-md="12" md-cols="3" md-cols-md="8"
+        md-row-height-gt-md="1:1" md-row-height="4:3"
+        md-gutter-gt-md="16px" md-gutter-md="8px" md-gutter="4px">
+      <md-grid-tile
+          ng-repeat="tile in appCtrl.colorTiles"
+          ng-style="{
+            'background': tile.color
+          }"
+          md-colspan-gt-sm="{{tile.colspan}}"
+          md-rowspan-gt-sm="{{tile.rowspan}}">
+      </md-grid-tile>
+    </md-grid-list>
+  </md-content>-->
+
+
+
+
+
+
+
+
+
+
+
+
 
   <div ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t">
       <!--<div ng-repeat="friend in friends | filter:searchText">-->
@@ -21,14 +49,10 @@
         md-gutter="12px" 
         md-gutter-gt-sm="8px">
 
-            <md-grid-tile class="gray"
-                md-rowspan="3" 
-                md-colspan="2" 
-                md-colspan-sm="1"
-                md-colspan-xs="1">
-            <md-grid-tile-footer>
-                <h3>{{item.gsx$naziv.$t}}</h3>
-            </md-grid-tile-footer>
+            <md-grid-tile class="green" md-rowspan="3" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+                    <md-grid-tile-footer>
+                        <h3>{{item.gsx$naziv.$t}}</h3>
+                    </md-grid-tile-footer>
             </md-grid-tile>
      </md-grid-list>
 <!--
