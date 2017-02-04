@@ -60,7 +60,7 @@
 					<li class="filter" data-filter=".color-Muzika"><a  data-type="color-Muzika" ng-click='changeSet("music")'>Muzika</a></li>
                     <li class="filter" data-filter=".color-Torte"><a  data-type="color-Torte" ng-click='changeSet("cake")'>Torte</a></li>
 					<li class="filter" data-filter=".color-Fotograf"><a  data-type="color-Fotograf" ng-click='changeSet("foto")'>Fotograf</a></li>
-					<button ng-click="changeImage(music)"></button>
+					<label>Search: <input ng-model="searchText"></label>
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
       <md-progress-linear ng-controller="ListController"  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear>
@@ -112,7 +112,7 @@
         </section>
 	
 <!--SEKCIJA: FILETERI-->
-<label>Search: <input ng-model="searchText"></label>
+
 		<div class="cd-filter">
 			<form id="MyDay_filteri">
 				
