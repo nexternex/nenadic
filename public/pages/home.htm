@@ -60,7 +60,7 @@
 					<li class="filter" data-filter=".color-Muzika"><a  data-type="color-Muzika" ng-click='changeSet("music")'>Muzika</a></li>
                     <li class="filter" data-filter=".color-Torte"><a  data-type="color-Torte" ng-click='changeSet("cake")'>Torte</a></li>
 					<li class="filter" data-filter=".color-Fotograf"><a  data-type="color-Fotograf" ng-click='changeSet("foto")'>Fotograf</a></li>
-					<label>Search: <input ng-model="searchText"></label> 
+				
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
       <md-progress-linear ng-controller="ListController"  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear>
@@ -72,6 +72,7 @@
 
 <!--SEKCIJA:TABLE-->
 		<section ng-controller="ListController"  class="cd-gallery" >
+				<label>Search: <input ng-model="searchText"></label> 
 				<ul > 
 				<li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" id="{{item.gsx$naziv.$t}}" ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t" >  
 							<md-card class="md-accent">
