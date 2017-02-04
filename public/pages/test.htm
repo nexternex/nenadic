@@ -31,7 +31,7 @@
          <md-grid-list md-cols-xs="1" md-cols-sm="2"  md-cols-md="4"  md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
 
             <md-grid-tile    
-             ng-style="{'background-image':url('item.gsx$img.$t')}" 
+             ng-style="{'background-image':'url('{{item.gsx$img.$t}}')''}" 
              md-colspan-gt-sm="{{item.gsx$h.$t}}" 
              md-rowspan-gt-sm="{{item.gsx$w.$t}}" 
              ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t"  
