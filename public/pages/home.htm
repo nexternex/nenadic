@@ -88,12 +88,12 @@
 										<img ng-src="{{item.gsx$img.$t}}" class="md-card-image" alt="Washed Out" layout-fill>
 										<md-grid-tile-footer>
 											<span class="md-headline company_name">{{item.gsx$naziv.$t}}</span>
+											 <span>{{item.gsx$telefon.$t}}</span>   
+											 <span>{{item.gsx$tip.$t}}</span>
 										</md-grid-tile-footer>
 								</md-grid-tile>
    					  		</md-grid-list>		
-<!--
-
-				<li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" id="{{item.gsx$naziv.$t}}" ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t" >  
+						<!--<li class="mix color-{{item.gsx$tip.$t}} {{item.gsx$naziv.$t}}" id="{{item.gsx$naziv.$t}}" ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t" >  
 							<md-card class="md-accent">
 							<img ng-src="{{item.gsx$img.$t}}" class="md-card-image" alt="Washed Out">
 							<md-card-title>
@@ -138,9 +138,7 @@
 				
 				<div class="cd-filter-block">
 					<h4>Pretraga</h4>
-					
 					<div class="cd-filter-content">
-						
 						<input type="search" placeholder="Probajte sa tri sesira i sl...." ng-model="searchText">
 					</div> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
@@ -154,25 +152,6 @@
 			    			<label class="checkbox-label" for="checkbox1">{{suboption}}</label>
 						</li>
 					</ul> <!-- cd-filter-content -->
-
-
-					<!--<ul class="cd-filter-content cd-filters list">
-						<li>
-							<input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-			    			<label class="checkbox-label" for="checkbox1">Sale</label>
-						</li>
-
-						<li>
-							<input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-							<label class="checkbox-label" for="checkbox2">Bendovi</label>
-						</li>
-
-						<li>
-							<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-							<label class="checkbox-label" for="checkbox3">Torte</label>
-						</li>
-					</ul>-->
-
 				</div> <!-- cd-filter-block -->
 
 				<div class="cd-filter-block">
