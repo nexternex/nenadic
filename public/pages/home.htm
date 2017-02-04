@@ -10,8 +10,8 @@
 
 					<md-toolbar>
 
-						<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl" layout="row" layout-align="center center">
-							<span >
+						<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl" layout="row" layout-align="space-between center">
+							<span>
 								<md-button aria-label="Login" class="md-fab md-raised md-mini hue-2 md-primary" ng-click="login()" >
 									<md-icon md-svg-src="account"></md-icon>
 									<md-tooltip md-direction="down">Anita</md-tooltip>
@@ -69,9 +69,7 @@
 				
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
-      <md-progress-linear ng-controller="ListController"  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear>
-<!--            <md-progress-circular md-mode="indeterminate" ng-show="isLoading"></md-progress-circular>-->
-             
+   		   <md-progress-linear ng-controller="ListController"  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear> 
 		</div> <!-- cd-tab-filter-wrapper -->
 
 
