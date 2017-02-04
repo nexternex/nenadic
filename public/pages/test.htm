@@ -6,39 +6,16 @@
                          {name:'Juliette', phone:'555-5678'}]"></div>
 
 <label>Search: <input ng-model="searchText"></label>
-<div id="searchTextResults">
-<!--
-<md-content layout-padding>
-    <md-grid-list
-        md-cols-gt-md="12" md-cols="3" md-cols-md="8"
-        md-row-height-gt-md="1:1" md-row-height="4:3"
-        md-gutter-gt-md="16px" md-gutter-md="8px" md-gutter="4px">
-      <md-grid-tile
-          ng-repeat="tile in appCtrl.colorTiles"
-          ng-style="{
-            'background': tile.color
-          }"
-          md-colspan-gt-sm="{{tile.colspan}}"
-          md-rowspan-gt-sm="{{tile.rowspan}}">
-      </md-grid-tile>
-    </md-grid-list>
-  </md-content>-->
-
-  <div >
-      <!--<div ng-repeat="friend in friends | filter:searchText">-->
-    <!--<td><img ng-src="{{item.gsx$img.$t}}"  alt="Washed Out"></td>-->
-     <!--<md-grid-list md-cols-xs="1" md-cols-sm="2"  md-cols-md="4"  md-cols-gt-md="6"md-row-height-gt-md="1:1" md-row-height="2:2"md-gutter="12px" md-gutter-gt-sm="8px">-->
          <md-grid-list md-cols-xs="1" md-cols-sm="2"  md-cols-md="4"  md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
 
             <md-grid-tile
-             ng-style="{'background-image': url('{{item.gsx$img.$t}}')}"   
              md-colspan-gt-sm="{{item.gsx$h.$t}}" 
              md-rowspan-gt-sm="{{item.gsx$w.$t}}" 
              ng-repeat="item in lists | filter:searchText track by item.gsx$naziv.$t"  
              md-rowspan="{{item.gsx$h.$t}}" md-colspan="{{item.gsx$w.$t}}" 
              md-colspan-sm="1" 
              md-colspan-xs="1">
-                    <!--<img ng-src="{{item.gsx$img.$t}}" class="md-card-image" alt="Washed Out" layout-fill>-->
+                    <img ng-src="{{item.gsx$img.$t}}" class="md-card-image" alt="Washed Out" layout-fill>
                     <md-grid-tile-footer>
                         <h3>{{item.gsx$naziv.$t}}</h3>
                     </md-grid-tile-footer>
