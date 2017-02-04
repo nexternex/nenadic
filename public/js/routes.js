@@ -9,7 +9,7 @@ myDay.config(function ($routeProvider){
     controller:'ListController',
     requiresLogin: false 
     })
-    .when('/Home',{
+    .when('/home',{
     templateUrl:'../pages/home.htm',
     controller:'ListController',
     requiresLogin: false 
@@ -28,11 +28,11 @@ myDay.config(function ($routeProvider){
     templateUrl: '../pages/timeline.htm',
     controller: 'ListController',
     requiresLogin: false
-    })
-    .when('/login2', {
-    templateUrl: '../pages/login.htm',
-    controller: 'MainController',
-    requiresLogin: false
+    })  
+    .when('/test',{
+    templateUrl:'../pages/test.htm',
+    controller:'ListController',
+    requiresLogin: false 
     })
     // Logged in route
     .when('/userInfo', {
