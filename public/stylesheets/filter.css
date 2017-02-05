@@ -21,7 +21,7 @@ html * {
 
 body {
   font-size: 1.6rem;
-  font-family: "Shrikhand"!important;
+  /*font-family: "Shrikhand"!important;*/
   color: #331d35;
   background-color:rgba(1,1,1,0.5);
 }
