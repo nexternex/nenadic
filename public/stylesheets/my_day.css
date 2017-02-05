@@ -21,9 +21,8 @@ html, body{
   height: 100%;
   z-index: 10;
   background: #ff0084; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, rgba(156, 39, 176, 0.65) , rgba(105, 240, 174, 0.26)) ; /* Chrome 10-25, Safari 5.1-6 */
-  background:linear-gradient(to left,rgba(156, 39, 176, 0.65) , rgba(105, 240, 174, 0.26)) ; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-       
+  background: -webkit-linear-gradient(to left,rgba(156, 39, 176, 0.22) , rgba(105, 240, 174, 0.25)) ; /* Chrome 10-25, Safari 5.1-6 */
+  background:linear-gradient(to left,rgba(156, 39, 176, 0.22) , rgba(105, 240, 174, 0.25)) ; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 md-virtual-repeat-container {
