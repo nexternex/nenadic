@@ -134,17 +134,16 @@
             <td md-cell>{{todo.place}}</td>
             <td md-cell>{{todo.desc}}</td>
             <td md-cell>{{todo.date}}</td>
+            <td md-cell><md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon></td>
           </tr>
         </tbody>
       </table>
     </md-table-container>
 
-<md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
-    
-    
+      <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
     </section>
-
-              <md-content >
+<!--STARI PRIKAZA TODO-A PO CARD PRINCIP-->
+              <!--<md-content >
                  <md-card class-"md-accent"   flex="33" ng-repeat="todo in todos">
                     <md-card-title>
                         <md-card-title-text>
@@ -162,7 +161,7 @@
                         </md-card-actions>
                     </md-card>
               </md-content>
-        </md-content>
+        </md-content>-->
         </div>
             <!-- FORM TO CREATE TODOS -->
       
