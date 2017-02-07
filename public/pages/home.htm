@@ -106,7 +106,7 @@
 
 				<div class="cd-filter-block" ng-controller="MenuCtrl">
 					<h4>Filteri:</h4>
-
+						<div ng-model="filters">{{filters.[0]}}</div>
 					<ul class="cd-filter-content cd-filters list" ng-repeat="option in filters">{{option[0]}}
 						<li ng-repeat="suboption in option[1]">
 							<input class="filter" data-filter=".{{suboption}}" type="checkbox" id="checkbox1">
@@ -117,7 +117,7 @@
 
 				<div class="cd-filter-block">
 					<h4>Dodatni fileri</h4>
-					
+				
 					<div class="cd-filter-content">
 						<div class="cd-select cd-filters">
 							<select class="filter" name="selectThis" id="selectThis" ng-model="search.gsx$tip.$t">
@@ -150,7 +150,7 @@
 							<label class="radio-label" for="radio3">Izbor 2</label>
 						</li>
 					</ul> <!-- cd-filter-content -->
-				<!--</div>  cd-filter-block -->-->
+				<!--</div>  cd-filter-block -->
 			</form>
 
 			<a  class="cd-close">Zatvori</a>
