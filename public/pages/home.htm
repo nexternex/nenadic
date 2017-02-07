@@ -106,7 +106,7 @@
 
 				<div class="cd-filter-block" ng-controller="MenuCtrl">
 					<h4>Filteri:</h4>
-						<div ng-model="filters">{{filters.[0]}}</div>
+						<div ng-model="filters">{{filters}}</div>
 					<ul class="cd-filter-content cd-filters list" ng-repeat="option in filters">{{option[0]}}
 						<li ng-repeat="suboption in option[1]">
 							<input class="filter" data-filter=".{{suboption}}" type="checkbox" id="checkbox1">
