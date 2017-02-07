@@ -165,15 +165,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
 }]);   
 //Menu controller ----ciricle meni 
 myDay.controller('MenuCtrl',['$scope', function($scope) {
-console.log("MenuCtrl");
-            this.topDirections = ['left', 'up'];
-            this.bottomDirections = ['down', 'right'];
-            this.isOpen = false;
-            this.availableModes = ['md-fling', 'md-scale'];
-            this.selectedMode = 'md-fling';
-            this.availableDirections = ['up', 'down', 'left', 'right'];
-            this.selectedDirection = 'up';
-
+            console.log("MenuCtrl");
         // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],

@@ -54,7 +54,7 @@
 	<main class="cd-main-content">
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
-				<ul class="cd-filters" ng-controller="MenuCtrl">
+				<ul class="cd-filters" ng-controller="MenuCtrl" ng-model="search.gsx$tip.$t"> 
 					<li class="placeholder"> 
 						<a data-type="all">All</a> <!-- selected option on mobile -->
 					</li>
@@ -107,7 +107,7 @@
 				<div class="cd-filter-block" ng-controller="MenuCtrl">
 					<h4>Filteri:</h4>
 
-					<ul class="cd-filter-content cd-filters list" ng-repeat="option in filters">{{option[0]}}
+					<ul class="cd-filter-content cd-filters list" ng-repeat="option in filters track by ">{{option[0]}}
 						<li ng-repeat="suboption in option[1]">
 							<input class="filter" data-filter=".{{suboption}}" type="checkbox" id="checkbox1">
 			    			<label class="checkbox-label" for="checkbox1">{{suboption}}</label>
