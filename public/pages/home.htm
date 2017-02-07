@@ -106,7 +106,7 @@
 
 				<div class="cd-filter-block">
 					<h4>Filteri:</h4>
-					<ul class="cd-filter-content cd-filters list" ng-repeat="option in filters">{{option[0]}}
+					<ul class="cd-filter-content cd-filters list" ng-repeat="option in filters">{{option[0]}} + {{option[1]}}
 						<md-slider  min="{{option[1].$first}}" max="{option[1].$last}"></md-slider>
 						<!--<li ng-repeat="suboption in option[1]">
 							<input class="filter" data-filter=".{{suboption}}" type="checkbox" id="checkbox1">
