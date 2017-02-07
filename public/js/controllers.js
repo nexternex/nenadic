@@ -196,21 +196,24 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
+                    $scope.$apply()
                     console.log("sale: "+$scope.filters);
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
                      $scope.filters=MyDay_filterSetTorte;
+                     $scope.$apply()
                      console.log("torte: "+$scope.filters);
                 }
                 else if(tema=="music"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/003.jpg')";
                     $scope.filters=MyDay_filterSetMuzika;
+                    $scope.$apply()
                     console.log("music: "+$scope.filters);
                 }
                 else if(tema=="foto"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/004.jpg')";
-                    alert(tema);
+              
                 }
                 else{
                     console.log("nema parametra:f(temax)")
