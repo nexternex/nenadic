@@ -192,7 +192,7 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
         console.log($scope.filters);
 
 
-        function changeSet(tema){
+        $scope.changeSet=function(tema){
  
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
