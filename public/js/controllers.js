@@ -165,7 +165,6 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
 }]);   
 //Menu controller ----ciricle meni 
 myDay.controller('MenuCtrl',['$scope', function($scope) {
-            $scope.filters=[];
             console.log("MenuCtrl");
         // filteri za sale
             var MyDay_filterSetSale=[  
@@ -193,7 +192,7 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
         console.log($scope.filters);
 
 
-        function changeSet (tema){
+        function changeSet(tema){
  
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
