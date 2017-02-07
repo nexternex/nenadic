@@ -1,4 +1,4 @@
-<header id="MyDay_header" class="cd-header" ng-controller="MenuCtrl">
+<header id="MyDay_header" class="cd-header">
 	 <div class="overlay"></div>
 <!-- #region SpeedDial -->
 			  <md-fab-toolbar md-open="fab.isOpen" count="fab.count" md-direction="right">
@@ -94,7 +94,7 @@
 	
 <!--SEKCIJA: FILETERI-->
 
-		<div class="cd-filter">
+		<div class="cd-filter"  ng-controller="MenuCtrl">
 			<form id="MyDay_filteri">
 			
 				<div class="cd-filter-block">
