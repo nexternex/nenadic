@@ -187,7 +187,7 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
              ];
 
-        $scope.filters=MyDay_filterSetSale;
+        $scope.filters=MyDay_filterSetTorte;
         console.log($scope.filters);
 
 
@@ -196,7 +196,6 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
-                    $scope.$apply();
                     console.log("sale: "+$scope.filters);
                     }
                 else if(tema=="cake"){
@@ -207,7 +206,6 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
                 else if(tema=="music"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/003.jpg')";
                     $scope.filters=MyDay_filterSetMuzika;
-                    $scope.$apply();
                     console.log("music: "+$scope.filters);
                 }
                 else if(tema=="foto"){
