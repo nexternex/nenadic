@@ -249,6 +249,17 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
                  $scope.status = 'You cancelled the dialog.';
             });
         };
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
 
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
@@ -273,6 +284,10 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
             console.log('Error: ' + data);
         });  
 }]);
+
+
+
+
 
 //PROFIL KORISNIKA//
 myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
