@@ -368,9 +368,18 @@ myDay.factory('todosService', function($http) {
 
 
 //KONTROLER: Infinite scroll - virtual scroll
-myDay.controller('virtualCtrl', function($timeout,$http) {
+myDay.controller('virtualCtrl', function($timeout) {
 
-   
+    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
+        .success(function(data) {
+            $scope.lists = data.feed.entry;
+            $scope.isLoading = false;
+//            console.log('liste sam dobio iz baze:'+data.feed.entry);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });  
+
 
         // In this example, we set up our model using a class.
         // Using a plain object works too. All that matters
@@ -427,18 +436,22 @@ myDay.controller('virtualCtrl', function($timeout,$http) {
           // For demo purposes, we simulate loading the item count with a timed
           // promise. In real code, this function would likely contain an
           // $http request.
-          $timeout(angular.noop, 300).then(angular.bind(this, function() {
-            this.numItems = 50000;
-          }));
+
+             $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
+                .success(function(data) {
+                    $scope.lists = data.feed.entry;
+                    $scope.isLoading = false;
+                    console.log('liste sam dobio iz baze:'+data.feed.entry);
+                    })
+                    .error(function(data) {
+                        console.log('Error: ' + data);
+                });  
+
+
+        //   $timeout(angular.noop, 300).then(angular.bind(this, function() {
+        //     this.numItems = 50000;
+        //   }));
         };
         
-        this.dynamicItems = $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
-        .success(function(data) {
-            $scope.lists = data.feed.entry;
-            $scope.isLoading = false;
-//            console.log('liste sam dobio iz baze:'+data.feed.entry);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });  
+        this.dynamicItems = new DynamicItems();
       });
