@@ -235,7 +235,7 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
        $scope.showAdvanced = function(ev) {
             console.log("dijalog_clicked!");
             $mdDialog.show({
-                controller: 'MainController',
+                // controller: 'MainController',
                 templateUrl: '../pages/companyCard.htm',
                 clickOutsideToClose:true,
                 // controller: DialogController,
