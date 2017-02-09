@@ -268,14 +268,6 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
 }]);
 
 myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
-          $scope.hide = function() {
-                $mdDialog.hide();
-            };
-
-            $scope.cancel = function() {
-              $mdDialog.cancel();
-            };
-
             $scope.answer = function(answer) {
                 console.log("Klik close");
              $mdDialog.hide();
