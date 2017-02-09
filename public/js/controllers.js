@@ -231,7 +231,7 @@ myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAd
      console.log("maps kontroler entry");
     }]);
 //LIST kontroler--dropdown komponente
-myDay.controller('ListController', ['$scope','$http', function ($scope,$http) {
+myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
        $scope.showAdvanced = function(ev) {
             console.log("dijalog_clicked!");
             $mdDialog.show({
