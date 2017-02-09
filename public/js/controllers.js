@@ -70,21 +70,22 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
         $scope.todos='';
         $scope.photo='';
+        $scope.customFullscreen = false;
         //  $scope.photo.user_id=auth.profile.user_id;
 
         $scope.showAdvanced = function(ev) {
             $mdDialog.show({
-            controller: DialogController,
-            templateUrl: 'companyCard.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose:true,
-            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+                controller: DialogController,
+                templateUrl: 'companyCard.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose:true,
+                fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
             })
             .then(function(answer) {
-            $scope.status = 'You said the information was "' + answer + '".';
+                $scope.status = 'You said the information was "' + answer + '".';
             }, function() {
-            $scope.status = 'You cancelled the dialog.';
+                 $scope.status = 'You cancelled the dialog.';
             });
         };
     
