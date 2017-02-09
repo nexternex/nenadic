@@ -74,6 +74,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
         //  $scope.photo.user_id=auth.profile.user_id;
 
         $scope.showAdvanced = function(ev) {
+            console.log("dijalog_clicked!");
             $mdDialog.show({
                 controller: DialogController,
                 templateUrl: 'companyCard.html',
