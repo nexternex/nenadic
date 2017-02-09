@@ -235,7 +235,7 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
        $scope.showAdvanced = function(ev) {
             console.log("dijalog_clicked!");
             $mdDialog.show({
-                // controller: 'MainController',
+                controller: 'ListController',
                 templateUrl: '../pages/companyCard.htm',
                 clickOutsideToClose:true,
                 // controller: DialogController,
@@ -249,17 +249,18 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
                  $scope.status = 'You cancelled the dialog.';
             });
         };
-    $scope.hide = function() {
-      $mdDialog.hide();
-    };
 
-    $scope.cancel = function() {
-      $mdDialog.cancel();
-    };
+            $scope.hide = function() {
+            $mdDialog.hide();
+            };
 
-    $scope.answer = function(answer) {
-      $mdDialog.hide(answer);
-    };
+            $scope.cancel = function() {
+            $mdDialog.cancel();
+            };
+
+            $scope.answer = function(answer) {
+            $mdDialog.hide(answer);
+            };
 
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
