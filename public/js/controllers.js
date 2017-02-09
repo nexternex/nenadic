@@ -236,7 +236,7 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
             console.log("dijalog_clicked!");
             $mdDialog.show({
                 // controller: DialogController,
-                templateUrl: 'companyCard.html',
+                templateUrl: '/companyCard.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose:true,
