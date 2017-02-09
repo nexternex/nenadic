@@ -75,7 +75,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
         $scope.showAdvanced = function(ev) {
             $mdDialog.show({
             controller: DialogController,
-            templateUrl: 'dialog1.tmpl.html',
+            templateUrl: 'companyCard.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose:true,
