@@ -368,86 +368,48 @@ myDay.factory('todosService', function($http) {
 
 
 //KONTROLER: Infinite scroll - virtual scroll
+
 myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
+          // In this example, we set up our model using a plain object.
+          // Using a class works too. All that matters is that we implement
+          // getItemAtIndex and getLength.
+          var vm = this;
+          vm.infiniteItems = {
+              numLoaded_: 0,
+              toLoad_: 0,
+              items: [],
 
+              // Required.
+              getItemAtIndex: function (index) {
+                  if (index > this.numLoaded_) {
+                      this.fetchMoreItems_(index);
+                      return null;
+                  }
+                  return this.items[index];
+              },
 
+              // Required.
+              getLength: function () {
+                  return this.numLoaded_ + 5;
+              },
 
-        // In this example, we set up our model using a class.
-        // Using a plain object works too. All that matters
-        // is that we implement getItemAtIndex and getLength.
-        var DynamicItems = function() {
-          /**
-           * @type {!Object<?Array>} Data pages, keyed by page number (0-index).
-           */
-          this.loadedPages = {};
+              fetchMoreItems_: function (index) {
+                  if (this.toLoad_ < index) {
+                      this.toLoad_ += 5;
 
-          /** @type {number} Total number of items. */
-          this.numItems = 0;
-
-          /** @const {number} Number of items to fetch per request. */
-          this.PAGE_SIZE = 50;
-
-          this.fetchNumItems_();
-        };
-
-        // Required.
-        DynamicItems.prototype.getItemAtIndex = function(index) {
-          var pageNumber = Math.floor(index / this.PAGE_SIZE);
-          var page = this.loadedPages[pageNumber];
-
-          if (page) {
-            return page[index % this.PAGE_SIZE];
-          } else if (page !== null) {
-            this.fetchPage_(pageNumber);
+                    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
+                        .success(function(data) {
+                            $scope.lists = data.feed.entry;
+                            $scope.isLoading = false;
+                //            console.log('liste sam dobio iz baze:'+data.feed.entry);
+                        })
+                        .error(function(data) {
+                            console.log('Error: ' + data);
+                        }).then(angular.bind(this, function (obj) {
+                          this.items = this.items.concat(obj.data);
+                          this.numLoaded_ = this.toLoad_;
+                      }));
+                  }
+              }
           }
-        };
-
-        // Required.
-        DynamicItems.prototype.getLength = function() {
-          return this.numItems;
-        };
-
-        DynamicItems.prototype.fetchPage_ = function(pageNumber) {
-          // Set the page to null so we know it is already being fetched.
-          this.loadedPages[pageNumber] = null;
-
-          // For demo purposes, we simulate loading more items with a timed
-          // promise. In real code, this function would likely contain an
-          // $http request.
-          $timeout(angular.noop, 300).then(angular.bind(this, function() {
-            this.loadedPages[pageNumber] = [];
-            var pageOffset = pageNumber * this.PAGE_SIZE;
-            for (var i = pageOffset; i < pageOffset + this.PAGE_SIZE; i++) {
-              this.loadedPages[pageNumber].push(i);
-            }
-          }));
-        };
-
-        DynamicItems.prototype.fetchNumItems_ = function() {
-          // For demo purposes, we simulate loading the item count with a timed
-          // promise. In real code, this function would likely contain an
-          // $http request.
-
-             $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
-                .success(function(data) {
-                    $scope.lists = data.feed.entry;
-                    $scope.isLoading = false;
-
-
-                    $timeout(angular.noop, 300).then(angular.bind(this, function() {
-                        this.numItems = $scope.lists.lenght;
-                    }));
-                    // console.log('liste sam dobio iz baze:'+data.feed.entry);
-                    })
-                    .error(function(data) {
-                        console.log('Error: ' + data);
-                });  
-
-
-        //   $timeout(angular.noop, 300).then(angular.bind(this, function() {
-        //     this.numItems = 50000;
-        //   }));
-        };
-        
-        this.dynamicItems = new DynamicItems();
       });
