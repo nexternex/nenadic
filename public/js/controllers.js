@@ -73,22 +73,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
         $scope.customFullscreen = false;
         //  $scope.photo.user_id=auth.profile.user_id;
 
-        $scope.showAdvanced = function(ev) {
-            console.log("dijalog_clicked!");
-            $mdDialog.show({
-                controller: DialogController,
-                templateUrl: 'companyCard.html',
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose:true,
-                fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-            })
-            .then(function(answer) {
-                $scope.status = 'You said the information was "' + answer + '".';
-            }, function() {
-                 $scope.status = 'You cancelled the dialog.';
-            });
-        };
+     
     
 // When landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
@@ -247,6 +232,23 @@ myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAd
     }]);
 //LIST kontroler--dropdown komponente
 myDay.controller('ListController', ['$scope','$http', function ($scope,$http) {
+       $scope.showAdvanced = function(ev) {
+            console.log("dijalog_clicked!");
+            $mdDialog.show({
+                controller: DialogController,
+                templateUrl: 'companyCard.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose:true,
+                fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+            })
+            .then(function(answer) {
+                $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+                 $scope.status = 'You cancelled the dialog.';
+            });
+        };
+
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
