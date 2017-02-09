@@ -20,6 +20,8 @@
   <md-virtual-repeat-container id="vertical-container">
       <div md-virtual-repeat="item in ctrl.infiniteItems" md-on-demand="" class="repeated-item" flex="">
          {{item.id}}
+         {{item.gsx$naziv.$t}}
+     
       </div>
     </md-virtual-repeat-container>
   </md-content>
