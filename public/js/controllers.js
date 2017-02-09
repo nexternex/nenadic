@@ -370,15 +370,6 @@ myDay.factory('todosService', function($http) {
 //KONTROLER: Infinite scroll - virtual scroll
 myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
 
-    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
-        .success(function(data) {
-            $scope.lists = data.feed.entry;
-            $scope.isLoading = false;
-//            console.log('liste sam dobio iz baze:'+data.feed.entry);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });  
 
 
         // In this example, we set up our model using a class.
@@ -441,7 +432,12 @@ myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
                 .success(function(data) {
                     $scope.lists = data.feed.entry;
                     $scope.isLoading = false;
-                    console.log('liste sam dobio iz baze:'+data.feed.entry);
+
+
+                    $timeout(angular.noop, 300).then(angular.bind(this, function() {
+                        this.numItems = $scope.list.lenght;
+                    }));
+                    // console.log('liste sam dobio iz baze:'+data.feed.entry);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
