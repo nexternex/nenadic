@@ -18,8 +18,8 @@
 <div ng-controller="virtualCtrl as ctrl" ng-cloak="">
   <md-content layout="column">
   <md-virtual-repeat-container id="vertical-container">
-      <div md-virtual-repeat="item in ctrl.dynamicItems" md-on-demand="" class="repeated-item" flex="">
-        {{item.gsx$img.$t}}
+      <div md-virtual-repeat="item in ctrl.infiniteItems" md-on-demand="" class="repeated-item" flex="">
+         {{item.id}}
       </div>
     </md-virtual-repeat-container>
   </md-content>
