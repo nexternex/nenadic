@@ -282,7 +282,7 @@ myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($sco
             };
 
             $scope.answer = function(answer) {
-                console.log()
+                console.log("Klik close");
              $mdDialog.hide(answer);
             };
 }]);
