@@ -71,6 +71,22 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
         $scope.todos='';
         $scope.photo='';
         //  $scope.photo.user_id=auth.profile.user_id;
+
+        $scope.showAdvanced = function(ev) {
+            $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'dialog1.tmpl.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true,
+            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+            })
+            .then(function(answer) {
+            $scope.status = 'You said the information was "' + answer + '".';
+            }, function() {
+            $scope.status = 'You cancelled the dialog.';
+            });
+        };
     
 // When landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
