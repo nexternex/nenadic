@@ -368,7 +368,7 @@ myDay.factory('todosService', function($http) {
 
 
 //KONTROLER: Infinite scroll - virtual scroll
-myDay.controller('virtualCtrl', function($timeout) {
+myDay.controller('virtualCtrl', function($timeout,$http) {
 
     $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
         .success(function(data) {
