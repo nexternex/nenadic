@@ -397,7 +397,7 @@ myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
                   if (this.toLoad_ < index) {
                       this.toLoad_ += 5;
 
-                    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
+                    $scope.list=$http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
                         .success(function(data) {
                             return data.feed.entry
                      console.log('liste sam dobio iz baze:'+data.feed.entry);
