@@ -241,11 +241,6 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-            })
-            .then(function(answer) {
-                $scope.status = 'Coll svidja mi se "' + answer + '".';
-            }, function() {
-                 $scope.status = 'You cancelled the dialog.';
             });
         };
 // when landing on the page, get all lists and show them
@@ -273,7 +268,7 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
 }]);
 
 myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
-   $scope.hide = function() {
+          $scope.hide = function() {
                 $mdDialog.hide();
             };
 
@@ -283,7 +278,7 @@ myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($sco
 
             $scope.answer = function(answer) {
                 console.log("Klik close");
-             $mdDialog.hide(answer);
+             $mdDialog.hide();
             };
 }]);
 
