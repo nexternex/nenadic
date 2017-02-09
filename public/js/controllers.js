@@ -233,9 +233,8 @@ myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAd
 //LIST kontroler--dropdown komponente
 myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
        $scope.showAdvanced = function(ev) {
-            console.log("dijalog_clicked!");
             $mdDialog.show({
-                controller: 'ListController',
+                controller: 'CardController',
                 templateUrl: '../pages/companyCard.htm',
                 clickOutsideToClose:true,
                 // controller: DialogController,
@@ -244,24 +243,11 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
                 fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
             })
             .then(function(answer) {
-                $scope.status = 'You said the information was "' + answer + '".';
+                $scope.status = 'Coll svidja mi se "' + answer + '".';
             }, function() {
                  $scope.status = 'You cancelled the dialog.';
             });
         };
-
-            $scope.hide = function() {
-            $mdDialog.hide();
-            };
-
-            $scope.cancel = function() {
-            $mdDialog.cancel();
-            };
-
-            $scope.answer = function(answer) {
-            $mdDialog.hide(answer);
-            };
-
 // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
@@ -286,8 +272,20 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
         });  
 }]);
 
+myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
+   $scope.hide = function() {
+                $mdDialog.hide();
+            };
 
+            $scope.cancel = function() {
+              $mdDialog.cancel();
+            };
 
+            $scope.answer = function(answer) {
+                console.log()
+             $mdDialog.hide(answer);
+            };
+}]);
 
 
 //PROFIL KORISNIKA//
