@@ -369,7 +369,7 @@ myDay.factory('todosService', function($http) {
 
 //KONTROLER: Infinite scroll - virtual scroll
 
-myDay.controller('infiniteItems', function($timeout,$http,$scope) {
+myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
           // In this example, we set up our model using a plain object.
           // Using a class works too. All that matters is that we implement
           // getItemAtIndex and getLength.
