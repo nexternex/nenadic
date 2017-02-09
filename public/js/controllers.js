@@ -366,10 +366,32 @@ myDay.factory('todosService', function($http) {
   };
 });
 
+myDay.controller('ModalController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
+
+  $scope.showAdvanced = function(ev) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: 'dialog1.tmpl.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+
+
+    
+}]);
 
 //KONTROLER: Infinite scroll - virtual scroll
-
 myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
+
+
           // In this example, we set up our model using a plain object.
           // Using a class works too. All that matters is that we implement
           // getItemAtIndex and getLength.
