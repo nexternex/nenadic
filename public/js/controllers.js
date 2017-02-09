@@ -235,7 +235,7 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
        $scope.showAdvanced = function(ev) {
             console.log("dijalog_clicked!");
             $mdDialog.show({
-                controller: DialogController,
+                // controller: DialogController,
                 templateUrl: 'companyCard.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
