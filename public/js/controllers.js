@@ -235,11 +235,12 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
        $scope.showAdvanced = function(ev) {
             console.log("dijalog_clicked!");
             $mdDialog.show({
+                controller: 'MainController',
+                templateUrl: '../pages/companyCard.htm',
+                clickOutsideToClose:true,
                 // controller: DialogController,
-                templateUrl: '/companyCard.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
-                clickOutsideToClose:true,
                 fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
             })
             .then(function(answer) {
@@ -385,29 +386,6 @@ myDay.factory('todosService', function($http) {
     getTodos: getTodos
   };
 });
-
-myDay.controller('ModalController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
-
-  $scope.showAdvanced = function(ev) {
-    $mdDialog.show({
-      controller: DialogController,
-      templateUrl: 'dialog1.tmpl.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
-      clickOutsideToClose:true,
-      fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-    })
-    .then(function(answer) {
-      $scope.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      $scope.status = 'You cancelled the dialog.';
-    });
-  };
-
-
-    
-}]);
-
 //KONTROLER: Infinite scroll - virtual scroll
 myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
 
