@@ -435,7 +435,7 @@ myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
 
 
                     $timeout(angular.noop, 300).then(angular.bind(this, function() {
-                        this.numItems = $scope.list.lenght;
+                        this.numItems = $scope.lists.lenght;
                     }));
                     // console.log('liste sam dobio iz baze:'+data.feed.entry);
                     })
