@@ -1,5 +1,5 @@
-//CONTROLERS
-myDay.controller('HomeController',['$scope' ,function($scope){
+//KONTROLER: Home controller
+ myDay.controller('HomeController',['$scope' ,function($scope){
      
       $scope.fab = {
         isOpen: false,
@@ -13,12 +13,12 @@ myDay.controller('HomeController',['$scope' ,function($scope){
                      {name:'2/3', txt:'tekst do bola', src:'/img/001.jpg'},
                      {name:'3/3', txt:'Best a name', src:'/img/002.jpg'}];
 
-}]);
-// Login.js
-myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
-$scope.auth = auth;
+ }]);
+//KONTROLER: Login controller
+ myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
+  $scope.auth = auth;
   $scope.login = function () {
-// podesavanje opcija za auth Lock widget
+    //podesavanje opcija za auth Lock widget
     auth.signin({
         icon: 'https://nenadic.herokuapp.com/img/myday.png',
         primaryColor: 'purple',
@@ -48,21 +48,21 @@ $scope.auth = auth;
 
   console.log('pokusaj login controller used');
 
-}]);
-//Logout controller
-myDay.controller('LogoutCtrl', function (auth, $location, store) {
+ }]);
+//KONTROLER: Logout controller
+ myDay.controller('LogoutCtrl', function (auth, $location, store) {
   auth.signout();
   store.remove('profile');
   store.remove('token');
   $location.path('/timeline');
-});
-//UserInfoCtrl.js
-myDay.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
-  $scope.auth = auth;
-  console.log('UserInfoCtrl controller used');  
-}]);
-//MAIN coontroler
-myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
+ });
+//KONTROLER: UserInfoCtrl controller
+    myDay.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
+    $scope.auth = auth;
+    console.log('UserInfoCtrl controller used');  
+    }]);
+//KONTROLER: MAIN coontroler
+  myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
         var todoData={};
         $scope.auth = auth;
         $scope.formData = {};
@@ -75,7 +75,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
 
      
     
-// When landing on the page, get all todos and show them    
+   //When landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
         .success(function(data) {
             $scope.todos = data;
@@ -84,7 +84,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
         .error(function(data) {
             console.log('Error: ' + data);
         });
-// Api create a todo
+   //Api create a todo
     $scope.createTodo = function() {
         $http.post('/api/todos',$scope.formData)
             .success(function(data) {
@@ -98,7 +98,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
             });
     };
     
-// Delete a todo after checking it
+    //Delete a todo after checking it
     $scope.deleteTodo = function(id) { 
             $http.delete('/api/todos/' + id)
                 .success(function(data) {
@@ -108,7 +108,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
                     console.log('Error: ' + data);
                 });
         };  
-    //    dijalog koji podize modal za kreiranje  todo
+    //dijalog koji podize modal za kreiranje  todo
     $scope.showCreate = function() {     
         $mdDialog.show({ 
                 controller: 'MainController',
@@ -143,7 +143,7 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
         $scope.status = 'You decided to keep your debt.';
         });
     };  
-// Basic md-dialog contollers
+    // Basic md-dialog contollers
     $scope.hide = function() {
         $mdDialog.hide();
     };
@@ -153,21 +153,16 @@ myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','a
     $scope.answer = function(answer) {
       $mdDialog.hide(answer);
     };
-     
-// Switch za readonly detalje naloga//
-    
+    // Switch za readonly detalje naloga//
     $scope.message=true;
     $scope.onChange=true;
     $scope.onChange = function(cbState) {
         $scope.message = cbState;
         };     
-
-
-
-// <-----------Main controler END------------------------>    
-}]);   
-//Menu controller ----ciricle meni 
-myDay.controller('MenuCtrl',['$scope', function($scope) {
+    // <-----------Main controler END------------------------>    
+ }]);   
+//KONTROLER: Menu controller----ciricle meni 
+ myDay.controller('MenuCtrl',['$scope', function($scope) {
             console.log("MenuCtrl");
         // filteri za sale
             var MyDay_filterSetSale=[  
@@ -223,26 +218,23 @@ myDay.controller('MenuCtrl',['$scope', function($scope) {
 
             }
      }]);
-
-
-
-//Maps controller
-myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
+//KONTROLER: Maps controller
+  myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
-//LIST kontroler--dropdown komponente
-myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
-       $scope.showAdvanced = function(ev) {
-            $mdDialog.show({
-                controller: 'CardController',
-                templateUrl: '../pages/companyCard.htm',
-                clickOutsideToClose:true,
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-            });
-        };
-// when landing on the page, get all lists and show them
+//KONTROLER: List controller--dropdown komponente
+    myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
+        $scope.showAdvanced = function(ev) {
+                $mdDialog.show({
+                    controller: 'CardController',
+                    templateUrl: '../pages/companyCard.htm',
+                    clickOutsideToClose:true,
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+                });
+            };
+    // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
             $scope.lists = data;
@@ -259,23 +251,23 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
         .success(function(data) {
             $scope.lists = data.feed.entry;
             $scope.isLoading = false;
-//            console.log('liste sam dobio iz baze:'+data.feed.entry);
+     //console.log('liste sam dobio iz baze:'+data.feed.entry);
         })
         .error(function(data) {
             console.log('Error: ' + data);
         });  
-}]);
-
-myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
+     }]);
+//KONTROLER: Card controller
+    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
             $scope.answer = function(answer) {
                 console.log("Klik close"+ answer);
              $mdDialog.hide();
             };
-}]);
+    }]);
 
 
-//PROFIL KORISNIKA//
-myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
+//KONTROLER: Profil korisnika
+    myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
     $scope.formData = {};
     $scope.profiles = [];
     $scope.auth = auth;
@@ -298,7 +290,7 @@ myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', 
     ],
    };
         
-// LOAD PROFILE when landing on the page, get profile and show them
+  // LOAD PROFILE when landing on the page, get profile and show them
     $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
             //rezultat 1 profila ide u data
@@ -313,7 +305,7 @@ myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', 
             // $scope.formData=$scope.profiles[0];
         });    
 
-// ++when submitting the add form, send the text to the node API
+  // ++when submitting the add form, send the text to the node API
     $scope.createList = function() {
         $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
             .success(function(data) {
@@ -325,7 +317,7 @@ myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', 
             });
     };
 
-// DELETE a list after checking it
+  // DELETE a list after checking it
     $scope.deleteList = function(id) {
         $http.delete('/api/lists/' + id)
             .success(function(data) {
@@ -336,7 +328,7 @@ myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', 
                 console.log('Error: ' + data);
             });
     };
-// UPDATE LIST
+ // UPDATE LIST
     $scope.updateList = function() {
        console.log("UPDATE LIST Start");
        $http.post('/api/lists_update/',{formData: $scope.formData,name:$scope.name,size:$scope.size,category:$scope.category,user_id:auth.profile.user_id})
@@ -347,7 +339,7 @@ myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', 
             console.log('Error: '+ data);
         });
     }; 
-// UPDATE image url
+ // UPDATE image url
     $scope.updateImageUrl = function() {
        $http.post('/api/save-details/'+ auth.profile.user_id)
         .success(function(data) {
@@ -358,26 +350,26 @@ myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', 
         });
     };   
            
-//<------------------------END PROFILE CONTROLER------------------->    
-}]);
+ //<------------------------END PROFILE CONTROLER------------------->    
+ }]);
 //FACTORY return users
-myDay.factory('setEvent', function($http) {
-  return {
-    loadEvents: function(data) {
-    $http.get('/api/todos')
-        .success(function(data) {
-             console.log('1001:return events from database'+data);
-             return data;
-            })
-        .error(function(data) {
-            console.log('101:error retur events from database');
-            });
-        return data;
-    }
-  }; 
-});
-//ovde nedostaje opis
-myDay.factory('todosService', function($http) {
+    myDay.factory('setEvent', function($http) {
+    return {
+        loadEvents: function(data) {
+        $http.get('/api/todos')
+            .success(function(data) {
+                console.log('1001:return events from database'+data);
+                return data;
+                })
+            .error(function(data) {
+                console.log('101:error retur events from database');
+                });
+            return data;
+        }
+    }; 
+    });
+//FACTORY: ??? 
+ myDay.factory('todosService', function($http) {
   var getTodos = function() {
     return $http.get('/api/todos');
   };
@@ -385,11 +377,9 @@ myDay.factory('todosService', function($http) {
   return {
     getTodos: getTodos
   };
-});
+ });
 //KONTROLER: Infinite scroll - virtual scroll
-myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
-
-
+  myDay.controller('virtualCtrl', function($timeout,$http,$scope) {
           // In this example, we set up our model using a plain object.
           // Using a class works too. All that matters is that we implement
           // getItemAtIndex and getLength.
