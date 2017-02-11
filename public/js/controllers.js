@@ -61,7 +61,7 @@
     $scope.auth = auth;
     console.log('UserInfoCtrl controller used');  
     }]);
-//KONTROLER: MAIN coontroler
+//KONTROLER: Main coontroler
   myDay.controller('MainController', ['$scope', '$http','$mdDialog', '$mdMedia','auth', function ($scope, $http, $mdDialog, $mdMedia, auth) {
         var todoData={};
         $scope.auth = auth;
