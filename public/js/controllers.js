@@ -237,7 +237,6 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
                 controller: 'CardController',
                 templateUrl: '../pages/companyCard.htm',
                 clickOutsideToClose:true,
-                // controller: DialogController,
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
@@ -269,7 +268,7 @@ myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($sco
 
 myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
             $scope.answer = function(answer) {
-                console.log("Klik close");
+                console.log("Klik close"+ answer);
              $mdDialog.hide();
             };
 }]);
