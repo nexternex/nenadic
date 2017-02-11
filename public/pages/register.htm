@@ -1,234 +1,231 @@
-<md-content layout-padding layout="column" 
-            layout-sm="column" 
-            layout-wrap style="width:100%" 
-            md-colors="::{backgroundColor: '{{theme}}-primary-20'}" 
-            layout-align="none"
-            class="md-tall">
-    
-<md-toolbar md-scroll-shrink>
-            <div class="md-toolbar-tools" ng-controller="UserInfoCtrl" >
-                Welcome {{auth.profile.nickname}} &nbsp;
-                <!--<p>{{auth.profile.user_id}} </p>-->
-                <img src="{{auth.profile.picture}}"></img>
-                <a href="#/">Switch to browser</a>
-            </div>
-</md-toolbar>
-<!--starting form layout-->
-<md-tabs md-dynamic-height md-border-bottom flex="100">
-<!--Pocinje prvi tab-->
-<md-tab label="Moj Nalog">
-        <md-content class="md-padding">  
-                   <fieldlist ng-model="formData" ng-disabled="data.cb2" class="md-primary hue-2" layout="row">
-                      
+<!--HTML Register.htm-->
+  <md-content layout-padding layout="column" 
+              layout-sm="column" 
+              layout-wrap style="width:100%" 
+              md-colors="::{backgroundColor: '{{theme}}-primary-20'}" 
+              layout-align="none"
+              class="md-tall">
+    <!--toolbar--> 
+      <md-toolbar md-scroll-shrink>
+                  <div class="md-toolbar-tools" ng-controller="UserInfoCtrl" >
+                      Welcome {{auth.profile.nickname}} &nbsp;
+                      <!--<p>{{auth.profile.user_id}} </p>-->
+                      <img src="{{auth.profile.picture}}"></img>
+                      <a href="#/">Switch to browser</a>
+                  </div>
+      </md-toolbar>
+    <!--starting form layout-->
+      <md-tabs md-dynamic-height md-border-bottom flex="100">
+      <!--Pocinje prvi tab-->
+        <md-tab label="Moj Nalog">
+                <md-content class="md-padding">  
+                    <fieldlist ng-model="formData" ng-disabled="data.cb2" class="md-primary hue-2" layout="row">    
                     <!--prva grupa podataka-->
-                    <md-content layout="column" flex="60">
-                            
-                            <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
-                                Izmeni podatke:
-                            </md-switch>
+                            <md-content layout="column" flex="60">
+                                    
+                                    <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
+                                        Izmeni podatke:
+                                    </md-switch>
+                    
+                                    <div layout='row' flex="100" >
+                                        <md-input-container flex="45" ngmodel="state">
+                                          <h1 ng-model="formData.c_id" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
+                                            <label>Ime:{{data.cb2}}</label>
+                                            </br><input  type="text" name="name" ng-readonly="data.cb2" ng-model="formData.name"></input><br>
+                                        </md-input-container>
+
+                                        <md-input-container flex="45">
+                                            <label> Prezime:</label> 		   
+                                            </br><input  type="text" name="lastname" ng-readonly="data.cb2"  ng-model="formData.lastname"><br>
+                                        </md-input-container>
+                                    </div>
             
-                            <div layout='row' flex="100" >
-                                <md-input-container flex="45" ngmodel="state">
-                                   <h1 ng-model="formData.c_id" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
-                                     <label>Ime:{{data.cb2}}</label>
-                                    </br><input  type="text" name="name" ng-readonly="data.cb2" ng-model="formData.name"></input><br>
-                                </md-input-container>
+                                    <div layout='row' flex="100">
+                                        <md-input-container flex="45">
+                                          <label>Naziv preduzeca:</label> 
+                                            </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company"><br>
+                                        </md-input-container>
 
-                                 <md-input-container flex="45">
-                                     <label> Prezime:</label> 		   
-                                     </br><input  type="text" name="lastname" ng-readonly="data.cb2"  ng-model="formData.lastname"><br>
-                                </md-input-container>
-                            </div>
-    
-                            <div layout='row' flex="100">
-                                 <md-input-container flex="45">
-                                   <label>Naziv preduzeca:</label> 
-                                     </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company"><br>
-                                 </md-input-container>
+                                        <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" flex="45">
+                                            <label>email:</label> 		   
+                                            </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address"><br>
+                                        </md-input-container>
+                                    </div>
 
-                                 <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" flex="45">
-                                     <label>email:</label> 		   
-                                     </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address"><br>
-                                 </md-input-container>
-                            </div>
+                                    <div layout='row' flex="100">
+                                        <md-input-container ng-disabled="data.cb2" flex='45'>
+                                            <label for="category">Vrsta delatnosti: </label></br>
+                                            <md-select name="category" ng-readonly="data.cb2" ng-model="category.singleSelect" value="{{category.singleSelect}}">
+                                              <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}"></option>
+                                            </md-select>
+                                        </md-input-container>
+                                        <md-input-container flex='45'>
+                                            <label for="size" >Velicina prikaza: </label></br>
+                                            <md-select name="size" ng-readonly="data.cb2"  ng-model="size.singleSelect" value="{{size.singleSelect}}">
+                                              <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}"></option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </div>
 
-                            <div layout='row' flex="100">
-                                <md-input-container ng-disabled="data.cb2" flex='45'>
-                                    <label for="category">Vrsta delatnosti: </label></br>
-                                    <md-select name="category" ng-readonly="data.cb2" ng-model="category.singleSelect" value="{{category.singleSelect}}">
-                                      <md-option ng-repeat="option in category.availableOptions" value="{{option.id}}"></option>
-                                    </md-select>
-                                </md-input-container>
-                                <md-input-container flex='45'>
-                                    <label for="size" >Velicina prikaza: </label></br>
-                                    <md-select name="size" ng-readonly="data.cb2"  ng-model="size.singleSelect" value="{{size.singleSelect}}">
-                                      <md-option ng-repeat="option in size.availableOptions" name="size"  value="{{option.id}}"></option>
-                                    </md-select>
-                                </md-input-container>
-                            </div>
+                                    <!--<md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Snimi izmene</md-button>-->
+                                    <md-button class="md-raised md-accent" value="Register" ng-click="updateList()" width="100px">Update izmene</md-button>
 
-                            <!--<md-button class="md-raised md-accent" value="Register" ng-click="createList()" width="100px">Snimi izmene</md-button>-->
-                            <md-button class="md-raised md-accent" value="Register" ng-click="updateList()" width="100px">Update izmene</md-button>
+                                </md-content>
+                    <!--druga grupa podataka-->
+                      <md-content >
+                                  <h2>Logo Firme</h2>
+                                  <input type="file" id="file-input">
+                                  <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
+                                  <p id="status">Please select a file</p>
+                                  <img style="border:1px solid gray;width:300px;"  id="preview" src="{{formData.img}}">
+                                
 
+                                  <h2>Kontakt Info</h2>
+                                  <form>
+                                      <input type="hidden" id="avatar-url" name="avatar-url" value="{{auth.profile.user_id}}">
+                                      <hr>
+                                      <md-button flex="100" type="submit" class=" md-primary" ng-click="updateImageUrl($event)">
+                                          <md-icon  md-svg-icon="content-save" aria-label="save">Sacuvaj sliku</md-icon>
+                                      </md-button>
+                                    </form>
                         </md-content>
-            <!--druga grupa podataka-->
-            <md-content >
-                        <h2>Logo Firme</h2>
-                        <input type="file" id="file-input">
-                        <input type='text' value={{auth.profile.user_id}} name='user_id' ng-hide="true"><br>
-                        <p id="status">Please select a file</p>
-                        <img style="border:1px solid gray;width:300px;"  id="preview" src="{{formData.img}}">
-                       
-
-                        <h2>Kontakt Info</h2>
-                        <form>
-                            <input type="hidden" id="avatar-url" name="avatar-url" value="{{auth.profile.user_id}}">
-                            <hr>
-                             <md-button flex="100" type="submit" class=" md-primary" ng-click="updateImageUrl($event)">
-                                <md-icon  md-svg-icon="content-save" aria-label="save">Sacuvaj sliku</md-icon>
-                             </md-button>
-                          </form>
-              </md-content>
- 
-                </fieldlist>
-    </md-content>
-</md-tab>
-<!--Pocinje drugi tab-->
-<md-tab label="Moji Dogadjaji">
-  <md-content class="md-padding">
-    <div class="md-whiteframe-2dp md-background-purple"  flex="90" layout="column">  
-    <div md-card>   
-        <md-content ng-controller="MainController">
-              <md-toolbar class="md-no-sticky md-accent">Dogadjaji
-                   <fieldlist  id="popupContainer" layout="column" id="todo-form">DODAJ DOGADJAJ 
-                        <!-- createToDo() WILL CREATE NEW TODOS -->
-                        <md-button flex="100" type="submit" class=" md-primary" ng-click="showCreate($event)">
-                           <md-icon  md-svg-icon="content-save" aria-label="save">Dodaj dogadjaj</md-icon>
-                        </md-button>
-                    </fieldlist>
-                  <p>{{status}}</p>
-                </md-toolbar>
-            
-<section ng-controller="MainController">
-        <md-toolbar class="md-table-toolbar md-default">
-            <div class="md-toolbar-tools">
-                <span>Termini</span>
-            </div>
-        </md-toolbar>
         
-    
-    <!-- exact table from live demo -->
-    <md-table-container >
-      <table md-table md-row-select multiple  md-progress="promise">
-        <thead md-head md-order="query.order" md-on-reorder="">
-          <tr md-row>
-            <th md-column md-order-by="nameToLower"><span>Ime</span></th>
-            <th md-column md-numeric md-order-by="calories.value"><span>Prezime</span></th>
-            <th md-column md-numeric>Godina</th>
-            <th md-column md-numeric>Text</th>
-          </tr>
-        </thead>
-        <tbody md-body>
-          <tr md-row md-select="todo" md-select-id="name" md-auto-select ng-repeat="todo in todos">
-            <td md-cell>{{todo.text}}</td>
-            <td md-cell>{{todo.place}}</td>
-            <td md-cell>{{todo.desc}}</td>
-            <td md-cell>{{todo.date}}</td>
-            <td md-cell><md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon></td>
-          </tr>
-        </tbody>
-      </table>
-    </md-table-container>
-
-      <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
-    </section>
-<!--STARI PRIKAZA TODO-A PO CARD PRINCIP-->
-              <!--<md-content >
-                 <md-card class-"md-accent"   flex="33" ng-repeat="todo in todos">
-                    <md-card-title>
-                        <md-card-title-text>
-                            <span class="md-headline">{{todo.text }}</span>
-                            <span class="md-subhead">{{todo.place }}</span>
-                            <span class="md-subhead">{{todo.desc }}</span>
-                            <span class="md-subhead">{{todo.date }}</span>
-                        </md-card-title-text>
-                            <md-card-title-media>
-                                <div class="md-media-lg card-media"></div>
-                            </md-card-title-media>
-                        </md-card-title>
-                        <md-card-actions layout="row" layout-align="end center" flex="40">
-                            <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
-                        </md-card-actions>
-                    </md-card>
-              </md-content>
-        </md-content>-->
-        </div>
-            <!-- FORM TO CREATE TODOS -->
-      
-        <div md-card id="calendar_basic" style="width: 1000px; height: 350px;"></div>
-    </md-content>
-</md-tab>
-</md-tabs>
-</md-content>
-
-    <script>
-    /*
-      Function to carry out the actual PUT request to S3 using the signed request from the app.
-    */
-    function uploadFile(file, signedRequest, url){
-      const xhr = new XMLHttpRequest();
-      xhr.open('PUT', signedRequest);
-      xhr.onreadystatechange = () => {
-        if(xhr.readyState === 4){
-          if(xhr.status === 200){
-            document.getElementById('preview').src = url;
-            document.getElementById('avatar-url').value = url;
+                        </fieldlist>
+            </md-content>
+        </md-tab>
+      <!--Pocinje drugi tab-->
+        <md-tab label="Moji Dogadjaji">
+          <md-content class="md-padding">
+            <div class="md-whiteframe-2dp md-background-purple"  flex="90" layout="column">  
+            <div md-card>   
+                <md-content ng-controller="MainController">
+                      <md-toolbar class="md-no-sticky md-accent">Dogadjaji
+                          <fieldlist  id="popupContainer" layout="column" id="todo-form">DODAJ DOGADJAJ 
+                                <!-- createToDo() WILL CREATE NEW TODOS -->
+                                <md-button flex="100" type="submit" class=" md-primary" ng-click="showCreate($event)">
+                                  <md-icon  md-svg-icon="content-save" aria-label="save">Dodaj dogadjaj</md-icon>
+                                </md-button>
+                            </fieldlist>
+                          <p>{{status}}</p>
+                        </md-toolbar>
+                    
+          <section ng-controller="MainController">
+                <md-toolbar class="md-table-toolbar md-default">
+                    <div class="md-toolbar-tools">
+                        <span>Termini</span>
+                    </div>
+                </md-toolbar>
+            <!-- exact table from live demo -->
+                <md-table-container >
+                  <table md-table md-row-select multiple  md-progress="promise">
+                    <thead md-head md-order="query.order" md-on-reorder="">
+                      <tr md-row>
+                        <th md-column md-order-by="nameToLower"><span>Ime</span></th>
+                        <th md-column md-numeric md-order-by="calories.value"><span>Prezime</span></th>
+                        <th md-column md-numeric>Godina</th>
+                        <th md-column md-numeric>Text</th>
+                      </tr>
+                    </thead>
+                    <tbody md-body>
+                      <tr md-row md-select="todo" md-select-id="name" md-auto-select ng-repeat="todo in todos">
+                        <td md-cell>{{todo.text}}</td>
+                        <td md-cell>{{todo.place}}</td>
+                        <td md-cell>{{todo.desc}}</td>
+                        <td md-cell>{{todo.date}}</td>
+                        <td md-cell><md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </md-table-container>
+              <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+            </section>
+          <!--STARI PRIKAZA TODO-A PO CARD PRINCIP-->
+                      <!--<md-content >
+                        <md-card class-"md-accent"   flex="33" ng-repeat="todo in todos">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">{{todo.text }}</span>
+                                    <span class="md-subhead">{{todo.place }}</span>
+                                    <span class="md-subhead">{{todo.desc }}</span>
+                                    <span class="md-subhead">{{todo.date }}</span>
+                                </md-card-title-text>
+                                    <md-card-title-media>
+                                        <div class="md-media-lg card-media"></div>
+                                    </md-card-title-media>
+                                </md-card-title>
+                                <md-card-actions layout="row" layout-align="end center" flex="40">
+                                    <md-icon  md-svg-icon="delete" aria-label="delete"  ng-click="showConfirm(todo._id)" ></md-icon>
+                                </md-card-actions>
+                            </md-card>
+                      </md-content>
+                </md-content>-->
+                </div>
+                    <!-- FORM TO CREATE TODOS -->
+              
+                <div md-card id="calendar_basic" style="width: 1000px; height: 350px;"></div>
+            </md-content>
+        </md-tab>
+      </md-tabs>
+  </md-content>
+<!--JS Register-->
+  <script>
+      /*
+        Function to carry out the actual PUT request to S3 using the signed request from the app.
+      */
+      function uploadFile(file, signedRequest, url){
+        const xhr = new XMLHttpRequest();
+        xhr.open('PUT', signedRequest);
+        xhr.onreadystatechange = () => {
+          if(xhr.readyState === 4){
+            if(xhr.status === 200){
+              document.getElementById('preview').src = url;
+              document.getElementById('avatar-url').value = url;
+            }
+            else{
+              alert('Could not upload file.');
+            }
           }
-          else{
-            alert('Could not upload file.');
-          }
-        }
-      };
-      xhr.send(file);
-    }
-    /*
-      Function to get the temporary signed request from the app.
-      If request successful, continue to upload the file using this signed
-      request.
-    */
-    function getSignedRequest(file){
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
-      xhr.onreadystatechange = () => {
-        if(xhr.readyState === 4){
-          if(xhr.status === 200){
-            const response = JSON.parse(xhr.responseText);
-            uploadFile(file, response.signedRequest, response.url);
-          }
-          else{
-            alert('Could not get signed URL.');
-          }
-        }
-      };
-      xhr.send();
-    }
-    /*
-     Function called when file input updated. If there is a file selected, then
-     start upload procedure by asking for a signed request from the app.
-    */
-    function initUpload(){
-    
-      const files = document.getElementById('file-input').files;
-      const file = files[0];
-      if(file == null){
-        return alert('No file selected.');
+        };
+        xhr.send(file);
       }
-      getSignedRequest(file);
-    }
-    /*
-     Bind listeners when the page loads.
-    */
-    (() => {
-        document.getElementById('file-input').onchange = initUpload;
-    })();
-    </script>  
+      /*
+        Function to get the temporary signed request from the app.
+        If request successful, continue to upload the file using this signed
+        request.
+      */
+      function getSignedRequest(file){
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
+        xhr.onreadystatechange = () => {
+          if(xhr.readyState === 4){
+            if(xhr.status === 200){
+              const response = JSON.parse(xhr.responseText);
+              uploadFile(file, response.signedRequest, response.url);
+            }
+            else{
+              alert('Could not get signed URL.');
+            }
+          }
+        };
+        xhr.send();
+      }
+      /*
+      Function called when file input updated. If there is a file selected, then
+      start upload procedure by asking for a signed request from the app.
+      */
+      function initUpload(){
+      
+        const files = document.getElementById('file-input').files;
+        const file = files[0];
+        if(file == null){
+          return alert('No file selected.');
+        }
+        getSignedRequest(file);
+      }
+      /*
+      Bind listeners when the page loads.
+      */
+      (() => {
+          document.getElementById('file-input').onchange = initUpload;
+      })();
+      </script>  
