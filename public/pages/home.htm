@@ -1,6 +1,7 @@
-<header id="MyDay_header" class="cd-header">
+<!--SEKCIJA:HEADER-->
+	<header id="MyDay_header" class="cd-header">
 	 <div class="overlay"></div>
-<!-- #region SpeedDial -->
+  <!--region SpeedDial -->
 			  <md-fab-toolbar md-open="fab.isOpen" count="fab.count" md-direction="right">
 					<md-fab-trigger class="align-with-text">
 						<md-button aria-label="menu" class="md-fab md-primary">
@@ -39,18 +40,14 @@
 				</md-fab-toolbar>
  	 </md-content>
 	<!-- #endregion SpeedDial -->
-
-<!-- info o logu -->
-		<!--<nav class="main-nav">
-			<ul>
-			</ul>
-		</nav>-->
+	<!--info o logu -->
             <h1>
                 MyDay</br>
                 <p class="slogan"> ...the best day in your life starts right here! :) </p>
             </h1>
      
 	</header>
+<!--SEKCIJA:SWITCHER-->	
 	<main class="cd-main-content"  ng-controller="MenuCtrl">
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
@@ -107,11 +104,6 @@
 				<div class="cd-filter-block">
 					<h4>Filteri:</h4>
 					<ul class="cd-filter-content cd-filters list" ng-repeat="option in filters track by $index">
-						<!--<span>{{option[0]}} + {{option[1]}}</span>
-						<span>{{option[1][0]}}</span>
-						<span>{{option[1][option[1][0].length-1]}}</span>
-						<md-slider  min="0" max="100"></md-slider>-->
-
 						<div layout>
 							<div flex="30" layout layout-align="left center">
 								<span class="md-body-1">{{option[0]}}</span>
@@ -127,11 +119,6 @@
 								aria-label="rating">
 							</md-slider>
 						</div>
-						<!--<li ng-repeat="suboption in option[1]">
-							<input class="filter" data-filter=".{{suboption}}" type="checkbox" id="checkbox1">
-			    			<label class="checkbox-label" for="checkbox1">{{suboption}}</label>
-							<md-slider  min="$first" max="$last"></md-slider>
-						</li>-->
 					</ul> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
 
@@ -150,7 +137,7 @@
 						</div> <!-- cd-select -->
 					</div> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
-<!--REM radio buttons trenutno ne trebaju-->
+ <!--REM radio buttons trenutno ne trebaju-->
 				<!--<div class="cd-filter-block">
 					<h4>Primer izbornika</h4>
 
@@ -179,8 +166,8 @@
 		<a  class="cd-filter-trigger">Filteri</a>
 	</main> <!-- cd-main-content -->
  
-
-<script src="js/jquery-2.1.4.min.js"></script>
+<!--SEKCIJA:JS-->
+	<script src="js/jquery-2.1.4.min.js"></script>
         <!--<script src="js/modernizr.js"></script>-->
         <script src="js/jquery.mixitup.min.js"></script>
         <script src="js/main.js"></script>
