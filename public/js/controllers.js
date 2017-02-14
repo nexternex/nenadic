@@ -227,7 +227,7 @@
         
         $scope.showAdvanced = function(ev) {
                 $mdDialog.show({
-                    controller: 'ListController',
+                    controller: 'CardController',
                     templateUrl: '../pages/companyCard.htm',
                     clickOutsideToClose:true,
                     parent: angular.element(document.body),
