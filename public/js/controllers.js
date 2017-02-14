@@ -237,7 +237,7 @@
                                 return ev;
                             }},
                     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-                });
+                }).then(console.log(ev));
             };
     
     // when landing on the page, get all lists and show them
