@@ -224,16 +224,22 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
+        
         $scope.showAdvanced = function(ev) {
                 $mdDialog.show({
-                    controller: 'CardController',
+                    controller: 'ListController',
                     templateUrl: '../pages/companyCard.htm',
                     clickOutsideToClose:true,
                     parent: angular.element(document.body),
                     targetEvent: ev,
+                    resolve: {
+                            item: function () {
+                                return ev;
+                            }},
                     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                 });
             }.then();
+    
     // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
@@ -258,7 +264,11 @@
         });  
      }]);
 //KONTROLER: Card controller
-    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
+    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,item) {
+
+          $scope.title = item.title;
+          $scope.id = item.id;
+
             $scope.answer = function(answer) {
                 console.log("Klik close"+ answer);
              $mdDialog.hide();
