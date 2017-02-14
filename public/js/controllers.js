@@ -264,7 +264,7 @@
         });  
      }]);
 //KONTROLER: Card controller
-    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,item) {
+    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,ev) {
 
         //   $scope.title = item.title;
           $scope.id = ev.id;
