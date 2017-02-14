@@ -238,7 +238,7 @@
                             }},
                     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                 });
-            }.then();
+            };
     
     // when landing on the page, get all lists and show them
     $http.get('/api/lists')
