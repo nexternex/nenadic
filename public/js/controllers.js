@@ -264,11 +264,11 @@
         });  
      }]);
 //KONTROLER: Card controller
-    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,ev) {
+    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,item) {
 
         //   $scope.title = item.title;
-        console.log("ev:"+ev);
-          $scope.id = ev.id;
+          console.log("ev:"+item);
+          $scope.item_modal = item;
 
             $scope.answer = function(answer) {
                 console.log("Klik close"+ answer);
