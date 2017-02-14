@@ -267,7 +267,7 @@
     myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,item) {
 
         //   $scope.title = item.title;
-          $scope.id = item.id;
+          $scope.id = ev.id;
 
             $scope.answer = function(answer) {
                 console.log("Klik close"+ answer);
