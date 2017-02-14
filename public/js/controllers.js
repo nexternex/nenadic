@@ -124,7 +124,7 @@
                 console.log('Error: ' + data);
             });
         }, function() {
-        $scope.status = 'You decided to keep your debt.';
+            $scope.status = 'You decided to keep your debt.';
         });
     }; 
         
@@ -233,7 +233,7 @@
                     targetEvent: ev,
                     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                 });
-            };
+            }.then();
     // when landing on the page, get all lists and show them
     $http.get('/api/lists')
         .success(function(data) {
