@@ -232,7 +232,7 @@
                     templateUrl: '../pages/companyCard.htm',
                     clickOutsideToClose:true,
                     parent: angular.element(document.body),
-                    targetEvent: ev,
+                    targetEvent: item,
                     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                 }).then(console.log(item));
             };
