@@ -271,19 +271,6 @@
             console.log('Error: ' + data);
         });  
      }]);
-//KONTROLER: Card controller
-    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,item) {
-
-        //   $scope.title = item.title;
-          console.log("ev:"+item);
-          $scope.item_modal = item;
-
-            $scope.answer = function(answer) {
-                console.log("Klik close"+ answer);
-             $mdDialog.hide();
-            };
-    }]);
-
 
 //KONTROLER: Profil korisnika
     myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
