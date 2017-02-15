@@ -225,9 +225,9 @@
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
         
-        $scope.showAdvanced = function(selectedItem) {
+        $scope.showAdvanced = function(ev) {
                 $mdDialog.show({
-                    locals:{dataToPass: selectedItem},  
+                    locals:{dataToPass: ev},  
                     controller: 'CardController',
                     templateUrl: '../pages/companyCard.htm',
                     clickOutsideToClose:true,
