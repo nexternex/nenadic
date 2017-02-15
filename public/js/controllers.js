@@ -227,7 +227,6 @@
         
         $scope.showAdvanced = function(ev) {
                 $mdDialog.show({
-                    locals:{dataToPass: ev},  
                     controller: 'CardController',
                     templateUrl: '../pages/companyCard.htm',
                     clickOutsideToClose:true,
@@ -261,11 +260,11 @@
         });  
      }]);
 //KONTROLER: Card controller
-    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,dataToPass) {
+    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,ev) {
 
         //   $scope.title = item.title;
-          console.log("ev:"+dataToPass);
-          $scope.item_modal = dataToPass;
+          console.log("ev:"+ev);
+          $scope.item_modal = ev;
 
             $scope.answer = function(answer) {
                 console.log("Klik close"+ answer);
