@@ -229,8 +229,8 @@
                 $mdDialog.show({
                     controller: function ($mdDialog) {
                         var vm = this;
-                        vm.task = {};
-                        vm.task = item;  //your task object from the ng-repeat
+                        vm.item = {};
+                        vm.item = item;  //your task object from the ng-repeat
 
                         $scope.hide = function () {
                             $mdDialog.hide();
