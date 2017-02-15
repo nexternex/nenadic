@@ -225,14 +225,25 @@
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
         
-        $scope.showAdvanced = function(item) {
+        $scope.showAdvanced = function(e,item) {
                 $mdDialog.show({
-                    locals: {item: item},
-                    controller: 'CardController',
+                    controller: function ($mdDialog) {
+                        var vm = this;
+                        vm.task = {};
+                        vm.task = item;  //your task object from the ng-repeat
+
+                        $scope.hide = function () {
+                            $mdDialog.hide();
+                        };
+                        $scope.cancel = function () {
+                            $mdDialog.cancel();
+                        };
+                    },
+            controllerAs: 'modal',
                     templateUrl: '../pages/companyCard.htm',
                     clickOutsideToClose:true,
                     parent: angular.element(document.body),
-                    targetEvent: item,
+                    targetEvent: e,
                     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                 }).then(console.log(item));
             };
