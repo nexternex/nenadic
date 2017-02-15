@@ -11,9 +11,9 @@
     </md-toolbar>
     <md-dialog-content style="max-width:800px;max-height:810px; ">
       <md-tabs md-dynamic-height md-border-bottom>
-        <md-tab label="one">
+        <md-tab label="Info">
           <md-content class="md-padding">
-            <h1 class="md-display-2">O Kompaniji</h1>
+            <h3 class="md-display-2">O Kompaniji</h3>
             <p>{{modal.item.gsx$id.$t}}</p>
            <p>{{modal.item.gsx$h.$t}}</p>
            <p>{{modal.item.gsx$v.$t}}</p>
@@ -21,16 +21,16 @@
             <p>{{modal.item.gsx$kontakt.$t}}</p>
           </md-content>
         </md-tab>
-        <md-tab label="two">
+        <md-tab label="Galerija">
           <md-content class="md-padding">
-            <h1 class="md-display-2">Galerija</h1>
+            <h3 class="md-display-2">Galerija</h3>
               <img ng-src="{{item.gsx$img.$t}}" class="md-card-image">
           </md-content>
         </md-tab>
-        <md-tab label="three">
+        <md-tab label="Video">
           <md-content class="md-padding">
-            <h1 class="md-display-2">Video</h1>
-            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+            <h3 class="md-display-2">Video</h3>
+            <img ng-src="{{item.gsx$img.$t}}" class="md-card-image">
           </md-content>
         </md-tab>
       </md-tabs>
