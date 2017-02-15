@@ -225,17 +225,14 @@
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
         
-        $scope.showAdvanced = function(ev) {
+        $scope.showAdvanced = function(selectedItem) {
                 $mdDialog.show({
+                    locals:{dataToPass: selectedItem},  
                     controller: 'CardController',
                     templateUrl: '../pages/companyCard.htm',
                     clickOutsideToClose:true,
                     parent: angular.element(document.body),
                     targetEvent: ev,
-                    resolve: {
-                            item: function () {
-                                return ev;
-                            }},
                     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                 }).then(console.log(ev));
             };
@@ -264,11 +261,11 @@
         });  
      }]);
 //KONTROLER: Card controller
-    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,item) {
+    myDay.controller('CardController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,dataToPass) {
 
         //   $scope.title = item.title;
-          console.log("ev:"+item);
-          $scope.item_modal = item;
+          console.log("ev:"+dataToPass);
+          $scope.item_modal = dataToPass;
 
             $scope.answer = function(answer) {
                 console.log("Klik close"+ answer);
