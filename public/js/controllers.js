@@ -225,16 +225,16 @@
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
         
-        $scope.showAdvanced = function(ev) {
+        $scope.showAdvanced = function(item) {
                 $mdDialog.show({
-                    locals: {item: ev},
+                    locals: {item: item},
                     controller: 'CardController',
                     templateUrl: '../pages/companyCard.htm',
                     clickOutsideToClose:true,
                     parent: angular.element(document.body),
                     targetEvent: ev,
                     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-                }).then(console.log(ev));
+                }).then(console.log(item));
             };
     
     // when landing on the page, get all lists and show them
