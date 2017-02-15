@@ -15,10 +15,10 @@
           <md-content class="md-padding">
             <h3 class="md-display-2">O Kompaniji</h3>
             <p>{{modal.item.gsx$id.$t}}</p>
-           <p>{{modal.item.gsx$h.$t}}</p>
-           <p>{{modal.item.gsx$v.$t}}</p>
-           <p>{{modal.item.gsx$email.$t}}</p>
-            <p>{{modal.item.gsx$kontakt.$t}}</p>
+            <p>{{modal.item.gsx$h.$t}}</p>
+            <p>{{modal.item.gsx$v.$t}}</p>
+            <p>{{modal.item.gsx$email.$t}}</p>
+            <p>{{modal.item.gsx$kontakosoba.$t}}</p>
           </md-content>
         </md-tab>
         <md-tab label="Galerija">
@@ -30,14 +30,17 @@
         <md-tab label="Video">
           <md-content class="md-padding">
             <h3 class="md-display-2">Video</h3>
-            <img ng-src="{{item.gsx$img.$t}}" class="md-card-image">
+            <p>{{modal.item.gsx$telefon.$t}}</p>
+            <p>{{modal.item.gsx$web.$t}}</p>
+            <p>{{modal.item.gsx$adresa.$t}}</p>
+            <p>{{modal.item.gsx$kontakosoba.$t}}</p>
           </md-content>
         </md-tab>
       </md-tabs>
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
-      <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
+      <md-button href="{{modal.item.gsx$web.$t}}" target="_blank" md-autofocus>
       Vise na sajtu
       </md-button>
       <span flex></span>
