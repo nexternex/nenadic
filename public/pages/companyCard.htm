@@ -2,7 +2,7 @@
   <form>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>{{modal.item.gsx$id.$t}}</h2>
+        <h2>{{modal.item.gsx$naziv.$t}}</h2>
         <span flex></span>
         <md-button class="md-icon-button" ng-click="cancel()">
           <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
@@ -14,8 +14,11 @@
         <md-tab label="one">
           <md-content class="md-padding">
             <h1 class="md-display-2">O Kompaniji</h1>
-            <p>{{modal.item.gsx$naziv.$t}}</p>
-            >
+            <p>{{modal.item.gsx$id.$t}}</p>
+           <p>{{modal.item.gsx$h.$t}}</p>
+           <p>{{modal.item.gsx$v.$t}}</p>
+           <p>{{modal.item.gsx$email.$t}}</p>
+            <p>{{modal.item.gsx$kontakt.$t}}</p>
           </md-content>
         </md-tab>
         <md-tab label="two">
