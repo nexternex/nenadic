@@ -239,7 +239,7 @@
                             $mdDialog.cancel();
                         };
                     },
-            controllerAs: 'modal',
+                    controllerAs: 'modal',
                     templateUrl: '../pages/companyCard.htm',
                     clickOutsideToClose:true,
                     parent: angular.element(document.body),
