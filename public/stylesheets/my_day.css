@@ -253,8 +253,23 @@ header {
 .flickity-prev-next-button:disabled {
   display: none;
 }
+/* ==========================================================================
+KARTICE
+========================================================================== */
 
-
-
+.card_caption{
+font-size: 1em;
+text-transform: uppercase;
+background-color: purple;
+border: 1px solid purple;
+color:rgba(255, 255, 255, 0.22)
+}
+.card_text{
+font-size: 1em;
+text-transform: uppercase;
+background-color: white;
+border: 1px solid purple;
+color:purple;
+}
 
 
