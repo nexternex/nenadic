@@ -253,6 +253,35 @@ header {
 .flickity-prev-next-button:disabled {
   display: none;
 }
+
+/* ==========================================================================
+MYD 
+========================================================================== */
+.overlay {
+  position: relative;
+}
+
+.overlay:after {
+  position: absolute;
+  content:"";
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+}
+.yellow{
+ /*overlay css here (#E6DD24)*/
+ background-color: #E6DD24;
+}
+.red{
+ /*overlay css here (#E6DD24)*/
+ background-color: red;
+}
+.blue{
+ /*overlay css here (#E6DD24)*/
+ background-color: blue;
+}
 /* ==========================================================================
 MYD TILES
 ========================================================================== */
@@ -261,8 +290,6 @@ MYD TILES
   border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
   background-size:cover; 
-
-
 }
 
 .company_name{
