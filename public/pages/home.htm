@@ -77,56 +77,21 @@
 						 md-row-height="2:2"
 						 md-gutter="12px" 				  	
 						 md-gutter-gt-sm="8px">
-						<md-grid-tile  class="md-accent" ng-repeat="item in lists | filter:search"
-														md-colspan-gt-sm="{{item.gsx$w.$t}}" 
-														md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
-														md-colspan-sm="1" 
-														md-colspan-xs="1"
-														data-myDay-type="{{item.gsx$tip.$t}}"
-														data-myDay-ref={{item.gsx$id.$t}}>
-														
-									<img ng-src="{{item.gsx$img.$t}}" class="md-card-image" alt="Washed Out">
-									<md-card-title>
-									<md-card-title-text>
-										<span class="md-headline">Action buttons</span>
-									</md-card-title-text>
-									</md-card-title>
-									<md-card-content>
-									<p>
-										The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-										two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-									</p>
-									<p>
-										The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-										two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-									</p>
-									<p>
-										The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-										two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-									</p>
-									</md-card-content>
-									<md-card-actions layout="row" layout-align="end center">
-									<md-button>Action 1</md-button>
-									<md-button>Action 2</md-button>
-									</md-card-actions>
-		</md-grid-tile>
-
-
-					
-								<!--<md-grid-tile  class="md-accent" ng-repeat="item in lists | filter:search"
+								<md-grid-tile  class="md-accent" ng-repeat="item in lists | filter:search"
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
 									md-colspan-sm="1" 
 									md-colspan-xs="1"
 									data-myDay-type="{{item.gsx$tip.$t}}"
-									data-myDay-ref={{item.gsx$id.$t}}>
+									data-myDay-ref={{item.gsx$id.$t}}
+									md-whiteframe-1dp>
 										 <md-card>
 											<img ng-src="{{item.gsx$img.$t}}" class="md-card-image" layout-fill>
 											<md-grid-tile-footer>
 												<span class="md-headline company_name"  ng-click="showAdvanced(e,item)">{{item.gsx$naziv.$t}}</span>
 											</md-grid-tile-footer>
 										</md-card>	
-								</md-grid-tile>-->
+								</md-grid-tile>
    					  		</md-grid-list>	
 							 	
                 </div>
