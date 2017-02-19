@@ -77,7 +77,7 @@
 						 md-row-height="2:2"
 						 md-gutter="12px" 				  	
 						 md-gutter-gt-sm="8px">
-						 <md-card>
+					
 								<md-grid-tile  class="md-accent" ng-repeat="item in lists | filter:search"
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
@@ -85,13 +85,15 @@
 									md-colspan-xs="1"
 									data-myDay-type="{{item.gsx$tip.$t}}"
 									data-myDay-ref={{item.gsx$id.$t}}>
-										<img ng-src="{{item.gsx$img.$t}}" class="md-card-image" layout-fill>
-										<md-grid-tile-footer>
-											<span class="md-headline company_name"  ng-click="showAdvanced(e,item)">{{item.gsx$naziv.$t}}</span>
-										</md-grid-tile-footer>
+										 <md-card>
+											<img ng-src="{{item.gsx$img.$t}}" class="md-card-image" layout-fill>
+											<md-grid-tile-footer>
+												<span class="md-headline company_name"  ng-click="showAdvanced(e,item)">{{item.gsx$naziv.$t}}</span>
+											</md-grid-tile-footer>
+										</md-card>	
 								</md-grid-tile>
    					  		</md-grid-list>	
-						</md-card>		 	
+							 	
                 </div>
                 <li class="gap"></li>
 			</ul>
