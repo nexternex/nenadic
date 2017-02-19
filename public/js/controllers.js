@@ -236,6 +236,7 @@
                             $mdDialog.hide();
                         };
                         $scope.cancel = function () {
+                            console.log("cancel");
                             $mdDialog.cancel();
                         };
                     },
