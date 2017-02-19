@@ -311,16 +311,16 @@ MYD KARTICE
 .card_caption{
 font-size: 1em;
 text-transform: uppercase;
-background-color: purple;
+/*background-color: purple;
 border: 1px solid purple;
-color:rgba(255, 255, 255, 0.22);
+color:rgba(255, 255, 255, 0.22);*/
 padding: 3px;
 }
 .card_txt{
 font-size: 1em;
-background-color: white;
+/*background-color: white;
 border: 1px solid purple;
-color:purple;
+color:purple;*/
 padding: 3px;
 font-weight: bolder;
 }
