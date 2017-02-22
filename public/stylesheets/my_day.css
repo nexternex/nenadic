@@ -9,6 +9,7 @@ html, body{
 #MyDay_header{
   position: relative;
   font-family: 'Fredericka the Great', cursive;
+  font-weight: 100;
 }
 .my_day_background{
     background-image: "../images/001.jpg";
