@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
 @import url('https://fonts.googleapis.com/css?family=Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 
 html, body{
   min-height: 100%;
@@ -7,6 +8,7 @@ html, body{
 
 #MyDay_header{
   position: relative;
+  font-family: 'Fredericka the Great', cursive;
 }
 .my_day_background{
     background-image: "../images/001.jpg";
