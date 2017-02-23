@@ -28,7 +28,6 @@ myDay.config(function ($routeProvider){
     templateUrl:'../pages/mypage.htm',
     controller:'ProfileController',
     requiresLogin: true 
-    })
-    // Logged in route
+    });
 });
 
