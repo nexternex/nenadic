@@ -22,7 +22,7 @@
     auth.signin({
         icon: 'https://nenadic.herokuapp.com/img/myday.png',
         primaryColor: 'purple',
-        language:'es',
+        language:'en',
         languageDictionary: {
             emailInputPlaceholder: "something@youremail.com",
             title: "Uloguj me"
