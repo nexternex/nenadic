@@ -24,27 +24,11 @@ myDay.config(function ($routeProvider){
     controller: 'ProfileController',
     requiresLogin: true   
     })
-    .when('/timeline', {
-    templateUrl: '../pages/timeline.htm',
-    controller: 'ListController',
-    requiresLogin: false
-    })  
     .when('/mypage',{
     templateUrl:'../pages/mypage.htm',
-    controller:'ListController',
-    requiresLogin: false 
-    })
-    .when('/test',{
-    templateUrl:'../pages/test.htm',
-    controller:'ListController',
-    requiresLogin: false 
+    controller:'ProfileController',
+    requiresLogin: true 
     })
     // Logged in route
-    .when('/userInfo', {
-    templateUrl: '../pages/userInfo.htm',
-    controller: 'MainController',
-    requiresLogin: false
-    });
-    
 });
 
