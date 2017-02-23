@@ -7,10 +7,10 @@ html, body{
   min-height: 100%;
 }
 
-#mypage main::before {
+#mypage section::before {
   background: url(img/187.jpg) 0 / cover fixed;
 }
-#mypage main {
+#mypage section {
   margin: 100px auto;
   position: relative;
   padding: 10px 5px;
@@ -23,7 +23,7 @@ html, body{
   overflow: hidden;
 }
 
-#mypage main::before {
+#mypage section::before {
   content: '';
   margin: -35px;
   position: absolute;
