@@ -30,7 +30,7 @@ myDay.config(function ($routeProvider){
     requiresLogin: false
     })  
     .when('/userpage',{
-    templateUrl:'../pages/userpage.htm',
+    templateUrl:'../pages/mypage.htm',
     controller:'ListController',
     requiresLogin: false 
     })

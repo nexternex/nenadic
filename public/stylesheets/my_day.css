@@ -7,11 +7,10 @@ html, body{
   min-height: 100%;
 }
 
-body,
-main::before {
+#mypage main::before {
   background: url(img/bg01.jpg) 0 / cover fixed;
 }
-main {
+#mypage main {
   margin: 100px auto;
   position: relative;
   padding: 10px 5px;
@@ -24,7 +23,7 @@ main {
   overflow: hidden;
 }
 
-main::before {
+#mypage main::before {
   content: '';
   margin: -35px;
   position: absolute;
@@ -36,7 +35,7 @@ main::before {
   z-index: -1;
    /*filter:brightness(35%);*/
 }
-h1{
+#mypage h1{
 font-family: 'Fredericka the Great', cursive;
 font-size: 4.2em;
 font-weight: 100;
