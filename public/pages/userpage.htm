@@ -1,11 +1,11 @@
 
-	<section id="mypage">	
+	<main id="mypage">	
 		<div class="header">
 			<h1>MyDay</h1>
 			<h3 class="slogan">..the best day in your life starts right here! ;)</h3>
 		</div>
 			<form>
-				<md-content layout="column" flex="60">
+				<div layout="column" flex="60">
                                     
                                     <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
                                         Izmeni podatke:
@@ -35,7 +35,20 @@
                                             </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address"><br>
                                         </md-input-container>
                                     </div>
+                </div>
 			</form>
-         <!--<a class="waves-effect waves-light btn s12 m6"><i class="material-icons left">check circle</i>nastavi</a>-->
-    </section>
+  <!--<a class="waves-effect waves-light btn s12 m6"><i class="material-icons left">check circle</i>nastavi</a>-->
+</main>
+<!--<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>-->
+	<!-- Compiled and minified JavaScript -->
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>-->
+<!--<script>
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>-->
 	
