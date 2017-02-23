@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import url('https://fonts.googleapis.com/css?family=Shrikhand');
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 
@@ -8,7 +8,7 @@ html, body{
 }
 
 #mypage main::before {
-  background: url(img/bg01.jpg) 0 / cover fixed;
+  background: url(img/187.jpg) 0 / cover fixed;
 }
 #mypage main {
   margin: 100px auto;
