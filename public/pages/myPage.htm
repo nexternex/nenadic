@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Full Page Background Image | Progressive</title>
+        <link rel="stylesheet" href="main.css" />
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+<body>
+	<main>	
+		<div class="header">
+			<h1>MyDay</h1>
+			<h3 class="slogan">..the best day in your life starts right here! ;)</h3>
+		</div>
+			<form>
+				<div class="row">
+
+						<div class="input-field col s6">
+							<i class="material-icons prefix">account_circle</i>
+							<input id="icon_prefix" type="text" class="validate">
+							<label for="icon_prefix">First Name</label>
+						</div>
+
+						<div class="input-field col s6">
+							<i class="material-icons prefix">phone</i>
+							<input id="icon_telephone" type="tel" class="validate">
+							<label for="icon_telephone">Telephone</label>
+						</div>
+				
+		
+					<div class="input-field col md12 s6">
+							<i class="material-icons prefix">list</i>
+						<select class="icons">
+							<option value="" disabled selected>Izaberi svoj dogadjaj</option>
+							<option value="" data-icon="img/bg01.jpg" class="circle">Vencanje</option>
+							<option value="" data-icon="img/bg02.jpg" class="circle">Rodjendan</option>
+							<option value="" data-icon="img/bg02.jpg" class="circle">Krstenje</option>
+						</select>
+						<label>Organizujem:</label>
+					</div>
+
+					<div class="input-field col s6">
+							<i class="material-icons prefix">https</i>
+						<input id="password" type="password" class="validate">
+						<label for="password">Password</label>
+					</div>
+
+					<div class="input-field col s6">
+						<i class="material-icons prefix">mail</i>
+						<input id="email" type="email" class="validate">
+						<label for="email">Email</label>
+					</div>
+				</div>
+			</form>
+  <a class="waves-effect waves-light btn s12 m6"><i class="material-icons left">check circle</i>nastavi</a>
+</main>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+<script>
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+	
+</body>
+</html>
