@@ -5,46 +5,38 @@
 			<h3 class="slogan">..the best day in your life starts right here! ;)</h3>
 		</div>
 			<form>
-				<div class="row">
+				<md-content layout="column" flex="60">
+                                    
+                                    <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
+                                        Izmeni podatke:
+                                    </md-switch>
+                    
+                                    <div layout='row' flex="100" >
+                                        <md-input-container flex="45" ngmodel="state">
+                                          <h1 ng-model="formData.c_id" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
+                                            <label>Ime:{{data.cb2}}</label>
+                                            </br><input  type="text" name="name" ng-readonly="data.cb2" ng-model="formData.name"></input><br>
+                                        </md-input-container>
 
-						<div class="input-field col s6">
-							<i class="material-icons prefix">account_circle</i>
-							<input id="icon_prefix" type="text" class="validate">
-							<label for="icon_prefix">First Name</label>
-						</div>
+                                        <md-input-container flex="45">
+                                            <label> Prezime:</label> 		   
+                                            </br><input  type="text" name="lastname" ng-readonly="data.cb2"  ng-model="formData.lastname"><br>
+                                        </md-input-container>
+                                    </div>
+            
+                                    <div layout='row' flex="100">
+                                        <md-input-container flex="45">
+                                          <label>Naziv preduzeca:</label> 
+                                            </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company"><br>
+                                        </md-input-container>
 
-						<div class="input-field col s6">
-							<i class="material-icons prefix">phone</i>
-							<input id="icon_telephone" type="tel" class="validate">
-							<label for="icon_telephone">Telephone</label>
-						</div>
-				
-		
-					<div class="input-field col md12 s6">
-							<i class="material-icons prefix">list</i>
-						<select class="icons">
-							<option value="" disabled selected>Izaberi svoj dogadjaj</option>
-							<option value="" data-icon="img/bg01.jpg" class="circle">Vencanje</option>
-							<option value="" data-icon="img/bg02.jpg" class="circle">Rodjendan</option>
-							<option value="" data-icon="img/bg02.jpg" class="circle">Krstenje</option>
-						</select>
-						<label>Organizujem:</label>
-					</div>
-
-					<div class="input-field col s6">
-							<i class="material-icons prefix">https</i>
-						<input id="password" type="password" class="validate">
-						<label for="password">Password</label>
-					</div>
-
-					<div class="input-field col s6">
-						<i class="material-icons prefix">mail</i>
-						<input id="email" type="email" class="validate">
-						<label for="email">Email</label>
-					</div>
-				</div>
+                                        <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" flex="45">
+                                            <label>email:</label> 		   
+                                            </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address"><br>
+                                        </md-input-container>
+                                    </div>
 			</form>
-  <a class="waves-effect waves-light btn s12 m6"><i class="material-icons left">check circle</i>nastavi</a>
+  <!--<a class="waves-effect waves-light btn s12 m6"><i class="material-icons left">check circle</i>nastavi</a>-->
 </section>
 <!--<script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
