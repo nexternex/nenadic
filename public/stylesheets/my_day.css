@@ -23,7 +23,7 @@ html, body{
   overflow: hidden;
 }
 
-.mypage_mainmypage::before {
+.mypage_main::before {
   content: '';
   margin: -35px;
   position: absolute;
