@@ -263,6 +263,7 @@ xgallery
 .cd-gallery {
   padding: 26px 5%;
   width: 100%;
+      background: rgb(248, 222, 255);
 }
 .cd-gallery li {
   margin-bottom: 1.6em;
