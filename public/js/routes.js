@@ -23,8 +23,8 @@ myDay.config(function ($routeProvider){
     controller: 'ProfileController',
     requiresLogin: true   
     })
-    .when('/mypage',{
-    templateUrl:'../pages/mypage.htm',
+    .when('/userpage',{
+    templateUrl:'../pages/userpage.htm',
     controller:'ProfileController',
     requiresLogin: false 
     });
