@@ -2,9 +2,48 @@
 @import url('https://fonts.googleapis.com/css?family=Shrikhand');
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 
+
 html, body{
   min-height: 100%;
 }
+
+body,
+main::before {
+  background: url(img/bg01.jpg) 0 / cover fixed;
+}
+main {
+  margin: 100px auto;
+  position: relative;
+  padding: 10px 5px;
+  background: hsla(287, 100%, 50%, 0.10);
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 10px;
+  width: 60%;
+  box-shadow: 5px 3px 30px black;
+  overflow: hidden;
+}
+
+main::before {
+  content: '';
+  margin: -35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(20px) brightness(35%);
+  z-index: -1;
+   /*filter:brightness(35%);*/
+}
+h1{
+font-family: 'Fredericka the Great', cursive;
+font-size: 4.2em;
+font-weight: 100;
+margin: 0;
+color: rgb(204, 255, 220)
+}
+
 
 #MyDay_header{
   position: relative;

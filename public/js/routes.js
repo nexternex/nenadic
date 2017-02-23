@@ -29,6 +29,11 @@ myDay.config(function ($routeProvider){
     controller: 'ListController',
     requiresLogin: false
     })  
+    .when('/userpage',{
+    templateUrl:'../pages/userpage.htm',
+    controller:'ListController',
+    requiresLogin: false 
+    })
     .when('/test',{
     templateUrl:'../pages/test.htm',
     controller:'ListController',
