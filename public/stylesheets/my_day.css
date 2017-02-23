@@ -8,7 +8,7 @@ html, body{
 }
 
 .mypage_section,.mypage_main::before {
-  background: url(/img/187.jpg) 0 / cover fixed;
+  background: url(/img/001.jpg) 0 / cover fixed;
 }
 .mypage_main {
   margin: 100px auto;
