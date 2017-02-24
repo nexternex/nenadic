@@ -9,20 +9,14 @@
       <form name="userForm">
         <div layout-gt-xs="row">
           <md-input-container class="md-block" flex-gt-xs>
-            <label>Company (Disabled)</label>
-            <input ng-model="user.company" disabled>
+            <label>Company</label>
+            <input ng-model="formData.address">
           </md-input-container>
-
-          <md-input-container>
-            <label>Enter date</label>
-            <md-datepicker ng-model="user.submissionDate"></md-datepicker>
-          </md-input-container>
-        </div>
 
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
             <label >Ime</label>
-            <input ng-model="user.firstName">
+            <input ng-model="formData.address">
           </md-input-container>
 
           <md-input-container class="md-block" flex-gt-sm>
@@ -47,9 +41,5 @@
           </md-input-container>
         </div>
       </form>
-
-
-
-
 </main>
 	
