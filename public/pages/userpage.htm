@@ -1,4 +1,4 @@
-<main class="mypage_main" layout="column" layout-align="center center">	
+<main class="mypage_main" layout="column" layout-align="center center"  md-colors="::{color: '{{theme}}-primary-20'}" >	
             <div class="header">
                 <h1>MyDay</h1>
                 <h3 class="slogan">..the best day in your life starts right here! ;)</h3>
@@ -8,7 +8,7 @@
                     Izmeni podatke:
                 </md-switch>
             
-                <md-input-container flex="100" ngmodel="state">
+                <md-input-container flex="100" ngmodel="state" >
                     <h1 ng-model="formData.c_id" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
                     <label>Ime:{{data.cb2}}</label>
                     </br><input  type="text" name="name" ng-readonly="data.cb2" ng-model="formData.name"></input><br>
