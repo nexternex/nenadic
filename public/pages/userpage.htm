@@ -4,19 +4,32 @@
                 <h1>MyDay</h1>
                 <h3 class="slogan">..the best day in your life starts right here! ;)</h3>
             </div>
+
+    <div layout-padding>
       <form name="userForm">
         <div layout-gt-xs="row">
           <md-input-container class="md-block" flex-gt-xs>
             <label>Company (Disabled)</label>
-            <input ng-model="formData.name" disabled>
+            <input ng-model="user.company" disabled>
           </md-input-container>
 
+          <md-input-container>
+            <label>Enter date</label>
+            <md-datepicker ng-model="user.submissionDate"></md-datepicker>
+          </md-input-container>
+        </div>
 
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
             <label>First name</label>
-            <input ng-model="formData.lastname">
+            <input ng-model="user.firstName">
           </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Long Last Name That Will Be Truncated And 3 Dots (Ellipsis) Will Appear At The End</label>
+            <input ng-model="theMax">
+          </md-input-container>
+        </div>
 
         <md-input-container class="md-block">
           <label>Address</label>
@@ -44,12 +57,12 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Postal Code</label>
-            <input name="postalCode" ng-model="formData.address" placeholder="12345"
+            <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
                    required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
 
             <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-              <div ng-message="required" class="my-message">Molimo Vas unesite postanski broj</div>
-              <div ng-message="pattern" class="my-message">Molimo Vas unesite validni postanski broj
+              <div ng-message="required" class="my-message">You must supply a postal code.</div>
+              <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
                 code.
               </div>
               <div ng-message="md-maxlength" class="my-message">
@@ -60,7 +73,7 @@
         </div>
 
         <md-input-container class="md-block">
-          <label>Napomene za dobavljace</label>
+          <label>Biography</label>
           <textarea ng-model="formData.city" md-maxlength="150" rows="5" md-select-on-focus></textarea>
         </md-input-container>
 
