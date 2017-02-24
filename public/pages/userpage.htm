@@ -4,11 +4,11 @@
 			<h3 class="slogan">..the best day in your life starts right here! ;)</h3>
 		</div>
 			<form>
-				<div layout="column" flex="100" >                                
+				<div layout="row" layout-align="center center">                                
                     <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
                         Izmeni podatke:
                     </md-switch>
-                    <div layout='column' flex="100" >
+                   
                         <md-input-container flex="100" ngmodel="state">
                             <h1 ng-model="formData.c_id" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
                             <label>Ime:{{data.cb2}}</label>
@@ -19,6 +19,7 @@
                             <label> Prezime:</label> 		   
                             </br><input  type="text" name="lastname" ng-readonly="data.cb2"  ng-model="formData.lastname"><br>
                         </md-input-container>
+                        
                         <md-input-container flex="100">
                             <label>Naziv preduzeca:</label> 
                             </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company"><br>
@@ -28,7 +29,7 @@
                             <label>email:</label> 		   
                             </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address"><br>
                         </md-input-container>
-                    </div>
+
                 </div>
 			</form>
   <!--<a class="waves-effect waves-light btn s12 m6"><i class="material-icons left">check circle</i>nastavi</a>-->
