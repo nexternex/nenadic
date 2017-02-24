@@ -10,6 +10,14 @@
                     Izmeni podatke:
                 </md-switch>
             
+
+                <md-input-container class="md-icon-float md-icon-right md-block md-accent">
+                    <label>Donation Amount</label>
+                    <md-icon md-svg-src="email"></md-icon>
+                    <input ng-model="formData.lastname" type="text">
+                </md-input-container>
+
+
                 <md-input-container flex="100" ngmodel="state" >
                     <h1 ng-model="formData.c_id" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
                     <label>Ime:{{data.cb2}}</label>
