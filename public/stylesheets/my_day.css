@@ -42,7 +42,15 @@ font-weight: 100;
 margin: 0;
 color: rgb(204, 255, 220)
 }
-
+.mypage_main .slogan{
+    font-size: 19px;
+    font-family: 'Indie Flower', cursive!important;
+    color: #82FFA9;
+    text-shadow: 1px 1px 1px black;
+    font-weight: 900;
+    z-index: 15;
+    padding: 1em;
+}
 
 #MyDay_header{
   position: relative;
@@ -136,8 +144,7 @@ Hero
     color: #82FFA9;
     text-shadow: 1px 1px 1px black;
     font-weight: 900;
-    z-index: 15;
-    
+    z-index: 15; 
 }
 .nav_links{
     font-size: 1em;
