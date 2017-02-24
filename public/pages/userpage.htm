@@ -5,12 +5,12 @@
                 <h3 class="slogan">..the best day in your life starts right here! ;)</h3>
             </div>
 
-			<form layout="column" layout-align="center center"  flex="100">
+		<form layout="row" layout-align="center center"  flex="100">
                 <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
                     Izmeni podatke:
                 </md-switch>
             
-  <div layout-gt-sm="row">
+             <div layout-gt-sm="row">
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Donation Amount</label>
                     <input ng-model="formData.lastname" type="text">
@@ -35,8 +35,8 @@
                     <label> Prezime:</label> 		   
                     </br><input  type="text" name="lastname" ng-readonly="data.cb2"  ng-model="formData.lastname"><br>
                 </md-input-container>
-         </div>
-        <div layout-gt-sm="row">
+            </div>
+            <div layout-gt-sm="row">
                 <md-input-container class="md-block" flex-gt-sm>
                      <md-icon md-svg-src="content-save" class="name"></md-icon>
                     <label>Mesto:</label> 
