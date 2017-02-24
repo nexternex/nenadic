@@ -1,8 +1,10 @@
-<main class="mypage_main" layout="column" layout-align="center center"  md-colors="::{color: '{{theme}}-accent-20'}" >	
+<main class="mypage_main" layout="column" layout-align="center center"  md-colors="::{color: '{{theme}}-accent-20'}" >
+
             <div class="header">
                 <h1>MyDay</h1>
                 <h3 class="slogan">..the best day in your life starts right here! ;)</h3>
             </div>
+
 			<form layout="column" layout-align="center center"  flex="80" class="md-accent">
                 <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
                     Izmeni podatke:
@@ -15,8 +17,8 @@
                 </md-input-container>
 
                  <md-input-container>
-                      <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
                     <label>Enter date</label>
+                        <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
                     <md-datepicker ng-model="user.submissionDate"></md-datepicker>
                 </md-input-container>
 
