@@ -1,50 +1,89 @@
-<main class="mypage_main" layout="column" layout-align="center center"flex="100" md-colors="::{color: '{{theme}}-accent-20'}" >
+<main  class="md-inline-form mypage_main">
 
             <div class="header">
                 <h1>MyDay</h1>
                 <h3 class="slogan">..the best day in your life starts right here! ;)</h3>
             </div>
 
-		<form layout="row" layout-align="center center"  flex="100">
-                <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="false" ng-false-value="true" class="md-primary" md-padding>
-                    Izmeni podatke:
-                </md-switch>
-            
-             <div layout-gt-sm="row">
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Donation Amount</label>
-                    <input ng-model="formData.lastname" type="text">
-                    <md-icon md-svg-src="email"></md-icon>
-                </md-input-container>
+            md-content layout-padding>
+    <div>
+      <form name="userForm">
 
+        <div layout-gt-xs="row">
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>Company (Disabled)</label>
+            <input ng-model="user.company" disabled>
+          </md-input-container>
 
-                <md-input-container class="md-block" flex-gt-sm ngmodel="state" >
-                    <h1 ng-model="formData.c_id" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
-                    <label>Ime:{{data.cb2}}</label>
-                    </br><input  type="text" name="name" ng-readonly="data.cb2" ng-model="formData.name"></input><br>
-                </md-input-container>
+          <md-input-container>
+            <label>Enter date</label>
+            <md-datepicker ng-model="user.submissionDate"></md-datepicker>
+          </md-input-container>
+        </div>
 
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>First name</label>
+            <input ng-model="user.firstName">
+          </md-input-container>
 
-                <md-input-container class="md-block" flex-gt-sm>
-                    <md-icon  md-svg-icon="content-save" aria-label="save"></md-icon>
-                    <label> Prezime:</label> 		   
-                    </br><input  type="text" name="lastname" ng-readonly="data.cb2"  ng-model="formData.lastname"><br>
-                </md-input-container>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Long Last Name That Will Be Truncated And 3 Dots (Ellipsis) Will Appear At The End</label>
+            <input ng-model="theMax">
+          </md-input-container>
+        </div>
+
+        <md-input-container class="md-block">
+          <label>Address</label>
+          <input ng-model="formData.address">
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-block">
+          <input ng-model="formData.address" placeholder="Address 2">
+        </md-input-container>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>City</label>
+            <input ng-model="formData.email">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>State</label>
+            <md-select ng-model="formData.name">
+              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                {{state.abbrev}}
+              </md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Postal Code</label>
+            <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
+                   required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+
+            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+              <div ng-message="required" class="my-message">You must supply a postal code.</div>
+              <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+                code.
+              </div>
+              <div ng-message="md-maxlength" class="my-message">
+                Don't use the long version silly...we don't need to be that specific...
+              </div>
             </div>
-            <div layout-gt-sm="row">
-                <md-input-container class="md-block" flex-gt-sm>
-                     <md-icon md-svg-src="content-save" class="name"></md-icon>
-                    <label>Mesto:</label> 
-                    </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company"><br>
-                </md-input-container>
+          </md-input-container>
+        </div>
 
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Kontakt:</label>
-                     <md-icon md-svg-src="content-save" class="name"></md-icon> 		   
-                    </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address"><br>
-                </md-input-container>
-                </div>
-			</form>
-  <!--<a class="waves-effect waves-light btn s12 m6"><i class="material-icons left">check circle</i>nastavi</a>-->
+        <md-input-container class="md-block">
+          <label>Biography</label>
+          <textarea ng-model="formData.city" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+
+      </form>
+    </div>
+  </md-content>
+
+
+
 </main>
 	
