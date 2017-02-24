@@ -11,40 +11,39 @@
                 </md-switch>
             
   <div layout-gt-sm="row">
-                <md-input-container class="md-icon-float md-icon-right md-block md-primary">
+                <md-input-container class="md-block" flex-gt-sm>
                     <label>Donation Amount</label>
                     <input ng-model="formData.lastname" type="text">
                     <md-icon md-svg-src="email"></md-icon>
                 </md-input-container>
 
 
-                <md-input-container flex="100" ngmodel="state" >
+                <md-input-container class="md-block" flex-gt-sm ngmodel="state" >
                     <h1 ng-model="formData.c_id" ng-init="formData.c_id=auth.profile.user_id" ng-hide="true"></h1>
                     <label>Ime:{{data.cb2}}</label>
                     </br><input  type="text" name="name" ng-readonly="data.cb2" ng-model="formData.name"></input><br>
                 </md-input-container>
 
-                 <md-input-container>
+                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Enter date</label>
                     <md-icon md-svg-src="content-save" class="name"></md-icon>
                     <md-datepicker ng-model="user.submissionDate"></md-datepicker>
                 </md-input-container>
 
-                <md-input-container flex="100">
+                <md-input-container class="md-block" flex-gt-sm>
                     <md-icon  md-svg-icon="content-save" aria-label="save"></md-icon>
                     <label> Prezime:</label> 		   
                     </br><input  type="text" name="lastname" ng-readonly="data.cb2"  ng-model="formData.lastname"><br>
                 </md-input-container>
          </div>
         <div layout-gt-sm="row">
-                <md-input-container flex="100">
+                <md-input-container class="md-block" flex-gt-sm>
                      <md-icon md-svg-src="content-save" class="name"></md-icon>
                     <label>Mesto:</label> 
                     </br><input  type="text" name="company"   ng-readonly="data.cb2" ng-model="formData.company"><br>
                 </md-input-container>
 
-                <md-input-container md-svg-src="img/icons/ic_email_24px.svg" class="email" flex="100">
-                
+                <md-input-container class="md-block" flex-gt-sm>
                     <label>Kontakt:</label>
                      <md-icon md-svg-src="content-save" class="name"></md-icon> 		   
                     </br><input  type="text" name="address" ng-readonly="data.cb2"  ng-model="formData.address"><br>
