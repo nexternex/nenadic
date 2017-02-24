@@ -8,7 +8,7 @@
 }*/
 
 body,.mypage_section,.mypage_main::before {
-  background: url(/img/001.jpg) 0 / cover fixed;
+  background: url(/img/bg01.jpg) 0 / cover fixed;
 }
 .mypage_main {
   margin: 100px auto;
@@ -58,7 +58,7 @@ color: rgb(204, 255, 220)
   font-weight:100;
 }
 .my_day_background{
-    background-image: "../images/bg01.jpg";
+    background-image: "../images/001.jpg";
     min-height: 300px;
 }
 
