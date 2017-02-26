@@ -70,63 +70,63 @@ const S3_BUCKET = process.env.S3_BUCKET;
  * Respond to GET requests to /account.
  * Upon request, render the 'account.html' web page in views/ directory.
  */
-app.get('/account', (req, res) => res.render('account.html'));
+	app.get('/account', (req, res) => res.render('account.html'));
 /*
  * Respond to GET requests to /sign-s3.
  * Upon request, return JSON containing the temporarily-signed S3 request and
  * the anticipated URL of the image.
  */
-app.get('/sign-s3', (req, res) => {
-  const s3 = new aws.S3();
-  const fileName = req.query['file-name'];
-  const fileType = req.query['file-type'];
-  const s3Params = {
-    Bucket: S3_BUCKET,
-    Key: fileName,
-    Expires: 60,
-    ContentType: fileType,
-    ACL: 'public-read'
-  };
+	app.get('/sign-s3', (req, res) => {
+	const s3 = new aws.S3();
+	const fileName = req.query['file-name'];
+	const fileType = req.query['file-type'];
+	const s3Params = {
+		Bucket: S3_BUCKET,
+		Key: fileName,
+		Expires: 60,
+		ContentType: fileType,
+		ACL: 'public-read'
+	};
 
-  s3.getSignedUrl('putObject', s3Params, (err, data) => {
-    if(err){
-      console.log(err);
-      return res.end();
-    }
-    const returnData = {
-      signedRequest: data,
-      url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`,
-	
-    };
+	s3.getSignedUrl('putObject', s3Params, (err, data) => {
+		if(err){
+		console.log(err);
+		return res.end();
+		}
+		const returnData = {
+		signedRequest: data,
+		url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`,
+		
+		};
 
-	console.log("Log za putanju na S3: " + returnData.url);
-	S3url=returnData.url;
-    res.write(JSON.stringify(returnData));
-    res.end();
-  });
-});
+		console.log("Log za putanju na S3: " + returnData.url);
+		S3url=returnData.url;
+		res.write(JSON.stringify(returnData));
+		res.end();
+	});
+	});
 /*
  * Respond to POST requests to /submit_form.
  * This function needs to be completed to handle the information in
  * a way that suits your application.
  */
 
-app.post('/api/save-details/:user_id', (req, res,err) => {
-  // TODO: Read POSTed form data and do something useful
+	app.post('/api/save-details/:user_id', (req, res,err) => {
+	// TODO: Read POSTed form data and do something useful
 
- 		console.log("save-detail: " + S3url + ":" + req.params.user_id );
-  		
-		  List.update({ 'c_id': req.params.user_id }, { $set: { img:S3url }},function(err, lists) {
-				if (err)
-					res.send(err)
-				});
+			console.log("save-detail: " + S3url + ":" + req.params.user_id );
+			
+			List.update({ 'c_id': req.params.user_id }, { $set: { img:S3url }},function(err, lists) {
+					if (err)
+						res.send(err)
+					});
 
-        if(err) {
-            return res.end("Error uploading file.");
-        }
-        res.end('File uploaded');
- 		console.log("uspesno zavrsen update url-a")
-});
+			if(err) {
+				return res.end("Error uploading file.");
+			}
+			res.end('File uploaded');
+			console.log("uspesno zavrsen update url-a")
+	});
 
 // Image 2 DRUGI METOD UPIS NA DISK--trenutno rem zbog upisa na S3
 	// app.post('/api/photo',function(req,res){
@@ -147,88 +147,90 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 	//     });
 // });
 
-//BACKEND ROUTES api/////////////////////////////////////////////////////////////////////////////
-// GET ALL USERS
-	app.get('/api/users:user_id', function(req, res) {
 
-		// use mongoose to get all todos in the database
-		User.find({ 'id': req.params.user_id },function(err, todos) {
+//BACKEND ROUTES API/////////////////////////////////////////////////////////////////////////////
 
-			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
-			if (err)
-				res.send(err)
+	// GET ALL USERS
+		app.get('/api/users:user_id', function(req, res) {
 
-			res.json(todos); // return all todos in JSON format
+			// use mongoose to get all todos in the database
+			User.find({ 'id': req.params.user_id },function(err, todos) {
+
+				// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+				if (err)
+					res.send(err)
+
+				res.json(todos); // return all todos in JSON format
+
+			});
+		});
+	// CREATE USER and send back all todos after creation
+		app.post('/api/users', function(req, res) {
+			// create a todo, information comes from AJAX request from Angular
+				User.create({
+					name : req.body.name,
+					lastname : req.body.lastname,
+					address : req.body.address,
+					email: req.body.email,
+					phone: req.body.phone,
+					type: req.body.type,
+					date : date.today,
+					id: req.body.id,
+					registred : true
+					
+				}, function(err, todo) {
+					if (err)
+						res.send(err);
+
+			// get and return all the todos after you create another
+				User.find(function(err, todos) {
+							if (err)
+								res.send(err)
+								res.json("Kreirao sam usera"); 
+						});
+					});
 
 		});
-	});
-// CREATE USER and send back all todos after creation
-	app.post('/api/users', function(req, res) {
-		// create a todo, information comes from AJAX request from Angular
-		User.create({
-			name : req.body.name,
-            lastname : req.body.lastname,
-            address : req.body.address,
-			email: req.body.email,
-			phone: req.body.phone,
-			type: req.body.type,
-            date : req.body.date,
-            id: req.body.id,
-			registred : true
-            
-		}, function(err, todo) {
-			if (err)
-				res.send(err);
 
-        // get and return all the todos after you create another
-       User.find(function(err, todos) {
+	// GET ALL TODOS
+		app.get('/api/todos:user_id', function(req, res) {
+
+			// use mongoose to get all todos in the database
+			Todo.find({ 'id': req.params.user_id },function(err, todos) {
+
+				// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 				if (err)
-                    res.send(err)
-                    res.json("Kreirao sam usera"); 
+					res.send(err)
+
+				res.json(todos); // return all todos in JSON format
+
 			});
 		});
 
-	});
-
-// GET ALL TODOS
-	app.get('/api/todos:user_id', function(req, res) {
-
-		// use mongoose to get all todos in the database
-		Todo.find({ 'id': req.params.user_id },function(err, todos) {
-
-			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
-			if (err)
-				res.send(err)
-
-			res.json(todos); // return all todos in JSON format
-
-		});
-	});
-
-// CREATE TODO and send back all todos after creation
-	app.post('/api/todos', function(req, res) {
-		// create a todo, information comes from AJAX request from Angular
-		Todo.create({
-			text : req.body.text,
-            place : req.body.place,
-            desc : req.body.desc,
-            date : req.body.date,
-            id: req.body.id,
-			done : false
-            
-		}, function(err, todo) {
-			if (err)
-				res.send(err);
-
-        // get and return all the todos after you create another
-        Todo.find(function(err, todos) {
+	// CREATE TODO and send back all todos after creation
+		app.post('/api/todos', function(req, res) {
+			// create a todo, information comes from AJAX request from Angular
+			Todo.create({
+				text : req.body.text,
+				place : req.body.place,
+				desc : req.body.desc,
+				date : req.body.date,
+				id: req.body.id,
+				done : false
+				
+			}, function(err, todo) {
 				if (err)
-                    res.send(err)
-                    res.json(todos); 
-			});
-		});
+					res.send(err);
 
-	});
+			// get and return all the todos after you create another
+			Todo.find(function(err, todos) {
+					if (err)
+						res.send(err)
+						res.json(todos); 
+				});
+			});
+
+		});
 // DELETE TODO
 	app.delete('/api/todos/:todo_id', function(req, res) {
 		Todo.remove({
