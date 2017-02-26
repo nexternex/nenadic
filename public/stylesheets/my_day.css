@@ -82,10 +82,10 @@ md-virtual-repeat-container {
   border: solid 1px #ccc;
   padding: 10px;
 }
-md-input{
+input{
   color:#82FFA9;
 }
-
+label { color:#82FFA9;}
 /*//divider*/
 .dividerdemoBasicUsage .face {
   border-radius: 30px;
