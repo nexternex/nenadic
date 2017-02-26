@@ -75,6 +75,7 @@
 
  //Api create a new account
     $scope.createUser = function() {
+        concole.log("clicked createUSer!")
         $http.post('/api/users', {formUser: $scope.formUser,name:$scope.name,lastname:$scope.lastname})
             .success(function(data) {
                 $scope.formUser = data;
