@@ -83,9 +83,11 @@ md-virtual-repeat-container {
   padding: 10px;
 }
 input{
-  color:#82FFA9!important;
+  color:rgba(255, 255, 255, 0.7)!important;
 }
-label { color:#82FFA9!important;}
+label {
+   color:rgba(185,246,202, 0.7)!important;
+   }
 /*//divider*/
 .dividerdemoBasicUsage .face {
   border-radius: 30px;
