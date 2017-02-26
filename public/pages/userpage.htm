@@ -6,7 +6,7 @@
             </div>
 
     <div layout-padding>
-      <form name="userForm">
+      <form ng-model="formUser" name="formUser">
         <div layout-gt-xs="row">
           <md-input-container class="md-block" flex-gt-xs >
             <label>Email</label>
@@ -44,6 +44,6 @@
         </div>
 
       </form>
-      <md-button>Nastavi</md-button>
+        <md-button class="md-raised md-accent" value="Register" ng-click="createUser()" width="100px">Snimi izmene</md-button>
 </main>
 	

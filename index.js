@@ -39,9 +39,11 @@ console.log('MongoDB connection successful.');
 //database model
 var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',id:'string' });
 var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string',c_id:'string',img:'string' });
+var schema_user = new mongoose.Schema({ name: 'string',lastname:'string',address:'string',email:'string',phone:'string',type:'string',id:'string',registered:'string' });
 
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
+var User = mongoose.model('User', schema_user);
 var S3url="";
 
 //app settings
@@ -146,6 +148,48 @@ app.post('/api/save-details/:user_id', (req, res,err) => {
 // });
 
 //BACKEND ROUTES api/////////////////////////////////////////////////////////////////////////////
+// GET ALL USERS
+	app.get('/api/users:user_id', function(req, res) {
+
+		// use mongoose to get all todos in the database
+		User.find({ 'id': req.params.user_id },function(err, todos) {
+
+			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+			if (err)
+				res.send(err)
+
+			res.json(todos); // return all todos in JSON format
+
+		});
+	});
+// CREATE USER and send back all todos after creation
+	app.post('/api/users', function(req, res) {
+		// create a todo, information comes from AJAX request from Angular
+		User.create({
+			name : req.body.name,
+            lastname : req.body.lastname,
+            address : req.body.address,
+			email: req.body.email,
+			phone: req.body.phone,
+			type: req.body.type,
+            date : req.body.date,
+            id: req.body.id,
+			registred : true
+            
+		}, function(err, todo) {
+			if (err)
+				res.send(err);
+
+        // get and return all the todos after you create another
+       User.find(function(err, todos) {
+				if (err)
+                    res.send(err)
+                    res.json("Kreirao sam usera"); 
+			});
+		});
+
+	});
+
 // GET ALL TODOS
 	app.get('/api/todos:user_id', function(req, res) {
 

@@ -73,8 +73,21 @@
         $scope.customFullscreen = false;
         //  $scope.photo.user_id=auth.profile.user_id;
 
+ //Api create a new account
+    $scope.createUser = function() {
+        $http.post('/api/users', {formUser: $scope.formUser,name:$scope.name,lastname:$scope.lastname})
+            .success(function(data) {
+                $scope.formUser = data;
+                alert("uspesno ste registrovali nalog koristeci profileController linux");
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
      
     
+
+
    //When landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
         .success(function(data) {
