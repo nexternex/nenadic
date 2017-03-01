@@ -183,12 +183,12 @@ const S3_BUCKET = process.env.S3_BUCKET;
 						res.send(err);
 
 			// get and return all the todos after you create another
-				// User.find(function(err, todos) {
-				// 			if (err)
-				// 				res.send(err)
-				// 				res.json("Kreirao sam usera"); 
-				// 		});
-				// 	});
+				User.find(function(err, todos) {
+							if (err)
+								res.send(err)
+								res.json("Kreirao sam usera"); 
+						});
+					});
 
 		});
 
