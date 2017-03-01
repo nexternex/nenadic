@@ -164,6 +164,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 
 			});
 		});
+
 	// CREATE USER and send back all todos after creation
 		app.post('/api/users', function(req, res) {
 			console.log("user cration started");
@@ -175,7 +176,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 					email: req.body.email,
 					phone: req.body.phone,
 					type: req.body.type,
-					date :date.new(),
+					date :"22.07.1988",
 					id: req.body.id,
 					registred : true
 					
