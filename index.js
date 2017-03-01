@@ -176,7 +176,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 					type: req.body.type,
 					date :"today",
 					id: req.body.id,
-					registred : true,
+					registred : true
 					
 				}, function(err, todo) {
 					if (err)
