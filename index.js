@@ -178,7 +178,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 					id: req.body.id,
 					registred : true,
 					
-				}, function(err, todo) {s
+				}, function(err, todo) {
 					if (err)
 						res.send(err);
 
