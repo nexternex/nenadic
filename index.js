@@ -174,7 +174,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 					email: req.body.email,
 					phone: req.body.phone,
 					type: req.body.type,
-					date : new Date(),
+					date :"today",
 					id: req.body.id,
 					registred : true
 					
