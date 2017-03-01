@@ -170,12 +170,12 @@ const S3_BUCKET = process.env.S3_BUCKET;
 			console.log("user cration started");
 			// create a todo, information comes from AJAX request from Angular
 				User.create({
-					name : req.body.name,
-					lastname : req.body.lastname,
-					address : req.body.address,
-					email: req.body.email,
-					phone: req.body.phone,
-					type: req.body.type,
+					name : req.body.formUser.name,
+					lastname : req.body.formUser.lastname,
+					address : req.body.formUser.address,
+					email: req.body.formUser.email,
+					phone: req.body.formUser.phone,
+					type: req.body.formUser.type,
 					date :"22.07.1988",
 					id: req.body.id,
 					registred : true
