@@ -283,8 +283,6 @@
     $scope.auth = auth;
     
     
-
-
     $scope.category={
     singleSelect: null,
     availableOptions: [
@@ -294,7 +292,8 @@
       {id: '4', name: 'Poslasticarnica'},
       {id: '5', name: 'Efekti'}
     ],
-   };  
+   };
+
     $scope.size={
     singleSelect: null,
     availableOptions: [
@@ -305,7 +304,7 @@
 
  //Api create a new account
     $scope.createUser = function() {
-        console.log("clicked createUSer!")
+        console.log("clicked createUSer!");
         $http.post('/api/users', {formUser: $scope.formUser,name:$scope.name,lastname:$scope.lastname})
             .success(function(data) {
                 $scope.formUser = data;
