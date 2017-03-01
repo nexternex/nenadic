@@ -15,47 +15,47 @@
 
  }]);
 //KONTROLER: Login controller
- myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
-  $scope.auth = auth;
-  $scope.login = function () {
-    //podesavanje opcija za auth Lock widget
-    auth.signin({
-        icon: 'https://nenadic.herokuapp.com/img/myday.png',
-        primaryColor: 'purple',
-        language:'en',
-        languageDictionary: {
-            emailInputPlaceholder: "something@youremail.com",
-            title: "Uloguj me"
-            }
-    }, function (profile, token) {
-      // Success callback
-      store.set('profile', profile);
-      store.set('token', token);
-      $location.path('/userpage');
-    }, function () {
-        console.log('error controller login');
-        alert("please login");
-      // Error callback
-    });
-  };
-    
-  $scope.logout = function() {
-      auth.signout();
-      store.remove('profile');
-      store.remove('token');
-      $location.path('/home');
-  };
+    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
+    $scope.auth = auth;
+    $scope.login = function () {
+        //podesavanje opcija za auth Lock widget
+        auth.signin({
+            icon: 'https://nenadic.herokuapp.com/img/myday.png',
+            primaryColor: 'purple',
+            language:'en',
+            languageDictionary: {
+                emailInputPlaceholder: "something@youremail.com",
+                title: "Uloguj me"
+                }
+        }, function (profile, token) {
+        // Success callback
+        store.set('profile', profile);
+        store.set('token', token);
+        $location.path('/userpage');
+        }, function () {
+            console.log('error controller login');
+            alert("please login");
+        // Error callback
+        });
+    };
+        
+    $scope.logout = function() {
+        auth.signout();
+        store.remove('profile');
+        store.remove('token');
+        $location.path('/home');
+    };
 
-  console.log('pokusaj login controller used');
+    console.log('pokusaj login controller used');
 
- }]);
+    }]);
 //KONTROLER: Logout controller
- myDay.controller('LogoutCtrl', function (auth, $location, store) {
-  auth.signout();
-  store.remove('profile');
-  store.remove('token');
-  $location.path('/timeline');
- });
+    myDay.controller('LogoutCtrl', function (auth, $location, store) {
+    auth.signout();
+    store.remove('profile');
+    store.remove('token');
+    $location.path('/timeline');
+    });
 //KONTROLER: UserInfoCtrl controller
     myDay.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
     $scope.auth = auth;
@@ -72,10 +72,6 @@
         $scope.photo='';
         $scope.customFullscreen = false;
         //  $scope.photo.user_id=auth.profile.user_id;
-
-
-    
-
 
    //When landing on the page, get all todos and show them    
        $http.get('/api/todos'+auth.profile.user_id)
@@ -278,21 +274,21 @@
 
 //KONTROLER: Profil korisnika
     myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
-    $scope.formData = {};
-    $scope.profiles = [];
-    $scope.auth = auth;
+        $scope.formData = {};
+        $scope.profiles = [];
+        $scope.auth = auth;
     
     
-    $scope.category={
-    singleSelect: null,
-    availableOptions: [
-      {id: '1', name: 'Svecane sale'},
-      {id: '2', name: 'Bend za svadbe'},
-      {id: '3', name: 'Dekoracija'},
-      {id: '4', name: 'Poslasticarnica'},
-      {id: '5', name: 'Efekti'}
-    ],
-   };
+        $scope.category={
+        singleSelect: null,
+        availableOptions: [
+            {id: '1', name: 'Svecane sale'},
+            {id: '2', name: 'Bend za svadbe'},
+            {id: '3', name: 'Dekoracija'},
+            {id: '4', name: 'Poslasticarnica'},
+            {id: '5', name: 'Efekti'}
+            ],
+    };
 
     $scope.size={
     singleSelect: null,
