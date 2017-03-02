@@ -149,7 +149,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 
 
 //BACKEND ROUTES API/////////////////////////////////////////////////////////////////////////////
-	app.post('/api/user_update', function(req, res) {
+	app.post('/api/user_update:user_id', function(req, res) {
         console.log(req.body.formUser.user_id+":"+ req.body.formUser.email);
 		// create a list, information comes from AJAX request from Angular
 		User.update({ 'u_id': req.body.user_id },
