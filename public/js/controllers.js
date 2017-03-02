@@ -313,7 +313,7 @@
    // UPDATE USer
     $scope.updateUser = function() {
        console.log("UPDATE USER Start");
-       $http.post('/api/user_update/',{formUser: $scope.formUser,name:$scope.name,lastname:$scope.lastname,email:$scope.email,u_id:auth.profile.user_id})
+       $http.post('/api/user_update'+auth.profile.user_id,{formUser: $scope.formUser,name:$scope.name,lastname:$scope.lastname,email:$scope.email,u_id:auth.profile.user_id})
         .success(function(data) {
             console.log('Update user completed');
         })
