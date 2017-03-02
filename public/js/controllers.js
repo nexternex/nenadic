@@ -32,7 +32,7 @@
         store.set('profile', profile);
         store.set('token', token);
            //Api create a new account
-        createUser(function() {
+        function createUser() {
                 console.log("clicked createUser!");
                 $http.post('/api/create_user'+auth.profile.user_id)
                     .success(function(data) {
@@ -43,12 +43,7 @@
                     .error(function(data) {
                         console.log('Error: ' + data);
                     });
-            });
-            
-        
-
-      
-        
+            };
         }, function () {
             console.log('error controller login');
             alert("please login");
