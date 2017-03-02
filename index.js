@@ -103,7 +103,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 		S3url=returnData.url;
 		res.write(JSON.stringify(returnData));
 		res.end();
-	});
+		});
 	});
 /*
  * Respond to POST requests to /submit_form.
@@ -129,31 +129,29 @@ const S3_BUCKET = process.env.S3_BUCKET;
 	});
 
 // Image 2 DRUGI METOD UPIS NA DISK--trenutno rem zbog upisa na S3
-	// app.post('/api/photo',function(req,res){
-	//     upload(req,res,function(err) {
+		// app.post('/api/photo',function(req,res){
+		//     upload(req,res,function(err) {
 
-	//         console.log("user_id:"+req.body.user_id);
-	//         console.log("path:"+req.files.userPhoto.path);
+		//         console.log("user_id:"+req.body.user_id);
+		//         console.log("path:"+req.files.userPhoto.path);
 
-	// 		List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
-	// 				if (err)
-	// 					res.send(err)
-	// 				});
-			
-	//         if(err) {
-	//             return res.end("Error uploading file.");
-	//         }
-	//         res.end('File uploaded');
-	//     });
-// });
+		// 		List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
+		// 				if (err)
+		// 					res.send(err)
+		// 				});
+				
+		//         if(err) {
+		//             return res.end("Error uploading file.");
+		//         }
+		//         res.end('File uploaded');
+		//     });
+	// });
 
 
 //BACKEND ROUTES API/////////////////////////////////////////////////////////////////////////////
-
-
 // CREATE USER //
 	app.post('/api/user_create/:user_id', function(req, res) {
-				console.log(req.body.formUser.name+":"+req.body.email);
+		console.log(req.body.formUser.name+":"+req.body.email);
 		// STEP1: CREATE USER and send back a user after creation
 			app.post('/api/users', function(req, res) {
 				console.log("user cration started");
@@ -173,19 +171,18 @@ const S3_BUCKET = process.env.S3_BUCKET;
 						if (err)
 							res.send(err);
 
-			// STEP2: get and return all the todos after you create another
-				User.find({ 'u_id': req.params.profile_id },function(err, profile) {
-					// if there is an error retrieving, send the error. nothing after res.send(err) will execute
-					if (err)
-						res.send(err)
-					res.json(profile); // return all users in JSON format
-					console.log("R2D2 says:nasao sam profile:"+profile);
+				// STEP2: get and return all the todos after you create another
+					User.find({ 'u_id': req.params.profile_id },function(err, profile) {
+						// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+						if (err)
+							res.send(err)
+						res.json(profile); // return all users in JSON format
+						console.log("R2D2 says:nasao sam profile:"+profile);
+						});
 					});
 				});
 
-			});
-
-// UPDATE USER
+// UPDATE USER //
 	app.post('/api/user_update', function(req, res) {
         console.log(req.body.formUser.user_id+":"+ req.body.formUser.email);
 		// STEP1: create a user, information comes from AJAX request from Angular
@@ -253,7 +250,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 			});
 
 		});
-// DELETE TODO
+// DELETE TODO //
 	app.delete('/api/todos/:todo_id', function(req, res) {
 		Todo.remove({
 			_id : req.params.todo_id
@@ -270,7 +267,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 		});
 	});
 
-// GET LISTS 
+// GET LISTS   //
 	app.get('/api/lists', function(req, res) {
 		List.find(function(err, lists) {
 			if (err)
@@ -319,6 +316,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 				});
 			});
 		});
+
 		app.post('/api/lists_data/:user_id', function(req, res) {
         console.log(req.body.formData.name+":"+req.body.size.singleSelect);
 		// create a list, information comes from AJAX request from Angular
@@ -367,5 +365,3 @@ app.get('*', routes.index)
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
-
