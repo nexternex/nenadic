@@ -39,7 +39,7 @@ console.log('MongoDB connection successful.');
 //database model
 var schema = new mongoose.Schema({ text: 'string',place: 'string',desc: 'string',date: 'string',id:'string' });
 var schema_list = new mongoose.Schema({ name: 'string',lastname:'string',company:'string',address:'string',size:'string',category:'string',c_id:'string',img:'string' });
-var schema_user = new mongoose.Schema({ name: 'string',lastname:'string',address:'string',email:'string',phone:'string',type:'string',id:'string',registered:'string' });
+var schema_user = new mongoose.Schema({ name: 'string',lastname:'string',address:'string',email:'string',phone:'string',type:'string',date:"string",u_id:'string',registered:'string' });
 
 var Todo = mongoose.model('Todo', schema);
 var List = mongoose.model('List', schema_list);
@@ -204,7 +204,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 					phone:"123-456",
 					type: "1",
 					date :"22.07.1988",
-					id: req.body.user_id,
+					u_id: req.body.user_id,
 					registred : true
 					
 				}, function(err, todo) {
