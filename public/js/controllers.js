@@ -32,18 +32,22 @@
         store.set('profile', profile);
         store.set('token', token);
            //Api create a new account
-        function createUser() {
+            $scope.createUser = function() {
                 console.log("clicked createUser!");
                 $http.post('/api/create_user'+auth.profile.user_id)
                     .success(function(data) {
                         // $scope.formUser = data;
-                        $location.path('/userpage');
+                         $location.path('/userpage');
                         alert("uspesno ste registrovali nalog koristeci profileController linux");
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
                     });
             };
+        
+
+      
+        
         }, function () {
             console.log('error controller login');
             alert("please login");
