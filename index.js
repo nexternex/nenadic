@@ -193,18 +193,18 @@ const S3_BUCKET = process.env.S3_BUCKET;
 		});
 
 	// CREATE USER and send back all todos after creation
-		app.post('/api/users', function(req, res) {
+		app.post('/api/create_user:user_id', function(req, res) {
 			console.log("user cration started");
 			// create a todo, information comes from AJAX request from Angular
 				User.create({
-					name : req.body.formUser.name,
-					lastname : req.body.formUser.lastname,
-					address : req.body.formUser.address,
-					email: req.body.formUser.email,
-					phone: req.body.formUser.phone,
-					type: req.body.formUser.type,
+					name : "Unesite ime",
+					lastname : "Unesite prezime",
+					address :"Vasa adresa",
+					email: "nexnexter@gmail.com",
+					phone:"123-456",
+					type: "1",
 					date :"22.07.1988",
-					id: req.body.id,
+					id: req.body.user_id,
 					registred : true
 					
 				}, function(err, todo) {
