@@ -31,7 +31,7 @@
 
     $scope.auth = auth;
     $scope.login = function () {
-        //podesavanje opcija za auth Lock widget
+        //podesavanje opcija za auth Lock widget//
         auth.signin({
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
             primaryColor: 'purple',
