@@ -36,7 +36,8 @@
                 console.log("clicked createUser!");
                 $http.post('/api/create_user'+auth.profile.user_id)
                     .success(function(data) {
-                        $scope.formUser = data;
+                        // $scope.formUser = data;
+                        $location.path('/userpage');
                         alert("uspesno ste registrovali nalog koristeci profileController linux");
                     })
                     .error(function(data) {
@@ -45,7 +46,7 @@
             };
         
 
-        $location.path('/userpage');
+      
         
         }, function () {
             console.log('error controller login');
