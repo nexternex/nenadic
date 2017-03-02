@@ -149,6 +149,33 @@ const S3_BUCKET = process.env.S3_BUCKET;
 
 
 //BACKEND ROUTES API/////////////////////////////////////////////////////////////////////////////
+	app.post('/api/user_update', function(req, res) {
+        console.log(req.body.formUser.user_id+":"+ req.body.formUser.email);
+		// create a list, information comes from AJAX request from Angular
+		User.update({ 'u_id': req.body.user_id },
+			 { $set: { name :req.body.name,
+				lastname : req.body.formUser.lastname,
+				email : req.body.formUser.email,
+				address : req.body.formUser.address,
+				type: req.body.formUser.type,
+				date :"22.07.1988",
+				u_id: req.body.id,
+				registred : true
+			 }}, function(err, list) {
+			if (err)
+				res.send(err);
+			// get and return all the lists after you create another
+			List.find({ 'c_id': req.params.profile_id },function(err, profile) {
+				// if there is an error retrieving, send the error. nothing after res.send(err) will execute
+				if (err)
+					res.send(err)
+				res.json(profile); // return all lists in JSON format
+				console.log("R2D2 says:nasao sam profile:"+List);
+				});
+			});
+		});
+
+
 
 	// GET ALL USERS
 		app.get('/api/users:user_id', function(req, res) {
@@ -275,7 +302,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 	});
 
 // UPDATE LIST 
-	//oglasi/lisitng and send back all lists after creation
+//oglasi/lisitng and send back all lists after creation
 	app.post('/api/lists_update', function(req, res) {
         console.log(req.body.formData.user_id+":"+ req.body.formData.company);
 		// create a list, information comes from AJAX request from Angular
@@ -347,5 +374,3 @@ app.get('*', routes.index)
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
-
-
