@@ -32,7 +32,7 @@
         store.set('profile', profile);
         store.set('token', token);
            //Api create a new account
-            $scope.createUser = function() {
+        createUser(function() {
                 console.log("clicked createUser!");
                 $http.post('/api/create_user'+auth.profile.user_id)
                     .success(function(data) {
@@ -43,7 +43,8 @@
                     .error(function(data) {
                         console.log('Error: ' + data);
                     });
-            };
+            });
+            
         
 
       
