@@ -16,18 +16,18 @@
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
- //Api create a new account
-    $scope.createUser = function() {
-        console.log("clicked createUSer!");
-        $http.post('/api/create_user'+auth.profile.user_id)
-            .success(function(data) {
-                // $scope.formUser = data;
-                alert("uspesno ste registrovali nalog koristeci profileController linux");
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            }); 
-    };
+    //Api create a new account
+        $scope.createUser = function() {
+            console.log("clicked createUSer!");
+            $http.post('/api/create_user'+auth.profile.user_id)
+                .success(function(data) {
+                    // $scope.formUser = data;
+                    alert("uspesno ste registrovali nalog koristeci profileController linux");
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                }); 
+        };
 
     $scope.auth = auth;
     $scope.login = function () {
