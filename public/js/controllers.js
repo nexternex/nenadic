@@ -310,7 +310,17 @@
                 console.log('Error: ' + data);
             });
     };
-     
+   // UPDATE USer
+    $scope.updateUser = function() {
+       console.log("UPDATE USER Start");
+       $http.post('/api/user_update/',{formUser: $scope.formUser,name:$scope.name,lastname:$scope.lastname,email:$scope.email,u_id:auth.profile.user_id})
+        .success(function(data) {
+            console.log('Update user completed');
+        })
+        .error(function(data) {
+            console.log('Error: '+ data);
+        });
+    };    
 
         
   // LOAD PROFILE when landing on the page, get profile and show them
