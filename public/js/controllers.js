@@ -31,14 +31,32 @@
         // Success callback
         store.set('profile', profile);
         store.set('token', token);
+           //Api create a new account
+            $scope.createUser = function() {
+                console.log("clicked createUser!");
+                $http.post('/api/create_user'+auth.profile.user_id)
+                    .success(function(data) {
+                        $scope.formUser = data;
+                        alert("uspesno ste registrovali nalog koristeci profileController linux");
+                    })
+                    .error(function(data) {
+                        console.log('Error: ' + data);
+                    });
+            };
+        
+
         $location.path('/userpage');
+        
         }, function () {
             console.log('error controller login');
             alert("please login");
         // Error callback
         });
     };
-        
+
+
+
+
     $scope.logout = function() {
         auth.signout();
         store.remove('profile');
@@ -298,18 +316,7 @@
     ],
    };
 
- //Api create a new account
-    $scope.createUser = function() {
-        console.log("clicked createUSer!");
-        $http.post('/api/users', {formUser: $scope.formUser,name:$scope.name,lastname:$scope.lastname})
-            .success(function(data) {
-                $scope.formUser = data;
-                alert("uspesno ste registrovali nalog koristeci profileController linux");
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
+
    // UPDATE USer
     $scope.updateUser = function() {
        console.log("UPDATE USER Start");
