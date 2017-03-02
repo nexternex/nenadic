@@ -204,7 +204,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 					phone:"123-456",
 					type: "1",
 					date :"22.07.1988",
-					u_id: req.body.user_id,
+					u_id: req.params.user_id,
 					registred : true
 					
 				}, function(err, todo) {
