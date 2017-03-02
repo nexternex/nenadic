@@ -161,16 +161,16 @@ const S3_BUCKET = process.env.S3_BUCKET;
 				date :"22.07.1988",
 				u_id: req.body.id,
 				registred : true
-			 }}, function(err, list) {
+			 }}, function(err, user) {
 			if (err)
 				res.send(err);
 			// get and return all the lists after you create another
-			List.find({ 'c_id': req.params.profile_id },function(err, profile) {
+				User.find({ 'u_id': req.params.profile_id },function(err, profile) {
 				// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 				if (err)
 					res.send(err)
 				res.json(profile); // return all lists in JSON format
-				console.log("R2D2 says:nasao sam profile:"+List);
+				console.log("R2D2 says:nasao sam profile:"+User);
 				});
 			});
 		});
