@@ -147,7 +147,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 	//     });
 // });
 
-
+ 
 //BACKEND ROUTES API/////////////////////////////////////////////////////////////////////////////
 	app.post('/api/user_update:user_id', function(req, res) {
         console.log(req.body.formUser.user_id+":"+ req.body.formUser.email);
