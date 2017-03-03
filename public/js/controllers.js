@@ -29,9 +29,12 @@
                  }); 
         };
 
+
+
+
     $scope.auth = auth;
     $scope.login = function () {
-        //podesavanje opcija za auth Lock widget//
+    //podesavanje opcija za auth Lock widget//
         auth.signin({
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
             primaryColor: 'purple',
@@ -44,8 +47,20 @@
         // Success callback
         store.set('profile', profile);
         store.set('token', token);
+
+    //check does user exists
+        $http.get('/api/user'+auth.profile.user_id)
+                    .success(function(data) {
+                    })
+                    .error(function(data) {
+                    console.log('Error: ' + data);
+                    $scope.createUser();
+                    }); 
+
         $location.path('/userpage');
-        $scope.createUser();
+        
+        
+       
         }, function () {
             console.log('error controller login');
             alert("please login");

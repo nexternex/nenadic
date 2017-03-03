@@ -177,12 +177,12 @@ const S3_BUCKET = process.env.S3_BUCKET;
 
 
 
-	// GET ALL USERS
+	// GET USER
 		app.get('/api/users:user_id', function(req, res) {
 
 			// use mongoose to get all todos in the database
 			User.find({ 'u_id': req.params.user_id },function(err, user) {
-
+				
 				// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 				if (err)
 					res.send(err)
