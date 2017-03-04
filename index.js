@@ -128,24 +128,6 @@ const S3_BUCKET = process.env.S3_BUCKET;
 			console.log("uspesno zavrsen update url-a")
 	});
 
-// Image 2 DRUGI METOD UPIS NA DISK--trenutno rem zbog upisa na S3
-	// app.post('/api/photo',function(req,res){
-	//     upload(req,res,function(err) {
-
-	//         console.log("user_id:"+req.body.user_id);
-	//         console.log("path:"+req.files.userPhoto.path);
-
-	// 		List.update({ c_id: req.body.user_id }, { $set: { img:req.files.userPhoto.path }},function(err, lists) {
-	// 				if (err)
-	// 					res.send(err)
-	// 				});
-			
-	//         if(err) {
-	//             return res.end("Error uploading file.");
-	//         }
-	//         res.end('File uploaded');
-	//     });
-// });
 
  
 //BACKEND ROUTES API/////////////////////////////////////////////////////////////////////////////
@@ -153,7 +135,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
         console.log(req.body.formUser.user_id+":"+ req.body.formUser.email);
 		// create a list, information comes from AJAX request from Angular
 		User.update({ 'u_id': req.params.user_id },
-			 { $set: { name :req.body.name,
+			 { $set: { name :req.body.formUser.name,
 				lastname : req.body.formUser.lastname,
 				email : req.body.formUser.email,
 				address : req.body.formUser.address,
