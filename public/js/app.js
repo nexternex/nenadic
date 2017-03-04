@@ -9,14 +9,11 @@ myDay.run(function(auth) {
  
 //config app
 myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
-  // ...
+  
   authProvider.init({
       domain: 'myday.eu.auth0.com',
       clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-      loginUrl: '/index',
-      primaryColor: 'red',
-      allowSignUp: false,
-      language:'en'
+      loginUrl: '/index'
     });
 
 

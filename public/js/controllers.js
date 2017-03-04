@@ -33,16 +33,18 @@
 
     $scope.login = function () {
         //podesavanje opcija za auth Lock widget//
-        auth.signin({
+        var options1={
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
-            primaryColor: 'purple',
-            allowSignUp: false,
+            primaryColor: '#82FFA9',
+            allowLogin: false,
             language:'en',
             languageDictionary: {
                 emailInputPlaceholder: "something@youremail.com",
                 title: "Uloguj me",
                 }
-        }, function (profile, token) {
+             };
+       
+        auth.signin(options1, function (profile, token) {
         // Success callback
         store.set('profile', profile);
         store.set('token', token);
