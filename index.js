@@ -152,14 +152,14 @@ const S3_BUCKET = process.env.S3_BUCKET;
 	app.post('/api/user_update:user_id', function(req, res) {
         console.log(req.body.formUser.user_id+":"+ req.body.formUser.email);
 		// create a list, information comes from AJAX request from Angular
-		User.update({ 'u_id': req.body.user_id },
+		User.update({ 'u_id': req.params.user_id },
 			 { $set: { name :req.body.name,
 				lastname : req.body.formUser.lastname,
 				email : req.body.formUser.email,
 				address : req.body.formUser.address,
 				type: req.body.formUser.type,
 				date :Date(),
-				u_id: req.body.id,
+				u_id: req.params.id,
 				registred : true
 			 }}, function(err, user) {
 			if (err)
