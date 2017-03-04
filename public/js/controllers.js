@@ -48,7 +48,6 @@
         store.set('profile', profile);
         store.set('token', token);
         $location.path('/userpage');
-        $scope.updateUser();
         }, function () {
             console.log('error controller login');
             alert("please login");
@@ -362,7 +361,7 @@
             //rezultat 1 profila ide u data
             $scope.profiles = data;
             //setujem formData da je jednak prvom objektu iz niza
-            $scope.formData=$scope.profiles[0];
+            $scope.formUser=$scope.profiles[0];
             console.log('profil sam dobio iz baze:'+$scope.my_profile);
         })
         .error(function(data) {
