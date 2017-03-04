@@ -59,7 +59,7 @@
 
     $scope.signup=function(){
         //podesavanje opcija za auth Lock widget//
-        auth.signin({
+        auth.signup({
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
             primaryColor: '#82FFA9',
             allowLogin: false,
