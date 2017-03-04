@@ -346,7 +346,7 @@
 
         
   // LOAD PROFILE when landing on the page, get profile and show them
-    $http.get('/api/user'+auth.profile.user_id)
+    $http.get('/api/users'+auth.profile.user_id)
         .success(function(data) {
             //rezultat 1 profila ide u data
             $scope.formUser = data;
