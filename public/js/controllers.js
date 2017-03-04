@@ -36,7 +36,6 @@
         var options1={
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
             primaryColor: '#82FFA9',
-            allowLogin: false,
             language:'en',
             languageDictionary: {
                 emailInputPlaceholder: "something@youremail.com",

@@ -158,7 +158,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 				email : req.body.formUser.email,
 				address : req.body.formUser.address,
 				type: req.body.formUser.type,
-				date :"22.07.1988",
+				date :Date(),
 				u_id: req.body.id,
 				registred : true
 			 }}, function(err, user) {
