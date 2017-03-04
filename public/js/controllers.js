@@ -38,7 +38,8 @@
             language:'en',
             languageDictionary: {
                 emailInputPlaceholder: "something@youremail.com",
-                title: "Uloguj me"
+                title: "Uloguj me",
+                allowSignUp :false
                 }
         }, function (profile, token) {
         // Success callback
