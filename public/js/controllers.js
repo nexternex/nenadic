@@ -342,7 +342,7 @@
    };
 
 
-   // UPDATE USer
+    //UPDATE User
     $scope.updateUser = function() {
        console.log("UPDATE USER Start");
        $http.post('/api/user_update'+auth.profile.user_id,{formUser: $scope.formUser,name:$scope.name,lastname:$scope.lastname,email:$scope.email,u_id:auth.profile.user_id})
@@ -359,7 +359,7 @@
     $http.get('/api/profile'+auth.profile.user_id)
         .success(function(data) {
             //rezultat 1 profila ide u data
-            $scope.profiles = data;
+            $scope.formUser = data;
             //setujem formData da je jednak prvom objektu iz niza
             $scope.formUser=$scope.profiles[0];
             console.log('profil sam dobio iz baze:'+$scope.my_profile);
@@ -375,7 +375,7 @@
         $http.post('/api/lists', {formData: $scope.formData,size:$scope.size,category:$scope.category})
             .success(function(data) {
                 $scope.formData = data;
-                alert("uspesno ste registrovali nalog koristeci profileController linux");
+                alert("uspesno ste registrovali nalog koristeci profileController");
             })
             .error(function(data) {
                 console.log('Error: ' + data);
