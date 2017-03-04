@@ -30,6 +30,7 @@
         };
 
     $scope.auth = auth;
+
     $scope.login = function () {
         //podesavanje opcija za auth Lock widget//
         auth.signin({
@@ -54,7 +55,32 @@
         });
     };
 
-    $scope.signup=function(){auth.signup()};
+    $scope.signup=function(){
+        //podesavanje opcija za auth Lock widget//
+        auth.signin({
+            icon: 'https://nenadic.herokuapp.com/img/myday.png',
+            primaryColor: 'purple',
+            allowSignIn :false,
+            language:'en',
+            languageDictionary: {
+                emailInputPlaceholder: "something@youremail.com",
+                title: "Uloguj me",
+                }
+        }, function (profile, token) {
+        // Success callback
+        store.set('profile', profile);
+        store.set('token', token);
+        $location.path('/userpage');
+        $scope.createUser();
+        }, function () {
+            console.log('error controller login');
+            alert("please login");
+        // Error callback
+        });
+
+
+
+};
         
     $scope.logout = function() {
         auth.signout();
