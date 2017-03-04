@@ -22,7 +22,7 @@
             $http.post('/api/create_user'+auth.profile.user_id)
                 .success(function(data) {
                     // $scope.formUser = data;
-                    alert("uspesno ste registrovali nalog koristeci profileController linux");
+                    alert("uspesno ste registrovali nalog koristeci profileController");
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
