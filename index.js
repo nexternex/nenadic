@@ -159,7 +159,6 @@ const S3_BUCKET = process.env.S3_BUCKET;
 				address : req.body.formUser.address,
 				type: req.body.formUser.type,
 				date :Date(),
-				u_id: req.params.id,
 				registred : true
 			 }}, function(err, user) {
 			if (err)
