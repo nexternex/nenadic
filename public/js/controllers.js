@@ -351,7 +351,8 @@
             //rezultat 1 profila ide u data
             $scope.formUser = data;
             //setujem formData da je jednak prvom objektu iz niza
-            console.log('profil sam dobio iz baze:'+data);
+            $scope.formUser=$scope.user[0];
+            console.log('profil sam dobio iz baze:'+$scope.my_profile);
         })
         .error(function(data) {
             console.log('Error: ' + data);
