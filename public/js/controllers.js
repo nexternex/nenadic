@@ -71,7 +71,7 @@
         store.set('profile', profile);
         store.set('token', token);
         $location.path('/userpage');
-        $scope.createUser();
+        $scope.updateUser();
         }, function () {
             console.log('error controller login');
             alert("please login");
