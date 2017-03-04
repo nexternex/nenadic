@@ -35,11 +35,11 @@
         auth.signin({
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
             primaryColor: 'purple',
+            allowSignUp :false,
             language:'en',
             languageDictionary: {
                 emailInputPlaceholder: "something@youremail.com",
                 title: "Uloguj me",
-                allowSignUp :false
                 }
         }, function (profile, token) {
         // Success callback
