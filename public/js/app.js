@@ -14,11 +14,9 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
       domain: 'myday.eu.auth0.com',
       clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
       loginUrl: '/index',
-      options: {
-        languageDictionary: {
-          title: "Prjavite se!"
-        }
-      }
+      primaryColor: 'purple',
+      allowSignUp: false,
+      language:'en'
     });
 
 
