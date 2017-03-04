@@ -346,12 +346,12 @@
 
         
   // LOAD PROFILE when landing on the page, get profile and show them
-    $http.get('/api/profile'+auth.profile.user_id)
+    $http.get('/api/user'+auth.profile.user_id)
         .success(function(data) {
             //rezultat 1 profila ide u data
             $scope.formUser = data;
             //setujem formData da je jednak prvom objektu iz niza
-            $scope.formUser=$scope.profiles[0];
+            $scope.formUser=$scope.user[0];
             console.log('profil sam dobio iz baze:'+$scope.my_profile);
         })
         .error(function(data) {
