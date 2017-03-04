@@ -16,6 +16,7 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
       loginUrl: '/index'
     });
 
+
     
     jwtOptionsProvider.config({
       whiteListedDomains: ['nenadic.herokuapp.com', 'spreadsheets.google.com']

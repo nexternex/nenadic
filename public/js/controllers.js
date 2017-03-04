@@ -60,7 +60,7 @@
         auth.signin({
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
             primaryColor: '#82FFA9',
-            allowSignIn :false,
+            allowLogin: false,
             language:'en',
             languageDictionary: {
                 emailInputPlaceholder: "something@youremail.com",
