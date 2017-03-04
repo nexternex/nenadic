@@ -59,7 +59,7 @@
         //podesavanje opcija za auth Lock widget//
         auth.signin({
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
-            primaryColor: 'blue',
+            primaryColor: '#82FFA9',
             allowSignIn :false,
             language:'en',
             languageDictionary: {
