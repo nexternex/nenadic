@@ -35,12 +35,8 @@
         //podesavanje opcija za auth Lock widget//
         var options1={
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
-            primaryColor: '#82FFA9',
-            language:'en',
-            languageDictionary: {
-                emailInputPlaceholder: "something@youremail.com",
-                title: "Uloguj me",
-                }
+            primaryColor: 'purple',
+            language:'en'
              };
        
         auth.signin(options1, function (profile, token) {
@@ -60,12 +56,6 @@
         auth.signup({
             icon: 'https://nenadic.herokuapp.com/img/myday.png',
             primaryColor: '#82FFA9',
-            allowLogin: false,
-            language:'en',
-            languageDictionary: {
-                emailInputPlaceholder: "something@youremail.com",
-                title: "Uloguj me",
-                }
         }, function (profile, token) {
         // Success callback
         store.set('profile', profile);
