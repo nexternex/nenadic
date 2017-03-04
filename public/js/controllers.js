@@ -349,9 +349,8 @@
     $http.get('/api/users'+auth.profile.user_id)
         .success(function(data) {
             //rezultat 1 profila ide u data
-            $scope.formUser = data;
+            $scope.formUser = data[0];
             //setujem formData da je jednak prvom objektu iz niza
-            $scope.formUser=$scope.user[0];
             console.log('profil sam dobio iz baze:'+data);
         })
         .error(function(data) {
