@@ -13,7 +13,12 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
   authProvider.init({
       domain: 'myday.eu.auth0.com',
       clientID: 'oFP2Wct8YTQvmWjmKAk4YgGmfLVZwJsl',
-      loginUrl: '/index'
+      loginUrl: '/index',
+      options: {
+        languageDictionary: {
+          title: "Prjavite se!"
+        }
+      }
     });
 
 
