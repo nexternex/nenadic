@@ -82,7 +82,7 @@ md-virtual-repeat-container {
   border: solid 1px #ccc;
   padding: 10px;
 }
-input{
+.mypage_main input{
   color:rgba(255, 255, 255, 0.7)!important;
 }
 label {
