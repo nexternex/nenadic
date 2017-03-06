@@ -16,7 +16,8 @@
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
-       $scope.mystate=auth.profile;
+       $scope.mystate=angular.IsUndefined(auth.profile);
+
        console.log($scope.mystate);
 
     //Api create a new account
