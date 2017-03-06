@@ -17,16 +17,7 @@
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
       
-       $scope.mystate= function () {
-           var state=false;
-           if (auth.profile === "undefined" ){
-               state=false;
-           }
-           else{
-              state= true;
-           }
-           return state
-       };
+       $scope.mystate=false;
        console.log(auth.profile +": "+$scope.mystate());
 
     //Api create a new account
@@ -36,6 +27,7 @@
                 .success(function(data) {
                     // $scope.formUser = data;
                     alert("uspesno ste registrovali nalog koristeci profileController");
+                     $scope.mystate=true;
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
@@ -90,6 +82,7 @@
         store.remove('profile');
         store.remove('token');
         $location.path('/home');
+        $scope.mystate=false;
     };
 
     console.log('pokusaj login controller used');
