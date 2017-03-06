@@ -25,7 +25,7 @@
                return true;
            }
        };
-       console.log($scope.mystate());
+       console.log(auth.profile +": "+$scope.mystate());
 
     //Api create a new account
         $scope.createUser = function() {
