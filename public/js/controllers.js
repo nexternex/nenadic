@@ -16,7 +16,7 @@
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
-       $scope.mystate=auth.isLogedin();
+       $scope.mystate=auth.isLoggedIn();
        console.log($scop.mystate);
 
     //Api create a new account
