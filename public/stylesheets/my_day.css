@@ -7,9 +7,9 @@
   min-height: 100%;
 }*/
 
-body,.mypage_section,.mypage_main::before {
+/*body,.mypage_section,.mypage_main::before {
   background: url(/img/bg01.jpg) 0 / cover fixed;
-}
+}*/
 .mypage_main {
   margin: 100px auto;
   position: relative;
