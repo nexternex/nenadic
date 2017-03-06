@@ -12,7 +12,7 @@
 					<md-toolbar>
 						<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl" layout="row" layout-align="space-between center">
 								<span>
-									<md-button aria-label="Login" class=" md-raised md-mini hue-2 md-primary" ng-click="login()" ng-show="{{mystate}} ==undefined" >
+									<md-button aria-label="Login" class=" md-raised md-mini hue-2 md-primary" ng-click="login()"  >
 										<md-icon md-svg-src="account">Prijava</md-icon>
 										<strong>Prijava</strong>
 										<md-tooltip md-direction="down">SignIn</md-tooltip>
@@ -23,15 +23,15 @@
 										<md-tooltip md-direction="down">Registracija</md-tooltip>
 									</md-button>
 
-									<md-button aria-label="Logout" class="md-fab md-raised md-mini hue-2 md-primary" ng-hide="false" ng-click="logout()">
+									<md-button aria-label="Logout" class="md-fab md-raised md-mini hue-2 md-primary" ng-show="{{mystate}} !== undefined" ng-click="logout()">
 										<md-icon md-svg-src="power"></md-icon>
 									</md-button>
 
-									<md-button aria-label="Photo" class="md-fab md-raised md-mini hue-3 md-primary">
+									<md-button aria-label="Photo" class="md-fab md-raised md-mini hue-3 md-primary"  ng-show="{{mystate}} !== undefined">
 										<md-icon md-svg-src="map"></md-icon>
 									</md-button>
 									
-									<a href="register" ng-controller="UserInfoCtrl">	
+									<a href="register" ng-controller="UserInfoCtrl"  ng-show="{{mystate}} !== undefined">	
 										<img ng-src="{{auth.profile.picture}}">
 										<h2 class="white"><strong> {{auth.profile.nickname}}<strong></h2>
 									</a>
