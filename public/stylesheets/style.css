@@ -44,11 +44,11 @@ Main Components
     
 }
 .cd-header h1 {
-  color: #ffffff;
+  color: rgb(200,230,201);
   line-height: 150px;
   text-align: center;
   font-size: 9.4rem;
-  font-weight: 600;
+  font-weight: 100;
 }
 @media only screen and (min-width: 1170px) {
   .cd-header {
