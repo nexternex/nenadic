@@ -18,12 +18,14 @@
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
       
        $scope.mystate= function () {
+           var state=false;
            if (auth.profile == "undefined" ){
-               return false;
+               state=false;
            }
            else{
-               return true;
+              state= true;
            }
+           return state
        };
        console.log(auth.profile +": "+$scope.mystate());
 
