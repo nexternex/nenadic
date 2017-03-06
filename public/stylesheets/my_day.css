@@ -3,13 +3,13 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 
 
-/*html, body{
+html, body{
   min-height: 100%;
-}*/
+}
 
-/*body,.mypage_section,.mypage_main::before {
+.mypage_section,.mypage_main::before {
   background: url(/img/bg01.jpg) 0 / cover fixed;
-}*/
+}
 .mypage_main {
   margin: 100px auto;
   position: relative;
