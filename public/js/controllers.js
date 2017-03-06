@@ -19,7 +19,7 @@
       
        $scope.mystate= function () {
            var state=false;
-           if (auth.profile == "undefined" ){
+           if (auth.profile === "undefined" ){
                state=false;
            }
            else{
