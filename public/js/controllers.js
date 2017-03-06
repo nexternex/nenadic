@@ -47,7 +47,7 @@
         // Success callback
         store.set('profile', profile);
         store.set('token', token);
-        $location.path('/userpage');
+        $location.path('/home');
         }, function () {
             console.log('error controller login');
             alert("please login");
