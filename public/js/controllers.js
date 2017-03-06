@@ -27,7 +27,7 @@
                 .success(function(data) {
                     // $scope.formUser = data;
                     alert("uspesno ste registrovali nalog koristeci profileController");
-                     $scope.mystate=true;
+                   
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
@@ -49,6 +49,7 @@
         store.set('profile', profile);
         store.set('token', token);
         $location.path('/home');
+         $scope.mystate=true;
         }, function () {
             console.log('error controller login');
             alert("please login");
