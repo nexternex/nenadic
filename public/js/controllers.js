@@ -16,7 +16,7 @@
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
-       $scope.mystate=auth.profile.user_id;
+       $scope.mystate=auth.profile;
 
        console.log($scope.mystate);
 
