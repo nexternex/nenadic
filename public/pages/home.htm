@@ -23,15 +23,15 @@
 										<md-tooltip md-direction="down">Registracija</md-tooltip>
 									</md-button>
 
-									<md-button aria-label="Logout" class="md-fab md-raised md-mini hue-2 md-primary" ng-show="{{mystate}} !== undefined" ng-click="logout()">
+									<md-button aria-label="Logout" class="md-fab md-raised md-mini hue-2 md-primary" ng-show="{{mystate}} !== 'undefined'" ng-click="logout()">
 										<md-icon md-svg-src="power"></md-icon>
 									</md-button>
 
-									<md-button aria-label="Photo" class="md-fab md-raised md-mini hue-3 md-primary"  ng-show="{{mystate}} !== undefined">
+									<md-button aria-label="Photo" class="md-fab md-raised md-mini hue-3 md-primary"  ng-show="{{mystate}} !== 'undefined'">
 										<md-icon md-svg-src="map"></md-icon>
 									</md-button>
 									
-									<a href="register" ng-controller="UserInfoCtrl"  ng-show="{{mystate}} !== undefined">	
+									<a href="register" ng-controller="UserInfoCtrl"  ng-show="{{mystate}} !=='undefined'">	
 										<img ng-src="{{auth.profile.picture}}">
 										<h2 class="white"><strong> {{auth.profile.nickname}}<strong></h2>
 									</a>
