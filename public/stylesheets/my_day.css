@@ -1,7 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import url('https://fonts.googleapis.com/css?family=Shrikhand');
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+/* -------------------------------- 
 
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 1.6rem;
+  /*font-family: "Shrikhand"!important;*/
+  color: #331d35;
+}
+
+a {
+  color: #41307c;
+  text-decoration: none;
+}
 
 html, body{
   min-height: 100%;
