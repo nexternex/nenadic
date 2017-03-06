@@ -16,7 +16,7 @@
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
-       $scope.mystate=angular.isUndefined(value);
+       $scope.mystate=angular.isUndefined(auth.profile.user_id);
 
        console.log($scope.mystate);
 
