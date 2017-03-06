@@ -17,15 +17,15 @@
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
       
-       $scope.mystate=function(){
+       $scope.mystate= function () {
            if (auth.profile == "undefined" ){
                return false;
            }
            else{
                return true;
            }
-       }
-       console.log($scope.mystate);
+       };
+       console.log($scope.mystate());
 
     //Api create a new account
         $scope.createUser = function() {
