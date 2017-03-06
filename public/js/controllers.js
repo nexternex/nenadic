@@ -18,7 +18,7 @@
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
       
        $scope.mystate=false;
-       console.log(auth.profile +": "+$scope.mystate());
+       console.log(auth.profile +": "+$scope.mystate);
 
     //Api create a new account
         $scope.createUser = function() {
