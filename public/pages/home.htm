@@ -2,15 +2,15 @@
 	<header id="MyDay_header" class="cd-header">
 	 <div class="overlay"></div>
   <!--region SpeedDial -->
-			  <md-fab-toolbar md-open="fab.isOpen" count="fab.count" md-direction="right">
-					<md-fab-trigger class="align-with-text">
+			  <!--<md-fab-toolbar md-open="fab.isOpen" count="fab.count" md-direction="right">-->
+					<!--<md-fab-trigger class="align-with-text">
 						<md-button aria-label="menu" class="md-fab md-primary">
 							<md-tooltip md-direction="down">Login</md-tooltip>
 							<md-icon md-svg-icon="menu"></md-icon>
 						</md-button>
-					</md-fab-trigger>
-					<md-toolbar>
-						<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl" layout="row" layout-align="space-between center">
+					</md-fab-trigger>-->
+					<md-toolbar  ng-controller="LoginCtrl">
+						<!--<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl" layout="row" layout-align="space-between center">-->
 								<span>
 									<md-button aria-label="Login" class=" md-raised md-mini hue-2 md-primary" ng-click="login()"  ng-hide="mystate()">
 										<md-icon md-svg-src="account">Prijava</md-icon>
@@ -49,9 +49,9 @@
 									<div class="nav_links">Oglasavanje</div>
 									<div class="nav_links">Kontakt</div>
 								</span>
-						</md-fab-actions>
+						<!--</md-fab-actions>-->
 					</md-toolbar>
-				</md-fab-toolbar>
+				<!--</md-fab-toolbar>-->
  	 </md-content>
 	<!-- #endregion SpeedDial -->
 	<!--info o logu -->
