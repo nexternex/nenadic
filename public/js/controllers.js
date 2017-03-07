@@ -16,7 +16,7 @@
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
-        
+    //prijava da ne  
        $scope.mystate=function (){
            var state=[];
            if(auth.profile == undefined){
