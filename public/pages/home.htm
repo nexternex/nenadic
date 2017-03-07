@@ -25,18 +25,22 @@
 
 									<md-button aria-label="Logout" class="md-fab md-raised md-mini hue-2 md-primary" ng-show="mystate()" ng-click="logout()">
 										<md-icon md-svg-src="power"></md-icon>
+										<md-tooltip md-direction="down">Odjavi se</md-tooltip>
 									</md-button>
 
 									<md-button aria-label="profile" class="md-fab md-raised md-mini hue-3 md-primary"  ng-show="mystate()">
 										<md-icon md-svg-src="account"></md-icon>
+										<md-tooltip md-direction="down">Podesavanja naloga</md-tooltip>
 									</md-button>
 									
 									<md-button aria-label="<likes></likes>" class="md-fab md-raised md-mini hue-3 md-primary"  ng-show="mystate()">
 										<md-icon md-svg-src="heart"></md-icon>
+										<md-tooltip md-direction="down">Tvoj izbor</md-tooltip>
 									</md-button>
 									
 									<md-button aria-label="web" class="md-fab md-raised md-mini hue-3 md-primary"  ng-show="mystate()">
 										<md-icon md-svg-src="web"></md-icon>
+										<md-tooltip md-direction="down">Tvoja pozivnica</md-tooltip>
 									</md-button>
 									
 									<!--<a href="register" ng-controller="UserInfoCtrl" ng-show="mystate()">	

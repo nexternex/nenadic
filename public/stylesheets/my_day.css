@@ -39,6 +39,7 @@ html, body{
 #myday_toolbar{
     position: relative;
     z-index: 12;
+    background: transparent!important;
 };
 .mypage_section,.mypage_main::before {
   background: url(/img/bg01.jpg) 0 / cover fixed;
