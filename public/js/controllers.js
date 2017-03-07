@@ -50,6 +50,7 @@
         store.set('token', token);
         $location.path('/home');
          $scope.mystate=true;
+         
         }, function () {
             console.log('error controller login');
             alert("please login");
