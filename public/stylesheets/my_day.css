@@ -40,6 +40,9 @@ html, body{
     position: relative;
     z-index: 12;
     background: transparent!important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 0.8em;
 };
 .mypage_section,.mypage_main::before {
   background: url(/img/bg01.jpg) 0 / cover fixed;
