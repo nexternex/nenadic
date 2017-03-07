@@ -10,14 +10,14 @@
 						</md-button>
 					</md-fab-trigger>
 					<md-toolbar>
-						<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl" layout="row" layout-align="space-between center" ng-hide="mystate()">
+						<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl" layout="row" layout-align="space-between center">
 								<span>
 									<md-button aria-label="Login" class=" md-raised md-mini hue-2 md-primary" ng-click="login()"  ng-hide="mystate()">
 										<md-icon md-svg-src="account">Prijava</md-icon>
 										<strong>Prijava</strong>
 										<md-tooltip md-direction="down">SignIn</md-tooltip>
 									</md-button>
-									<md-button aria-label="SignUp" class=" md-raised md-mini hue-2 md-accent" ng-click="signup()" >
+									<md-button aria-label="SignUp" class=" md-raised md-mini hue-2 md-accent" ng-click="signup()" ng-hide="mystate()" >
 										<md-icon md-svg-src="account"></md-icon>
 												<strong>Registracija</strong>
 										<md-tooltip md-direction="down">Registracija</md-tooltip>
