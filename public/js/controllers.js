@@ -20,16 +20,14 @@
        $scope.mystate=function (){
            var state=[];
            if(auth.profile == undefined){
-               console.log("auth.profile0:"+auth.profile);
              state=false;   
            }
            else{
-               console.log("auth.profile1:"+auth.profile);
                state=true;
            }
            return state;
        };
-       console.log(auth.profile +": "+$scope.mystate());
+       console.log("funcija:"+auth.profile +": "+$scope.mystate());
 
     //Api create a new account
         $scope.createUser = function() {
