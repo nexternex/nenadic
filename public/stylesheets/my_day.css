@@ -30,6 +30,7 @@ body {
 a {
   color: #41307c;
   text-decoration: none;
+  background-color: transparent!important;
 }
 
 html, body{
