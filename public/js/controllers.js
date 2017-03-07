@@ -17,7 +17,18 @@
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
       
-       $scope.mystate=false;
+       $scope.mystate=function (){
+           var state=[];
+           if(auth.profile == undefined){
+               console.log(auth.profile);
+             state=false;   
+           }
+           else{
+               console.log(auth.profile);
+               state=true;
+           }
+           return state;
+       };
        console.log(auth.profile +": "+$scope.mystate);
 
     //Api create a new account
@@ -49,7 +60,7 @@
         store.set('profile', profile);
         store.set('token', token);
         $location.path('/home');
-         $scope.mystate=true;
+         
          
         }, function () {
             console.log('error controller login');
@@ -74,9 +85,6 @@
             alert("please login");
         // Error callback
         });
-
-
-
     };
         
     $scope.logout = function() {
@@ -84,7 +92,6 @@
         store.remove('profile');
         store.remove('token');
         $location.path('/home');
-        $scope.mystate=false;
     };
 
     console.log('pokusaj login controller used');
@@ -201,7 +208,7 @@
     // <-----------Main controler END------------------------>    
  }]);   
 //KONTROLER: Menu controller----ciricle meni 
- myDay.controller('MenuCtrl',['$scope', function($scope) {
+    myDay.controller('MenuCtrl',['$scope', function($scope) {
             console.log("MenuCtrl");
         // filteri za sale
             var MyDay_filterSetSale=[  
