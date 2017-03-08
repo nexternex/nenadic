@@ -221,6 +221,9 @@ xtab-filter
     /* reduce width when filter is visible */
     width: 80%;
   }
+ .slogan{
+   font-size: 0.5em;
+ } 
 }
 
 /* -------------------------------- 
