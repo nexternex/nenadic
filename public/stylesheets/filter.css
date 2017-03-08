@@ -67,7 +67,7 @@ Main Components
     padding-top: 90px;
   }
   .cd-header h1{
-    line-height:1em;
+    line-height:50px;
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -224,9 +224,6 @@ xtab-filter
     /* reduce width when filter is visible */
     width: 80%;
   }
- .slogan{
-   font-size: 0.5em;
- } 
 }
 
 /* -------------------------------- 
