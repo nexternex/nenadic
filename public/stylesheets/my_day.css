@@ -42,9 +42,9 @@ html, body{
     background: transparent!important;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bolder;
-};
+}
 .mypage_wrap{
-  min-height: 100%;
+    min-height: 100%;
     background: url(img/001.jpg);
     background-size: cover;
     padding: 1%;
