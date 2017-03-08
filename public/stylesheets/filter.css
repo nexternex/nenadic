@@ -66,6 +66,9 @@ Main Components
   .cd-main-content.is-fixed .cd-gallery {
     padding-top: 90px;
   }
+  .cd-header h1{
+    line-height:1em;
+  }
 }
 @media only screen and (min-width: 1170px) {
   .cd-main-content.is-fixed .cd-gallery {
