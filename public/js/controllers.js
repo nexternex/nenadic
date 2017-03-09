@@ -333,6 +333,9 @@
             console.log('Error: ' + data);
         });  
      }]);
+//pretraga za lajkovane kartice
+
+
 
 //KONTROLER: Profil korisnika
     myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
