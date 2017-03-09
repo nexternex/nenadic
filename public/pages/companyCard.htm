@@ -4,7 +4,7 @@
       <div class="md-toolbar-tools">
         <h2>{{modal.item.gsx$naziv.$t}}</h2>
         <span flex></span>
-        <md-button class="md-icon-button" ng-click="modal.cancel()">
+        <md-button class="md-icon-button" ng-click="cancel()">
           <!--<md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>-->
           <md-icon md-svg-src="close"></md-icon>
         </md-button>
@@ -61,10 +61,10 @@
       Vise na sajtu
       </md-button>
       <span flex></span>
-      <md-button class ="md-accent" ng-click="answer('not useful')" >
+      <md-button class ="md-accent" ng-click="cancel()" >
         Zatvori
       </md-button>
-      <md-button class="med-primary" ng-click="answer('useful')" style="margin-right:20px;" >
+      <md-button class="med-primary" ng-click="Hide()" style="margin-right:20px;" >
         <md-icon md-svg-src="heart"></md-icon>
       </md-button>
     </md-dialog-actions>
