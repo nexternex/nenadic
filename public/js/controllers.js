@@ -268,7 +268,7 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
-        
+        //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item) {
                 $mdDialog.show({
                     controller: function ($mdDialog) {
