@@ -294,15 +294,15 @@
                 }).then(console.log(item));
             };
     
-    // when landing on the page, get all lists and show them
-    $http.get('/api/lists')
-        .success(function(data) {
-            $scope.lists = data;
-            console.log('liste sam dobio iz baze:'+data);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
+    // when landing on the page, GET-liste iz baze podatka
+    // $http.get('/api/lists')
+    //     .success(function(data) {
+    //         $scope.lists = data;
+    //         console.log('liste sam dobio iz baze:'+data);
+    //     })
+    //     .error(function(data) {
+    //         console.log('Error: ' + data);
+    //     });
     
     $scope.isLoading = true;
 
