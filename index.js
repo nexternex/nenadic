@@ -158,7 +158,7 @@ const S3_BUCKET = process.env.S3_BUCKET;
 
 	//USER LIKE FUNKCIJA
 	app.post('/api/user_ido:user_id', function(req, res) {
-		User.ido.update({ 'u_id': req.params.user_id },{ $push: { ido :req.body.ido}}, function(err, user) {
+		User.update({ 'u_id': req.params.user_id },{ $push: { ido :req.body.ido}}, function(err, user) {
 			if (err)
 				res.send(err);
 			// get and return all the lists after you create another
