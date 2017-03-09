@@ -267,9 +267,10 @@
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog) {
+    myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,auth) {
         //modal detalji kompanije iz liste
-        $scope.showAdvanced = function(e,item) {
+        $scope.showAdvanced = function(e,item,auth) {
+            $scope.auth=auth;
                 $mdDialog.show({
                     controller: function ($mdDialog) {
                         var vm = this;
