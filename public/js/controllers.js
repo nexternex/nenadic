@@ -272,7 +272,7 @@
         $scope.showAdvanced = function(e,item,auth) {
             $scope.auth=auth;
                 $mdDialog.show({
-                    controller: function ($mdDialog) {
+                    controller: function ($mdDialog,auth) {
                         var vm = this;
                         vm.item = {};
                         vm.item = item;  //your task object from the ng-repeat
