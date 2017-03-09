@@ -64,7 +64,7 @@ Main Components
 }
 @media only screen and (min-width: 768px) {
   .cd-main-content.is-fixed .cd-gallery {
-    padding-top: 90px;
+    padding-top: 90px; 
   }
   .cd-header h1{
     line-height:100px;
