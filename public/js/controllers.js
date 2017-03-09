@@ -285,6 +285,19 @@
                             console.log("cancel");
                             $mdDialog.cancel();
                         };
+
+                      this.ido = function () {
+                            console.log("Ido");
+
+                            $http.post('/api/user_ido'+auth.profile.user_id,{id_c:modal.item.gsx$id.$t,u_id:auth.profile.user_id})
+                                .success(function(data) {
+                                    console.log('Update user completed');
+                                })
+                                .error(function(data) {
+                                    console.log('Error: '+ data);
+                                });
+                                                
+                        };
                     },
                     controllerAs: 'modal',
                     templateUrl: '../pages/companyCard.htm',

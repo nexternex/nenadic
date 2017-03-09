@@ -156,6 +156,17 @@ const S3_BUCKET = process.env.S3_BUCKET;
 			});
 		});
 
+	//USER LIKE FUNKCIJA
+	app.post('/api/user_ido:user_id', function(req, res) {
+        console.log(req.body.formUser.user_id+":"+ req.body.formUser.email);
+		// create a list, information comes from AJAX request from Angular
+		User.ido.update({ 'u_id': req.params.user_id },
+			 { $push: { ido :req.body.ido
+				}}, function(err, user) {
+			if (err)
+				res.send(err);
+			// get and return all the lists after you create another
+		});
 
 
 	// GET USER
