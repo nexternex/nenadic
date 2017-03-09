@@ -62,7 +62,7 @@
       </md-button>
       <span flex></span>
       <md-button class ="md-accent" ng-click="modal.cancel()" >Zatvori</md-button>
-      <md-button class="md-primary" ng-click="modal.ido()" style="margin-right:20px;" >
+      <md-button class="md-primary" ng-click="modal.ido({{modal.item.gsx$id.$t}})" style="margin-right:20px;" >
         <md-icon md-svg-src="heart"></md-icon>
       </md-button>
     </md-dialog-actions>

@@ -289,8 +289,9 @@
 
                       this.ido = function () {
                             console.log("Ido");
+                            var id_c=e;
 
-                            $http.post('/api/user_ido'+auth.profile.user_id,{id_c:modal.item.gsx$id.$t,u_id:auth.profile.user_id})
+                            $http.post('/api/user_ido'+auth.profile.user_id,{id_c:modal.item.gsx$id.$t})
                                 .success(function(data) {
                                     console.log('Update user completed');
                                 })
