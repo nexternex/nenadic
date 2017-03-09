@@ -276,12 +276,12 @@
                         vm.item = {};
                         vm.item = item;  //your task object from the ng-repeat
 
-                        $scope.hide = function ($mdDialog) {
+                        $scope.hide = function () {
                             console.log("hide");
                             $mdDialog.hide();
                         };
                         
-                        $scope.cancel = function ($mdDialog) {
+                        $scope.cancel = function () {
                             console.log("cancel");
                             $mdDialog.cancel();
                         };
