@@ -94,13 +94,13 @@
 						 md-row-height="2:2"
 						 md-gutter="12px" 				  	
 						 md-gutter-gt-sm="8px">
-								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in lists | inArray:filterBy:"gsx$naziv.$t"'
+								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in lists | inArray:filterBy:"gsx$id.$t"'
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
 									md-colspan-sm="1" 
 									md-colspan-xs="1"
 									data-myDay-type="{{item.gsx$tip.$t}}"
-									data-myDay-ref={{item.gsx$id.$t}}
+									data-myDay-ref="{{item.gsx$id.$t}}"
 									md-whiteframe-3dp									
 									style="background-image:url({{item.gsx$img.$t}})" >
 											<!--<div class="overlay"></div>-->
