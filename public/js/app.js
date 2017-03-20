@@ -75,7 +75,7 @@ myDay.filter('myFilter', function() {
         // filter your original array to return only the objects that
         // have their ID in the filterIDs array
         return inputArray.filter(function (entry) {
-            return this.indexOf(entry.ID) !== -1;
+            return this.indexOf(entry.gsx$id.$t) !== -1;
         }, filterIDs); // filterIDs here is what "this" is referencing in the line above
     };
 });
