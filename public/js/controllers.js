@@ -311,15 +311,15 @@
                 }).then(console.log(item));
             };
     
-    // when landing on the page, GET-liste iz baze podatka
-    // $http.get('/api/lists')
-    //     .success(function(data) {
-    //         $scope.lists = data;
-    //         console.log('liste sam dobio iz baze:'+data);
-    //     })
-    //     .error(function(data) {
-    //         console.log('Error: ' + data);
-    //     });
+            // when landing on the page, GET-liste iz baze podatka
+            // $http.get('/api/lists')
+            //     .success(function(data) {
+            //         $scope.lists = data;
+            //         console.log('liste sam dobio iz baze:'+data);
+            //     })
+            //     .error(function(data) {
+            //         console.log('Error: ' + data);
+            //     });
     
     $scope.isLoading = true;
 
@@ -334,10 +334,6 @@
             console.log('Error: ' + data);
         });  
      }]);
-//pretraga za lajkovane kartice
- 
-
-
 //KONTROLER: Profil korisnika
     myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
         $scope.formData = {};
