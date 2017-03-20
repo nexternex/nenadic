@@ -335,7 +335,7 @@
         });  
      }]);
 //pretraga za lajkovane kartice
-    search.gsx$id.$t = [1, 2];
+   $scope.filterBy = ['1', '2', '3'];
 
 
 //KONTROLER: Profil korisnika

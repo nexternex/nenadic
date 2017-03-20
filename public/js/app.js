@@ -68,14 +68,12 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
   });
 });
 
- // add a custom filter to your module
-myDay.filter('myFilter', function() {
-    // the filter takes an additional input filterIDs
-    return function(inputArray, filterIDs) {
-        // filter your original array to return only the objects that
-        // have their ID in the filterIDs array
-        return inputArray.filter(function (entry) {
-            return this.indexOf(entry.gsx$id.$t) !== -1;
-        }, filterIDs); // filterIDs here is what "this" is referencing in the line above
+myDay.filter('inArray', function($filter){
+    return function(list, arrayFilter, element){
+        if(arrayFilter){
+            return $filter("filter")(list, function(listItem){
+                return arrayFilter.indexOf(listItem[element]) != -1;
+            });
+        }
     };
 });
