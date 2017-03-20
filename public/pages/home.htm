@@ -94,7 +94,7 @@
 						 md-row-height="2:2"
 						 md-gutter="12px" 				  	
 						 md-gutter-gt-sm="8px">
-								<md-grid-tile  class="md-accent myd_card" ng-repeat="item in lists | filter:search |filter:search.gsx$id.$t:true "
+								<md-grid-tile  class="md-accent myd_card" ng-repeat="item in lists | filter:search |filter:search.gsx$id.$t:match:true"
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
 									md-colspan-sm="1" 
@@ -125,7 +125,7 @@
 					<h4>Pretraga</h4>
 					<div class="cd-filter-content">
 						<input type="search" placeholder="Probajte sa tri sesira i sl...." ng-model="search.gsx$naziv.$t">
-						<input type="input"  placeholder="" ng-model="search.gsx$id.$t">
+						<input type="input"  placeholder="Ovde ide upis like-a" ng-model="search.gsx$id.$t">
 					</div> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
 
