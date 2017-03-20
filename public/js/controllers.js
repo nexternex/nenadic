@@ -268,6 +268,7 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,auth) {
+
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
             $scope.auth=auth;
@@ -334,7 +335,7 @@
         });  
      }]);
 //pretraga za lajkovane kartice
-
+    search.gsx$id.$t = [1, 2];
 
 
 //KONTROLER: Profil korisnika
