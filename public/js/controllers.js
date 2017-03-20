@@ -267,8 +267,8 @@
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,auth) {
-
+    myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,auth,inArray) {
+        $scope.filterBy = ['1', '2', '3'];
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
             $scope.auth=auth;
@@ -335,7 +335,7 @@
         });  
      }]);
 //pretraga za lajkovane kartice
-   $scope.filterBy = ['1', '2', '3'];
+ 
 
 
 //KONTROLER: Profil korisnika
