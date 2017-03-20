@@ -94,7 +94,7 @@
 						 md-row-height="2:2"
 						 md-gutter="12px" 				  	
 						 md-gutter-gt-sm="8px">
-								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in lists | filter : search | filter:search.gsx$id.$t:"gsx$id.$t":true'
+								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in lists | filter : search | filter:filterBy:"gsx$id.$t"'
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
 									md-colspan-sm="1" 
@@ -106,6 +106,7 @@
 											<!--<div class="overlay"></div>-->
 											<md-grid-tile-footer class="myd_card_footer"> 
 												<span class="md-headline company_name"  ng-click="showAdvanced(e,item)">{{item.gsx$naziv.$t}}</span>
+												<span class="md-headline company_name">{{item.gsx$id.$t}}</span>
 											</md-grid-tile-footer>	
 								</md-grid-tile>
    					  		</md-grid-list>	
