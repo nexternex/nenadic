@@ -74,6 +74,7 @@ myDay.filter('myFilter', function () {
       angular.forEach(inputs, function (input) {
         if (filterValues.indexOf(input.gsx$id.$t) !== -1)
             output.push(input);
+            console.log("inputNN:"+input)
        });
        return output;
    };
