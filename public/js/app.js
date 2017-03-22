@@ -68,12 +68,13 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
   });
 });
 
-myDay.filter('inArray', function($filter){
-    return function(list, arrayFilter, element){
-        if(arrayFilter){
-            return $filter("filter")(list, function(listItem){
-                return arrayFilter.indexOf(listItem[element]) != -1;
-            });
-        }
-    };
+myDay.filter('myFilter', function () {  
+   return function(inputs,filterValues) {
+      var output = [];
+      angular.forEach(inputs, function (input) {
+        if (filterValues.indexOf(input.id) !== -1)
+            output.push(input);
+       });
+       return output;
+   };
 });
