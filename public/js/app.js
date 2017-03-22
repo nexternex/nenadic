@@ -72,7 +72,7 @@ myDay.filter('myFilter', function () {
    return function(inputs,filterValues) {
       var output = [];
       angular.forEach(inputs, function (input) {
-        if (filterValues.indexOf(input.gsx$id.$t) !== -1)
+        if (filterValues.indexOf(input.item.gsx$id.$t) !== -1)
             output.push(input);
             console.log("inputNN:"+output);
        });
