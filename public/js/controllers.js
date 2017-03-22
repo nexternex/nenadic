@@ -268,9 +268,9 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,auth) {
-      $scope.filterValues = ["1","8"];
+      $scope.filterValues = [1,8];
       $scope.myFilter = function(value) {
-     return ($scope.filterValues.indexOf(value.gsx$naziv.$t) !== -1);
+     return ($scope.filterValues.indexOf(value.gsx$id.$t) !== -1);
 };
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
