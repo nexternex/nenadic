@@ -69,7 +69,7 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
 });
 
 myDay.filter('myFilter', function () {
-     console.log("inputNN:"+input);
+     console.log("inputN1:"+input);
    
 
    return function(inputs,filterValues) {
