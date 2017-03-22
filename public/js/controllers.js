@@ -268,7 +268,7 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$http','$mdDialog', function ($scope,$http,$mdDialog,auth) {
-      $scope.filterValues = ["1","8"];
+      $scope.filterValues = [1,8];
       $scope.myFilter = function(value) {
             return ($scope.filterValues.indexOf(value.id) !== -1);
         };
