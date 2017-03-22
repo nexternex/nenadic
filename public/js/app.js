@@ -68,7 +68,8 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
   });
 });
 
-myDay.filter('myFilter', function () {  
+myDay.filter('myFilter', function () { 
+  console.log("filetr:1"); 
    return function(inputs,filterValues) {
       var output = [];
       angular.forEach(inputs, function (input) {
