@@ -1,9 +1,10 @@
 //MODULE Angular
 var myDay=angular.module('myDay',['ngRoute','ngResource','ngAnimate','ngAria','ngMaterial','auth0','angular-storage', 'angular-jwt','md.data.table']);
 
-myDay.run(function(auth) {
+myDay.run(function(auth,$rootScope) {
   // This hooks al auth events to check everything as soon as the app starts
   auth.hookEvents();
+  $rootScope.up.ido = ["1","22","33"];
   console.log('step0001-a');
 });
  
@@ -50,7 +51,6 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
 });
 
 myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
-   $rootScope.up.ido= ["1","22","33"];
   // This events gets triggered on refresh or URL change
   $rootScope.$on('$locationChangeStart', function() {
     var token = store.get('token');
