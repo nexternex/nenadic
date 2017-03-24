@@ -267,8 +267,8 @@
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$http','$mdDialog','auth', function ($scope,$http,$mdDialog,auth) {
-    //   $scope.filterValues = [1,8];
+    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', function ($scope,$rootScope,$http,$mdDialog,auth) {
+        $scope.filterValues = $rootScope.up.ido;
     //   $scope.myFilter = function(value) {
     //         return ($scope.filterValues.indexOf(value.id) !== -1);
     //     };
@@ -338,7 +338,7 @@
         });  
      }]);
 //KONTROLER: Profil korisnika
-    myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
+    myDay.controller('ProfileController', ['$scope','$rootScope','$http','auth','$q','$timeout', function ($scope,$rootScope,$http,auth,$q,$timeout) {
         $scope.formData = {};
         $scope.profiles = [];
         $scope.auth = auth;
@@ -382,6 +382,7 @@
         .success(function(data) {
             //rezultat 1 profila ide u data
             $scope.formUser = data[0];
+            $rootScope.up=data[0];
             //setujem formData da je jednak prvom objektu iz niza
             console.log('profil sam dobio iz baze:'+data);
         })
