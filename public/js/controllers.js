@@ -382,7 +382,7 @@
         .success(function(data) {
             //rezultat 1 profila ide u data
             $scope.formUser = data[0];
-            $rootScope.up=data[0];
+            $rootScope.up=data[0].ido;
             //setujem formData da je jednak prvom objektu iz niza
             console.log('profil sam dobio iz baze:'+data);
         })
