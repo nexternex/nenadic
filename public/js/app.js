@@ -6,7 +6,7 @@ myDay.run(function(auth,$rootScope) {
   auth.hookEvents();
     $rootScope.up ="";
     $rootScope.heart = false;
-  console.log('step0001-a');
+    console.log('step0001-a');
 });
  
 //config app
