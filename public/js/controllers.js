@@ -96,11 +96,13 @@
 
     }]);
 //KONTROLER: Logout controller
-    myDay.controller('LogoutCtrl', function (auth, $location, store) {
+    myDay.controller('LogoutCtrl', function (auth, $location, store, $rootScope) {
     auth.signout();
     store.remove('profile');
     store.remove('token');
     $location.path('/timeline');
+    $rootScope.up ="";
+
     });
 //KONTROLER: UserInfoCtrl controller
     myDay.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
