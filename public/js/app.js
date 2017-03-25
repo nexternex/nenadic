@@ -72,6 +72,9 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
 
 myDay.filter('myFilter', function () {
    return function(inputs,filterValues) {
+     if(filerValues==""){
+        return input;
+     }else{
       var output = [];
       angular.forEach(inputs, function (input) {
         if (filterValues.indexOf(input.gsx$id.$t) !== -1)
@@ -79,5 +82,6 @@ myDay.filter('myFilter', function () {
             console.log("inputNN:"+output);
        });
        return output;
+     }
    };
 });
