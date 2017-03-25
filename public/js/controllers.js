@@ -15,7 +15,7 @@
 
  }]);
 //KONTROLER: Login controller
-    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location',function ($scope, $http, auth, store, $location) {
+    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope',function ($scope, $http, auth, store, $location,$rootScope) {
         
        $scope.mystate=function (){
            var state=[];
