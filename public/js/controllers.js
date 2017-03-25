@@ -86,6 +86,8 @@
     };
         
     $scope.logout = function() {
+        $rootScope.up ="";
+        console.log("promenjeni:"+$rootScope.up);
         auth.signout();
         store.remove('profile');
         store.remove('token');
