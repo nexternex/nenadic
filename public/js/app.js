@@ -73,7 +73,7 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
 myDay.filter('myFilter', function () {
    return function(inputs,filterValues) {
      if(filterValues==""){
-        return input;
+        return inputs;
      }else{
       var output = [];
       angular.forEach(inputs, function (input) {
