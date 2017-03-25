@@ -271,7 +271,7 @@
         if ($rootScope.up ==""){
             console.log("nolikes")
         }else if($rootScope.up !==""){
-        $scope.filterValues = $rootScope.up;
+            $scope.filterValues = $rootScope.up;
         };
     //   $scope.myFilter = function(value) {
     //         return ($scope.filterValues.indexOf(value.id) !== -1);
