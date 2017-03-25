@@ -102,7 +102,7 @@
     store.remove('token');
     $location.path('/timeline');
     $rootScope.up ="";
-
+    console.log("promenjeni:"+$rootScope.up);
     });
 //KONTROLER: UserInfoCtrl controller
     myDay.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
@@ -271,7 +271,7 @@
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', function ($scope,$rootScope,$http,$mdDialog,auth) {
         if ($rootScope.up ==""){
-              $scope.filterValues =$rootScope.up;
+              $scope.filterValues ="";
         }
         else if($rootScope.up !==""){
             $scope.filterValues = $rootScope.up;
