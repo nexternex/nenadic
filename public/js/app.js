@@ -4,8 +4,8 @@ var myDay=angular.module('myDay',['ngRoute','ngResource','ngAnimate','ngAria','n
 myDay.run(function(auth,$rootScope) {
   // This hooks al auth events to check everything as soon as the app starts
   auth.hookEvents();
-  $rootScope.up = ["1","22","33"];
-   $rootScope.heart = false;
+    $rootScope.up ="";
+    $rootScope.heart = false;
   console.log('step0001-a');
 });
  
