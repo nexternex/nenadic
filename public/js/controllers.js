@@ -268,7 +268,7 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', function ($scope,$rootScope,$http,$mdDialog,auth) {
-        if ($rootScope.up =="nohart"){
+        if ($rootScope.up ==""){
               $scope.filterValues ="";
             console.log("nolikes")
         }else if($rootScope.up !==""){
