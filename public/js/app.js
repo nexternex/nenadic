@@ -72,7 +72,7 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
 
 myDay.filter('myFilter', function () {
    return function(inputs,filterValues) {
-     if(filerValues==""){
+     if(filterValues==""){
         return input;
      }else{
       var output = [];
