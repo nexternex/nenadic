@@ -269,9 +269,21 @@
         else if($rootScope.up !==""){
             $scope.filterValues = $rootScope.up;
         };
-    //   $scope.myFilter = function(value) {
-    //         return ($scope.filterValues.indexOf(value.id) !== -1);
-    //     };
+
+$scope.heart=function(){
+    $http.get('/api/users'+auth.profile.user_id)
+        .success(function(data) {
+            //rezultat 1 profila ide u data
+            $rootScope.up=data[0].ido;
+            //setujem formData da je jednak prvom objektu iz niza
+            console.log('srce povlaci likove:'+data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+            // $scope.profiles = data;
+            // $scope.formData=$scope.profiles[0];
+        });
+    };     
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
             $scope.auth=auth;
@@ -382,7 +394,6 @@
         .success(function(data) {
             //rezultat 1 profila ide u data
             $scope.formUser = data[0];
-            $rootScope.up=data[0].ido;
             //setujem formData da je jednak prvom objektu iz niza
             console.log('profil sam dobio iz baze:'+data);
         })
