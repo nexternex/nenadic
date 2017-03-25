@@ -97,15 +97,6 @@
     console.log('pokusaj login controller used');
 
     }]);
-//KONTROLER: Logout controller
-    myDay.controller('LogoutCtrl', function (auth, $location, store, $rootScope) {
-        $rootScope.up ="";
-        console.log("promenjeni:"+$rootScope.up);
-        auth.signout();
-        store.remove('profile');
-        store.remove('token');
-        $location.path('/timeline');
-    });
 //KONTROLER: UserInfoCtrl controller
     myDay.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
     $scope.auth = auth;
