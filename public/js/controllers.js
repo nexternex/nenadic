@@ -270,85 +270,87 @@
             $scope.filterValues = $rootScope.up;
         };
 
-$scope.heart=function(){
-    $http.get('/api/users'+auth.profile.user_id)
-        .success(function(data) {
-            //rezultat 1 profila ide u data
-            $rootScope.up=data[0].ido;
-            //setujem formData da je jednak prvom objektu iz niza
-            console.log('srce povlaci likove:'+data);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-            // $scope.profiles = data;
-            // $scope.formData=$scope.profiles[0];
-        });
-    };     
+        $scope.heart=function(){
+            $http.get('/api/users'+auth.profile.user_id)
+                .success(function(data) {
+                    //rezultat 1 profila ide u data
+                    $rootScope.up=data[0].ido;
+                    //setujem formData da je jednak prvom objektu iz niza
+                    console.log('srce povlaci likove:'+data);
+                    $route.reload();
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                    // $scope.profiles = data;
+                    // $scope.formData=$scope.profiles[0];
+                });
+            };
+
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
-            $scope.auth=auth;
-                $mdDialog.show({
-                    controller: function ($mdDialog,auth) {
-                        var vm = this;
-                        vm.item = {};
-                        vm.item = item;  //your task object from the ng-repeat
+                $scope.auth=auth;
+                    $mdDialog.show({
+                        controller: function ($mdDialog,auth) {
+                            var vm = this;
+                            vm.item = {};
+                            vm.item = item;  //your task object from the ng-repeat
 
-                       this.hide = function () {
-                            console.log("hide");
-                            $mdDialog.hide();
-                        };
-                        
-                       this.cancel = function () {
-                            console.log("cancel");
-                            $mdDialog.cancel();
-                        };
+                        this.hide = function () {
+                                console.log("hide");
+                                $mdDialog.hide();
+                            };
+                            
+                        this.cancel = function () {
+                                console.log("cancel");
+                                $mdDialog.cancel();
+                            };
 
-                      this.ido = function (id_c) {
-                            console.log("Ido");
-                            var id_cc=id_c;
+                        this.ido = function (id_c) {
+                                console.log("Ido");
+                                var id_cc=id_c;
 
-                            $http.post('/api/user_ido'+auth.profile.user_id,{id_c:id_cc})
-                                .success(function(data) {
-                                    console.log('Update user completed');
-                                })
-                                .error(function(data) {
-                                    console.log('Error: '+ data);
-                                });
-                                                
-                        };
-                    },
-                    controllerAs: 'modal',
-                    templateUrl: '../pages/companyCard.htm',
-                    clickOutsideToClose:true,
-                    parent: angular.element(document.body),
-                    targetEvent: e,
-                    fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-                }).then(console.log(item));
-            };
-    
-            // when landing on the page, GET-liste iz baze podatka
-            // $http.get('/api/lists')
-            //     .success(function(data) {
-            //         $scope.lists = data;
-            //         console.log('liste sam dobio iz baze:'+data);
-            //     })
-            //     .error(function(data) {
-            //         console.log('Error: ' + data);
-            //     });
-    
-    $scope.isLoading = true;
+                                $http.post('/api/user_ido'+auth.profile.user_id,{id_c:id_cc})
+                                    .success(function(data) {
+                                        console.log('Update user completed');
+                                    })
+                                    .error(function(data) {
+                                        console.log('Error: '+ data);
+                                    });
+                                                    
+                            };
+                        },
+                        controllerAs: 'modal',
+                        templateUrl: '../pages/companyCard.htm',
+                        clickOutsideToClose:true,
+                        parent: angular.element(document.body),
+                        targetEvent: e,
+                        fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+                    }).then(console.log(item));
+                };
+        
+                // when landing on the page, GET-liste iz baze podatka
+                // $http.get('/api/lists')
+                //     .success(function(data) {
+                //         $scope.lists = data;
+                //         console.log('liste sam dobio iz baze:'+data);
+                //     })
+                //     .error(function(data) {
+                //         console.log('Error: ' + data);
+                //     });
+        
+            $scope.isLoading = true;
 
-    
-    $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
-        .success(function(data) {
-            $scope.lists = data.feed.entry;
-            $scope.isLoading = false;
-     //console.log('liste sam dobio iz baze:'+data.feed.entry);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });  
-     }]);
+        
+        $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
+            .success(function(data) {
+                $scope.lists = data.feed.entry;
+                $scope.isLoading = false;
+        //console.log('liste sam dobio iz baze:'+data.feed.entry);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });  
+        }]);
 //KONTROLER: Profil korisnika
     myDay.controller('ProfileController', ['$scope','$rootScope','$http','auth','$q','$timeout', function ($scope,$rootScope,$http,auth,$q,$timeout) {
         $scope.formData = {};
