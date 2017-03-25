@@ -270,7 +270,7 @@
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', function ($scope,$rootScope,$http,$mdDialog,auth) {
         if ($rootScope.up =="x"){
               $scope.filterValues ="x";
-            console.log("nolikes")
+            console.log("nolikes:"+ $scope.filterValues)
         }else if($rootScope.up !==""){
             $scope.filterValues = $rootScope.up;
         };
