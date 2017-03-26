@@ -268,7 +268,7 @@
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', function ($scope,$rootScope,$http,$mdDialog,auth) {
+    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth',' $location', function ($scope,$rootScope,$http,$mdDialog,auth, $location) {
         if ($rootScope.up ==""){
               $scope.filterValues ="";
         }
@@ -284,7 +284,8 @@
                   
                     //setujem formData da je jednak prvom objektu iz niza
                     console.log('srce povlaci likove:'+$rootScope.up);
-                     $scope.$apply;
+                    $scope.$apply;
+                    $location.path('/');
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
