@@ -4,7 +4,6 @@ var myDay=angular.module('myDay',['ngRoute','ngResource','ngAnimate','ngAria','n
 myDay.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
     auth.hookEvents();
-    console.log('step0001-a');
 });
  
 //config app
@@ -67,7 +66,7 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
     }
   });
 });
- Filtriranje liste u zavisnosti od lajkova
+//  Filtriranje liste u zavisnosti od lajkova
 myDay.filter('myFilter', function () {
    return function(inputs,filterValues) {
      if(filterValues==""){
