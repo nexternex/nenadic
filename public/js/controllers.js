@@ -274,7 +274,7 @@
             $http.get('/api/users'+auth.profile.user_id)
                 .success(function(data) {
                     //rezultat 1 profila ide u data
-                    $rootScope.up=data[0].ido;
+                   $scope.filterValues=data[0].ido;
                     //setujem formData da je jednak prvom objektu iz niza
                     console.log('srce povlaci likove:'+data);
                      $location.path('/home');
