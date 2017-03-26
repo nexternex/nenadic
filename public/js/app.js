@@ -50,8 +50,8 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
 myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
   // This events gets triggered on refresh or URL change
   $rootScope.$on('$locationChangeStart', function() {
-    // $rootScope.up ="";
-    // $rootScope.heart = false;
+    $rootScope.up ="";
+    $rootScope.heart = false;
 
     var token = store.get('token');
     if (token) {
@@ -67,18 +67,18 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
     }
   });
 });
- //Filtriranje liste u zavisnosti od lajkova
-// myDay.filter('myFilter', function () {
-//    return function(inputs,filterValues) {
-//      if(filterValues==""){
-//         return inputs;
-//      }else{
-//       var output = [];
-//       angular.forEach(inputs, function (input) {
-//         if (filterValues.indexOf(input.gsx$id.$t) !== -1)
-//             output.push(input);
-//        });
-//        return output;
-//      }
-//    };
-// });
+ Filtriranje liste u zavisnosti od lajkova
+myDay.filter('myFilter', function () {
+   return function(inputs,filterValues) {
+     if(filterValues==""){
+        return inputs;
+     }else{
+      var output = [];
+      angular.forEach(inputs, function (input) {
+        if (filterValues.indexOf(input.gsx$id.$t) !== -1)
+            output.push(input);
+       });
+       return output;
+     }
+   };
+});
