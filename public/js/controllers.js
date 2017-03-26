@@ -262,7 +262,7 @@
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth','$location', function ($scope,$rootScope,$http,$mdDialog,auth,$location) {
+    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', function ($scope,$rootScope,$http,$mdDialog,auth) {
         if ($rootScope.up ==""){
               $scope.filterValues ="";
         }
