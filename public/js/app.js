@@ -56,8 +56,7 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
     if (token) {
       if (!jwtHelper.isTokenExpired(token)) {
         if (!auth.isAuthenticated) {
-          auth.authenticate(store.get('profile'), token);
-           
+          auth.authenticate(store.get('profile'), token);         
         }
       } else {
         // Either show the login page or use the refresh token to get a new idToken
