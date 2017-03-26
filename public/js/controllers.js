@@ -95,7 +95,14 @@
 
     console.log('pokusaj login controller used');
 
-    }]);
+}]);
+//KONTROLER: Logout controller
+    myDay.controller('LogoutCtrl', function (auth, $location, store) {
+    auth.signout();
+    store.remove('profile');
+    store.remove('token');
+    $location.path('/timeline');
+    });
 //KONTROLER: UserInfoCtrl controller
     myDay.controller('UserInfoCtrl',['$scope','auth', function ($scope, auth) {
     $scope.auth = auth;
