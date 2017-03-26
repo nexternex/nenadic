@@ -281,6 +281,7 @@
                 .success(function(data) {
                     //rezultat 1 profila ide u data
                    $scope.filterValues=data[0].ido;
+                   $scope.$apply;
                     //setujem formData da je jednak prvom objektu iz niza
                     console.log('srce povlaci likove:'+$scope.filterValues);
                 })
