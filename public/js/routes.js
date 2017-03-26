@@ -26,7 +26,7 @@ myDay.config(function ($routeProvider){
     .when('/userpage',{
     templateUrl:'../pages/userpage.htm',
     controller:'ProfileController',
-    requiresLogin: false 
+    requiresLogin: true 
     });
 });
 
