@@ -86,7 +86,7 @@
     };
         
     $scope.logout = function() {
-        $rootScope.up ="";
+        // $rootScope.up ="";
         auth.signout();
         store.remove('profile');
         store.remove('token');
