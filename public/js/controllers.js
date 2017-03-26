@@ -277,7 +277,6 @@
                    $scope.filterValues=data[0].ido;
                     //setujem formData da je jednak prvom objektu iz niza
                     console.log('srce povlaci likove:'+data);
-                     $location.path('/home');
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
