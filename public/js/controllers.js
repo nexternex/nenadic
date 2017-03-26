@@ -269,25 +269,25 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', function ($scope,$rootScope,$http,$mdDialog,auth) {
-        if ($rootScope.up ==""){
-              $scope.filterValues ="";
-        }
-        else if($rootScope.up !==""){
-            $scope.filterValues = $rootScope.up;
-        };
+        // if ($rootScope.up ==""){
+        //       $scope.filterValues ="";
+        // }
+        // else if($rootScope.up !==""){
+        //     $scope.filterValues = $rootScope.up;
+        // };
 
-        // $scope.heart=function(){
-        //     $http.get('/api/users'+auth.profile.user_id)
-        //         .success(function(data) {
-        //             //rezultat 1 profila ide u data
-        //            $scope.filterValues=data[0].ido;
-        //             //setujem formData da je jednak prvom objektu iz niza
-        //             console.log('srce povlaci likove:'+data);
-        //         })
-        //         .error(function(data) {
-        //             console.log('Error: ' + data);
-        //         });
-        //     };
+        $scope.heart=function(){
+            $http.get('/api/users'+auth.profile.user_id)
+                .success(function(data) {
+                    //rezultat 1 profila ide u data
+                   $scope.filterValues=data[0].ido;
+                    //setujem formData da je jednak prvom objektu iz niza
+                    console.log('srce povlaci likove:'+data);
+                })
+                .error(function(data) {
+                    console.log('Error: ' + data);
+                });
+            };
 
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
