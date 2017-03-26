@@ -277,7 +277,7 @@
                     $rootScope.up=data[0].ido;
                     //setujem formData da je jednak prvom objektu iz niza
                     console.log('srce povlaci likove:'+data);
-                    $route.reload();
+                    $scope.$apply;
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
