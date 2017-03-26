@@ -50,8 +50,8 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
 myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
   // This events gets triggered on refresh or URL change
   $rootScope.$on('$locationChangeStart', function() {
-    // $rootScope.up ="";
-    // $rootScope.heart = false;
+    $rootScope.up ="";
+    $rootScope.heart = false;
 
     var token = store.get('token');
     if (token) {
