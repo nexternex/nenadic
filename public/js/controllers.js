@@ -269,12 +269,12 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', function ($scope,$rootScope,$http,$mdDialog,auth) {
-        // if ($rootScope.up ==""){
-        //       $scope.filterValues ="";
-        // }
-        // else if($rootScope.up !==""){
-        //     $scope.filterValues = $rootScope.up;
-        // };
+        if ($rootScope.up ==""){
+              $scope.filterValues ="";
+        }
+        else if($rootScope.up !==""){
+            $scope.filterValues = $rootScope.up;
+        };
 
         $scope.heart=function(){
             $http.get('/api/users'+auth.profile.user_id)
