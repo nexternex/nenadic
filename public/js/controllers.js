@@ -356,12 +356,13 @@
         }]);
 //KONTROLER: Profil korisnika
     myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout', function ($scope,$http,auth,$q,$timeout) {
-        $scope.formData = {};
-        $scope.profiles = [];
-        $scope.auth = auth;
+
+    $scope.formData = {};
+    $scope.profiles = [];
+    $scope.auth = auth;
     
     
-        $scope.category={
+    $scope.category={
         singleSelect: null,
         availableOptions: [
             {id: '1', name: 'Svecane sale'},
@@ -373,11 +374,11 @@
     };
 
     $scope.size={
-    singleSelect: null,
-    availableOptions: [
-      {id: '1', name: 'Standardna'},
-      {id: '2', name: 'Velika'},
-    ],
+        singleSelect: null,
+        availableOptions: [
+        {id: '1', name: 'Standardna'},
+        {id: '2', name: 'Velika'},
+        ],
    };
 
 
