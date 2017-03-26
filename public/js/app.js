@@ -68,17 +68,17 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
   });
 });
  //Filtriranje liste u zavisnosti od lajkova
-myDay.filter('myFilter', function () {
-   return function(inputs,filterValues) {
-     if(filterValues==""){
-        return inputs;
-     }else{
-      var output = [];
-      angular.forEach(inputs, function (input) {
-        if (filterValues.indexOf(input.gsx$id.$t) !== -1)
-            output.push(input);
-       });
-       return output;
-     }
-   };
-});
+// myDay.filter('myFilter', function () {
+//    return function(inputs,filterValues) {
+//      if(filterValues==""){
+//         return inputs;
+//      }else{
+//       var output = [];
+//       angular.forEach(inputs, function (input) {
+//         if (filterValues.indexOf(input.gsx$id.$t) !== -1)
+//             output.push(input);
+//        });
+//        return output;
+//      }
+//    };
+// });
