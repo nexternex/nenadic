@@ -95,7 +95,7 @@
 
     console.log('pokusaj login controller used');
 
-}]);
+    }]);
 //KONTROLER: Logout controller
     myDay.controller('LogoutCtrl', function (auth, $location, store) {
     auth.signout();
