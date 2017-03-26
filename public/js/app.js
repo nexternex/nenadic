@@ -4,6 +4,8 @@ var myDay=angular.module('myDay',['ngRoute','ngResource','ngAnimate','ngAria','n
 myDay.run(function(auth) {
   // This hooks al auth events to check everything as soon as the app starts
     auth.hookEvents();
+    $rootScope.up ="";
+    $rootScope.heart = false;
 });
  
 //config app
@@ -49,9 +51,6 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
 myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
   // This events gets triggered on refresh or URL change
   $rootScope.$on('$locationChangeStart', function() {
-    $rootScope.up ="";
-    $rootScope.heart = false;
-
     var token = store.get('token');
     if (token) {
       if (!jwtHelper.isTokenExpired(token)) {
