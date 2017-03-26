@@ -276,12 +276,10 @@
                     //rezultat 1 profila ide u data
                    $scope.filterValues=data[0].ido;
                     //setujem formData da je jednak prvom objektu iz niza
-                    console.log('srce povlaci likove:'+data);
+                    console.log('srce povlaci likove:'+data.ido);
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
-                    // $scope.profiles = data;
-                    // $scope.formData=$scope.profiles[0];
                 });
             };
 
