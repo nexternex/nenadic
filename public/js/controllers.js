@@ -16,7 +16,7 @@
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope',function ($scope, $http, auth, store, $location,$rootScope) {
-        
+        // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
        $scope.mystate=function (){
            var state=[];
            if(auth.profile == undefined){
@@ -282,7 +282,7 @@
                     //rezultat 1 profila ide u data
                    $scope.filterValues=data[0].ido;
                     //setujem formData da je jednak prvom objektu iz niza
-                    console.log('srce povlaci likove:'+data);
+                    console.log('srce povlaci likove:'+$scope.filterValues);
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
