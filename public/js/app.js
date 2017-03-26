@@ -18,8 +18,6 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
       loginUrl: '/index'
     });
 
-
-    
     jwtOptionsProvider.config({
       whiteListedDomains: ['nenadic.herokuapp.com', 'spreadsheets.google.com']
     });
@@ -69,7 +67,7 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
     }
   });
 });
-
+ //Filtriranje liste u zavisnosti od lajkova
 myDay.filter('myFilter', function () {
    return function(inputs,filterValues) {
      if(filterValues==""){
