@@ -280,12 +280,10 @@
             $http.get('/api/users'+auth.profile.user_id)
                 .success(function(data) {
                     //rezultat 1 profila ide u data
-                  $rootScope.up=data[0].ido;
-                  
+                   $rootScope.up=data[0].ido;
                     //setujem formData da je jednak prvom objektu iz niza
-                    console.log('srce povlaci likove:'+$rootScope.up);
-                     $scope.$apply;
-                     $location.path('/home');
+                   console.log('srce povlaci likove:'+$rootScope.up);
+                   $location.path('/home');
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
@@ -403,7 +401,6 @@
         .success(function(data) {
             //rezultat 1 profila ide u data
             $scope.formUser = data[0];
-            $rootScope.up=data[0].ido;
             //setujem formData da je jednak prvom objektu iz niza
             console.log('profil sam dobio iz baze:'+data);
         })
