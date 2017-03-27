@@ -18,7 +18,7 @@
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','MYDYserviceUP','mydyServiceHeart',function ($scope, $http, auth, store, $location,$rootScope,mydyServiceHeart) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
         //ikona srce u zavisnosti od switcha 
-        $scope.heartClicked=mydyServiceHeart.$rootScope.heart;
+        $scope.heartClicked=$rootScope.heart;
 
         $scope.heart=function(){
                 $http.get('/api/users'+auth.profile.user_id)
