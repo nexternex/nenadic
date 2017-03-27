@@ -283,7 +283,7 @@
                    $rootScope.up=data[0].ido;
                     //setujem formData da je jednak prvom objektu iz niza
                    console.log('srce povlaci likove:'+$rootScope.up);
-                   $location.path('/home');
+                   $location.path('/');
                 })
                 .error(function(data) {
                     console.log('Error: ' + data);
