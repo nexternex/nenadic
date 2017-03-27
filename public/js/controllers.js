@@ -16,8 +16,8 @@
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope',function ($scope, $http, auth, store, $location,$rootScope) {
-        // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
-
+    // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
+        //ikona srce u zavisnosti od switcha 
        $scope.heartClicked=$rootScope.heart;
 
        $scope.mystate=function (){
@@ -30,6 +30,7 @@
            }
            return state;
        };
+
        console.log("funcija:"+auth.profile +": "+$scope.mystate());
 
     //Api create a new account
