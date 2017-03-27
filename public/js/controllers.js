@@ -17,6 +17,7 @@
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope',function ($scope, $http, auth, store, $location,$rootScope) {
         // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
+       $scope.heartClicked=$rootScope.heart;
        $scope.mystate=function (){
            var state=[];
            if(auth.profile == undefined){
