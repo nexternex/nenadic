@@ -286,6 +286,9 @@
                     //rezultat 1 profila ide u data
                    $rootScope.up=data[0].ido;
                    $rootScope.heart=!$rootScope.heart;
+                   console.log( $rootScope.heart);
+                    //setujem formData da je jednak prvom objektu iz niza
+                   console.log('srce povlaci likove:'+$rootScope.up);
                    $location.path('/');
                 })
                 .error(function(data) {
