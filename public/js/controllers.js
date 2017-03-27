@@ -18,7 +18,7 @@
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope',function ($scope, $http, auth, store, $location,$rootScope) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
         //ikona srce u zavisnosti od switcha 
-       $scope.heartClicked=$rootScope.heart;
+        $scope.heartClicked=$rootScope.heart;
 
         $scope.heart=function(){
                 $http.get('/api/users'+auth.profile.user_id)
@@ -29,7 +29,12 @@
                     console.log( $rootScope.heart);
                         //setujem formData da je jednak prvom objektu iz niza
                     console.log('srce povlaci likove:'+$rootScope.up);
-                    $location.path('/');
+
+                        $state.transitionTo($state.current, $stateParams, {
+                            reload: true,
+                            inherit: false,
+                            notify: true
+                        });
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
