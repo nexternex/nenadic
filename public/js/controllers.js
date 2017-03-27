@@ -15,7 +15,7 @@
 
  }]);
 //KONTROLER: Login controller
-    myDay.controller('LoginCtrl', ['$state','$scope', '$http', 'auth', 'store', '$location','$rootScope',function ($state,$scope, $http, auth, store, $location,$rootScope) {
+    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope',function ($scope, $http, auth, store, $location,$rootScope) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
         //ikona srce u zavisnosti od switcha 
         $scope.heartClicked=$rootScope.heart;
@@ -29,12 +29,6 @@
                     console.log( $rootScope.heart);
                         //setujem formData da je jednak prvom objektu iz niza
                     console.log('srce povlaci likove:'+$rootScope.up);
-
-                        $state.transitionTo($state.current, $stateParams, {
-                            reload: true,
-                            inherit: false,
-                            notify: true
-                        });
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
