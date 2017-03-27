@@ -15,7 +15,7 @@
 
  }]);
 //KONTROLER: Login controller
-    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','MYDYserviceUP','mydyServiceHeart',function ($scope, $http, auth, store, $location,$rootScope,mydyServiceHeart) {
+    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','MYDYserviceUP',function ($scope, $http, auth, store, $location,$rootScope) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
         //ikona srce u zavisnosti od switcha 
         $scope.heartClicked=$rootScope.heart;
@@ -534,19 +534,3 @@
               }
           }
       });
-//FACTORY ROOT $rootScope
-myDay.factory('MYDYserviceUP', ['$rootScope', function ($rootScope) {
-    $rootScope.$watch(function () {
-        return $rootScope.up;
-    }, function (value) {
-        console.log("root updated:"+$rootScope.up);
-    });    
-}]);
-
-myDay.factory('mydyServiceHeart', ['$rootScope', function ($rootScope) {
-    $rootScope.$watch(function () {
-        return $rootScope.heart;
-    }, function (value) {
-        console.log("heart:" + $rootScope.heart);
-    });    
-}]);
