@@ -20,6 +20,24 @@
         //ikona srce u zavisnosti od switcha 
        $scope.heartClicked=$rootScope.heart;
 
+        $scope.heart=function(){
+                $http.get('/api/users'+auth.profile.user_id)
+                    .success(function(data) {
+                        //rezultat 1 profila ide u data
+                    $rootScope.up=data[0].ido;
+                    $rootScope.heart=!$rootScope.heart;
+                    console.log( $rootScope.heart);
+                        //setujem formData da je jednak prvom objektu iz niza
+                    console.log('srce povlaci likove:'+$rootScope.up);
+                    $location.path('/');
+                    })
+                    .error(function(data) {
+                        console.log('Error: ' + data);
+                    });
+                };
+
+
+
        $scope.mystate=function (){
            var state=[];
            if(auth.profile == undefined){
@@ -280,22 +298,7 @@
             $scope.filterValues = $rootScope.up;
         };
 
-        $scope.heart=function(){
-            $http.get('/api/users'+auth.profile.user_id)
-                .success(function(data) {
-                    //rezultat 1 profila ide u data
-                   $rootScope.up=data[0].ido;
-                   $rootScope.heart=!$rootScope.heart;
-                   console.log( $rootScope.heart);
-                    //setujem formData da je jednak prvom objektu iz niza
-                   console.log('srce povlaci likove:'+$rootScope.up);
-                   $location.path('/');
-                })
-                .error(function(data) {
-                    console.log('Error: ' + data);
-                });
-            };
-
+   
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
                 $scope.auth=auth;
