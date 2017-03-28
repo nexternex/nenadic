@@ -541,6 +541,7 @@
      function setState ($rootScope,heartState){
         $rootScope.heart=!$rootScope.heart;
         heartState= $rootScope.heart;
+        return heartState;
     };
-    return heartState;
+
     });
