@@ -15,7 +15,7 @@
 
  }]);
 //KONTROLER: Login controller
-    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService',function ($scope, $http, auth, store, $location,$rootScope,ThisService) {
+    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService','filterValues',function ($scope, $http, auth, store, $location,$rootScope,ThisService,filterValues) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
         //ikona srce u zavisnosti od switcha 
 
@@ -40,7 +40,7 @@
                 $http.get('/api/users'+auth.profile.user_id)
                     .success(function(data) {
                         //rezultat 1 profila ide u data
-                    $rootScope.up=data[0].ido;
+                   filterValues=data[0].ido;
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
@@ -301,15 +301,16 @@
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location', function ($scope,$rootScope,$http,$mdDialog,auth, $location) {
-        if ($rootScope.up ==""){
-              $scope.filterValues ="";
-        }
-        else if($rootScope.up !==""){
-            $scope.filterValues = $rootScope.up;
-        };
+    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','filterValues', function ($scope,$rootScope,$http,$mdDialog,auth, $location,filterValues) {
+        // if ($rootScope.up ==""){
+        //       $scope.filterValues ="";
+        // }
+        // else if($rootScope.up !==""){
+        //     $scope.filterValues = $rootScope.up;
+        // };
 
-   
+    $scope.filetrValues=filterValues;
+
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
                 $scope.auth=auth;

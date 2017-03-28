@@ -5,10 +5,10 @@ myDay.run(function(auth,$rootScope) {
   // This hooks al auth events to check everything as soon as the app starts
     auth.hookEvents();
     $rootScope.up ="";
-    $rootScope.heart = false;
 });
  
 myDay.value("DisplayElement", { value: true }) ;
+myDay.value("filterValues", { value: " " }) ;
 //config app
 myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
   
