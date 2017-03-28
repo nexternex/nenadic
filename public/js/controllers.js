@@ -537,7 +537,7 @@
 //FACTORY  SET HEART
  myDay.service('setHeart', function($rootScope) {
     this.myHeart = function ($rootScope) {
-        $rootScope.heart=!$rootScope.heart
+        $rootScope.heart=!$rootScope.heart;
         return $rootScope.heart;
     }
 });
