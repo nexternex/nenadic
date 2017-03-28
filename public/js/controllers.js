@@ -536,12 +536,10 @@
       });
 //FACTORY  SET HEART
  myDay.factory('setHeart', function($rootScope) {
-    var heartState;
-
      function setState ($rootScope,heartState){
+        var heartState;
         $rootScope.heart=!$rootScope.heart;
         heartState= $rootScope.heart;
         return heartState;
     };
-
-    });
+});
