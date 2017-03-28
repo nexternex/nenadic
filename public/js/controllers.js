@@ -309,7 +309,7 @@
         //     $scope.filterValues = $rootScope.up;
         // };
 
-    $scope.filetrValues=filterValues;
+    $scope.filterValues=filterValues;
 
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
