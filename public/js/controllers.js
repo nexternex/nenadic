@@ -20,7 +20,7 @@
         //ikona srce u zavisnosti od switcha 
         var mydyState=false;
         $scope.heart1=function(mydyState){
-            setHeart.myHeart(mydyState);
+            mydyState=setHeart.myHeart(mydyState);
         };
 
         $scope.heart=function(){
