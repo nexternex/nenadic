@@ -25,17 +25,32 @@
 
         $scope.toggleElement = function() {
             $scope.displayElement = ThisService.toggleDisplay();
-            $http.get('/api/users'+auth.profile.user_id)
+            if( $rootScope.up==""){
+             $scope.mystate();
+              }
+            else{
+                $rootScope.up="";
+            };
+        }
+
+        init();
+    
+
+        $scope.heart=function(){
+                $http.get('/api/users'+auth.profile.user_id)
                     .success(function(data) {
                         //rezultat 1 profila ide u data
-                        $rootScope.up=data[0].ido;
+                    $rootScope.up=data[0].ido;
+                    $rootScope.heart=!$rootScope.heart;
+                    console.log("ovo je iz stare funkciej:"+ $rootScope.heart);
+                        //setujem formData da je jednak prvom objektu iz niza
+                    console.log('srce povlaci likove:'+$rootScope.up);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
                     });
-        }
+                };
 
-        init();
 
 
        $scope.mystate=function (){
