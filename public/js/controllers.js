@@ -15,10 +15,19 @@
 
  }]);
 //KONTROLER: Login controller
-    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','setHeart',function ($scope, $http, auth, store, $location,$rootScope,setHeart) {
+    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService',function ($scope, $http, auth, store, $location,$rootScope,ThisService) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
         //ikona srce u zavisnosti od switcha 
-        $scope.heart1=setHeart.changeStateHeart;
+
+      function init() {
+            $scope.displayElement = ThisService.toggleDisplay();
+        }
+
+        $scope.toggleElement = function() {
+            $scope.displayElement = ThisService.toggleDisplay();
+        }
+
+        init();
     
 
         $scope.heart=function(){
@@ -536,12 +545,8 @@
           }
       });
 //FACTORY  SET HEART
- myDay.service('setHeart', function($rootScope) {
-        $rootScope.heart=!$rootScope.heart;
-        var stateHeart= $rootScope.heart;
-        
-
-  return {
-    stateHeart
-  };
-});
+myDay.service("ThisService", function(DisplayElement) {
+        this.toggleDisplay = function() {
+          return DisplayElement.value = !DisplayElement.value;
+        }
+    })

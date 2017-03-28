@@ -8,6 +8,7 @@ myDay.run(function(auth,$rootScope) {
     $rootScope.heart = false;
 });
  
+myDay.value("DisplayElement", { value: true }) ;
 //config app
 myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
   
