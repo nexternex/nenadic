@@ -18,9 +18,8 @@
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','setHeart',function ($scope, $http, auth, store, $location,$rootScope,setHeart) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
         //ikona srce u zavisnosti od switcha 
-        var mydyState=false;
-        $scope.heart1=function(mydyState){
-            mydyState=setHeart.myHeart(mydyState);
+        $scope.heart1=function(){
+            mydyState=setHeart;
         };
 
         $scope.heart=function(){
