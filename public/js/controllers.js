@@ -28,7 +28,7 @@
             if( filterValues==""){
              $scope.heart();
               }
-            else{
+            else{ 
                 filterValues="";
             };
         }
