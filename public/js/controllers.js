@@ -25,7 +25,6 @@
 
         $scope.toggleElement = function() {
             $scope.displayElement = ThisService.toggleDisplay();
-            
             if( filterValues==""){
              $scope.heart();
               }
@@ -33,7 +32,6 @@
                 filterValues="";
             };
         }
-
         init();
     
 
