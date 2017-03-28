@@ -539,8 +539,12 @@
       });
 //FACTORY  SET HEART
  myDay.service('setHeart', function() {
-    this.myHeart = function (x) {
-        console.log(x);
-        return !x;
-    }
+    var stateHeart=false;
+    var changeStateHeart = function() {
+    return !stateHeart;
+  };
+
+  return {
+    state:stateHeart
+  };
 });
