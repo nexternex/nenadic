@@ -541,6 +541,7 @@
  myDay.service('setHeart', function() {
     this.myHeart = function (x) {
         x=!x;
+        console.log(x);
         return x;
     }
 });
