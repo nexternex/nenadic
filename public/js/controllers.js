@@ -19,7 +19,9 @@
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
         //ikona srce u zavisnosti od switcha 
         var mydyState=false;
-        $scope.heart1=setHeart.myHeart(mydyState);
+        $scope.heart1=function(mydyState){
+            setHeart.myHeart(mydyState);
+        };
 
         $scope.heart=function(){
                 $http.get('/api/users'+auth.profile.user_id)
