@@ -546,6 +546,6 @@
   };
 
   return {
-    state:stateHeart
+    state:changeStateHeart()
   };
 });
