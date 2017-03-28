@@ -541,7 +541,8 @@
     var changeStateHeart = function() {
         $rootScope.heart=!$rootScope.heart;
         stateHeart=$rootScope.heart;
-    return stateHeart;
+        console.log(stateHeart)
+         return stateHeart;
   };
 
   return {
