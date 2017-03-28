@@ -26,7 +26,7 @@
         $scope.toggleElement = function() {
             $scope.displayElement = ThisService.toggleDisplay();
             if( $rootScope.up==""){
-             $scope.mystate();
+             $scope.heart();
               }
             else{
                 $rootScope.up="";
