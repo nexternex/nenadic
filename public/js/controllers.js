@@ -18,9 +18,8 @@
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','setHeart',function ($scope, $http, auth, store, $location,$rootScope,setHeart) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
         //ikona srce u zavisnosti od switcha 
-        $scope.heart1=function(){
-            mydyState=setHeart.changeStateHeart;
-        };
+        $scope.heart1=setHeart.changeStateHeart();
+    
 
         $scope.heart=function(){
                 $http.get('/api/users'+auth.profile.user_id)
@@ -28,7 +27,7 @@
                         //rezultat 1 profila ide u data
                     $rootScope.up=data[0].ido;
                     $rootScope.heart=!$rootScope.heart;
-                    console.log( $rootScope.heart);
+                    console.log("ovo je iz stare funkciej:"+ $rootScope.heart);
                         //setujem formData da je jednak prvom objektu iz niza
                     console.log('srce povlaci likove:'+$rootScope.up);
                     })
