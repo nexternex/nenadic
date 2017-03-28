@@ -537,14 +537,11 @@
       });
 //FACTORY  SET HEART
  myDay.service('setHeart', function($rootScope) {
-    var changeStateHeart = function() {
         $rootScope.heart=!$rootScope.heart;
-        stateHeart=$rootScope.heart;
-        console.log(stateHeart);
-         return stateHeart;
-  };
+        var stateHeart= $rootScope.heart;
+        
 
   return {
-    state:changeStateHeart()
+    stateHeart
   };
 });
