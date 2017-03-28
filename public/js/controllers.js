@@ -25,11 +25,11 @@
 
         $scope.toggleElement = function() {
             $scope.displayElement = ThisService.toggleDisplay();
-            if( $rootScope.up==""){
+            if( filterValues==""){
              $scope.heart();
               }
             else{
-                $rootScope.up="";
+                filterValues="";
             };
         }
 
