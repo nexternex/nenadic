@@ -305,7 +305,7 @@ $scope.filterValues=filterValuesGlobal;
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','filterValues', function ($scope,$rootScope,$http,$mdDialog,auth, $location,filterValues) {
+    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','filterValuesGlobal', function ($scope,$rootScope,$http,$mdDialog,auth, $location,filterValuesGlobal) {
         // if ($rootScope.up ==""){
         //       $scope.filterValues ="";
         // }
@@ -313,8 +313,8 @@ $scope.filterValues=filterValuesGlobal;
         //     $scope.filterValues = $rootScope.up;
         // };
 
-    $scope.filterValues="";
-    console.log("filetrValues:"+filterValues);
+    $scope.filterValues=filterValuesGlobal;
+    console.log("filetrValues:"+filterValuesGlobal);
 
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
