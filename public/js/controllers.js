@@ -43,7 +43,7 @@
                 $http.get('/api/users'+auth.profile.user_id)
                     .success(function(data) {
                         //rezultat 1 profila ide u data
-                   $rootScope.filter=data[0].ido;
+                   $rootScope.filterValue=data[0].ido;
                    console.log("filterValues2:"+$rootScope.filterValues);
                     })
                     .error(function(data) {
