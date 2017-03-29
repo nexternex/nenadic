@@ -68,7 +68,7 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
 });
 //  Filtriranje liste u zavisnosti od lajkova
 myDay.filter('myFilter', function () {
-   return function(inputs,filterValues) {
+   return function(inputs,filterValuesGlobal) {
      if(filterValues==""){
         return inputs;
      }else{
