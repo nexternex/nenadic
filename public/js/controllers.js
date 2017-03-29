@@ -29,7 +29,7 @@
 
             if( filterValues==""){
              $scope.heart();
-             consple.log("filetrValues:"+fileterValues);
+             consple.log("filterValues:"+filterValues);
               }
             else{ 
                 filterValues="";
