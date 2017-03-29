@@ -68,13 +68,13 @@ myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
 });
 //  Filtriranje liste u zavisnosti od lajkova
 myDay.filter('myFilter', function () {
-   return function(inputs,filterValuesGlobal) {
-     if(filterValuesGlobal==""){
+   return function(inputs,filterValues) {
+     if(filterValues==""){
         return inputs;
      }else{
       var output = [];
       angular.forEach(inputs, function (input) {
-        if (filterValuesGlobal.indexOf(input.gsx$id.$t) !== -1)
+        if (filterValues.indexOf(input.gsx$id.$t) !== -1)
             output.push(input);
        });
        return output;

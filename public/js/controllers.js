@@ -18,7 +18,6 @@
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService','filterValuesGlobal',function ($scope, $http, auth, store, $location,$rootScope,ThisService,filterValuesGlobal) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
     //ikona srce u zavisnosti od switcha 
-$scope.filterValues=filterValuesGlobal;
       function init() {
             $scope.displayElement = ThisService.toggleDisplay();
         }
@@ -28,12 +27,12 @@ $scope.filterValues=filterValuesGlobal;
             $scope.displayElement = ThisService.toggleDisplay();
 
             if( filterValuesGlobal==""){
-             $scope.heart();
-             console.log("filterValues1:"+filterValuesGlobal);
+                $scope.heart();
+                console.log("filterValues1:"+filterValuesGlobal);
               }
             else{ 
                 filterValuesGlobal="";
-            console.log("filterValues1a:"+filterValuesGlobal);
+                console.log("filterValues1a:"+filterValuesGlobal);
             };
         }
         init();
@@ -43,8 +42,8 @@ $scope.filterValues=filterValuesGlobal;
                 $http.get('/api/users'+auth.profile.user_id)
                     .success(function(data) {
                         //rezultat 1 profila ide u data
-                   filterValues=data[0].ido;
-                   console.log("filterValues2:"+filterValues);
+                   filterValuesGlobal=data[0].ido;
+                   console.log("filterValues2:"+filterValuesGlobal);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
@@ -314,7 +313,7 @@ $scope.filterValues=filterValuesGlobal;
         // };
 
     $scope.filterValues=filterValuesGlobal;
-    console.log("filetrValues:"+filterValuesGlobal);
+    console.log("filterValues:"+filterValues);
 
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
