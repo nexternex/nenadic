@@ -550,7 +550,7 @@
           }
       });
 //FACTORY  SET HEART
-myDay.service("ThisService", function(DisplayElement) {
+    myDay.service("ThisService", function(DisplayElement) {
         this.toggleDisplay = function() {
           return DisplayElement.value = !DisplayElement.value;
         }
