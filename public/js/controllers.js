@@ -33,6 +33,7 @@
               }
             else{ 
                 filterValues="";
+            console.log("filterValues1a:"+filterValues);
             };
         }
         init();
