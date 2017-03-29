@@ -312,6 +312,7 @@
         // };
 
     $scope.filterValues="";
+    console.log("filetrValues:"+filterValues);
 
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
