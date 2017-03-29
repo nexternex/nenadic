@@ -43,6 +43,7 @@
                     .success(function(data) {
                         //rezultat 1 profila ide u data
                    filterValues=data[0].ido;
+                   console.log("filterValues2:"+filterValues);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
