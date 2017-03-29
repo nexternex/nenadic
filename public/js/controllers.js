@@ -26,12 +26,12 @@
 
             $scope.displayElement = ThisService.toggleDisplay();
 
-            if( filterValuesGlobal==""){
+            if( filterValuesGlobal.value==""){
                 $scope.heart();
                 console.log("filterValues1:"+filterValuesGlobal);
               }
             else{ 
-                filterValuesGlobal="";
+                filterValuesGlobal.value="";
                 console.log("filterValues1a:"+filterValuesGlobal);
             };
         }
@@ -43,7 +43,7 @@
                     .success(function(data) {
                         //rezultat 1 profila ide u data
                    filterValuesGlobal.value=data[0].ido;
-                   console.log("filterValues2:"+filterValuesGlobal);
+                   console.log("filterValues2:"+filterValuesGlobal.value);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
