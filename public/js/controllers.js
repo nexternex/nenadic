@@ -312,7 +312,7 @@
         //     $scope.filterValues = $rootScope.up;
         // };
 
-    $scope.filterValues=filterValuesGlobal;
+    $scope.filterValues=[1,2,3];
     console.log("filterValuesListCtrl:"+$scope.filterValues);
 
         //modal detalji kompanije iz liste
