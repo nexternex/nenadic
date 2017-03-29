@@ -15,7 +15,7 @@
 
  }]);
 //KONTROLER: Login controller
-    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService','filterValuesGlobal',function ($scope, $http, auth, store, $location,$rootScope,ThisService,filterValuesGlobal) {
+    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService','$rootScope',function ($scope, $http, auth, store, $location,$rootScope,ThisService,$rootScope) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
     //ikona srce u zavisnosti od switcha 
       function init() {
@@ -26,13 +26,13 @@
 
             $scope.displayElement = ThisService.toggleDisplay();
 
-            if( filterValuesGlobal.value==""){
+            if( $rootScope.filter==""){
                 $scope.heart();
-                console.log("filterValues1:"+filterValuesGlobal);
+                console.log("filterValues1:"+$rootScope.filter);
               }
             else{ 
-                filterValuesGlobal.value="";
-                console.log("filterValues1a:"+filterValuesGlobal);
+                $rootScope.filter="";
+                console.log("filterValues1a:"+$rootScope.filter);
             };
         }
         init();
@@ -42,8 +42,8 @@
                 $http.get('/api/users'+auth.profile.user_id)
                     .success(function(data) {
                         //rezultat 1 profila ide u data
-                   filterValuesGlobal.value=data[0].ido;
-                   console.log("filterValues2:"+filterValuesGlobal.value);
+                   $rootScope.filter=data[0].ido;
+                   console.log("filterValues2:"+$rootScope.filter);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
@@ -312,7 +312,7 @@
         //     $scope.filterValues = $rootScope.up;
         // };
 
-    $scope.filterValues=filterValuesGlobal.value;
+    $scope.filterValues=$rootScope.filter;
     console.log("filterValuesListCtrl:"+$scope.filterValues);
 
         //modal detalji kompanije iz liste
