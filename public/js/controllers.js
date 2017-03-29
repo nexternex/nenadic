@@ -15,9 +15,10 @@
 
  }]);
 //KONTROLER: Login controller
-    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService','$rootScope',function ($scope, $http, auth, store, $location,$rootScope,ThisService,$rootScope) {
+    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService',function ($scope, $http, auth, store, $location,$rootScope,ThisService) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
     //ikona srce u zavisnosti od switcha 
+     $rootScope.filter="";
       function init() {
             $scope.displayElement = ThisService.toggleDisplay();
         }
@@ -304,7 +305,7 @@
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','filterValuesGlobal', function ($scope,$rootScope,$http,$mdDialog,auth, $location,filterValuesGlobal) {
+    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location', function ($scope,$rootScope,$http,$mdDialog,auth, $location) {
         // if ($rootScope.up ==""){
         //       $scope.filterValues ="";
         // }
@@ -312,7 +313,7 @@
         //     $scope.filterValues = $rootScope.up;
         // };
 
-    $scope.filterValues=$rootScope.filter;
+    $rootScope.filterValues="";
     console.log("filterValuesListCtrl:"+$scope.filterValues);
 
         //modal detalji kompanije iz liste

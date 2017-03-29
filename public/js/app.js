@@ -5,7 +5,6 @@ myDay.run(function(auth,$rootScope) {
   // This hooks al auth events to check everything as soon as the app starts
     auth.hookEvents();
     $rootScope.up ="";
-    $rootScope.filter="";
 });
  
 myDay.value("DisplayElement", { value: true }) ;
