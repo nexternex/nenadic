@@ -18,7 +18,7 @@
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService','filterValuesGlob',function ($scope, $http, auth, store, $location,$rootScope,ThisService,filterValuesGlob) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
     //ikona srce u zavisnosti od switcha 
-$scope.filterValues=filterValues;
+$scope.filterValues=filterValuesGlobal;
       function init() {
             $scope.displayElement = ThisService.toggleDisplay();
         }
