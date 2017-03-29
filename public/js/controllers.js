@@ -18,7 +18,7 @@
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService',function ($scope, $http, auth, store, $location,$rootScope,ThisService) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
     //ikona srce u zavisnosti od switcha 
-     $rootScope.filter="";
+     $rootScope.filterValues="";
       function init() {
             $scope.displayElement = ThisService.toggleDisplay();
         }
@@ -27,13 +27,13 @@
 
             $scope.displayElement = ThisService.toggleDisplay();
 
-            if( $rootScope.filter==""){
+            if( $rootScope.filterValues==""){
                 $scope.heart();
-                console.log("filterValues1:"+$rootScope.filter);
+                console.log("filterValues1:"+$rootScope.filterValues);
               }
             else{ 
-                $rootScope.filter="";
-                console.log("filterValues1a:"+$rootScope.filter);
+                $rootScope.filterValues="";
+                console.log("filterValues1a:"+$rootScope.filterValues);
             };
         }
         init();
@@ -44,7 +44,7 @@
                     .success(function(data) {
                         //rezultat 1 profila ide u data
                    $rootScope.filter=data[0].ido;
-                   console.log("filterValues2:"+$rootScope.filter);
+                   console.log("filterValues2:"+$rootScope.filterValues);
                     })
                     .error(function(data) {
                         console.log('Error: ' + data);
