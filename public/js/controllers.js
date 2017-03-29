@@ -27,13 +27,13 @@ $scope.filterValues=filterValuesGlobal;
 
             $scope.displayElement = ThisService.toggleDisplay();
 
-            if( filterValues==""){
+            if( filterValuesGlobal==""){
              $scope.heart();
-             console.log("filterValues1:"+filterValues);
+             console.log("filterValues1:"+filterValuesGlobal);
               }
             else{ 
-                filterValues="";
-            console.log("filterValues1a:"+filterValues);
+                filterValuesGlobal="";
+            console.log("filterValues1a:"+filterValuesGlobal);
             };
         }
         init();
