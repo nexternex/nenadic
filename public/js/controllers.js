@@ -42,7 +42,7 @@
                 $http.get('/api/users'+auth.profile.user_id)
                     .success(function(data) {
                         //rezultat 1 profila ide u data
-                   filterValuesGlobal=data[0].ido;
+                   filterValuesGlobal.value=data[0].ido;
                    console.log("filterValues2:"+filterValuesGlobal);
                     })
                     .error(function(data) {
