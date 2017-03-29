@@ -29,7 +29,7 @@
 
             if( filterValues==""){
              $scope.heart();
-             conople.log("filterValues1:"+filterValues);
+             console.log("filterValues1:"+filterValues);
               }
             else{ 
                 filterValues="";
