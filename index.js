@@ -165,6 +165,16 @@ const S3_BUCKET = process.env.S3_BUCKET;
 		});
 	});
 
+	//USER DISLIKE
+		app.post('/api/user_rido:user_id', function(req, res) {
+		User.update({ 'u_id': req.params.user_id },{ $pull: { ido :req.body.id_c}}, function(err, user) {
+			if (err)
+				res.send(err);
+			// get and return all the lists after you create another
+		});
+	});
+
+
 
 	// GET USER
 		app.get('/api/users:user_id', function(req, res) {

@@ -348,6 +348,19 @@
                                     });
                                                     
                             };
+                        this.r_ido = function (id_c) {
+                                console.log("Ido");
+                                var id_cc=id_c;
+
+                                $http.post('/api/user_rido'+auth.profile.user_id,{id_c:id_cc})
+                                    .success(function(data) {
+                                        console.log('Update user completed');
+                                    })
+                                    .error(function(data) {
+                                        console.log('Error: '+ data);
+                                    });
+                                                    
+                            };
                         },
                         controllerAs: 'modal',
                         templateUrl: '../pages/companyCard.htm',
