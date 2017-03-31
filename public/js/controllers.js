@@ -349,7 +349,7 @@
                                                     
                             };
                         this.r_ido = function (id_c) {
-                                console.log("Ido");
+                                console.log("rIdo");
                                 var id_cc=id_c;
 
                                 $http.post('/api/user_rido'+auth.profile.user_id,{id_c:id_cc})
