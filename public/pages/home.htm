@@ -98,7 +98,8 @@
 						 md-row-height-gt-md="1:1"
 						 md-row-height="2:2"
 						 md-gutter="12px" 				  	
-						 md-gutter-gt-sm="8px">
+						 md-gutter-gt-sm="8px"
+						 ng-click="showAdvanced(e,item)">
 								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in lists | filter : search | myFilter:filterValues'
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
