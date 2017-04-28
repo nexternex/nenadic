@@ -395,7 +395,7 @@
             });  
         }]);
 //KONTROLER: Profil korisnika
-    myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout','$rootScope', function ($scope,$http,auth,$q,$timeout,$rootScope) {
+    myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout','$rootScope,$window', function ($scope,$http,auth,$q,$timeout,$rootScope,$window) {
 
     $scope.formData = {};
     $scope.profiles = [];
