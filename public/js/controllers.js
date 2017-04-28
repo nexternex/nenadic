@@ -436,7 +436,12 @@
 
     //GoHome
         $scope.goHome = function($window) {
+        try{
          $window.location.href = '/#/';
+        }
+        catch(e){
+            console.log("Error:"+e);
+        }
     }; 
 
         
