@@ -435,15 +435,14 @@
     };   
 
     //GoHome
-        $scope.goHome = function($window) {
-        try{
-         $window.location.href = '/#/';
-        }
-        catch(e){
-            console.log("Error:"+e);
-        }  
-        
-    }; 
+        $scope.goHome = function() {
+            try{
+            $window.location.href = '/#/';
+            }
+            catch(e){
+                console.log("Error:"+e);
+            }  
+        }; 
 
         
   // LOAD PROFILE when landing on the page, get profile and show them
