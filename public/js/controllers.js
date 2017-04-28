@@ -432,7 +432,12 @@
         .error(function(data) {
             console.log('Error: '+ data);
         });
-    };    
+    };   
+
+    //GoHome
+        $scope.goHome = function() {
+         $window.location.href = '#/';
+    }; 
 
         
   // LOAD PROFILE when landing on the page, get profile and show them
