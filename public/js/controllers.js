@@ -395,7 +395,7 @@
             });  
         }]);
 //KONTROLER: Profil korisnika
-    myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout','$rootScope,$window', function ($scope,$http,auth,$q,$timeout,$rootScope,$window) {
+    myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout','$rootScope','$window', function ($scope,$http,auth,$q,$timeout,$rootScope,$window) {
 
     $scope.formData = {};
     $scope.profiles = [];
@@ -435,7 +435,7 @@
     };   
 
     //GoHome
-        $scope.goHome = function() {
+        $scope.goHome = function($window) {
          $window.location.href = '#/';
     }; 
 
