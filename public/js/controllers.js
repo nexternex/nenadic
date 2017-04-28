@@ -436,7 +436,7 @@
 
     //GoHome
         $scope.goHome = function($window) {
-         $window.location.href = '#/';
+         $window.location.href = '/#';
     }; 
 
         
