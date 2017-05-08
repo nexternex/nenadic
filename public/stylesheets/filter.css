@@ -30,7 +30,7 @@ Main Components
     line-height: 180px;
   }
 }
-@media only screen and (min-width: 150px) {
+@media only screen and (min-width: 150px) and (max-width:768px) {
   .cd-header {
     height: auto;
   }
