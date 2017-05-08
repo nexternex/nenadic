@@ -14,7 +14,7 @@ Main Components
 }
 .cd-header h1 {
     color: rgb(200,230,201);
-    line-height: 150px;
+    line-height: 180px;
     text-align: center;
     font-size: 17.8rem;
     font-weight: 100;
@@ -67,7 +67,7 @@ Main Components
     padding-top: 90px; 
   }
   .cd-header h1{
-    line-height:100px;
+    line-height:180px;
   }
 }
 @media only screen and (min-width: 1170px) {
