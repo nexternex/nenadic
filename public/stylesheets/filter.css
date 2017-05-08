@@ -32,14 +32,14 @@ Main Components
 }
 @media only screen and (min-width: 150px) {
   .cd-header {
-    height: 480px;
+    height: auto;
   }
   .cd-header h1 {
     line-height: 90px;
     font-size: 40px;
   }
   .slogan{
-    font-size: 20px
+    font-size: 12px
   }
 
 }
