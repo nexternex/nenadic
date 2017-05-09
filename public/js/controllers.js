@@ -283,11 +283,13 @@
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
                      $scope.filters=MyDay_filterSetTorte;
+                     $scope.search.gsx$tip.$t="Torte"
                      console.log("torte: "+$scope.filters);
                 }
                 else if(tema=="music"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/003.jpg')";
                     $scope.filters=MyDay_filterSetMuzika;
+                    $scope.search.gsx$tip.$t="Muzika"
                     console.log("music: "+$scope.filters);
                 }
                 else if(tema=="foto"){
