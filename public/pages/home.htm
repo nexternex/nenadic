@@ -70,12 +70,12 @@
 	<main class="cd-main-content"  ng-controller="MenuCtrl">
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
-				<ul class="cd-filters" ng-model="search.gsx$tip.$t"> 
+				<ul class="cd-filters"> 
 					<li class="placeholder"> 
 						<a data-type="all">All</a> <!-- selected option on mobile -->
 					</li>
 					<li class="filter"><a class="selected"  data-type="all">Izaberi sve</a></li>
-					<li class="filter" data-filter=".color-Sale"><a  data-type="color-Sale" ng-click='changeSet("sale")'>Sale</a></li>
+					<li class="filter" ng-model="search.gsx$tip.$t" data-filter=".color-Sale"><a  data-type="color-Sale" ng-click='changeSet("sale")'>Sale</a></li>
 					<li class="filter" data-filter=".color-Muzika"><a  data-type="color-Muzika" ng-click='changeSet("music")'>Muzika</a></li>
                     <li class="filter" data-filter=".color-Torte"><a  data-type="color-Torte" ng-click='changeSet("cake")'>Torte</a></li>
 					<li class="filter" data-filter=".color-Fotograf"><a  data-type="color-Fotograf" ng-click='changeSet("foto")'>Fotograf</a></li>
