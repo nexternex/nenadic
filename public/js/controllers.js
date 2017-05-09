@@ -309,14 +309,7 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location', function ($scope,$rootScope,$http,$mdDialog,auth, $location) {
-        // if ($rootScope.up ==""){
-        //       $scope.filterValues ="";
-        // }
-        // else if($rootScope.up !==""){
-        //     $scope.filterValues = $rootScope.up;
-        // };
 
-  
     console.log("filterValuesListCtrl:"+$rootScope.filterValues);
 
         //modal detalji kompanije iz liste
