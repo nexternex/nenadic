@@ -51,8 +51,6 @@
                     });
                 };
 
-
-
        $scope.mystate=function (){
            var state=[];
            if(auth.profile == undefined){
@@ -278,6 +276,8 @@
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
+                    $scope.search.gsx$tip.$t="Sale"
+
                     console.log("sale: "+$scope.filters);
                     }
                 else if(tema=="cake"){
@@ -422,7 +422,7 @@
    };
 
 
-    //UPDATE User
+//UPDATE User
     $scope.updateUser = function() {
        console.log("UPDATE USER Start");
        $http.post('/api/user_update'+auth.profile.user_id,{formUser: $scope.formUser,name:$scope.name,lastname:$scope.lastname,email:$scope.email,u_id:auth.profile.user_id})
