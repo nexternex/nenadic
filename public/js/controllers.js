@@ -243,8 +243,17 @@
  }]);   
 //KONTROLER: Menu controller----ciricle meni 
     myDay.controller('MenuCtrl',['$scope', function($scope) {
-        
-        // filteri za sale
+
+      
+     }]);
+//KONTROLER: Maps controller
+  myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
+     console.log("maps kontroler entry");
+    }]);
+//KONTROLER: List controller--dropdown komponente
+    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location', function ($scope,$rootScope,$http,$mdDialog,auth, $location) {
+
+          // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
                 ["sectionTip",["moderan","rustican","kafana","restoran","hotel","motel"]],
@@ -301,13 +310,6 @@
                 }
 
             }
-     }]);
-//KONTROLER: Maps controller
-  myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
-     console.log("maps kontroler entry");
-    }]);
-//KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location', function ($scope,$rootScope,$http,$mdDialog,auth, $location) {
 
     console.log("filterValuesListCtrl:"+$rootScope.filterValues);
 
