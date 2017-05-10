@@ -251,7 +251,7 @@
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location', function ($scope,$rootScope,$http,$mdDialog,auth, $location) {
+    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter) {
 
           // filteri za sale
             var MyDay_filterSetSale=[  
