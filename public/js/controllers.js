@@ -286,14 +286,14 @@
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
                     $scope.search.gsx$tip.$t="Sale";
-
                     console.log("sale: "+$scope.filters);
+
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
-                     $scope.filters=MyDay_filterSetTorte;
-                     $scope.search.gsx$tip.$t="Torte";
-                     console.log("torte: "+$scope.filters);
+                    $scope.filters=MyDay_filterSetTorte;
+                    $scope.search.gsx$tip.$t="Torte";
+                    console.log("torte: "+$scope.filters);
                 }
                 else if(tema=="music"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/003.jpg')";
