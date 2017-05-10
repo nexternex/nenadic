@@ -243,8 +243,7 @@
  }]);   
 //KONTROLER: Menu controller----ciricle meni 
     myDay.controller('MenuCtrl',['$scope', function($scope) {
-            console.log("MenuCtrl");
-
+        
         // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
