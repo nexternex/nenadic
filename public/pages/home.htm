@@ -67,7 +67,7 @@
      
 	</header>
 <!--SEKCIJA:SWITCHER+LOADER-->	
-	<main class="cd-main-content"  ng-controller="MenuCtrl">
+	<main class="cd-main-content"  ng-controller="ListController">
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
 				<ul class="cd-filters"> 
@@ -87,10 +87,10 @@
 					<li class="filter" data-filter=".color-Animatori"><a  data-type="color-Animatori" ng-click='changeSet("animatori")'>Animatori</a></li>
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
-   		   <md-progress-linear ng-controller="ListController"  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear> 
+   		   <md-progress-linear  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear> 
 		</div> <!-- cd-tab-filter-wrapper -->
 <!--SEKCIJA:TABLE-->
-		<section ng-controller="ListController"  class="cd-gallery">
+		<section class="cd-gallery">
 				         <md-grid-list 
 						 class="myd_mix"
 						 md-cols-xs="1" 
