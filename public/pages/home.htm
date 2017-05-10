@@ -70,7 +70,7 @@
 	<main class="cd-main-content"  ng-controller="ListController">
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
-				<ul class="cd-filters"> 
+				<ul class="cd-filters" ng-model="search.gsx$tip.$t"> 
 					<li class="placeholder"> 
 						<a data-type="all">All</a> <!-- selected option on mobile -->
 					</li>
@@ -134,7 +134,6 @@
 					<h4>Pretraga</h4>
 					<div class="cd-filter-content">
 						<input type="search" placeholder="Probajte sa tri sesira i sl...." ng-model="search.gsx$naziv.$t">
-						<input type="input"  placeholder="Ovde ide upis like-a" ng-model="search.gsx$id.$t">
 					</div> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
 
@@ -164,7 +163,7 @@
 			
 					<div class="cd-filter-content">
 						<div class="cd-select cd-filters">
-							<select class="filter" name="selectThis" id="selectThis" ng-model="search.gsx$tip.$t">
+							<select class="filter" name="selectThis" id="selectThis" >
 								<option value="">Izaberite opciju</option>
 								<option value="Muzika">Muzika</option>
 								<option value="Torte">Torte</option>
