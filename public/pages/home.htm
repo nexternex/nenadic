@@ -67,15 +67,15 @@
      
 	</header>
 <!--SEKCIJA:SWITCHER+LOADER-->	
-	<main class="cd-main-content"  ng-controller="ListController">
+	<main class="cd-main-content"  ng-controller="MenuCtrl">
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
-				<ul class="cd-filters" ng-model="search.gsx$tip.$t"> 
+				<ul class="cd-filters"> 
 					<li class="placeholder"> 
 						<a data-type="all">All</a> <!-- selected option on mobile -->
 					</li>
 					<li class="filter"><a class="selected"  data-type="all">Izaberi sve</a></li>
-					<li class="filter" data-filter=".color-Sale"><a  data-type="color-Sale" ng-click='changeSet("sale")'>Sale</a></li>
+					<li class="filter" ng-model="search.gsx$tip.$t" data-filter=".color-Sale"><a  data-type="color-Sale" ng-click='changeSet("sale")'>Sale</a></li>
 					<li class="filter" data-filter=".color-Muzika"><a  data-type="color-Muzika" ng-click='changeSet("music")'>Muzika</a></li>
                     <li class="filter" data-filter=".color-Torte"><a  data-type="color-Torte" ng-click='changeSet("cake")'>Torte</a></li>
 					<li class="filter" data-filter=".color-Fotograf"><a  data-type="color-Fotograf" ng-click='changeSet("foto")'>Fotograf</a></li>
@@ -90,7 +90,7 @@
    		   <md-progress-linear ng-controller="ListController"  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear> 
 		</div> <!-- cd-tab-filter-wrapper -->
 <!--SEKCIJA:TABLE-->
-		<section   class="cd-gallery">
+		<section ng-controller="ListController"  class="cd-gallery">
 				         <md-grid-list 
 						 class="myd_mix"
 						 md-cols-xs="1" 
@@ -134,6 +134,7 @@
 					<h4>Pretraga</h4>
 					<div class="cd-filter-content">
 						<input type="search" placeholder="Probajte sa tri sesira i sl...." ng-model="search.gsx$naziv.$t">
+						<input type="input"  placeholder="Ovde ide upis like-a" ng-model="search.gsx$id.$t">
 					</div> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
 
@@ -158,6 +159,21 @@
 					</ul> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
 
+				<div class="cd-filter-block">
+					<h4>Dodatni fileri</h4>
+			
+					<div class="cd-filter-content">
+						<div class="cd-select cd-filters">
+							<select class="filter" name="selectThis" id="selectThis">
+								<option value="">Izaberite opciju</option>
+								<option value="Muzika">Muzika</option>
+								<option value="Torte">Torte</option>
+								<option value="Sale">Sale</option>
+								<option value="Foto">Foto</option>
+							</select>
+						</div> <!-- cd-select -->
+					</div> <!-- cd-filter-content -->
+				</div> <!-- cd-filter-block -->
  <!--REM radio buttons trenutno ne trebaju-->
 				<!--<div class="cd-filter-block">
 					<h4>Primer izbornika</h4>
