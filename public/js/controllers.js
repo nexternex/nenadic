@@ -276,7 +276,7 @@
              ];
 
         $scope.filters=MyDay_filterSetTorte;
-
+ 
         console.log($scope.filters);
 
 
@@ -312,7 +312,7 @@
             }
 
     console.log("filterValuesListCtrl:"+$rootScope.filterValues);
-
+    document.getElementById(filtTip).innerText="all";
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
                 $scope.auth=auth;
