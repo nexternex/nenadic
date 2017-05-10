@@ -285,7 +285,7 @@
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
-                    search.gsx$tip.$t="Sale";
+                    $scope.search.gsx$tip.$t="Sale";
                     console.log("sale: "+$scope.filters);
 
                     }
