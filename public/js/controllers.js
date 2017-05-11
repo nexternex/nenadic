@@ -286,7 +286,7 @@
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
                     // $scope.search.gsx$tip.$t="Sale";
-                    $("#selectThis").val("1");
+                    $("#selectThis").val("Sale");
                     console.log("sale: "+$scope.filters);
 
                     }
