@@ -82,13 +82,3 @@ myDay.filter('myFilter', function () {
    };
 });
 
-myDay.filter('myFilterTip', function () {
-   return function(inputs,filterValues) {
-     if(filterValues==""){
-        return inputs;
-     } else{
-      var output ="";     
-       return output;
-     }
-   };
-});

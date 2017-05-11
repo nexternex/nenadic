@@ -255,7 +255,7 @@
 
 
     // $scope.search={};
-    $scope.search.gsx$tip.$t={};
+    $scope.search={};
           // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
@@ -288,7 +288,7 @@
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
-                    $scope.search.gsx$tip.$t="Sale";
+                    $scope.search="Sale";
                     console.log("sale: "+$scope.filters);
 
                     }
