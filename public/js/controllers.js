@@ -287,6 +287,7 @@
                     $scope.filters=MyDay_filterSetSale;
                     // $scope.search.gsx$tip.$t="Sale";
                     $("#selectThis").val("Sale");
+                    $scope.$apply()
                     console.log("sale: "+$scope.filters);
 
                     }
