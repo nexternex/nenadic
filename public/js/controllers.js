@@ -253,6 +253,9 @@
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter) {
 
+
+    $scope.search={};
+
           // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
@@ -276,6 +279,7 @@
              ];
 
         $scope.filters=MyDay_filterSetTorte;
+     
         console.log($scope.filters);
 
 
@@ -311,7 +315,6 @@
             }
 
     console.log("filterValuesListCtrl:"+$rootScope.filterValues);
-    document.getElementById('filterTip').value="sale";
     
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
