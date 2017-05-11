@@ -276,7 +276,7 @@
              ];
 
         $scope.filters=MyDay_filterSetTorte;
- 
+        $scope.search.gsx$tip.$t="Sale";
         console.log($scope.filters);
 
 
