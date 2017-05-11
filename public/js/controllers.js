@@ -254,8 +254,8 @@
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter) {
 
 
-    $scope.search={};
-
+    // $scope.search={};
+    $scope.search.gsx$tip.$t={};
           // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
