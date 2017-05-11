@@ -252,7 +252,7 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter) {
-
+$scope.search.gsx$tip=""
           // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
