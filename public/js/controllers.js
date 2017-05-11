@@ -312,7 +312,7 @@
             }
 
     console.log("filterValuesListCtrl:"+$rootScope.filterValues);
-    document.getElementById(filterTip).innerText="all";
+    // document.getElementById(filterTip).innerText="all";
     
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
