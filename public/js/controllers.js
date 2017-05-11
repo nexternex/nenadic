@@ -276,7 +276,6 @@
              ];
 
         $scope.filters=MyDay_filterSetTorte;
-        $scope.search.gsx$tip.$t="Sale";
         console.log($scope.filters);
 
 
@@ -312,7 +311,7 @@
             }
 
     console.log("filterValuesListCtrl:"+$rootScope.filterValues);
-    // document.getElementById(filterTip).innerText="all";
+    document.getElementById(filterTip).value="all";
     
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
