@@ -307,6 +307,7 @@
                 }
                 else{
                     console.log("nema parametra:f(temax)")
+                    $scope.search.gsx$tip.$t=" ";
                 }
 
             }
