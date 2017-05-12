@@ -363,6 +363,13 @@ MYD TILES
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
   background-size:cover; 
 }
+.myd_card_gray{
+  margin: 0.5em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+  background-size:cover; 
+  background: gray;
+}
 
 .company_name{
     font-family:'Shrikhand'!important;
