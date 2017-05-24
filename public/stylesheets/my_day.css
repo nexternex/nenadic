@@ -383,9 +383,9 @@ MYD TILES
 }
 
 .myd_card:hover{
-  -moz-transform: scale(0.9);
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9);
+   -webkit-filter:blur(30%);
+  -moz-filter: blur(30%);
+   filter:blur(30%);
   cursor: pointer;
 }
 .myd_card:active{
