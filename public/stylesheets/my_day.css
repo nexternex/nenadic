@@ -386,6 +386,7 @@ MYD TILES
   -moz-transform: scale(0.9);
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
+  cursor: pointer;
 }
 
 /* ==========================================================================
