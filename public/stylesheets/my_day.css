@@ -389,11 +389,9 @@ MYD TILES
   cursor: pointer;
 }
 .myd_card:active{
-  margin: 0.5em;
-  border-radius: 5px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
-  background-size:cover; 
-  background: #dfdfdf;
+  -webkit-filter: saturate(30%);
+  -moz-filter: saturate(30%);
+   filter:saturate(30%);
 }
 /* ==========================================================================
 MYD KARTICE
