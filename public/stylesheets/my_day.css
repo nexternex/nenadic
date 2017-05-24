@@ -382,12 +382,12 @@ MYD TILES
       border-radius: 5px;
 }
 
-.myd_card:hover{
+/*.myd_card:hover{
   -moz-transform: scale(0.98);
   -webkit-transform: scale(0.98);
   transform: scale(0.98);
   cursor: pointer;
-}
+}*/
 .myd_card:active{
   -webkit-filter: saturate(30%);
   -moz-filter: saturate(30%);
