@@ -1060,7 +1060,7 @@ figure.effect-ming {
 	background: #030c17;
 }
 
-figure.effect-ming img {
+.effect-ming img {
 	opacity: 0.9;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
