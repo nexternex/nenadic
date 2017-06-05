@@ -383,10 +383,9 @@ MYD TILES
 }
 
 .myd_card:hover{
-  -moz-transform: scale(0.98);
-  -webkit-transform: scale(0.98);
-  transform: scale(0.98);
-  cursor: pointer;
+	opacity: 0.9;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
 }
 .myd_card:active{
   -webkit-filter: saturate(30%);
