@@ -90,7 +90,7 @@
    		   <md-progress-linear  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear> 
 		</div> <!-- cd-tab-filter-wrapper -->
 <!--SEKCIJA:TABLE-->
-		<section class="cd-gallery grid">
+		<section class="cd-gallery">
 				         <md-grid-list 
 						 class="myd_mix "
 						 md-cols-xs="1" 
@@ -101,7 +101,7 @@
 						 md-row-height="2:2"
 						 md-gutter="12px" 				  	
 						 md-gutter-gt-sm="8px">
-								<md-grid-tile  class="md-accent  effect-ming" ng-repeat='item in lists | filter : search | myFilter:filterValues'
+								<md-grid-tile  class="md-accent grid  effect-ming" ng-repeat='item in lists | filter : search | myFilter:filterValues'
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
 									md-colspan-sm="1" 
