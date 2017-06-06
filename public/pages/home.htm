@@ -101,7 +101,7 @@
 						 md-row-height="2:2"
 						 md-gutter="12px" 				  	
 						 md-gutter-gt-sm="8px">
-								<figure  class="md-accent effect-milo" ng-repeat='item in lists | filter : search | myFilter:filterValues'
+								<md-grid-tile  class="md-accent  effect-ming" ng-repeat='item in lists | filter : search | myFilter:filterValues'
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
 									md-colspan-sm="1" 
@@ -118,7 +118,7 @@
 													<span class="md-headline company_name">{{item.gsx$id.$t}}</span>
 													<a href="#">View more</a>
 												</figcaption>
-								</figure>
+								</md-grid-tile>
 
    					  		</md-grid-list>	
 							 	
