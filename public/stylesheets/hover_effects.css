@@ -10,8 +10,6 @@
 
 /* Common style */
 .grid md-grid-tile {
-	position: relative;
-	float: left;
 	overflow: hidden;
 	height: auto;
 	background: #3085a3;
