@@ -1201,8 +1201,8 @@ md-grid-tile.effect-lexi:hover p {
 /*---------------*/
 
 md-grid-tile.effect-duke {
-	background: -webkit-linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
-	background: linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
+	background: -webkit-linear-gradient(-45deg, rgb(105,240,174) 0%,rgb(142,36,170) 100%);
+	background: linear-gradient(-45deg, rgb(105,240,174) 0%,rgb(142,36,170) 100%);
 }
 
 md-grid-tile.effect-duke img,
