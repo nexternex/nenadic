@@ -1,4 +1,4 @@
-.cd-gallery  {
+.grid {
 	position: relative;
 	clear: both;
 	margin: 0 auto;
@@ -9,8 +9,8 @@
 }
 
 /* Common style */
-.cd-gallery  md-grid-tile {
-	/*position: relative;
+.grid figure {
+	position: relative;
 	float: left;
 	overflow: hidden;
 	margin: 10px 1%;
@@ -21,10 +21,10 @@
 	height: auto;
 	background: #3085a3;
 	text-align: center;
-	cursor: pointer;*/
+	cursor: pointer;
 }
 
-.cd-gallery  md-grid-tile img {
+.grid figure img {
 	position: relative;
 	display: block;
 	min-height: 100%;
@@ -32,7 +32,7 @@
 	opacity: 0.8;
 }
 
-.cd-gallery  md-grid-tile figcaption {
+.grid figure figcaption {
 	padding: 2em;
 	color: #fff;
 	text-transform: uppercase;
@@ -41,13 +41,13 @@
 	backface-visibility: hidden;
 }
 
-.cd-gallery  md-grid-tile figcaption::before,
-.cd-gallery  md-grid-tile figcaption::after {
+.grid figure figcaption::before,
+.grid figure figcaption::after {
 	pointer-events: none;
 }
 
-.cd-gallery  md-grid-tile figcaption,
-.cd-gallery  md-grid-tile figcaption > a {
+.grid figure figcaption,
+.grid figure figcaption > a {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -57,7 +57,7 @@
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
-.cd-gallery  md-grid-tile figcaption > a {
+.grid figure figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
 	white-space: nowrap;
@@ -65,21 +65,21 @@
 	opacity: 0;
 }
 
-.cd-gallery  md-grid-tile h2 {
+.grid figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
 
-.cd-gallery  md-grid-tile h2 span {
+.grid figure h2 span {
 	font-weight: 800;
 }
 
-.cd-gallery  md-grid-tile h2,
-.cd-gallery  md-grid-tile p {
+.grid figure h2,
+.grid figure p {
 	margin: 0;
 }
 
-.cd-gallery  md-grid-tile p {
+.grid figure p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }
@@ -90,11 +90,11 @@
 /***** Julia *****/
 /*---------------*/
 
-md-grid-tile.effect-julia {
+figure.effect-julia {
 	background: #2f3238;
 }
 
-md-grid-tile.effect-julia img {
+figure.effect-julia img {
 	max-width: none;
 	height: 400px;
 	-webkit-transition: opacity 1s, -webkit-transform 1s;
@@ -103,16 +103,16 @@ md-grid-tile.effect-julia img {
 	backface-visibility: hidden;
 }
 
-md-grid-tile.effect-julia figcaption {
+figure.effect-julia figcaption {
 	text-align: left;
 }
 
-md-grid-tile.effect-julia h2 {
+figure.effect-julia h2 {
 	position: relative;
 	padding: 0.5em 0;
 }
 
-md-grid-tile.effect-julia p {
+figure.effect-julia p {
 	display: inline-block;
 	margin: 0 0 0.25em;
 	padding: 0.4em 1em;
@@ -127,43 +127,43 @@ md-grid-tile.effect-julia p {
 	transform: translate3d(-360px,0,0);
 }
 
-md-grid-tile.effect-julia p:first-child {
+figure.effect-julia p:first-child {
 	-webkit-transition-delay: 0.15s;
 	transition-delay: 0.15s;
 }
 
-md-grid-tile.effect-julia p:nth-of-type(2) {
+figure.effect-julia p:nth-of-type(2) {
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
 }
 
-md-grid-tile.effect-julia p:nth-of-type(3) {
+figure.effect-julia p:nth-of-type(3) {
 	-webkit-transition-delay: 0.05s;
 	transition-delay: 0.05s;
 }
 
-md-grid-tile.effect-julia:hover p:first-child {
+figure.effect-julia:hover p:first-child {
 	-webkit-transition-delay: 0s;
 	transition-delay: 0s;
 }
 
-md-grid-tile.effect-julia:hover p:nth-of-type(2) {
+figure.effect-julia:hover p:nth-of-type(2) {
 	-webkit-transition-delay: 0.05s;
 	transition-delay: 0.05s;
 }
 
-md-grid-tile.effect-julia:hover p:nth-of-type(3) {
+figure.effect-julia:hover p:nth-of-type(3) {
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
 }
 
-md-grid-tile.effect-julia:hover img {
+figure.effect-julia:hover img {
 	opacity: 0.4;
 	-webkit-transform: scale3d(1.1,1.1,1);
 	transform: scale3d(1.1,1.1,1);
 }
 
-md-grid-tile.effect-julia:hover p {
+figure.effect-julia:hover p {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
@@ -173,30 +173,30 @@ md-grid-tile.effect-julia:hover p {
 /***** Goliath *****/
 /*-----------------*/
 
-md-grid-tile.effect-goliath {
+figure.effect-goliath {
 	background: #df4e4e;
 }
 
-md-grid-tile.effect-goliath img,
-md-grid-tile.effect-goliath h2 {
+figure.effect-goliath img,
+figure.effect-goliath h2 {
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 }
 
-md-grid-tile.effect-goliath img {
+figure.effect-goliath img {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
-md-grid-tile.effect-goliath h2,
-md-grid-tile.effect-goliath p {
+figure.effect-goliath h2,
+figure.effect-goliath p {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	padding: 30px;
 }
 
-md-grid-tile.effect-goliath p {
+figure.effect-goliath p {
 	text-transform: none;
 	font-size: 90%;
 	opacity: 0;
@@ -206,17 +206,17 @@ md-grid-tile.effect-goliath p {
 	transform: translate3d(0,50px,0);
 }
 
-md-grid-tile.effect-goliath:hover img {
+figure.effect-goliath:hover img {
 	-webkit-transform: translate3d(0,-80px,0);
 	transform: translate3d(0,-80px,0);
 }
 
-md-grid-tile.effect-goliath:hover h2 {
+figure.effect-goliath:hover h2 {
 	-webkit-transform: translate3d(0,-100px,0);
 	transform: translate3d(0,-100px,0);
 }
 
-md-grid-tile.effect-goliath:hover p {
+figure.effect-goliath:hover p {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
@@ -226,16 +226,16 @@ md-grid-tile.effect-goliath:hover p {
 /***** Hera *****/
 /*-----------------*/
 
-md-grid-tile.effect-hera {
+figure.effect-hera {
 	background: #303fa9;
 }
 
-md-grid-tile.effect-hera h2 {
+figure.effect-hera h2 {
 	font-size: 158.75%;
 }
 
-md-grid-tile.effect-hera h2,
-md-grid-tile.effect-hera p {
+figure.effect-hera h2,
+figure.effect-hera p {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -247,7 +247,7 @@ md-grid-tile.effect-hera p {
 	transform-origin: 50%;
 }
 
-md-grid-tile.effect-hera figcaption::before {
+figure.effect-hera figcaption::before {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -264,61 +264,61 @@ md-grid-tile.effect-hera figcaption::before {
 	transform-origin: 50%;
 }
 
-md-grid-tile.effect-hera p {
+figure.effect-hera p {
 	width: 100px;
 	text-transform: none;
 	font-size: 121%;
 	line-height: 2;
 }
 
-md-grid-tile.effect-hera p a {
+figure.effect-hera p a {
 	color: #fff;
 }
 
-md-grid-tile.effect-hera p a:hover,
-md-grid-tile.effect-hera p a:focus {
+figure.effect-hera p a:hover,
+figure.effect-hera p a:focus {
 	opacity: 0.6;
 }
 
-md-grid-tile.effect-hera p a i {
+figure.effect-hera p a i {
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 }
 
-md-grid-tile.effect-hera p a:first-child i {
+figure.effect-hera p a:first-child i {
 	-webkit-transform: translate3d(-60px,-60px,0);
 	transform: translate3d(-60px,-60px,0);
 }
 
-md-grid-tile.effect-hera p a:nth-child(2) i {
+figure.effect-hera p a:nth-child(2) i {
 	-webkit-transform: translate3d(60px,-60px,0);
 	transform: translate3d(60px,-60px,0);
 }
 
-md-grid-tile.effect-hera p a:nth-child(3) i {
+figure.effect-hera p a:nth-child(3) i {
 	-webkit-transform: translate3d(-60px,60px,0);
 	transform: translate3d(-60px,60px,0);
 }
 
-md-grid-tile.effect-hera p a:nth-child(4) i {
+figure.effect-hera p a:nth-child(4) i {
 	-webkit-transform: translate3d(60px,60px,0);
 	transform: translate3d(60px,60px,0);
 }
 
-md-grid-tile.effect-hera:hover figcaption::before {
+figure.effect-hera:hover figcaption::before {
 	opacity: 1;
 	-webkit-transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(1,1,1);
 	transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,-45deg) scale3d(1,1,1);
 }
 
-md-grid-tile.effect-hera:hover h2 {
+figure.effect-hera:hover h2 {
 	opacity: 0;
 	-webkit-transform: translate3d(-50%,-50%,0) scale3d(0.8,0.8,1);
 	transform: translate3d(-50%,-50%,0) scale3d(0.8,0.8,1);
 }
 
-md-grid-tile.effect-hera:hover p i:empty {
+figure.effect-hera:hover p i:empty {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0); /* just because it's stronger than nth-child */
 	opacity: 1;
@@ -328,19 +328,19 @@ md-grid-tile.effect-hera:hover p i:empty {
 /***** Winston *****/
 /*-----------------*/
 
-md-grid-tile.effect-winston {
+figure.effect-winston {
 	background: #162633;
 	text-align: left;
 }
 
-md-grid-tile.effect-winston img {
+figure.effect-winston img {
 	-webkit-transition: opacity 0.45s;
 	transition: opacity 0.45s;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
-md-grid-tile.effect-winston figcaption::before {
+figure.effect-winston figcaption::before {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -357,32 +357,32 @@ md-grid-tile.effect-winston figcaption::before {
 	transform-origin: 0 100%;
 }
 
-md-grid-tile.effect-winston h2 {
+figure.effect-winston h2 {
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0,20px,0);
 	transform: translate3d(0,20px,0);
 }
 
-md-grid-tile.effect-winston p {
+figure.effect-winston p {
 	position: absolute;
 	right: 0;
 	bottom: 0;
 	padding: 0 1.5em 7% 0;
 }
 
-md-grid-tile.effect-winston a {
+figure.effect-winston a {
 	margin: 0 10px;
 	color: #5d504f;
 	font-size: 170%;
 }
 
-md-grid-tile.effect-winston a:hover,
-md-grid-tile.effect-winston a:focus {
+figure.effect-winston a:hover,
+figure.effect-winston a:focus {
 	color: #cc6055;
 }
 
-md-grid-tile.effect-winston p a i {
+figure.effect-winston p a i {
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
@@ -390,38 +390,38 @@ md-grid-tile.effect-winston p a i {
 	transform: translate3d(0,50px,0);
 }
 
-md-grid-tile.effect-winston:hover img {
+figure.effect-winston:hover img {
 	opacity: 0.6;
 }
 
-md-grid-tile.effect-winston:hover h2 {
+figure.effect-winston:hover h2 {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-winston:hover figcaption::before {
+figure.effect-winston:hover figcaption::before {
 	opacity: 0.7;
 	-webkit-transform: rotate3d(0,0,1,20deg);
 	transform: rotate3d(0,0,1,20deg);
 }
 
-md-grid-tile.effect-winston:hover p i {
+figure.effect-winston:hover p i {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-winston:hover p a:nth-child(3) i {
+figure.effect-winston:hover p a:nth-child(3) i {
 	-webkit-transition-delay: 0.05s;
 	transition-delay: 0.05s;
 }
 
-md-grid-tile.effect-winston:hover p a:nth-child(2) i {
+figure.effect-winston:hover p a:nth-child(2) i {
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
 }
 
-md-grid-tile.effect-winston:hover p a:first-child i {
+figure.effect-winston:hover p a:first-child i {
 	-webkit-transition-delay: 0.15s;
 	transition-delay: 0.15s;
 }
@@ -430,11 +430,11 @@ md-grid-tile.effect-winston:hover p a:first-child i {
 /***** Selena *****/
 /*-----------------*/
 
-md-grid-tile.effect-selena {
+figure.effect-selena {
 	background: #fff;
 }
 
-md-grid-tile.effect-selena img {
+figure.effect-selena img {
 	opacity: 0.95;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
@@ -442,19 +442,19 @@ md-grid-tile.effect-selena img {
 	transform-origin: 50% 50%;
 }
 
-md-grid-tile.effect-selena:hover img {
+figure.effect-selena:hover img {
 	-webkit-transform: scale3d(0.95,0.95,1);
 	transform: scale3d(0.95,0.95,1);
 }
 
-md-grid-tile.effect-selena h2 {
+figure.effect-selena h2 {
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: translate3d(0,20px,0);
 	transform: translate3d(0,20px,0);
 }
 
-md-grid-tile.effect-selena p {
+figure.effect-selena p {
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
@@ -464,12 +464,12 @@ md-grid-tile.effect-selena p {
 	transform-origin: 50% 0%;
 }
 
-md-grid-tile.effect-selena:hover h2 {
+figure.effect-selena:hover h2 {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-selena:hover p {
+figure.effect-selena:hover p {
 	opacity: 1;
 	-webkit-transform: perspective(1000px) rotate3d(1,0,0,0);
 	transform: perspective(1000px) rotate3d(1,0,0,0);
@@ -479,16 +479,16 @@ md-grid-tile.effect-selena:hover p {
 /***** Terry *****/
 /*-----------------*/
 
-md-grid-tile.effect-terry {
+figure.effect-terry {
 	background: #34495e;
 }
 
-md-grid-tile.effect-terry figcaption {
+figure.effect-terry figcaption {
 	padding: 1em;
 }
 
-md-grid-tile.effect-terry figcaption::before,
-md-grid-tile.effect-terry figcaption::after {
+figure.effect-terry figcaption::before,
+figure.effect-terry figcaption::after {
 	position: absolute;
 	width: 200%;
 	height: 200%;
@@ -499,7 +499,7 @@ md-grid-tile.effect-terry figcaption::after {
 	transition: transform 0.35s;
 }
 
-md-grid-tile.effect-terry figcaption::before {
+figure.effect-terry figcaption::before {
 	right: 0;
 	bottom: 0;
 	border-width: 0 70px 60px 0;
@@ -507,7 +507,7 @@ md-grid-tile.effect-terry figcaption::before {
 	transform: translate3d(70px,60px,0);
 }
 
-md-grid-tile.effect-terry figcaption::after {
+figure.effect-terry figcaption::after {
 	top: 0;
 	left: 0;
 	border-width: 15px 0 0 15px;
@@ -515,17 +515,17 @@ md-grid-tile.effect-terry figcaption::after {
 	transform: translate3d(-15px,-15px,0);
 }
 
-md-grid-tile.effect-terry img,
-md-grid-tile.effect-terry p a {
+figure.effect-terry img,
+figure.effect-terry p a {
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 }
 
-md-grid-tile.effect-terry img {
+figure.effect-terry img {
 	opacity: 0.85;
 }
 
-md-grid-tile.effect-terry h2 {
+figure.effect-terry h2 {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -538,13 +538,13 @@ md-grid-tile.effect-terry h2 {
 }
 
 @media screen and (max-width: 920px) {
-	md-grid-tile.effect-terry h2 {
+	figure.effect-terry h2 {
 		padding: 0.75em 10px;
 		font-size: 120%;
 	}
 }
 
-md-grid-tile.effect-terry p {
+figure.effect-terry p {
 	float: right;
 	clear: both;
 	text-align: left;
@@ -552,7 +552,7 @@ md-grid-tile.effect-terry p {
 	font-size: 111%;
 }
 
-md-grid-tile.effect-terry p a {
+figure.effect-terry p a {
 	display: block;
 	margin-bottom: 1em;
 	color: #fff;
@@ -561,48 +561,48 @@ md-grid-tile.effect-terry p a {
 	transform: translate3d(90px,0,0);
 }
 
-md-grid-tile.effect-terry p a:hover,
-md-grid-tile.effect-terry p a:focus {
+figure.effect-terry p a:hover,
+figure.effect-terry p a:focus {
 	color: #f3cf3f;
 }
 
-md-grid-tile.effect-terry:hover figcaption::before,
-md-grid-tile.effect-terry:hover figcaption::after {
+figure.effect-terry:hover figcaption::before,
+figure.effect-terry:hover figcaption::after {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-terry:hover img {
+figure.effect-terry:hover img {
 	opacity: 0.6;
 
 }
 
-md-grid-tile.effect-terry:hover h2,
-md-grid-tile.effect-terry:hover p a {
+figure.effect-terry:hover h2,
+figure.effect-terry:hover p a {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-terry:hover p a {
+figure.effect-terry:hover p a {
 	opacity: 1;
 }
 
-md-grid-tile.effect-terry:hover p a:first-child {
+figure.effect-terry:hover p a:first-child {
 	-webkit-transition-delay: 0.025s;
 	transition-delay: 0.025s;
 }
 
-md-grid-tile.effect-terry:hover p a:nth-child(2) {
+figure.effect-terry:hover p a:nth-child(2) {
 	-webkit-transition-delay: 0.05s;
 	transition-delay: 0.05s;
 }
 
-md-grid-tile.effect-terry:hover p a:nth-child(3) {
+figure.effect-terry:hover p a:nth-child(3) {
 	-webkit-transition-delay: 0.075s;
 	transition-delay: 0.075s;
 }
 
-md-grid-tile.effect-terry:hover p a:nth-child(4) {
+figure.effect-terry:hover p a:nth-child(4) {
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
 }
@@ -611,21 +611,21 @@ md-grid-tile.effect-terry:hover p a:nth-child(4) {
 /***** Phoebe *****/
 /*-----------------*/
 
-md-grid-tile.effect-phoebe {
+figure.effect-phoebe {
 	background: #675983;
 }
 
-md-grid-tile.effect-phoebe img {
+figure.effect-phoebe img {
 	opacity: 0.85;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 }
 
-md-grid-tile.effect-phoebe:hover img {
+figure.effect-phoebe:hover img {
 	opacity: 0.6;
 }
 
-md-grid-tile.effect-phoebe figcaption::before {
+figure.effect-phoebe figcaption::before {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -642,13 +642,13 @@ md-grid-tile.effect-phoebe figcaption::before {
 	transform-origin: 50% 50%;
 }
 
-md-grid-tile.effect-phoebe:hover figcaption::before {
+figure.effect-phoebe:hover figcaption::before {
 	opacity: 0.6;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
 }
 
-md-grid-tile.effect-phoebe h2 {
+figure.effect-phoebe h2 {
 	margin-top: 1em;
 	-webkit-transition: transform 0.35s;
 	transition: transform 0.35s;
@@ -656,12 +656,12 @@ md-grid-tile.effect-phoebe h2 {
 	transform: translate3d(0,40px,0);
 }
 
-md-grid-tile.effect-phoebe:hover h2 {
+figure.effect-phoebe:hover h2 {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-phoebe p a {
+figure.effect-phoebe p a {
 	color: #fff;
 	font-size: 140%;
 	opacity: 0;
@@ -671,22 +671,22 @@ md-grid-tile.effect-phoebe p a {
 	transition: opacity 0.35s, transform 0.35s;
 }
 
-md-grid-tile.effect-phoebe p a:first-child {
+figure.effect-phoebe p a:first-child {
 	-webkit-transform: translate3d(-60px,-60px,0);
 	transform: translate3d(-60px,-60px,0);
 }
 
-md-grid-tile.effect-phoebe p a:nth-child(2) {
+figure.effect-phoebe p a:nth-child(2) {
 	-webkit-transform: translate3d(0,60px,0);
 	transform: translate3d(0,60px,0);
 }
 
-md-grid-tile.effect-phoebe p a:nth-child(3) {
+figure.effect-phoebe p a:nth-child(3) {
 	-webkit-transform: translate3d(60px,-60px,0);
 	transform: translate3d(60px,-60px,0);
 }
 
-md-grid-tile.effect-phoebe:hover p a {
+figure.effect-phoebe:hover p a {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
@@ -696,11 +696,11 @@ md-grid-tile.effect-phoebe:hover p a {
 /***** Apollo *****/
 /*-----------------*/
 
-md-grid-tile.effect-apollo {
+figure.effect-apollo {
 	background: #3498db;
 }
 
-md-grid-tile.effect-apollo img {
+figure.effect-apollo img {
 	opacity: 0.95;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
@@ -708,7 +708,7 @@ md-grid-tile.effect-apollo img {
 	transform: scale3d(1.05,1.05,1);
 }
 
-md-grid-tile.effect-apollo figcaption::before {
+figure.effect-apollo figcaption::before {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -722,7 +722,7 @@ md-grid-tile.effect-apollo figcaption::before {
 	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
 }
 
-md-grid-tile.effect-apollo p {
+figure.effect-apollo p {
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -736,22 +736,22 @@ md-grid-tile.effect-apollo p {
 	transition: opacity 0.35s;
 }
 
-md-grid-tile.effect-apollo h2 {
+figure.effect-apollo h2 {
 	text-align: left;
 }
 
-md-grid-tile.effect-apollo:hover img {
+figure.effect-apollo:hover img {
 	opacity: 0.6;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
 }
 
-md-grid-tile.effect-apollo:hover figcaption::before {
+figure.effect-apollo:hover figcaption::before {
 	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
 	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
 }
 
-md-grid-tile.effect-apollo:hover p {
+figure.effect-apollo:hover p {
 	opacity: 1;
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
@@ -761,21 +761,21 @@ md-grid-tile.effect-apollo:hover p {
 /***** Kira *****/
 /*-----------------*/
 
-md-grid-tile.effect-kira {
+figure.effect-kira {
 	background: #fff;
 	text-align: left;
 }
 
-md-grid-tile.effect-kira img {
+figure.effect-kira img {
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 }
 
-md-grid-tile.effect-kira figcaption {
+figure.effect-kira figcaption {
 	z-index: 1;
 }
 
-md-grid-tile.effect-kira p {
+figure.effect-kira p {
 	padding: 2.25em 0.5em;
 	font-weight: 600;	
 	font-size: 100%;
@@ -787,17 +787,17 @@ md-grid-tile.effect-kira p {
 	transform: translate3d(0,-10px,0);
 }
 
-md-grid-tile.effect-kira p a {
+figure.effect-kira p a {
 	margin: 0 0.5em;
 	color: #101010;
 }
 
-md-grid-tile.effect-kira p a:hover,
-md-grid-tile.effect-kira p a:focus {
+figure.effect-kira p a:hover,
+figure.effect-kira p a:focus {
 	opacity: 0.6;
 }
 
-md-grid-tile.effect-kira figcaption::before {
+figure.effect-kira figcaption::before {
 	position: absolute;
 	top: 0;
 	right: 2em;
@@ -814,17 +814,17 @@ md-grid-tile.effect-kira figcaption::before {
 	transform-origin: 50% 0;
 }
 
-md-grid-tile.effect-kira:hover img {
+figure.effect-kira:hover img {
 	opacity: 0.5;
 }
 
-md-grid-tile.effect-kira:hover p {
+figure.effect-kira:hover p {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-kira:hover figcaption::before {
+figure.effect-kira:hover figcaption::before {
 	opacity: 0.7;
 	-webkit-transform: translate3d(0,5em,0) scale3d(1,1,1) ;
 	transform: translate3d(0,5em,0) scale3d(1,1,1);
@@ -834,14 +834,14 @@ md-grid-tile.effect-kira:hover figcaption::before {
 /***** Steve *****/
 /*-----------------*/
 
-md-grid-tile.effect-steve {
+figure.effect-steve {
 	z-index: auto;
 	overflow: visible;
 	background: #000;
 }
 
-md-grid-tile.effect-steve:before,
-md-grid-tile.effect-steve h2:before {
+figure.effect-steve:before,
+figure.effect-steve h2:before {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -854,16 +854,16 @@ md-grid-tile.effect-steve h2:before {
 	transition: opacity 0.35s;
 }
 
-md-grid-tile.effect-steve:before {
+figure.effect-steve:before {
 	box-shadow: 0 3px 30px rgba(0,0,0,0.8);
 	opacity: 0;
 }
 
-md-grid-tile.effect-steve figcaption {
+figure.effect-steve figcaption {
 	z-index: 1;
 }
 
-md-grid-tile.effect-steve img {
+figure.effect-steve img {
 	opacity: 1;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
@@ -871,23 +871,23 @@ md-grid-tile.effect-steve img {
 	transform: perspective(1000px) translate3d(0,0,0);
 }
 
-md-grid-tile.effect-steve h2,
-md-grid-tile.effect-steve p {
+figure.effect-steve h2,
+figure.effect-steve p {
 	background: #fff;
 	color: #2d434e;
 }
 
-md-grid-tile.effect-steve h2 {
+figure.effect-steve h2 {
 	position: relative;
 	margin-top: 2em;
 	padding: 0.25em;
 }
 
-md-grid-tile.effect-steve h2:before {
+figure.effect-steve h2:before {
 	box-shadow: 0 1px 10px rgba(0,0,0,0.5);
 }
 
-md-grid-tile.effect-steve p {
+figure.effect-steve p {
 	margin-top: 1em;
 	padding: 0.5em;
 	font-weight: 800;
@@ -898,20 +898,20 @@ md-grid-tile.effect-steve p {
 	transform: scale3d(0.9,0.9,1);
 }
 
-md-grid-tile.effect-steve:hover:before {
+figure.effect-steve:hover:before {
 	opacity: 1;
 }
 
-md-grid-tile.effect-steve:hover img {
+figure.effect-steve:hover img {
 	-webkit-transform: perspective(1000px) translate3d(0,0,21px);
 	transform: perspective(1000px) translate3d(0,0,21px);
 }
 
-md-grid-tile.effect-steve:hover h2:before {
+figure.effect-steve:hover h2:before {
 	opacity: 0;
 }
 
-md-grid-tile.effect-steve:hover p {
+figure.effect-steve:hover p {
 	opacity: 1;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
@@ -921,26 +921,26 @@ md-grid-tile.effect-steve:hover p {
 /***** Moses *****/
 /*-----------------*/
 
-md-grid-tile.effect-moses {
+figure.effect-moses {
 	background: -webkit-linear-gradient(-45deg, #EC65B7 0%,#05E0D8 100%);
 	background: linear-gradient(-45deg, #EC65B7 0%,#05E0D8 100%);
 }
 
-md-grid-tile.effect-moses img {
+figure.effect-moses img {
 	opacity: 0.85;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 }
 
-md-grid-tile.effect-moses h2,
-md-grid-tile.effect-moses p {
+figure.effect-moses h2,
+figure.effect-moses p {
 	padding: 20px;
 	width: 50%;
 	height: 50%;
 	border: 2px solid #fff;
 }
 
-md-grid-tile.effect-moses h2 {
+figure.effect-moses h2 {
 	padding: 20px;
 	width: 50%;
 	height: 50%;
@@ -951,7 +951,7 @@ md-grid-tile.effect-moses h2 {
 	transform: translate3d(10px,10px,0);
 }
 
-md-grid-tile.effect-moses p {
+figure.effect-moses p {
 	float: right;
 	padding: 20px;
 	text-align: right;
@@ -962,18 +962,18 @@ md-grid-tile.effect-moses p {
 	transform: translate3d(-50%,-50%,0);
 }
 
-md-grid-tile.effect-moses:hover h2 {
+figure.effect-moses:hover h2 {
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-moses:hover p {
+figure.effect-moses:hover p {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-moses:hover img {
+figure.effect-moses:hover img {
 	opacity: 0.6;
 }
 
@@ -981,23 +981,23 @@ md-grid-tile.effect-moses:hover img {
 /***** Jazz *****/
 /*---------------*/
 
-md-grid-tile.effect-jazz {
+figure.effect-jazz {
 	background: -webkit-linear-gradient(-45deg, #f3cf3f 0%,#f33f58 100%);
 	background: linear-gradient(-45deg, #f3cf3f 0%,#f33f58 100%);
 }
 
-md-grid-tile.effect-jazz img {
+figure.effect-jazz img {
 	opacity: 0.9;
 }
 
-md-grid-tile.effect-jazz figcaption::after,
-md-grid-tile.effect-jazz img,
-md-grid-tile.effect-jazz p {
+figure.effect-jazz figcaption::after,
+figure.effect-jazz img,
+figure.effect-jazz p {
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 }
 
-md-grid-tile.effect-jazz figcaption::after {
+figure.effect-jazz figcaption::after {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1013,40 +1013,40 @@ md-grid-tile.effect-jazz figcaption::after {
 	transform-origin: 50% 50%;
 }
 
-md-grid-tile.effect-jazz h2,
-md-grid-tile.effect-jazz p {
+figure.effect-jazz h2,
+figure.effect-jazz p {
 	opacity: 1;
 	-webkit-transform: scale3d(0.8,0.8,1);
 	transform: scale3d(0.8,0.8,1);
 }
 
-md-grid-tile.effect-jazz h2 {
+figure.effect-jazz h2 {
 	padding-top: 26%;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 }
 
-md-grid-tile.effect-jazz p {
+figure.effect-jazz p {
 	padding: 0.5em 2em;
 	text-transform: none;
 	font-size: 0.85em;
 	opacity: 0;
 }
 
-md-grid-tile.effect-jazz:hover img {
+figure.effect-jazz:hover img {
 	opacity: 0.7;
 	-webkit-transform: scale3d(1.05,1.05,1);
 	transform: scale3d(1.05,1.05,1);
 }
 
-md-grid-tile.effect-jazz:hover figcaption::after {
+figure.effect-jazz:hover figcaption::after {
 	opacity: 1;
 	-webkit-transform: rotate3d(0,0,1,45deg) scale3d(1,1,1);
 	transform: rotate3d(0,0,1,45deg) scale3d(1,1,1);
 }
 
-md-grid-tile.effect-jazz:hover h2,
-md-grid-tile.effect-jazz:hover p {
+figure.effect-jazz:hover h2,
+figure.effect-jazz:hover p {
 	opacity: 1;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
@@ -1056,17 +1056,17 @@ md-grid-tile.effect-jazz:hover p {
 /***** Ming *****/
 /*---------------*/
 
-md-grid-tile.effect-ming {
+figure.effect-ming {
 	background: #030c17;
 }
 
-.effect-ming {
+figure.effect-ming img {
 	opacity: 0.9;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 }
 
-md-grid-tile.effect-ming figcaption::before {
+figure.effect-ming figcaption::before {
 	position: absolute;
 	top: 30px;
 	right: 30px;
@@ -1082,13 +1082,13 @@ md-grid-tile.effect-ming figcaption::before {
 	transform: scale3d(1.4,1.4,1);
 }
 
-md-grid-tile.effect-ming h2 {
+figure.effect-ming h2 {
 	margin: 20% 0 10px 0;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 }
 
-md-grid-tile.effect-ming p {
+figure.effect-ming p {
 	padding: 1em;
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -1097,23 +1097,23 @@ md-grid-tile.effect-ming p {
 	transform: scale(1.5);
 }
 
-md-grid-tile.effect-ming:hover h2 {
+figure.effect-ming:hover h2 {
 	-webkit-transform: scale(0.9);
 	transform: scale(0.9);
 }
 
-md-grid-tile.effect-ming:hover figcaption::before,
-md-grid-tile.effect-ming:hover p {
+figure.effect-ming:hover figcaption::before,
+figure.effect-ming:hover p {
 	opacity: 1;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
 }
 
-md-grid-tile.effect-ming:hover figcaption {
+figure.effect-ming:hover figcaption {
 	background-color: rgba(58,52,42,0);
 }
 
-md-grid-tile.effect-ming:hover img {
+figure.effect-ming:hover img {
 	opacity: 0.4;
 }
 
@@ -1121,12 +1121,12 @@ md-grid-tile.effect-ming:hover img {
 /***** Lexi *****/
 /*---------------*/
 
-md-grid-tile.effect-lexi {
+figure.effect-lexi {
 	background: -webkit-linear-gradient(-45deg, #000 0%,#fff 100%);
 	background: linear-gradient(-45deg, #000 0%,#fff 100%);
 }
 
-md-grid-tile.effect-lexi img {
+figure.effect-lexi img {
 	margin: -10px 0 0 -10px;
 	max-width: none;
 	width: -webkit-calc(100% + 10px);
@@ -1140,13 +1140,13 @@ md-grid-tile.effect-lexi img {
 	backface-visibility: hidden;
 }
 
-md-grid-tile.effect-lexi figcaption::before,
-md-grid-tile.effect-lexi p {
+figure.effect-lexi figcaption::before,
+figure.effect-lexi p {
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 }
 
-md-grid-tile.effect-lexi figcaption::before {
+figure.effect-lexi figcaption::before {
 	position: absolute;
 	right: -100px;
 	bottom: -100px;
@@ -1163,13 +1163,13 @@ md-grid-tile.effect-lexi figcaption::before {
 	transform-origin: 50% 50%;
 }
 
-md-grid-tile.effect-lexi:hover img {
+figure.effect-lexi:hover img {
 	opacity: 0.6;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 
-md-grid-tile.effect-lexi h2 {
+figure.effect-lexi h2 {
 	text-align: left;
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
@@ -1177,7 +1177,7 @@ md-grid-tile.effect-lexi h2 {
 	transform: translate3d(5px,5px,0);
 }
 
-md-grid-tile.effect-lexi p {
+figure.effect-lexi p {
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -1189,14 +1189,14 @@ md-grid-tile.effect-lexi p {
 	transform: translate3d(20px,20px,0);
 }
 
-md-grid-tile.effect-lexi:hover figcaption::before {
+figure.effect-lexi:hover figcaption::before {
 	opacity: 1;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
 }
 
-md-grid-tile.effect-lexi:hover h2,
-md-grid-tile.effect-lexi:hover p {
+figure.effect-lexi:hover h2,
+figure.effect-lexi:hover p {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
@@ -1206,24 +1206,24 @@ md-grid-tile.effect-lexi:hover p {
 /***** Duke *****/
 /*---------------*/
 
-md-grid-tile.effect-duke {
+figure.effect-duke {
 	background: -webkit-linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
 	background: linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
 }
 
-md-grid-tile.effect-duke img,
-md-grid-tile.effect-duke p {
+figure.effect-duke img,
+figure.effect-duke p {
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 }
 
-md-grid-tile.effect-duke:hover img {
+figure.effect-duke:hover img {
 	opacity: 0.1;
 	-webkit-transform: scale3d(2,2,1);
 	transform: scale3d(2,2,1);
 }
 
-md-grid-tile.effect-duke h2 {
+figure.effect-duke h2 {
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
 	-webkit-transform: scale3d(0.8,0.8,1);
@@ -1232,7 +1232,7 @@ md-grid-tile.effect-duke h2 {
 	transform-origin: 50% 100%;
 }
 
-md-grid-tile.effect-duke p {
+figure.effect-duke p {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -1248,8 +1248,8 @@ md-grid-tile.effect-duke p {
 	transform-origin: 50% -100%;
 }
 
-md-grid-tile.effect-duke:hover h2,
-md-grid-tile.effect-duke:hover p {
+figure.effect-duke:hover h2,
+figure.effect-duke:hover p {
 	opacity: 1;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
@@ -1261,7 +1261,7 @@ md-grid-tile.effect-duke:hover p {
 		padding: 0 10px;
 		text-align: center;
 	}
-	.cd-gallery  md-grid-tile {
+	.grid figure {
 		display: inline-block;
 		float: none;
 		margin: 10px auto;
