@@ -11,10 +11,10 @@
 /* Common style */
 .grid md-grid-tile {
 	/*overflow: hidden;*/
-	height: auto;
+	/*height: auto;
 	background: #3085a3;
 	text-align: center;
-	cursor: pointer;
+	cursor: pointer;*/
 }
 
 .grid md-grid-tile img {
