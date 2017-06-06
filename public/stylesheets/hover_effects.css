@@ -10,14 +10,7 @@
 
 /* Common style */
 .cd-gallery  md-grid-tile {
-	position: relative;
-	float: left;
-	overflow: hidden;
-	margin: 10px 1%;
-	height: auto;
-	background: #3085a3;
-	text-align: center;
-	cursor: pointer;
+
 }
 
 .cd-gallery  md-grid-tile img {
