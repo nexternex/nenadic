@@ -10,7 +10,7 @@
 
 /* Common style */
 .grid md-grid-tile {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	height: auto;
 	background: #3085a3;
 	text-align: center;
