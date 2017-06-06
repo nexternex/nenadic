@@ -1,12 +1,30 @@
-.grid {
+.cd-gallery  {
+	position: relative;
+	clear: both;
+	margin: 0 auto;
+	padding: 1em 0 4em;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
 }
 
 /* Common style */
-.grid md-grid-tile {
-
+.cd-gallery  md-grid-tile {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
+	height: auto;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
 }
 
-.grid md-grid-tile img {
+.cd-gallery  md-grid-tile img {
 	position: relative;
 	display: block;
 	min-height: 100%;
@@ -14,7 +32,7 @@
 	opacity: 0.8;
 }
 
-.grid md-grid-tile figcaption {
+.cd-gallery  md-grid-tile figcaption {
 	padding: 2em;
 	color: #fff;
 	text-transform: uppercase;
@@ -23,13 +41,13 @@
 	backface-visibility: hidden;
 }
 
-.grid md-grid-tile figcaption::before,
-.grid md-grid-tile figcaption::after {
+.cd-gallery  md-grid-tile figcaption::before,
+.cd-gallery  md-grid-tile figcaption::after {
 	pointer-events: none;
 }
 
-.grid md-grid-tile figcaption,
-.grid md-grid-tile figcaption > a {
+.cd-gallery  md-grid-tile figcaption,
+.cd-gallery  md-grid-tile figcaption > a {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -39,7 +57,7 @@
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
-.grid md-grid-tile figcaption > a {
+.cd-gallery  md-grid-tile figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
 	white-space: nowrap;
@@ -47,21 +65,21 @@
 	opacity: 0;
 }
 
-.grid md-grid-tile h2 {
+.cd-gallery  md-grid-tile h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
 
-.grid md-grid-tile h2 span {
+.cd-gallery  md-grid-tile h2 span {
 	font-weight: 800;
 }
 
-.grid md-grid-tile h2,
-.grid md-grid-tile p {
+.cd-gallery  md-grid-tile h2,
+.cd-gallery  md-grid-tile p {
 	margin: 0;
 }
 
-.grid md-grid-tile p {
+.cd-gallery  md-grid-tile p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }
@@ -1243,7 +1261,7 @@ md-grid-tile.effect-duke:hover p {
 		padding: 0 10px;
 		text-align: center;
 	}
-	.grid md-grid-tile {
+	.cd-gallery  md-grid-tile {
 		display: inline-block;
 		float: none;
 		margin: 10px auto;
