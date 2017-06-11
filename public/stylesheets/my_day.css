@@ -376,6 +376,7 @@ MYD TILES
     font-weight: 500;    
     color: rgba(255,255,255,0.8);
     padding-left:0.3em;
+    font-size: 1.5 em!important
 }
 .myd_card_footer{
       background: rgba(142, 36, 170, 0.53);
