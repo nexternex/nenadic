@@ -26,7 +26,7 @@
 
         $scope.toggleElement = function() {
 
-            $scope.displayElement = HeartService.toggleDisplay();
+            // $scope.displayElement = HeartService.toggleDisplay();
 
             if( $rootScope.filterValues==""){
                 $scope.displayElement=true;
@@ -34,6 +34,7 @@
                 console.log("filterValues1:"+$rootScope.filterValues+"/de/"+$scope.displayElement);
               }
             else{ 
+                $scope.displayElement=false;
                 $rootScope.filterValues="";
                 console.log("filterValues1a:"+$rootScope.filterValues);
             };
