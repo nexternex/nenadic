@@ -20,13 +20,13 @@
     //ikona srce u zavisnosti od switcha 
      $rootScope.filterValues="";
 
-      function init() {
-            // $scope.displayElement = ThisService.toggleDisplay();
+        function init() {
+            // $scope.displayElement = HeartService.toggleDisplay();
         }
 
         $scope.toggleElement = function() {
 
-            $scope.displayElement = ThisService.toggleDisplay();
+            $scope.displayElement = HeartService.toggleDisplay();
 
             if( $rootScope.filterValues==""){
                 $scope.heart();
@@ -575,7 +575,7 @@
           }
       });
 //FACTORY  SET HEART
-    myDay.service("ThisService", function(DisplayElement) {
+    myDay.service("HeartService", function(DisplayElement) {
         this.toggleDisplay = function() {
           return DisplayElement.value = !DisplayElement.value;
         }
