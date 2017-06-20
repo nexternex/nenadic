@@ -29,7 +29,7 @@
             $scope.displayElement = HeartService.toggleDisplay();
 
             if( $rootScope.filterValues==""){
-                $scope.displayElement=false;
+                $scope.displayElement=true;
                 $scope.heart();
                 console.log("filterValues1:"+$rootScope.filterValues+"/de/"+$scope.displayElement);
               }
