@@ -15,7 +15,7 @@
 
  }]);
 //KONTROLER: Login controller
-    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','ThisService',function ($scope, $http, auth, store, $location,$rootScope,ThisService) {
+    myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','HeartService',function ($scope, $http, auth, store, $location,$rootScope,HeartService) {
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
     //ikona srce u zavisnosti od switcha 
      $rootScope.filterValues="";
