@@ -36,7 +36,7 @@
             else{ 
                 $scope.displayElement=false;
                 $rootScope.filterValues="";
-                console.log("filterValues1a:"+$rootScope.filterValues);
+                console.log("filterValues1a:"+$rootScope.filterValues+"/de/"+$scope.displayElement);
             };
         }
         // init();
