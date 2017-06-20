@@ -31,7 +31,7 @@
             if( $rootScope.filterValues==""){
                 $scope.displayElement=false;
                 $scope.heart();
-                console.log("filterValues1:"+$rootScope.filterValues);
+                console.log("filterValues1:"+$rootScope.filterValues+"/de/"+displayElement);
               }
             else{ 
                 $rootScope.filterValues="";
