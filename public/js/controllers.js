@@ -21,7 +21,7 @@
      $rootScope.filterValues="";
 
         function init() {
-            // $scope.displayElement = HeartService.toggleDisplay();
+            $scope.displayElement = HeartService.toggleDisplay();
         }
 
         $scope.toggleElement = function() {
