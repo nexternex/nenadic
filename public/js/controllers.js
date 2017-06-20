@@ -20,9 +20,9 @@
     //ikona srce u zavisnosti od switcha 
      $rootScope.filterValues="";
 
-        function init() {
-            $scope.displayElement = HeartService.toggleDisplay();
-        }
+        // function init() {
+        //     // $scope.displayElement = HeartService.toggleDisplay();
+        // }
 
         $scope.toggleElement = function() {
 
@@ -37,7 +37,7 @@
                 console.log("filterValues1a:"+$rootScope.filterValues);
             };
         }
-        init();
+        // init();
     
 
         $scope.heart=function(){
