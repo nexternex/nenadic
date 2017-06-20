@@ -29,6 +29,7 @@
             $scope.displayElement = HeartService.toggleDisplay();
 
             if( $rootScope.filterValues==""){
+                $scope.displayElement=false;
                 $scope.heart();
                 console.log("filterValues1:"+$rootScope.filterValues);
               }
