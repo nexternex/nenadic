@@ -12,6 +12,31 @@
     </md-toolbar>
     <md-dialog-content class="">
       <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="Info">
+          <md-content class="md-padding">
+            <!--<h3 class="md-display-2">Video</h3>-->
+              <div class="myd_card">
+                <md-icon md-svg-src="phone"></md-icon>
+                <!--<span class="card_caption" flex> telefon :</span>-->
+                <span class="card_txt" flex>{{modal.item.gsx$telefon.$t}}</span>
+              </div>
+              <div class="myd_card">
+                <md-icon md-svg-src="web"></md-icon>
+                <!--<span class="card_caption" flex> web sajt:</span>-->
+                <span class="card_txt">{{modal.item.gsx$web.$t}}</span>
+              </div>
+              <div class="myd_card">
+                <md-icon md-svg-src="home"></md-icon>
+                <!--<span class="card_caption" flex>adresa: </span>-->
+                <span class="card_txt">{{modal.item.gsx$adresa.$t}}</span>
+              </div>
+              <div class="myd_card">
+                 <md-icon md-svg-src=""></md-icon>
+                <!--<span class="card_caption" flex>kontak osoba:</span>-->
+                <span class="card_txt">{{modal.item.gsx$kontakosoba.$t}}</span>
+              </div>
+          </md-content>
+        </md-tab>
         <md-tab label="Info">
           <md-content class="md-padding">
             <h3 class="md-display-2">O Kompaniji</h3>
@@ -25,7 +50,7 @@
         <md-tab label="Galerija">
           <md-content class="md-padding">
             <h3 class="md-display-2">Galerija</h3>
-              <img ng-src="{{modal.item.gsx$img.$t}}" class="md-card-image">
+              <img ng-src="{{modal.item.gsx$img.$t}}"  class="md-card-image">
           </md-content>
         </md-tab>
         <md-tab label="Video">
