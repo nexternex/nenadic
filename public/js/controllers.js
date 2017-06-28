@@ -326,12 +326,12 @@
                             // var array2=[];
                             vm.item = {};
                             vm.item = item;  //your task object from the ng-repeat
-                            array2=$rootScope.filterValues; //spisak lajkovanih objekata za uporedjivnje 
+                            // array2=$rootScope.filterValues; //spisak lajkovanih objekata za uporedjivnje 
 
                             // angular.forEach(array2, function (e) {
                             //         if (array2.indexOf(e) === -1) {
                             //             // a is NOT in array1
-                            //            console.log(e+":clasn niza");
+                            //            console.log(e+":clan niza");
                             //         }
                             //     });
 
