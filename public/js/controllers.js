@@ -323,6 +323,7 @@
                     $mdDialog.show({
                         controller: function ($mdDialog,auth) {
                             var vm = this;
+                            var array2=[];
                             vm.item = {};
                             vm.item = item;  //your task object from the ng-repeat
                             array2=$rootScope.filterValues; //spisak lajkovanih objekata za uporedjivnje 
