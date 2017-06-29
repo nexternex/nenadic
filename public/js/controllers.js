@@ -338,6 +338,8 @@
                                             console.log('Error: ' + data);
                                         });
                                     }; 
+
+                                              $scope.heart1();
                         this.hide = function () {
                                 console.log("hide");
                                 $mdDialog.hide();
@@ -383,7 +385,7 @@
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(){
                       
-                            $scope.heart1();
+                  
                             var likes = $rootScope.filterValues;
 
                             if (likes.indexOf(item.gsx$id.$t) === -1) {
