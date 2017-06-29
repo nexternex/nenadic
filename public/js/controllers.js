@@ -322,18 +322,17 @@
                 $scope.auth=auth;
                     $mdDialog.show({
                         controller: function ($mdDialog,auth) {
+                            
                             var vm = this;
-                            // var array2=[];
                             vm.item = {};
-                            vm.item = item;  //your task object from the ng-repeat
-                            // array2=$rootScope.filterValues; //spisak lajkovanih objekata za uporedjivnje 
+                            vm.item = item;  //your object from the ng-repeat
 
-                            // angular.forEach(array2, function (e) {
-                            //         if (array2.indexOf(e) === -1) {
-                            //             // a is NOT in array1
-                            //            console.log(e+":clan niza");
-                            //         }
-                            //     });
+                            var likes = $rootScope.filterValues;
+                            var a = likes.indexOf(vm.item.gsx$id.$t);
+
+                            if (a.indexOf(vm.item) === -1) {
+                              console.log("like ne postoji");
+                            }
 
                         this.hide = function () {
                                 console.log("hide");
