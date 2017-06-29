@@ -389,7 +389,7 @@
                     }).then( function x(){
                             var likes = $rootScope.filterValues;
 
-                            if (likes.indexOf(vm.item.gsx$id.$t) === -1) {
+                            if (likes.indexOf(item.gsx$id.$t) === -1) {
                               console.log("like ne postoji");
                               $("#myd_unlike").hide();
                             }
