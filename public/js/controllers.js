@@ -381,7 +381,8 @@
                                         .error(function(data) {
                                             console.log('Error: ' + data);
                                         });
-                                    };   
+                                    }; 
+                            $scope.heart1();
                             var likes = $rootScope.filterValues;
 
                             if (likes.indexOf(item.gsx$id.$t) === -1) {
