@@ -328,6 +328,20 @@
                             vm.item = item;  //your object from the ng-repeat
 
 
+                              $scope.heart1=function(){
+                                    $http.get('/api/users'+auth.profile.user_id)
+                                        .success(function(data) {
+                                            //rezultat 1 profila ide u data
+                                             $rootScope.filterValues=data[0].ido;
+                                             console.log("filterValues2:"+$rootScope.filterValues);
+                                        })
+                                        .error(function(data) {
+                                            console.log('Error: ' + data);
+                                        });
+                                    };    
+                           
+
+                           
 
                         this.hide = function () {
                                 console.log("hide");
@@ -372,23 +386,7 @@
                         parent: angular.element(document.body),
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-                    }).then(function nex(){
-
-
-                              $scope.heart1=function(){
-                                    $http.get('/api/users'+auth.profile.user_id)
-                                        .success(function(data) {
-                                            //rezultat 1 profila ide u data
-                                             $rootScope.filterValues=data[0].ido;
-                                             console.log("filterValues2:"+$rootScope.filterValues);
-                                        })
-                                        .error(function(data) {
-                                            console.log('Error: ' + data);
-                                        });
-                                    }; 
-                    
-                            $scope.heart1();
-
+                    }).then( function x(){
                             var likes = $rootScope.filterValues;
 
                             if (likes.indexOf(vm.item.gsx$id.$t) === -1) {
@@ -399,9 +397,9 @@
                               $("#myd_like").hide();
                               $("#myd_unlike").show();
                             }
-                        }
-                    
-                    );
+                   
+                    }()
+                    );    
                 };
         
                 // when landing on the page, GET-liste iz baze podatka
