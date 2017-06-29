@@ -384,6 +384,7 @@
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(){
+                        console.log("startujem THEN");
                       
                   
                             var likes = $rootScope.filterValues;
