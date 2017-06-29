@@ -326,7 +326,6 @@
                             var vm = this;
                             vm.item = {};
                             vm.item = item;  //your object from the ng-repeat
-                            var id_c=item.gsx$id.$t;
 
                             var likes = $rootScope.filterValues;
                             // var a = likes.indexOf(vm.item.gsx$id.$t);
