@@ -328,17 +328,6 @@
                             vm.item = item;  //your object from the ng-repeat
 
 
-                              $scope.heart1=function(){
-                                    $http.get('/api/users'+auth.profile.user_id)
-                                        .success(function(data) {
-                                            //rezultat 1 profila ide u data
-                                             $rootScope.filterValues=data[0].ido;
-                                             console.log("filterValues2:"+$rootScope.filterValues);
-                                        })
-                                        .error(function(data) {
-                                            console.log('Error: ' + data);
-                                        });
-                                    }; 
 
                         this.hide = function () {
                                 console.log("hide");
@@ -384,6 +373,19 @@
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then(function nex(){
+
+
+                              $scope.heart1=function(){
+                                    $http.get('/api/users'+auth.profile.user_id)
+                                        .success(function(data) {
+                                            //rezultat 1 profila ide u data
+                                             $rootScope.filterValues=data[0].ido;
+                                             console.log("filterValues2:"+$rootScope.filterValues);
+                                        })
+                                        .error(function(data) {
+                                            console.log('Error: ' + data);
+                                        });
+                                    }; 
                     
                             $scope.heart1();
 
