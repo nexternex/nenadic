@@ -328,9 +328,9 @@
                             vm.item = item;  //your object from the ng-repeat
 
                             var likes = $rootScope.filterValues;
-                            var a = likes.indexOf(vm.item.gsx$id.$t);
+                            // var a = likes.indexOf(vm.item.gsx$id.$t);
 
-                            if (a.indexOf(vm.item) === -1) {
+                            if (likes.indexOf(vm.item.gsx$id.$t) === -1) {
                               console.log("like ne postoji");
                             }
 
