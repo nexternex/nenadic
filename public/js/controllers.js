@@ -332,6 +332,11 @@
 
                             if (likes.indexOf(vm.item.gsx$id.$t) === -1) {
                               console.log("like ne postoji");
+                              $("myd_unlike").hide();
+                            }
+                            else {
+                              $("myd_like").hide();
+                              $("myd_unlike").show();
                             }
 
                         this.hide = function () {
