@@ -332,26 +332,13 @@
                                     $http.get('/api/users'+auth.profile.user_id)
                                         .success(function(data) {
                                             //rezultat 1 profila ide u data
-                                    $rootScope.filterValues=data[0].ido;
-                                    console.log("filterValues2:"+$rootScope.filterValues);
+                                             $rootScope.filterValues=data[0].ido;
+                                             console.log("filterValues2:"+$rootScope.filterValues);
                                         })
                                         .error(function(data) {
                                             console.log('Error: ' + data);
                                         });
-                                    };    
-                            $scope.heart1();
-                            
-                            var likes = $rootScope.filterValues;
-                            // var a = likes.indexOf(vm.item.gsx$id.$t);
-
-                            if (likes.indexOf(vm.item.gsx$id.$t) === -1) {
-                              console.log("like ne postoji");
-                              $("#myd_unlike").hide();
-                            }
-                            else {
-                              $("#myd_like").hide();
-                              $("#myd_unlike").show();
-                            }
+                                    }; 
 
                         this.hide = function () {
                                 console.log("hide");
@@ -396,7 +383,23 @@
                         parent: angular.element(document.body),
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-                    }).then(console.log(item));
+                    }).then(function nex(){
+                    
+                            $scope.heart1();
+
+                            var likes = $rootScope.filterValues;
+
+                            if (likes.indexOf(vm.item.gsx$id.$t) === -1) {
+                              console.log("like ne postoji");
+                              $("#myd_unlike").hide();
+                            }
+                            else {
+                              $("#myd_like").hide();
+                              $("#myd_unlike").show();
+                            }
+                        }
+                    
+                    );
                 };
         
                 // when landing on the page, GET-liste iz baze podatka
