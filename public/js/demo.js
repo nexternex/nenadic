@@ -74,7 +74,7 @@
 	};
 
 	// grid items:
-	var items = [].slice.call(document.querySelectorAll('md-button'));
+	var items = [].slice.call(document.querySelectorAll('.grid__item'));
 
 	function init() { 
 		/* Icon 16 */
