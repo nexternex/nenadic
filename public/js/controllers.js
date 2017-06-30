@@ -254,9 +254,9 @@
      console.log("maps kontroler entry");
     }]);
 //KONTROLER: List controller--dropdown komponente
-    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter) {
+    myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
             $scope.search="";
-          // filteri za sale
+        // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
                 ["sectionTip",["moderan","rustican","kafana","restoran","hotel","motel"]],
