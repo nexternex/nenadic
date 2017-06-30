@@ -75,7 +75,7 @@
 
 	// grid items:
 	var items = [].slice.call(document.querySelectorAll('.grid__item'));
-
+console.log(items);
 	function init() { 
 		/* Icon 16 */
 		var el16 = items[0].querySelector('button.icobutton'), el16span = el16.querySelector('span');
