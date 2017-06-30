@@ -315,7 +315,7 @@
 
             }
 
-    console.log("filterValuesListCtrl:"+$rootScope.filterValues);
+            console.log("filterValuesListCtrl:"+$rootScope.filterValues);
     
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
@@ -398,7 +398,7 @@
                               $("#myd_like").hide();
                               $("#myd_unlike").show();
                             }
-                       }, 3000);
+                       }, 100);
                     }()
                     );    
                 };
