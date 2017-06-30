@@ -386,7 +386,7 @@
                     }).then( function x(){
                         $timeout(function() {
 
-                        console.log("startujem THEN");
+                            console.log("startujem THEN");
                     
                             var likes = $rootScope.filterValues;
 
