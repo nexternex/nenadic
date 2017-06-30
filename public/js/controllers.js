@@ -384,9 +384,10 @@
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(){
+                        $timeout(function() {
+
                         console.log("startujem THEN");
-                      
-                  
+                    
                             var likes = $rootScope.filterValues;
 
                             if (likes.indexOf(item.gsx$id.$t) === -1) {
@@ -397,7 +398,7 @@
                               $("#myd_like").hide();
                               $("#myd_unlike").show();
                             }
-                   
+                       }, 3000);
                     }()
                     );    
                 };
