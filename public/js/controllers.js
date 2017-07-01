@@ -404,7 +404,9 @@
                     );    
                 };
         
-                // when landing on the page, GET-liste iz baze podatka
+                // when landing on the page, GET-liste iz baze podatka 
+                //-deo za citanje ako ide iz baze
+                
                 // $http.get('/api/lists')
                 //     .success(function(data) {
                 //         $scope.lists = data;
