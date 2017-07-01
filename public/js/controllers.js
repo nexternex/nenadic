@@ -385,7 +385,7 @@
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(like_array){
-                        $timeout(function() {
+                        $timeout(function(like_array) {
 
                             console.log("startujem THEN");
                     
