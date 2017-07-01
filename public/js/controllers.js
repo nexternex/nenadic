@@ -388,7 +388,7 @@
                     }).then( function x(like_array){
                         $timeout(function(like_array) {
 
-                            console.log("startujem THEN");
+                            console.log("startujem THEN:"+like_array);
                     
                             var likes = like_array;
 
