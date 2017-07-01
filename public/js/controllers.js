@@ -390,10 +390,11 @@
                                         });
                                     }; 
 
-                            console.log("startujem THEN:"+like_array);
                     
                             var likes = $scope.heart1();
 
+                            console.log("startujem THEN:"+like_array);
+                            
                             if (likes.indexOf(item.gsx$id.$t) === -1) {
                               console.log("like ne postoji");
                               $("#myd_unlike").hide();
