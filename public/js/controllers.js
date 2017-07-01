@@ -19,6 +19,7 @@
     // prikaz za ikonice tollbar u zavisnosti da li je user logovoan
     //ikona srce u zavisnosti od switcha 
      $rootScope.filterValues="";
+     $rootScope.likes="";
 
         // function init() {
         //     // $scope.displayElement = HeartService.toggleDisplay();
@@ -331,7 +332,7 @@
                                     $http.get('/api/users'+auth.profile.user_id)
                                         .success(function(data) {
                                             //rezultat 1 profila ide u data
-                                             $rootScope.filterValues=data[0].ido;
+                                             $rootScope.likes=data[0].ido;
                                              console.log("filterValues2:"+$rootScope.filterValues);
                                         })
                                         .error(function(data) {
@@ -388,7 +389,7 @@
 
                             console.log("startujem THEN");
                     
-                            var likes = $rootScope.filterValues;
+                            var likes = $rootScope.likes;
 
                             if (likes.indexOf(item.gsx$id.$t) === -1) {
                               console.log("like ne postoji");
