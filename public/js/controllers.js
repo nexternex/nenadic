@@ -323,17 +323,18 @@
                     $mdDialog.show({
                         controller: function ($mdDialog,auth) {
                             
-                            var like_array={};
+                            var like_array={};//PROMENJIVA KOJA SADRZI TRENUTNE LAJKOVE KORISNIKA
                             var vm = this;
                             vm.item = {};
                             vm.item = item;  //your object from the ng-repeat
  
-                           $scope.heart1=function(){
+                           $scope.heart1=function(like_array){
                                     $http.get('/api/users'+auth.profile.user_id)
                                         .success(function(data) {
                                             //rezultat 1 profila ide u data
                                              like_array=data[0].ido;
                                              console.log("filterValues2:"+like_array);
+                   
                                         })
                                         .error(function(data) {
                                             console.log('Error: ' + data);
