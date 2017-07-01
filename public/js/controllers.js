@@ -323,7 +323,6 @@
                     $mdDialog.show({
                         controller: function ($mdDialog,auth) {
                             
-                            $scope.like_array={};
                             var vm = this;
                             vm.item = {};
                             vm.item = item;  //your object from the ng-repeat
@@ -332,15 +331,15 @@
                                     $http.get('/api/users'+auth.profile.user_id)
                                         .success(function(data) {
                                             //rezultat 1 profila ide u data
-                                             like_array=data[0].ido;
-                                             console.log("filterValues2:"+$scope.like_array);
+                                             $rootScope.filterValues=data[0].ido;
+                                             console.log("filterValues2:"+$rootScope.filterValues);
                                         })
                                         .error(function(data) {
                                             console.log('Error: ' + data);
                                         });
                                     }; 
-                        $scope.heart1();
 
+                                              $scope.heart1();
                         this.hide = function () {
                                 console.log("hide");
                                 $mdDialog.hide();
@@ -389,7 +388,7 @@
 
                             console.log("startujem THEN");
                     
-                            var likes = $scope.like_array;
+                            var likes = $rootScope.filterValues;
 
                             if (likes.indexOf(item.gsx$id.$t) === -1) {
                               console.log("like ne postoji");
