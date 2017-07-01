@@ -323,12 +323,23 @@
                     $mdDialog.show({
                         controller: function ($mdDialog,auth) {
                             
-                            var like_array={};//PROMENJIVA KOJA SADRZI TRENUTNE LAJKOVE KORISNIKA
+                            $scope.like_array={};
                             var vm = this;
                             vm.item = {};
                             vm.item = item;  //your object from the ng-repeat
  
-                         
+                           $scope.heart1=function(){
+                                    $http.get('/api/users'+auth.profile.user_id)
+                                        .success(function(data) {
+                                            //rezultat 1 profila ide u data
+                                             like_array=data[0].ido;
+                                             console.log("filterValues2:"+$scope.like_array);
+                                        })
+                                        .error(function(data) {
+                                            console.log('Error: ' + data);
+                                        });
+                                    }; 
+                        $scope.heart1();
 
                         this.hide = function () {
                                 console.log("hide");
@@ -375,26 +386,11 @@
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(){
                         $timeout(function() {
-                            
-                              $scope.heart1=function(){
-                                    $http.get('/api/users'+auth.profile.user_id)
-                                        .success(function(data) {
-                                            //rezultat 1 profila ide u data
-                                             like_array=data[0].ido;
-                                             console.log("filterValues2:"+like_array);
-                                             return like_array;
-                   
-                                        })
-                                        .error(function(data) {
-                                            console.log('Error: ' + data);
-                                        });
-                                    }; 
 
+                            console.log("startujem THEN");
                     
-                            var likes = $scope.heart1();
+                            var likes = $scope.like_array;
 
-                            console.log("startujem THEN:"+like_array);
-                            
                             if (likes.indexOf(item.gsx$id.$t) === -1) {
                               console.log("like ne postoji");
                               $("#myd_unlike").hide();
