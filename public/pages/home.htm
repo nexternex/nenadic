@@ -101,6 +101,7 @@
 						 md-row-height="2:2"
 						 md-gutter="12px" 				  	
 						 md-gutter-gt-sm="8px">
+						 <div infinite-scroll="addMoreItems()">
 								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in lists | filter : search | myFilter:filterValues'
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
@@ -117,7 +118,7 @@
 												<span class="md-headline company_name">{{item.gsx$id.$t}}</span>
 											</md-grid-tile-footer>	
 								</md-grid-tile>
-
+							</div>				
    					  		</md-grid-list>	
 							 	
                 </div>
