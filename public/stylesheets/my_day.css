@@ -412,7 +412,7 @@ color:purple;*/
 padding: 3px;
 font-weight: bolder;
 }
-@media screen and ( min-width: 768px ) {
+@media screen and ( max-width: 768px ) {
   md-dialog.fullscreen-dialog {
       max-width: 100%;
       max-height: 100%;
