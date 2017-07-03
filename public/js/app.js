@@ -1,5 +1,5 @@
 //MODULE Angular
-var myDay=angular.module('myDay',['ngRoute','ngResource','ngAnimate','ngAria','ngMaterial','auth0','angular-storage', 'angular-jwt','md.data.table','infinite-scroll']);
+var myDay=angular.module('myDay',['ngRoute','ngResource','ngAnimate','ngAria','ngMaterial','auth0','angular-storage', 'angular-jwt','md.data.table']);
 
 myDay.run(function(auth,$rootScope) {
   // This hooks al auth events to check everything as soon as the app starts
