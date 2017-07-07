@@ -1,5 +1,14 @@
 <!--SEKCIJA:HEADER-->
 	<header id="MyDay_header" class="cd-header" ng-controller="ListController">
+				<div>
+			<select id="cd-dropdown" name="cd-dropdown" class="cd-select1 filter" ng-model="search.gsx$naziv.$t">
+				<option value="">Izaberite opciju</option>
+				<option value="Muzika">Muzika</option>
+				<option value="Torte">Torte</option>
+				<option value="Sale">Sale</option>
+				<option value="Foto">Foto</option>
+			</select>
+		</div>
 	 <div class="overlay"></div>
   <!--region SpeedDial -->
 			  <!--<md-fab-toolbar md-open="fab.isOpen" count="fab.count" md-direction="right">-->
@@ -64,15 +73,6 @@
 				MyDay</br>
 				<p class="slogan">...the best day in your life starts right here! :) </p>
             </h1>
-		<div>
-			<select id="cd-dropdown" name="cd-dropdown" class="cd-select1 filter" ng-model="search.gsx$naziv.$t">
-				<option value="">Izaberite opciju</option>
-				<option value="Muzika">Muzika</option>
-				<option value="Torte">Torte</option>
-				<option value="Sale">Sale</option>
-				<option value="Foto">Foto</option>
-			</select>
-		</div>
 	</header>
 <!--SEKCIJA:SWITCHER+LOADER-->	
 	<main class="cd-main-content"  > 
