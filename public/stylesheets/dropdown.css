@@ -119,7 +119,7 @@
 }
 
 .cd-dropdown,
-.cd-select {
+.cd-select1 {
 	position: relative;
 	width: 300px;
 	margin: 20px auto;
@@ -199,7 +199,7 @@
 }
 
 /* Select fallback styling */
-.cd-select {
+.cd-select1 {
 	border: 1px solid #ddd;
 }
 
