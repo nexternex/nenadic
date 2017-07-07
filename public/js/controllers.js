@@ -283,7 +283,6 @@
      
         console.log($scope.filters);
 
-
         $scope.changeSet=function(tema){
  
                 if( tema=="sale") {
