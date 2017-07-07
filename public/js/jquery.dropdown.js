@@ -9,7 +9,7 @@
  * http://www.codrops.com
  */
 ;( function( $, window, undefined ) {
-
+	console.log("start js dropdown");
 	'use strict';
 
 	$.DropDown = function( options, element ) {
