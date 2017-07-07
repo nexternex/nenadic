@@ -20,6 +20,7 @@ Main Componentss
     font-weight: 100;
     position: relative;
     z-index:20;
+    text-shadow:1px 1px 1px rgba(142, 36, 170, 0.91)
 
 }
 @media only screen and (min-width: 1170px) {

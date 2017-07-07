@@ -97,6 +97,7 @@ color: rgb(204, 255, 220)
 
 #MyDay_header{
   position: relative;
+  height:100vh;
   font-family: 'Fredericka the Great', cursive;
   font-weight:100;
 }
