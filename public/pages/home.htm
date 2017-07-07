@@ -64,13 +64,15 @@
 				MyDay</br>
 				<p class="slogan">...the best day in your life starts right here! :) </p>
             </h1>
-					<select id="cd-dropdown" name="cd-dropdown" class="cd-select1 filter" ng-controller="ListController" ng-model="search.gsx$tip.$t" ng-init="search.gsx$tip.$t=''">
+			<div ng-controller="ListController">
+					<select id="cd-dropdown" name="cd-dropdown" class="cd-select1 filter"  ng-model="search.gsx$tip.$t" ng-init="search.gsx$tip.$t=''">
 								<option value="">Izaberite opciju</option>
 								<option value="Muzika">Muzika</option>
 								<option value="Torte">Torte</option>
 								<option value="Sale">Sale</option>
 								<option value="Foto">Foto</option>
 					</select>
+		</div>			
 	</header>
 <!--SEKCIJA:SWITCHER+LOADER-->	
 	<main class="cd-main-content"  ng-controller="ListController">
@@ -215,7 +217,7 @@
         <script src="js/main.js"></script>
         <script src="js/flickity.pkgd.min.js"></script>
         <script src="js/jquery.dropdown.js"></script>
-				<script type="text/javascript">
+		<script type="text/javascript">
 			
 			$( function() {
 				
