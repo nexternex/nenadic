@@ -64,13 +64,17 @@
 				MyDay</br>
 				<p class="slogan">...the best day in your life starts right here! :) </p>
             </h1>
-					<select id="cd-dropdown" name="cd-dropdown" class="cd-select">
-						<option value="-1" selected>Choose your favorite animal</option>
-						<option value="1" class="icon-monkey">Monkey</option>
-						<option value="2" class="icon-bear">Bear</option>
-						<option value="3" class="icon-squirrel">Squirrel</option>
-						<option value="4" class="icon-elephant">Elephant</option>
-					</select>
+					<div class="cd-filter-content">
+						<div class="cd-select cd-filters">
+							<select class="filter" name="selectThis" id="selectThis" ng-model="search.gsx$tip.$t" ng-init="search.gsx$tip.$t=''">
+								<option value="">Izaberite opciju</option>
+								<option value="Muzika">Muzika</option>
+								<option value="Torte">Torte</option>
+								<option value="Sale">Sale</option>
+								<option value="Foto">Foto</option>
+							</select>
+						</div> <!-- cd-select -->
+					</div> <!-- cd-filter-content -->
 	</header>
 <!--SEKCIJA:SWITCHER+LOADER-->	
 	<main class="cd-main-content"  ng-controller="ListController">
