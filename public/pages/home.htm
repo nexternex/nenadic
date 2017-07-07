@@ -82,7 +82,14 @@
 			</select>
 	</header>
 <!--SEKCIJA:SWITCHER+LOADER-->	
-	<main class="cd-main-content"  >
+	<main class="cd-main-content"  > 
+		<select id="cd-dropdown" name="cd-dropdown" class="cd-select1 filter"  ng-model="search.gsx$tip.$t" ng-init="search.gsx$tip.$t=''">
+				<option value="">Izaberite opciju</option>
+				<option value="Muzika">Muzika</option>
+				<option value="Torte">Torte</option>
+				<option value="Sale">Sale</option>
+				<option value="Foto">Foto</option>
+			</select>
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
 				
