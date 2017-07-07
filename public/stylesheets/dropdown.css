@@ -208,7 +208,7 @@
 }
 
 .cd-active.cd-dropdown > span {
-	color: #fc756f;
+	color: rgb(105,240,174);
 }
 
 .cd-active.cd-dropdown > span,
@@ -225,6 +225,6 @@
 }
 
 .cd-active.cd-dropdown ul li span:hover {
-	background: #fc756f;
+	background: rgb(105,240,174);
 	color: #fff;
 }
