@@ -65,13 +65,7 @@
 				<p class="slogan">...the best day in your life starts right here! :) </p>
             </h1>
 		<div>
-			<select id="cd-dropdown" name="cd-dropdown" class="cd-select1 filter" ng-model="nex" ng-options="x for x in names">
-				<option value="">Izaberite opciju</option>
-				<option value="Muzika">Muzika</option>
-				<option value="Torte">Torte</option>
-				<option value="Sale">Sale</option>
-				<option value="Foto">Foto</option>
-			</select>
+			<select ng-model="nex.value" ng-options="v for v in nex.values"></select>
 		</div>
 	</header>
 <!--SEKCIJA:SWITCHER+LOADER-->	
