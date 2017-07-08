@@ -256,15 +256,7 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
-            $scope.search=" ";
-            
-            $scope.nex = {
-                "type": "select", 
-                "name": "Service",
-                "value": "Sale", 
-                "values": [ "Sale", "Torte", "Muzika"] 
-            };
-            // $scope.search.gsx$tip.$t=$scope.nex;
+            $scope.search="";
         // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
@@ -290,6 +282,7 @@
         $scope.filters=MyDay_filterSetTorte;
      
         console.log($scope.filters);
+
 
         $scope.changeSet=function(tema){
  
