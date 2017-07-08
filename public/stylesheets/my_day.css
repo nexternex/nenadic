@@ -97,7 +97,9 @@ color: rgb(204, 255, 220)
 
 #MyDay_header{
   position: relative;
-  height:calc(100vh-20px);
+  height: -o-calc(100vh - 50px); /* opera */
+  height: -webkit-calc(100vh - 50px); /* google, safari */
+  height: -moz-calc(100vh - 50px); /* firefox */
   font-family: 'Fredericka the Great', cursive;
   font-weight:100;
   -webkit-transition: height .8s linear;   
