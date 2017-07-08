@@ -257,7 +257,13 @@
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
             $scope.search=" ";
-            $scope.nex=["Sale", "Torte", "Muzika"];
+            
+            $scope.nex = {
+                "type": "select", 
+                "name": "Service",
+                "value": "Sale", 
+                "values": [ "Sale", "Torte", "Muzika"] 
+            };
             $scope.search.gsx$tip.$t=$scope.nex;
         // filteri za sale
             var MyDay_filterSetSale=[  
