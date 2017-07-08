@@ -286,9 +286,7 @@
 
 
         $scope.changeSet=function(tema){
-                console.log(tema+$scope.selectedItem);
-                
- 
+
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
