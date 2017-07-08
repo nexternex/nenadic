@@ -122,6 +122,18 @@ color: rgb(204, 255, 220)
   background: -webkit-linear-gradient(to left,rgba(156, 39, 176, 0.22) , rgba(105, 240, 174, 0.25)) ; /* Chrome 10-25, Safari 5.1-6 */
   background:linear-gradient(to left,rgba(156, 39, 176, 0.22) , rgba(105, 240, 174, 0.25)) ; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+#myd_cvece{
+  position: relative;
+  width:200px;
+  height:300px;
+  top:200px;
+  left:300px;
+  background-color: rgba(185,246,202, 0.7)
+}
+#myd_cvece:hover{
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    }
 
 md-virtual-repeat-container {
   position: relative;
