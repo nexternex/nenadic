@@ -102,9 +102,9 @@ color: rgb(204, 255, 220)
   height: -moz-calc(100vh - 50px); /* firefox */
   font-family: 'Fredericka the Great', cursive;
   font-weight:100;
-  -webkit-transition: height,background-image .8s linear;   
-  -moz-transition: height,background-image .8s linear;   
-  -ms-transition: height,background-image .8s linear;  
+  -webkit-transition: height .8s linear;   
+  -moz-transition: height .8s linear;   
+  -ms-transition: height .8s linear;   
 }
 .my_day_background{
     background-image: "../images/001.jpg";
