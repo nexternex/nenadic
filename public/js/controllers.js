@@ -288,12 +288,13 @@
         $scope.changeSet=function(tema){
             console.log(tema);
             console.log($scope.selectedItem);
-
+            $("#MyDay_header").css("height","50vh");
+            
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/001.jpg')";
                     $scope.filters=MyDay_filterSetSale;
                     $scope.search.gsx$tip.$t="Sale";
-                    $("#MyDay_header").css("height","50vh");
+                  
                     console.log("sale: "+$scope.filters);
 
                     }
