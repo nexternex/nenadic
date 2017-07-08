@@ -64,12 +64,12 @@
 				MyDay</br>
 				<p class="slogan">...the best day in your life starts right here! :) </p>
             </h1>
-			<select ng-model="selectedItem" ng-change="changeSet({{selectedItem.value}})">
+			<select id="cd-dropdown" name="cd-dropdown" class="cd-select1 filter" ng-model="selectedItem" ng-change="changeSet({})">
 				<option value="">Izaberite opciju</option>
-				<option value="Muzika">Muzika</option>
-				<option value="Torte">Torte</option>
-				<option value="Sale">Sale</option>
-				<option value="Foto">Foto</option>
+				<option value="Muzika">sale</option>
+				<option value="Torte">cake</option>
+				<option value="Sale">music</option>
+				<option value="Foto">foto</option>
 			</select>
 	</header>
 <!--SEKCIJA:SWITCHER+LOADER-->	
@@ -213,7 +213,7 @@
         <script src="js/main.js"></script>
         <script src="js/flickity.pkgd.min.js"></script>
         <script src="js/jquery.dropdown.js"></script>
-		<script type="text/javascript">
+		<!--<script type="text/javascript">
 			
 			$( function() {
 				
@@ -223,4 +223,4 @@
 
 			});
 
-		</script>
+		</script>-->
