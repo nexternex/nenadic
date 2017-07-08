@@ -264,7 +264,7 @@
                 "value": "Sale", 
                 "values": [ "Sale", "Torte", "Muzika"] 
             };
-            $scope.search.gsx$tip.$t=$scope.nex;
+            // $scope.search.gsx$tip.$t=$scope.nex;
         // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
