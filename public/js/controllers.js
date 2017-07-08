@@ -286,7 +286,7 @@
 
 
         $scope.changeSet=function(tema){
-                console.log(tema+$scope.sele);
+                console.log(tema+$scope.selectedItem);
                 
  
                 if( tema=="sale") {
