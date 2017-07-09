@@ -332,7 +332,7 @@
                             var vm = this;
                             vm.item = {};
                             vm.item = item;  //your object from the ng-repeat
-                            console.log("Aktivn user je:" +auth.profile.user_id)
+                            console.log("Aktivn user je:" +auth.profile.user_id);
  
                             $scope.heart1=function(){
                                         $http.get('/api/users'+auth.profile.user_id)
