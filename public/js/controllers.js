@@ -346,11 +346,12 @@ console.log(auth);
                                             });
                                         }; 
                         //execute heart
-                         if (auth.isAuthenticated == false) {
-                             console.log ("korisnik  nije logovan");
+                         if (auth.isAuthenticated) {
+                             $scope.heart1();
+                          
                          }
                          else {
-                            $scope.heart1();
+                               console.log ("korisnik  nije logovan");
                          };
 
                         this.hide = function () {
