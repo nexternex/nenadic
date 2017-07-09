@@ -399,6 +399,7 @@
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(){
+                        
                             $("#myd_like").hide();
                             $("#myd_unlike").hide();
 
@@ -406,7 +407,6 @@
                             $timeout(function() {
 
                                 console.log("startujem THEN");
-                        
                                 var likes = $rootScope.likes;
 
                                 if (likes.indexOf(item.gsx$id.$t) === -1) {
