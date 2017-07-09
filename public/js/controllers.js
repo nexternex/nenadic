@@ -346,7 +346,7 @@ console.log(auth.profile);
                                             });
                                         }; 
                         //execute heart
-                         if (auth == null) {
+                         if (auth.profile == 'undefined') {
                              console.log ("korisnik  nije logovan");
                          }
                          else {
