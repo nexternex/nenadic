@@ -346,7 +346,7 @@
                                             });
                                         }; 
                         //execute heart
-                         if (vm.user == null) {
+                         if (auth == null) {
                              console.log ("korisnik  nije logovan");
                          }
                          else {
