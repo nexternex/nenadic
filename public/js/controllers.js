@@ -399,6 +399,9 @@
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(){
+                            $("#myd_like").hide();
+                            $("#myd_unlike").hide();
+
                         if (auth.isAuthenticated){
                             $timeout(function() {
 
@@ -407,12 +410,13 @@
                                 var likes = $rootScope.likes;
 
                                 if (likes.indexOf(item.gsx$id.$t) === -1) {
-                                console.log("like ne postoji");
-                                $("#myd_unlike").hide();
+                                    console.log("like ne postoji");
+                                    $("#myd_unlike").hide();
+                                    $("#myd_like").show();
                                 }
                                 else {
-                                $("#myd_like").hide();
-                                $("#myd_unlike").show();
+                                    $("#myd_like").hide();
+                                    $("#myd_unlike").show();
                                 }
                         }, 30);//end timeout
                     }//end if 
