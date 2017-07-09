@@ -332,7 +332,7 @@
                             var vm = this;
                             vm.item = {};
                             vm.item = item;  //your object from the ng-repeat
-                            vm.user=auth.profile.user_id ;
+
  
                             $scope.heart1=function(){
                                         $http.get('/api/users'+auth.profile.user_id)
