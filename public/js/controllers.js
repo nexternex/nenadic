@@ -399,23 +399,29 @@
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(){
-                        $timeout(function() {
+                        if (auth.isAuthenticated){
+                            $timeout(function() {
 
-                            console.log("startujem THEN");
-                    
-                            var likes = $rootScope.likes;
+                                console.log("startujem THEN");
+                        
+                                var likes = $rootScope.likes;
 
-                            if (likes.indexOf(item.gsx$id.$t) === -1) {
-                              console.log("like ne postoji");
-                              $("#myd_unlike").hide();
-                            }
-                            else {
-                              $("#myd_like").hide();
-                              $("#myd_unlike").show();
-                            }
-                       }, 30);
+                                if (likes.indexOf(item.gsx$id.$t) === -1) {
+                                console.log("like ne postoji");
+                                $("#myd_unlike").hide();
+                                }
+                                else {
+                                $("#myd_like").hide();
+                                $("#myd_unlike").show();
+                                }
+                        }, 30);//end timeout
+                    }//end if 
+                    else{
+                            $("#myd_like").hide();
+                            $("#myd_unlike").hide();
+                        }
                     }()
-                    );    
+                    );//end then    
                 };
         
                 // when landing on the page, GET-liste iz baze podatka 
