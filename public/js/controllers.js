@@ -333,19 +333,25 @@
                             vm.item = {};
                             vm.item = item;  //your object from the ng-repeat
  
-                           $scope.heart1=function(){
-                                    $http.get('/api/users'+auth.profile.user_id)
-                                        .success(function(data) {
-                                            //rezultat 1 profila ide u data
-                                             $rootScope.likes=data[0].ido;
-                                             console.log("filterValues2:"+$rootScope.filterValues);
-                                        })
-                                        .error(function(data) {
-                                            console.log('Error: ' + data);
-                                        });
-                                    }; 
+                            $scope.heart1=function(){
+                                        $http.get('/api/users'+auth.profile.user_id)
+                                            .success(function(data) {
+                                                //rezultat 1 profila ide u data
+                                                $rootScope.likes=data[0].ido;
+                                                console.log("filterValues2:"+$rootScope.filterValues);
+                                            })
+                                            .error(function(data) {
+                                                console.log('Error: ' + data);
+                                            });
+                                        }; 
+                        //execute heart
+                         if (auth.profile.user_id !="") {
+                             console.log ("korisnik nije logovan");
+                         }
+                         else {
+                            $scope.heart1();
+                         };
 
-                                              $scope.heart1();
                         this.hide = function () {
                                 console.log("hide");
                                 $mdDialog.hide();
