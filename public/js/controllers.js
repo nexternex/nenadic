@@ -347,6 +347,9 @@
                         //execute heart
                          if (auth.isAuthenticated) {
                              $scope.heart1();
+                               $("#myd_like").hide();
+                               $("#myd_unlike").hide();
+                          
                          }
                          else {
                                console.log ("korisnik  nije logovan");
@@ -396,33 +399,23 @@
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(){
+                        $timeout(function() {
 
-                            $("#myd_like").hide();
-                            $("#myd_unlike").hide();
+                            console.log("startujem THEN");
+                    
+                            var likes = $rootScope.likes;
 
-                        if (auth.isAuthenticated){
-                            $timeout(function() {
-
-                                console.log("startujem THEN");
-                                var likes = $rootScope.likes;
-
-                                if (likes.indexOf(item.gsx$id.$t) === -1) {
-                                    console.log("like ne postoji");
-                                    $("#myd_unlike").hide();
-                                    $("#myd_like").show();
-                                }
-                                else {
-                                    $("#myd_like").hide();
-                                    $("#myd_unlike").show();
-                                }
-                        }, 30);//end timeout
-                    }//end if 
-                    else{
-                            $("#myd_like").hide();
-                            $("#myd_unlike").hide();
-                        }
+                            if (likes.indexOf(item.gsx$id.$t) === -1) {
+                              console.log("like ne postoji");
+                              $("#myd_unlike").hide();
+                            }
+                            else {
+                              $("#myd_like").hide();
+                              $("#myd_unlike").show();
+                            }
+                       }, 30);
                     }()
-                    );//end then    
+                    );    
                 };
         
                 // when landing on the page, GET-liste iz baze podatka 
