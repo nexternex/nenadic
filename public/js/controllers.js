@@ -347,9 +347,6 @@
                         //execute heart
                          if (auth.isAuthenticated) {
                              $scope.heart1();
-                               $("#myd_like").hide();
-                               $("#myd_unlike").hide();
-                          
                          }
                          else {
                                console.log ("korisnik  nije logovan");
@@ -399,7 +396,7 @@
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                     }).then( function x(){
-                        
+
                             $("#myd_like").hide();
                             $("#myd_unlike").hide();
 
