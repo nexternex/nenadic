@@ -347,7 +347,7 @@
                         //execute heart
                          if (auth.isAuthenticated) {
                              $scope.heart1();
-                               $("#myd_like").hide();
+                               $("#myd_like").show();
                                $("#myd_unlike").hide();
                           
                          }
