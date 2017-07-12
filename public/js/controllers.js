@@ -398,7 +398,8 @@
                         parent: angular.element(document.body),
                         targetEvent: e,
                         fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-                    }).then( function x(){
+                    })
+                    // .then( function x(){
                     //     $timeout(function() {
 
                     //         console.log("startujem THEN");
@@ -414,8 +415,8 @@
                     //           $("#myd_unlike").show();
                     //         }
                     //    }, 30);
-                    }()
-                    );    
+                    // }()
+                    // );    
                 };
         
                 // when landing on the page, GET-liste iz baze podatka 
