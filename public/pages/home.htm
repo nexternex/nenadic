@@ -154,9 +154,15 @@
 							</md-slider>
 						</div>
 					</ul> <!-- cd-filter-content -->
-					<tags-input ng-model="tags">
-						<auto-complete source="loadTags($query)"></auto-complete>
-					</tags-input>
+				    <tags-input ng-model="tags" display-property="name" placeholder="Izaberite grad" replace-spaces-with-dashes="false">
+						<auto-complete source="loadCountries($query)"
+								min-length="0"
+								load-on-focus="true"
+								load-on-empty="true"
+								max-results-to-show="32"
+								template="my-custom-template">
+						</auto-complete>
+    				</tags-input>
 				</div> <!-- cd-filter-block -->
 				
 				<div class="cd-filter-block">

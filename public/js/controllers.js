@@ -280,18 +280,20 @@
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
              ];
         //filetri za gradove
-              $scope.tags = [
-            { text: 'Pancevo' },
-            { text: 'Beograd' },
-            { text: 'Novi Sad' },
-            { text: 'Nis' }
-          ];
-          $scope.loadTags = function(query) {
-            return $http.get('/tags?query=' + query);
-          };
-          
-        $scope.filters=MyDay_filterSetTorte;
-     
+             $scope.tags = [];
+    
+            $scope.loadCountries = function($query) {
+                return $http.get('countries.json', { cache: true}).then(function(response) {
+                var countries = response.data;
+                return countries.filter(function(country) {
+                    return country.name.toLowerCase().indexOf($query.toLowerCase()) != -1;
+                    });
+                });
+            };
+            $scope.filters=MyDay_filterSetTorte;
+        //end filetri za gradove
+
+        
         console.log($scope.filters);
 
 
