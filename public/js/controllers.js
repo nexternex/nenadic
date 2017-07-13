@@ -282,7 +282,7 @@
              ];
         //filetri za gradove
             $scope.tags = [];
-            $scope.search.gsx$adresa.$t=$scope.tags; 
+            // $scope.search.gsx$adresa.$t=$scope.tags; 
             $scope.loadCountries = function($query) {
                 return $http.get('json/countries.json', { cache: true}).then(function(response) {
                 var countries = response.data;
