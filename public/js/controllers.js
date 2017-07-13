@@ -283,7 +283,7 @@
              $scope.tags = [];
     
             $scope.loadCountries = function($query) {
-                return $http.get('countries.json', { cache: true}).then(function(response) {
+                return $http.get('json/countries.json', { cache: true}).then(function(response) {
                 var countries = response.data;
                 return countries.filter(function(country) {
                     return country.name.toLowerCase().indexOf($query.toLowerCase()) != -1;
@@ -293,7 +293,7 @@
             $scope.filters=MyDay_filterSetTorte;
         //end filetri za gradove
 
-        
+
         console.log($scope.filters);
 
 
