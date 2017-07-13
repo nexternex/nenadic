@@ -258,7 +258,7 @@
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
             $scope.search="";
             $scope.selectedItem="";
-            $scope.search.gsx$adresa.$t="";
+            // $scope.search.gsx$adresa.$t=[];
         // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
@@ -282,7 +282,7 @@
              ];
         //filetri za gradove
             $scope.tags = [];
-            $scope.search.gsx$adresa.$t= $scope.tags; 
+            $scope.search.gsx$adresa.$t=$scope.tags; 
             $scope.loadCountries = function($query) {
                 return $http.get('json/countries.json', { cache: true}).then(function(response) {
                 var countries = response.data;
