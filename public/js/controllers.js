@@ -279,7 +279,17 @@
                 ["Tezina",["1","5","10","15","20","30"]],
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
              ];
-
+        //filetri za gradove
+              $scope.tags = [
+            { text: 'Pancevo' },
+            { text: 'Beograd' },
+            { text: 'Novi Sad' },
+            { text: 'Nis' }
+          ];
+          $scope.loadTags = function(query) {
+            return $http.get('/tags?query=' + query);
+          };
+          
         $scope.filters=MyDay_filterSetTorte;
      
         console.log($scope.filters);

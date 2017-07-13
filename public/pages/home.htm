@@ -155,7 +155,9 @@
 						</div>
 					</ul> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
-
+				<tags-input ng-model="tags">
+					<auto-complete source="loadTags($query)"></auto-complete>
+					</tags-input>
 				<div class="cd-filter-block">
 					<h4>Dodatni fileri</h4>
 			
