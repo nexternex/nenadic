@@ -40,17 +40,20 @@ tags-input .tags .tag-list {
   list-style-type: none;
 }
 tags-input .tags .tag-item {
-  margin: 2px;
-  padding: 0 5px;
-  display: inline-block;
-  float: left;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: 26px;
-  line-height: 25px;
-  border: 1px solid #acacac;
-  border-radius: 3px;
-  background: -webkit-linear-gradient(top, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
-  background: linear-gradient(to bottom, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%);
+     margin: 2px;
+    padding: 0 5px;
+    display: inline-block;
+    float: left;
+    font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 26px;
+    line-height: 25px;
+    /* border: 1px solid #acacac; */
+    border-radius: 3px;
+    background: -webkit-linear-gradient(top, #f0f9ff 0%, rgb(234,128,252) 47%, #a1dbff 100%);
+    background: rgb(230, 230, 230);
+    font-weight: 800;
+    color: rgba(65, 48, 124, 0.91);
+    font-family: inherit;
 }
 tags-input .tags .tag-item.selected {
   background: -webkit-linear-gradient(top, #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
