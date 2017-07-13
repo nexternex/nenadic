@@ -289,7 +289,7 @@
             console.log(tema);
             console.log($scope.selectedItem);
              document.getElementById('MyDay_header').style.height = "50vh";
-             
+
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/sale.jpg')";
                     $scope.filters=MyDay_filterSetSale;
@@ -311,7 +311,11 @@
                     console.log("music: "+$scope.filters);
                 }
                 else if(tema=="foto"){
-                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/004.jpg')";
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/foto.jpg')";
+              
+                }
+                else if(tema=="zlatare"){
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/zlatare.jpg')";
               
                 }
                 else{
