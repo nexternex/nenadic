@@ -299,7 +299,7 @@
 
                     }
                 else if(tema=="cake"){
-                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/002.jpg')";
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/torte.jpg')";
                     $scope.filters=MyDay_filterSetTorte;
                     $scope.search.gsx$tip.$t="Torte";
                     console.log("torte: "+$scope.filters);
