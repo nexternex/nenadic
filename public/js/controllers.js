@@ -305,7 +305,7 @@
                     console.log("torte: "+$scope.filters);
                 }
                 else if(tema=="music"){
-                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/003.jpg')";
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/music.jpg')";
                     $scope.filters=MyDay_filterSetMuzika;
                     $scope.search.gsx$tip.$t="Muzika";
                     console.log("music: "+$scope.filters);
