@@ -289,7 +289,7 @@
             console.log(tema);
             console.log($scope.selectedItem);
              document.getElementById('MyDay_header').style.height = "50vh";
-
+             
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/sale.jpg')";
                     $scope.filters=MyDay_filterSetSale;
