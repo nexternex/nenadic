@@ -292,6 +292,7 @@
                 });
             };
             $scope.filters=MyDay_filterSetTorte;
+            
         //end filetri za gradove
 
 
