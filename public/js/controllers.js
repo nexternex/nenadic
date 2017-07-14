@@ -292,8 +292,9 @@
                     });
                 });
             };
+
             $scope.filters=MyDay_filterSetTorte;
-            $rootScope.filterCites=$scope.loadCountries;
+            $rootScope.filterCites=$scope.loadCountries.countries;
             console.log("gradovi:"+$scope.loadCountries);
             console.log($rootScope.filterCites);
         //end filetri za gradove
