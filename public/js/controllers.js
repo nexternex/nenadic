@@ -294,6 +294,7 @@
             };
             $scope.filters=MyDay_filterSetTorte;
             $rootScope.filterCites=$scope.loadCountries;
+            xonsole.log($rootScope.filterCites);
         //end filetri za gradove
 
 
