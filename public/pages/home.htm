@@ -155,7 +155,7 @@
 							</md-slider>
 						</div>
 					</ul> <!-- cd-filter-content -->
-				    <tags-input  display-property="name" placeholder="Izaberite grad" replace-spaces-with-dashes="false">
+				    <tags-input  ng-model="tags" display-property="name" placeholder="Izaberite grad" replace-spaces-with-dashes="false">
 						<auto-complete source="loadCountries($query)"
 								min-length="0"
 								load-on-focus="true"
