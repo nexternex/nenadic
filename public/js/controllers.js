@@ -286,6 +286,7 @@
             $scope.tags = "";
            
             $scope.loadCountries = function($query) {
+                $rootScope.filterCities=$scope.tags;
                 console.log("Ucitvam gradove:"+$rootScope.filterCities+":tags:"+$scope.tags);
                 return $http.get('json/gradovi.json', { cache: true}).then(function(response) {
                 var countries = response.data;
@@ -294,8 +295,8 @@
                     });
                 });
             };
-            
-            $rootScope.filterCities=$scope.tags;
+
+            // $rootScope.filterCities=$scope.tags;
         //end filetri za gradove
 
 
