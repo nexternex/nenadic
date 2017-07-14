@@ -258,7 +258,7 @@
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
             $scope.search="";
             $scope.selectedItem="";
-            $rootScope.filterCites="";
+            $rootScope.filterCities="";
             // $scope.search.gsx$adresa.$t=[];
         // filteri za sale
             var MyDay_filterSetSale=[  
