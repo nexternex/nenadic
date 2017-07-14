@@ -288,7 +288,7 @@
                 return $http.get('json/gradovi.json', { cache: true}).then(function(response) {
                 var countries = response.data;
                 return countries.filter(function(country) {
-                    return country.name.toLowerCase().indexOf($query.toLowerCase()) != -1;
+                    return country.toLowerCase().indexOf($query.toLowerCase()) != -1;
                     });
                 });
             };
