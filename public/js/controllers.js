@@ -294,6 +294,7 @@
                     });
                 });
             };
+            
             $rootScope.filterCities=$scope.tags;
         //end filetri za gradove
 
