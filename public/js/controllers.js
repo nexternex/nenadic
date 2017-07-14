@@ -295,7 +295,7 @@
 
             $scope.filters=MyDay_filterSetTorte;
             $rootScope.filterCites=$scope.tags;
-            console.log("gradovi:"+tags);
+            console.log("gradovi:"+$Sscope.tags);
             console.log($rootScope.filterCites);
         //end filetri za gradove
 
