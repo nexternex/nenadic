@@ -281,9 +281,10 @@
                 ["Tezina",["1","5","10","15","20","30"]],
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
              ];
+            $scope.filters=MyDay_filterSetTorte;
         //filetri za gradove
             $scope.tags = "";
-            // $scope.search.gsx$adresa.$t=$scope.tags; 
+            $scope.search.gsx$adresa.$t=$scope.tags; 
             $scope.loadCountries = function($query) {
                 console.log("Ucitvam gradove:"+$rootScope.filterCites);
                 return $http.get('json/gradovi.json', { cache: true}).then(function(response) {
@@ -294,10 +295,11 @@
                 });
             };
 
-            $scope.filters=MyDay_filterSetTorte;
+         
             $rootScope.filterCites=$scope.tags;
-            console.log("gradovi:"+$scope.tags);
-            console.log($rootScope.filterCites);
+
+            // console.log("gradovi:"+$scope.tags);
+            // console.log($rootScope.filterCites);
         //end filetri za gradove
 
 
