@@ -294,12 +294,7 @@
                     });
                 });
             };
-
-            //   $scope.search.gsx$adresa.$t=$scope.tags; 
             $rootScope.filterCities=$scope.tags;
-
-            // console.log("gradovi:"+$scope.tags);
-            // console.log($rootScope.filterCites);
         //end filetri za gradove
 
 
