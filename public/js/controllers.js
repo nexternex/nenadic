@@ -282,7 +282,7 @@
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
              ];
         //filetri za gradove
-            $scope.tags = [];
+            $scope.tags = "";
             // $scope.search.gsx$adresa.$t=$scope.tags; 
             $scope.loadCountries = function($query) {
                 console.log("Ucitvam gradove:"+$rootScope.filterCites);
@@ -295,7 +295,7 @@
             };
 
             $scope.filters=MyDay_filterSetTorte;
-            $rootScope.filterCites=$scope.tags.value;
+            $rootScope.filterCites=$scope.tags;
             console.log("gradovi:"+$scope.tags);
             console.log($rootScope.filterCites);
         //end filetri za gradove
