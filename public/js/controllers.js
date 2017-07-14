@@ -286,7 +286,7 @@
             $scope.tags = "";
            
             $scope.loadCountries = function($query) {
-                console.log("Ucitvam gradove:"+$rootScope.filterCites);
+                console.log("Ucitvam gradove:"+$rootScope.filterCites+":tags:"+$scope.tags);
                 return $http.get('json/gradovi.json', { cache: true}).then(function(response) {
                 var countries = response.data;
                 return countries.filter(function(country) {
@@ -295,7 +295,7 @@
                 });
             };
 
-              $scope.search.gsx$adresa.$t=$scope.tags; 
+            //   $scope.search.gsx$adresa.$t=$scope.tags; 
             $rootScope.filterCites=$scope.tags;
 
             // console.log("gradovi:"+$scope.tags);
