@@ -284,7 +284,7 @@
             $scope.filters=MyDay_filterSetTorte;
         //filetri za gradove
             $scope.tags = "";
-            $scope.search.gsx$adresa.$t=$scope.tags; 
+           
             $scope.loadCountries = function($query) {
                 console.log("Ucitvam gradove:"+$rootScope.filterCites);
                 return $http.get('json/gradovi.json', { cache: true}).then(function(response) {
@@ -295,7 +295,7 @@
                 });
             };
 
-         
+              $scope.search.gsx$adresa.$t=$scope.tags; 
             $rootScope.filterCites=$scope.tags;
 
             // console.log("gradovi:"+$scope.tags);
