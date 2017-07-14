@@ -9,7 +9,7 @@ myDay.run(function(auth,$rootScope) {
  
 myDay.value("DisplayElement", { value: true }) ;
 myDay.value("filterValuesGlobal", { value:""}) ;
-// myDay.value("filterCitiesGlobal", { value:""}) ;
+myDay.value("filterCitiesGlobal", { value:""}) ;
 
 //config app
 myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
