@@ -294,8 +294,8 @@
             };
 
             $scope.filters=MyDay_filterSetTorte;
-            $rootScope.filterCites=$scope.loadCountries;
-            console.log("gradovi:"+$scope.loadCountries);
+            $rootScope.filterCites=$scope.tags;
+            console.log("gradovi:"+tags);
             console.log($rootScope.filterCites);
         //end filetri za gradove
 
