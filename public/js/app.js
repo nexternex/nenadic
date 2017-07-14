@@ -9,6 +9,7 @@ myDay.run(function(auth,$rootScope) {
  
 myDay.value("DisplayElement", { value: true }) ;
 myDay.value("filterValuesGlobal", { value:""}) ;
+myDay.value("filterCitiesGlobal", { value:""}) ;
 //config app
 myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtInterceptorProvider,jwtOptionsProvider,$mdThemingProvider,$mdIconProvider) {
   
@@ -82,3 +83,18 @@ myDay.filter('myFilter', function () {
    };
 });
 
+//  Filtriranje liste u zavisnosti od gradova
+myDay.filter('myCitiesFilter', function () {
+   return function(inputs,filterCities) {
+     if(filterCities==""){
+        return inputs;
+     }else{
+      var output = [];
+      angular.forEach(inputs, function (input) {
+        if (filterCities.indexOf(input.gsx$adresa.$t) !== -1)
+            output.push(input);
+       });
+       return output;
+     }
+   };
+});

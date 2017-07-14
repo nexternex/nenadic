@@ -258,6 +258,7 @@
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
             $scope.search="";
             $scope.selectedItem="";
+            $rootScope.filterCites="";
             // $scope.search.gsx$adresa.$t=[];
         // filteri za sale
             var MyDay_filterSetSale=[  
@@ -292,7 +293,7 @@
                 });
             };
             $scope.filters=MyDay_filterSetTorte;
-            
+            $rootScope.filterCites=$scope.loadCountries;
         //end filetri za gradove
 
 
