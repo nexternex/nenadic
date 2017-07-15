@@ -394,7 +394,16 @@
                         this.ido = function (id_c) {
                                 console.log("Ido");
                                 var id_cc=id_c;
-                                
+
+                               $scope.showPrerenderedDialog = function(ev) {
+                                    $mdDialog.show({
+                                    contentElement: '#notLogedDialog',
+                                    parent: angular.element(document.body),
+                                    targetEvent: ev,
+                                    clickOutsideToClose: true
+                                    });
+                                };       
+
                             if (auth.isAuthenticated){
 
                                 $http.post('/api/user_ido'+auth.profile.user_id,{id_c:id_cc})
@@ -406,7 +415,10 @@
                                         alert("Morate se ulogovati");
                                     });
                                }
-                            else{alert("Morate se ulogovati")};                      
+                            else{
+                                alert("Morate se ulogovati");
+                                showPrerenderedDialog($event); 
+                            };                      
                             };
 
 
