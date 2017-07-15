@@ -417,7 +417,7 @@
                                }
                             else{
                                 alert("Morate se ulogovati");
-                                $scope.showPrerenderedDialog($event); 
+                                $scope.showPrerenderedDialog(); 
                             };                      
                             };
 
