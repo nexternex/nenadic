@@ -370,16 +370,16 @@
                                             });
                                         }; 
                         //execute heart
-                         if (auth.isAuthenticated) {
-                             $scope.heart1();
-                               $("#myd_like").show();
-                               $("#myd_unlike").hide();
-                          
-                         }
-                         else {
+                            if (auth.isAuthenticated) {
+                                $scope.heart1();
+                                $("#myd_like").show();
+                                $("#myd_unlike").hide();
+                            
+                            }
+                            else {
 
-                              alert("korisnik  nije logovan");
-                         };
+                                console.log("korisnik  nije logovan");
+                            };
 
                         this.hide = function () {
                                 console.log("hide");
@@ -401,6 +401,7 @@
                                     })
                                     .error(function(data) {
                                         console.log('Error: '+ data);
+                                        alert("Morate se ulogovati");
                                     });
                                                     
                             };
