@@ -295,9 +295,8 @@
                 });
             };
 
-            $scope.tags_change=function(tags){
-                $rootScope.filterCities=tags;
-                console.log("Ucitvam gradove:"+$rootScope.filterCities+":tags:"+$scope.tags);
+            $scope.tags_change=function(){
+                $rootScope.filterCities=$scope.tags;
             };
 
 
