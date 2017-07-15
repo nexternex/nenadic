@@ -295,6 +295,13 @@
                 });
             };
 
+
+            $scope.$watch(function() {
+                return $scope.tags;
+                }, function(newValue, oldValue) {
+                console.log("change detected: " + newValue)
+                });
+            
             $scope.tags_change = function(){
                 $rootScope.filterCities=$scope.tags;
                 alert($scope.tags);
