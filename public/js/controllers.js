@@ -394,7 +394,7 @@
                         this.ido = function (id_c) {
                                 console.log("Ido");
                                 var id_cc=id_c;
-                            if (isAuthenticated){
+                            if (auth.isAuthenticated){
 
                                 $http.post('/api/user_ido'+auth.profile.user_id,{id_c:id_cc})
                                     .success(function(data) {
