@@ -296,7 +296,7 @@
             };
 
             $scope.tags_change=function(){
-                $rootScope.filterCities=$scope.tags;
+                $rootScope.filterCities=tags;
                 console.log("Ucitvam gradove:"+$rootScope.filterCities+":tags:"+$scope.tags);
             };
 
