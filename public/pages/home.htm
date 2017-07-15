@@ -155,34 +155,25 @@
 							</md-slider>
 						</div>
 					</ul> <!-- cd-filter-content -->
-					<tags-input  
-						ng-model="tags"  
-						use-strings="true" 
-						display-property="name" 
-						placeholder="Izaberite grad"
-						replace-spaces-with-dashes="false">
-						<auto-complete source="loadCountries($query)"
-								min-length="0"
-								load-on-focus="true"
-								load-on-empty="true"
-								max-results-to-show="32"
-								template="my-custom-template">
-						</auto-complete>
-    				</tags-input>
+				
 				</div> <!-- cd-filter-block -->
 				
 				<div class="cd-filter-block">
 					<h4>Dodatni fileri</h4>
-			
-							<select id="cd-dropdown" name="cd-dropdown" class="cd-select1 filter"  ng-model="search.gsx$tip.$t" ng-init="search.gsx$tip.$t=''">
-								<option value="">Izaberite opciju</option>
-								<option value="Muzika">Muzika</option>
-								<option value="Torte">Torte</option>
-								<option value="Sale">Sale</option>
-								<option value="Foto">Foto</option>
-					</select>
-				
-
+						<tags-input  
+								ng-model="tags"  
+								use-strings="true" 
+								display-property="name" 
+								placeholder="Izaberite grad"
+								replace-spaces-with-dashes="false">
+								<auto-complete source="loadCountries($query)"
+										min-length="0"
+										load-on-focus="true"
+										load-on-empty="true"
+										max-results-to-show="32"
+										template="my-custom-template">
+								</auto-complete>
+							</tags-input>
 				</div> <!-- cd-filter-block -->
  <!--REM radio buttons trenutno ne trebaju-->
 				<!--<div class="cd-filter-block">
