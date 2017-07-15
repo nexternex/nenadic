@@ -394,6 +394,7 @@
                         this.ido = function (id_c) {
                                 console.log("Ido");
                                 var id_cc=id_c;
+                            if (isAuthenticated){
 
                                 $http.post('/api/user_ido'+auth.profile.user_id,{id_c:id_cc})
                                     .success(function(data) {
@@ -403,8 +404,12 @@
                                         console.log('Error: '+ data);
                                         alert("Morate se ulogovati");
                                     });
-                                                    
+                               }
+                            else{alert("Morate se ulogovati")};                      
                             };
+
+
+
                         this.r_ido = function (id_c) {
                                 console.log("rIdo");
                                 var id_cc=id_c;
