@@ -295,7 +295,7 @@
                 });
             };
 
-            $scope.tags_change=function(){
+            $scope.tags_change = function(){
                 $rootScope.filterCities=$scope.tags;
             };
 
