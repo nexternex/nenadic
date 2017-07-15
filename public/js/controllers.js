@@ -282,7 +282,7 @@
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
              ];
             $scope.filters=MyDay_filterSetTorte;
-            
+
         //filetri za gradove
             $scope.tags = "";
             $scope.loadCountries = function($query) {
@@ -377,7 +377,8 @@
                           
                          }
                          else {
-                               console.log ("korisnik  nije logovan");
+
+                              alert("korisnik  nije logovan");
                          };
 
                         this.hide = function () {
