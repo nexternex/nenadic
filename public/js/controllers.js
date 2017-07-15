@@ -300,12 +300,13 @@
                 return $scope.tags;
                 }, function(newValue, oldValue) {
                 console.log("change detected: " + newValue)
+                  $rootScope.filterCities=$scope.tags;
                 });
-            
-            $scope.tags_change = function(){
-                $rootScope.filterCities=$scope.tags;
-                alert($scope.tags);
-            };
+
+            // $scope.tags_change = function(){
+            //     $rootScope.filterCities=$scope.tags;
+            //     alert($scope.tags);
+            // };
 
 
             // $rootScope.filterCities=$scope.tags;
