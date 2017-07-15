@@ -297,6 +297,7 @@
 
             $scope.tags_change = function(){
                 $rootScope.filterCities=$scope.tags;
+                alert($scope.tags);
             };
 
 
@@ -457,7 +458,7 @@
                 //         console.log('Error: ' + data);
                 //     });
         
-            $scope.isLoading = true;
+        $scope.isLoading = true;
 
         
         $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
