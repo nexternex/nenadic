@@ -1,13 +1,21 @@
 		<div class="md-dialog-container" id="notLogedDialog">
             <md-dialog layout-padding>
                 <h2>Pre-Rendered Dialog</h2>
-                <p>
-                This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its
-                template on each opening.
-                <br/><br/>
-                The Dialog Element is a static element in the DOM, which is just visually hidden.<br/>
-                Once the dialog opens, we just fetch the element from the DOM into our dialog and upon close
-                we restore the element back into its old DOM position.
-                </p>
+ 
+                <md-toolbar id="myday_toolbar" ng-controller="LoginCtrl" layout="row" layout-align="space-between center"  flex="80"> 
+						<!--<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl" layout="row" layout-align="space-between center">-->
+								<span>
+									<md-button aria-label="Login" class=" md-raised md-mini hue-2 md-primary" ng-click="login()"  ng-hide="mystate()" flex="40">
+										<md-icon md-svg-src="account">Prijava</md-icon>
+										<strong>Prijava</strong>
+										<md-tooltip md-direction="down">SignIn</md-tooltip>
+									</md-button>
+									<md-button aria-label="SignUp" class=" md-raised md-mini hue-2 md-accent" ng-click="signup()" ng-hide="mystate()"  flex="40" >
+										<md-icon md-svg-src="account"></md-icon>
+												<strong>Registracija</strong>
+										<md-tooltip md-direction="down">Registracija</md-tooltip>
+									</md-button>
+								</span>
+					</md-toolbar>
             </md-dialog>
 		</div>

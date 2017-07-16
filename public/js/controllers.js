@@ -400,7 +400,8 @@
                                     templateUrl: '../pages/pleaselogin.htm',
                                     parent: angular.element(document.body),
                                     targetEvent: ev,
-                                    clickOutsideToClose: true
+                                    clickOutsideToClose: true,
+                                    fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                                     });
                                 };       
 
