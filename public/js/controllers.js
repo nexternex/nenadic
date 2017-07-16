@@ -394,7 +394,8 @@
                         this.ido = function (id_c) {
                                 console.log("Ido");
                                 var id_cc=id_c;
-
+                        // dijalog ukoliko korisnik nije logovan
+                        // full screen sa opcijom da se loguaje ili prijavi 
                                $scope.showPrerenderedDialog = function(ev) {
                                     $mdDialog.show({
                                     contentElement: '#notLogedDialog',
@@ -412,13 +413,11 @@
                                     })
                                     .error(function(data) {
                                         console.log('Error: '+ data);
-                                        alert("Morate se ulogovati");
                                     });
                                }
                             else{
-                                alert("Morate se ulogovati");
                                 $scope.showPrerenderedDialog(); 
-                            };                      
+                                };                      
                             };
 
 
