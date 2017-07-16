@@ -395,12 +395,12 @@
                                 var id_cc=id_c;
                         // dijalog ukoliko korisnik nije logovan
                         // full screen sa opcijom da se loguaje ili prijavi 
-                               $scope.showPrerenderedDialog = function(ev) {
+                               $scope.showPrerenderedDialog = function(event) {
                                     $mdDialog.show({
                                     templateUrl: '../pages/pleaselogin.htm',
                                     clickOutsideToClose:true,
                                     parent: angular.element(document.body),
-                                    targetEvent: ev,
+                                    targetEvent: event,
                                     fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                                     });
                                 };       
