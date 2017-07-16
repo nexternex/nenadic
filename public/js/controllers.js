@@ -377,7 +377,6 @@
                             
                             }
                             else {
-
                                 console.log("korisnik  nije logovan");
                             };
 
@@ -398,7 +397,7 @@
                         // full screen sa opcijom da se loguaje ili prijavi 
                                $scope.showPrerenderedDialog = function(ev) {
                                     $mdDialog.show({
-                                    contentElement: '#notLogedDialog',
+                                    templateUrl: '../pages/pleaselogin.htm',
                                     parent: angular.element(document.body),
                                     targetEvent: ev,
                                     clickOutsideToClose: true
@@ -416,7 +415,7 @@
                                     });
                                }
                             else{
-                                $scope.showPrerenderedDialog(); 
+                                $scope.showPrerenderedDialog(event); 
                                 };                      
                             };
 
