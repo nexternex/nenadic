@@ -1,16 +1,17 @@
 		<div class="md-dialog-container" id="notLogedDialog">
             <md-dialog layout-padding>
-                <h2>Pre-Rendered Dialog</h2>
- 
+                <h1>Morate biti prijavljeni</h1>
+                <h2>Ukoliko želite da dodate u Vaš izbor, neophodno je da se registrujete</h2>
+                <h2>Prilikom registracije dobijate i besplatanu min-preyentaciju-poyivnicu za Vaše slavlje koju lako možete podeliti putem drušetvenih mreža</h2>
                 <md-toolbar id="myday_toolbar" ng-controller="LoginCtrl" layout="row" layout-align="space-between center"  flex="80"> 
 						<!--<md-fab-actions class="md-toolbar-tools"  ng-controller="LoginCtrl" layout="row" layout-align="space-between center">-->
 								<span>
-									<md-button aria-label="Login" class=" md-raised md-mini hue-2 md-primary" ng-click="login()"  ng-hide="mystate()" flex="40">
+									<md-button aria-label="Login" class=" md-raised md-mini hue-2 md-primary" ng-click="login()"  ng-hide="mystate()" flex="100">
 										<md-icon md-svg-src="account">Prijava</md-icon>
 										<strong>Prijava</strong>
 										<md-tooltip md-direction="down">SignIn</md-tooltip>
 									</md-button>
-									<md-button aria-label="SignUp" class=" md-raised md-mini hue-2 md-accent" ng-click="signup()" ng-hide="mystate()"  flex="40" >
+									<md-button aria-label="SignUp" class=" md-raised md-mini hue-2 md-accent" ng-click="signup()" ng-hide="mystate()"  flex="100" >
 										<md-icon md-svg-src="account"></md-icon>
 												<strong>Registracija</strong>
 										<md-tooltip md-direction="down">Registracija</md-tooltip>
