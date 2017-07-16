@@ -398,9 +398,10 @@
                                $scope.showPrerenderedDialog = function(ev) {
                                     $mdDialog.show({
                                     templateUrl: '../pages/pleaselogin.htm',
+                                    clickOutsideToClose:true,
                                     parent: angular.element(document.body),
-                                    targetEvent: ev,
-                                    clickOutsideToClose: true
+                                    targetEvent: e,
+                                    fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
                                     });
                                 };       
 
