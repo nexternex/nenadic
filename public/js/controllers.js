@@ -704,7 +704,7 @@
                   if (this.toLoad_ < index) {
                       this.toLoad_ += 5;
                      $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK').then(angular.bind(this, function (obj) {
-                          this.items = this.items.concat(obj.data);
+                          this.items = this.items.concat(obj.data.feed.entry);
                           this.numLoaded_ = this.toLoad_;
                       }));
                   }
