@@ -23,6 +23,11 @@ myDay.config(function ($routeProvider){
     controller: 'ProfileController',
     requiresLogin: true   
     })
+    .when('/infinite', {
+    templateUrl: '../pages/infinite.htm',
+    controller: 'ProfileController',
+    requiresLogin: true   
+    })
     .when('/userpage',{
     templateUrl:'../pages/userpage.htm',
     controller:'ProfileController',
