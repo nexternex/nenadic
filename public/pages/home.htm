@@ -91,7 +91,7 @@
    		   <md-progress-linear  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear> 
 		</div> <!-- cd-tab-filter-wrapper -->
 <!--SEKCIJA:TABLE-->
-			<section class="cd-gallery">
+			<section class="cd-gallery" ng-controller="AppCtrl as ctrl">
 				<md-virtual-repeat-container id="vertical-container" flex>
 				         <!-- <md-grid-list 
 							class="myd_mix"
@@ -104,7 +104,7 @@
 							md-gutter="12px" 				  	
 							 md-gutter-gt-sm="8px"> -->
 							
-								<md-grid-tile ng-controller="AppCtrl as ctrl" class="md-accent myd_card" ng-repeat='item in ctrl.infiniteItems | filter : search | myCitiesFilter:filterCities | myFilter:filterValues '
+								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in ctrl.infiniteItems | filter : search | myCitiesFilter:filterCities | myFilter:filterValues '
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
 									md-colspan-sm="1" 
