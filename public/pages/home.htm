@@ -42,7 +42,7 @@
 										<md-icon md-svg-src="web"></md-icon>
 										<md-tooltip md-direction="down">Tvoja pozivnica</md-tooltip>
 									</md-button>
-									<span>{{<auth class="profile nickname"></auth>}}</span>
+									<span>{{auth.profile.nickname}}</span>
 									<!--<a href="register" ng-controller="UserInfoCtrl" ng-show="mystate()">	
 										<img ng-src="{{auth.profile.picture}}">
 										<h2 class="white"><strong> {{auth.profile.nickname}}<strong></h2>
@@ -92,7 +92,7 @@
 		</div> <!-- cd-tab-filter-wrapper -->
 <!--SEKCIJA:TABLE-->
 			<section class="cd-gallery" ng-controller="AppCtrl as ctrl">
-				<md-virtual-repeat-container id="vertical-container" flex>
+				
 				         <md-grid-list 
 							class="myd_mix"
 							md-cols-xs="1" 
@@ -103,8 +103,8 @@
 							md-row-height="2:2"
 							md-gutter="12px" 				  	
 							 md-gutter-gt-sm="8px">
-							
-								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in ctrl.infiniteItems'
+							<md-virtual-repeat-container id="vertical-container" flex>	  
+								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in ctrl.infiniteItems | filter : search | myCitiesFilter:filterCities | myFilter:filterValues '
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
 									md-colspan-sm="1" 
@@ -120,10 +120,9 @@
 												<span class="md-headline company_name">{{item.gsx$id.$t}}</span>
 												<span class="md-headline company_name">{{item.gsx$adresa.$t}}</span>
 											</md-grid-tile-footer>	
-								</md-grid-tile>
-							
-							 </md-grid-list>	
-						</md-virtual-repeat-container>	
+									</md-grid-tile>
+								</md-virtual-repeat-container>		
+   					  		</md-grid-list>	
                 	<li class="gap"></li>
         	<div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
         </section>
