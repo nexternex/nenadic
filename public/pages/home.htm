@@ -101,7 +101,8 @@
 							md-row-height-gt-md="1:1"
 							md-row-height="2:2"
 							md-gutter="12px" 				  	
-						 	md-gutter-gt-sm="8px">
+							 md-gutter-gt-sm="8px">
+							<md-virtual-repeat-container id="vertical-container" flex>
 								<md-grid-tile ng-controller="AppCtrl as ctrl" class="md-accent myd_card" ng-repeat='item in ctrl.infiniteItems | filter : search | myCitiesFilter:filterCities | myFilter:filterValues '
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
@@ -118,8 +119,9 @@
 												<span class="md-headline company_name">{{item.gsx$id.$t}}</span>
 												<span class="md-headline company_name">{{item.gsx$adresa.$t}}</span>
 											</md-grid-tile-footer>	
-								</md-grid-tile>		
-   					  		</md-grid-list>	
+								</md-grid-tile>
+							</md-virtual-repeat-container>		
+   					  	</md-grid-list>	
                 	<li class="gap"></li>
         	<div class="cd-fail-message">Nismo pronasli rezultate za zadati kriterijum</div>
         </section>
