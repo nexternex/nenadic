@@ -3,8 +3,7 @@
     <div ng-controller="AppCtrl as ctrl" ng-cloak>
         <md-content layout="column">
           <md-virtual-repeat-container id="vertical-container" flex>
-                <div md-virtual-repeat="item in ctrl.infiniteItems" md-on-demand
-                     class="repeated-item" flex>
+                <div md-virtual-repeat="item in ctrl.infiniteItems" md-on-demand class="repeated-item" flex>
                     {{item.name}}
                 </div>
             </md-virtual-repeat-container>
