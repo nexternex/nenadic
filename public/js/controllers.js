@@ -703,7 +703,7 @@
               fetchMoreItems_: function (index) {
                   if (this.toLoad_ < index) {
                       this.toLoad_ += 5;
-                      $http.get('/json/items.json').then(angular.bind(this, function (obj) {
+                      $http.get('../json/items.json').then(angular.bind(this, function (obj) {
                           this.items = this.items.concat(obj.data);
                           this.numLoaded_ = this.toLoad_;
                       }));
