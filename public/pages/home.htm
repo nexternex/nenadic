@@ -91,9 +91,10 @@
    		   <md-progress-linear  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear> 
 		</div> <!-- cd-tab-filter-wrapper -->
 <!--SEKCIJA:TABLE-->
-			<section class="cd-gallery" ng-controller="AppCtrl as ctrl">
+			<section class="cd-gallery" >
 				
-				         <md-grid-list 
+						 <md-grid-list 
+							ng-controller="AppCtrl as ctrl"
 							class="myd_mix"
 							md-cols-xs="1" 
 							md-cols-sm="2"   
