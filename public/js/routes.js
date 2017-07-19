@@ -25,7 +25,7 @@ myDay.config(function ($routeProvider){
     })
     .when('/infinite', {
     templateUrl: '../pages/infinite.htm',
-    controller: 'ProfileController',
+    controller: 'AppCtrl',
     requiresLogin: true   
     })
     .when('/userpage',{

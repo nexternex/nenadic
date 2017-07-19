@@ -676,7 +676,7 @@
         }
     })
 
-    myday.controller('AppCtrl', function ($timeout,$scope,$http) {
+    myDSay.controller('AppCtrl', function ($timeout,$scope,$http) {
           // In this example, we set up our model using a plain object.
           // Using a class works too. All that matters is that we implement
           // getItemAtIndex and getLength.
