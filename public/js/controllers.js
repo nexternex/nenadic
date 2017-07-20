@@ -309,7 +309,7 @@
         $scope.changeSet=function(tema){
             console.log(tema);
             console.log($scope.selectedItem);
-             document.getElementById('MyDay_header').style.height = "50vh";
+           
 
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/sale.jpg')";
@@ -343,7 +343,8 @@
                     console.log("nema parametra:f(temax)")
                     $scope.search.gsx$tip.$t="";
                 }
-
+                
+                document.getElementById('MyDay_header').style.height = "50vh";
             }
 
             console.log("filterValuesListCtrl:"+$rootScope.filterValues);
