@@ -256,7 +256,6 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
-            $scope.search="";
             $scope.selectedItem="";
             $rootScope.filterCities="";
             // $scope.search.gsx$adresa.$t=[];
@@ -309,9 +308,7 @@
         $scope.changeSet=function(tema){
             console.log(tema);
             console.log($scope.selectedItem);
-            $scope.search="";
-           
-
+      
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/sale.jpg')";
                     $scope.filters=MyDay_filterSetSale;
