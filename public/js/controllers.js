@@ -309,6 +309,7 @@
         $scope.changeSet=function(tema){
             console.log(tema);
             console.log($scope.selectedItem);
+            $scope.search="";
            
 
                 if( tema=="sale") {
