@@ -256,7 +256,7 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
-            $scope.search=" ";
+            $scope.search="";
             $scope.selectedItem="";
             $rootScope.filterCities="";
             // $scope.search.gsx$adresa.$t=[];
