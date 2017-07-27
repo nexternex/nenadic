@@ -256,7 +256,7 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
-            $scope.search="";
+            $scope.search=" ";
             $scope.selectedItem="";
             $rootScope.filterCities="";
             // $scope.search.gsx$adresa.$t=[];
@@ -281,12 +281,12 @@
                 ["Tezina",["1","5","10","15","20","30"]],
                 ["Efekti",["Muzicka","Pirotehnika","3d"]]
              ];
+
             $scope.filters=MyDay_filterSetTorte;
 
         //filetri za gradove
             $scope.tags = "";
             $scope.loadCountries = function($query) {
-               
                 return $http.get('json/gradovi.json', { cache: true}).then(function(response) {
                 var countries = response.data;
                 return countries.filter(function(country) {
