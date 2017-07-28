@@ -254,11 +254,11 @@
   myDay.controller('MapsCtrl', ['$scope','GoogleMaps','InitAutocomplete','FillInAddress','Geolocate', function($scope,GoogleMaps,InitAutocomplete,FillInAddress,Geolocate) {
      console.log("maps kontroler entry");
     }]);
-//KONTROLER: List controller--dropdown komponente
+//KONTROLER: List controller
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
 
-            // $scope.search="";
-            // $scope.selectedItem="";
+            $scope.search="";
+            $scope.selectedItem="";
             $rootScope.filterCities="";
             // $scope.search.gsx$adresa.$t=[];
 
@@ -271,7 +271,6 @@
             ];
         // filteri za muziku
             var MyDay_filterSetMuzika=[
-                 
                 ["Clanova Benda",[2,4,6]],
                 ["Vrsta Benda",["moderan","rockpop","tamburaski","starogradski"]],
                 ["Cena",[120,140,150,160,170,1800,1900,2000]],
@@ -486,6 +485,7 @@
                 console.log('Error: ' + data);
             });  
         }]);
+
 //KONTROLER: Profil korisnika
     myDay.controller('ProfileController', ['$scope','$http','auth','$q','$timeout','$rootScope','$window', function ($scope,$http,auth,$q,$timeout,$rootScope,$window) {
 
