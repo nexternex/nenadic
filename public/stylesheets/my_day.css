@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Shrikhand');
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 @import url('https://fonts.googleapis.com/css?family=Economica|Neucha');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 /* -------------------------------- 
 
 Primary style
@@ -25,7 +25,7 @@ html * {
 
 body {
   font-size: 12px;
-  font-family: "Economica"!important;
+  font-family: "Roboto"!important;
   color: #331d35;
 }
 
