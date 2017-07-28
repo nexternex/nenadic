@@ -284,25 +284,6 @@
 
             $scope.filters=MyDay_filterSetTorte;
 
-        //filetri za gradove
-            $scope.tags = "";
-            $scope.loadCountries = function($query) {
-                return $http.get('json/gradovi.json', { cache: true}).then(function(response) {
-                var countries = response.data;
-                return countries.filter(function(country) {
-                    return country.toLowerCase().indexOf($query.toLowerCase()) != -1;
-                    });
-                });
-            };
-            $scope.$watch(function() {
-                return $scope.tags;
-                }, function(newValue, oldValue) {
-                console.log("change detected: " + newValue)
-                  $rootScope.filterCities=$scope.tags;
-                });
-        //end filetri za gradove
-
-
         console.log($scope.filters);
 
 
@@ -348,6 +329,25 @@
 
             console.log("filterValuesListCtrl:"+$rootScope.filterValues);
     
+
+        //filetri za gradove
+            $scope.tags = "";
+            $scope.loadCountries = function($query) {
+                return $http.get('json/gradovi.json', { cache: true}).then(function(response) {
+                var countries = response.data;
+                return countries.filter(function(country) {
+                    return country.toLowerCase().indexOf($query.toLowerCase()) != -1;
+                    });
+                });
+            };
+            $scope.$watch(function() {
+                return $scope.tags;
+                }, function(newValue, oldValue) {
+                console.log("change detected: " + newValue)
+                  $rootScope.filterCities=$scope.tags;
+                });
+        //end filetri za gradove
+
         //modal detalji kompanije iz liste
         $scope.showAdvanced = function(e,item,auth) {
                 $scope.auth=auth;
