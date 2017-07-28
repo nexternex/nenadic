@@ -70,7 +70,7 @@
 
     //Api create a new account
         $scope.createUser = function() {
-            console.log("clicked createUSer!");
+            // console.log("clicked createUSer!");
             $http.post('/api/create_user'+auth.profile.user_id)
                 .success(function(data) {
                     // $scope.formUser = data;
@@ -256,10 +256,12 @@
     }]);
 //KONTROLER: List controller--dropdown komponente
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
-            $scope.search="";
+
+            // $scope.search="";
             // $scope.selectedItem="";
             $rootScope.filterCities="";
             // $scope.search.gsx$adresa.$t=[];
+
         // filteri za sale
             var MyDay_filterSetSale=[  
                 ["sectionCap",[100,200,300]],
@@ -288,16 +290,12 @@
 
 
         $scope.changeSet=function(tema){
-            // console.log(tema);
-            // console.log($scope.selectedItem);
       
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/sale.jpg')";
                     $scope.filters=MyDay_filterSetSale;
                     $scope.search.gsx$tip.$t="Sale";
-                  
                     console.log("sale: "+$scope.filters);
-
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/torte.jpg')";
