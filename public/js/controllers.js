@@ -292,8 +292,8 @@
       
                 if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/sale.jpg')";
-                    $scope.filters=MyDay_filterSetSale;
-                    $scope.search.gsx$tip.$t="Sale";
+                    $scope.filters=MyDay_filterSetSale;//pojedinacni opcioni filteri
+                    $scope.search.gsx$tip.$t="Sale";//filtriranje grupe
                     console.log("sale: "+$scope.filters);
                     }
                 else if(tema=="cake"){
