@@ -445,6 +445,12 @@ md-dialog.fullscreen-dialog {
 }
 
 .myd-footer{
-  background-image: linear-gradient(purple,pink);
-  font-size:1.2em;
+  background-image: -webkit-linear-gradient(purple, rgb(142,36,170));
+  background-image: -moz-linear-gradient(purple, rgb(142,36,170));
+  background-image: -o-linear-gradient(purple, rgb(142,36,170));
+  background-image: linear-gradient(purple, rgb(142,36,170));
+  font-size: 1.2em;
+  font-family: roboto;
+  line-height: 1.2em;
+  font-weight: 500;
 }
