@@ -453,4 +453,7 @@ md-dialog.fullscreen-dialog {
   font-family: roboto;
   line-height: 1.2em;
   font-weight: 500;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #1de9b6, #ff04ff);
+    -webkit-text-fill-color: transparent;
 }
