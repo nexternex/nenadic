@@ -673,12 +673,12 @@
           return DisplayElement.value = !DisplayElement.value;
         }
     })
-
+//Infinite scroll
     myDay.controller('AppCtrl', function ($timeout,$scope,$http) {
           // In this example, we set up our model using a plain object.
           // Using a class works too. All that matters is that we implement
           // getItemAtIndex and getLength.
-           var vm = this;
+          var vm = this;
           vm.infiniteItems = {
               numLoaded_: 0,
               toLoad_: 0,
