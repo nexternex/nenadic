@@ -443,3 +443,8 @@ md-dialog.fullscreen-dialog {
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+.myd-footer{
+  background-image: linear-gradient(purple,pink);
+  font-size:1.2em;
+}
