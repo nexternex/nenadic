@@ -479,6 +479,7 @@
             .success(function(data) {
                 $scope.lists = data.feed.entry;
                 $scope.isLoading = false;
+                window.loading_screen.finish();
         //console.log('liste sam dobio iz baze:'+data.feed.entry);
             })
             .error(function(data) {
