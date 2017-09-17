@@ -474,8 +474,8 @@
         
         $scope.isLoading = true;
 
-        // demo="2PACX-1vRb_J-jIVbkU-6S4Ou4gyXRv3muwVA2Yt7M4Ik_KJSs-t-E3UHIw0PGE1qXxhNr1k1nwgO2NyMwULAp"
-        // production="11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6"
+        // demo_key="2PACX-1vRb_J-jIVbkU-6S4Ou4gyXRv3muwVA2Yt7M4Ik_KJSs-t-E3UHIw0PGE1qXxhNr1k1nwgO2NyMwULAp"
+        // production_key="11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6"
 
         $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
             .success(function(data) {
