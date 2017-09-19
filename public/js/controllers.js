@@ -474,10 +474,10 @@
         
         $scope.isLoading = true;
 
-        // demo_key="2PACX-1vRb_J-jIVbkU-6S4Ou4gyXRv3muwVA2Yt7M4Ik_KJSs-t-E3UHIw0PGE1qXxhNr1k1nwgO2NyMwULAp"
+        // demo_key="1tIzVyyKxmIyFCjwrXsPh0Jf0n0vWz49HoOtDg0Buv7I"
         // production_key="11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6"
 
-        $http.jsonp('https://spreadsheets.google.com/feeds/list/11YuCLGXJ_wOb4doQSgcxWuBNZfU9L-oSRo7RqmMNJ4k/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
+        $http.jsonp('https://spreadsheets.google.com/feeds/list/1tIzVyyKxmIyFCjwrXsPh0Jf0n0vWz49HoOtDg0Buv7I/od6/public/values?alt=json-in-script&callback=JSON_CALLBACK')
             .success(function(data) {
                 $scope.lists = data.feed.entry;
                 $scope.isLoading = false;
