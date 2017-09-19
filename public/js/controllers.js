@@ -329,7 +329,7 @@
                     console.log("vozila: "+$scope.filters);
                 }
                 else if(tema=="putovanja"){
-                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/putvanja.jpg')";
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/putovanja.jpg')";
                     $scope.search.gsx$tip.$t="putovanja";
                     console.log("putovanja: "+$scope.filters);
                 }
