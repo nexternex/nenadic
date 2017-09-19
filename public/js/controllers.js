@@ -338,6 +338,11 @@
                     $scope.search.gsx$tip.$t="animatori";
                     console.log("animatori: "+$scope.filters);
                 }
+                else if(tema=="dekor"){
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/dekor.jpg')";
+                    $scope.search.gsx$tip.$t="dekor";
+                    console.log("dekor: "+$scope.filters);
+                }
                 else{
                     console.log("nema parametra:f(temax)")
                     $scope.search.gsx$tip.$t="";
