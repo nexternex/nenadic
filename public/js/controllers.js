@@ -310,11 +310,33 @@
                 }
                 else if(tema=="foto"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/foto.jpg')";
-              
+                    $scope.search.gsx$tip.$t="foto";
+                    console.log("foto: "+$scope.filters);
                 }
                 else if(tema=="zlatare"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/zlatare.jpg')";
-              
+                    $scope.search.gsx$tip.$t="zlatare";
+                    console.log("zlatare: "+$scope.filters);
+                }
+                else if(tema=="crkve"){
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/crkve.jpg')";
+                    $scope.search.gsx$tip.$t="crkve";
+                    console.log("crkve: "+$scope.filters);
+                }
+                else if(tema=="vozila"){
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/vozila.jpg')";
+                    $scope.search.gsx$tip.$t="vozila";
+                    console.log("vozila: "+$scope.filters);
+                }
+                else if(tema=="putovanja"){
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/vozila.jpg')";
+                    $scope.search.gsx$tip.$t="putovanja";
+                    console.log("putovanja: "+$scope.filters);
+                }
+                else if(tema=="animatori"){
+                    document.getElementById('MyDay_header').style.backgroundImage = "url('/img/animatori.jpg')";
+                    $scope.search.gsx$tip.$t="animatori";
+                    console.log("animatori: "+$scope.filters);
                 }
                 else{
                     console.log("nema parametra:f(temax)")
