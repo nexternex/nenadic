@@ -64,26 +64,41 @@
 				<img style="border: 5px solid rgb(142,36,170);
 				border-radius: 50%;
 				padding: 5px;
-				background: radial-gradient(white,rgb(105,240,174));"
-				src="/img/myday.png"></img>
-				</div>MyDay</br>
+				background: radial-gradient(rgba(255,255,255,0.87),rgba(105, 240, 174, 0.44));"
+				src="/img/myday.gif"></img>
+				<!-- </div>MyDay</br> -->
 				<p class="slogan">{{auth.profile.name}} ...the best day in your life starts right here! :) </p>
 			</h1>
-			<div id="nav_01" layout="row"  layout-padding layout-margin layout-wrap style="position:relative;z-index:12;padding-left:10%;padding-right:20%;">
-				<span flex class="my_btn">Muzika</span>
-				<span flex class="my_btn">Restorani</span>
-				<span flex class="my_btn">Zlatare</span>
-				<span flex class="my_btn">Torte</span>
-				<span flex class="my_btn">Dekoracija</span>
-				<span flex class="my_btn">Foto</span>
+			<div id="nav_01" layout="row"  layout-padding layout-margin layout-wrap layout-align="center center" style="position:relative;z-index:12;padding-left:10%;padding-right:10%;">
+
+				<md-button aria-label="Logout"  class="md-fab md-raised md-mini hue-2 md-primary">
+					<md-icon md-svg-src="power"></md-icon>
+					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
+				</md-button>
+				<md-button aria-label="Logout" felx class="md-fab md-raised hue-2 md-primary">
+					<md-icon md-svg-src="power"></md-icon>
+					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
+				</md-button>	
+				<md-button aria-label="Logout"  class="md-fab md-raised hue-2 md-primary">
+					<md-icon md-svg-src="power"></md-icon>
+					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
+				</md-button>	
+				<md-button aria-label="Logout"  class="md-fab md-raised  hue-2 md-primary">
+					<md-icon md-svg-src="cake"></md-icon>
+					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
+				</md-button>	
+				<md-button aria-label="Logout"  class="md-fab md-raised hue-2 md-primary">
+					<md-icon md-svg-src="power"></md-icon>
+					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
+				</md-button>
 			</div>
-			<div id="nav_02" layout="row"  layout-padding layout-margin layout-wrap style="position:relative;z-index:12;padding-left:10%;padding-right:20%;">
-				<span flex class="my_btn">Muzika</span>
-				<span flex class="my_btn">Restorani</span>
-				<span flex class="my_btn">Zlatare</span>
-				<span flex class="my_btn">Torte</span>
-				<span flex class="my_btn">Dekoracija</span>
-				<span flex class="my_btn">Foto</span>
+			<div id="nav_02" layout="row"  layout-padding layout-margin layout-wrap style="position:relative;z-index:12;padding-left:10%;padding-right:10%;">
+				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
+				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
+				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
+				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
+				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
+				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
 			</div>
             <!-- <h2>platforma za brzu pretagu </h2> -->
 	</header>
@@ -96,7 +111,14 @@
 					<li class="placeholder"> 
 						<a data-type="all">All</a> <!-- selected option on mobile -->
 					</li>
-					<li class="filter"><a  ng-click='changeSet("")'class="selected">Izaberi sve</a></li>
+					<li class="filter">
+						<a  ng-click='changeSet("")'class="selected">
+								<md-button aria-label="All"  class="md-fab md-raised hue-2 md-primary">
+										<md-icon md-svg-src="power"></md-icon>
+										<md-tooltip md-direction="down">Izaberi sve</md-tooltip>
+								</md-button>
+						</a>
+					</li>
 					<li class="filter"><a  ng-click='changeSet("sale")'>Sale i restorani</a></li>
 					<li class="filter"><a  ng-click='changeSet("music")'>Muzika</a></li>
                     <li class="filter"><a  ng-click='changeSet("cake")'>Torte</a></li>
