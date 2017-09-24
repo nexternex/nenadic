@@ -114,10 +114,24 @@ color: rgb(204, 255, 220)
 }
 /* icons home page  */
 .my_btn{
- border-radius:50%;
- background: radial-gradient(red,green);
- width:2rem;
- height:2rem;
+  font-size: 1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  margin: 3px;
+  transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  padding: 0.3em;
+  width: 10.5%;
 
 }
 .my_btn:hover{
