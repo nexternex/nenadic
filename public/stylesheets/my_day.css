@@ -112,7 +112,26 @@ color: rgb(204, 255, 220)
     background-image: "../images/001.jpg";
     min-height: 300px;
 }
+/* icons home page  */
+.my_btn{
+ border-radius:50%;
+ background: radial-gradient(red,green);
+ width:2rem;
+ height:2rem;
 
+}
+.my_btn:hover{
+  border-radius:50%;
+  background: radial-gradient(blue,green)
+   
+ }
+ .my_btn:active{
+  border-radius:50%;
+  background: radial-gradient(green,red,green)
+   
+ }
+ 
+ /* end icons */
 .overlay{
   position: absolute;
   top: 0;
