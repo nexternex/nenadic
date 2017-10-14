@@ -1,5 +1,5 @@
 <!--SEKCIJA:HEADER-->
-	<header id="MyDay_header" class="cd-header" ng-controller="ListController">
+	<header id="MyDay_header" class="cd-header" ng-controller="ListController" layout="column" layout-align="start center">
 	 <div class="overlay"></div>
   <!--region SpeedDial -->
 			  <!--<md-fab-toolbar md-open="fab.isOpen" count="fab.count" md-direction="right">-->
@@ -50,7 +50,7 @@
 								</span>
 
 								<span> 
-									<div class="nav_links">O nama</div>
+									<div class="nav_links"  ng-click='changeSet("sale")'>O nama</div>
 									<div class="nav_links">Oglasavanje</div>
 									<div class="nav_links">Kontakt</div>
 								</span>
@@ -60,75 +60,24 @@
 				<!--</md-fab-toolbar>-->
 	<!-- # end region SpeedDial -->
 	<!--info o logu -->
-            <h1>
-				<img style="border: 5px solid rgb(142,36,170);
-				border-radius: 50%;
-				padding: 5px;
-				background: radial-gradient(rgba(255,255,255,0.87),rgba(105, 240, 174, 0.44));"
-				src="/img/myday.gif"></img>
-				<!-- </div>MyDay</br> -->
-				<p class="slogan">{{auth.profile.name}} ...the best day in your life starts right here! :) </p>
+			<h1 layout="column" layout-align="start center" layout-align-xs="center top">
+				<img id="trigger-menu" class="myday_logo"  src="/img/myday.gif"></img>
+				<p  class="slogan" ng-click='changeSet("menu")'>{{auth.profile.name}}...the best day in your life starts right here ; ) !!!</p>
 			</h1>
-			<div id="nav_01" layout="row"  layout-padding layout-margin layout-wrap layout-align="center center" style="position:relative;z-index:12;padding-left:10%;padding-right:10%;">
-
-				<md-button aria-label="Logout"  class="md-fab md-raised md-mini hue-2 md-primary">
-					<md-icon md-svg-src="power"></md-icon>
-					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
-				</md-button>
-				<md-button aria-label="Logout" felx class="md-fab md-raised hue-2 md-primary">
-					<md-icon md-svg-src="power"></md-icon>
-					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
-				</md-button>	
-				<md-button aria-label="Logout"  class="md-fab md-raised hue-2 md-primary">
-					<md-icon md-svg-src="power"></md-icon>
-					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
-				</md-button>	
-				<md-button aria-label="Logout"  class="md-fab md-raised  hue-2 md-primary">
-					<md-icon md-svg-src="cake"></md-icon>
-					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
-				</md-button>	
-				<md-button aria-label="Logout"  class="md-fab md-raised hue-2 md-primary">
-					<md-icon md-svg-src="power"></md-icon>
-					<md-tooltip md-direction="down">Odjavi se</md-tooltip>
-				</md-button>
-			</div>
-			<div id="nav_02" layout="row"  layout-padding layout-margin layout-wrap style="position:relative;z-index:12;padding-left:10%;padding-right:10%;">
-				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
-				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
-				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
-				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
-				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
-				<span flex class="my_btn"><md-icon md-svg-src="power"></md-icon></span>
-			</div>
-            <!-- <h2>platforma za brzu pretagu </h2> -->
+			
 	</header>
 <!--SEKCIJA:SWITCHER+LOADER-->	
 	<main class="cd-main-content"  >
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
-				
 				<ul class="cd-filters" > 
-					<li class="placeholder"> 
-						<a data-type="all">All</a> <!-- selected option on mobile -->
+					 <!-- selected option on mobile -->
+					<li class="placeholder">
+						<a data-type="all">All</a> 
 					</li>
-					<li class="filter">
-						<a  ng-click='changeSet("")'class="selected">
-								<md-button aria-label="All"  class="md-fab md-raised hue-2 md-primary">
-										<md-icon md-svg-src="power"></md-icon>
-										<md-tooltip md-direction="down">Izaberi sve</md-tooltip>
-								</md-button>
-						</a>
-					</li>
-					<li class="filter"><a  ng-click='changeSet("sale")'>Sale i restorani</a></li>
-					<li class="filter"><a  ng-click='changeSet("music")'>Muzika</a></li>
-                    <li class="filter"><a  ng-click='changeSet("cake")'>Torte</a></li>
-					<li class="filter"><a  ng-click='changeSet("foto")'>Fotografi</a></li>
-					<li class="filter"><a  ng-click='changeSet("dekor")'>Dekor</a></li>
-					<li class="filter"><a  ng-click='changeSet("zlatare")'>Zlatare</a></li>
-                    <li class="filter"><a  ng-click='changeSet("crkve")'>Crkve</a></li>
-					<li class="filter"><a  ng-click='changeSet("vozila")'>Vozila</a></li>
-					<li class="filter"><a  ng-click='changeSet("putovanja")'>Putovanja</a></li>
-					<li class="filter"><a  ng-click='changeSet("animatori")'>Animatori</a></li>
+					<p  class="scroll_head"ng-click='changeSet("menu")'>
+						{{auth.profile.name}} {{kategorija}}
+					</p>
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
    		   <md-progress-linear  md-mode="indeterminate" ng-show="isLoading"></md-progress-linear> 
@@ -256,6 +205,115 @@
 	</main> <!-- cd-main-content -->
 
 
+<div class="overlay_menu overlay-hugeinc" style="text-align:center;padding:2%">
+				<button type="button" class="overlay_menu-close">
+					<p class="slogan"><md-icon md-svg-src="close"></md-icon></p>
+				</button>
+				<p class="slogan">...izaberite kategoriju :) </p>
+
+				<nav layout="row" layout-align="space-around center">
+					<div layout="column" layout-margin layout-padding layout-fill  flex>
+						<md-button ng-click='changeSet("music")' flex aria-label="Muzika" class="md-raised hue-3 md-primary">
+							<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+							<strong>1 Muzika</strong>
+							<md-tooltip md-direction="down">Muzika</md-tooltip>
+						</md-button>
+						<md-button ng-click='changeSet("sale")' flex aria-label="Sale" class="md-raised hue-3 md-primary">
+								<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+								<strong>2 Sale</strong>
+								<md-tooltip md-direction="down">Sale</md-tooltip>
+						</md-button>
+						<md-button ng-click='changeSet("cvecara")' flex aria-label="profile" class="md-raised hue-3 md-primary">
+								<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+								<strong>3 Cvecare</strong>
+								<md-tooltip md-direction="down">Cvecare</md-tooltip>
+						</md-button>
+						<md-button ng-click='changeSet("dekor")' flex aria-label="profile" class="md-raised hue-3 md-primary">
+								<md-icon   md-svg-src="/img/myd_icon/music.svg"></md-icon>
+								<strong>4 Dekor</strong>
+								<md-tooltip md-direction="down">Dekor</md-tooltip>
+						</md-button>
+					</div>
+					<div layout="column"   layout-padding  layout-margin  layout-fill style flex>
+						<md-button ng-click='changeSet("zlatare")' flex aria-label="profile" class="md-raised hue-3 md-primary">
+							<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+							<strong>5 Zlatare</strong>
+							<md-tooltip md-direction="down">Zlatare</md-tooltip>
+						</md-button>
+						<md-button ng-click='changeSet("music")' flex aria-label="profile" class="md-raised hue-3 md-primary">
+								<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+								<strong>6 Oldtimers</strong>
+								<md-tooltip md-direction="down">Oldtimers</md-tooltip>
+						</md-button>
+						<md-button ng-click='changeSet("poto")' flex aria-label="profile" class="md-raised hue-3 md-primary">
+								<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+								<strong>7 Fotografi</strong>
+								<md-tooltip md-direction="down">Fotografi</md-tooltip>
+						</md-button>
+						<md-button ng-click='changeSet("animatori")' flex aria-label="profile" class="md-raised hue-3 md-primary">
+								<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+								<strong>8 Animatori</strong>
+								<md-tooltip md-direction="down">Animatori</md-tooltip>
+						</md-button>
+					</div>
+					<div layout="column"  layout-padding layout-margin  layout-fill style flex>
+						<md-button ng-click='changeSet("putovanja")' flex aria-label="putovanja" class="md-raised hue-3 md-primary">
+							<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+							<strong>9 Putovanja</strong>
+							<md-tooltip md-direction="down">Putovanja</md-tooltip>
+						</md-button>
+						<md-button ng-click='changeSet("pozivnice")' flex aria-label="profile" class="md-raised hue-3 md-primary">
+								<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+								<strong>10 Pozivnice</strong>
+								<md-tooltip md-direction="down">Pozivnice</md-tooltip>
+						</md-button>
+						<md-button ng-click='changeSet("beauty")' flex aria-label="profile" class="md-raised hue-3 md-primary">
+								<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+								<strong>11 Beauty</strong>
+								<md-tooltip md-direction="down">Beauty</md-tooltip>
+						</md-button>
+						<md-button ng-click='changeSet("vencanice")' flex aria-label="profile" class="md-raised hue-3 md-primary">
+								<md-icon md-svg-src="/img/myd_icon/music.svg"></md-icon>
+								<strong>12 Vencanice</strong>
+								<md-tooltip md-direction="down">Vencanice</md-tooltip>
+						</md-button>
+					</div>
+<!--stari meni				 -->
+				<!-- <ul layout="row" layout-align="space-between center">
+					<li flex ng-click='changeSet("music")'><img src="/img/myd_icon/myd_0002_music.png">Muzika</li>
+					<li flex ng-click='changeSet("cake")'><img src="/img/myd_icon/myd_0004_torta.png">Torte</li>
+					<li flex ng-click='changeSet("sale")'><img src="/img/myd_icon/myd_0002_music.png">Sale i restoran</li>
+					<li flex ng-click='changeSet("photo")'><a><img src="/img/myd_icon/myd_0002_music.png">Fotografi</a></li>
+					</ul>
+					<ul>
+					<li flex ng-click='changeSet("dekor")'><img src="/img/myd_icon/myd_0002_music.png">Dekor</li>
+					<li flex ng-click='changeSet("zlatare")'><img src="/img/myd_icon/myd_0003_ring.png">Zlatare</li>
+					<li flex ng-click='changeSet("cvecara")'><img src="/img/myd_icon/myd_0005_cvecara.png">Cvecare</li>
+					<li flex ng-click='changeSet("sale")'><img src="/img/myd_icon/myd_0001_animators.png">Animatori</li>
+				</ul>
+				<ul>
+					
+					<li flex ng-click='changeSet("putovanja")'><img src="/img/myd_icon/myd_0002_music.png">Putovanja</li>
+					<li flex ng-click='changeSet("pozivnice")'><img src="/img/myd_icon/myd_0002_music.png">Pozivnice</li>
+					<li flex ng-click='changeSet("beauty")'><img src="/img/myd_icon/myd_0000_beauty.png">Beauty</li>
+					<li flex ng-click='changeSet("vencanice")'><img src="/img/myd_icon/myd_0002_music.png">Vencanice</li>
+				</ul>
+				<ul>
+					<li flex ng-click='changeSet("odela")'><img src="/img/myd_icon/myd_0002_music.png">Odela</li>
+					<li flex ng-click='changeSet("obuca")'><img src="/img/myd_icon/myd_0002_music.png">Obuca</li>
+					<li flex ng-click='changeSet("vozila")'><img src="/img/myd_icon/myd_0002_music.png">Vozila</li>
+					<li flex ng-click='changeSet("vatromet")'><img src="/img/myd_icon/myd_0002_music.png">Vatromet</li>
+				</ul>
+				<ul>
+					<li flex ng-click='changeSet("baloni")'><img src="/img/myd_icon/myd_0002_music.png">Baloni</li>
+					<li flex ng-click='changeSet("satori")'><img src="/img/myd_icon/myd_0002_music.png">Satori</li>
+					<li flex ng-click='changeSet("pokloni")'><img src="/img/myd_icon/myd_0002_music.png">Pokloni</li>
+					<li flex ng-click='changeSet("organizacija")'><img src="/img/myd_icon/myd_0002_music.png">Organizacija</li>
+				</ul> -->
+			</nav>
+		</div>
+
+
 <div ng-include="'pages/footer.htm'"></div>
 <!--SEKCIJA:JS-->
 	<script src="js/jquery-2.1.4.min.js"></script>
@@ -263,7 +321,8 @@
         <script src="js/jquery.mixitup.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/flickity.pkgd.min.js"></script>
-        <script src="js/jquery.dropdown.js"></script>
+		<script src="js/jquery.dropdown.js"></script>
+		<script src="js/fullscreen.js"></script> <!-- Resource jQuery -->
 <!-- drop down tags  -->
 		<script type="text/ng-template" id="my-custom-template">
 				<div class="right-panel">

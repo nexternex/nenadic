@@ -256,7 +256,7 @@
     }]);
 //KONTROLER: List controller
     myDay.controller('ListController', ['$scope','$rootScope', '$http','$mdDialog','auth', '$location','$filter','$timeout', function ($scope,$rootScope,$http,$mdDialog,auth, $location,$filter,$timeout) {
-
+            // $scope.kategorija="...tvoj najbolji dan pocinje ovde ;)";
             $scope.search="";
             $scope.selectedItem="";
             $rootScope.filterCities="";
@@ -289,63 +289,86 @@
 
 
         $scope.changeSet=function(tema){
-      
-                if( tema=="sale") {
+            $(".cd-tab-filter li").removeClass(".selected");
+                if(tema=="menu"){
+                    $('#trigger-menu').click();
+                }
+                else if( tema=="sale") {
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/sale.jpg')";
                     $scope.filters=MyDay_filterSetSale;//pojedinacni opcioni filteri
                     $scope.search.gsx$tip.$t="Sale";//filtriranje grupe
+                    $scope.kategorija="Svecane sale i restorani";
                     console.log("sale: "+$scope.filters);
+                    $('.overlay_menu-close').click();
                     }
                 else if(tema=="cake"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/torte.jpg')";
                     $scope.filters=MyDay_filterSetTorte;
                     $scope.search.gsx$tip.$t="Torte";
+                    $scope.kategorija="Torte i sitni kolaci";
                     console.log("torte: "+$scope.filters);
                 }
                 else if(tema=="music"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/music.jpg')";
                     $scope.filters=MyDay_filterSetMuzika;
                     $scope.search.gsx$tip.$t="Muzika";
+                    $scope.kategorija="Muzika, Bendovi, DJ-ovi..";
                     console.log("music: "+$scope.filters);
+                    $('.overlay_menu-close').click();
                 }
                 else if(tema=="foto"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/foto.jpg')";
                     $scope.search.gsx$tip.$t="foto";
+                    $scope.search.gsx$tip.$t="foto";
+                    $scope.kategorija="Fotografi, Kamermani, Dronovi";
                     console.log("foto: "+$scope.filters);
+                    $('.overlay_menu-close').click();
                 }
                 else if(tema=="zlatare"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/zlatare.jpg')";
                     $scope.search.gsx$tip.$t="zlatare";
+                    $scope.kategorija="Zlatare";
                     console.log("zlatare: "+$scope.filters);
+                    $('.overlay_menu-close').click();
                 }
                 else if(tema=="crkve"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/crkve.jpg')";
                     $scope.search.gsx$tip.$t="crkve";
                     console.log("crkve: "+$scope.filters);
+                    $('.overlay_menu-close').click();
                 }
                 else if(tema=="vozila"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/vozila.jpg')";
                     $scope.search.gsx$tip.$t="vozila";
+                    $scope.kategorija="Vozila, oldtajemeri, rent-a-car";
                     console.log("vozila: "+$scope.filters);
+                    $('.overlay_menu-close').click();
                 }
                 else if(tema=="putovanja"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/putovanja.jpg')";
                     $scope.search.gsx$tip.$t="putovanja";
+                    $scope.kategorija="Bracna putovanja. Egzoticna vencanja";
                     console.log("putovanja: "+$scope.filters);
+                    $('.overlay_menu-close').click();
                 }
                 else if(tema=="animatori"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/animatori.jpg')";
                     $scope.search.gsx$tip.$t="animatori";
+                    $scope.kategorija="Animatori, Madjionicari, Striptizete ;)";
                     console.log("animatori: "+$scope.filters);
+                    $('.overlay_menu-close').click();
                 }
                 else if(tema=="dekor"){
                     document.getElementById('MyDay_header').style.backgroundImage = "url('/img/dekor.jpg')";
                     $scope.search.gsx$tip.$t="dekor";
+                    $scope.kategorija="Profesionalna dekoracija, Agencije za vencanja";
                     console.log("dekor: "+$scope.filters);
+                    $('.overlay_menu-close').click();
                 }
                 else{
                     console.log("nema parametra:f(temax)")
                     $scope.search.gsx$tip.$t="";
+                    $('.overlay_menu-close').click();
                 }
                 
                 document.getElementById('MyDay_header').style.height = "50vh";

@@ -33,7 +33,7 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
 
   $httpProvider.interceptors.push('jwtInterceptor');
 
-  // Tema aplikacije Angular Theming
+  //#region Tema aplikacije Angular Theming
   $mdIconProvider.defaultIconSet('../fonts/mdi.svg'); 
   $mdThemingProvider.theme('default')
     .primaryPalette('purple',  {                  
@@ -50,7 +50,7 @@ myDay.config(function (authProvider, $routeProvider, $httpProvider, jwtIntercept
                     })
     .accentPalette('green');
 });
-
+//#endregion
 myDay.run(function($rootScope, auth, store, jwtHelper, $location) {
   // This events gets triggered on refresh or URL change
   $rootScope.$on('$locationChangeStart', function() {

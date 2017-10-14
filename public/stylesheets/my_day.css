@@ -38,6 +38,25 @@ a {
 html, body{
   min-height: 100%;
 }
+.myday_logo{
+  height:25vh;
+  border: 5px solid rgb(142,36,170);
+  border-radius: 50%;
+  padding-top:5px;
+  margin-top:20px;
+  background: radial-gradient(rgb(255, 255, 255),rgba(105, 240, 174, 0.39));
+  box-shadow: 1px 1px 20px 1px rgba(0,0,0,0.87);
+  cursor: pointer;
+  -webkit-transition: all .4s ease-in-out;   
+  -moz-transition: all .4s ease-in-out;   
+  -ms-transition: all .4s ease-in-out;  
+  filter: blur(0px) brightness(80%); 
+}
+.myday_logo:hover{
+  filter: blur(0px) brightness(120%);
+  /* background: radial-gradient(rgb(255, 255, 255),rgba(105, 240, 174, 0.39,url(/img/MyDayBtn.gif))); */
+  cursor: url(/img/MyDayBtn.gif)!important;
+}
 #myday_toolbar{
     position: relative;
     z-index: 12;
@@ -81,11 +100,11 @@ html, body{
   z-index: -1;
 }
 .mypage_main h1{
-font-family: 'Fredericka the Great', cursive;
-font-size: 4.2em;
-font-weight: 100;
-margin: 0;
-color: rgb(204, 255, 220)
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 4.2em;
+  font-weight: 100;
+  margin: 0;
+  color: rgb(204, 255, 220);
 }
 .mypage_main .slogan{
     font-size: 19px;
@@ -95,6 +114,16 @@ color: rgb(204, 255, 220)
     font-weight: 900;
     z-index: 15;
     padding: 1em;
+}
+.scroll_head{
+  font-family: 'Indie Flower', cursive!important;
+   color:blueviolet;
+   font-size:4vh;
+   textarea:focus;
+   input:focus;
+   outline: none;
+   padding:1%;
+   cursor: pointer;
 }
 
 #MyDay_header{
@@ -114,17 +143,17 @@ color: rgb(204, 255, 220)
 }
 /* icons home page  */
 .my_icon01{
-display: inline-block;
-font-size: 0px;
-cursor: pointer;
-margin: 15px 30px;
-width: 90px;
-height: 90px;
-border-radius: 50%;
-text-align: center;
-position: relative;
-z-index: 1;
-color: #2c2c2c;
+  display: inline-block;
+  font-size: 0px;
+  cursor: pointer;
+  margin: 15px 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #2c2c2c;
 }
 
 .my-icon-effect-01 .my-icon01 {
@@ -135,16 +164,33 @@ color: #2c2c2c;
   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
   background: linear-gradient(white,#c2c2c2);
 }
+.my_selector{
+  font-size: 1.5vw;
+  background: linear-gradient(rgba(156, 39, 176, 0.65),rgba(156, 39, 176, 0.5)), url(/img/MyDayBtn.gif);
+  border-radius: 4px;
+  font-family: Indie Flower;
+  background-size: contain;
+  padding: 5px 7px 5px 7px;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  margin:7px;
+  background-size: cover;
+}
+.my_selector:hover{
+  filter: brightness(1.4);
+  color:#82FFA9;
+}
 
 .my_btn{
   font-size: 1em;
   font-weight: 900;
   text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(155, 20, 182, 0.5);
   border-radius: 3px;
   position: relative;
   display: inline-block;
-  margin-left: 10px;
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   margin: 3px;
@@ -153,9 +199,8 @@ color: #2c2c2c;
   -webkit-transition: all 0.8s;
   -o-transition: all 0.8s;
   -ms-transition: all 0.8s;
-  padding: 0.3em;
   width: auto;
-  min-height:1em;
+  min-height:0.8em;
 
 }
 .my_btn:hover{
@@ -249,12 +294,12 @@ Hero
     padding-top: 26%; }
     
 .slogan{
-    font-size: 40px;
-    font-family: 'Indie Flower', cursive!important;
-    color: #82FFA9;
-    text-shadow: 1px 1px 1px black;
-    font-weight: 900;
-    z-index: 15; 
+  font-size:4vh;
+  font-family: 'Indie Flower', cursive!important;
+  color: #82FFA9;
+  text-shadow: 1px 1px 1px black;
+  font-weight: 900;
+  z-index: 1;
 }
 .nav_links{
     font-size: 1em;
@@ -515,7 +560,7 @@ md-dialog.fullscreen-dialog {
 
 
 
- //LAZY LOAD CLASES MY DAY// 
+ /* //LAZY LOAD CLASES MY DAY//  */
 /* main styles */
 /* *, *:before, *:after {
   box-sizing: border-box;
@@ -637,4 +682,4 @@ a.progressive img.reveal {
 @keyframes reveal {
 	0% { transform: scale(1.05); opacity: 0; }
 	100% { transform: scale(1); opacity: 1; }
-} */ */
+} */ 

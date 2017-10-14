@@ -120,7 +120,7 @@ xtab-filter
 .cd-tab-filter {
   /* tabbed navigation style on mobile - dropdown */
   position: relative;
-  height: 50px;
+  height: auto;
   width: 140px;
   margin: 0 auto;
   z-index: 1;
