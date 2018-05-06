@@ -102,9 +102,10 @@
 									data-myDay-type="{{item.gsx$tip.$t}}"
 									data-myDay-ref="{{item.gsx$id.$t}}"
 									md-whiteframe-3dp
-									data-src="url({{item.gsx$img.$t}}"									
+																		
 									style="background-image:url({{item.gsx$img.$t}})" 
 									ng-click="showAdvanced(e,item)">
+									<img class="lozad" data-src="{{item.gsx$img.$t}}" style="width:300px">
 											<!-- <div class="overlay"></div> -->
 											<md-grid-tile-footer class="myd_card_footer"> 
 												<span class="md-headline company_name"><strong>{{item.gsx$naziv.$t}}</strong></span>
