@@ -417,12 +417,11 @@
 }, false); -->
 </script>
 <script>
-	lozad('img', {
+	lozad('.lozad', {
     load: function(el) {
         el.src = el.dataset.src;
         el.onload = function() {
 			el.classList.add('fade');
-			console.log('lozad');
         }
     }
 }).observe()
