@@ -417,13 +417,6 @@
 }, false); -->
 </script>
 <script>
-	lozad('[data-lzd="1"]', {
-    load: function(el) {
-        el.src = el.dataset.src;
-        el.onload = function() {
-			el.classList.add('fade');
-			console.log("lozad");
-        }
-    }
-}).observe()
+const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+observer.observe();
 </script>
