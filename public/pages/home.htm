@@ -94,15 +94,15 @@
 							md-row-height="2:2"
 							md-gutter="12px" 				  	
 						 	md-gutter-gt-sm="8px">
-								<md-grid-tile  class="md-accent myd_card" ng-repeat='item in lists | filter : search | myCitiesFilter:filterCities | myFilter:filterValues'
+								<md-grid-tile  class="md-accent myd_card lozad" ng-repeat='item in lists | filter : search | myCitiesFilter:filterCities | myFilter:filterValues'
 									md-colspan-gt-sm="{{item.gsx$w.$t}}" 
 									md-rowspan-gt-sm="{{item.gsx$h.$t}}" 
 									md-colspan-sm="1" 
 									md-colspan-xs="1"
 									data-myDay-type="{{item.gsx$tip.$t}}"
 									data-myDay-ref="{{item.gsx$id.$t}}"
-									md-whiteframe-3dp									
-									style="background-image:url({{item.gsx$img.$t}})" 
+									md-whiteframe-3dp
+									data-src="{{item.gsx$img.$t}}"									
 									ng-click="showAdvanced(e,item)">
 											<!-- <div class="overlay"></div> -->
 											<md-grid-tile-footer class="myd_card_footer"> 
@@ -417,3 +417,7 @@
 }, false); -->
 </script>
 <script src="https://cdn.jsdelivr.net/npm/lozad"></script>
+<script>
+	const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+	observer.observe();
+</script>
