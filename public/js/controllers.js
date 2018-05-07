@@ -13,7 +13,7 @@
                      {name:'2/3', txt:'tekst do bola', src:'/img/001.jpg'},
                      {name:'3/3', txt:'Best a name', src:'/img/002.jpg'}];
     
-                 $scope.onEnd = function(){
+     $scope.onEnd = function(){
                         $timeout(function(){
                             alert('all done');
                             const observer = lozad(); // lazy loads elements with default selector as ".lozad"
