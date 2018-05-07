@@ -12,13 +12,15 @@
       $scope.slides=[{name:'1/3', txt:'neki text', src:'/img/001.jpg'},
                      {name:'2/3', txt:'tekst do bola', src:'/img/001.jpg'},
                      {name:'3/3', txt:'Best a name', src:'/img/002.jpg'}];
-
-      $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
-                        // Do anything
-                        const observer = lozad(); // lazy loads elements with default selector as ".lozad"
-                              observer.observe();
-                              console.log("lazyload fully aplied");
-                    })
+    
+                 $scope.onEnd = function(){
+                        $timeout(function(){
+                            alert('all done');
+                            const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+                            observer.observe();
+                            console.log("lazyload fully aplied");
+                        }, 1);
+                    };
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','HeartService',function ($scope, $http, auth, store, $location,$rootScope,HeartService) {
