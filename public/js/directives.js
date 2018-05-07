@@ -29,8 +29,15 @@
 //     }
 // })
 
-myDay.directive('lazyLoad', function(){
-    var observer = lozad(); // lazy loads elements with default selector as ".lozad"
-    observer.observe();
-    console.log("kraj_lzd");
+myDay.directive('onFinishRender', function ($timeout) {
+	return {
+		restrict: 'A',
+		link: function (scope, element, attr) {
+			if (scope.$last === true) {
+				$timeout(function () {
+					scope.$emit('ngRepeatFinished');
+				});
+			}
+		}
+	}
 });

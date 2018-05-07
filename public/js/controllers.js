@@ -13,6 +13,11 @@
                      {name:'2/3', txt:'tekst do bola', src:'/img/001.jpg'},
                      {name:'3/3', txt:'Best a name', src:'/img/002.jpg'}];
 
+      $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+                        // Do anything
+                        const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+                              observer.observe();
+                    })
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','HeartService',function ($scope, $http, auth, store, $location,$rootScope,HeartService) {
