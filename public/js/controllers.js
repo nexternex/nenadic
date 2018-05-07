@@ -13,14 +13,7 @@
                      {name:'2/3', txt:'tekst do bola', src:'/img/001.jpg'},
                      {name:'3/3', txt:'Best a name', src:'/img/002.jpg'}];
     
-     $scope.onEnd = function(){
-                        $timeout(function(){
-                            alert('all done');
-                            const observer = lozad(); // lazy loads elements with default selector as ".lozad"
-                            observer.observe();
-                            console.log("lazyload fully aplied");
-                        }, 1);
-                    };
+  
  }]);
 //KONTROLER: Login controller
     myDay.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location','$rootScope','HeartService',function ($scope, $http, auth, store, $location,$rootScope,HeartService) {
@@ -50,7 +43,7 @@
         }
         // init();
     
-
+  
         $scope.heart=function(){
                 $http.get('/api/users'+auth.profile.user_id)
                     .success(function(data) {
@@ -269,6 +262,15 @@
             $scope.selectedItem="";
             $rootScope.filterCities="";
             // $scope.search.gsx$adresa.$t=[];
+
+            $scope.onEnd = function(){
+                $timeout(function(){
+                    alert('all done');
+                    const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+                    observer.observe();
+                    console.log("lazyload fully aplied");
+                }, 1);
+            };
 
         // filteri za sale
             var MyDay_filterSetSale=[  
