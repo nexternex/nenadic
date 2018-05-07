@@ -30,7 +30,7 @@
 // })
 
 myDay.directive('lazyLoad',function(){
-    const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+    var observer = lozad(); // lazy loads elements with default selector as ".lozad"
     observer.observe();
     console.log("kraj_lzd")
 });
