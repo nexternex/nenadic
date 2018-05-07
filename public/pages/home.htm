@@ -103,8 +103,8 @@
 									data-myDay-ref="{{item.gsx$id.$t}}"
 									data-background-image="{{item.gsx$img.$t}}"
 									md-whiteframe-3dp
-									ng-click="showAdvanced(e,item)">
-									<!-- <img class="lozad" data-lzd="1" data-src="{{item.gsx$img.$t}}" style="width:100%;height:100%;"> -->
+									ng-click="showAdvanced(e,item)" lazyLoad >
+									<img class="lozad" data-lzd="1" data-src="{{item.gsx$img.$t}}" style="width:100%;height:100%;">
 											<!-- <div class="overlay"></div> -->
 											<md-grid-tile-footer class="myd_card_footer"> 
 												<span class="md-headline company_name"><strong>{{item.gsx$naziv.$t}}</strong></span>
@@ -416,9 +416,4 @@
 	}
 
 }, false); -->
-</script>
-<script>
-const observer = lozad(); // lazy loads elements with default selector as ".lozad"
-observer.observe();
-console.log("kraj_lzd")
 </script>
